@@ -1,0 +1,16 @@
+environment                      = "prod"
+region                           = "us-east-1"
+project                          = "security"
+user_pool_name                   = "app-user-pool"
+allow_self_registration          = false
+mfa_configuration                = "ON"
+password_minimum_length          = 14
+temporary_password_validity_days = 1
+advanced_security_mode           = "ENFORCED"
+app_client_name                  = "web-app-client"
+callback_urls                    = ["https://app.example.com/callback"]
+logout_urls                      = ["https://app.example.com/logout"]
+allowed_oauth_flows              = ["code"]
+allowed_oauth_scopes             = ["openid", "email", "profile"]
+enable_identity_pool             = true
+allow_unauthenticated_identities = false

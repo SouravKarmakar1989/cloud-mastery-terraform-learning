@@ -1,0 +1,61 @@
+variable "project_name" {
+  type    = string
+  default = "agent-world-lab"
+}
+
+variable "platform_short" {
+  type    = string
+  default = "awl"
+}
+
+variable "environment" {
+  type    = string
+  default = "lab"
+}
+
+variable "owner" {
+  type    = string
+  default = "platform-team"
+}
+
+variable "cost_center" {
+  type    = string
+  default = "learning"
+}
+
+variable "data_class" {
+  type    = string
+  default = "internal"
+}
+
+variable "azure_subscription_id" {
+  type    = string
+  default = ""
+}
+
+variable "azure_tenant_id" {
+  type    = string
+  default = ""
+}
+
+variable "azure_location" {
+  type    = string
+  default = "eastus"
+}
+
+variable "feature_flags" {
+  type = object({
+    enable_azure_foundry       = bool
+    enable_bedrock_agentcore   = bool
+    enable_gcp_advanced        = bool
+    enable_vector_store        = bool
+    enable_observability_stack = bool
+  })
+  default = {
+    enable_azure_foundry       = false
+    enable_bedrock_agentcore   = false
+    enable_gcp_advanced        = false
+    enable_vector_store        = false
+    enable_observability_stack = false
+  }
+}

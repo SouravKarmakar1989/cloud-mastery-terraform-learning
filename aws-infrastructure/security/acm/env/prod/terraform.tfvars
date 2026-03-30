@@ -1,0 +1,9 @@
+environment                   = "prod"
+region                        = "us-east-1"
+project                       = "security"
+primary_domain                = "example.com"
+subject_alternative_names     = ["*.example.com", "api.example.com", "www.example.com"]
+hosted_zone_name              = "example.com"
+create_cloudfront_certificate = true
+cloudfront_domain             = "example.com"
+cloudfront_sans               = ["*.example.com", "www.example.com"]

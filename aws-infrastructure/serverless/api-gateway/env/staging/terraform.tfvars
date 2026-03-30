@@ -1,0 +1,12 @@
+environment                  = "staging"
+region                       = "us-east-1"
+cognito_user_pool_arn        = "arn:aws:cognito-idp:us-east-1:ACCOUNT_ID:userpool/us-east-1_XXXXXXXXX"
+list_students_arn            = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-staging-list_students"
+get_student_arn              = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-staging-get_student"
+create_student_arn           = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-staging-create_student"
+update_student_arn           = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-staging-update_student"
+delete_student_arn           = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-staging-delete_student"
+start_certification_arn      = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-staging-start_certification"
+get_certification_status_arn = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-staging-get_certification_status"
+throttling_burst_limit       = 100
+throttling_rate_limit        = 50

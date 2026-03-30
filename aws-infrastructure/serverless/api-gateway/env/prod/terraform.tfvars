@@ -1,0 +1,13 @@
+environment                  = "prod"
+region                       = "us-east-1"
+cognito_user_pool_arn        = "arn:aws:cognito-idp:us-east-1:ACCOUNT_ID:userpool/us-east-1_XXXXXXXXX"
+list_students_arn            = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-prod-list_students"
+get_student_arn              = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-prod-get_student"
+create_student_arn           = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-prod-create_student"
+update_student_arn           = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-prod-update_student"
+delete_student_arn           = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-prod-delete_student"
+start_certification_arn      = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-prod-start_certification"
+get_certification_status_arn = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-prod-get_certification_status"
+throttling_burst_limit       = 500
+throttling_rate_limit        = 200
+frontend_origin              = "https://your-production-frontend.com"

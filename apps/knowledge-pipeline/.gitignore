@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+
+# Runtime artifacts
+cache/*.json
+cache/*.md
+outputs/**
+Knowledge Base/**
+playwright-profile/**
+
+# Keep directory stubs
+!cache/.gitkeep
+!outputs/.gitkeep
+!Knowledge Base/.gitkeep
+!playwright-profile/.gitkeep
+
+# Local secrets
+.env

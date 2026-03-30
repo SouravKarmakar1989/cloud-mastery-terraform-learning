@@ -1,0 +1,16 @@
+environment                     = "prod"
+region                          = "us-east-1"
+project                         = "security"
+waf_scope                       = "REGIONAL"
+alb_arn                         = ""   # Set to ALB ARN after vpc-secure is deployed
+enable_aws_managed_common_rules = true
+enable_known_bad_inputs         = true
+enable_sqli_rules               = true
+enable_linux_rules              = true
+enable_anonymous_ip_list        = true
+enable_rate_limiting            = true
+rate_limit_threshold            = 2000
+enable_shield_advanced          = false  # Set true with valid Shield Advanced subscription
+shield_protected_resource_arns  = []
+enable_waf_logging              = true
+waf_log_retention_days          = 90

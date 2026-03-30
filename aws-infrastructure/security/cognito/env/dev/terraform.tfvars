@@ -1,0 +1,16 @@
+environment                      = "dev"
+region                           = "us-east-1"
+project                          = "security"
+user_pool_name                   = "app-user-pool"
+allow_self_registration          = true
+mfa_configuration                = "OPTIONAL"
+password_minimum_length          = 12
+temporary_password_validity_days = 7
+advanced_security_mode           = "AUDIT"
+app_client_name                  = "web-app-client"
+callback_urls                    = ["https://localhost:3000/callback", "http://localhost:3000/callback"]
+logout_urls                      = ["https://localhost:3000/logout", "http://localhost:3000/logout"]
+allowed_oauth_flows              = ["code"]
+allowed_oauth_scopes             = ["openid", "email", "profile"]
+enable_identity_pool             = true
+allow_unauthenticated_identities = false

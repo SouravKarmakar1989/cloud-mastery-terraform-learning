@@ -1,0 +1,16 @@
+project_name           = "agent-world-lab"
+platform_short         = "awl"
+environment            = "lab"
+owner                  = "platform-team"
+cost_center            = "learning"
+data_class             = "internal"
+gcp_project_id         = "replace-with-project-id"
+gcp_region             = "us-central1"
+
+feature_flags = {
+  enable_azure_foundry       = false
+  enable_bedrock_agentcore   = false
+  enable_gcp_advanced        = false
+  enable_vector_store        = false
+  enable_observability_stack = false
+}

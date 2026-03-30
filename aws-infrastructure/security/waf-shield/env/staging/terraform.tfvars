@@ -1,0 +1,16 @@
+environment                     = "staging"
+region                          = "us-east-1"
+project                         = "security"
+waf_scope                       = "REGIONAL"
+alb_arn                         = ""
+enable_aws_managed_common_rules = true
+enable_known_bad_inputs         = true
+enable_sqli_rules               = true
+enable_linux_rules              = true
+enable_anonymous_ip_list        = false
+enable_rate_limiting            = true
+rate_limit_threshold            = 3000
+enable_shield_advanced          = false
+shield_protected_resource_arns  = []
+enable_waf_logging              = true
+waf_log_retention_days          = 60

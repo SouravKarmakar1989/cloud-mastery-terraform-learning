@@ -1,0 +1,9 @@
+environment                   = "dev"
+region                        = "us-east-1"
+project                       = "security"
+primary_domain                = "dev.example.com"
+subject_alternative_names     = ["*.dev.example.com"]
+hosted_zone_name              = "example.com"
+create_cloudfront_certificate = false
+cloudfront_domain             = ""
+cloudfront_sans               = []

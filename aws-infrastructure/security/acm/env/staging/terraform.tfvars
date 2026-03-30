@@ -1,0 +1,9 @@
+environment                   = "staging"
+region                        = "us-east-1"
+project                       = "security"
+primary_domain                = "staging.example.com"
+subject_alternative_names     = ["*.staging.example.com", "api.staging.example.com"]
+hosted_zone_name              = "example.com"
+create_cloudfront_certificate = false
+cloudfront_domain             = ""
+cloudfront_sans               = []

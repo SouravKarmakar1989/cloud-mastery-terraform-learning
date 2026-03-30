@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AgentWorldLab.Application\AgentWorldLab.Application.csproj" />
+    <ProjectReference Include="..\AgentWorldLab.Domain\AgentWorldLab.Domain.csproj" />
+    <ProjectReference Include="..\AgentWorldLab.Infrastructure\AgentWorldLab.Infrastructure.csproj" />
+    <ProjectReference Include="..\AgentWorldLab.Auth\AgentWorldLab.Auth.csproj" />
+    <ProjectReference Include="..\AgentWorldLab.Adapters.Abstractions\AgentWorldLab.Adapters.Abstractions.csproj" />
+    <ProjectReference Include="..\AgentWorldLab.Adapters.Azure\AgentWorldLab.Adapters.Azure.csproj" />
+    <ProjectReference Include="..\AgentWorldLab.Adapters.Aws\AgentWorldLab.Adapters.Aws.csproj" />
+    <ProjectReference Include="..\AgentWorldLab.Adapters.Gcp\AgentWorldLab.Adapters.Gcp.csproj" />
+    <ProjectReference Include="..\AgentWorldLab.Adapters.Mcp\AgentWorldLab.Adapters.Mcp.csproj" />
+  </ItemGroup>
+</Project>

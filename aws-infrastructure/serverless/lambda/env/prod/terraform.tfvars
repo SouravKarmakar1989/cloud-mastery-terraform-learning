@@ -1,0 +1,10 @@
+environment               = "prod"
+region                    = "us-east-1"
+students_table_name       = "stu-cert-prod-students"
+students_table_arn        = "arn:aws:dynamodb:us-east-1:ACCOUNT_ID:table/stu-cert-prod-students"
+certifications_table_name = "stu-cert-prod-certifications"
+certifications_table_arn  = "arn:aws:dynamodb:us-east-1:ACCOUNT_ID:table/stu-cert-prod-certifications"
+# state_machine_arn       = ""  # Fill after deploying serverless/step-functions
+deployment_bucket         = "your-deployment-bucket"
+deployment_prefix         = "stu-cert/prod/latest"
+log_retention_days        = 30

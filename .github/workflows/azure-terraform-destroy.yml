@@ -1,0 +1,99 @@
+name: azure-terraform-destroy
+
+on:
+  workflow_dispatch:
+    inputs:
+      module:
+        description: 'Infrastructure module to destroy'
+        required: true
+        type: choice
+        options:
+          # ── Platform / Shared ──────────────────────────────────────────────
+          - observability/log-analytics
+          - observability/app-insights
+          - security/key-vault
+          # ── AI Foundry ────────────────────────────────────────────────────
+          - ai-foundry/genAI-agentic
+          # ── AI Services ───────────────────────────────────────────────────
+          - ai-services/vision
+          - ai-services/speech-language
+          - ai-services/doc-intelligence
+          - ai-services/content-understanding
+          - ai-services/ai-search
+          # ── Core Azure ────────────────────────────────────────────────────
+          - azure-minimal
+          - afd
+          - apim
+          - databricks
+          - data-factory
+          - integration
+          - data-analytics
+          - network/core
+          - network/firewall
+          - network/dns
+          - compute/iaas/vm
+          - compute/iaas/vmss
+          - compute/iaas/batch
+          - compute/paas/app-service
+          - compute/container/acr
+          - compute/container/aca
+          - compute/container/aci
+          - compute/container/aks
+          - compute/container/spring-apps
+          - compute/serverless/func-app
+          - compute/serverless/durable-func
+          - compute/logic-app/consumption
+          - compute/logic-app/standard
+          - compute/static-web-app
+          - storage/blob
+          - storage/adls
+          - storage/files
+          - database/cosmos
+          - database/sql
+          - database/postgres
+          - database/mysql
+          - database/redis
+      environment:
+        description: 'Target environment (e.g. dev, staging, prod)'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+      target_resource:
+        description: 'Terraform resource to target (e.g. azurerm_storage_account.sa). Leave empty to destroy all.'
+        required: false
+        default: ''
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  destroy:
+    runs-on: ubuntu-latest
+    # Destroy in prod requires reviewer approval — same gate as apply.
+    environment: ${{ inputs.environment }}
+    env:
+      TF_TARGET: ${{ inputs.target_resource != '' && format('-target={0}', inputs.target_resource) || '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        working-directory: azure-infrastructure/${{ inputs.module }}
+        run: terraform init -backend-config=env/${{ inputs.environment }}/backend.hcl
+
+      - name: Terraform Destroy
+        working-directory: azure-infrastructure/${{ inputs.module }}
+        run: terraform destroy -auto-approve -var-file=env/${{ inputs.environment }}/terraform.tfvars ${{ env.TF_TARGET }}

@@ -1,0 +1,9 @@
+environment               = "dev"
+region                    = "us-east-1"
+cognito_user_pool_id      = "us-east-1_XXXXXXXXX"
+students_table_name       = "stu-cert-dev-students"
+students_table_arn        = "arn:aws:dynamodb:us-east-1:ACCOUNT_ID:table/stu-cert-dev-students"
+certifications_table_name = "stu-cert-dev-certifications"
+certifications_table_arn  = "arn:aws:dynamodb:us-east-1:ACCOUNT_ID:table/stu-cert-dev-certifications"
+appsync_resolver_arn      = "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:stu-cert-dev-appsync_resolver"
+log_retention_days        = 7

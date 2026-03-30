@@ -1,0 +1,19 @@
+project_name           = "agent-world-lab"
+platform_short         = "awl"
+environment            = "lab"
+owner                  = "platform-team"
+cost_center            = "learning"
+data_class             = "internal"
+azure_subscription_id  = "replace-with-subscription-id"
+azure_tenant_id        = "replace-with-tenant-id"
+azure_location         = "eastus"
+aws_region             = "us-east-1"
+aws_profile            = null
+
+feature_flags = {
+  enable_azure_foundry       = false
+  enable_bedrock_agentcore   = false
+  enable_gcp_advanced        = false
+  enable_vector_store        = false
+  enable_observability_stack = false
+}
