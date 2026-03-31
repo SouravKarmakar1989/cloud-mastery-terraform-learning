@@ -1,4 +1,4 @@
-# PR trigger note: minimal no-op change to validate required CI checks.
+# PR trigger note: minimal no-op change to validate required CI checks (refresh).
 prefix   = "sk"
 location = "eastus"
 env      = "dev"

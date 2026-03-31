@@ -56,10 +56,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            CHANGED_FILES=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
-          else
+          if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
             CHANGED_FILES=$(git diff --name-only HEAD~1...HEAD)
+          else
+            CHANGED_FILES=$(git show --name-only --pretty='' HEAD)
           fi
 
           printf "%s\n" "$CHANGED_FILES" | grep -E '^platforms/github-iac-terraform/.*\.(tf|tfvars)$' > changed_tf_paths.txt || true
@@ -149,10 +149,10 @@ jobs:
         run: |
           set -euo pipefail
 
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            CHANGED_FILES=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
-          else
+          if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
             CHANGED_FILES=$(git diff --name-only HEAD~1...HEAD)
+          else
+            CHANGED_FILES=$(git show --name-only --pretty='' HEAD)
           fi
 
           printf "%s\n" "$CHANGED_FILES" | grep -E '^platforms/github-iac-terraform/.*\.tf$' > changed_tf_files.txt || true
@@ -194,10 +194,11 @@ jobs:
 
       - name: Run Semgrep
         run: >
-          semgrep ci
-          --config auto
-          --sarif
-          --output semgrep.sarif
+          if [ -n "${SEMGREP_APP_TOKEN:-}" ]; then
+            semgrep ci --config auto --sarif --output semgrep.sarif;
+          else
+            semgrep scan --config auto --sarif --output semgrep.sarif;
+          fi
         env:
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}  # optional: link to semgrep.dev dashboard
 
