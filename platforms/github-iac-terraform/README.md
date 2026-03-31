@@ -19,6 +19,7 @@
 11. [Adding a New Module](#adding-a-new-module)
 12. [GitHub Environment Protection Rules](#github-environment-protection-rules)
 13. [Troubleshooting](#troubleshooting)
+14. [Workflow Execution Guide](./WORKFLOW_EXECUTION_GUIDE.md)
 
 ---
 
@@ -322,6 +323,8 @@ tfstate container/
 ## CI/CD Pipeline
 
 The pipeline is split across four workflows, each with a distinct role.
+
+For a command-level explanation of how `terraform init`, `terraform plan`, `terraform apply`, and `terraform destroy` are executed in each workflow, see [WORKFLOW_EXECUTION_GUIDE.md](./WORKFLOW_EXECUTION_GUIDE.md).
 
 ### `ci.yml` — Pull Request Gate
 

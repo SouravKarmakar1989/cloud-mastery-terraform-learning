@@ -1,0 +1,317 @@
+name: full-cost-cleanup
+
+# Manual, destructive workflow to remove post-test costs.
+# Order: destroy test infra -> cleanup runner platform -> optional backend deletion.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_destroy:
+        description: 'Type DESTROY_ALL to continue'
+        required: true
+        type: string
+      environment:
+        description: 'Environment to destroy'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+      destroy_azure_minimal:
+        description: 'Destroy Azure minimal test stack'
+        required: true
+        default: true
+        type: boolean
+      destroy_aws_minimal:
+        description: 'Destroy AWS minimal test stack'
+        required: true
+        default: true
+        type: boolean
+      destroy_gcp_minimal:
+        description: 'Destroy GCP minimal test stack'
+        required: true
+        default: false
+        type: boolean
+      cleanup_runner_platform:
+        description: 'Delete runner platform resources from rg-runner-platform'
+        required: true
+        default: true
+        type: boolean
+      delete_runner_resource_group:
+        description: 'Delete rg-runner-platform resource group'
+        required: true
+        default: false
+        type: boolean
+      delete_tf_backends:
+        description: 'Delete backend state stores (highly destructive)'
+        required: true
+        default: false
+        type: boolean
+      confirm_backend_delete:
+        description: 'Type DELETE_BACKENDS to allow backend deletion'
+        required: false
+        default: ''
+        type: string
+      azure_backend_resource_group:
+        description: 'Azure backend RG'
+        required: false
+        default: 'rg-tfstate'
+        type: string
+      azure_backend_storage_account:
+        description: 'Azure backend storage account'
+        required: false
+        default: 'satfstate2301'
+        type: string
+      delete_azure_backend_resource_group:
+        description: 'Delete Azure backend RG after storage account delete'
+        required: true
+        default: false
+        type: boolean
+      aws_backend_buckets_csv:
+        description: 'Comma-separated AWS backend buckets'
+        required: false
+        default: 'tf-state-sourav-765257401907,cloud-mastery-tf-state-dev,cloud-mastery-tf-state-staging,cloud-mastery-tf-state-prod'
+        type: string
+      aws_lock_tables_csv:
+        description: 'Comma-separated AWS DynamoDB lock tables'
+        required: false
+        default: 'tf-state-lock,terraform-lock'
+        type: string
+      aws_role_arn:
+        description: 'AWS IAM role ARN for OIDC auth (required for AWS destroy/backend delete)'
+        required: false
+        default: ''
+        type: string
+      gcp_tfstate_bucket:
+        description: 'GCP backend bucket name (no gs:// prefix, optional)'
+        required: false
+        default: ''
+        type: string
+      gcp_workload_identity_provider:
+        description: 'GCP Workload Identity Provider resource (required for GCP destroy/backend delete)'
+        required: false
+        default: ''
+        type: string
+      gcp_service_account:
+        description: 'GCP service account email for OIDC auth (required for GCP destroy/backend delete)'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  teardown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate confirmations
+        run: |
+          if [ "${{ inputs.confirm_destroy }}" != "DESTROY_ALL" ]; then
+            echo "::error::Set confirm_destroy to DESTROY_ALL"
+            exit 1
+          fi
+
+          if [ "${{ inputs.delete_tf_backends }}" = "true" ] && [ "${{ inputs.confirm_backend_delete }}" != "DELETE_BACKENDS" ]; then
+            echo "::error::Backend deletion requested but confirm_backend_delete is not DELETE_BACKENDS"
+            exit 1
+          fi
+
+          if [ "${{ inputs.destroy_aws_minimal }}" = "true" ] || [ "${{ inputs.delete_tf_backends }}" = "true" ]; then
+            if [ -z "${{ inputs.aws_role_arn }}" ]; then
+              echo "::error::aws_role_arn is required for AWS operations"
+              exit 1
+            fi
+          fi
+
+          if [ "${{ inputs.destroy_gcp_minimal }}" = "true" ] || { [ "${{ inputs.delete_tf_backends }}" = "true" ] && [ -n "${{ inputs.gcp_tfstate_bucket }}" ]; }; then
+            if [ -z "${{ inputs.gcp_workload_identity_provider }}" ] || [ -z "${{ inputs.gcp_service_account }}" ]; then
+              echo "::error::gcp_workload_identity_provider and gcp_service_account are required for GCP operations"
+              exit 1
+            fi
+          fi
+
+      # Azure auth is needed for both Azure module destroy and runner/backend cleanup.
+      - name: Azure Login (OIDC)
+        if: ${{ inputs.destroy_azure_minimal || inputs.cleanup_runner_platform || inputs.delete_tf_backends }}
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Setup Terraform
+        if: ${{ inputs.destroy_azure_minimal || inputs.destroy_aws_minimal || inputs.destroy_gcp_minimal }}
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Destroy Azure minimal stack
+        if: ${{ inputs.destroy_azure_minimal }}
+        working-directory: platforms/github-iac-terraform/azure-infrastructure/azure-minimal
+        run: |
+          terraform init -backend-config=env/${{ inputs.environment }}/backend.hcl
+          terraform destroy -auto-approve -var-file=env/${{ inputs.environment }}/terraform.tfvars
+
+      - name: Configure AWS credentials (OIDC)
+        if: ${{ inputs.destroy_aws_minimal || inputs.delete_tf_backends }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ inputs.aws_role_arn }}
+          aws-region: us-east-1
+
+      - name: Destroy AWS minimal stack
+        if: ${{ inputs.destroy_aws_minimal }}
+        working-directory: platforms/github-iac-terraform/aws-infrastructure/aws-minimal
+        run: |
+          terraform init -backend-config=env/${{ inputs.environment }}/backend.hcl
+          terraform destroy -auto-approve -var-file=env/${{ inputs.environment }}/terraform.tfvars
+
+      - name: Configure GCP credentials (OIDC)
+        if: ${{ inputs.destroy_gcp_minimal || (inputs.delete_tf_backends && inputs.gcp_tfstate_bucket != '') }}
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ inputs.gcp_workload_identity_provider }}
+          service_account: ${{ inputs.gcp_service_account }}
+
+      - name: Setup gcloud
+        if: ${{ inputs.destroy_gcp_minimal || (inputs.delete_tf_backends && inputs.gcp_tfstate_bucket != '') }}
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Destroy GCP minimal stack
+        if: ${{ inputs.destroy_gcp_minimal }}
+        working-directory: platforms/github-iac-terraform/gcp-infrastructure/gcp-minimal
+        run: |
+          terraform init -backend-config=env/${{ inputs.environment }}/backend.hcl
+          terraform destroy -auto-approve -var-file=env/${{ inputs.environment }}/terraform.tfvars
+
+      - name: Cleanup runner platform resources
+        if: ${{ inputs.cleanup_runner_platform }}
+        run: |
+          set -euo pipefail
+          RG="rg-runner-platform"
+
+          if ! az group show --name "$RG" > /dev/null 2>&1; then
+            echo "Runner resource group $RG not found. Skipping."
+            exit 0
+          fi
+
+          echo "=== Deleting VMs ==="
+          az vm list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az vm delete --resource-group "$RG" --name {} --yes
+
+          echo "=== Deleting NICs ==="
+          az network nic list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az network nic delete --resource-group "$RG" --name {}
+
+          echo "=== Deleting Public IPs ==="
+          az network public-ip list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az network public-ip delete --resource-group "$RG" --name {}
+
+          echo "=== Deleting Disks ==="
+          az disk list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az disk delete --resource-group "$RG" --name {} --yes
+
+          echo "=== Deleting NSGs ==="
+          az network nsg list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az network nsg delete --resource-group "$RG" --name {}
+
+          echo "=== Deleting VNets ==="
+          az network vnet list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az network vnet delete --resource-group "$RG" --name {}
+
+      - name: Delete runner platform resource group
+        if: ${{ inputs.cleanup_runner_platform && inputs.delete_runner_resource_group }}
+        run: |
+          RG="rg-runner-platform"
+          if az group show --name "$RG" > /dev/null 2>&1; then
+            az group delete --name "$RG" --yes --no-wait
+            echo "Deletion started for $RG"
+          else
+            echo "$RG does not exist, skipping"
+          fi
+
+      - name: Delete Azure backend storage
+        if: ${{ inputs.delete_tf_backends }}
+        run: |
+          set -euo pipefail
+          RG='${{ inputs.azure_backend_resource_group }}'
+          SA='${{ inputs.azure_backend_storage_account }}'
+
+          if az storage account show --resource-group "$RG" --name "$SA" > /dev/null 2>&1; then
+            az storage account delete --resource-group "$RG" --name "$SA" --yes
+            echo "Deleted Azure backend storage account $SA"
+          else
+            echo "Azure backend storage account $SA not found, skipping"
+          fi
+
+      - name: Delete Azure backend resource group
+        if: ${{ inputs.delete_tf_backends && inputs.delete_azure_backend_resource_group }}
+        run: |
+          RG='${{ inputs.azure_backend_resource_group }}'
+          if az group show --name "$RG" > /dev/null 2>&1; then
+            az group delete --name "$RG" --yes --no-wait
+            echo "Deletion started for Azure backend RG $RG"
+          else
+            echo "Azure backend RG $RG not found, skipping"
+          fi
+
+      - name: Delete AWS backend buckets
+        if: ${{ inputs.delete_tf_backends }}
+        run: |
+          set -euo pipefail
+          IFS=',' read -ra BUCKETS <<< "${{ inputs.aws_backend_buckets_csv }}"
+
+          for bucket in "${BUCKETS[@]}"; do
+            b=$(echo "$bucket" | xargs)
+            [ -z "$b" ] && continue
+            if aws s3api head-bucket --bucket "$b" 2>/dev/null; then
+              aws s3 rb "s3://$b" --force
+              echo "Deleted bucket $b"
+            else
+              echo "Bucket $b not found or not accessible, skipping"
+            fi
+          done
+
+      - name: Delete AWS lock tables
+        if: ${{ inputs.delete_tf_backends }}
+        run: |
+          set -euo pipefail
+          IFS=',' read -ra TABLES <<< "${{ inputs.aws_lock_tables_csv }}"
+
+          for table in "${TABLES[@]}"; do
+            t=$(echo "$table" | xargs)
+            [ -z "$t" ] && continue
+            if aws dynamodb describe-table --table-name "$t" >/dev/null 2>&1; then
+              aws dynamodb delete-table --table-name "$t"
+              echo "Deleted table $t"
+            else
+              echo "Table $t not found, skipping"
+            fi
+          done
+
+      - name: Delete GCP backend bucket
+        if: ${{ inputs.delete_tf_backends && inputs.gcp_tfstate_bucket != '' }}
+        run: |
+          set -euo pipefail
+          B='${{ inputs.gcp_tfstate_bucket }}'
+          if gcloud storage buckets describe "gs://$B" >/dev/null 2>&1; then
+            gcloud storage rm --recursive "gs://$B/**" || true
+            gcloud storage buckets delete "gs://$B"
+            echo "Deleted GCP backend bucket $B"
+          else
+            echo "GCP bucket $B not found, skipping"
+          fi
+
+      - name: Cleanup summary
+        run: |
+          echo "Cleanup workflow completed."
+          echo "Environment: ${{ inputs.environment }}"
+          echo "Azure minimal destroyed: ${{ inputs.destroy_azure_minimal }}"
+          echo "AWS minimal destroyed: ${{ inputs.destroy_aws_minimal }}"
+          echo "GCP minimal destroyed: ${{ inputs.destroy_gcp_minimal }}"
+          echo "Runner cleanup: ${{ inputs.cleanup_runner_platform }}"
+          echo "Backends deleted: ${{ inputs.delete_tf_backends }}"
