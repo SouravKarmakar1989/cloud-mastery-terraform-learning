@@ -1,3 +1,4 @@
+# PR trigger note: minimal no-op change to validate required CI checks.
 prefix   = "sk"
 location = "eastus"
 env      = "dev"
