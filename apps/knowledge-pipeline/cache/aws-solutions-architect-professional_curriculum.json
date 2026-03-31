@@ -1,0 +1,3507 @@
+{
+  "count": 240,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 4204418,
+      "title": "Course Introduction",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 18436272,
+      "title": "Course Introduction - Please Watch",
+      "asset": {
+        "_class": "asset",
+        "id": 44760454,
+        "asset_type": "Video",
+        "title": "SAP_-_Course_Intro_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Course-Intro-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 1,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4819738,
+      "title": "Course Expectations Quiz",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 18400102,
+      "title": "About your instructor",
+      "asset": {
+        "_class": "asset",
+        "id": 58251047,
+        "asset_type": "Video",
+        "title": "Promo_Course_(Stephane_Maarek_ver._2024)_-_FINAL_RENDER_v2.mp4",
+        "external_url": "",
+        "filename": "Promo-Course-Stephane-Maarek-ver.2024-FINAL-RENDER-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 2,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 4326774,
+      "title": "Slides Download",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 18376846,
+      "title": "Slides Download",
+      "asset": {
+        "_class": "asset",
+        "id": 24012172,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 3,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 24030460,
+          "filename": "Course-Material-Download",
+          "download_urls": null,
+          "title": "Course Material Download",
+          "external_url": "https://courses.datacumulus.com/downloads/certified-solutions-architect-professional-m0v",
+          "asset_type": "ExternalLink"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 4326702,
+      "title": "Identity & Federation",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 18376322,
+      "title": "IAM",
+      "asset": {
+        "_class": "asset",
+        "id": 61960625,
+        "asset_type": "Video",
+        "title": "SAP_-_IAM_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-IAM-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 4,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785522,
+      "title": "IAM Access Analyzer",
+      "asset": {
+        "_class": "asset",
+        "id": 45101016,
+        "asset_type": "Video",
+        "title": "SAP_-_IAM_-_Access_Analyzer_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-IAM-Access-Analyzer-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 5,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376326,
+      "title": "STS",
+      "asset": {
+        "_class": "asset",
+        "id": 45101006,
+        "asset_type": "Video",
+        "title": "SAP_-_STS_v4.mp4",
+        "external_url": "",
+        "filename": "SAP-STS-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 6,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376334,
+      "title": "Identity Federation & Cognito",
+      "asset": {
+        "_class": "asset",
+        "id": 64325557,
+        "asset_type": "Video",
+        "title": "SAP - Identity Federation and Cognito v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Identity-Federation-and-Cognito-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 7,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376342,
+      "title": "AWS Directory Services",
+      "asset": {
+        "_class": "asset",
+        "id": 41768956,
+        "asset_type": "Video",
+        "title": "SAP - Directory Services v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Directory-Services-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 8,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376348,
+      "title": "AWS Organizations",
+      "asset": {
+        "_class": "asset",
+        "id": 70792937,
+        "asset_type": "Video",
+        "title": "SAP - Organizations v5.mp4",
+        "external_url": "",
+        "filename": "SAP-Organizations-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 9,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30990582,
+      "title": "AWS Organizations Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 58202817,
+        "asset_type": "Video",
+        "title": "SAP_-_Organizations_Policies_v4.mp4",
+        "external_url": "",
+        "filename": "SAP-Organizations-Policies-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 10,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376356,
+      "title": "AWS IAM Identity Center",
+      "asset": {
+        "_class": "asset",
+        "id": 69222191,
+        "asset_type": "Video",
+        "title": "SAA - IAM Identity Center - Overview v3.mp4",
+        "external_url": "",
+        "filename": "SAA-IAM-Identity-Center-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 11,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30990692,
+      "title": "AWS Control Tower",
+      "asset": {
+        "_class": "asset",
+        "id": 52133428,
+        "asset_type": "Video",
+        "title": "SAP_-_Control_Tower_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Control-Tower-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 12,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376360,
+      "title": "AWS Resource Access Manager - RAM",
+      "asset": {
+        "_class": "asset",
+        "id": 44741186,
+        "asset_type": "Video",
+        "title": "SAP_-_Resource_Access_Manager_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Resource-Access-Manager-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 13,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376366,
+      "title": "Summary of Identity & Federation",
+      "asset": {
+        "_class": "asset",
+        "id": 64325565,
+        "asset_type": "Video",
+        "title": "SAP - Summary of Identity and Federation v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Summary-of-Identity-and-Federation-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 14,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4820682,
+      "title": "Identity & Federation Quiz",
+      "object_index": 2
+    },
+    {
+      "_class": "chapter",
+      "id": 4304424,
+      "title": "Security",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 18376370,
+      "title": "CloudTrail",
+      "asset": {
+        "_class": "asset",
+        "id": 48855594,
+        "asset_type": "Video",
+        "title": "SAA_-_CloudTrail_-_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-CloudTrail-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 15,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37934008,
+      "title": "CloudTrail - EventBridge Integration",
+      "asset": {
+        "_class": "asset",
+        "id": 48855596,
+        "asset_type": "Video",
+        "title": "SAA_-_CloudTrail_-_EventBridge_Integration_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-CloudTrail-EventBridge-Integration-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 16,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30990124,
+      "title": "CloudTrail - SA Pro",
+      "asset": {
+        "_class": "asset",
+        "id": 44741230,
+        "asset_type": "Video",
+        "title": "SAP_-_CloudTrail_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-CloudTrail-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 17,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17881468,
+      "title": "KMS",
+      "asset": {
+        "_class": "asset",
+        "id": 70815417,
+        "asset_type": "Video",
+        "title": "SAP - KMS v7.mp4",
+        "external_url": "",
+        "filename": "SAP-KMS-v7.mp4",
+        "download_urls": null
+      },
+      "object_index": 18,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376380,
+      "title": "Parameter Store",
+      "asset": {
+        "_class": "asset",
+        "id": 44753082,
+        "asset_type": "Video",
+        "title": "SAA_-_SSM_-_Parameter_Store_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-SSM-Parameter-Store-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 19,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376382,
+      "title": "Secrets Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 45101034,
+        "asset_type": "Video",
+        "title": "SAP_-_Secrets_Manager_v4.mp4",
+        "external_url": "",
+        "filename": "SAP-Secrets-Manager-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 20,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376384,
+      "title": "RDS Security",
+      "asset": {
+        "_class": "asset",
+        "id": 47074398,
+        "asset_type": "Video",
+        "title": "SAP_-_RDS_Security_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-RDS-Security-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 21,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376386,
+      "title": "SSL Encryption, SNI & MITM",
+      "asset": {
+        "_class": "asset",
+        "id": 33695184,
+        "asset_type": "Video",
+        "title": "SAP - SSL Security v2.mp4",
+        "external_url": "",
+        "filename": "SAP-SSL-Security-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 22,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376394,
+      "title": "AWS Certificate Manager - ACM",
+      "asset": {
+        "_class": "asset",
+        "id": 22771516,
+        "asset_type": "Video",
+        "title": "SAP - ACM.mp4",
+        "external_url": "",
+        "filename": "SAP-ACM.mp4",
+        "download_urls": null
+      },
+      "object_index": 23,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376400,
+      "title": "CloudHSM",
+      "asset": {
+        "_class": "asset",
+        "id": 50279772,
+        "asset_type": "Video",
+        "title": "SAP_-_CloudHSM_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-CloudHSM-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 24,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376404,
+      "title": "Solution Architecture - SSL on ELB",
+      "asset": {
+        "_class": "asset",
+        "id": 39582562,
+        "asset_type": "Video",
+        "title": "SAP_-_SSL_Architectures.mp4",
+        "external_url": "",
+        "filename": "SAP-SSL-Architectures.mp4",
+        "download_urls": null
+      },
+      "object_index": 25,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18287528,
+      "title": "S3 Security",
+      "asset": {
+        "_class": "asset",
+        "id": 46022184,
+        "asset_type": "Video",
+        "title": "SAP_-_S3_Security_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-S3-Security-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 26,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30990812,
+      "title": "S3 Access Points",
+      "asset": {
+        "_class": "asset",
+        "id": 46642688,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Access_Points_-_Overview_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Access-Points-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 27,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36230426,
+      "title": "S3 Multi-Region Access Points",
+      "asset": {
+        "_class": "asset",
+        "id": 46641274,
+        "asset_type": "Video",
+        "title": "SAP_-_S3_-_Multi_Region_Access_Points_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-S3-Multi-Region-Access-Points-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 28,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36231458,
+      "title": "S3 Multi-Region Access Points - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 46641276,
+        "asset_type": "Video",
+        "title": "SAP_-_S3_-_Multi_Region_Access_Points_-_Hands_On_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-S3-Multi-Region-Access-Points-Hands-On-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 29,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36231556,
+      "title": "S3 Object Lambda",
+      "asset": {
+        "_class": "asset",
+        "id": 46642686,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Object_Lambda_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Object-Lambda-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 30,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785352,
+      "title": "DDoS and AWS Shield",
+      "asset": {
+        "_class": "asset",
+        "id": 44741218,
+        "asset_type": "Video",
+        "title": "SAP_-_DDoS_and_Shield_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-DDoS-and-Shield-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 31,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785358,
+      "title": "AWS WAF - Web Application Firewall",
+      "asset": {
+        "_class": "asset",
+        "id": 63040193,
+        "asset_type": "Video",
+        "title": "SAP - WAF v4.mp4",
+        "external_url": "",
+        "filename": "SAP-WAF-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 32,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785374,
+      "title": "AWS Firewall Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 44752252,
+        "asset_type": "Video",
+        "title": "SAA_-_Firewall_Manager_-_Overview_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-Firewall-Manager-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 33,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18287526,
+      "title": "Blocking an IP Address",
+      "asset": {
+        "_class": "asset",
+        "id": 64325555,
+        "asset_type": "Video",
+        "title": "SAA - Blocking IPs v4.mp4",
+        "external_url": "",
+        "filename": "SAA-Blocking-IPs-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 34,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376410,
+      "title": "Amazon Inspector",
+      "asset": {
+        "_class": "asset",
+        "id": 45198980,
+        "asset_type": "Video",
+        "title": "CCP_-_Inspector_v3.mp4",
+        "external_url": "",
+        "filename": "CCP-Inspector-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 35,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376414,
+      "title": "AWS Config",
+      "asset": {
+        "_class": "asset",
+        "id": 44741226,
+        "asset_type": "Video",
+        "title": "SAP_-_Config_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Config-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 36,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376420,
+      "title": "AWS Managed Logs",
+      "asset": {
+        "_class": "asset",
+        "id": 47711814,
+        "asset_type": "Video",
+        "title": "SAP_-_Managed_Logs_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Managed-Logs-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 37,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143900,
+      "title": "Amazon GuardDuty",
+      "asset": {
+        "_class": "asset",
+        "id": 49104812,
+        "asset_type": "Video",
+        "title": "SAP_-_GuardDuty_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-GuardDuty-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 38,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785320,
+      "title": "IAM Advanced Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 44752244,
+        "asset_type": "Video",
+        "title": "SAA_-_IAM_-_Advanced_Policies_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-IAM-Advanced-Policies-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 39,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783352,
+      "title": "EC2 Instance Connect",
+      "asset": {
+        "_class": "asset",
+        "id": 44741222,
+        "asset_type": "Video",
+        "title": "SAP_-_EC2_Instance_Connect_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-EC2-Instance-Connect-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 40,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785454,
+      "title": "AWS Security Hub",
+      "asset": {
+        "_class": "asset",
+        "id": 49694436,
+        "asset_type": "Video",
+        "title": "CCP_-_Security_Hub_-_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-Security-Hub-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 41,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785458,
+      "title": "Amazon Detective",
+      "asset": {
+        "_class": "asset",
+        "id": 44752480,
+        "asset_type": "Video",
+        "title": "CCP_-_Detective.mp4",
+        "external_url": "",
+        "filename": "CCP-Detective.mp4",
+        "download_urls": null
+      },
+      "object_index": 42,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4820696,
+      "title": "Security Quiz",
+      "object_index": 3
+    },
+    {
+      "_class": "chapter",
+      "id": 4326708,
+      "title": "Compute & Load Balancing",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 18376426,
+      "title": "Solution Architecture on AWS",
+      "asset": {
+        "_class": "asset",
+        "id": 22771490,
+        "asset_type": "Video",
+        "title": "SAP - Scalable and Performant Architectures Intro.mp4",
+        "external_url": "",
+        "filename": "SAP-Scalable-and-Performant-Architectures-Intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 43,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376428,
+      "title": "EC2",
+      "asset": {
+        "_class": "asset",
+        "id": 44741220,
+        "asset_type": "Video",
+        "title": "SAP_-_EC2_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-EC2-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 44,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991226,
+      "title": "High Performance Computing (HPC)",
+      "asset": {
+        "_class": "asset",
+        "id": 58202559,
+        "asset_type": "Video",
+        "title": "SAP_-_High_Performance_Computing_HPC_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-High-Performance-Computing-HPC-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 45,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376432,
+      "title": "Auto Scaling",
+      "asset": {
+        "_class": "asset",
+        "id": 39582542,
+        "asset_type": "Video",
+        "title": "SAP_-_Auto_Scaling_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Auto-Scaling-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 46,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376746,
+      "title": "Auto Scaling Update Strategies",
+      "asset": {
+        "_class": "asset",
+        "id": 22771458,
+        "asset_type": "Video",
+        "title": "SAP - Auto Scaling Group Updates Strategies.mp4",
+        "external_url": "",
+        "filename": "SAP-Auto-Scaling-Group-Updates-Strategies.mp4",
+        "download_urls": null
+      },
+      "object_index": 47,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376444,
+      "title": "Spot Instances & Spot Fleet",
+      "asset": {
+        "_class": "asset",
+        "id": 59209597,
+        "asset_type": "Video",
+        "title": "SAP_-_Spot_Instances_v4.mp4",
+        "external_url": "",
+        "filename": "SAP-Spot-Instances-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 48,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376446,
+      "title": "Amazon ECS - Elastic Container Service",
+      "asset": {
+        "_class": "asset",
+        "id": 39584998,
+        "asset_type": "Video",
+        "title": "SAP_-_ECS_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-ECS-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 49,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783186,
+      "title": "Amazon ECR - Elastic Container Registry",
+      "asset": {
+        "_class": "asset",
+        "id": 44741216,
+        "asset_type": "Video",
+        "title": "SAP_-_ECR_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-ECR-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 50,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785466,
+      "title": "Amazon EKS - Elastic Kubernetes Service",
+      "asset": {
+        "_class": "asset",
+        "id": 44752580,
+        "asset_type": "Video",
+        "title": "SAA_-_EKS_-_Overview_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-EKS-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 51,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783432,
+      "title": "AWS App Runner",
+      "asset": {
+        "_class": "asset",
+        "id": 58202743,
+        "asset_type": "Video",
+        "title": "SAP_-_App_Runner_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-App-Runner-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 52,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35111698,
+      "title": "ECS Anywhere & EKS Anywhere",
+      "asset": {
+        "_class": "asset",
+        "id": 45200146,
+        "asset_type": "Video",
+        "title": "SAP_-_ECS__EKS_Anywhere_v1D.mp4",
+        "external_url": "",
+        "filename": "SAP-ECS-EKS-Anywhere-v1D.mp4",
+        "download_urls": null
+      },
+      "object_index": 53,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376450,
+      "title": "AWS Lambda - Part 1",
+      "asset": {
+        "_class": "asset",
+        "id": 58202585,
+        "asset_type": "Video",
+        "title": "SAP_-_Lambda_Part_I_v4.mp4",
+        "external_url": "",
+        "filename": "SAP-Lambda-Part-I-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 54,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376754,
+      "title": "AWS Lambda - Part 2",
+      "asset": {
+        "_class": "asset",
+        "id": 44741202,
+        "asset_type": "Video",
+        "title": "SAP_-_Lambda_Part_II_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Lambda-Part-II-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 55,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376460,
+      "title": "Elastic Load Balancers - Part 1",
+      "asset": {
+        "_class": "asset",
+        "id": 44741210,
+        "asset_type": "Video",
+        "title": "SAP_-_ELB_Part_I_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-ELB-Part-I-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 56,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30990920,
+      "title": "Elastic Load Balancers - Part 2",
+      "asset": {
+        "_class": "asset",
+        "id": 39582550,
+        "asset_type": "Video",
+        "title": "SAP_-_ELB_Part_II_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-ELB-Part-II-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 57,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376462,
+      "title": "API Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 22771442,
+        "asset_type": "Video",
+        "title": "SAP - API Gateway.mp4",
+        "external_url": "",
+        "filename": "SAP-API-Gateway.mp4",
+        "download_urls": null
+      },
+      "object_index": 58,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30990866,
+      "title": "API Gateway - Part 2",
+      "asset": {
+        "_class": "asset",
+        "id": 44741238,
+        "asset_type": "Video",
+        "title": "SAP_-_API_Gateway_Part_II_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-API-Gateway-Part-II-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 59,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30990876,
+      "title": "AWS AppSync",
+      "asset": {
+        "_class": "asset",
+        "id": 44741246,
+        "asset_type": "Video",
+        "title": "SAP_-_AppSync_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-AppSync-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 60,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376466,
+      "title": "Route 53 - Part 1",
+      "asset": {
+        "_class": "asset",
+        "id": 47711812,
+        "asset_type": "Video",
+        "title": "SAP_-_Route_53_Part_I_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Route-53-Part-I-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 61,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376764,
+      "title": "Route 53 - Part 2",
+      "asset": {
+        "_class": "asset",
+        "id": 39584992,
+        "asset_type": "Video",
+        "title": "SAP_-_Route_53_Part_II_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Route-53-Part-II-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 62,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991252,
+      "title": "Route 53 - Resolvers & Hybrid DNS",
+      "asset": {
+        "_class": "asset",
+        "id": 48091160,
+        "asset_type": "Video",
+        "title": "ANS_-_Route_53_-_Resolvers_and_Hybrid_DNS_v2.mp4",
+        "external_url": "",
+        "filename": "ANS-Route-53-Resolvers-and-Hybrid-DNS-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 63,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30990950,
+      "title": "AWS Global Accelerator",
+      "asset": {
+        "_class": "asset",
+        "id": 60517515,
+        "asset_type": "Video",
+        "title": "SAP_-_Global_Accelerator_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Global-Accelerator-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 64,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376476,
+      "title": "Comparison of Solutions Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 22771476,
+        "asset_type": "Video",
+        "title": "SAP - Solution Architectures Comparison.mp4",
+        "external_url": "",
+        "filename": "SAP-Solution-Architectures-Comparison.mp4",
+        "download_urls": null
+      },
+      "object_index": 65,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783418,
+      "title": "AWS Outposts",
+      "asset": {
+        "_class": "asset",
+        "id": 44741184,
+        "asset_type": "Video",
+        "title": "SAP_-_Outposts_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-Outposts-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 66,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785474,
+      "title": "AWS WaveLength",
+      "asset": {
+        "_class": "asset",
+        "id": 44752608,
+        "asset_type": "Video",
+        "title": "CCP_-_WaveLength_-_Overview_v1.mp4",
+        "external_url": "",
+        "filename": "CCP-WaveLength-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 67,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785476,
+      "title": "AWS Local Zones",
+      "asset": {
+        "_class": "asset",
+        "id": 44752612,
+        "asset_type": "Video",
+        "title": "CCP_-_Global_-_Local_Zones.mp4",
+        "external_url": "",
+        "filename": "CCP-Global-Local-Zones.mp4",
+        "download_urls": null
+      },
+      "object_index": 68,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4820710,
+      "title": "Compute & Load Balancing Quiz",
+      "object_index": 4
+    },
+    {
+      "_class": "chapter",
+      "id": 4326718,
+      "title": "Storage",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 18376494,
+      "title": "EBS & Local Instance Store",
+      "asset": {
+        "_class": "asset",
+        "id": 54048806,
+        "asset_type": "Video",
+        "title": "SAP_-_EBS_and_Local_Instance_Store_v4.mp4",
+        "external_url": "",
+        "filename": "SAP-EBS-and-Local-Instance-Store-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 69,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376502,
+      "title": "Amazon EFS",
+      "asset": {
+        "_class": "asset",
+        "id": 56533250,
+        "asset_type": "Video",
+        "title": "SAP_-_EFS_v5.mp4",
+        "external_url": "",
+        "filename": "SAP-EFS-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 70,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376504,
+      "title": "Amazon S3",
+      "asset": {
+        "_class": "asset",
+        "id": 61960669,
+        "asset_type": "Video",
+        "title": "SAP_-_S3_v5.mp4",
+        "external_url": "",
+        "filename": "SAP-S3-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 71,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038530,
+      "title": "Amazon S3 - Storage Class Analysis",
+      "asset": {
+        "_class": "asset",
+        "id": 45101020,
+        "asset_type": "Video",
+        "title": "SAP_-_S3_-_Storage_Class_Analysis_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-S3-Storage-Class-Analysis-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 72,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038234,
+      "title": "Amazon S3 - Storage Lens",
+      "asset": {
+        "_class": "asset",
+        "id": 55574594,
+        "asset_type": "Video",
+        "title": "SAP_-_S3_-_Storage_Lens_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-S3-Storage-Lens-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 73,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376512,
+      "title": "S3 Solution Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 22771464,
+        "asset_type": "Video",
+        "title": "SAP - S3 Solution Architectures.mp4",
+        "external_url": "",
+        "filename": "SAP-S3-Solution-Architectures.mp4",
+        "download_urls": null
+      },
+      "object_index": 74,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991310,
+      "title": "Amazon FSx",
+      "asset": {
+        "_class": "asset",
+        "id": 43615246,
+        "asset_type": "Video",
+        "title": "SAA_-_FSx_-_Overview_v6.mp4",
+        "external_url": "",
+        "filename": "SAA-FSx-Overview-v6.mp4",
+        "download_urls": null
+      },
+      "object_index": 75,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783562,
+      "title": "Amazon FSx - Solution Architectures",
+      "asset": {
+        "_class": "asset",
+        "id": 44741214,
+        "asset_type": "Video",
+        "title": "SAP_-_FSx_-_Solution_Architectures_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-FSx-Solution-Architectures-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 76,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991292,
+      "title": "AWS DataSync",
+      "asset": {
+        "_class": "asset",
+        "id": 43615244,
+        "asset_type": "Video",
+        "title": "SAA_-_DataSync_-_Overview_v5.mp4",
+        "external_url": "",
+        "filename": "SAA-DataSync-Overview-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 77,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783596,
+      "title": "AWS DataSync - Solution Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 44741224,
+        "asset_type": "Video",
+        "title": "SAP_-_DataSync_-_Architecture_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-DataSync-Architecture-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 78,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41854794,
+      "title": "AWS Data Exchange",
+      "asset": {
+        "_class": "asset",
+        "id": 54048402,
+        "asset_type": "Video",
+        "title": "DAS_-_Data_Exchange_-_Overview_v1.mp4",
+        "external_url": "",
+        "filename": "DAS-Data-Exchange-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 79,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30990990,
+      "title": "AWS Transfer Family",
+      "asset": {
+        "_class": "asset",
+        "id": 39582532,
+        "asset_type": "Video",
+        "title": "SAP_-_AWS_Transfer_Family_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-AWS-Transfer-Family-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 80,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038402,
+      "title": "AWS Storage Services Price Comparison",
+      "asset": {
+        "_class": "asset",
+        "id": 45101024,
+        "asset_type": "Video",
+        "title": "SAP_-_Storage_Price_Comparison_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-Storage-Price-Comparison-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 81,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4820752,
+      "title": "Storage Quiz",
+      "object_index": 5
+    },
+    {
+      "_class": "chapter",
+      "id": 4326722,
+      "title": "Caching",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 18376518,
+      "title": "CloudFront - Part 1",
+      "asset": {
+        "_class": "asset",
+        "id": 64327023,
+        "asset_type": "Video",
+        "title": "SAP - CloudFront Part I v4.mp4",
+        "external_url": "",
+        "filename": "SAP-CloudFront-Part-I-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 82,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376524,
+      "title": "CloudFront - Part 2",
+      "asset": {
+        "_class": "asset",
+        "id": 44741254,
+        "asset_type": "Video",
+        "title": "SAP_-_CloudFront_Part_II_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-CloudFront-Part-II-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 83,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376532,
+      "title": "Lambda@Edge and CloudFront Functions",
+      "asset": {
+        "_class": "asset",
+        "id": 50650994,
+        "asset_type": "Video",
+        "title": "ANS_-_CloudFront_-_Edge_Functions_v2.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-Edge-Functions-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 84,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038504,
+      "title": "Lambda@Edge Reduce Latency",
+      "asset": {
+        "_class": "asset",
+        "id": 45101012,
+        "asset_type": "Video",
+        "title": "SAP_-_CloudFront_-_LambdaEdge_Reduce_Latency_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-CloudFront-LambdaEdge-Reduce-Latency-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 85,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376542,
+      "title": "Amazon ElastiCache",
+      "asset": {
+        "_class": "asset",
+        "id": 60517893,
+        "asset_type": "Video",
+        "title": "SAP_-_ElastiCache_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-ElastiCache-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 86,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376550,
+      "title": "Handling Extreme Rates",
+      "asset": {
+        "_class": "asset",
+        "id": 39582518,
+        "asset_type": "Video",
+        "title": "SAP_-_Handling_extreme_rates_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Handling-extreme-rates-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 87,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4822658,
+      "title": "Caching Quiz",
+      "object_index": 6
+    },
+    {
+      "_class": "chapter",
+      "id": 4326728,
+      "title": "Databases",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 18376556,
+      "title": "DynamoDB",
+      "asset": {
+        "_class": "asset",
+        "id": 70792941,
+        "asset_type": "Video",
+        "title": "SAP - DynamoDB v4.mp4",
+        "external_url": "",
+        "filename": "SAP-DynamoDB-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 88,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376558,
+      "title": "Amazon OpenSearch",
+      "asset": {
+        "_class": "asset",
+        "id": 58202723,
+        "asset_type": "Video",
+        "title": "SAP_-_OpenSearch_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-OpenSearch-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 89,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376562,
+      "title": "RDS",
+      "asset": {
+        "_class": "asset",
+        "id": 69222179,
+        "asset_type": "Video",
+        "title": "SAP - RDS v7.mp4",
+        "external_url": "",
+        "filename": "SAP-RDS-v7.mp4",
+        "download_urls": null
+      },
+      "object_index": 90,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376564,
+      "title": "Aurora - Part 1",
+      "asset": {
+        "_class": "asset",
+        "id": 69142515,
+        "asset_type": "Video",
+        "title": "SAP - Aurora Part 1 - v4.mp4",
+        "external_url": "",
+        "filename": "SAP-Aurora-Part-1-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 91,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34782540,
+      "title": "Aurora - Part 2",
+      "asset": {
+        "_class": "asset",
+        "id": 67390217,
+        "asset_type": "Video",
+        "title": "SAP - Aurora Part 2 - v4.mp4",
+        "external_url": "",
+        "filename": "SAP-Aurora-Part-2-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 92,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4822830,
+      "title": "Databases Quiz",
+      "object_index": 7
+    },
+    {
+      "_class": "chapter",
+      "id": 4326730,
+      "title": "Service Communication",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 18376570,
+      "title": "Step Functions",
+      "asset": {
+        "_class": "asset",
+        "id": 44741122,
+        "asset_type": "Video",
+        "title": "SAP_-_Step_Functions_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Step-Functions-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 93,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376576,
+      "title": "SQS",
+      "asset": {
+        "_class": "asset",
+        "id": 69142523,
+        "asset_type": "Video",
+        "title": "SAP - SQS v3.mp4",
+        "external_url": "",
+        "filename": "SAP-SQS-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 94,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376578,
+      "title": "Amazon MQ",
+      "asset": {
+        "_class": "asset",
+        "id": 44741232,
+        "asset_type": "Video",
+        "title": "SAP_-_Amazon_MQ_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Amazon-MQ-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 95,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376582,
+      "title": "Amazon SNS",
+      "asset": {
+        "_class": "asset",
+        "id": 40666038,
+        "asset_type": "Video",
+        "title": "SAA_-_SNS_-_Overview_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-SNS-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 96,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 31738494,
+      "title": "Amazon SNS - SQS Fan Out Pattern",
+      "asset": {
+        "_class": "asset",
+        "id": 53082808,
+        "asset_type": "Video",
+        "title": "SAA_-_SNS_-_SQS_-_Fan_Out_v8.mp4",
+        "external_url": "",
+        "filename": "SAA-SNS-SQS-Fan-Out-v8.mp4",
+        "download_urls": null
+      },
+      "object_index": 97,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783322,
+      "title": "Amazon SNS - Message Delivery Retries",
+      "asset": {
+        "_class": "asset",
+        "id": 44741120,
+        "asset_type": "Video",
+        "title": "SAP_-_SNS_-_Message_Delivery_Retries_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-SNS-Message-Delivery-Retries-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 98,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4823154,
+      "title": "Service Communication Quiz",
+      "object_index": 8
+    },
+    {
+      "_class": "chapter",
+      "id": 4326732,
+      "title": "Data Engineering",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 18376590,
+      "title": "Amazon Kinesis Data Streams",
+      "asset": {
+        "_class": "asset",
+        "id": 70792939,
+        "asset_type": "Video",
+        "title": "DVA - Kinesis - Overview v3.mp4",
+        "external_url": "",
+        "filename": "DVA-Kinesis-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 99,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376592,
+      "title": "Amazon Data Firehose",
+      "asset": {
+        "_class": "asset",
+        "id": 61966621,
+        "asset_type": "Video",
+        "title": "DAS_-_Kinesis_Data_Firehose_v3.mp4",
+        "external_url": "",
+        "filename": "DAS-Kinesis-Data-Firehose-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 100,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376596,
+      "title": "Amazon Managed Service for Apache Flink",
+      "asset": {
+        "_class": "asset",
+        "id": 61961127,
+        "asset_type": "Video",
+        "title": "DVA_-_Managed_Service_for_Apache_Flink_-_Overview_v1.mp4",
+        "external_url": "",
+        "filename": "DVA-Managed-Service-for-Apache-Flink-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 101,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376600,
+      "title": "Streaming Architectures",
+      "asset": {
+        "_class": "asset",
+        "id": 67390191,
+        "asset_type": "Video",
+        "title": "SAP - Streaming Architectures v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Streaming-Architectures-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 102,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34791238,
+      "title": "Amazon MSK",
+      "asset": {
+        "_class": "asset",
+        "id": 44752578,
+        "asset_type": "Video",
+        "title": "SAA_-_Analytics_-_MSK_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-Analytics-MSK-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 103,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376602,
+      "title": "AWS Batch",
+      "asset": {
+        "_class": "asset",
+        "id": 44741234,
+        "asset_type": "Video",
+        "title": "SAP_-_Batch_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Batch-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 104,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376604,
+      "title": "Amazon EMR",
+      "asset": {
+        "_class": "asset",
+        "id": 44741208,
+        "asset_type": "Video",
+        "title": "SAP_-_EMR_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-EMR-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 105,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376606,
+      "title": "Running Jobs on AWS",
+      "asset": {
+        "_class": "asset",
+        "id": 44741180,
+        "asset_type": "Video",
+        "title": "SAP_-_Running_Jobs_on_AWS_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Running-Jobs-on-AWS-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 106,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991040,
+      "title": "AWS Glue",
+      "asset": {
+        "_class": "asset",
+        "id": 39585024,
+        "asset_type": "Video",
+        "title": "SAP_-_Glue.mp4",
+        "external_url": "",
+        "filename": "SAP-Glue.mp4",
+        "download_urls": null
+      },
+      "object_index": 107,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376608,
+      "title": "Redshift",
+      "asset": {
+        "_class": "asset",
+        "id": 59209601,
+        "asset_type": "Video",
+        "title": "SAP_-_Redshift_v4.mp4",
+        "external_url": "",
+        "filename": "SAP-Redshift-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 108,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991032,
+      "title": "Amazon DocumentDB",
+      "asset": {
+        "_class": "asset",
+        "id": 45101030,
+        "asset_type": "Video",
+        "title": "SAP_-_DocumentDB_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-DocumentDB-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 109,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783440,
+      "title": "Amazon Timestream",
+      "asset": {
+        "_class": "asset",
+        "id": 44752474,
+        "asset_type": "Video",
+        "title": "SAA_-_Databases_-_Timestream_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-Databases-Timestream-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 110,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785488,
+      "title": "Amazon Athena",
+      "asset": {
+        "_class": "asset",
+        "id": 47711774,
+        "asset_type": "Video",
+        "title": "SAA_-_Analytics_-_Athena_Overview_v5.mp4",
+        "external_url": "",
+        "filename": "SAA-Analytics-Athena-Overview-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 111,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785492,
+      "title": "Amazon QuickSight",
+      "asset": {
+        "_class": "asset",
+        "id": 44752588,
+        "asset_type": "Video",
+        "title": "SAA_-_Analytics_-_Quicksight_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-Analytics-Quicksight-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 112,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376614,
+      "title": "Big Data Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 22771410,
+        "asset_type": "Video",
+        "title": "SAP - Big Data Architecture.mp4",
+        "external_url": "",
+        "filename": "SAP-Big-Data-Architecture.mp4",
+        "download_urls": null
+      },
+      "object_index": 113,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4823162,
+      "title": "Data Engineering Quiz",
+      "object_index": 9
+    },
+    {
+      "_class": "chapter",
+      "id": 4326734,
+      "title": "Monitoring",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 18376620,
+      "title": "CloudWatch",
+      "asset": {
+        "_class": "asset",
+        "id": 44754886,
+        "asset_type": "Video",
+        "title": "SAP_-_CloudWatch_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-CloudWatch-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 114,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34786598,
+      "title": "CloudWatch Logs",
+      "asset": {
+        "_class": "asset",
+        "id": 48635612,
+        "asset_type": "Video",
+        "title": "SAP_-_CloudWatch_Logs_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-CloudWatch-Logs-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 115,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785954,
+      "title": "Amazon EventBridge",
+      "asset": {
+        "_class": "asset",
+        "id": 44752576,
+        "asset_type": "Video",
+        "title": "SAA_-_EventBridge_-_Overview_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-EventBridge-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 116,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376622,
+      "title": "X-Ray",
+      "asset": {
+        "_class": "asset",
+        "id": 22771396,
+        "asset_type": "Video",
+        "title": "SAP - X-Ray.mp4",
+        "external_url": "",
+        "filename": "SAP-X-Ray.mp4",
+        "download_urls": null
+      },
+      "object_index": 117,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785504,
+      "title": "AWS Personal Health Dashboard",
+      "asset": {
+        "_class": "asset",
+        "id": 44752628,
+        "asset_type": "Video",
+        "title": "SOA_-_Personal_Health_Dashboard.mp4",
+        "external_url": "",
+        "filename": "SOA-Personal-Health-Dashboard.mp4",
+        "download_urls": null
+      },
+      "object_index": 118,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4823188,
+      "title": "Monitoring Quiz",
+      "object_index": 10
+    },
+    {
+      "_class": "chapter",
+      "id": 4326738,
+      "title": "Deployment and Instance Management",
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 18376624,
+      "title": "Elastic Beanstalk",
+      "asset": {
+        "_class": "asset",
+        "id": 54586732,
+        "asset_type": "Video",
+        "title": "SAP_-_Beanstalk_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Beanstalk-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 119,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376630,
+      "title": "CodeDeploy",
+      "asset": {
+        "_class": "asset",
+        "id": 44741228,
+        "asset_type": "Video",
+        "title": "SAP_-_CodeDeploy_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-CodeDeploy-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 120,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376632,
+      "title": "CloudFormation",
+      "asset": {
+        "_class": "asset",
+        "id": 45200588,
+        "asset_type": "Video",
+        "title": "SAP_-_CloudFormation_v5D.mp4",
+        "external_url": "",
+        "filename": "SAP-CloudFormation-v5D.mp4",
+        "download_urls": null
+      },
+      "object_index": 121,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376634,
+      "title": "Service Catalog",
+      "asset": {
+        "_class": "asset",
+        "id": 22776510,
+        "asset_type": "Video",
+        "title": "SAP - Service Catalog.mp4",
+        "external_url": "",
+        "filename": "SAP-Service-Catalog.mp4",
+        "download_urls": null
+      },
+      "object_index": 122,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376636,
+      "title": "SAM - Serverless Application Model",
+      "asset": {
+        "_class": "asset",
+        "id": 39585014,
+        "asset_type": "Video",
+        "title": "SAP_-_SAM_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-SAM-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 123,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991378,
+      "title": "AWS CDK - Cloud Development Kit",
+      "asset": {
+        "_class": "asset",
+        "id": 39585330,
+        "asset_type": "Video",
+        "title": "CCP_-_CDK_-_Overview_v1.mp4",
+        "external_url": "",
+        "filename": "CCP-CDK-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 124,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376642,
+      "title": "AWS Systems Manager - SSM",
+      "asset": {
+        "_class": "asset",
+        "id": 44741108,
+        "asset_type": "Video",
+        "title": "SAP_-_Systems_Manager_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Systems-Manager-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 125,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34784908,
+      "title": "AWS Cloud Map",
+      "asset": {
+        "_class": "asset",
+        "id": 44752464,
+        "asset_type": "Video",
+        "title": "DVA_-_Cloud_Map.mp4",
+        "external_url": "",
+        "filename": "DVA-Cloud-Map.mp4",
+        "download_urls": null
+      },
+      "object_index": 126,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4823198,
+      "title": "Deployment and Instance Management Quiz",
+      "object_index": 11
+    },
+    {
+      "_class": "chapter",
+      "id": 4326742,
+      "title": "Cost Control",
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 18376644,
+      "title": "Cost Allocation Tags",
+      "asset": {
+        "_class": "asset",
+        "id": 22771376,
+        "asset_type": "Video",
+        "title": "SAP - Cost Allocation Tags.mp4",
+        "external_url": "",
+        "filename": "SAP-Cost-Allocation-Tags.mp4",
+        "download_urls": null
+      },
+      "object_index": 127,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991060,
+      "title": "AWS Tag Editor",
+      "asset": {
+        "_class": "asset",
+        "id": 39585006,
+        "asset_type": "Video",
+        "title": "SAP_-_Tag_Editor.mp4",
+        "external_url": "",
+        "filename": "SAP-Tag-Editor.mp4",
+        "download_urls": null
+      },
+      "object_index": 128,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376646,
+      "title": "Trusted Advisor",
+      "asset": {
+        "_class": "asset",
+        "id": 53653572,
+        "asset_type": "Video",
+        "title": "SAP_-_Trusted_Advisor_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Trusted-Advisor-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 129,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783426,
+      "title": "AWS Service Quotas",
+      "asset": {
+        "_class": "asset",
+        "id": 44741124,
+        "asset_type": "Video",
+        "title": "SAP_-_Service_Quotas_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-Service-Quotas-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 130,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376648,
+      "title": "EC2 Launch Types & Savings Plan",
+      "asset": {
+        "_class": "asset",
+        "id": 39585010,
+        "asset_type": "Video",
+        "title": "SAP_-_EC2_Instance_Types_and_Savings_Plan_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-EC2-Instance-Types-and-Savings-Plan-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 131,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18360042,
+      "title": "S3 Cost Savings",
+      "asset": {
+        "_class": "asset",
+        "id": 61960645,
+        "asset_type": "Video",
+        "title": "SAP_-_S3_Cost_Savings_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-S3-Cost-Savings-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 132,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18360044,
+      "title": "S3 Storage Classes - Reminder",
+      "asset": {
+        "_class": "asset",
+        "id": 61968757,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_Storage_Classes_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Storage-Classes-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 133,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991052,
+      "title": "AWS Budgets & Cost Explorer",
+      "asset": {
+        "_class": "asset",
+        "id": 45101018,
+        "asset_type": "Video",
+        "title": "SAP_-_Budget_and_Cost_Explorer_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Budget-and-Cost-Explorer-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 134,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785468,
+      "title": "AWS Compute Optimizer",
+      "asset": {
+        "_class": "asset",
+        "id": 45101032,
+        "asset_type": "Video",
+        "title": "SAP_-_Compute_Optimizer_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Compute-Optimizer-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 135,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038278,
+      "title": "EC2 Reserved Instance",
+      "asset": {
+        "_class": "asset",
+        "id": 45101022,
+        "asset_type": "Video",
+        "title": "SAP_-_Reserved_Instances_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-Reserved-Instances-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 136,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4823204,
+      "title": "Cost Control Quiz",
+      "object_index": 12
+    },
+    {
+      "_class": "chapter",
+      "id": 4325872,
+      "title": "Migration",
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 18376658,
+      "title": "Cloud Migration Strategies - The 7Rs",
+      "asset": {
+        "_class": "asset",
+        "id": 56533378,
+        "asset_type": "Video",
+        "title": "CCP_-_Cloud_Migration_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-Cloud-Migration-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 137,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376660,
+      "title": "Storage Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 67390219,
+        "asset_type": "Video",
+        "title": "SAA - Storage Gateway Overview v4.mp4",
+        "external_url": "",
+        "filename": "SAA-Storage-Gateway-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 138,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785408,
+      "title": "Storage Gateway - Advanced Concepts",
+      "asset": {
+        "_class": "asset",
+        "id": 44741114,
+        "asset_type": "Video",
+        "title": "SAP_-_Storage_Gateway_-_Advanced_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Storage-Gateway-Advanced-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 139,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376662,
+      "title": "Snow Family",
+      "asset": {
+        "_class": "asset",
+        "id": 70793089,
+        "asset_type": "Video",
+        "title": "CCP - Snowball - Overview v6.mp4",
+        "external_url": "",
+        "filename": "CCP-Snowball-Overview-v6.mp4",
+        "download_urls": null
+      },
+      "object_index": 140,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991142,
+      "title": "Snow Family - Improving Performance",
+      "asset": {
+        "_class": "asset",
+        "id": 39584980,
+        "asset_type": "Video",
+        "title": "SAP_-_Snow_Family_-_Improving_Performance.mp4",
+        "external_url": "",
+        "filename": "SAP-Snow-Family-Improving-Performance.mp4",
+        "download_urls": null
+      },
+      "object_index": 141,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376666,
+      "title": "AWS DMS - Database Migration Services",
+      "asset": {
+        "_class": "asset",
+        "id": 45435450,
+        "asset_type": "Video",
+        "title": "SAP_-_DMS_v2D.mp4",
+        "external_url": "",
+        "filename": "SAP-DMS-v2D.mp4",
+        "download_urls": null
+      },
+      "object_index": 142,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991082,
+      "title": "AWS CART - Cloud Adoption Readiness Tool",
+      "asset": {
+        "_class": "asset",
+        "id": 39585002,
+        "asset_type": "Video",
+        "title": "SAP_-_Cloud_Adoption_Readiness_Tool.mp4",
+        "external_url": "",
+        "filename": "SAP-Cloud-Adoption-Readiness-Tool.mp4",
+        "download_urls": null
+      },
+      "object_index": 143,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18373264,
+      "title": "Disaster Recovery",
+      "asset": {
+        "_class": "asset",
+        "id": 67390187,
+        "asset_type": "Video",
+        "title": "SAA - Disaster Recovery v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Disaster-Recovery-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 144,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991624,
+      "title": "AWS FIS - Fault Injection Simulator",
+      "asset": {
+        "_class": "asset",
+        "id": 39586824,
+        "asset_type": "Video",
+        "title": "DVA_-_AWS_Fault_Injection_Simulator_FIS_v1.mp4",
+        "external_url": "",
+        "filename": "DVA-AWS-Fault-Injection-Simulator-FIS-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 145,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376668,
+      "title": "VM Migrations Services",
+      "asset": {
+        "_class": "asset",
+        "id": 45101008,
+        "asset_type": "Video",
+        "title": "SAP_-_Migration_Services_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-Migration-Services-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 146,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038600,
+      "title": "AWS Migration Evaluator",
+      "asset": {
+        "_class": "asset",
+        "id": 45101026,
+        "asset_type": "Video",
+        "title": "SAP_-_Migration_Evaluator_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-Migration-Evaluator-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 147,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34785472,
+      "title": "AWS Backup",
+      "asset": {
+        "_class": "asset",
+        "id": 44752582,
+        "asset_type": "Video",
+        "title": "SAA_-_AWS_Backup_-_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-AWS-Backup-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 148,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4823262,
+      "title": "Migration Quiz",
+      "object_index": 13
+    },
+    {
+      "_class": "chapter",
+      "id": 4329096,
+      "title": "VPC",
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 18387196,
+      "title": "VPC - Basics",
+      "asset": {
+        "_class": "asset",
+        "id": 53082220,
+        "asset_type": "Video",
+        "title": "SAP_-_VPC_-_Basics_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-Basics-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 149,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18387200,
+      "title": "VPC Peering",
+      "asset": {
+        "_class": "asset",
+        "id": 22786890,
+        "asset_type": "Video",
+        "title": "SAP - VPC - Peering.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-Peering.mp4",
+        "download_urls": null
+      },
+      "object_index": 150,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18387210,
+      "title": "Transit Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 44754884,
+        "asset_type": "Video",
+        "title": "SAP_-_VPC_-_Transit_Gateway_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-Transit-Gateway-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 151,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18387212,
+      "title": "VPC Endpoints",
+      "asset": {
+        "_class": "asset",
+        "id": 63040117,
+        "asset_type": "Video",
+        "title": "SAP - VPC Endpoints v4.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-Endpoints-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 152,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18387216,
+      "title": "VPC Endpoint Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 22786886,
+        "asset_type": "Video",
+        "title": "SAP - VPC Endpoint Policies.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-Endpoint-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 153,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18387222,
+      "title": "PrivateLink",
+      "asset": {
+        "_class": "asset",
+        "id": 44741110,
+        "asset_type": "Video",
+        "title": "SAP_-_VPC_-_PrivateLink_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-PrivateLink-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 154,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18387228,
+      "title": "AWS S2S VPN",
+      "asset": {
+        "_class": "asset",
+        "id": 46714256,
+        "asset_type": "Video",
+        "title": "SAP_-_VPC_-_VPN_Part_I_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-VPN-Part-I-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 155,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18387230,
+      "title": "AWS Client VPN",
+      "asset": {
+        "_class": "asset",
+        "id": 44741094,
+        "asset_type": "Video",
+        "title": "SAP_-_VPC_-_VPN_-_Client_VPN_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-VPN-Client-VPN-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 156,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18387234,
+      "title": "Direct Connect",
+      "asset": {
+        "_class": "asset",
+        "id": 50279770,
+        "asset_type": "Video",
+        "title": "SAP_-_VPC_-_Direct_Connect_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-Direct-Connect-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 157,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18387238,
+      "title": "On-Premise Redundant Connections",
+      "asset": {
+        "_class": "asset",
+        "id": 44754888,
+        "asset_type": "Video",
+        "title": "SAP_-_VPC_-_On_Premise_Connection_Redundancy_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-On-Premise-Connection-Redundancy-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 158,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038450,
+      "title": "VPC Flow Logs",
+      "asset": {
+        "_class": "asset",
+        "id": 47700148,
+        "asset_type": "Video",
+        "title": "SAP_-_VPC_-_Flow_Logs_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-Flow-Logs-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 159,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783010,
+      "title": "AWS Network Firewall",
+      "asset": {
+        "_class": "asset",
+        "id": 44741096,
+        "asset_type": "Video",
+        "title": "SAP_-_VPC_-_Network_Firewall_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-VPC-Network-Firewall-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 160,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4824810,
+      "title": "VPC Quiz",
+      "object_index": 14
+    },
+    {
+      "_class": "chapter",
+      "id": 8370206,
+      "title": "Machine Learning",
+      "object_index": 16
+    },
+    {
+      "_class": "lecture",
+      "id": 35038620,
+      "title": "Rekognition Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 45101098,
+        "asset_type": "Video",
+        "title": "SAA_-_ML_-_Rekognition_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-ML-Rekognition-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 161,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038624,
+      "title": "Transcribe Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 45101250,
+        "asset_type": "Video",
+        "title": "CCP_-_ML_-_Transcribe_v3.mp4",
+        "external_url": "",
+        "filename": "CCP-ML-Transcribe-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 162,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038626,
+      "title": "Polly Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 45101096,
+        "asset_type": "Video",
+        "title": "SAA_-_ML_-_Polly_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-ML-Polly-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 163,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038630,
+      "title": "Translate Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 45101254,
+        "asset_type": "Video",
+        "title": "CCP_-_ML_-_Translate.mp4",
+        "external_url": "",
+        "filename": "CCP-ML-Translate.mp4",
+        "download_urls": null
+      },
+      "object_index": 164,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038636,
+      "title": "Lex + Connect Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 45101256,
+        "asset_type": "Video",
+        "title": "CCP_-_ML_-_Lex_and_Connect.mp4",
+        "external_url": "",
+        "filename": "CCP-ML-Lex-and-Connect.mp4",
+        "download_urls": null
+      },
+      "object_index": 165,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038648,
+      "title": "Comprehend Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 45101252,
+        "asset_type": "Video",
+        "title": "CCP_-_ML_-_Comprehend.mp4",
+        "external_url": "",
+        "filename": "CCP-ML-Comprehend.mp4",
+        "download_urls": null
+      },
+      "object_index": 166,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038660,
+      "title": "Comprehend Medical Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 45101100,
+        "asset_type": "Video",
+        "title": "SAA_-_ML_-_Comprehend_Medical_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-ML-Comprehend-Medical-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 167,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038668,
+      "title": "SageMaker AI Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 67398853,
+        "asset_type": "Video",
+        "title": "CCP - ML - SageMaker.mp4",
+        "external_url": "",
+        "filename": "CCP-ML-SageMaker.mp4",
+        "download_urls": null
+      },
+      "object_index": 168,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038680,
+      "title": "Kendra Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 45101244,
+        "asset_type": "Video",
+        "title": "CCP_-_ML_-_Kendra_v1.mp4",
+        "external_url": "",
+        "filename": "CCP-ML-Kendra-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 169,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038686,
+      "title": "Personalize Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 45101246,
+        "asset_type": "Video",
+        "title": "CCP_-_ML_-_Personalize_v1.mp4",
+        "external_url": "",
+        "filename": "CCP-ML-Personalize-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 170,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038690,
+      "title": "Textract Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 45101262,
+        "asset_type": "Video",
+        "title": "CCP_-_Amazon_Textract_v1.mp4",
+        "external_url": "",
+        "filename": "CCP-Amazon-Textract-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 171,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038694,
+      "title": "Machine Learning Summary",
+      "asset": {
+        "_class": "asset",
+        "id": 63040097,
+        "asset_type": "Video",
+        "title": "CCP - ML - Summary v4.mp4",
+        "external_url": "",
+        "filename": "CCP-ML-Summary-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 172,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5719142,
+      "title": "Machine Learning Quiz",
+      "object_index": 15
+    },
+    {
+      "_class": "chapter",
+      "id": 4326746,
+      "title": "Other Services",
+      "object_index": 17
+    },
+    {
+      "_class": "lecture",
+      "id": 18376830,
+      "title": "Other Services",
+      "asset": {
+        "_class": "asset",
+        "id": 22771372,
+        "asset_type": "Video",
+        "title": "SAP - Other Services.mp4",
+        "external_url": "",
+        "filename": "SAP-Other-Services.mp4",
+        "download_urls": null
+      },
+      "object_index": 173,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376692,
+      "title": "CICD",
+      "asset": {
+        "_class": "asset",
+        "id": 44741260,
+        "asset_type": "Video",
+        "title": "SAP_-_CICD_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-CICD-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 174,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35038568,
+      "title": "Amazon CodeGuru",
+      "asset": {
+        "_class": "asset",
+        "id": 70793417,
+        "asset_type": "Video",
+        "title": "CCP - CodeGuru - Overview v1.mp4",
+        "external_url": "",
+        "filename": "CCP-CodeGuru-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 175,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376696,
+      "title": "Alexa for Business, Lex & Connect",
+      "asset": {
+        "_class": "asset",
+        "id": 22771384,
+        "asset_type": "Video",
+        "title": "SAP - Alexa for Business, Lex, Connect.mp4",
+        "external_url": "",
+        "filename": "SAP-Alexa-for-Business-Lex-Connect.mp4",
+        "download_urls": null
+      },
+      "object_index": 176,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376704,
+      "title": "Kinesis Video Streams",
+      "asset": {
+        "_class": "asset",
+        "id": 22771378,
+        "asset_type": "Video",
+        "title": "SAP - Kinesis Video Streams.mp4",
+        "external_url": "",
+        "filename": "SAP-Kinesis-Video-Streams.mp4",
+        "download_urls": null
+      },
+      "object_index": 177,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376710,
+      "title": "AWS WorkSpaces",
+      "asset": {
+        "_class": "asset",
+        "id": 46534196,
+        "asset_type": "Video",
+        "title": "SAP_-_WorkSpaces_v3.mp4",
+        "external_url": "",
+        "filename": "SAP-WorkSpaces-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 178,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783138,
+      "title": "Amazon AppStream 2.0",
+      "asset": {
+        "_class": "asset",
+        "id": 44741242,
+        "asset_type": "Video",
+        "title": "SAP_-_AppStreams_2.0_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-AppStreams-2.0-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 179,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18376714,
+      "title": "AWS Device Farm",
+      "asset": {
+        "_class": "asset",
+        "id": 22771390,
+        "asset_type": "Video",
+        "title": "SAP - DeviceFarm.mp4",
+        "external_url": "",
+        "filename": "SAP-DeviceFarm.mp4",
+        "download_urls": null
+      },
+      "object_index": 180,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30991398,
+      "title": "Amazon Macie",
+      "asset": {
+        "_class": "asset",
+        "id": 44754820,
+        "asset_type": "Video",
+        "title": "CCP_-_Macie_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-Macie-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 181,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34782962,
+      "title": "Amazon SES",
+      "asset": {
+        "_class": "asset",
+        "id": 44741112,
+        "asset_type": "Video",
+        "title": "SAP_-_SES_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-SES-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 182,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42360086,
+      "title": "Amazon Pinpoint",
+      "asset": {
+        "_class": "asset",
+        "id": 54708614,
+        "asset_type": "Video",
+        "title": "CCP_-_Pinpoint_-_Overview_v1.mp4",
+        "external_url": "",
+        "filename": "CCP-Pinpoint-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 183,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34782972,
+      "title": "EC2 Image Builder",
+      "asset": {
+        "_class": "asset",
+        "id": 44741244,
+        "asset_type": "Video",
+        "title": "SAP_-_EC2_Image_Builder_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-EC2-Image-Builder-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 184,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34783296,
+      "title": "AWS IoT Core",
+      "asset": {
+        "_class": "asset",
+        "id": 44741196,
+        "asset_type": "Video",
+        "title": "SAP_-_IoT_Core_v1.mp4",
+        "external_url": "",
+        "filename": "SAP-IoT-Core-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 185,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18499088,
+      "title": "Other Services Summary",
+      "asset": {
+        "_class": "asset",
+        "id": 55286786,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 186,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4824830,
+      "title": "Other Services Quiz",
+      "object_index": 16
+    },
+    {
+      "_class": "chapter",
+      "id": 4332344,
+      "title": "Exam Preparation",
+      "object_index": 18
+    },
+    {
+      "_class": "lecture",
+      "id": 43768474,
+      "title": "Exam Walkthrough and Signup",
+      "asset": {
+        "_class": "asset",
+        "id": 56556940,
+        "asset_type": "Video",
+        "title": "AWS_-_Exam_Sign_Up_v5.mp4",
+        "external_url": "",
+        "filename": "AWS-Exam-Sign-Up-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 187,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 43768540,
+      "title": "Save 50% on your AWS Exam Cost!",
+      "asset": {
+        "_class": "asset",
+        "id": 56556936,
+        "asset_type": "Video",
+        "title": "AWS_-_Save_50_on_AWS_Exam_Cost_v2.mp4",
+        "external_url": "",
+        "filename": "AWS-Save-50-on-AWS-Exam-Cost-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 188,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 43768572,
+      "title": "Get an Extra 30 Minutes on your AWS Exam - Non Native English Speakers only",
+      "asset": {
+        "_class": "asset",
+        "id": 59209751,
+        "asset_type": "Video",
+        "title": "AWS_-_Request_30_minute_accommodation_on_AWS_exam_v2.mp4",
+        "external_url": "",
+        "filename": "AWS-Request-30-minute-accommodation-on-AWS-exam-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 189,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143834,
+      "title": "Exam Guide & Sample Questions",
+      "asset": {
+        "_class": "asset",
+        "id": 45101002,
+        "asset_type": "Video",
+        "title": "SAP_-_Exam_Guide_and_Sample_Questions_SAP-C02.mp4",
+        "external_url": "",
+        "filename": "SAP-Exam-Guide-and-Sample-Questions-SAP-C02.mp4",
+        "download_urls": null
+      },
+      "object_index": 190,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34788388,
+      "title": "Note: Sample Questions here are for SAP-C02",
+      "asset": {
+        "_class": "asset",
+        "id": 67337231,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 191,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 51917441,
+      "title": "Note about Sample Question 1",
+      "asset": {
+        "_class": "asset",
+        "id": 67337267,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 192,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143840,
+      "title": "Sample Question 1",
+      "asset": {
+        "_class": "asset",
+        "id": 23758554,
+        "asset_type": "Video",
+        "title": "SAP_-_Sample_Questions_v2_-_Q1.mp4",
+        "external_url": "",
+        "filename": "SAP-Sample-Questions-v2-Q1.mp4",
+        "download_urls": null
+      },
+      "object_index": 193,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143852,
+      "title": "Sample Question 2",
+      "asset": {
+        "_class": "asset",
+        "id": 23758530,
+        "asset_type": "Video",
+        "title": "SAP_-_Sample_Questions_v2_-_Q2.mp4",
+        "external_url": "",
+        "filename": "SAP-Sample-Questions-v2-Q2.mp4",
+        "download_urls": null
+      },
+      "object_index": 194,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143854,
+      "title": "Sample Question 3",
+      "asset": {
+        "_class": "asset",
+        "id": 23759714,
+        "asset_type": "Video",
+        "title": "SAP - Sample Questions v2 - Q3.mp4",
+        "external_url": "",
+        "filename": "SAP-Sample-Questions-v2-Q3.mp4",
+        "download_urls": null
+      },
+      "object_index": 195,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143856,
+      "title": "Sample Question 4",
+      "asset": {
+        "_class": "asset",
+        "id": 23758538,
+        "asset_type": "Video",
+        "title": "SAP_-_Sample_Questions_v2_-_Q4.mp4",
+        "external_url": "",
+        "filename": "SAP-Sample-Questions-v2-Q4.mp4",
+        "download_urls": null
+      },
+      "object_index": 196,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143860,
+      "title": "Sample Question 5",
+      "asset": {
+        "_class": "asset",
+        "id": 44741176,
+        "asset_type": "Video",
+        "title": "SAP_-_Sample_Questions_v2_-_Q5_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Sample-Questions-v2-Q5-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 197,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143864,
+      "title": "Sample Question 6",
+      "asset": {
+        "_class": "asset",
+        "id": 44741192,
+        "asset_type": "Video",
+        "title": "SAP_-_Sample_Questions_v2_-_Q6_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Sample-Questions-v2-Q6-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 198,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143866,
+      "title": "Sample Question 7",
+      "asset": {
+        "_class": "asset",
+        "id": 44741178,
+        "asset_type": "Video",
+        "title": "SAP_-_Sample_Questions_v2_-_Q7_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Sample-Questions-v2-Q7-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 199,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143868,
+      "title": "Sample Question 8",
+      "asset": {
+        "_class": "asset",
+        "id": 44741132,
+        "asset_type": "Video",
+        "title": "SAP_-_Sample_Questions_v2_-_Q8_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Sample-Questions-v2-Q8-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 200,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143870,
+      "title": "Sample Question 9",
+      "asset": {
+        "_class": "asset",
+        "id": 44741130,
+        "asset_type": "Video",
+        "title": "SAP_-_Sample_Questions_v2_-_Q9_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Sample-Questions-v2-Q9-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 201,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19143872,
+      "title": "Sample Question 10",
+      "asset": {
+        "_class": "asset",
+        "id": 44741128,
+        "asset_type": "Video",
+        "title": "SAP_-_Sample_Questions_v2_-_Q10_v2.mp4",
+        "external_url": "",
+        "filename": "SAP-Sample-Questions-v2-Q10-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 202,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 4332264,
+      "title": "Congratulations",
+      "object_index": 19
+    },
+    {
+      "_class": "lecture",
+      "id": 39035388,
+      "title": "AWS Certification Paths",
+      "asset": {
+        "_class": "asset",
+        "id": 59209749,
+        "asset_type": "Video",
+        "title": "AWS_-_Common_-_Certification_Paths_v3.mp4",
+        "external_url": "",
+        "filename": "AWS-Common-Certification-Paths-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 203,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18400086,
+      "title": "Congratulations",
+      "asset": {
+        "_class": "asset",
+        "id": 58316307,
+        "asset_type": "Video",
+        "title": "Conclusion_video_-_FINAL_RENDER.mp4",
+        "external_url": "",
+        "filename": "Conclusion-video-FINAL-RENDER.mp4",
+        "download_urls": null
+      },
+      "object_index": 204,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18400090,
+      "title": "Bonus Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 71597367,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 205,
+      "supplementary_assets": []
+    }
+  ]
+}

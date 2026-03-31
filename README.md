@@ -6,6 +6,23 @@
 
 See `docs/SOLUTION_ARCHITECTURE.md` for the merged architecture and operating model.
 
+## Consolidated Workspace Imports
+
+The solution root now contains consolidated imports so extractor operations and GitHub IAC workflows can run from one place:
+
+- Extractor app code: `apps/knowledge-pipeline/`
+- Extractor output corpus (including parent Udemy outputs): `apps/knowledge-pipeline/outputs/`
+- Imported GitHub IAC repo: `platforms/github-iac-terraform/`
+- Imported GitHub Runner platform: `platforms/github-runner-platform/`
+
+Quick commands from this root:
+
+- Extract transcripts: `make kb-extract-all URL=https://www.udemy.com/course/<slug>/`
+- Build KB indexes: `make kb-build`
+- Audit KB integrity: `make kb-audit`
+- Run imported GitHub IAC plan: `make ghiac-plan MOD=azure-minimal ENV=dev`
+- Run imported GitHub IAC apply: `make ghiac-apply MOD=azure-minimal ENV=dev`
+
 ---
 
 ## Table of Contents

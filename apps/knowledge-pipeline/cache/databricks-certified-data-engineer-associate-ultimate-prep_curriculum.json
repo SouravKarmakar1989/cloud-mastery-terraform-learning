@@ -1,0 +1,2827 @@
+{
+  "count": 168,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 11606039,
+      "title": "Course Introduction",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 49729003,
+      "title": "Course Disclaimer",
+      "asset": {
+        "_class": "asset",
+        "id": 64404003,
+        "asset_type": "Video",
+        "title": "DEA 1.3.mp4",
+        "external_url": "",
+        "filename": "DEA-1.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 1,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48852847,
+      "title": "Course Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 63597787,
+        "asset_type": "Video",
+        "title": "DEA 1.1 V3 Course.mp4",
+        "external_url": "",
+        "filename": "DEA-1.1-V3-Course.mp4",
+        "download_urls": null
+      },
+      "object_index": 2,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48855553,
+      "title": "Course Structure",
+      "asset": {
+        "_class": "asset",
+        "id": 68025253,
+        "asset_type": "Video",
+        "title": "DEA 1.2 V2.mp4",
+        "external_url": "",
+        "filename": "DEA-1.2-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 3,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48855555,
+      "title": "Course Slides Download",
+      "asset": {
+        "_class": "asset",
+        "id": 63587563,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 4,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 69999649,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-12-12_09-49-42-b0c23dfefa5eb11c8b1962b121a6f30b/original.pdf?response-content-disposition=attachment%3B+filename%3DDatabricks%2BCertified%2BData%2BEngineer%2BAssociate%2BCourse%2BV6%2BRelease.pdf&Expires=1773839810&Signature=HCXeuDrzOHU9Lirpo7dXvJfX0W-3LemScFHbmEoV6M1Yjfa9uddSMz4mS~fbpv7l8MzZ51EHv6kH4audlYVzye3zRskOte2H9d1mvHMNrmAqtREBisPOtTfNM1u0Mw0jt8aV9LI3GNBi~krk4gLge3u7X6lIn6Dxwmgh59P5Ear-u6EckT~e7WxP07F60BofdpQjxrLlG-PQ1uAcaxO8D7p4ChsdzYwZEnjAcMyOFNq0aJl1RqcxhI9rLXjHAZy5GAbHfp6ArehN6LBkAFRCwBcucgKpEyjip7Frw1f7QvU-qZBOC24SbxlHlSwQ7Sr78R-Ethft4AYCM4H1BS5mAw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "Databricks-Certified-Data-Engineer-Associate-Course-V6-Release.pdf",
+          "external_url": "",
+          "title": "Databricks Certified Data Engineer Associate Course V6 Release.pdf"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 49119001,
+      "title": "Course Notebooks Download",
+      "asset": {
+        "_class": "asset",
+        "id": 65004315,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 5,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 69999601,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-12-12_09-49-39-c1953aa01480bbb666ccf83c5f87b81e/original.dbc?response-content-disposition=attachment%3B+filename%3Ddea-course-v4.dbc&Expires=1773839810&Signature=pxPKxWwyNlARepau2ZQLCOxg4FPl2HRsRjmQmwWr~I~GEN9g9j1QatCKRghxjxZyXSVCsp4biLZ6BnnIKgYrqNV5Pto0kPs-DJqE5Mb7qQMzga2-GrjG5~Ant0GXlQDy2oDzyj-YnUbKa-QNDTBOTwP-3rwp2i~sypETRzykqhgsmwx5B07aaemGmQsHt-2UF8JB4bc-D4TMX8dsycG~LMISYMzo~7OYe68dJ7OQ~N7zb2mQDRBtfRMhKYhTaj6aMTsMO~IKyL--t7c~fMzch2X3O0qOJ6tK3~WMjM3H0YmtRlI1aTEM4~klVrUplVXbnR4~LZQuU7xwGHrL6DiQ4g__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "dea-course-v4.dbc",
+          "external_url": "",
+          "title": "dea-course-v4.dbc"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 49119015,
+      "title": "Course Data Download",
+      "asset": {
+        "_class": "asset",
+        "id": 63588549,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 6,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 63588451,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_19-38-17-62f41abebccd3a28ec8f15d91be23c9d/original.zip?response-content-disposition=attachment%3B+filename%3Dcircuitbox_data.zip&Expires=1773839810&Signature=2rk4-fTNEYqWr-l2FJh~JgZe-XU75r-FxaSCpIeu46TCnGlPLB31T1F3HCmgquAlDPOhpIZD2O6RPI812bmLifjk3fC37-yebd9omrYwxWV0YcR7yDzZoEn98leh-XEsEpzowTH0Tq9OVGyIw1UIYJtG91esRCQMiOQTEfsliCvUUljb0~jmFScZK3B46o0ndLJFreywYjoTHlE5vwgxtWKzsDn1yjkzYHfKR2fSX3LgvnyjIXlym-5~eQg4Zi2u9sKu1ZzyCOnmN9xsLXAMT0nLiEYaBLGrZJAogEaoxgJJbms3VhSmGmsKbltY4O-cDoKRaiyHTlcM8i1mxX1DoQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "circuitbox-data.zip",
+          "external_url": "",
+          "title": "circuitbox_data.zip"
+        },
+        {
+          "_class": "asset",
+          "id": 63588459,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_19-38-20-73efeb0da67a375b04981f3e8b01f71b/original.zip?response-content-disposition=attachment%3B+filename%3Dgizmobox_data.zip&Expires=1773839810&Signature=pY0Zg0bkynBvqrn3kUkcq5okjIApIrDnOQi1roLzsLymCpfSA9WIB~7ZrW6pz848PNLHNvRIRNiqKkgSHLL4kLHTlyZIuH-HlAntatLHL3mi4O-i-mOjrzeb7uCzPsgHJhfvSuATunubDz4JSu7uwdC52pDmTrX9eyBbF-0nf6WRl4sVvj26IMddLl7NZ2iybVr3x9Ii41hfJs~fW5gw-RugFfAt933ZALskUfHDKUm0bPNXBRoxY5hHPwHDXEO-hUKeuXAwyFDR7DqCqaT-7jnhGPF6UkicuRRmBxx1GE4ORVVr26LzhmI5Ux0jbs2jG~fJr-Um-MmbIJdpE7IM0w__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "gizmobox-data.zip",
+          "external_url": "",
+          "title": "gizmobox_data.zip"
+        },
+        {
+          "_class": "asset",
+          "id": 63588467,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_19-38-56-6c3487e14ad6c9643e7da256d734bb00/original.zip?response-content-disposition=attachment%3B+filename%3Dtop_tech_companies_data.zip&Expires=1773839810&Signature=6CNUPCxvAQLz7cwSS1ItN29-84Mh8w81OgOu8U9c9UsM-64DBXUHvBvAQlNdUto~Tliwj7rLvMqyCJvUk3Y9X332FayYhKGCnt-rrF4vNdddlX7ki07TON28uH0y9AdgnOqt39hhGmnEHMzat9fGm~bYd7hAJVIlyUbl7JbuF8QnOE-gwFjQ1i1bzdCTsfLS2H2YKq0swmufjc~EBsmrxnpJaVevLlABaEo-6GPh5G6SRZVvRQn6kox11FmCXXIhnPoEFOfe1LD2qFIYaUQkfnu1W01VGIbDtEuPgT~GWn4pSMU5J0zhD5Wx3KPjvF~dh3nO1Zmv5PToAzIB0LoSQg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "top-tech-companies-data.zip",
+          "external_url": "",
+          "title": "top_tech_companies_data.zip"
+        },
+        {
+          "_class": "asset",
+          "id": 63588469,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_19-39-07-928fe3f10523acbe885caddccd0e3398/original.zip?response-content-disposition=attachment%3B+filename%3Dstock_prices_data.zip&Expires=1773839810&Signature=5fGdQS~2se9kFzlCYZv5sEf23FOsX1xfEGFTbjGrDwv7dFJqEQTqOZD3o0gME8ZWO7-178fYL4UjuCWv7HCX1spDwCj8IXohxwFGsXmZDsgmRyLgZx4MEhe17HMhmrSRNKVdXTh~rKI3osyz9hx28rkmDC1hxEx6LPt4G7E1Q6kH-qSBXZ5eS7r4EiLpgvM6h~DOxTR6SJbnXbKQCz7Q3qOOX48-9y9eGX5WBnWjwz25~Ig98r32sqSDL2AeUVvcKcjB1orxeQFIrNb4ZjEMDgbGm8e96JKSDbohv2al-VTS4kCrM~XE08tvVRWzSrFJt6AoStPyRbRl-2TQs7QA6w__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "stock-prices-data.zip",
+          "external_url": "",
+          "title": "stock_prices_data.zip"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 11606843,
+      "title": "Azure Subscription",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 48855561,
+      "title": "Creating Azure Free Account",
+      "asset": {
+        "_class": "asset",
+        "id": 63227189,
+        "asset_type": "Video",
+        "title": "DEA 2.1.mp4",
+        "external_url": "",
+        "filename": "DEA-2.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 7,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48855565,
+      "title": "Azure Portal Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 63227185,
+        "asset_type": "Video",
+        "title": "DEA 2.2.mp4",
+        "external_url": "",
+        "filename": "DEA-2.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 8,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11606851,
+      "title": "Introduction to Databricks Lakehouse Platform",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 48855591,
+      "title": "Data Lakehouse Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 63227259,
+        "asset_type": "Video",
+        "title": "DEA 3.1.mp4",
+        "external_url": "",
+        "filename": "DEA-3.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 9,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48855599,
+      "title": "Introduction to Medallion Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 63227239,
+        "asset_type": "Video",
+        "title": "DEA 3.2.mp4",
+        "external_url": "",
+        "filename": "DEA-3.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 10,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48855607,
+      "title": "Databricks Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 63227249,
+        "asset_type": "Video",
+        "title": "DEA 3.3.mp4",
+        "external_url": "",
+        "filename": "DEA-3.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 11,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48855615,
+      "title": "Creating Azure Databricks Service",
+      "asset": {
+        "_class": "asset",
+        "id": 64404013,
+        "asset_type": "Video",
+        "title": "DEA 3.4.mp4",
+        "external_url": "",
+        "filename": "DEA-3.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 12,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48855629,
+      "title": "Databricks User Interface Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 63227257,
+        "asset_type": "Video",
+        "title": "DEA 3.5.mp4",
+        "external_url": "",
+        "filename": "DEA-3.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 13,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11606943,
+      "title": "Databricks Workspace Components [Updated July 2025 Syllabus]",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 48856043,
+      "title": "Databricks Architecture Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 63227987,
+        "asset_type": "Video",
+        "title": "DEA 4.1.mp4",
+        "external_url": "",
+        "filename": "DEA-4.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 14,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856047,
+      "title": "Introduction to Databricks Compute",
+      "asset": {
+        "_class": "asset",
+        "id": 63227985,
+        "asset_type": "Video",
+        "title": "DEA 4.2.mp4",
+        "external_url": "",
+        "filename": "DEA-4.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 15,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856051,
+      "title": "Databricks Cluster Configuration",
+      "asset": {
+        "_class": "asset",
+        "id": 68683827,
+        "asset_type": "Video",
+        "title": "DEA 4.3.mp4",
+        "external_url": "",
+        "filename": "DEA-4.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 16,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856053,
+      "title": "Create Databricks Cluster",
+      "asset": {
+        "_class": "asset",
+        "id": 68723689,
+        "asset_type": "Video",
+        "title": "DEA 4.4.mp4",
+        "external_url": "",
+        "filename": "DEA-4.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 17,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 52930591,
+      "title": "Troubleshooting Databricks Cluster Quota and VM Issues",
+      "asset": {
+        "_class": "asset",
+        "id": 68723529,
+        "asset_type": "Video",
+        "title": "ADB 4.9.mp4",
+        "external_url": "",
+        "filename": "ADB-4.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 18,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856057,
+      "title": "Databricks Notebooks",
+      "asset": {
+        "_class": "asset",
+        "id": 63228031,
+        "asset_type": "Video",
+        "title": "DEA 4.5.mp4",
+        "external_url": "",
+        "filename": "DEA-4.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 19,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856061,
+      "title": "Databricks Magic Commands",
+      "asset": {
+        "_class": "asset",
+        "id": 63228035,
+        "asset_type": "Video",
+        "title": "DEA 4.6.mp4",
+        "external_url": "",
+        "filename": "DEA-4.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 20,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856065,
+      "title": "Databricks Utilities",
+      "asset": {
+        "_class": "asset",
+        "id": 63228027,
+        "asset_type": "Video",
+        "title": "DEA 4.7.mp4",
+        "external_url": "",
+        "filename": "DEA-4.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 21,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856069,
+      "title": "Databricks Git Folders (Repos)",
+      "asset": {
+        "_class": "asset",
+        "id": 63227993,
+        "asset_type": "Video",
+        "title": "DEA 4.8.mp4",
+        "external_url": "",
+        "filename": "DEA-4.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 22,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856071,
+      "title": "Databricks Git Folders (Repos) - Demo",
+      "asset": {
+        "_class": "asset",
+        "id": 63228045,
+        "asset_type": "Video",
+        "title": "DEA 4.9.mp4",
+        "external_url": "",
+        "filename": "DEA-4.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 23,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849563,
+      "title": "Debugging Databricks Notebooks [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 69966333,
+        "asset_type": "Video",
+        "title": "DEA 4.10.mp4",
+        "external_url": "",
+        "filename": "DEA-4.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 24,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11606991,
+      "title": "Introduction to Unity Catalog",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 48856149,
+      "title": "Introduction to Unity Catalog",
+      "asset": {
+        "_class": "asset",
+        "id": 63237631,
+        "asset_type": "Video",
+        "title": "DEA 5.1.mp4",
+        "external_url": "",
+        "filename": "DEA-5.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 25,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856151,
+      "title": "Databricks Unity Catalog / Hive Metastore Object Model",
+      "asset": {
+        "_class": "asset",
+        "id": 63237645,
+        "asset_type": "Video",
+        "title": "DEA 5.2.mp4",
+        "external_url": "",
+        "filename": "DEA-5.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 26,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856153,
+      "title": "Create Unity Catalog Metastore",
+      "asset": {
+        "_class": "asset",
+        "id": 63237659,
+        "asset_type": "Video",
+        "title": "DEA 5.3.mp4",
+        "external_url": "",
+        "filename": "DEA-5.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 27,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856155,
+      "title": "Cluster Configurations For Unity Catalog",
+      "asset": {
+        "_class": "asset",
+        "id": 63237641,
+        "asset_type": "Video",
+        "title": "DEA 5.6.mp4",
+        "external_url": "",
+        "filename": "DEA-5.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 28,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856159,
+      "title": "Configure Access to Cloud Storage - Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 63237649,
+        "asset_type": "Video",
+        "title": "DEA 5.4.mp4",
+        "external_url": "",
+        "filename": "DEA-5.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 29,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856165,
+      "title": "Configure Access to Cloud Storage - Demo",
+      "asset": {
+        "_class": "asset",
+        "id": 63237657,
+        "asset_type": "Video",
+        "title": "DEA 5.5.mp4",
+        "external_url": "",
+        "filename": "DEA-5.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 30,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11606997,
+      "title": "Apache Spark - Overview",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 48856169,
+      "title": "ETL With Apache Spark - Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 69963779,
+        "asset_type": "Video",
+        "title": "DEA 6.1 V2.mp4",
+        "external_url": "",
+        "filename": "DEA-6.1-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 31,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856173,
+      "title": "ETL Project Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 64404075,
+        "asset_type": "Video",
+        "title": "DEA 6.2.mp4",
+        "external_url": "",
+        "filename": "DEA-6.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 32,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48856175,
+      "title": "Set-up Data Lake Project Environment",
+      "asset": {
+        "_class": "asset",
+        "id": 63237895,
+        "asset_type": "Video",
+        "title": "DEA 6.3.1.mp4",
+        "external_url": "",
+        "filename": "DEA-6.3.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 33,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 63576407,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_11-16-25-b2614f9655717dbb6704d12614634251/original.zip?response-content-disposition=attachment%3B+filename%3Dgizmobox_data.zip&Expires=1773839810&Signature=ZeTViFhD1XbQJp2NgTOpAbfmV2ioL-B9hm16SAn9Q~0OsYPEkJA9CaXkkyhMpCfhqGQIj3iqAJtJEKP2PMUduJF8qI4Rksn072prHEeDUq2~LXYgeVCmYsJZU2oepV2ow0mpA~V8EeewcwjsE2Ijhf4i8Mm2QLz~JCcjTb3pEQ3I5OPwqk5fQDUJX57VWrJ8RCqSJ021R7DoVDkkoBQ0x8qT7hjusUInAOm0rdONreDtFsbbyfntRIFzv09Yo~ftdP0jCVg0GRZxK2qzwUINRl0m6ikTjnrALyBGyFqIeMwg2Spi5VUYHKh9DTjKd7wVzhBvMBXzL1Hu1k6weZIl2A__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "gizmobox-data.zip",
+          "external_url": "",
+          "title": "gizmobox_data.zip"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 48856181,
+      "title": "Set-up Unity Catalog Project Environment",
+      "asset": {
+        "_class": "asset",
+        "id": 63237967,
+        "asset_type": "Video",
+        "title": "DEA 6.3.2.mp4",
+        "external_url": "",
+        "filename": "DEA-6.3.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 34,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11608261,
+      "title": "Apache Spark - Querying Data (SQL)",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 48863617,
+      "title": "Extract Customers Data - Simple JSON",
+      "asset": {
+        "_class": "asset",
+        "id": 63238193,
+        "asset_type": "Video",
+        "title": "DEA 7.2.mp4",
+        "external_url": "",
+        "filename": "DEA-7.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 35,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48863619,
+      "title": "Create Views",
+      "asset": {
+        "_class": "asset",
+        "id": 63238159,
+        "asset_type": "Video",
+        "title": "DEA 7.3.mp4",
+        "external_url": "",
+        "filename": "DEA-7.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 36,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48863623,
+      "title": "Create Temporary Views",
+      "asset": {
+        "_class": "asset",
+        "id": 63238171,
+        "asset_type": "Video",
+        "title": "DEA 7.4.mp4",
+        "external_url": "",
+        "filename": "DEA-7.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 37,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48863629,
+      "title": "Extract Orders Data - Complex JSON as Text",
+      "asset": {
+        "_class": "asset",
+        "id": 63238191,
+        "asset_type": "Video",
+        "title": "DEA 7.5.mp4",
+        "external_url": "",
+        "filename": "DEA-7.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 38,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 52389729,
+      "title": "Extract Memberships Data - Cluster Requirement",
+      "asset": {
+        "_class": "asset",
+        "id": 67993183,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 39,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48863633,
+      "title": "Extract Memberships Data - Binary File",
+      "asset": {
+        "_class": "asset",
+        "id": 67993557,
+        "asset_type": "Video",
+        "title": "DEA 7.6 V2.mp4",
+        "external_url": "",
+        "filename": "DEA-7.6-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 40,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48863639,
+      "title": "Extract Addresses Data using read_files Function - TSV",
+      "asset": {
+        "_class": "asset",
+        "id": 63238199,
+        "asset_type": "Video",
+        "title": "DEA 7.7.mp4",
+        "external_url": "",
+        "filename": "DEA-7.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 41,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48863645,
+      "title": "Extract Payments Data - CSV via External Table",
+      "asset": {
+        "_class": "asset",
+        "id": 63238221,
+        "asset_type": "Video",
+        "title": "DEA 7.8.mp4",
+        "external_url": "",
+        "filename": "DEA-7.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 42,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 54097825,
+      "title": "\u203c\ufe0f Important Note for Subscriptions Created After 18th December 2025",
+      "asset": {
+        "_class": "asset",
+        "id": 70289679,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 43,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48863651,
+      "title": "Extract Refunds Data - SQL Table via External Table",
+      "asset": {
+        "_class": "asset",
+        "id": 64404109,
+        "asset_type": "Video",
+        "title": "DEA 7.9.mp4",
+        "external_url": "",
+        "filename": "DEA-7.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 44,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 63576439,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_11-16-29-241dcac8e0174d3d3a120a8dcdb3ab49/original.sql?response-content-disposition=attachment%3B+filename%3Drefunds_azure_sql_ddl.sql&Expires=1773839810&Signature=G03HLDgDmiLmHCjEecyeZM1vVPedVrRzfc27XO0k1ZF0igrHxgK76BRoS9Mf4mXLLvXPwhZn73bZ9Cqmhml2CxVXZ194u9Vwr4jCS2nUGOcT5IaJURaEBR4G9xhVDy363N76o3GzzptTgB~-rVPZJvJ0zd3I3LEFZ3dbaWtykD1knaHPpyYjI5ZkRi8IKp3ZX6ayuNXCe~CnoH5JGNlKoioCn9YnWbh5TCio~pWltIKlFJdQhONoF1sCKrDo4bnqdlmF0CjgsAnvmTT5CCrWZI3b9zMhEOJU2fpsIwZCee4WcdIkFbiTFwc4-mTezMvUt0Lb058aJSJ9L0iTqpCiEw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "refunds-azure-sql-ddl.sql",
+          "external_url": "",
+          "title": "refunds_azure_sql_ddl.sql"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 48863653,
+      "title": "Querying Files via PySpark",
+      "asset": {
+        "_class": "asset",
+        "id": 63238209,
+        "asset_type": "Video",
+        "title": "DEA 7.10.mp4",
+        "external_url": "",
+        "filename": "DEA-7.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 45,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11615261,
+      "title": "Apache Spark - Transforming Data (SQL)",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 48892103,
+      "title": "Data Profiling in Databricks",
+      "asset": {
+        "_class": "asset",
+        "id": 63274655,
+        "asset_type": "Video",
+        "title": "DEA 8.2.mp4",
+        "external_url": "",
+        "filename": "DEA-8.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 46,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48892107,
+      "title": "Transform Customers Data",
+      "asset": {
+        "_class": "asset",
+        "id": 64404161,
+        "asset_type": "Video",
+        "title": "DEA 8.3.mp4",
+        "external_url": "",
+        "filename": "DEA-8.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 47,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48892115,
+      "title": "Transform Payments Data",
+      "asset": {
+        "_class": "asset",
+        "id": 63274661,
+        "asset_type": "Video",
+        "title": "DEA 8.4.mp4",
+        "external_url": "",
+        "filename": "DEA-8.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 48,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48892121,
+      "title": "Transform Refunds Data",
+      "asset": {
+        "_class": "asset",
+        "id": 63274667,
+        "asset_type": "Video",
+        "title": "DEA 8.5.mp4",
+        "external_url": "",
+        "filename": "DEA-8.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 49,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48892123,
+      "title": "Transform Memberships Data",
+      "asset": {
+        "_class": "asset",
+        "id": 63274651,
+        "asset_type": "Video",
+        "title": "DEA 8.6.mp4",
+        "external_url": "",
+        "filename": "DEA-8.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 50,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48892127,
+      "title": "Transform Addresses Data",
+      "asset": {
+        "_class": "asset",
+        "id": 63274663,
+        "asset_type": "Video",
+        "title": "DEA 8.7.mp4",
+        "external_url": "",
+        "filename": "DEA-8.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 51,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48892131,
+      "title": "Query Orders Data - JSON Strings",
+      "asset": {
+        "_class": "asset",
+        "id": 63274675,
+        "asset_type": "Video",
+        "title": "DEA 8.8.mp4",
+        "external_url": "",
+        "filename": "DEA-8.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 52,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48892137,
+      "title": "Transform Orders Data - Convert String to JSON",
+      "asset": {
+        "_class": "asset",
+        "id": 63297757,
+        "asset_type": "Video",
+        "title": "DEA 8.9.mp4",
+        "external_url": "",
+        "filename": "DEA-8.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 53,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48892141,
+      "title": "Transform Orders Data - Explode Arrays",
+      "asset": {
+        "_class": "asset",
+        "id": 63297791,
+        "asset_type": "Video",
+        "title": "DEA 8.10.mp4",
+        "external_url": "",
+        "filename": "DEA-8.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 54,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48892143,
+      "title": "Create Customer Address - JOINs",
+      "asset": {
+        "_class": "asset",
+        "id": 63274669,
+        "asset_type": "Video",
+        "title": "DEA 8.11.mp4",
+        "external_url": "",
+        "filename": "DEA-8.11.mp4",
+        "download_urls": null
+      },
+      "object_index": 55,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48892153,
+      "title": "Create Month Order Summary - Aggregations",
+      "asset": {
+        "_class": "asset",
+        "id": 63274685,
+        "asset_type": "Video",
+        "title": "DEA 8.12.mp4",
+        "external_url": "",
+        "filename": "DEA-8.12.mp4",
+        "download_urls": null
+      },
+      "object_index": 56,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48892183,
+      "title": "Spark User Defined Functions (UDFs)",
+      "asset": {
+        "_class": "asset",
+        "id": 63389379,
+        "asset_type": "Video",
+        "title": "DEA 8.13.mp4",
+        "external_url": "",
+        "filename": "DEA-8.13.mp4",
+        "download_urls": null
+      },
+      "object_index": 57,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49345829,
+      "title": "Higher Order Functions (Array)",
+      "asset": {
+        "_class": "asset",
+        "id": 64404141,
+        "asset_type": "Video",
+        "title": "DEA 8.14.mp4",
+        "external_url": "",
+        "filename": "DEA-8.14.mp4",
+        "download_urls": null
+      },
+      "object_index": 58,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49345837,
+      "title": "Higher Order Functions (Map)",
+      "asset": {
+        "_class": "asset",
+        "id": 64404143,
+        "asset_type": "Video",
+        "title": "DEA 8.15.mp4",
+        "external_url": "",
+        "filename": "DEA-8.15.mp4",
+        "download_urls": null
+      },
+      "object_index": 59,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 12758449,
+      "title": "Apache Spark - Querying Data (PySpark) [New July 2025 Syllabus]",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 53849619,
+      "title": "Introduction to PySpark",
+      "asset": {
+        "_class": "asset",
+        "id": 69963809,
+        "asset_type": "Video",
+        "title": "DEA 20.1.mp4",
+        "external_url": "",
+        "filename": "DEA-20.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 60,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849627,
+      "title": "Extract Customers Data - Simple JSON",
+      "asset": {
+        "_class": "asset",
+        "id": 69963851,
+        "asset_type": "Video",
+        "title": "DEA 20.2.mp4",
+        "external_url": "",
+        "filename": "DEA-20.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 61,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849637,
+      "title": "Extract Orders Data - Complex JSON as Text",
+      "asset": {
+        "_class": "asset",
+        "id": 69963835,
+        "asset_type": "Video",
+        "title": "DEA 20.3.mp4",
+        "external_url": "",
+        "filename": "DEA-20.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 62,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849645,
+      "title": "Extract Memberships Data - Binary File",
+      "asset": {
+        "_class": "asset",
+        "id": 69963829,
+        "asset_type": "Video",
+        "title": "DEA 20.4.mp4",
+        "external_url": "",
+        "filename": "DEA-20.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 63,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849651,
+      "title": "Extract Addresses Data - TSV",
+      "asset": {
+        "_class": "asset",
+        "id": 69963839,
+        "asset_type": "Video",
+        "title": "DEA 20.5.mp4",
+        "external_url": "",
+        "filename": "DEA-20.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 64,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849657,
+      "title": "Extract Payments Data - CSV",
+      "asset": {
+        "_class": "asset",
+        "id": 69963847,
+        "asset_type": "Video",
+        "title": "DEA 20.6.mp4",
+        "external_url": "",
+        "filename": "DEA-20.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 65,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849659,
+      "title": "Extract Refunds Data - SQL Table via JDBC",
+      "asset": {
+        "_class": "asset",
+        "id": 69963845,
+        "asset_type": "Video",
+        "title": "DEA 20.7.mp4",
+        "external_url": "",
+        "filename": "DEA-20.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 66,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 12758453,
+      "title": "Apace Spark - Transforming Data (PySpark) [New July 2025 Syllabus]",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 53849669,
+      "title": "Transform Customers Data",
+      "asset": {
+        "_class": "asset",
+        "id": 69963935,
+        "asset_type": "Video",
+        "title": "DEA 21.2.mp4",
+        "external_url": "",
+        "filename": "DEA-21.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 67,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849685,
+      "title": "Transform Payments Data",
+      "asset": {
+        "_class": "asset",
+        "id": 69963867,
+        "asset_type": "Video",
+        "title": "DEA 21.3.mp4",
+        "external_url": "",
+        "filename": "DEA-21.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 68,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849691,
+      "title": "Transform Refunds Data",
+      "asset": {
+        "_class": "asset",
+        "id": 69963861,
+        "asset_type": "Video",
+        "title": "DEA 21.4.mp4",
+        "external_url": "",
+        "filename": "DEA-21.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 69,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849697,
+      "title": "Transform Memberships Data",
+      "asset": {
+        "_class": "asset",
+        "id": 69963865,
+        "asset_type": "Video",
+        "title": "DEA 21.5.mp4",
+        "external_url": "",
+        "filename": "DEA-21.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 70,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849707,
+      "title": "Transform Addresses Data",
+      "asset": {
+        "_class": "asset",
+        "id": 69963877,
+        "asset_type": "Video",
+        "title": "DEA 21.6.mp4",
+        "external_url": "",
+        "filename": "DEA-21.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 71,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849715,
+      "title": "Transform Orders Data - Convert String to JSON",
+      "asset": {
+        "_class": "asset",
+        "id": 69963897,
+        "asset_type": "Video",
+        "title": "DEA 21.7.mp4",
+        "external_url": "",
+        "filename": "DEA-21.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 72,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849721,
+      "title": "Transform Orders Data - Explode Arrays",
+      "asset": {
+        "_class": "asset",
+        "id": 69963901,
+        "asset_type": "Video",
+        "title": "DEA 21.8.mp4",
+        "external_url": "",
+        "filename": "DEA-21.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 73,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849725,
+      "title": "Join Customer Address",
+      "asset": {
+        "_class": "asset",
+        "id": 69963889,
+        "asset_type": "Video",
+        "title": "DEA 21.9.mp4",
+        "external_url": "",
+        "filename": "DEA-21.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 74,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849727,
+      "title": "Month Order Summary",
+      "asset": {
+        "_class": "asset",
+        "id": 69963895,
+        "asset_type": "Video",
+        "title": "DEA 21.10.mp4",
+        "external_url": "",
+        "filename": "DEA-21.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 75,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11639861,
+      "title": "Spark Structured Streaming",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 48994919,
+      "title": "Structured Streaming - Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 63418769,
+        "asset_type": "Video",
+        "title": "DEA 13.1.mp4",
+        "external_url": "",
+        "filename": "DEA-13.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 76,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48994925,
+      "title": "Structured Streaming - Demo",
+      "asset": {
+        "_class": "asset",
+        "id": 63418801,
+        "asset_type": "Video",
+        "title": "DEA 13.2.mp4",
+        "external_url": "",
+        "filename": "DEA-13.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 77,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 63576463,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_11-16-38-8d45933ce6aaf7f9eecd7da836f3d693/original.zip?response-content-disposition=attachment%3B+filename%3Dgizmobox_data.zip&Expires=1773839810&Signature=bpoCJB~FxM37ou3he8zKIFGNc0DcuOEATRVpvV5-nBmobozNUongCpOw5diRk4RTRnYXf2tpg2Y2K~YRwq4JivBaCTPcw1popaPrjelPvdmSpX5Omg2Ni1w13rx6Kc~6pbKKyHiXN2u2vbEtAQNAYtqj3d1z1qbDo2pq1c~K2-Zc3b6rno2IK4IJolkhGNHdWeiumsogvHM9TFT0qSMZf1QmdJE20YPVZdos6siWwu0tVACk6-RTqDPlP6Cd2h2RyrkZV3kmxEKXT~szsO93KUc2maPh0EpvqLtOztjUGNmIypS0Zlkg4hIiMb1tQDH32nZkNMGNpB7D2YX-YAXs-g__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "gizmobox-data.zip",
+          "external_url": "",
+          "title": "gizmobox_data.zip"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 48994929,
+      "title": "Trigger & OutputMode",
+      "asset": {
+        "_class": "asset",
+        "id": 63418783,
+        "asset_type": "Video",
+        "title": "DEA 13.3.mp4",
+        "external_url": "",
+        "filename": "DEA-13.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 78,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48994933,
+      "title": "Checkpointing",
+      "asset": {
+        "_class": "asset",
+        "id": 63418775,
+        "asset_type": "Video",
+        "title": "DEA 13.4.mp4",
+        "external_url": "",
+        "filename": "DEA-13.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 79,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 12762867,
+      "title": "Auto Loader [Updated July 2025 Syllabus]",
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 48994935,
+      "title": "Introduction to Auto Loader",
+      "asset": {
+        "_class": "asset",
+        "id": 63418809,
+        "asset_type": "Video",
+        "title": "DEA 13.5.mp4",
+        "external_url": "",
+        "filename": "DEA-13.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 80,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 63576475,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_11-16-37-6de2abf3931156e6ab11828ce79cff71/original.zip?response-content-disposition=attachment%3B+filename%3Dgizmobox_data.zip&Expires=1773839810&Signature=MZYSQXzdJBMs0lK2AT3~tfQDSp5Fx43wExzk0gKD4IVuFKtltGCvtI9pVenJRC1-Srxh4m9PtbKPW9CmMdnSeRE8sdXXH-G0pK1fUYiJXrr-AeF5y-e6IS45j2hbQsu~glhKISglJ3YES9GjGkM6Sq7FY90V4rGlPF4i2yPXYS51HU1sU7drFoKRBUAjBKDpBT9SPR8ya5lamvQXbCWMgt7xT7Hga3-4qxnFTiq4aoGEU0ppLHc8Rl0Ji1Fi9wP1iybG~PWbuqN-TrkVnGmhYneMu22TckRzFkbyx5AupVCTEh1W4jqmxGMBtYtxpL0hJ7rOpit77NwTz~PIVRmdOA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "gizmobox-data.zip",
+          "external_url": "",
+          "title": "gizmobox_data.zip"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 53869735,
+      "title": "Auto Loader - File Options",
+      "asset": {
+        "_class": "asset",
+        "id": 69987051,
+        "asset_type": "Video",
+        "title": "DEA 13.6.mp4",
+        "external_url": "",
+        "filename": "DEA-13.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 81,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53869741,
+      "title": "Auto Loader - Schema Evolution",
+      "asset": {
+        "_class": "asset",
+        "id": 69987053,
+        "asset_type": "Video",
+        "title": "DEA 13.7.mp4",
+        "external_url": "",
+        "filename": "DEA-13.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 82,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11615631,
+      "title": "Delta Lake [Updated July 2025 Syllabus]",
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 48893673,
+      "title": "Introduction to Delta Lake",
+      "asset": {
+        "_class": "asset",
+        "id": 63276645,
+        "asset_type": "Video",
+        "title": "DEA 9.1.mp4",
+        "external_url": "",
+        "filename": "DEA-9.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 83,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48893677,
+      "title": "Delta Transaction Log",
+      "asset": {
+        "_class": "asset",
+        "id": 67997159,
+        "asset_type": "Video",
+        "title": "DEA 9.2 V2.mp4",
+        "external_url": "",
+        "filename": "DEA-9.2-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 84,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48893681,
+      "title": "Delta Lake Version History",
+      "asset": {
+        "_class": "asset",
+        "id": 63276655,
+        "asset_type": "Video",
+        "title": "DEA 9.3.mp4",
+        "external_url": "",
+        "filename": "DEA-9.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 85,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48893683,
+      "title": "Support for ACID Transactions",
+      "asset": {
+        "_class": "asset",
+        "id": 63276733,
+        "asset_type": "Video",
+        "title": "DEA 9.4.mp4",
+        "external_url": "",
+        "filename": "DEA-9.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 86,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48893685,
+      "title": "Create Delta Lake Table - Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 63276659,
+        "asset_type": "Video",
+        "title": "DEA 9.5.mp4",
+        "external_url": "",
+        "filename": "DEA-9.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 87,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48893687,
+      "title": "Delta Lake Table & Column Properties",
+      "asset": {
+        "_class": "asset",
+        "id": 63276699,
+        "asset_type": "Video",
+        "title": "DEA 9.6.mp4",
+        "external_url": "",
+        "filename": "DEA-9.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 88,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48893693,
+      "title": "Create or Replace & CTAS Statements",
+      "asset": {
+        "_class": "asset",
+        "id": 63276673,
+        "asset_type": "Video",
+        "title": "DEA 9.7.mp4",
+        "external_url": "",
+        "filename": "DEA-9.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 89,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48893699,
+      "title": "Insert Overwrite & Partitioning",
+      "asset": {
+        "_class": "asset",
+        "id": 63276677,
+        "asset_type": "Video",
+        "title": "DEA 9.8.mp4",
+        "external_url": "",
+        "filename": "DEA-9.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 90,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48893703,
+      "title": "COPY INTO and MERGE Command",
+      "asset": {
+        "_class": "asset",
+        "id": 63276711,
+        "asset_type": "Video",
+        "title": "DEA 9.9.mp4",
+        "external_url": "",
+        "filename": "DEA-9.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 91,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 63576485,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_11-17-00-1c26baac35ddc610bdf4313c99573596/original.zip?response-content-disposition=attachment%3B+filename%3Dstock_prices_data.zip&Expires=1773839810&Signature=dAl6c1u51ERz5TMbssgQ0ZNPx~3bBsayhrJL8ulUJZmvAwBJdO7fMujehHU6CEXq-yuLJ8ySOKQnWsSUOCEOPTyGKdeZHztstAdnuOP0Xf16agqg09lkipj6QOX90c6RuKKgPoVW6l6Lmhj-Hl2zyEJTowSOEngqnlM0Qp0rYWTJginAtFaI8ltMV2dAnRYI6NYFSvsM5dxvnkg4I1GDKO3JkvejmEQ2TCbldKhUsbCNhTeL62ltoXgMyKq05SlmhUSHDgVXmeViI6-hxErUYbtHgGXj13kdVVBneC2I5hIdoNAcDlwroc3l7~w6Kn5OlFkZhQ-l0n--Yj-Q7otwhA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "stock-prices-data.zip",
+          "external_url": "",
+          "title": "stock_prices_data.zip"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 48893707,
+      "title": "Compaction - OPTIMIZE and ZORDER",
+      "asset": {
+        "_class": "asset",
+        "id": 69963921,
+        "asset_type": "Video",
+        "title": "DEA 9.10 .mp4",
+        "external_url": "",
+        "filename": "DEA-9.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 92,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53849747,
+      "title": "Liquid Clustering [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 69963903,
+        "asset_type": "Video",
+        "title": "DEA 9.12.mp4",
+        "external_url": "",
+        "filename": "DEA-9.12.mp4",
+        "download_urls": null
+      },
+      "object_index": 93,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48893711,
+      "title": "Remove Unused Files - VACUUM",
+      "asset": {
+        "_class": "asset",
+        "id": 63297109,
+        "asset_type": "Video",
+        "title": "DEA 9.11.mp4",
+        "external_url": "",
+        "filename": "DEA-9.11.mp4",
+        "download_urls": null
+      },
+      "object_index": 94,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11621279,
+      "title": "Lakeflow Declarative Pipelines (DLT) - Overview",
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 48916719,
+      "title": "Introduction to Delta Live Tables",
+      "asset": {
+        "_class": "asset",
+        "id": 63310199,
+        "asset_type": "Video",
+        "title": "DEA 11.1.mp4",
+        "external_url": "",
+        "filename": "DEA-11.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 95,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916725,
+      "title": "DLT Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 63310183,
+        "asset_type": "Video",
+        "title": "DEA 11.2.mp4",
+        "external_url": "",
+        "filename": "DEA-11.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 96,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916729,
+      "title": "Programming with DLT",
+      "asset": {
+        "_class": "asset",
+        "id": 63310195,
+        "asset_type": "Video",
+        "title": "DEA 11.3.mp4",
+        "external_url": "",
+        "filename": "DEA-11.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 97,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11621281,
+      "title": "Lakeflow Declarative Pipelines (DLT) - Project",
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 48916749,
+      "title": "DLT Project Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 63310189,
+        "asset_type": "Video",
+        "title": "DEA 11.4.mp4",
+        "external_url": "",
+        "filename": "DEA-11.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 98,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916753,
+      "title": "Cluster Configuration & Azure VM Quota",
+      "asset": {
+        "_class": "asset",
+        "id": 64404225,
+        "asset_type": "Video",
+        "title": "DEA 11.5.mp4",
+        "external_url": "",
+        "filename": "DEA-11.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 99,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916755,
+      "title": "DLT Project Environment Set-up",
+      "asset": {
+        "_class": "asset",
+        "id": 63310225,
+        "asset_type": "Video",
+        "title": "DEA 11.6.mp4",
+        "external_url": "",
+        "filename": "DEA-11.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 100,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 63576539,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_11-18-45-e7ccbfd070b664b9369ac25d849dae6d/original.zip?response-content-disposition=attachment%3B+filename%3Dcircuitbox_data.zip&Expires=1773839810&Signature=Nzr-nIX~3oU6rp~nkqTv7RLHMAV8oY-iSEGSVH7HbzfHnrq5~tYNz0aSyxZK33FSFkTcc8HJi85Tw3H-RMmgzR0sTtzo9G~s9CqtgQn6QGrLrSaleyvnw3g8I7HWG89EbYVt0mAOqu0BPN~-XxL5nY~F~WxS-oXItSdvj-XEHyFa1jB01sHDtr14afEkPPJtaEUdmTsA0JCta~fIIrxmUI9XnzmQRd2J9N2U9gX7t3vglD9~A6SVLgKktYsL-6ilh3efZ-KHXHHcNrWyaw8~v~G4nEho6uyE7-zx1UcUsJOEDYus6WlJwO7jMCj6B5QR7-hMN4Cp9JGSxb0We7m~1A__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "circuitbox-data.zip",
+          "external_url": "",
+          "title": "circuitbox_data.zip"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 48916761,
+      "title": "Introduction to Streaming Tables - Ingest Customer Data (SQL)",
+      "asset": {
+        "_class": "asset",
+        "id": 63310233,
+        "asset_type": "Video",
+        "title": "DEA 11.7.mp4",
+        "external_url": "",
+        "filename": "DEA-11.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 101,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53522941,
+      "title": "Recent Changes to DLT User Interface [Please Watch]",
+      "asset": {
+        "_class": "asset",
+        "id": 69528423,
+        "asset_type": "Video",
+        "title": "DEA 11.17.mp4",
+        "external_url": "",
+        "filename": "DEA-11.17.mp4",
+        "download_urls": null
+      },
+      "object_index": 102,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916767,
+      "title": "Introduction to DLT Pipelines - Create CircuitBox DLT Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 64655777,
+        "asset_type": "Video",
+        "title": "DEA 11.8 V2.mp4",
+        "external_url": "",
+        "filename": "DEA-11.8-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 103,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916771,
+      "title": "Introduction to DLT Expectations - Validate Customers Data (SQL)",
+      "asset": {
+        "_class": "asset",
+        "id": 63310273,
+        "asset_type": "Video",
+        "title": "DEA 11.9.mp4",
+        "external_url": "",
+        "filename": "DEA-11.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 104,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916773,
+      "title": "Introduction to Apply Changes - Customers Type 1 SCD Table (SQL)",
+      "asset": {
+        "_class": "asset",
+        "id": 63310261,
+        "asset_type": "Video",
+        "title": "DEA 11.10.mp4",
+        "external_url": "",
+        "filename": "DEA-11.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 105,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916777,
+      "title": "Creating DLT Datasets - Ingest Addresses Data (Python)",
+      "asset": {
+        "_class": "asset",
+        "id": 63310251,
+        "asset_type": "Video",
+        "title": "DEA 11.11.mp4",
+        "external_url": "",
+        "filename": "DEA-11.11.mp4",
+        "download_urls": null
+      },
+      "object_index": 106,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916779,
+      "title": "Implementing DLT Expectations - Validate Addresses Data (Python)",
+      "asset": {
+        "_class": "asset",
+        "id": 63310249,
+        "asset_type": "Video",
+        "title": "DEA 11.12.mp4",
+        "external_url": "",
+        "filename": "DEA-11.12.mp4",
+        "download_urls": null
+      },
+      "object_index": 107,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916785,
+      "title": "Implementing Slowly Changing Dimensions - Addresses Type 2 SCD Table (Python)",
+      "asset": {
+        "_class": "asset",
+        "id": 63310255,
+        "asset_type": "Video",
+        "title": "DEA 11.13.mp4",
+        "external_url": "",
+        "filename": "DEA-11.13.mp4",
+        "download_urls": null
+      },
+      "object_index": 108,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916787,
+      "title": "Process Orders Data - Assigment",
+      "asset": {
+        "_class": "asset",
+        "id": 63310257,
+        "asset_type": "Video",
+        "title": "DEA 11.14.mp4",
+        "external_url": "",
+        "filename": "DEA-11.14.mp4",
+        "download_urls": null
+      },
+      "object_index": 109,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48916793,
+      "title": "Introduction to Materialized Views - Create Customer Order Summary",
+      "asset": {
+        "_class": "asset",
+        "id": 63310271,
+        "asset_type": "Video",
+        "title": "DEA 11.15.mp4",
+        "external_url": "",
+        "filename": "DEA-11.15.mp4",
+        "download_urls": null
+      },
+      "object_index": 110,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 52393347,
+      "title": "Publish to Multiple Catalogs and Schemas from a Single DLT Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 67997245,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 111,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49729217,
+      "title": "Delta Live Tables Legacy Syntax",
+      "asset": {
+        "_class": "asset",
+        "id": 64404245,
+        "asset_type": "Video",
+        "title": "DEA 11.16.mp4",
+        "external_url": "",
+        "filename": "DEA-11.16.mp4",
+        "download_urls": null
+      },
+      "object_index": 112,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11618839,
+      "title": "Databricks Lakeflow Jobs",
+      "object_index": 16
+    },
+    {
+      "_class": "lecture",
+      "id": 48907843,
+      "title": "Introduction to Databricks Jobs",
+      "asset": {
+        "_class": "asset",
+        "id": 69528961,
+        "asset_type": "Video",
+        "title": "DEA 10.1 V2.mp4",
+        "external_url": "",
+        "filename": "DEA-10.1-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 113,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48907845,
+      "title": "Introduction to Tasks",
+      "asset": {
+        "_class": "asset",
+        "id": 64404183,
+        "asset_type": "Video",
+        "title": "DEA 10.2.mp4",
+        "external_url": "",
+        "filename": "DEA-10.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 114,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48907847,
+      "title": "Create a Databricks Job",
+      "asset": {
+        "_class": "asset",
+        "id": 64404211,
+        "asset_type": "Video",
+        "title": "DEA 10.3.mp4",
+        "external_url": "",
+        "filename": "DEA-10.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 115,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 63576505,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_11-17-20-63d2ba5af37ed8475abfdb3636d61588/original.zip?response-content-disposition=attachment%3B+filename%3Dtop_tech_companies_data.zip&Expires=1773839810&Signature=AkQpmB49VcS40si7kCRA82cZfqja~He7x0hxPPdyWNJjPzxXDMg-qma1HiyaCX5H0pA-3jW-G3guld4hTC5l1gk7xjukRnGY~G0i5MIGDnMbDqmrZYgKnDkOEPpzoQNY4DgTgUWg3YYVbrr3ehqQxCetgYk9RjNzb7~gROqYnDrpPbQ1wlsY-i0kPbNF1AnrI2w50Ppj8cAAOhUujXCpegnRrDwZv8W3TTZw2JaOU0Nnld6ltJQC1BjrKQaiK7lAyGlkfx~Y1wIzzap9mGPcZhFrKBze5Ev5AWrhYsi3hvd0yvFUcKeuUB7M4sdYZATXquqpAff4wzNGamC2dz-5tA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "top-tech-companies-data.zip",
+          "external_url": "",
+          "title": "top_tech_companies_data.zip"
+        },
+        {
+          "_class": "asset",
+          "id": 63576525,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_11-18-15-521ff2957168c215b76442a4221e32cb/original.dbc?response-content-disposition=attachment%3B+filename%3Ddea05-databricks-jobs.dbc&Expires=1773839810&Signature=1vKTEfOrovWpKtoO-CF3XtBbHHydOw8gq8Q4qJaww0qvM1iZBGKCsPy1HxmJv5Wanxsu9XdlzX-BTox9jMETAgK1LG-PQWZZqh5AEJUtkCmnVRRc9qKWbkdTOyGopnvaiHB07h5A3CS8KAoP48Hh-ueuL~xz-vDzJtoYhJt56wRBhjUt-SAr-7yMoclBP9bvm44JdboXYtGU7Ho~RTwC4hZz1K9VBJGIer2ehsQpRp1hvZb~m~kWB4jHxrgSW0jShM9k7BuWdPD7epbB23tiwS0mw41SNfYIpwMqiw3odAKLTr~xdlneT33PmzFANNngPQvYEOUyDXzH-7Pz-yFaTQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "dea05-databricks-jobs.dbc",
+          "external_url": "",
+          "title": "dea05-databricks-jobs.dbc"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 48907853,
+      "title": "Running & Monitoring Jobs",
+      "asset": {
+        "_class": "asset",
+        "id": 63297325,
+        "asset_type": "Video",
+        "title": "DEA 10.4.mp4",
+        "external_url": "",
+        "filename": "DEA-10.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 116,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48907857,
+      "title": "Schedule & Event Triggers",
+      "asset": {
+        "_class": "asset",
+        "id": 63297319,
+        "asset_type": "Video",
+        "title": "DEA 10.5.mp4",
+        "external_url": "",
+        "filename": "DEA-10.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 117,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48907861,
+      "title": "Debug a failed job",
+      "asset": {
+        "_class": "asset",
+        "id": 63297343,
+        "asset_type": "Video",
+        "title": "DEA 10.6.mp4",
+        "external_url": "",
+        "filename": "DEA-10.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 118,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49347847,
+      "title": "Complex Triggers using CRON",
+      "asset": {
+        "_class": "asset",
+        "id": 64404173,
+        "asset_type": "Video",
+        "title": "DEA 10.7.mp4",
+        "external_url": "",
+        "filename": "DEA-10.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 119,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 63886471,
+          "download_urls": null,
+          "asset_type": "ExternalLink",
+          "filename": "CRON-Syntax-Documentation",
+          "external_url": "https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html",
+          "title": "CRON Syntax Documentation"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 11668503,
+      "title": "Databricks SQL",
+      "object_index": 17
+    },
+    {
+      "_class": "lecture",
+      "id": 49109097,
+      "title": "Databricks SQL Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 64404301,
+        "asset_type": "Video",
+        "title": "DEA 14.1.mp4",
+        "external_url": "",
+        "filename": "DEA-14.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 120,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49109099,
+      "title": "Create SQL Warehouse",
+      "asset": {
+        "_class": "asset",
+        "id": 64404323,
+        "asset_type": "Video",
+        "title": "DEA 14.2.mp4",
+        "external_url": "",
+        "filename": "DEA-14.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 121,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49109105,
+      "title": "Databricks SQL - Query & Visualization",
+      "asset": {
+        "_class": "asset",
+        "id": 64404335,
+        "asset_type": "Video",
+        "title": "DEA 14.3.mp4",
+        "external_url": "",
+        "filename": "DEA-14.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 122,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49109113,
+      "title": "Databricks - SQL Alerts",
+      "asset": {
+        "_class": "asset",
+        "id": 64404333,
+        "asset_type": "Video",
+        "title": "DEA 14.4.mp4",
+        "external_url": "",
+        "filename": "DEA-14.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 123,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11655179,
+      "title": "Data Governance",
+      "object_index": 18
+    },
+    {
+      "_class": "lecture",
+      "id": 49058693,
+      "title": "Introduction to Data Governance",
+      "asset": {
+        "_class": "asset",
+        "id": 63503639,
+        "asset_type": "Video",
+        "title": "DEA 12.1.mp4",
+        "external_url": "",
+        "filename": "DEA-12.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 124,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49058703,
+      "title": "Data Governance using Unity Catalog",
+      "asset": {
+        "_class": "asset",
+        "id": 63503653,
+        "asset_type": "Video",
+        "title": "DEA 12.2.mp4",
+        "external_url": "",
+        "filename": "DEA-12.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 125,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49058711,
+      "title": "Data Discovery, Audit & Lineage Demo",
+      "asset": {
+        "_class": "asset",
+        "id": 64404327,
+        "asset_type": "Video",
+        "title": "DEA 12.3.mp4",
+        "external_url": "",
+        "filename": "DEA-12.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 126,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49058723,
+      "title": "Data Access Control & Security",
+      "asset": {
+        "_class": "asset",
+        "id": 63503689,
+        "asset_type": "Video",
+        "title": "DEA 12.4.mp4",
+        "external_url": "",
+        "filename": "DEA-12.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 127,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49204933,
+      "title": "Legacy Privilege Model",
+      "asset": {
+        "_class": "asset",
+        "id": 64404393,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 128,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 12307553,
+      "title": "Delta Sharing & Lakehouse Federation [New July 2025 Syllabus]",
+      "object_index": 19
+    },
+    {
+      "_class": "lecture",
+      "id": 51924927,
+      "title": "Introduction to Delta Sharing [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 67348023,
+        "asset_type": "Video",
+        "title": "DEA 17.1.mp4",
+        "external_url": "",
+        "filename": "DEA-17.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 129,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 51924945,
+      "title": "Databricks to Databricks Delta Sharing Demo [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 67348057,
+        "asset_type": "Video",
+        "title": "DEA 17.2.mp4",
+        "external_url": "",
+        "filename": "DEA-17.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 130,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 51924955,
+      "title": "Databricks Open Delta Sharing Demo [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 67348013,
+        "asset_type": "Video",
+        "title": "DEA 17.3.mp4",
+        "external_url": "",
+        "filename": "DEA-17.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 131,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 67671227,
+          "download_urls": null,
+          "asset_type": "ExternalLink",
+          "filename": "Open-Sharing-Power-BI",
+          "external_url": "https://docs.databricks.com/aws/en/delta-sharing/read-data-open#power-bi-read-shared-data",
+          "title": "Open Sharing - Power BI"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 51924965,
+      "title": "Introduction to Lakehouse Federation [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 67348027,
+        "asset_type": "Video",
+        "title": "DEA 17.4.mp4",
+        "external_url": "",
+        "filename": "DEA-17.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 132,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 51924977,
+      "title": "Lakehouse Federation Demo [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 67348053,
+        "asset_type": "Video",
+        "title": "DEA 17.5.mp4",
+        "external_url": "",
+        "filename": "DEA-17.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 133,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 12338487,
+      "title": "Databricks Connect [New July 2025 Syllabus]",
+      "object_index": 20
+    },
+    {
+      "_class": "lecture",
+      "id": 52059315,
+      "title": "Introduction to Databricks Connect [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 67535509,
+        "asset_type": "Video",
+        "title": "DEA 18.1.mp4",
+        "external_url": "",
+        "filename": "DEA-18.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 134,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 52059323,
+      "title": "Local Development Environment Set-up [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 67535537,
+        "asset_type": "Video",
+        "title": "DEA 18.2.mp4",
+        "external_url": "",
+        "filename": "DEA-18.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 135,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 67671475,
+          "download_urls": null,
+          "asset_type": "ExternalLink",
+          "filename": "Python-Download",
+          "external_url": "https://www.python.org/downloads/",
+          "title": "Python Download"
+        },
+        {
+          "_class": "asset",
+          "id": 67671507,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-08-25_15-19-00-14e0063d2dc594d22a03d082828bed2f/original.py?response-content-disposition=attachment%3B+filename%3Dcompanies_report.py&Expires=1773839810&Signature=6XyVagkgwRaF3R2M-~Wncdcog0dTwPhSzeQs3roWGqiz89s-hKUaMic66hl-CxEtsRRVcb1Cu3g14CCrFdtGmiVH5-jbr2LZjsr~9mHRgsz4CjMWmqA2LbP0KfJN6Kg~6ZKRApJaC~i0-E-bUPL0WJ4APz51stylU2ju9XWvOLEnU1Gywc6gH78Xe6-vcFCwJqmCOIG2Qb-m2GQJjOkMlHG1hBqN1OkXOqY0Al8hvHXT6ySQlc6Zf8ReI6m715sH5R0tQqy2tlysOOFg5yjIg7BhWsWb0zo71P~3fqK34Q5cgneiMcLHrPhH2uGmcVRdJkrvPmaA306lVAzv8MVLgg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "companies-report.py",
+          "external_url": "",
+          "title": "companies_report.py"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 52059335,
+      "title": "Databricks Connect Set-up [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 67535543,
+        "asset_type": "Video",
+        "title": "DEA 18.3.mp4",
+        "external_url": "",
+        "filename": "DEA-18.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 136,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 67671521,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-08-25_15-19-14-e6720973eb572bdc76a83ad9069edd4e/original.ipynb?response-content-disposition=attachment%3B+filename%3Dcompanies_report.ipynb&Expires=1773839810&Signature=6VId~r8iPehUlOGEZlIKM8e-ahWw8GiJ3HGPESuwzpNr6PtyuIwjaGPhx~FRqCh9yoHmrVo9f3IRiO-DuFWZmlx3V4KgtagmzUPAJaYFp75j~GL0PIuPXXZTv1Vf2ETgSmFolNAp0y3wbSCfTxvlhVw-UGZNzx5NO-2mxMDFPXI2bQ8FXpFnVKPYydLGFUbdsOVxAmKT6TfUhhnqlTNHPPQN6BnoMtjfozJmpqufg13UXWTN2BExjz1xTA~bPYMjv2vWYrR7BD7Oaw5gVhE~8~LFRx1E-jHHwoc~GnYlsPpKVH64fvzMAEB~7Yq3Qi-hByJPV2rwcTm0mUdaJ2k6eQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "companies-report.ipynb",
+          "external_url": "",
+          "title": "companies_report.ipynb"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 12351927,
+      "title": "Databricks Asset Bundles [New July 2025 Syllabus]",
+      "object_index": 21
+    },
+    {
+      "_class": "lecture",
+      "id": 52112427,
+      "title": "Introduction to Databricks Asset Bundles [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 67604955,
+        "asset_type": "Video",
+        "title": "DEA 19.1.mp4",
+        "external_url": "",
+        "filename": "DEA-19.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 137,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 52112435,
+      "title": "Structure of Databricks Asset Bundles [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 67604949,
+        "asset_type": "Video",
+        "title": "DEA 19.2.mp4",
+        "external_url": "",
+        "filename": "DEA-19.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 138,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 52112439,
+      "title": "Deployment to Databricks Workspaces - Demo [New July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 67604979,
+        "asset_type": "Video",
+        "title": "DEA 19.3.mp4",
+        "external_url": "",
+        "filename": "DEA-19.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 139,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 67671563,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-08-25_15-21-23-9d6339f1690f4b5b3a82c29dc21de89e/original.yml?response-content-disposition=attachment%3B+filename%3Ddatabricks.yml&Expires=1773839810&Signature=aiS0YRDpU4e5KHl1tqoxJDggQvwEwL01onKLX5m58dIH3axkSyOniuKiXzC8SNfylhrk6yy6LQVELkLt9qOLIhxoCYKiDl10mbJSG2tVb8HTZdf8KyOm1UjPv8sfwuyJ9eqo0qgE5~OzELjAS8hqUTQ-6aSGP1Kn~qJVO3wznSfIqeDNFjFxDU457fuxFda~lKI0dCntcO~NV8korGgRLOxD07LI003FnHlMG1FspMULoCL-FW-Iy7yrwadwcaGQVldZHnLoa87g7tMaYiHPpqmiI8HeHyIDHjhNP6RFxEFyG5QpaJKELV0yDAC~w9KcsiFfbcphpRak2YYV6nVOeg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "databricks.yml",
+          "external_url": "",
+          "title": "databricks.yml"
+        },
+        {
+          "_class": "asset",
+          "id": 67671575,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-08-25_15-21-35-894307a89f1c41d1f2554dd9f8962511/original.ipynb?response-content-disposition=attachment%3B+filename%3Ddab_demo_notebook.ipynb&Expires=1773839810&Signature=zWnKaA8UgJUIM2C50IJM5dRWNaZ4dJwwN1PX3ZBJGvjBeLUIfQHKfNQOf~GU8jrQSLwIU95h-7Q8e95T0bNwIOxywcTEGdi7NTQlAcOyout31-j~-JuZ8OnSuuwJsuhk7blGwL5IGdAg29l51zb8n2qUTaTdC~RDInsnNJl7SFt35VI7nosXP5f8YIWCVDVBYmY02goTocqnYybchxPf7SipTEMc8CgS37~gowdRJoXobZx24SkE3Q1sl82q5y36ORPYBuQJOdjGhXvVZWDwlcly8Kd5ST9-k6~zxdUuDuNGqE8O7psQ6jUYBakVYrdqD9KmSVeKUC4kB98cFsmc0g__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "dab-demo-notebook.ipynb",
+          "external_url": "",
+          "title": "dab_demo_notebook.ipynb"
+        },
+        {
+          "_class": "asset",
+          "id": 67671595,
+          "download_urls": null,
+          "asset_type": "ExternalLink",
+          "filename": "Databricks-CLI-Install",
+          "external_url": "https://docs.databricks.com/aws/en/dev-tools/cli/install#curl-installation-for-linux-macos-and-windows",
+          "title": "Databricks CLI Install"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 52163473,
+      "title": "Essential CLI Commands for Asset Bundles",
+      "asset": {
+        "_class": "asset",
+        "id": 67672077,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 140,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11606833,
+      "title": "Certification Exam Guide & Practice Exam [Updated July 2025 Syllabus]",
+      "object_index": 22
+    },
+    {
+      "_class": "lecture",
+      "id": 49729543,
+      "title": "Disclaimer & Use of Practice Exams",
+      "asset": {
+        "_class": "asset",
+        "id": 64404719,
+        "asset_type": "Video",
+        "title": "DEA 15.2.mp4",
+        "external_url": "",
+        "filename": "DEA-15.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 141,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49113299,
+      "title": "Certification Exam Overview [Updated July 2025 Syllabus]",
+      "asset": {
+        "_class": "asset",
+        "id": 68025259,
+        "asset_type": "Video",
+        "title": "DEA 15.1 V2.mp4",
+        "external_url": "",
+        "filename": "DEA-15.1-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 142,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 63588591,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_19-48-39-e101003a208f0e6b4986f09c25be9fb2/original.pdf?response-content-disposition=attachment%3B+filename%3DOfficial-PracticeExam-DataEngineerAssociate.pdf&Expires=1773839810&Signature=K6vqs~pJae5xePAN2hqevzFc060BiaRIYt0BZ3RW96q0lraQlGxMxxf52ZORn4wKOVspdAuyBvx5C043IKU3-sKQfabzC-3X1YaIeKoooHPk3LH-yiDJVmP0gZau98otgiyhQE1Wwq9s9WFcL5eC0YJymTRTxEHowBrXDfB-UxOpi143HQy-G7SVIBS2~fARDU5ZfD-VHWJRGf-M~buIc27G4kZ0jcLXt37JpuNEGuq8~cOZdWmZIX699Jb9pll3XwZcjj3VnyRRadT8HkPLiFV~Dh1F38lj1Doqm23gHpJgd3k9MZZH2wEa0T~51AaV20EawoGNRTp1MtB0319Ywg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "Official-PracticeExam-DataEngineerAssociate.pdf",
+          "external_url": "",
+          "title": "Official-PracticeExam-DataEngineerAssociate.pdf"
+        },
+        {
+          "_class": "asset",
+          "id": 63588603,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2025-03-12_19-48-40-ac668922baa9604c354679d8156d968d/original.pdf?response-content-disposition=attachment%3B+filename%3Ddatabricks-certified-data-engineer-associate-exam-guide.pdf&Expires=1773839811&Signature=pvyydBrkTDLZEaA6Lnzzx7bMMt2z~hZfSMKXrfOCeNfXU-SvaDGKfa-lxaDP7XiRivva7qAI5an1EvtBLtPsEkP7jNqaZ20dnf1jz5TA78~RQqy1bd7OiVubVEoBabLnXGTYVltj48i2f2rKIUo0UAXZN5c24Di~KqCO-2fBP-I8mI9GK6X-V-z821qF61ulFmmrLxGWrbbdOotSPa7iNQv-In6l4mJ~dW6GtkUU80hirf6w1T-MvZa20E29DnW1czNudIfQRbczHxU5HeMk94NeIqgmu5IdLrZI2KwET8yhWU4FWjWGhmdL88uEQ8hzc8V6eKTjTjZYEJqw6KKz-Q__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "asset_type": "File",
+          "filename": "databricks-certified-data-engineer-associate-exam-guide.pdf",
+          "external_url": "",
+          "title": "databricks-certified-data-engineer-associate-exam-guide.pdf"
+        }
+      ]
+    },
+    {
+      "_class": "quiz",
+      "id": 6854429,
+      "title": "Practice Exam 1 - Databricks Certified Data Engineer Associate [Updated July 2025 Syllabus]",
+      "object_index": 1
+    },
+    {
+      "_class": "chapter",
+      "id": 11691335,
+      "title": "Next Steps",
+      "object_index": 23
+    },
+    {
+      "_class": "lecture",
+      "id": 49729399,
+      "title": "Good Luck",
+      "asset": {
+        "_class": "asset",
+        "id": 64404523,
+        "asset_type": "Video",
+        "title": "DEA 16.1.mp4",
+        "external_url": "",
+        "filename": "DEA-16.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 143,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49201127,
+      "title": "Bonus Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 66594537,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 144,
+      "supplementary_assets": []
+    }
+  ]
+}

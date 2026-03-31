@@ -1,0 +1,50 @@
+name: azure-cleanup-runner
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Delete all resources in rg-runner-platform
+        run: |
+          set -euo pipefail
+          RG="rg-runner-platform"
+
+          echo "=== Deleting VMs ==="
+          az vm list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az vm delete --resource-group "$RG" --name {} --yes
+
+          echo "=== Deleting NICs ==="
+          az network nic list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az network nic delete --resource-group "$RG" --name {}
+
+          echo "=== Deleting Public IPs ==="
+          az network public-ip list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az network public-ip delete --resource-group "$RG" --name {}
+
+          echo "=== Deleting Disks ==="
+          az disk list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az disk delete --resource-group "$RG" --name {} --yes
+
+          echo "=== Deleting NSGs ==="
+          az network nsg list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az network nsg delete --resource-group "$RG" --name {}
+
+          echo "=== Deleting VNets ==="
+          az network vnet list --resource-group "$RG" --query "[].name" --output tsv | \
+            xargs -r -I{} az network vnet delete --resource-group "$RG" --name {}
+
+          echo "Cleanup complete."

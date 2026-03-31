@@ -1,0 +1,1 @@
+Welcome Back. In the earlier lecture, we learned about the source control process. Let me quickly recall it. Great! That's all about CI/CD pipeline for a Spark Application for the Hadoop platform. See you again. Keep Learning and Keep Growing.

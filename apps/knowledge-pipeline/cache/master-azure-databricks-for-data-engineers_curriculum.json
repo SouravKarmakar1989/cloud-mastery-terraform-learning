@@ -1,0 +1,1994 @@
+{
+  "count": 103,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 9928414,
+      "title": "Before you start",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 41515990,
+      "title": "Course Prerequisites",
+      "asset": {
+        "_class": "asset",
+        "id": 53628252,
+        "asset_type": "Video",
+        "title": "DB003-Course Prerequisites.mp4",
+        "external_url": "",
+        "filename": "DB003-Course-Prerequisites.mp4",
+        "download_urls": null
+      },
+      "object_index": 1,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41543148,
+      "title": "About the Course",
+      "asset": {
+        "_class": "asset",
+        "id": 53911106,
+        "asset_type": "Video",
+        "title": "DB002-About the Course.mp4",
+        "external_url": "",
+        "filename": "DB002-About-the-Course.mp4",
+        "download_urls": null
+      },
+      "object_index": 2,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41543152,
+      "title": "How to access Course Material and Resources",
+      "asset": {
+        "_class": "asset",
+        "id": 53975212,
+        "asset_type": "Video",
+        "title": "DB003-How to access Course Material and Resources.mp4",
+        "external_url": "",
+        "filename": "DB003-How-to-access-Course-Material-and-Resources.mp4",
+        "download_urls": null
+      },
+      "object_index": 3,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41543156,
+      "title": "Note for Students - Before Start",
+      "asset": {
+        "_class": "asset",
+        "id": 53907094,
+        "asset_type": "Video",
+        "title": "GRR000-Review Request.mp4",
+        "external_url": "",
+        "filename": "GRR000-Review-Request.mp4",
+        "download_urls": null
+      },
+      "object_index": 4,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53965844,
+          "asset_type": "File",
+          "filename": "Notebooks.zip",
+          "title": "Notebooks.zip",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_07-08-05-6b8ed5058aa90f1dce0df9a4be1de243/original.zip?response-content-disposition=attachment%3B+filename%3DNotebooks.zip&Expires=1773839992&Signature=FitywId4lDU0Jlkd-XFcL4mrbWPjq9Fa~OEN0nEGWjHtUhB~88xecel4vWH0-JGsWGjDEYMcu-y2Zk-MgZ8JnsCJeU-UWEQ14XoyHKM9heG~MXorRQpaS2z12~9jpM3PqvMHKCiFVcPHJGyJd5u36GAlopyDYUUpcKNLU1nG1TuCvOBaeg95-QfaIsaBe~Nlq7Y~dVkEVLvdOO0CiBipTwgdzfRJ0aclRvxyIWIfn55chUJDfKe22wnHW3atpn~73HAEvT5qj4WTSjy1mfBm7XB3bFiBjM-tWNjmkD4EJgdZcp0e4sGecYvwgrHXy6wbIK6Yk5UFUVnF1zhc1yCb2Q__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53965848,
+          "asset_type": "File",
+          "filename": "SampleData.zip",
+          "title": "SampleData.zip",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_07-11-04-377ed1c5084a679dc399715a3d4a55f6/original.zip?response-content-disposition=attachment%3B+filename%3DSampleData.zip&Expires=1773839992&Signature=r6AWGYVqy~gqS3CndplhHSXXczn3FsqR~91jncnbspwhUCu6tfqP66yvX~nqkVWgBWI0Y2q9fXwYkzQYWTw-8eYO2kuw9kKSpnI1ZbDf3YfEcqtDG6ZIZyfGbTCNVdWZXWohh558ljX6XebcXGFZ~ErAiC4PGj0C9JDETiZorQKxcYt4FfeVB4CxJOTOEF8cDry9mVeiD9FVIqbTuza2wfxTq-xqQ8hpOL7Qb5zcO3l-neTgXnXSUEDo723iiGXSMYuekXD1AnDChUQdhjN1IQesMOEbnHTyz2c156uloPzwtK0KtZghOnaloRESJZ3my5J-K1T6bBz9JF8wh27LJw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53965856,
+          "asset_type": "File",
+          "filename": "Capstone-Project.zip",
+          "title": "Capstone Project.zip",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_07-11-05-4a8d2871b45265abd65185dd76c3b3c6/original.zip?response-content-disposition=attachment%3B+filename%3DCapstone%2BProject.zip&Expires=1773839992&Signature=pjNQpU4-n0gADpd~VLLA2p9IEYfZNH73UR3BOQ4XwFDvdRa8JiQif2DAMXuqbB7gzvB~fJy2A1sK2L5twrXeSf20Y-pxi~mM4yd0Jo-nRgyXT4isGhK4oovtdndGZmCTcgk9OgzGCeTbXxWTF4EepKIsXjU1qkyyUmIPCjUsuVgV~VDejJkghPPpXHVcNCOoM3xSMQSNO10qr90P7YbvibiHca~PB1drevb1rBBpJD~tu5JMrNhIxzM7YAq4SYaz9XE6zC2p1~~pukXA~DAVa4xzLdcPteJ-8SmyTHXfOtETPN5CR1t~lBgK2ZSYSXLxZl~jCn7EQYmwbvSGpCU80Q__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9934820,
+      "title": "Introduction",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 41543158,
+      "title": "Introduction to Data Engineering",
+      "asset": {
+        "_class": "asset",
+        "id": 53628656,
+        "asset_type": "Video",
+        "title": "DB004-Introduction to Data Engineering.mp4",
+        "external_url": "",
+        "filename": "DB004-Introduction-to-Data-Engineering.mp4",
+        "download_urls": null
+      },
+      "object_index": 5,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41543188,
+      "title": "Apache Spark to Data Engineering Platform",
+      "asset": {
+        "_class": "asset",
+        "id": 53632690,
+        "asset_type": "Video",
+        "title": "DB006-Apache Spark to Data Engineering Platform.mp4",
+        "external_url": "",
+        "filename": "DB006-Apache-Spark-to-Data-Engineering-Platform.mp4",
+        "download_urls": null
+      },
+      "object_index": 6,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41543222,
+      "title": "Introduction to Databricks Platform",
+      "asset": {
+        "_class": "asset",
+        "id": 53633618,
+        "asset_type": "Video",
+        "title": "DB007-Introduction to Databricks Platform.mp4",
+        "external_url": "",
+        "filename": "DB007-Introduction-to-Databricks-Platform.mp4",
+        "download_urls": null
+      },
+      "object_index": 7,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53645326,
+          "asset_type": "File",
+          "filename": "02-Introduction.pdf",
+          "title": "02-Introduction.pdf",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-12-31_05-16-01-bf35b3223f1c0f5b9135b3e90cca1da1/original.pdf?response-content-disposition=attachment%3B+filename%3D02-Introduction.pdf&Expires=1773839992&Signature=S35XNr9oYd1KntjfWvc0fY357ADV3VbFmRkOFjRbIFmcSZwB4SVGsQ3ZbQm8H6S7pIixO3NjreCs59eYAZ4UnBoahujHaodCEAo8sfOq51LFfz-qFuhKSWh21NRl8z6WjlytH8N~BYIFRAjvSOCebMYyMIRc5-ct85SGb8uf3h8Hq9cCKGAWqOYqTth9jmgeJYpDHO0AcF5iJCfcV9f44dXFhtQfIRCZZPbCOl08IjuQFNdw5R4-2xm~p2M6KdpnDcSYCfU2yPgypIKxX7DVrOUASeIe6-eps3vxkMlpgvpqbc8Z231K9azWOoO4sG6mQ8RUq5GrnDtHIlG6hAPuDA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9935768,
+      "title": "Getting Started",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 41549942,
+      "title": "What will you learn in this section",
+      "asset": {
+        "_class": "asset",
+        "id": 53645042,
+        "asset_type": "Video",
+        "title": "DB008-What will you learn in this section.mp4",
+        "external_url": "",
+        "filename": "DB008-What-will-you-learn-in-this-section.mp4",
+        "download_urls": null
+      },
+      "object_index": 8,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41543228,
+      "title": "Creating Azure Cloud Account",
+      "asset": {
+        "_class": "asset",
+        "id": 53628764,
+        "asset_type": "Video",
+        "title": "DB010-Creating Azure Account.mp4",
+        "external_url": "",
+        "filename": "DB010-Creating-Azure-Account.mp4",
+        "download_urls": null
+      },
+      "object_index": 9,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41543232,
+      "title": "Azure Portal Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 53635876,
+        "asset_type": "Video",
+        "title": "DB009-Azure Portal Overview.mp4",
+        "external_url": "",
+        "filename": "DB009-Azure-Portal-Overview.mp4",
+        "download_urls": null
+      },
+      "object_index": 10,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41543240,
+      "title": "Creating Databricks Workspace Service",
+      "asset": {
+        "_class": "asset",
+        "id": 53645124,
+        "asset_type": "Video",
+        "title": "DB011-Creating Databricks Workspace Service.mp4",
+        "external_url": "",
+        "filename": "DB011-Creating-Databricks-Workspace-Service.mp4",
+        "download_urls": null
+      },
+      "object_index": 11,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41547878,
+      "title": "Introduction to Databricks Workspace",
+      "asset": {
+        "_class": "asset",
+        "id": 53645136,
+        "asset_type": "Video",
+        "title": "DB012-Introduction to Databricks Workspace.mp4",
+        "external_url": "",
+        "filename": "DB012-Introduction-to-Databricks-Workspace.mp4",
+        "download_urls": null
+      },
+      "object_index": 12,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41543384,
+      "title": "Azure Databricks Platform Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 53645170,
+        "asset_type": "Video",
+        "title": "DB013-Azure Databricks Platform Architecture.mp4",
+        "external_url": "",
+        "filename": "DB013-Azure-Databricks-Platform-Architecture.mp4",
+        "download_urls": null
+      },
+      "object_index": 13,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53645338,
+          "asset_type": "File",
+          "filename": "03-Getting-Started.pdf",
+          "title": "03-Getting Started.pdf",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-12-31_05-16-21-ddc6211881515ff1c5bc4abd689d396a/original.pdf?response-content-disposition=attachment%3B+filename%3D03-Getting%2BStarted.pdf&Expires=1773839992&Signature=sY00SMxTKJ5nDtQh-uipTLpMJp7VF0ikdaqnol1uPeuh-Z6pF32C2cm0zCd6kVKc2TUkpr-sBis~Z0Uw4e7JfiX2vr22SLjAc1SuVjuNqBTAtuUjNOFuNF5oiRlCp3MZlYtKohCk-I9-NPBPdbmodBnTaEve05H55ggK0mF0B~nGz5yvYuOHk4CwMlvRaST~9Mx3n4SrdPpM0JRez0tt9xELs7zAzYQMLOoGEiVs0uZ0dhLUEdAVZAOJTG0frj1wVrOdJ1dOgruvfRjX8CgAwaacUzo2tXzSRn6MCvogkfCqPzChu-qWWCX8jVEO9Lijw14zaIy59QllbR2Uh98cPA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9937864,
+      "title": "Working in Databricks Workspace",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 41555364,
+      "title": "What will you learn in this section",
+      "asset": {
+        "_class": "asset",
+        "id": 53646954,
+        "asset_type": "Video",
+        "title": "DB014-What will you learn in this section.mp4",
+        "external_url": "",
+        "filename": "DB014-What-will-you-learn-in-this-section.mp4",
+        "download_urls": null
+      },
+      "object_index": 14,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41555368,
+      "title": "How to create Spark Cluster",
+      "asset": {
+        "_class": "asset",
+        "id": 53645774,
+        "asset_type": "Video",
+        "title": "DB015-How to create Spark Cluster.mp4",
+        "external_url": "",
+        "filename": "DB015-How-to-create-Spark-Cluster.mp4",
+        "download_urls": null
+      },
+      "object_index": 15,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41555396,
+      "title": "Working with Databricks Notebook",
+      "asset": {
+        "_class": "asset",
+        "id": 53645756,
+        "asset_type": "Video",
+        "title": "DB016-Working with Databricks Notebook.mp4",
+        "external_url": "",
+        "filename": "DB016-Working-with-Databricks-Notebook.mp4",
+        "download_urls": null
+      },
+      "object_index": 16,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41555400,
+      "title": "Notebook Magic Commands",
+      "asset": {
+        "_class": "asset",
+        "id": 53645758,
+        "asset_type": "Video",
+        "title": "DB017-Notebook Magic Commands.mp4",
+        "external_url": "",
+        "filename": "DB017-Notebook-Magic-Commands.mp4",
+        "download_urls": null
+      },
+      "object_index": 17,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41555402,
+      "title": "Databricks Utilities Package",
+      "asset": {
+        "_class": "asset",
+        "id": 53645754,
+        "asset_type": "Video",
+        "title": "DB018-Databricks Utilities Package.mp4",
+        "external_url": "",
+        "filename": "DB018-Databricks-Utilities-Package.mp4",
+        "download_urls": null
+      },
+      "object_index": 18,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53645988,
+          "asset_type": "File",
+          "filename": "04-Working-in-Databricks-Workspace.pdf",
+          "title": "04-Working in Databricks Workspace.pdf",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-12-31_07-08-18-eabaee1c7e60a08e064aaa7cbe9f658f/original.pdf?response-content-disposition=attachment%3B+filename%3D04-Working%2Bin%2BDatabricks%2BWorkspace.pdf&Expires=1773839992&Signature=hkt4bXwGKE7JxQ2LLM2orZUZmN2mmfCORugpEQsVr1ZRx7TujS-OirvDPIyyYGRAyUaEgBGWsAAmx2j90RZhFOc4uypwrGibxxOa5VStdz23QQxy7qSpPIgUGIQTgW-wlynAVCDReviAvtgdZ523JIG5fD0VXYg5pME5X5P8f9sKH07r9Oe0IZq7xHbPI2VCIgqUDDnWdzfTmxSpdOt98Ov-IQHLRAX8fg4i6m0dYvVJYF3WMZgHthpTfCtaOXDnlq7iN~IZaQw5gEMupLKMTf45AFxpQ7egPvIXX1A8bTLwsI3wx5uDFdFsufl6nPKjuT~eyyVXFB3xK1FEA0sW3Q__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53645992,
+          "asset_type": "File",
+          "filename": "CH4-Working-in-Databricks-Workspace.dbc",
+          "title": "CH4-Working in Databricks Workspace.dbc",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-12-31_07-08-20-340b28ef4a7c98efd85df816ca10edaf/original.dbc?response-content-disposition=attachment%3B+filename%3DCH4-Working%2Bin%2BDatabricks%2BWorkspace.dbc&Expires=1773839992&Signature=mM~A0YxHmg-gc-LdPp9t0v2QpWc9KIQ-PavuROk~JmDfe3nNY32rFt0LB4UakeUmoKmjeNjYIjhHz9-74-LhSWN5EWb7sQoe8~AdOpmX3TQenlO2MbZiGo8EJbuqrcj35lCq0Rfdb~kIRvYjSVAX1l9ZMMJRFYQeln-jkt5YrJ9ng8HxntDbRIdpnNYj2U2pTQjOGosBfIO6peWmd-HghfYsM6isQhT6f7ogsWmiEov5oraZuZd4tvbOvAiEedQis7Xksqfe9ChZcEZDMRKn~S8XaIEFqrC4NowQARAtKQBmqy4EEmQu0JoPwlVLY2rEyWoV71D6HCLwPxrfRhpWXA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9937848,
+      "title": "Working with Databricks File System - DBFS",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 41555346,
+      "title": "What will you learn in this section",
+      "asset": {
+        "_class": "asset",
+        "id": 53663570,
+        "asset_type": "Video",
+        "title": "DB019-What will you learn in this section.mp4",
+        "external_url": "",
+        "filename": "DB019-What-will-you-learn-in-this-section.mp4",
+        "download_urls": null
+      },
+      "object_index": 19,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41555354,
+      "title": "Introduction to DBFS",
+      "asset": {
+        "_class": "asset",
+        "id": 53663816,
+        "asset_type": "Video",
+        "title": "DB020-Introduction to DBFS.mp4",
+        "external_url": "",
+        "filename": "DB020-Introduction-to-DBFS.mp4",
+        "download_urls": null
+      },
+      "object_index": 20,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41556070,
+      "title": "Working with DBFS Root",
+      "asset": {
+        "_class": "asset",
+        "id": 53664048,
+        "asset_type": "Video",
+        "title": "DB021-Working with DBFS Root.mp4",
+        "external_url": "",
+        "filename": "DB021-Working-with-DBFS-Root.mp4",
+        "download_urls": null
+      },
+      "object_index": 21,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41556102,
+      "title": "Mounting ADLS to DBFS",
+      "asset": {
+        "_class": "asset",
+        "id": 53665394,
+        "asset_type": "Video",
+        "title": "DB022-Mounting ADLS to DBFS.mp4",
+        "external_url": "",
+        "filename": "DB022-Mounting-ADLS-to-DBFS.mp4",
+        "download_urls": null
+      },
+      "object_index": 22,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53677922,
+          "asset_type": "File",
+          "filename": "05-Working-with-Databricks-File-System-DBFS.pdf",
+          "title": "05-Working with Databricks File System - DBFS.pdf",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-02_05-46-32-8aa4d0f51f30c79443384e9ecb480382/original.pdf?response-content-disposition=attachment%3B+filename%3D05-Working%2Bwith%2BDatabricks%2BFile%2BSystem%2B-%2BDBFS.pdf&Expires=1773839992&Signature=Wl3m6UN7BS4cLGGDNocnbKKxJgyG2CE4xML6g8BMAKGheHOgwZkW6JE4DaG3k5yQlYJ7e077vxKtteeVxxi8MlLT107Eso8yZ7UDh3B0DuWGq~eVoXt3wt93JnMKsBvmekjLPkF8Jq3IpeSLRV2cTzHS07A8b4J6yfw5-yy7z5SqVoS1cj8p2DyBjW3R12u9kIbVBJHfcHXvg9sjz3UuDgSxiOcvgKBQ23ltBxCT9RJ52eTGBVbJK1w7b6BJOpTaHFn32Za9gFB33sSb2lwAEdDqTPqxA2qd4-WvVa4jml11VQ9P1UIOZLGsI8FCAE62Td7hemXUHP~M2o4q6B4zFg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53677930,
+          "asset_type": "File",
+          "filename": "CH5-Working-with-Databricks-File-System-DBFS.dbc",
+          "title": "CH5-Working with Databricks File System - DBFS.dbc",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-02_05-48-05-5989995f59700937858734fb2952bd91/original.dbc?response-content-disposition=attachment%3B+filename%3DCH5-Working%2Bwith%2BDatabricks%2BFile%2BSystem%2B-%2BDBFS.dbc&Expires=1773839992&Signature=y4AS7B8vKL4JsFCuYMZEtdToumx5IGazBXUQnNbnlrEqCnsNM44X1y-AEOAeWYrQq9BRRYSsubRZngmO4Yr3NxAUCweVcuYKEwf18F~ue1LROQFtsU0Q97997ujLKQmzMWGob-K9c8BuJaxQXOoQSx74EvBYCGh3ah~o1PzNX2y6Sr1NCp7AuADkDDulkeRkEbGjcZkgwWJM9rka-aaBvSTpkEG-wphBKleWRddgw5DcP3WFisMnMO4GGkOxvcK3gTKJo23Ud4NJ2gdPpVgYhqtEQryMpkGem9HNL9QFB32k5w3tAiebyaTMUHEPaukDCnnq~xKg3aP6GQZPOtHttw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53677934,
+          "asset_type": "File",
+          "filename": "people.json",
+          "title": "people.json",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-02_05-48-06-37b91c9f9b1a0bf2321dafffd28d9fa1/original.json?response-content-disposition=attachment%3B+filename%3Dpeople.json&Expires=1773839992&Signature=EYfMjZTW1pbAwY6gSlydHAJqmH1SmmYWmbX9ZV5nUcgB1S7LHggvE0gKu5-VXlhrj-uZoWRmVZclfyhUskddVpqtjloNN1W-jsK9ZTxMLoBt6V-LM~30R~dCt4LCmorvkcdzN1UR5i6KrLhyKPHMwGpEsGcoK2TA~BPMSLQ3I~bFLPdA3d7NGDVeAal-Bg1pMv9DuE2JkSmZs52leMaWaeaDMVoXLj~sc2tj6xCFtqM~zQqFewFnXN-InPzdGLJhBSEpBZauezVkqXciPvoxBbx0qQJZB7CoBN~XEQFT5~d~SwL0V-OOQzeUgM0RQqQ8meHIlokEa~i4CUj-ARQqng__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9937766,
+      "title": "Working with Unity Catalog",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 41589068,
+      "title": "What will you learn in this section",
+      "asset": {
+        "_class": "asset",
+        "id": 53690108,
+        "asset_type": "Video",
+        "title": "DB023-What will you learn in this section.mp4",
+        "external_url": "",
+        "filename": "DB023-What-will-you-learn-in-this-section.mp4",
+        "download_urls": null
+      },
+      "object_index": 23,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41589040,
+      "title": "Introduction to Unity Catalog",
+      "asset": {
+        "_class": "asset",
+        "id": 53690714,
+        "asset_type": "Video",
+        "title": "DB024-Introduction to Unity Catalog.mp4",
+        "external_url": "",
+        "filename": "DB024-Introduction-to-Unity-Catalog.mp4",
+        "download_urls": null
+      },
+      "object_index": 24,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41589046,
+      "title": "Setup Unity Catalog",
+      "asset": {
+        "_class": "asset",
+        "id": 53691958,
+        "asset_type": "Video",
+        "title": "DB025-Setup Unity Catalog.mp4",
+        "external_url": "",
+        "filename": "DB025-Setup-Unity-Catalog.mp4",
+        "download_urls": null
+      },
+      "object_index": 25,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41589052,
+      "title": "Unity Catalog User Provisioning",
+      "asset": {
+        "_class": "asset",
+        "id": 53692834,
+        "asset_type": "Video",
+        "title": "DB026-Unity Catalog User Provisioning.mp4",
+        "external_url": "",
+        "filename": "DB026-Unity-Catalog-User-Provisioning.mp4",
+        "download_urls": null
+      },
+      "object_index": 26,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41589058,
+      "title": "Working with Securable Objects",
+      "asset": {
+        "_class": "asset",
+        "id": 53694086,
+        "asset_type": "Video",
+        "title": "DB027-Working with Securable Objects.mp4",
+        "external_url": "",
+        "filename": "DB027-Working-with-Securable-Objects.mp4",
+        "download_urls": null
+      },
+      "object_index": 27,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53712992,
+          "asset_type": "File",
+          "filename": "06-Setting-up-Unity-Catalog.pdf",
+          "title": "06-Setting up Unity Catalog.pdf",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-03_13-14-34-889d72a7d7cb0fb763c9c4a88b2d7df5/original.pdf?response-content-disposition=attachment%3B+filename%3D06-Setting%2Bup%2BUnity%2BCatalog.pdf&Expires=1773839992&Signature=K~nhFZzqOMEF7pgQ12NevaAVcqxIK7ngz1aRCTn-BlvHSA5vysUMbpyzDGFbGNuDjkoM4RBUX05ZeRd7lDNdADaZH-alAY1Rg90qMKa4dL59MnLMerwKrSYgFkggclUP6jMIUGzHfnOe1QYZ6vvIoTN8K0N6edHQe9j1QdUz9ADezVFFbDMNyEGi0omQe1L8gzpyzhTGyC88~wLWCQ9Fh0g0S3OH56~O1ujRIlxqjgu4J9sbk1GUt01~QzMLKG~ROO-Dqi~EpDYO2RNlkYZO9tTfN4eGwQIP1F5M0Xb0LCmI9yw6BJ~eHVXZJjIOBmfIwq3HTv6vWpVQC7F6hfbYkA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53712996,
+          "asset_type": "File",
+          "filename": "CH6-Working-with-Unity-Catalog.dbc",
+          "title": "CH6-Working with Unity Catalog.dbc",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-03_13-14-48-91ed2946250eed6cdb58d1ca675ae2bf/original.dbc?response-content-disposition=attachment%3B+filename%3DCH6-Working%2Bwith%2BUnity%2BCatalog.dbc&Expires=1773839992&Signature=1eQZH9J5ZNrZwoS1vaOoHvt4l9tVKK~qkDkCGobqTb6zAzyZfiGFyg2~GxkNOIQQnqFrz5cFLMTZNLY8KBJsyXe889AuC-niiMo3BNin2aAPwg4JDbo0npuvQcZBn~mpAmSlRkHZGlaiSh-nTW33aUaIiylstt2pgSRvPG-48sWkhA5g3ml7ueyv4Kvph7z9hHfGTUPgGDM7FXnrEoaFe3fMs3r1zyksr565ycGz5Wfxg1Ke2~xHlpANPyQy~iW1i8pK5VZc6dZNrOqLTKcoDPWjTzt3nut3z2eqopKma3gPdzbbKxD5TgGBBOif1SVUG2FuzTEtl-TyL3awR-z9Lg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9946302,
+      "title": "Working with Delta Lake and Delta Tables",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 41599660,
+      "title": "What will you learn in this section",
+      "asset": {
+        "_class": "asset",
+        "id": 53717498,
+        "asset_type": "Video",
+        "title": "DB028-What will you learn in this section.mp4",
+        "external_url": "",
+        "filename": "DB028-What-will-you-learn-in-this-section.mp4",
+        "download_urls": null
+      },
+      "object_index": 28,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41599664,
+      "title": "Introduction to Delta Lake",
+      "asset": {
+        "_class": "asset",
+        "id": 53717402,
+        "asset_type": "Video",
+        "title": "DB029-Introduction to Delta Lake.mp4",
+        "external_url": "",
+        "filename": "DB029-Introduction-to-Delta-Lake.mp4",
+        "download_urls": null
+      },
+      "object_index": 29,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41607774,
+      "title": "Creating Delta Table",
+      "asset": {
+        "_class": "asset",
+        "id": 53738446,
+        "asset_type": "Video",
+        "title": "DB030-Creating Delta Table.mp4",
+        "external_url": "",
+        "filename": "DB030-Creating-Delta-Table.mp4",
+        "download_urls": null
+      },
+      "object_index": 30,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41607782,
+      "title": "Sharing data for External Delta Table",
+      "asset": {
+        "_class": "asset",
+        "id": 53741344,
+        "asset_type": "Video",
+        "title": "DB031-Sharing data for External Delta Table.mp4",
+        "external_url": "",
+        "filename": "DB031-Sharing-data-for-External-Delta-Table.mp4",
+        "download_urls": null
+      },
+      "object_index": 31,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41607788,
+      "title": "Reading Delta Table",
+      "asset": {
+        "_class": "asset",
+        "id": 53754518,
+        "asset_type": "Video",
+        "title": "DB032-Reading Delta Table.mp4",
+        "external_url": "",
+        "filename": "DB032-Reading-Delta-Table.mp4",
+        "download_urls": null
+      },
+      "object_index": 32,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41607792,
+      "title": "Delta Table Operations",
+      "asset": {
+        "_class": "asset",
+        "id": 53755110,
+        "asset_type": "Video",
+        "title": "DB033-Delta Table Operations.mp4",
+        "external_url": "",
+        "filename": "DB033-Delta-Table-Operations.mp4",
+        "download_urls": null
+      },
+      "object_index": 33,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41607800,
+      "title": "Delta Table Time Travel",
+      "asset": {
+        "_class": "asset",
+        "id": 53771074,
+        "asset_type": "Video",
+        "title": "DB034-Delta Table Time Travel.mp4",
+        "external_url": "",
+        "filename": "DB034-Delta-Table-Time-Travel.mp4",
+        "download_urls": null
+      },
+      "object_index": 34,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41607804,
+      "title": "Convert Parquet to Delta",
+      "asset": {
+        "_class": "asset",
+        "id": 53755406,
+        "asset_type": "Video",
+        "title": "DB035-Convert Parquet to Delta.mp4",
+        "external_url": "",
+        "filename": "DB035-Convert-Parquet-to-Delta.mp4",
+        "download_urls": null
+      },
+      "object_index": 35,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41607810,
+      "title": "Delta Table Schema Validation",
+      "asset": {
+        "_class": "asset",
+        "id": 53790810,
+        "asset_type": "Video",
+        "title": "DB036-Delta Table Schema Validation.mp4",
+        "external_url": "",
+        "filename": "DB036-Delta-Table-Schema-Validation.mp4",
+        "download_urls": null
+      },
+      "object_index": 36,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41607818,
+      "title": "Delta Table Schema Evolution",
+      "asset": {
+        "_class": "asset",
+        "id": 53810176,
+        "asset_type": "Video",
+        "title": "DB037-Delta Table Schema Evolution.mp4",
+        "external_url": "",
+        "filename": "DB037-Delta-Table-Schema-Evolution.mp4",
+        "download_urls": null
+      },
+      "object_index": 37,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41607826,
+      "title": "Look Inside Delta Table",
+      "asset": {
+        "_class": "asset",
+        "id": 53761810,
+        "asset_type": "Video",
+        "title": "DB038-Look Inside Delta Table.mp4",
+        "external_url": "",
+        "filename": "DB038-Look-Inside-Delta-Table.mp4",
+        "download_urls": null
+      },
+      "object_index": 38,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41607834,
+      "title": "Delta Table Utilities and Optimization",
+      "asset": {
+        "_class": "asset",
+        "id": 53812332,
+        "asset_type": "Video",
+        "title": "DB039-Delta Table Utilities and Optimization.mp4",
+        "external_url": "",
+        "filename": "DB039-Delta-Table-Utilities-and-Optimization.mp4",
+        "download_urls": null
+      },
+      "object_index": 39,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53859176,
+          "asset_type": "File",
+          "filename": "07-Working-with-Delta-Lake-and-Delta-Tables.pdf",
+          "title": "07-Working with Delta Lake and Delta Tables.pdf",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-10_05-23-15-b6d3d095418e39c70e023da1c7cea6d7/original.pdf?response-content-disposition=attachment%3B+filename%3D07-Working%2Bwith%2BDelta%2BLake%2Band%2BDelta%2BTables.pdf&Expires=1773839992&Signature=GNHK3OLnTl~vIUBHnONsq3SY78j8Phg~KjN23Od9PUOJ2ovzmXGd4kqzE4GKPzoocPVwq6XoYx4JOZSM7yJRzkXC1EoaQn54PTUGZmpfQop2Ds9F21LJj9bhfdGljfoKN0z1BCNBieR1hl9xBeW5NLZw7DyzxP9XRgpNrmlG~CA2minF1Wbqyp-YlRnKuzOkEvCr2~0vU5NKAUKAmi4cWmzSOhi4R4b2caZ3TWgVbUUsGHRW2YEVoDk5~OtnbfwdDmwz3s4HWvFahboXACp2gZc-nOX3EfKtNuhs3uqCf-giz~6bwvhT3uVvVfKbka8FZdLygJNUYCoPqILHkNdfTw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53859506,
+          "asset_type": "File",
+          "filename": "CH7-Working-with-Delta-Lake-and-Delta-Tables.dbc",
+          "title": "CH7-Working with Delta Lake and Delta Tables.dbc",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-10_05-52-59-12a94fe00423fa8fddd6c7fe4506e59d/original.dbc?response-content-disposition=attachment%3B+filename%3DCH7-Working%2Bwith%2BDelta%2BLake%2Band%2BDelta%2BTables.dbc&Expires=1773839992&Signature=jPkPSNo3LZDyJEu-ol~e-aeYIusQwZuWdxTMd~H87XpsYMyr1CXr1y45qL3fis5ZLQ10CYg9crWN8OZ9Of2wa8bE~2yadyMvJOxulOzZot0fwdmJG6H7ADjC4RbuRaKvF1SGhvVO7i115JvYBX7TI0FAsnF4Y5Q85IOjqeJZTL~iYDbXcTDlelgkBtvFdy4buybx~jqo67Dij66XDbQL62qXWfdhfi9hPSXUD7wQxdaUK0~~8lEGJW3TV~XY1dECgJkCLzs1nq~zLj7s9vRz0~Picf1bq97vdj3tjWTCEuBo46UdPSzPdqVeKhqaS~OqlW3n1sRyM8Y9Moe3XxCB6Q__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53859556,
+          "asset_type": "File",
+          "filename": "CH7-Data-Files.zip",
+          "title": "CH7-Data Files.zip",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-10_05-53-06-b65c6ac852d03938c03d1dcc7043fea6/original.zip?response-content-disposition=attachment%3B+filename%3DCH7-Data%2BFiles.zip&Expires=1773839992&Signature=GnVx5EyDnrJrREXPfmG2osemcBQc4je-E8QiuV4gL42j7JcJFME8KX7~6s34cuDm40ufJZ-rmd7-ZlNk5AC~YP3j26Apbam~SXVDGPbIBpTs9K1MiSyc26VUmcv1pEZpIvcINQtOkDSrAG60FNEunYj9~Dh0Ip8EhpsBc7lnVhELP54dCsu7nQDLoDzzzDWuuJ577RtCyuVbkJs4CxjioQwcI9WsDaycnmR6T4IZGz5fUNO8KDyHLBUWISoV0NiO87hVS4GPS9lZ0uYze9rZQ9FV7TdCRAEfr1uPeR3J~yAP0ZVYXvtmkQFDkLxz~mW1~2J1acZP0neHPGAItZ8I1g__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9976848,
+      "title": "Working with Databricks Incremental Ingestion Tools",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 41718070,
+      "title": "What will you learn in this section",
+      "asset": {
+        "_class": "asset",
+        "id": 53891978,
+        "asset_type": "Video",
+        "title": "DB040-What will you learn in this section.mp4",
+        "external_url": "",
+        "filename": "DB040-What-will-you-learn-in-this-section.mp4",
+        "download_urls": null
+      },
+      "object_index": 40,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718076,
+      "title": "Architecture and Need for Incremental Ingestion",
+      "asset": {
+        "_class": "asset",
+        "id": 53892186,
+        "asset_type": "Video",
+        "title": "DB041-Architecture and Need for Incremental Ingestion.mp4",
+        "external_url": "",
+        "filename": "DB041-Architecture-and-Need-for-Incremental-Ingestion.mp4",
+        "download_urls": null
+      },
+      "object_index": 41,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718080,
+      "title": "Using Copy Into with Manual Schema Evolution",
+      "asset": {
+        "_class": "asset",
+        "id": 53892914,
+        "asset_type": "Video",
+        "title": "DB042-Using Copy Into with Manual Schema Evolution.mp4",
+        "external_url": "",
+        "filename": "DB042-Using-Copy-Into-with-Manual-Schema-Evolution.mp4",
+        "download_urls": null
+      },
+      "object_index": 42,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718082,
+      "title": "Using Copy Into with Automatic Schema Evolution",
+      "asset": {
+        "_class": "asset",
+        "id": 53895012,
+        "asset_type": "Video",
+        "title": "DB043-Using Copy Into with Automatic Schema Evolution.mp4",
+        "external_url": "",
+        "filename": "DB043-Using-Copy-Into-with-Automatic-Schema-Evolution.mp4",
+        "download_urls": null
+      },
+      "object_index": 43,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718084,
+      "title": "Streaming Ingestion with Manual Schema Evolution",
+      "asset": {
+        "_class": "asset",
+        "id": 53895242,
+        "asset_type": "Video",
+        "title": "DB044-Streaming Ingestion with Manual Schema Evolution.mp4",
+        "external_url": "",
+        "filename": "DB044-Streaming-Ingestion-with-Manual-Schema-Evolution.mp4",
+        "download_urls": null
+      },
+      "object_index": 44,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718086,
+      "title": "Streaming Ingestion with Automatic Schema Evolution",
+      "asset": {
+        "_class": "asset",
+        "id": 53895530,
+        "asset_type": "Video",
+        "title": "DB045-Streaming Ingestion with Automatic Schema Evolution.mp4",
+        "external_url": "",
+        "filename": "DB045-Streaming-Ingestion-with-Automatic-Schema-Evolution.mp4",
+        "download_urls": null
+      },
+      "object_index": 45,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718088,
+      "title": "Introduction to Databricks Autoloader",
+      "asset": {
+        "_class": "asset",
+        "id": 53911388,
+        "asset_type": "Video",
+        "title": "DB046-Introduction to Databricks Autoloader.mp4",
+        "external_url": "",
+        "filename": "DB046-Introduction-to-Databricks-Autoloader.mp4",
+        "download_urls": null
+      },
+      "object_index": 46,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718096,
+      "title": "Autoloader with Automatic Schema Evolution",
+      "asset": {
+        "_class": "asset",
+        "id": 53916892,
+        "asset_type": "Video",
+        "title": "DB047-Autoloader with Automatic Schema Evolution.mp4",
+        "external_url": "",
+        "filename": "DB047-Autoloader-with-Automatic-Schema-Evolution.mp4",
+        "download_urls": null
+      },
+      "object_index": 47,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53975196,
+          "asset_type": "File",
+          "filename": "08-Working-with-Databricks-Incremental-Ingestion-Tools.pdf",
+          "title": "08-Working with Databricks Incremental Ingestion Tools.pdf",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_14-43-51-03b68c56e8c62d52e15213bb63b23a33/original.pdf?response-content-disposition=attachment%3B+filename%3D08-Working%2Bwith%2BDatabricks%2BIncremental%2BIngestion%2BTools.pdf&Expires=1773839992&Signature=4PFbfiw1vJgRrWSZyEx2nE77iZ2PVr34sQuj~0Pf5mE2bFei~T~tHbP4deSBXEopJM1yoVsQy0kxGvMe7s~tjXkVspfWF5v-ib6U3tVFdHd2tGrgJ8VZxFd-~gQeASm7NyZjKDi4PbRZAQ~F7Ml5Of6RYBYMde-7DJpSxUerLQObztOpb-fTTi5eth6QMinRZm2nIyS2IXyGnaCZWDxvXMjxdlNJcKNrgTrUX-sdHvfzpJFfbDMDIW3DrfOR7cGbM4U3slEOu7vFkuwk9VbPxo0PtMg~aANRDZrLpzxSrbrynfkRAVWjK2JoxB6M22gDLdu23fVgoR8dIMMH6tATcQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53975206,
+          "asset_type": "File",
+          "filename": "CH8-Working-with-Databricks-Incremental-Ingestion-Tools.dbc",
+          "title": "CH8-Working with Databricks Incremental Ingestion Tools.dbc",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_14-44-15-8ebc00d84a71a9e2ddd9303405c5bcaa/original.dbc?response-content-disposition=attachment%3B+filename%3DCH8-Working%2Bwith%2BDatabricks%2BIncremental%2BIngestion%2BTools.dbc&Expires=1773839992&Signature=a5FF0awSCSvVFXdNkDBu4N3d8QqPVYIWpwkZMiHOPZWkZv~hJfos7xW0C5sw8cplwimptAq36zH-RkHRFE7uZ1y8EECuKQBwXdy-~JVlR22IfveVqXPNqlRSBH4VdWu4kY0VQGr8oVSaWEddajauzc95iVVfNXT1iJ~H-x8q17NYcCezoZjcoqOk2cuRURJ2e6sdOE~eH889YEmn-9ClwOuBrVF4uAFX9BJDpaLLYv0julKLLx~guhWsf9GBaGK~TIDXnGHZxDwwXMV8KmXeszwWSG37RXsMfphzx97RZH0yIebhFNZ4Up39SWqI0QWLj3YnSKs1L8sxbzz8DSd3BQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53975218,
+          "asset_type": "File",
+          "filename": "CH8-Data-Files.zip",
+          "title": "CH8-Data Files.zip",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_14-47-21-7e24ab66b8620b14b5d1da1b22142080/original.zip?response-content-disposition=attachment%3B+filename%3DCH8-Data%2BFiles.zip&Expires=1773839992&Signature=ZaNDPxna0JkQR43TJwIwcXBW0B3sUqeihZNknHsKXNysCWElNHbDV~TJpEM0UnCBTJkf6oGIWjBb0DQFaz3h4Ed3geYB8Bmyk5GRht55DaWhYNXAwBMLvSRDedIQVAT4v1hnBEN4zW1LmKw8zeKzKnVwWPeJ3g6BTf3EGJk6KrQuElv60r2OoZY0ZdhWa0Ia0zbeffTGJuLJAa1MJ887P4YH4Eseh8EfJmqQ898kvUFwK3PU9GhOAdpa-fFuzl2AKDlrmBRi5kd92qHHw7VHkcbJGOfpG4v2syfj~BnhVkSO7PqZOkxjnGy1nkG0-tDC0XrGXH6TUh~Rile5t3~l7g__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9976876,
+      "title": "Working with Databricks Delta Live Tables (DLT)",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 41774174,
+      "title": "What will you learn in this section",
+      "asset": {
+        "_class": "asset",
+        "id": 53963284,
+        "asset_type": "Video",
+        "title": "DB048-What will you learn in this section.mp4",
+        "external_url": "",
+        "filename": "DB048-What-will-you-learn-in-this-section.mp4",
+        "download_urls": null
+      },
+      "object_index": 48,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718182,
+      "title": "Introduction to Databricks DLT",
+      "asset": {
+        "_class": "asset",
+        "id": 53935504,
+        "asset_type": "Video",
+        "title": "DB049-Introduction to Databricks DLT.mp4",
+        "external_url": "",
+        "filename": "DB049-Introduction-to-Databricks-DLT.mp4",
+        "download_urls": null
+      },
+      "object_index": 49,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41719044,
+      "title": "Understand DLT Use Case Scenario",
+      "asset": {
+        "_class": "asset",
+        "id": 53935880,
+        "asset_type": "Video",
+        "title": "DB050-Understand DLT Use Case Scenario.mp4",
+        "external_url": "",
+        "filename": "DB050-Understand-DLT-Use-Case-Scenario.mp4",
+        "download_urls": null
+      },
+      "object_index": 50,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41719284,
+      "title": "Setup DLT Scenario Dataset",
+      "asset": {
+        "_class": "asset",
+        "id": 53936066,
+        "asset_type": "Video",
+        "title": "DB051-Setup DLT Scenario Dataset.mp4",
+        "external_url": "",
+        "filename": "DB051-Setup-DLT-Scenario-Dataset.mp4",
+        "download_urls": null
+      },
+      "object_index": 51,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41719046,
+      "title": "Creating DLT Workload in SQL",
+      "asset": {
+        "_class": "asset",
+        "id": 53938472,
+        "asset_type": "Video",
+        "title": "DB052-Creating DLT Workload in SQL.mp4",
+        "external_url": "",
+        "filename": "DB052-Creating-DLT-Workload-in-SQL.mp4",
+        "download_urls": null
+      },
+      "object_index": 52,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41719048,
+      "title": "Creating DLT Pipeline for your Workload",
+      "asset": {
+        "_class": "asset",
+        "id": 53947532,
+        "asset_type": "Video",
+        "title": "DB053-Creating DLT Pipeline for your Workload.mp4",
+        "external_url": "",
+        "filename": "DB053-Creating-DLT-Pipeline-for-your-Workload.mp4",
+        "download_urls": null
+      },
+      "object_index": 53,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41719050,
+      "title": "Creating DLT Workload in Python",
+      "asset": {
+        "_class": "asset",
+        "id": 53964302,
+        "asset_type": "Video",
+        "title": "DB054-Creating DLT Workload in Python.mp4",
+        "external_url": "",
+        "filename": "DB054-Creating-DLT-Workload-in-Python.mp4",
+        "download_urls": null
+      },
+      "object_index": 54,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53975252,
+          "asset_type": "File",
+          "filename": "09-Working-with-Databricks-Delta-Live-Tables-DLT.pdf",
+          "title": "09-Working with Databricks Delta Live Tables (DLT).pdf",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_14-47-24-a70ee8b97cc17f9afdbfa88463b6fb26/original.pdf?response-content-disposition=attachment%3B+filename%3D09-Working%2Bwith%2BDatabricks%2BDelta%2BLive%2BTables%2B%2528DLT%2529.pdf&Expires=1773839992&Signature=o~w5k-AiIB-4wEV98M0lbldGhY9gzUYL4-Yvd-JhrUAdZghxX7MhnxKApVtksDKpGMMmxokabmcVUFlD5lyGz4qitSIf5Pko9PR4R3VYpJ9Wb4Tn6plANZ1GRDJdcqt5kZHIxjtS0eggQVCyUNuUfudPqt7MFCtfhUetvzpVFRNaFh0GMXexQL9dAdodn717ApzXu8SOvEYwk5KDrkc1aC0RHZrVwWsCf01LltL6uMzdVCGy8MOSMPut6hWobSZqelLW5I4mAFw647Q2s2S5HJYKnfk7gtoAdppOfkVfAPmjt8xV94VXia2wMlzxWJLGSOkv0otKU0JTtr~lU8ttpA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53975260,
+          "asset_type": "File",
+          "filename": "CH9-Working-with-Databricks-Delta-Live-Tables-DLT.dbc",
+          "title": "CH9-Working with Databricks Delta Live Tables (DLT).dbc",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_14-47-24-fed5bcbbd80128b7ad0af2e28ec81224/original.dbc?response-content-disposition=attachment%3B+filename%3DCH9-Working%2Bwith%2BDatabricks%2BDelta%2BLive%2BTables%2B%2528DLT%2529.dbc&Expires=1773839992&Signature=2gHwhDs-NF0yby7iCtsaUaQRAJRb3agE3ObjEQLA44WVavOnEQS0L3rM4JMwfNM5sSKAzgFT0OCL5wT3lZulZPzLNs4tt~rdk0FAuzIa7zAhps4OPfy~-K~AesGs66hU6mOYtPVPEo1rkihcItBzRXyMsRdTFpzoiHDOR0~W-BBvjAts28dRbYM3yPpQuDqxDNUf53XSd6pu2xOPBHhU8SWt~id9nvm8vFMwxo34vM53Bb1hoBVkD1fecSY6KeQT10LPNOHhQm1HiyCN8swlT1pHsvZ6JgejMzHDxR1hXxu9NfTUu-iRGdbJ7Bf6IF-nHhGoD0whcliELa2PQ15nvA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53975306,
+          "asset_type": "File",
+          "filename": "CH9-Data-Files.zip",
+          "title": "CH9-Data Files.zip",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_14-47-58-a5abb2ec4e4b1bd4eaf4027641e218e5/original.zip?response-content-disposition=attachment%3B+filename%3DCH9-Data%2BFiles.zip&Expires=1773839992&Signature=yFoNW~m7oft1CIoFDjZzhUQhz~CBrOka86hmEAT2Bui-L6eT6nDpWOMaEiDtfkyJRWu1QmU~KZWsJqGk4EoblbdzGgbd9w1kQFzj8wU118snIyAr0E0q1TKLzilOEeJ2yzX1Uj8qF8jH6U1Z5FCqeSI-snf-6GatoQL-1rVhoaBNtDLCWb0xHc5vaGhZtcwv9YBuHng6DecDg5x0FdQoMtY9hF0gH1pMiULV9DtwcWyk-x6dqh3rcgcakY1ZQXEqnEamb5lbaYUc7fGtvEemcUbib8mWAnLCfjhUJPtp5JdN5Rryd7dw9okIimgXmPqkfMi2-IGDnbsuuuVa-V-2NQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9976878,
+      "title": "Databricks Project and Automation Features",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 41805542,
+      "title": "What will you learn in this section",
+      "asset": {
+        "_class": "asset",
+        "id": 53970316,
+        "asset_type": "Video",
+        "title": "DB055-What will you learn in this section.mp4",
+        "external_url": "",
+        "filename": "DB055-What-will-you-learn-in-this-section.mp4",
+        "download_urls": null
+      },
+      "object_index": 55,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718188,
+      "title": "Working with Databricks Repos",
+      "asset": {
+        "_class": "asset",
+        "id": 53970826,
+        "asset_type": "Video",
+        "title": "DB056-Working with Databricks Repos.mp4",
+        "external_url": "",
+        "filename": "DB056-Working-with-Databricks-Repos.mp4",
+        "download_urls": null
+      },
+      "object_index": 56,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41719088,
+      "title": "Working with Databricks Workflows",
+      "asset": {
+        "_class": "asset",
+        "id": 53861140,
+        "asset_type": "Video",
+        "title": "DB055-Working with Databricks Workflows.mp4",
+        "external_url": "",
+        "filename": "DB055-Working-with-Databricks-Workflows.mp4",
+        "download_urls": null
+      },
+      "object_index": 57,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718190,
+      "title": "Working with Databricks Rest API",
+      "asset": {
+        "_class": "asset",
+        "id": 53861148,
+        "asset_type": "Video",
+        "title": "DB056-Working with Databricks Rest API.mp4",
+        "external_url": "",
+        "filename": "DB056-Working-with-Databricks-Rest-API.mp4",
+        "download_urls": null
+      },
+      "object_index": 58,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718194,
+      "title": "Working with Databricks CLI",
+      "asset": {
+        "_class": "asset",
+        "id": 53861146,
+        "asset_type": "Video",
+        "title": "DB057-Working with Databricks CLI.mp4",
+        "external_url": "",
+        "filename": "DB057-Working-with-Databricks-CLI.mp4",
+        "download_urls": null
+      },
+      "object_index": 59,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53977770,
+          "asset_type": "File",
+          "filename": "10-Databricks-Project-and-Automation-Features.pdf",
+          "title": "10-Databricks Project and Automation Features.pdf",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_16-25-46-d6c0153525f7a993f8d6f0b642815aa1/original.pdf?response-content-disposition=attachment%3B+filename%3D10-Databricks%2BProject%2Band%2BAutomation%2BFeatures.pdf&Expires=1773839992&Signature=44QtfOOxsUvy3AqjlH6Wilq-6k1yD6-SqZrxTLfcpOvsoQ1j0kTb9Y4xINnP01ILDTNwWU7e6lK0WQgP4A-5P~HfA8of0sWwb1HJPjegYLV7BL9qIDp6HImaCS5s298wxxi8TwxAzosuHjG5zcrj4wDvOn~Ml-KsMMNFnEEGkS0CMfrKLbAk7jyAF9RdBgPSvCi07mPemWVz8kMrhG~FTrcmnWyQq03hNQALqiYsOxUlEw9Wz7TJjMmyjAUjUk~TSaA4a3OxVrni8pTHQWVUzXXA8AhTJpE1m4GnEJjgGGxmU90UWILjWa43GTILOxpvnmaTx-PHeFTvz6mZkZuycw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53977780,
+          "asset_type": "File",
+          "filename": "CH10-Data-Files.zip",
+          "title": "CH10-Data Files.zip",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_16-26-28-0fe9fee2791fe754508ddff430a3238b/original.zip?response-content-disposition=attachment%3B+filename%3DCH10-Data%2BFiles.zip&Expires=1773839992&Signature=b4dRMUG-FVlmrB5P3hFGEtiUvk9NWdkAV809zSt2Bb6BIy-uwf51KP7Vh2oDHW-vTNSU4MICqBuwMaPYxeSVU-XiLEeE~KTAPeps7od1E1diw8wO6xkDhINI1o0tkPiVvHR8bvmIGRbK3YaN0PmB8ponOnhaJWbwzLjpgNgsOa6yo~jToCQY45sFB-ipx2GueLy3V4VDbft8DmGNXmC80IsrvA-J1Z62N3GIX5L6HLMiBrBxRIO1wzILxiW2kr0dpj2CydOrwXaSDBnwSohiPRsOF70IAwmu6JgesfXSeMxACyUZHpg9ERiPJMThdnJs73iFqHStJ78D6yFrsmzPuQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53977786,
+          "asset_type": "File",
+          "filename": "CH10-Databricks-Project-and-Automation-Features.dbc",
+          "title": "CH10-Databricks Project and Automation Features.dbc",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_16-26-43-88d7e7ca2d7584b9bedc62d86959f35a/original.dbc?response-content-disposition=attachment%3B+filename%3DCH10-Databricks%2BProject%2Band%2BAutomation%2BFeatures.dbc&Expires=1773839992&Signature=DPFBKBgkSjIS5GAUCcvFBZbJI1u55YuAnlOgp4n~fsKpyBuETteLJ8~EYEQjyDPbnhgqX0Ls3CHN1Papf8SKuEnfoVZzbMZmI36fav0gChtZEIiXIYBdsZ-Y~TQE5FJtaQmoqZxSUdYjVi9cE7LPm3IAsHzyhir4J-eYG6l~CcSmt87eZfwQWW~40e8~6NIbKpbAuwROb5OKj55WUlyz5o8my9NcBrBZIey6b19OMFb5iD6os6Azf~nuQS5RWVL1UbegMrQknf6HzUUp6WUJBAF~tLwYqacJl5B1M7HxoDiFKl3ZSTEk4zMVL~A5L52NX06kOzxU6OirAr17xMykiw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53977812,
+          "asset_type": "File",
+          "filename": "Deploy.zip",
+          "title": "Deploy.zip",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-15_16-28-21-0a160d7854d1d19f3df2a68a5832e884/original.zip?response-content-disposition=attachment%3B+filename%3DDeploy.zip&Expires=1773839992&Signature=KkOhv~ioAd~3vZCJfbpTxTL2M8yT~Vg7xX4kh3MQiSVac0YBHT6J1u5RRxCph2Z3Hd3vL~CsMK7ff5wYxVRNQ5-kG7qxi7wbaC0fAaGtOgLIV0WImeIdiwH-J3d32UE2~hoOatj460j1OO61szqyHjFeWMBFPx6RJFl~OjXvgszY~KqLrNCae6EYByy0CWlkLQ~qfRT315GTZt8Mk9gQeoiN28~cJd5WdEjtkO8juiKSh5aY0nFvv0O2VL8UhUEVWGh-A9LueXHN~p5uBWMrMyc5vyez6KLPpFA5QnPP7WNuEVznqfLBKztEPdXpAmL9kX6pLwGVYjhAIcfqbxzvdg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9976882,
+      "title": "Capstone Project",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 41718198,
+      "title": "Project Scope and Background",
+      "asset": {
+        "_class": "asset",
+        "id": 53860050,
+        "asset_type": "Video",
+        "title": "DP001-Project Scope and Background.mp4",
+        "external_url": "",
+        "filename": "DP001-Project-Scope-and-Background.mp4",
+        "download_urls": null
+      },
+      "object_index": 60,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718206,
+      "title": "Taking out the operational requirement",
+      "asset": {
+        "_class": "asset",
+        "id": 53860036,
+        "asset_type": "Video",
+        "title": "DP002-Taking out the operational requirement.mp4",
+        "external_url": "",
+        "filename": "DP002-Taking-out-the-operational-requirement.mp4",
+        "download_urls": null
+      },
+      "object_index": 61,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718208,
+      "title": "Storage Design",
+      "asset": {
+        "_class": "asset",
+        "id": 53860086,
+        "asset_type": "Video",
+        "title": "DP003-Storage Design.mp4",
+        "external_url": "",
+        "filename": "DP003-Storage-Design.mp4",
+        "download_urls": null
+      },
+      "object_index": 62,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718212,
+      "title": "Implement Data Security",
+      "asset": {
+        "_class": "asset",
+        "id": 53860072,
+        "asset_type": "Video",
+        "title": "DP004-Implement Data Security.mp4",
+        "external_url": "",
+        "filename": "DP004-Implement-Data-Security.mp4",
+        "download_urls": null
+      },
+      "object_index": 63,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718214,
+      "title": "Implement Resource Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 53860038,
+        "asset_type": "Video",
+        "title": "DP005-Implement Resource Policies.mp4",
+        "external_url": "",
+        "filename": "DP005-Implement-Resource-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 64,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718220,
+      "title": "Decouple Data Ingestion",
+      "asset": {
+        "_class": "asset",
+        "id": 53860076,
+        "asset_type": "Video",
+        "title": "DP006-Decouple Data Ingestion.mp4",
+        "external_url": "",
+        "filename": "DP006-Decouple-Data-Ingestion.mp4",
+        "download_urls": null
+      },
+      "object_index": 65,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718222,
+      "title": "Design Bronze Layer",
+      "asset": {
+        "_class": "asset",
+        "id": 53860042,
+        "asset_type": "Video",
+        "title": "DP007-Design Bronze Layer.mp4",
+        "external_url": "",
+        "filename": "DP007-Design-Bronze-Layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 66,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718226,
+      "title": "Design Silver and Gold Layer",
+      "asset": {
+        "_class": "asset",
+        "id": 53860052,
+        "asset_type": "Video",
+        "title": "DP008-Design Silver and Gold Layer.mp4",
+        "external_url": "",
+        "filename": "DP008-Design-Silver-and-Gold-Layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 67,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718228,
+      "title": "Setup your environment",
+      "asset": {
+        "_class": "asset",
+        "id": 53860040,
+        "asset_type": "Video",
+        "title": "DP009.1-Setup your environment.mp4",
+        "external_url": "",
+        "filename": "DP009.1-Setup-your-environment.mp4",
+        "download_urls": null
+      },
+      "object_index": 68,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718230,
+      "title": "Create a workspace",
+      "asset": {
+        "_class": "asset",
+        "id": 53860116,
+        "asset_type": "Video",
+        "title": "DP009.2 Create a workspace.mp4",
+        "external_url": "",
+        "filename": "DP009.2-Create-a-workspace.mp4",
+        "download_urls": null
+      },
+      "object_index": 69,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718234,
+      "title": "Create and Storage Layer",
+      "asset": {
+        "_class": "asset",
+        "id": 53860140,
+        "asset_type": "Video",
+        "title": "DP009.3 Create and Storage Layer.mp4",
+        "external_url": "",
+        "filename": "DP009.3-Create-and-Storage-Layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 70,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718236,
+      "title": "Setup Unity Catalog",
+      "asset": {
+        "_class": "asset",
+        "id": 53860096,
+        "asset_type": "Video",
+        "title": "DP009.4 Setup Unity Catalog.mp4",
+        "external_url": "",
+        "filename": "DP009.4-Setup-Unity-Catalog.mp4",
+        "download_urls": null
+      },
+      "object_index": 71,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718238,
+      "title": "Create Metadata Catalog and External Locations",
+      "asset": {
+        "_class": "asset",
+        "id": 53860134,
+        "asset_type": "Video",
+        "title": "DP009.5 Create Metadata Catalog and External Locations.mp4",
+        "external_url": "",
+        "filename": "DP009.5-Create-Metadata-Catalog-and-External-Locations.mp4",
+        "download_urls": null
+      },
+      "object_index": 72,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718242,
+      "title": "Setup your source control",
+      "asset": {
+        "_class": "asset",
+        "id": 53860080,
+        "asset_type": "Video",
+        "title": "DP009-Setup your source control.mp4",
+        "external_url": "",
+        "filename": "DP009-Setup-your-source-control.mp4",
+        "download_urls": null
+      },
+      "object_index": 73,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718244,
+      "title": "Start Coding",
+      "asset": {
+        "_class": "asset",
+        "id": 53860138,
+        "asset_type": "Video",
+        "title": "DP010-Start Coding.mp4",
+        "external_url": "",
+        "filename": "DP010-Start-Coding.mp4",
+        "download_urls": null
+      },
+      "object_index": 74,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718246,
+      "title": "Test your code",
+      "asset": {
+        "_class": "asset",
+        "id": 53860172,
+        "asset_type": "Video",
+        "title": "DP011-Test your code.mp4",
+        "external_url": "",
+        "filename": "DP011-Test-your-code.mp4",
+        "download_urls": null
+      },
+      "object_index": 75,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718252,
+      "title": "Load historical data",
+      "asset": {
+        "_class": "asset",
+        "id": 53860126,
+        "asset_type": "Video",
+        "title": "DP012-Load historical data.mp4",
+        "external_url": "",
+        "filename": "DP012-Load-historical-data.mp4",
+        "download_urls": null
+      },
+      "object_index": 76,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718254,
+      "title": "Ingest into bronze layer",
+      "asset": {
+        "_class": "asset",
+        "id": 53860166,
+        "asset_type": "Video",
+        "title": "DP013-Ingest into bronze layer.mp4",
+        "external_url": "",
+        "filename": "DP013-Ingest-into-bronze-layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 77,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718258,
+      "title": "Process the silver layer",
+      "asset": {
+        "_class": "asset",
+        "id": 53860178,
+        "asset_type": "Video",
+        "title": "DP014-Process the silver layer.mp4",
+        "external_url": "",
+        "filename": "DP014-Process-the-silver-layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 78,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718260,
+      "title": "Handling multiple updates",
+      "asset": {
+        "_class": "asset",
+        "id": 53860128,
+        "asset_type": "Video",
+        "title": "DP015-Handling multiple updates.mp4",
+        "external_url": "",
+        "filename": "DP015-Handling-multiple-updates.mp4",
+        "download_urls": null
+      },
+      "object_index": 79,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718262,
+      "title": "Implementing Gold Layer",
+      "asset": {
+        "_class": "asset",
+        "id": 53860146,
+        "asset_type": "Video",
+        "title": "DP016-Implementing Gold Layer.mp4",
+        "external_url": "",
+        "filename": "DP016-Implementing-Gold-Layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 80,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718266,
+      "title": "Creating a run script",
+      "asset": {
+        "_class": "asset",
+        "id": 53860148,
+        "asset_type": "Video",
+        "title": "DP017-Creating a run script.mp4",
+        "external_url": "",
+        "filename": "DP017-Creating-a-run-script.mp4",
+        "download_urls": null
+      },
+      "object_index": 81,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718268,
+      "title": "Preparing for Integration testing",
+      "asset": {
+        "_class": "asset",
+        "id": 53860106,
+        "asset_type": "Video",
+        "title": "DP018-Preparing for Integration testing.mp4",
+        "external_url": "",
+        "filename": "DP018-Preparing-for-Integration-testing.mp4",
+        "download_urls": null
+      },
+      "object_index": 82,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718272,
+      "title": "Creating Test Data Producer",
+      "asset": {
+        "_class": "asset",
+        "id": 53860100,
+        "asset_type": "Video",
+        "title": "DP019-Creating Test Data Producer.mp4",
+        "external_url": "",
+        "filename": "DP019-Creating-Test-Data-Producer.mp4",
+        "download_urls": null
+      },
+      "object_index": 83,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718274,
+      "title": "Creating Integration Test for Batch mode",
+      "asset": {
+        "_class": "asset",
+        "id": 53860114,
+        "asset_type": "Video",
+        "title": "DP020-Creating Integration Test for Batch mode.mp4",
+        "external_url": "",
+        "filename": "DP020-Creating-Integration-Test-for-Batch-mode.mp4",
+        "download_urls": null
+      },
+      "object_index": 84,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718276,
+      "title": "Creating Integration Test for Stream mode",
+      "asset": {
+        "_class": "asset",
+        "id": 53860174,
+        "asset_type": "Video",
+        "title": "DP021-Creating Integration Test for Stream mode.mp4",
+        "external_url": "",
+        "filename": "DP021-Creating-Integration-Test-for-Stream-mode.mp4",
+        "download_urls": null
+      },
+      "object_index": 85,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718282,
+      "title": "Implementing CI CD Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 53860122,
+        "asset_type": "Video",
+        "title": "DP022-Implementing CI CD Pipeline.mp4",
+        "external_url": "",
+        "filename": "DP022-Implementing-CI-CD-Pipeline.mp4",
+        "download_urls": null
+      },
+      "object_index": 86,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718284,
+      "title": "Develop Build Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 53860130,
+        "asset_type": "Video",
+        "title": "DP023-Develop Build Pipeline.mp4",
+        "external_url": "",
+        "filename": "DP023-Develop-Build-Pipeline.mp4",
+        "download_urls": null
+      },
+      "object_index": 87,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718286,
+      "title": "Develop Release Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 53860170,
+        "asset_type": "Video",
+        "title": "DP024-Develop Release Pipeline.mp4",
+        "external_url": "",
+        "filename": "DP024-Develop-Release-Pipeline.mp4",
+        "download_urls": null
+      },
+      "object_index": 88,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718290,
+      "title": "Creating Databricks CLI Script",
+      "asset": {
+        "_class": "asset",
+        "id": 53860108,
+        "asset_type": "Video",
+        "title": "DP025-Creating Databricks CLI Script.mp4",
+        "external_url": "",
+        "filename": "DP025-Creating-Databricks-CLI-Script.mp4",
+        "download_urls": null
+      },
+      "object_index": 89,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53860764,
+          "asset_type": "File",
+          "filename": "Data-Set.zip",
+          "title": "Data Set.zip",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-10_08-04-33-641556b40ac29f34b9180fb524b73bfc/original.zip?response-content-disposition=attachment%3B+filename%3DData%2BSet.zip&Expires=1773839992&Signature=aASJyTYLVQVgAZ9OGN10xSUGOVstpaPKKm3oo0hhOUmXK2xMM6Iq9QMfDDbIValIwB9rxT8c7xWomdSGVH~Ym81pjqmi95wIbPT1hdThybtelFYcVmpmw57eHTJa6QVN54eOtXlWVxyImQvOBMQyHSHt4lbaaTqbzRiXxYr32KvDIjp5wsQfDSFRRiskeNSkYe3GBs0qkK8Pg94kCorIu~pE0ExUZi8WoXPba8hz7Qlo9MnrnP2mqDFipkgahCKNRE8Hdp~ffi5T7nv2MZZz9KehfsCe3roDoIGDllh0gf00hjVaW1smvp1swW~2KDM3qLc646~fHIsGTV1WjPRMGA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53860770,
+          "asset_type": "File",
+          "filename": "Notebooks.zip",
+          "title": "Notebooks.zip",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-10_08-04-33-dd12503d5879701a7874f710a6cfce95/original.zip?response-content-disposition=attachment%3B+filename%3DNotebooks.zip&Expires=1773839992&Signature=iTFKURIqWjDFgd2Mh69UkaT2qH6kIbWgP6pye6nmYGTtC5fsKM82k-y8fqfXAd7~S7i7GgPeFjKaqiqvrx6XpQllsi~dmHfIvgVoScdFQLA3i48QzieDBt8m4mY3mhR~SHxX1ARuLE1rM1zqmpMZzetPJvj5FWRidgEGN3YY6OUtSW5T2E3NEZ8Rzp9~qq80jG80vCclFXAFw13X-3XnrpbULnYREJVz1Zbyn1ENo4w1hTzInY72~fTX2dP~uOzw4F2lKRQaH~snOxvyYHpSq07WlqGZEK0xbvG2s5PDJ0fAACnB2zDzTGDbKDurL2qNTS9Tp1WIPZk8YD8IJduM9w__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        },
+        {
+          "_class": "asset",
+          "id": 53860772,
+          "asset_type": "File",
+          "filename": "Other-Code.zip",
+          "title": "Other Code.zip",
+          "external_url": "",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-10_08-04-33-a1297e592b0cfe724375a0d7986d1fba/original.zip?response-content-disposition=attachment%3B+filename%3DOther%2BCode.zip&Expires=1773839992&Signature=LMkvnHy8-qj5W40IyixfKU6LdlpAAN0cBjCfL4w-cLnFTjbyjPRHuZ4tPuLV1kzBzZ-8RXvDg-KOwIGyGeON87XQZw2FraNrbm7tB1Wxk07EJEtyKRpFhs7kFVO2fupSy5wU4w3JvUDkFNp29NSgyNWBkG6tjtrXycQv7w72sBxAPb5k0gQAn-ULZPG8la9Tg7krhSw2uUDgfuyl2EKep~udkZwCkvrCU6sm8Wc1J8IFI1lRmIe2m9I4BKkOzgz6mPX7kXcmWBrs6kDyJ4tSUOIq2V0Qs1WDlb2~6dljhzL834f4lw-Re5SunawXjUicJjzktbRJQ461z-y0atn-fg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9976896,
+      "title": "Final Word",
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 41811176,
+      "title": "Congratulations",
+      "asset": {
+        "_class": "asset",
+        "id": 53974548,
+        "asset_type": "Video",
+        "title": "DB090-Congratulations.mp4",
+        "external_url": "",
+        "filename": "DB090-Congratulations.mp4",
+        "download_urls": null
+      },
+      "object_index": 90,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41718310,
+      "title": "Keep Learning and Keep Growing",
+      "asset": {
+        "_class": "asset",
+        "id": 53965436,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 91,
+      "supplementary_assets": []
+    }
+  ]
+}

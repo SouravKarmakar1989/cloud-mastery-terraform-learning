@@ -1,0 +1,1789 @@
+{
+  "count": 117,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 5243888,
+      "title": "Before you start",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 21955538,
+      "title": "About the Course",
+      "asset": {
+        "_class": "asset",
+        "id": 52373054,
+        "asset_type": "Video",
+        "title": "RSS000-About The Course.mp4",
+        "external_url": "",
+        "filename": "RSS000-About-The-Course.mp4",
+        "download_urls": null
+      },
+      "object_index": 1,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955566,
+      "title": "Course Prerequisite",
+      "asset": {
+        "_class": "asset",
+        "id": 52374636,
+        "asset_type": "Video",
+        "title": "RSS002-Course Prerequisites.mp4",
+        "external_url": "",
+        "filename": "RSS002-Course-Prerequisites.mp4",
+        "download_urls": null
+      },
+      "object_index": 2,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 25977554,
+      "title": "Source Code and Other Resources",
+      "asset": {
+        "_class": "asset",
+        "id": 52375742,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 3,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40606408,
+      "title": "Note for Students - Before Start",
+      "asset": {
+        "_class": "asset",
+        "id": 52374560,
+        "asset_type": "Video",
+        "title": "GRR000-Review Request.mp4",
+        "external_url": "",
+        "filename": "GRR000-Review-Request.mp4",
+        "download_urls": null
+      },
+      "object_index": 4,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 9602760,
+      "title": "Setup your environment",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 40147604,
+      "title": "Spark Development Environments",
+      "asset": {
+        "_class": "asset",
+        "id": 51770356,
+        "asset_type": "Video",
+        "title": "RSS001-Spark Development Environemts.mp4",
+        "external_url": "",
+        "filename": "RSS001-Spark-Development-Environemts.mp4",
+        "download_urls": null
+      },
+      "object_index": 5,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40147610,
+      "title": "Setup your Databricks Community Cloud Environment",
+      "asset": {
+        "_class": "asset",
+        "id": 51749444,
+        "asset_type": "Video",
+        "title": "RSS002-Setup your Databricks Community Cloud Environment.mp4",
+        "external_url": "",
+        "filename": "RSS002-Setup-your-Databricks-Community-Cloud-Environment.mp4",
+        "download_urls": null
+      },
+      "object_index": 6,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40147626,
+      "title": "Working in Databricks Workspace",
+      "asset": {
+        "_class": "asset",
+        "id": 51750098,
+        "asset_type": "Video",
+        "title": "RSS003-Working in Databricks Workspace.mp4",
+        "external_url": "",
+        "filename": "RSS003-Working-in-Databricks-Workspace.mp4",
+        "download_urls": null
+      },
+      "object_index": 7,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 9605696,
+      "title": "Getting Started with Spark Streaming",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 40160908,
+      "title": "Batch processing to stream processing",
+      "asset": {
+        "_class": "asset",
+        "id": 51851954,
+        "asset_type": "Video",
+        "title": "RSS004-Batch processing to stream processing.mp4",
+        "external_url": "",
+        "filename": "RSS004-Batch-processing-to-stream-processing.mp4",
+        "download_urls": null
+      },
+      "object_index": 8,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40160946,
+      "title": "Your Spark application - Applying Best Practice",
+      "asset": {
+        "_class": "asset",
+        "id": 51932336,
+        "asset_type": "Video",
+        "title": "RSS005-Creating your first streaming application.mp4",
+        "external_url": "",
+        "filename": "RSS005-Creating-your-first-streaming-application.mp4",
+        "download_urls": null
+      },
+      "object_index": 9,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40271704,
+      "title": "Your first streaming application - Implementing Stream",
+      "asset": {
+        "_class": "asset",
+        "id": 51956104,
+        "asset_type": "Video",
+        "title": "RSS006-Your first streaming application - Implementing Stream.mp4",
+        "external_url": "",
+        "filename": "RSS006-Your-first-streaming-application-Implementing-Stream.mp4",
+        "download_urls": null
+      },
+      "object_index": 10,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40160948,
+      "title": "Stream Processing Model in Spark",
+      "asset": {
+        "_class": "asset",
+        "id": 52006356,
+        "asset_type": "Video",
+        "title": "RSS007-Stream Processing Model in Spark.mp4",
+        "external_url": "",
+        "filename": "RSS007-Stream-Processing-Model-in-Spark.mp4",
+        "download_urls": null
+      },
+      "object_index": 11,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40160950,
+      "title": "Create Another Streaming Application",
+      "asset": {
+        "_class": "asset",
+        "id": 52048860,
+        "asset_type": "Video",
+        "title": "RSS008-Create Another Streaming Application.mp4",
+        "external_url": "",
+        "filename": "RSS008-Create-Another-Streaming-Application.mp4",
+        "download_urls": null
+      },
+      "object_index": 12,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40160960,
+      "title": "Stream Triggers",
+      "asset": {
+        "_class": "asset",
+        "id": 52113926,
+        "asset_type": "Video",
+        "title": "RSS009-Stream Triggers.mp4",
+        "external_url": "",
+        "filename": "RSS009-Stream-Triggers.mp4",
+        "download_urls": null
+      },
+      "object_index": 13,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40160964,
+      "title": "Incremental Batch Processing",
+      "asset": {
+        "_class": "asset",
+        "id": 52118930,
+        "asset_type": "Video",
+        "title": "RSS010-Incremental Batch Processing.mp4",
+        "external_url": "",
+        "filename": "RSS010-Incremental-Batch-Processing.mp4",
+        "download_urls": null
+      },
+      "object_index": 14,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40411708,
+      "title": "Streaming Sources and Sinks",
+      "asset": {
+        "_class": "asset",
+        "id": 52372058,
+        "asset_type": "Video",
+        "title": "RSS011-Streaming Sources and Sinks.mp4",
+        "external_url": "",
+        "filename": "RSS011-Streaming-Sources-and-Sinks.mp4",
+        "download_urls": null
+      },
+      "object_index": 15,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40411728,
+      "title": "Creating Chain of Streams",
+      "asset": {
+        "_class": "asset",
+        "id": 52122230,
+        "asset_type": "Video",
+        "title": "RSS012-Creating chain of streams.mp4",
+        "external_url": "",
+        "filename": "RSS012-Creating-chain-of-streams.mp4",
+        "download_urls": null
+      },
+      "object_index": 16,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 9667510,
+      "title": "Kafka for Data Engineers",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 40411786,
+      "title": "An Introduction to Kafka",
+      "asset": {
+        "_class": "asset",
+        "id": 52195318,
+        "asset_type": "Video",
+        "title": "KDE001-An Introduction to Kafka.mp4",
+        "external_url": "",
+        "filename": "KDE001-An-Introduction-to-Kafka.mp4",
+        "download_urls": null
+      },
+      "object_index": 17,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40411798,
+      "title": "Creating Kafka Cluster in Cloud",
+      "asset": {
+        "_class": "asset",
+        "id": 52212204,
+        "asset_type": "Video",
+        "title": "KDE002-Creating Kafka Cluster in Cloud.mp4",
+        "external_url": "",
+        "filename": "KDE002-Creating-Kafka-Cluster-in-Cloud.mp4",
+        "download_urls": null
+      },
+      "object_index": 18,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40411806,
+      "title": "Kafka Core Concepts",
+      "asset": {
+        "_class": "asset",
+        "id": 52295310,
+        "asset_type": "Video",
+        "title": "KDE003-Kafka Core Concepts.mp4",
+        "external_url": "",
+        "filename": "KDE003-Kafka-Core-Concepts.mp4",
+        "download_urls": null
+      },
+      "object_index": 19,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40411812,
+      "title": "Producing Data to Kafka Topic",
+      "asset": {
+        "_class": "asset",
+        "id": 52299886,
+        "asset_type": "Video",
+        "title": "KDE004-Producing Data to Kafka Topic.mp4",
+        "external_url": "",
+        "filename": "KDE004-Producing-Data-to-Kafka-Topic.mp4",
+        "download_urls": null
+      },
+      "object_index": 20,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40411826,
+      "title": "Consuming Data from Kafka Topic",
+      "asset": {
+        "_class": "asset",
+        "id": 52331290,
+        "asset_type": "Video",
+        "title": "KDE005-Consuming Data from Kafka Topic.mp4",
+        "external_url": "",
+        "filename": "KDE005-Consuming-Data-from-Kafka-Topic.mp4",
+        "download_urls": null
+      },
+      "object_index": 21,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40411836,
+      "title": "Working with Kafka Topic Data",
+      "asset": {
+        "_class": "asset",
+        "id": 52245394,
+        "asset_type": "Video",
+        "title": "KDE006-Working with Kafka Topic Data.mp4",
+        "external_url": "",
+        "filename": "KDE006-Working-with-Kafka-Topic-Data.mp4",
+        "download_urls": null
+      },
+      "object_index": 22,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40511826,
+      "title": "How to Implement Idempotence",
+      "asset": {
+        "_class": "asset",
+        "id": 52372348,
+        "asset_type": "Video",
+        "title": "KDE007-How to Implement Idempotence.mp4",
+        "external_url": "",
+        "filename": "KDE007-How-to-Implement-Idempotence.mp4",
+        "download_urls": null
+      },
+      "object_index": 23,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40564370,
+      "title": "Working with Kafka Sink",
+      "asset": {
+        "_class": "asset",
+        "id": 52416136,
+        "asset_type": "Video",
+        "title": "KDE008-Working with Kafka Sink.mp4",
+        "external_url": "",
+        "filename": "KDE008-Working-with-Kafka-Sink.mp4",
+        "download_urls": null
+      },
+      "object_index": 24,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 9713068,
+      "title": "Streaming Aggregates and State Management",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 40606302,
+      "title": "Streaming Aggregates and State Store",
+      "asset": {
+        "_class": "asset",
+        "id": 52506582,
+        "asset_type": "Video",
+        "title": "RSS013-Streaming Aggregates and State Store.mp4",
+        "external_url": "",
+        "filename": "RSS013-Streaming-Aggregates-and-State-Store.mp4",
+        "download_urls": null
+      },
+      "object_index": 25,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40606310,
+      "title": "Incremental Aggregates and Update Mode",
+      "asset": {
+        "_class": "asset",
+        "id": 52506500,
+        "asset_type": "Video",
+        "title": "RSS014-Incremental Streaming Aggregates and Update Mode.mp4",
+        "external_url": "",
+        "filename": "RSS014-Incremental-Streaming-Aggregates-and-Update-Mode.mp4",
+        "download_urls": null
+      },
+      "object_index": 26,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40606318,
+      "title": "Spark Streaming Output Modes",
+      "asset": {
+        "_class": "asset",
+        "id": 52506504,
+        "asset_type": "Video",
+        "title": "RSS015-Streaming Query Stats.mp4",
+        "external_url": "",
+        "filename": "RSS015-Streaming-Query-Stats.mp4",
+        "download_urls": null
+      },
+      "object_index": 27,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40703674,
+      "title": "Statefull Vs Stateless Aggregation",
+      "asset": {
+        "_class": "asset",
+        "id": 52574448,
+        "asset_type": "Video",
+        "title": "RSS016-Statefull Vs Stateless Aggregation.mp4",
+        "external_url": "",
+        "filename": "RSS016-Statefull-Vs-Stateless-Aggregation.mp4",
+        "download_urls": null
+      },
+      "object_index": 28,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40703676,
+      "title": "Implementing Stateless Streaming Aggregation",
+      "asset": {
+        "_class": "asset",
+        "id": 52574442,
+        "asset_type": "Video",
+        "title": "RSS017-Implementing Stateless Streaming Aggregation.mp4",
+        "external_url": "",
+        "filename": "RSS017-Implementing-Stateless-Streaming-Aggregation.mp4",
+        "download_urls": null
+      },
+      "object_index": 29,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40703680,
+      "title": "Timebound Stateful Tumbling Window Aggregation",
+      "asset": {
+        "_class": "asset",
+        "id": 52639182,
+        "asset_type": "Video",
+        "title": "RSS018-Timebound Stateful Tumbling Window Aggregation.mp4",
+        "external_url": "",
+        "filename": "RSS018-Timebound-Stateful-Tumbling-Window-Aggregation.mp4",
+        "download_urls": null
+      },
+      "object_index": 30,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40810120,
+      "title": "Watermarking and State Store Cleanup",
+      "asset": {
+        "_class": "asset",
+        "id": 52739187,
+        "asset_type": "Video",
+        "title": "RSS019-Watermarking and State Store Cleanup.mp4",
+        "external_url": "",
+        "filename": "RSS019-Watermarking-and-State-Store-Cleanup.mp4",
+        "download_urls": null
+      },
+      "object_index": 31,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40796374,
+      "title": "Sliding Window Aggregates",
+      "asset": {
+        "_class": "asset",
+        "id": 52656978,
+        "asset_type": "Video",
+        "title": "RSS021-Sliding Window Aggregates.mp4",
+        "external_url": "",
+        "filename": "RSS021-Sliding-Window-Aggregates.mp4",
+        "download_urls": null
+      },
+      "object_index": 32,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 9555866,
+      "title": "Working with Databricks Platform",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 39969824,
+      "title": "Introduction to Databricks",
+      "asset": {
+        "_class": "asset",
+        "id": 51532488,
+        "asset_type": "Video",
+        "title": "RDB001-Introduction to Databricks.mp4",
+        "external_url": "",
+        "filename": "RDB001-Introduction-to-Databricks.mp4",
+        "download_urls": null
+      },
+      "object_index": 33,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39969852,
+      "title": "Creating Azure Free Account",
+      "asset": {
+        "_class": "asset",
+        "id": 51519856,
+        "asset_type": "Video",
+        "title": "RDB002-Creating Azure Free Account.mp4",
+        "external_url": "",
+        "filename": "RDB002-Creating-Azure-Free-Account.mp4",
+        "download_urls": null
+      },
+      "object_index": 34,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39969854,
+      "title": "Azure Portal Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 51519838,
+        "asset_type": "Video",
+        "title": "RDB003-Azure Portal Overview.mp4",
+        "external_url": "",
+        "filename": "RDB003-Azure-Portal-Overview.mp4",
+        "download_urls": null
+      },
+      "object_index": 35,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39969858,
+      "title": "Creating Azure Databricks Service",
+      "asset": {
+        "_class": "asset",
+        "id": 51519862,
+        "asset_type": "Video",
+        "title": "RDB004-Creating Azure Databricks Service.mp4",
+        "external_url": "",
+        "filename": "RDB004-Creating-Azure-Databricks-Service.mp4",
+        "download_urls": null
+      },
+      "object_index": 36,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39969898,
+      "title": "Introduction to Azure Databricks Workspace",
+      "asset": {
+        "_class": "asset",
+        "id": 51863286,
+        "asset_type": "Video",
+        "title": "RDB005-Introduction to Azure Databricks Workspace.mp4",
+        "external_url": "",
+        "filename": "RDB005-Introduction-to-Azure-Databricks-Workspace.mp4",
+        "download_urls": null
+      },
+      "object_index": 37,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39969902,
+      "title": "Azure Databricks Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 51519870,
+        "asset_type": "Video",
+        "title": "RDB006-Azure Databricks Architecture.mp4",
+        "external_url": "",
+        "filename": "RDB006-Azure-Databricks-Architecture.mp4",
+        "download_urls": null
+      },
+      "object_index": 38,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39969904,
+      "title": "Creating Azure Databricks Cluster",
+      "asset": {
+        "_class": "asset",
+        "id": 51900942,
+        "asset_type": "Video",
+        "title": "RDB007-Creating Azure Databricks Cluster.mp4",
+        "external_url": "",
+        "filename": "RDB007-Creating-Azure-Databricks-Cluster.mp4",
+        "download_urls": null
+      },
+      "object_index": 39,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39969910,
+      "title": "Introduction to Databricks Notebooks",
+      "asset": {
+        "_class": "asset",
+        "id": 52079106,
+        "asset_type": "Video",
+        "title": "RDB008-Introduction to Databricks Notebooks.mp4",
+        "external_url": "",
+        "filename": "RDB008-Introduction-to-Databricks-Notebooks.mp4",
+        "download_urls": null
+      },
+      "object_index": 40,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39969918,
+      "title": "Notebooks Magic Commands and Utilities",
+      "asset": {
+        "_class": "asset",
+        "id": 52079114,
+        "asset_type": "Video",
+        "title": "RDB009-Notebooks Magic Commands.mp4",
+        "external_url": "",
+        "filename": "RDB009-Notebooks-Magic-Commands.mp4",
+        "download_urls": null
+      },
+      "object_index": 41,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39969926,
+      "title": "Databricks Notebooks Utilities",
+      "asset": {
+        "_class": "asset",
+        "id": 52153218,
+        "asset_type": "Video",
+        "title": "RDB010-Databricks Notebooks Utilities.mp4",
+        "external_url": "",
+        "filename": "RDB010-Databricks-Notebooks-Utilities.mp4",
+        "download_urls": null
+      },
+      "object_index": 42,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40147552,
+      "title": "Introduction to Databricks Unity Catalog",
+      "asset": {
+        "_class": "asset",
+        "id": 52079124,
+        "asset_type": "Video",
+        "title": "RDB011-Introduction to Databricks Unity Catalog.mp4",
+        "external_url": "",
+        "filename": "RDB011-Introduction-to-Databricks-Unity-Catalog.mp4",
+        "download_urls": null
+      },
+      "object_index": 43,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40147558,
+      "title": "Introduction to Databricks Workflow Jobs",
+      "asset": {
+        "_class": "asset",
+        "id": 52153226,
+        "asset_type": "Video",
+        "title": "RDB012-Introduction to Databricks Workflow Jobs.mp4",
+        "external_url": "",
+        "filename": "RDB012-Introduction-to-Databricks-Workflow-Jobs.mp4",
+        "download_urls": null
+      },
+      "object_index": 44,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40147566,
+      "title": "Introduction to Databricks Rest API",
+      "asset": {
+        "_class": "asset",
+        "id": 52153236,
+        "asset_type": "Video",
+        "title": "RDB013-Introduction to Databricks Rest API.mp4",
+        "external_url": "",
+        "filename": "RDB013-Introduction-to-Databricks-Rest-API.mp4",
+        "download_urls": null
+      },
+      "object_index": 45,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40147572,
+      "title": "Introduction to Databricks CLI",
+      "asset": {
+        "_class": "asset",
+        "id": 52153234,
+        "asset_type": "Video",
+        "title": "RDB014-Introduction to Databricks CLI.mp4",
+        "external_url": "",
+        "filename": "RDB014-Introduction-to-Databricks-CLI.mp4",
+        "download_urls": null
+      },
+      "object_index": 46,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 9544154,
+      "title": "Capstone Project - Implementing Real-time Project in Lakehouse",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 39899004,
+      "title": "Project Scope and Background",
+      "asset": {
+        "_class": "asset",
+        "id": 51425872,
+        "asset_type": "Video",
+        "title": "DP001-Project Scope and Background.mp4",
+        "external_url": "",
+        "filename": "DP001-Project-Scope-and-Background.mp4",
+        "download_urls": null
+      },
+      "object_index": 47,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899006,
+      "title": "Taking out the operational requirement",
+      "asset": {
+        "_class": "asset",
+        "id": 51425858,
+        "asset_type": "Video",
+        "title": "DP002-Taking out the operational requirement.mp4",
+        "external_url": "",
+        "filename": "DP002-Taking-out-the-operational-requirement.mp4",
+        "download_urls": null
+      },
+      "object_index": 48,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899010,
+      "title": "Storage Design",
+      "asset": {
+        "_class": "asset",
+        "id": 51425870,
+        "asset_type": "Video",
+        "title": "DP003-Storage Design.mp4",
+        "external_url": "",
+        "filename": "DP003-Storage-Design.mp4",
+        "download_urls": null
+      },
+      "object_index": 49,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899012,
+      "title": "Implement Data Security",
+      "asset": {
+        "_class": "asset",
+        "id": 51425876,
+        "asset_type": "Video",
+        "title": "DP004-Implement Data Security.mp4",
+        "external_url": "",
+        "filename": "DP004-Implement-Data-Security.mp4",
+        "download_urls": null
+      },
+      "object_index": 50,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899014,
+      "title": "Implement Resource Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 51425868,
+        "asset_type": "Video",
+        "title": "DP005-Implement Resource Policies.mp4",
+        "external_url": "",
+        "filename": "DP005-Implement-Resource-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 51,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899016,
+      "title": "Decouple Data Ingestion",
+      "asset": {
+        "_class": "asset",
+        "id": 51425882,
+        "asset_type": "Video",
+        "title": "DP006-Decouple Data Ingestion.mp4",
+        "external_url": "",
+        "filename": "DP006-Decouple-Data-Ingestion.mp4",
+        "download_urls": null
+      },
+      "object_index": 52,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899018,
+      "title": "Design Bronze Layer",
+      "asset": {
+        "_class": "asset",
+        "id": 51425880,
+        "asset_type": "Video",
+        "title": "DP007-Design Bronze Layer.mp4",
+        "external_url": "",
+        "filename": "DP007-Design-Bronze-Layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 53,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899020,
+      "title": "Design Silver and Gold Layer",
+      "asset": {
+        "_class": "asset",
+        "id": 51425886,
+        "asset_type": "Video",
+        "title": "DP008-Design Silver and Gold Layer.mp4",
+        "external_url": "",
+        "filename": "DP008-Design-Silver-and-Gold-Layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 54,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899024,
+      "title": "Setup your source control",
+      "asset": {
+        "_class": "asset",
+        "id": 51425894,
+        "asset_type": "Video",
+        "title": "DP009-Setup your source control.mp4",
+        "external_url": "",
+        "filename": "DP009-Setup-your-source-control.mp4",
+        "download_urls": null
+      },
+      "object_index": 55,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40147176,
+      "title": "Setup your environment",
+      "asset": {
+        "_class": "asset",
+        "id": 51748636,
+        "asset_type": "Video",
+        "title": "DP009.1-Setup your environment.mp4",
+        "external_url": "",
+        "filename": "DP009.1-Setup-your-environment.mp4",
+        "download_urls": null
+      },
+      "object_index": 56,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40147182,
+      "title": "Create a development workspace",
+      "asset": {
+        "_class": "asset",
+        "id": 51748648,
+        "asset_type": "Video",
+        "title": "DP009.2 Create a workspace.mp4",
+        "external_url": "",
+        "filename": "DP009.2-Create-a-workspace.mp4",
+        "download_urls": null
+      },
+      "object_index": 57,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40147188,
+      "title": "Create and Configure Storage Layer",
+      "asset": {
+        "_class": "asset",
+        "id": 51748658,
+        "asset_type": "Video",
+        "title": "DP009.3 Create and Storage Layer.mp4",
+        "external_url": "",
+        "filename": "DP009.3-Create-and-Storage-Layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 58,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40147194,
+      "title": "Create Unity Catalog Metastore",
+      "asset": {
+        "_class": "asset",
+        "id": 51748654,
+        "asset_type": "Video",
+        "title": "DP009.4 Setup Unity Catalog.mp4",
+        "external_url": "",
+        "filename": "DP009.4-Setup-Unity-Catalog.mp4",
+        "download_urls": null
+      },
+      "object_index": 59,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40147200,
+      "title": "Create Catalog and External Locations",
+      "asset": {
+        "_class": "asset",
+        "id": 51766904,
+        "asset_type": "Video",
+        "title": "DP009.5 Create Metadata Catalog and External Locations.mp4",
+        "external_url": "",
+        "filename": "DP009.5-Create-Metadata-Catalog-and-External-Locations.mp4",
+        "download_urls": null
+      },
+      "object_index": 60,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899026,
+      "title": "Start Coding",
+      "asset": {
+        "_class": "asset",
+        "id": 51425924,
+        "asset_type": "Video",
+        "title": "DP010-Start Coding.mp4",
+        "external_url": "",
+        "filename": "DP010-Start-Coding.mp4",
+        "download_urls": null
+      },
+      "object_index": 61,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899030,
+      "title": "Test your code",
+      "asset": {
+        "_class": "asset",
+        "id": 51425944,
+        "asset_type": "Video",
+        "title": "DP011-Test your code.mp4",
+        "external_url": "",
+        "filename": "DP011-Test-your-code.mp4",
+        "download_urls": null
+      },
+      "object_index": 62,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899032,
+      "title": "Load historical data",
+      "asset": {
+        "_class": "asset",
+        "id": 51425932,
+        "asset_type": "Video",
+        "title": "DP012-Load historical data.mp4",
+        "external_url": "",
+        "filename": "DP012-Load-historical-data.mp4",
+        "download_urls": null
+      },
+      "object_index": 63,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899034,
+      "title": "Ingest into bronze layer",
+      "asset": {
+        "_class": "asset",
+        "id": 51425962,
+        "asset_type": "Video",
+        "title": "DP013-Ingest into bronze layer.mp4",
+        "external_url": "",
+        "filename": "DP013-Ingest-into-bronze-layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 64,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899036,
+      "title": "Process the silver layer",
+      "asset": {
+        "_class": "asset",
+        "id": 51425964,
+        "asset_type": "Video",
+        "title": "DP014-Process the silver layer.mp4",
+        "external_url": "",
+        "filename": "DP014-Process-the-silver-layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 65,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899038,
+      "title": "Handling multiple updates",
+      "asset": {
+        "_class": "asset",
+        "id": 51425942,
+        "asset_type": "Video",
+        "title": "DP015-Handling multiple updates.mp4",
+        "external_url": "",
+        "filename": "DP015-Handling-multiple-updates.mp4",
+        "download_urls": null
+      },
+      "object_index": 66,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899040,
+      "title": "Implementing Gold Layer",
+      "asset": {
+        "_class": "asset",
+        "id": 51425940,
+        "asset_type": "Video",
+        "title": "DP016-Implementing Gold Layer.mp4",
+        "external_url": "",
+        "filename": "DP016-Implementing-Gold-Layer.mp4",
+        "download_urls": null
+      },
+      "object_index": 67,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899044,
+      "title": "Creating a run script",
+      "asset": {
+        "_class": "asset",
+        "id": 51425956,
+        "asset_type": "Video",
+        "title": "DP017-Creating a run script.mp4",
+        "external_url": "",
+        "filename": "DP017-Creating-a-run-script.mp4",
+        "download_urls": null
+      },
+      "object_index": 68,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899046,
+      "title": "Preparing for Integration testing",
+      "asset": {
+        "_class": "asset",
+        "id": 51425936,
+        "asset_type": "Video",
+        "title": "DP018-Preparing for Integration testing.mp4",
+        "external_url": "",
+        "filename": "DP018-Preparing-for-Integration-testing.mp4",
+        "download_urls": null
+      },
+      "object_index": 69,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899048,
+      "title": "Creating Test Data Producer",
+      "asset": {
+        "_class": "asset",
+        "id": 51425934,
+        "asset_type": "Video",
+        "title": "DP019-Creating Test Data Producer.mp4",
+        "external_url": "",
+        "filename": "DP019-Creating-Test-Data-Producer.mp4",
+        "download_urls": null
+      },
+      "object_index": 70,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899052,
+      "title": "Creating Integration Test for Batch mode",
+      "asset": {
+        "_class": "asset",
+        "id": 51425938,
+        "asset_type": "Video",
+        "title": "DP020-Creating Integration Test for Batch mode.mp4",
+        "external_url": "",
+        "filename": "DP020-Creating-Integration-Test-for-Batch-mode.mp4",
+        "download_urls": null
+      },
+      "object_index": 71,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899056,
+      "title": "Creating Integration Test for Stream mode",
+      "asset": {
+        "_class": "asset",
+        "id": 51515574,
+        "asset_type": "Video",
+        "title": "DP021-Creating Integration Test for Stream mode.mp4",
+        "external_url": "",
+        "filename": "DP021-Creating-Integration-Test-for-Stream-mode.mp4",
+        "download_urls": null
+      },
+      "object_index": 72,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899058,
+      "title": "Implementing CI CD Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 51515494,
+        "asset_type": "Video",
+        "title": "DP022-Implementing CI CD Pipeline.mp4",
+        "external_url": "",
+        "filename": "DP022-Implementing-CI-CD-Pipeline.mp4",
+        "download_urls": null
+      },
+      "object_index": 73,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899060,
+      "title": "Develop Build Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 51515500,
+        "asset_type": "Video",
+        "title": "DP023-Develop Build Pipeline.mp4",
+        "external_url": "",
+        "filename": "DP023-Develop-Build-Pipeline.mp4",
+        "download_urls": null
+      },
+      "object_index": 74,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899064,
+      "title": "Develop Release Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 51515544,
+        "asset_type": "Video",
+        "title": "DP024-Develop Release Pipeline.mp4",
+        "external_url": "",
+        "filename": "DP024-Develop-Release-Pipeline.mp4",
+        "download_urls": null
+      },
+      "object_index": 75,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39899066,
+      "title": "Creating Databricks CLI Script",
+      "asset": {
+        "_class": "asset",
+        "id": 51515492,
+        "asset_type": "Video",
+        "title": "DP025-Creating Databricks CLI Script.mp4",
+        "external_url": "",
+        "filename": "DP025-Creating-Databricks-CLI-Script.mp4",
+        "download_urls": null
+      },
+      "object_index": 76,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 9713810,
+      "title": "Final Word",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 40609092,
+      "title": "An End is a new Beginning",
+      "asset": {
+        "_class": "asset",
+        "id": 52377102,
+        "asset_type": "Video",
+        "title": "GRR001-Final Word.mp4",
+        "external_url": "",
+        "filename": "GRR001-Final-Word.mp4",
+        "download_urls": null
+      },
+      "object_index": 77,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 5243894,
+      "title": "Archived - Old Course Content",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 21955568,
+      "title": "Spark Development Environment",
+      "asset": {
+        "_class": "asset",
+        "id": 27489462,
+        "asset_type": "Video",
+        "title": "SS03 - Spark Development Environment-Python.mp4",
+        "external_url": "",
+        "filename": "SS03-Spark-Development-Environment-Python.mp4",
+        "download_urls": null
+      },
+      "object_index": 78,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955572,
+      "title": "Windows User - Spark Installation Prerequisites",
+      "asset": {
+        "_class": "asset",
+        "id": 27495998,
+        "asset_type": "Video",
+        "title": "SS04 - Spark Installation Prerequisites.mp4",
+        "external_url": "",
+        "filename": "SS04-Spark-Installation-Prerequisites.mp4",
+        "download_urls": null
+      },
+      "object_index": 79,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955574,
+      "title": "Windows User - Installing Apache Spark",
+      "asset": {
+        "_class": "asset",
+        "id": 27516168,
+        "asset_type": "Video",
+        "title": "SS05 - Installing Apache Spark.mp4",
+        "external_url": "",
+        "filename": "SS05-Installing-Apache-Spark.mp4",
+        "download_urls": null
+      },
+      "object_index": 80,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955576,
+      "title": "Windows User - Setup and test your IDE",
+      "asset": {
+        "_class": "asset",
+        "id": 27540020,
+        "asset_type": "Video",
+        "title": "SS06 - Setup and test your IDE - PyCharm.mp4",
+        "external_url": "",
+        "filename": "SS06-Setup-and-test-your-IDE-PyCharm.mp4",
+        "download_urls": null
+      },
+      "object_index": 81,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 23704954,
+      "title": "Mac User - Installing Apache Spark",
+      "asset": {
+        "_class": "asset",
+        "id": 29790304,
+        "asset_type": "Video",
+        "title": "SS05 - Mac-Installing Apache Spark.mp4",
+        "external_url": "",
+        "filename": "SS05-Mac-Installing-Apache-Spark.mp4",
+        "download_urls": null
+      },
+      "object_index": 82,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 23704994,
+      "title": "Mac User - Setup and test your IDE",
+      "asset": {
+        "_class": "asset",
+        "id": 29790346,
+        "asset_type": "Video",
+        "title": "SP06-Mac-Apache Spark in IDE.mp4",
+        "external_url": "",
+        "filename": "SP06-Mac-Apache-Spark-in-IDE.mp4",
+        "download_urls": null
+      },
+      "object_index": 83,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955580,
+      "title": "Install and run Apache Kafka",
+      "asset": {
+        "_class": "asset",
+        "id": 27547578,
+        "asset_type": "Video",
+        "title": "SS07 - Install and run Apache Kafka.mp4",
+        "external_url": "",
+        "filename": "SS07-Install-and-run-Apache-Kafka.mp4",
+        "download_urls": null
+      },
+      "object_index": 84,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955596,
+      "title": "Stream processing model in Spark",
+      "asset": {
+        "_class": "asset",
+        "id": 27614496,
+        "asset_type": "Video",
+        "title": "SS11 - Stream processing model in Spark-Python.mp4",
+        "external_url": "",
+        "filename": "SS11-Stream-processing-model-in-Spark-Python.mp4",
+        "download_urls": null
+      },
+      "object_index": 85,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955598,
+      "title": "Working with Files and Directories",
+      "asset": {
+        "_class": "asset",
+        "id": 27626252,
+        "asset_type": "Video",
+        "title": "SS12 - Working with Files and Directories - Python.mp4",
+        "external_url": "",
+        "filename": "SS12-Working-with-Files-and-Directories-Python.mp4",
+        "download_urls": null
+      },
+      "object_index": 86,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955602,
+      "title": "Streaming Sources, Sinks and Output Mode",
+      "asset": {
+        "_class": "asset",
+        "id": 27671124,
+        "asset_type": "Video",
+        "title": "SS13 - Streaming Sources Sinks and Output Mode.mp4",
+        "external_url": "",
+        "filename": "SS13-Streaming-Sources-Sinks-and-Output-Mode.mp4",
+        "download_urls": null
+      },
+      "object_index": 87,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955606,
+      "title": "Fault Tolerance and Restarts",
+      "asset": {
+        "_class": "asset",
+        "id": 27683198,
+        "asset_type": "Video",
+        "title": "SS14 - Fault Tolerance and Restarts.mp4",
+        "external_url": "",
+        "filename": "SS14-Fault-Tolerance-and-Restarts.mp4",
+        "download_urls": null
+      },
+      "object_index": 88,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955586,
+      "title": "Introduction to Stream Processing",
+      "asset": {
+        "_class": "asset",
+        "id": 27570840,
+        "asset_type": "Video",
+        "title": "SS08 - Introduction to Stream Processing.mp4",
+        "external_url": "",
+        "filename": "SS08-Introduction-to-Stream-Processing.mp4",
+        "download_urls": null
+      },
+      "object_index": 89,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955588,
+      "title": "Spark Streaming APIs - DStream Vs Structured Streaming",
+      "asset": {
+        "_class": "asset",
+        "id": 27573158,
+        "asset_type": "Video",
+        "title": "SS09 - Spark Streaming APIs - DStream Vs Structured Streaming.mp4",
+        "external_url": "",
+        "filename": "SS09-Spark-Streaming-APIs-DStream-Vs-Structured-Streaming.mp4",
+        "download_urls": null
+      },
+      "object_index": 90,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955590,
+      "title": "Creating your first stream processing application",
+      "asset": {
+        "_class": "asset",
+        "id": 27598184,
+        "asset_type": "Video",
+        "title": "SS10 - Creating your first stream processing application - Python.mp4",
+        "external_url": "",
+        "filename": "SS10-Creating-your-first-stream-processing-application-Python.mp4",
+        "download_urls": null
+      },
+      "object_index": 91,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955612,
+      "title": "Streaming from Kafka as a Source",
+      "asset": {
+        "_class": "asset",
+        "id": 27692678,
+        "asset_type": "Video",
+        "title": "SS15 - Streaming from Kafka Source.mp4",
+        "external_url": "",
+        "filename": "SS15-Streaming-from-Kafka-Source.mp4",
+        "download_urls": null
+      },
+      "object_index": 92,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955616,
+      "title": "Working with Kafka Sinks",
+      "asset": {
+        "_class": "asset",
+        "id": 27713962,
+        "asset_type": "Video",
+        "title": "SS16 - Working with Kafka Sinks.mp4",
+        "external_url": "",
+        "filename": "SS16-Working-with-Kafka-Sinks.mp4",
+        "download_urls": null
+      },
+      "object_index": 93,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955620,
+      "title": "Multi-query Streams Application",
+      "asset": {
+        "_class": "asset",
+        "id": 27716340,
+        "asset_type": "Video",
+        "title": "SS17 - Multi-query Streams Application.mp4",
+        "external_url": "",
+        "filename": "SS17-Multi-query-Streams-Application.mp4",
+        "download_urls": null
+      },
+      "object_index": 94,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955622,
+      "title": "Kafka Serialization and Deserialization for Spark",
+      "asset": {
+        "_class": "asset",
+        "id": 27717984,
+        "asset_type": "Video",
+        "title": "SS18 - Kafka Serialization and Deserialization for Spark.mp4",
+        "external_url": "",
+        "filename": "SS18-Kafka-Serialization-and-Deserialization-for-Spark.mp4",
+        "download_urls": null
+      },
+      "object_index": 95,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955626,
+      "title": "Creating Kafka AVRO Sinks",
+      "asset": {
+        "_class": "asset",
+        "id": 27730830,
+        "asset_type": "Video",
+        "title": "SS19 - Creating Kafka AVRO Sinks.mp4",
+        "external_url": "",
+        "filename": "SS19-Creating-Kafka-AVRO-Sinks.mp4",
+        "download_urls": null
+      },
+      "object_index": 96,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955630,
+      "title": "Working with Kafka AVRO Source",
+      "asset": {
+        "_class": "asset",
+        "id": 27739544,
+        "asset_type": "Video",
+        "title": "SS20 - Working with Kafka AVRO Source.mp4",
+        "external_url": "",
+        "filename": "SS20-Working-with-Kafka-AVRO-Source.mp4",
+        "download_urls": null
+      },
+      "object_index": 97,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955632,
+      "title": "Stateless Vs Statefull transformations",
+      "asset": {
+        "_class": "asset",
+        "id": 27756410,
+        "asset_type": "Video",
+        "title": "SS21 - Stateless Vs Stateful transformations.mp4",
+        "external_url": "",
+        "filename": "SS21-Stateless-Vs-Stateful-transformations.mp4",
+        "download_urls": null
+      },
+      "object_index": 98,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955636,
+      "title": "Event time and Windowing",
+      "asset": {
+        "_class": "asset",
+        "id": 27781070,
+        "asset_type": "Video",
+        "title": "SS22 - Event time and Windowing.mp4",
+        "external_url": "",
+        "filename": "SS22-Event-time-and-Windowing.mp4",
+        "download_urls": null
+      },
+      "object_index": 99,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955638,
+      "title": "Tumbling Window aggregate",
+      "asset": {
+        "_class": "asset",
+        "id": 27826292,
+        "asset_type": "Video",
+        "title": "SS23 - Tumbling Window aggregate.mp4",
+        "external_url": "",
+        "filename": "SS23-Tumbling-Window-aggregate.mp4",
+        "download_urls": null
+      },
+      "object_index": 100,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955642,
+      "title": "Watermarking your windows",
+      "asset": {
+        "_class": "asset",
+        "id": 27960428,
+        "asset_type": "Video",
+        "title": "SS24 - Watermarking your windows.mp4",
+        "external_url": "",
+        "filename": "SS24-Watermarking-your-windows.mp4",
+        "download_urls": null
+      },
+      "object_index": 101,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955648,
+      "title": "Watermark and output modes",
+      "asset": {
+        "_class": "asset",
+        "id": 27968212,
+        "asset_type": "Video",
+        "title": "SS25 - Watermark and output modes.mp4",
+        "external_url": "",
+        "filename": "SS25-Watermark-and-output-modes.mp4",
+        "download_urls": null
+      },
+      "object_index": 102,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21955650,
+      "title": "Sliding Window",
+      "asset": {
+        "_class": "asset",
+        "id": 27970696,
+        "asset_type": "Video",
+        "title": "SS26 - Sliding Window.mp4",
+        "external_url": "",
+        "filename": "SS26-Sliding-Window.mp4",
+        "download_urls": null
+      },
+      "object_index": 103,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22355480,
+      "title": "Joining Stream to static source",
+      "asset": {
+        "_class": "asset",
+        "id": 27990532,
+        "asset_type": "Video",
+        "title": "SS27 - Joining Stream to static source.mp4",
+        "external_url": "",
+        "filename": "SS27-Joining-Stream-to-static-source.mp4",
+        "download_urls": null
+      },
+      "object_index": 104,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22369992,
+      "title": "Joining Stream to another Stream",
+      "asset": {
+        "_class": "asset",
+        "id": 28008758,
+        "asset_type": "Video",
+        "title": "SS28 - Joining Stream to another Stream.mp4",
+        "external_url": "",
+        "filename": "SS28-Joining-Stream-to-another-Stream.mp4",
+        "download_urls": null
+      },
+      "object_index": 105,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22370012,
+      "title": "Streaming Watermark",
+      "asset": {
+        "_class": "asset",
+        "id": 28015416,
+        "asset_type": "Video",
+        "title": "SS29 - Streaming Watermark.mp4",
+        "external_url": "",
+        "filename": "SS29-Streaming-Watermark.mp4",
+        "download_urls": null
+      },
+      "object_index": 106,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22370018,
+      "title": "Streaming Outer Joins",
+      "asset": {
+        "_class": "asset",
+        "id": 28033876,
+        "asset_type": "Video",
+        "title": "SS30 - Streaming Outer Joins.mp4",
+        "external_url": "",
+        "filename": "SS30-Streaming-Outer-Joins.mp4",
+        "download_urls": null
+      },
+      "object_index": 107,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 23246780,
+      "title": "Final Word",
+      "asset": {
+        "_class": "asset",
+        "id": 29173264,
+        "asset_type": "Video",
+        "title": "Epilogue.mp4",
+        "external_url": "",
+        "filename": "Epilogue.mp4",
+        "download_urls": null
+      },
+      "object_index": 108,
+      "supplementary_assets": []
+    }
+  ]
+}

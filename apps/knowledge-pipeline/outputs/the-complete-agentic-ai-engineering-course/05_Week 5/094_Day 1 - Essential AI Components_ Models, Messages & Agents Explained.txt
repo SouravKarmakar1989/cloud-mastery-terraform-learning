@@ -1,0 +1,1 @@
+And so with that we covered models, messages and agents. And we'll do teams another time. And that wraps up the first day of week five. And next time we'll get a bit deeper into agent chat. See you then.

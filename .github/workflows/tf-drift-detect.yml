@@ -63,14 +63,14 @@ jobs:
       - uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        working-directory: azure-infrastructure/${{ matrix.module }}
+        working-directory: platforms/github-iac-terraform/azure-infrastructure/${{ matrix.module }}
         run: terraform init -backend-config=env/${{ env.DRIFT_ENV }}/backend.hcl
         # Skip modules that don't have a backend for this environment
         continue-on-error: true
 
       - name: Terraform Plan (drift check)
         id: plan
-        working-directory: azure-infrastructure/${{ matrix.module }}
+        working-directory: platforms/github-iac-terraform/azure-infrastructure/${{ matrix.module }}
         # Exit code 0 = no changes, 1 = error, 2 = changes detected (drift)
         run: |
           terraform plan \
@@ -83,7 +83,7 @@ jobs:
       - name: Flag drift
         if: steps.plan.outputs.exit_code == '2'
         run: |
-          echo "::warning::DRIFT DETECTED in azure-infrastructure/${{ matrix.module }} (${{ env.DRIFT_ENV }})"
+          echo "::warning::DRIFT DETECTED in platforms/github-iac-terraform/azure-infrastructure/${{ matrix.module }} (${{ env.DRIFT_ENV }})"
           echo "DRIFT=true" >> $GITHUB_ENV
 
   # ── Open a GitHub Issue if any module drifted ─────────────────────────────

@@ -1,0 +1,265 @@
+﻿FILTERED_FULL_SCAN_SUMMARY
+Technical transcripts: 3173
+Referenced in KB: 2572
+Missing in KB refs: 601
+Coverage %: 81.06
+
+TOP_MODULE_GAPS
+
+Module                                                                                                            Total Covered Missing CoveragePct
+------                                                                                                            ----- ------- ------- -----------
+aws-certified-developer-associate-dva-c01/23_aws serverless_ api gateway                                             20      20       0         100
+aws-certified-developer-associate-dva-c01/25_aws serverless_ sam - serverless application model                       7       7       0         100
+aws-certified-developer-associate-dva-c01/21_aws serverless_ lambda                                                  46      46       0         100
+aws-certified-developer-associate-dva-c01/22_aws serverless_ dynamodb                                                23      23       0         100
+aws-certified-solutions-architect-associate-saa-c03/25_identity and access management (iam) - advanced               10      10       0         100
+aws-certified-solutions-architect-associate-saa-c03/24_aws monitoring & audit_ cloudwatch, cloudtrail & config       17      17       0         100
+aws-certified-developer-associate-dva-c01/26_cloud development kit (cdk)                                              5       5       0         100
+aws-certified-developer-associate-dva-c01/28_other serverless_ step functions & appsync                              12      12       0         100
+aws-certified-solutions-architect-associate-saa-c03/28_disaster recovery & migrations                                11      11       0         100
+aws-certified-developer-associate-dva-c01/16_ecs, ecr & fargate - docker in aws                                      15      15       0         100
+aws-certified-developer-associate-dva-c01/13_advanced amazon s3                                                       6       6       0         100
+aws-certified-developer-associate-dva-c01/14_amazon s3 security                                                      13      13       0         100
+aws-certified-developer-associate-dva-c01/19_aws integration & messaging_ sqs, sns & kinesis                         19      19       0         100
+aws-certified-developer-associate-dva-c01/20_aws monitoring & audit_ cloudwatch, x-ray and cloudtrail                28      28       0         100
+aws-certified-developer-associate-dva-c01/17_aws elastic beanstalk                                                   12      12       0         100
+aws-certified-developer-associate-dva-c01/18_aws cloudformation                                                      18      18       0         100
+aws-certified-solutions-architect-associate-saa-c03/08_high availability and scalability_ elb & asg                  17      17       0         100
+aws-certified-solutions-architect-associate-saa-c03/09_aws fundamentals_ rds + aurora + elasticache                  13      13       0         100
+aws-certified-solutions-architect-associate-saa-c03/05_ec2 fundamentals                                              15      15       0         100
+aws-certified-solutions-architect-associate-saa-c03/07_ec2 instance storage                                          13      13       0         100
+aws-certified-solutions-architect-associate-saa-c03/13_advanced amazon s3                                             8       8       0         100
+aws-certified-solutions-architect-associate-saa-c03/14_amazon s3 security                                            14      14       0         100
+aws-certified-solutions-architect-associate-saa-c03/10_route 53                                                      19      19       0         100
+aws-certified-solutions-architect-associate-saa-c03/15_cloudfront & aws global accelerator                            7       7       0         100
+aws-certified-solutions-architect-associate-saa-c03/20_serverless solution architecture discussions                   4       4       0         100
+aws-certified-solutions-architect-associate-saa-c03/19_serverless overviews from a solution architect perspective    16      16       0         100
+aws-certified-solutions-architect-associate-saa-c03/22_data & analytics                                              12      12       0         100
+aws-certified-solutions-architect-associate-saa-c03/21_databases in aws                                              10      10       0         100
+aws-certified-solutions-architect-associate-saa-c03/16_aws storage extras                                            10      10       0         100
+aws-certified-solutions-architect-associate-saa-c03/04_iam & aws cli                                                 18      18       0         100
+aws-certified-solutions-architect-associate-saa-c03/18_containers on aws_ ecs, fargate, ecr & eks                    12      12       0         100
+aws-certified-solutions-architect-associate-saa-c03/17_decoupling applications_ sqs, sns, kinesis, active mq         15      15       0         100
+aws-solutions-architect-professional/14_migration                                                                    12      12       0         100
+data engineering/apache-spark-3-beyond-basics                                                                        24      24       0         100
+data engineering/apache-spark-programming-in-python-for-beginners                                                    59      59       0         100
+aws-solutions-architect-professional/11_monitoring                                                                    5       5       0         100
+aws-certified-cloudops-associate/16_monitoring, auditing and performance                                             34      34       0         100
+aws-solutions-architect-professional/13_cost control                                                                 10      10       0         100
+aws-certified-cloudops-associate/06_ec2 high availability and scalability                                            27      27       0         100
+data engineering/master-azure-databricks-for-data-engineers                                                          76      76       0         100
+data engineering/spark-streaming-using-python                                                                        98      98       0         100
+data engineering/azure-databricks-spark-core-for-data-engineers                                                     165     165       0         100
+data engineering/databricks-certified-data-engineer-associate-ultimate-prep                                          54      54       0         100
+aws-certified-cloudops-associate/07_cloudformation for cloudops                                                      34      34       0         100
+aws-solutions-architect-professional/10_data engineering                                                             15      15       0         100
+aws ai/3. aws-generative-ai-developer-professional                                                                  284     284       0         100
+aws-solutions-architect-professional/05_compute & load balancing                                                     26      26       0         100
+aws-certified-developer-associate-dva-c01/08_aws fundamentals_ rds + aurora + elasticache                            11      11       0         100
+aws-certified-developer-associate-dva-c01/06_ec2 instance storage                                                    12      12       0         100
+aws-certified-developer-associate-dva-c01/05_ec2 fundamentals                                                        13      13       0         100
+
+
+
+
+SAMPLE_MISSING_PATHS
+outputs/aws speciality/advanced-networking-specialty/23_additional topics/250_vpc sharing.txt
+outputs/aws speciality/advanced-networking-specialty/23_additional topics/251_aws private nat gateway.txt
+outputs/aws speciality/advanced-networking-specialty/23_additional topics/252_aws network architecture for amazon workspaces_appstream 2.0.txt
+outputs/aws speciality/advanced-networking-specialty/23_additional topics/253_aws wavelength.txt
+outputs/aws speciality/advanced-networking-specialty/23_additional topics/254_aws local zones.txt
+outputs/aws speciality/security/03_domain 1 - detection/005_amazon guardduty.txt
+outputs/aws speciality/security/03_domain 1 - detection/006_amazon guardduty - findings & automation.txt
+outputs/aws speciality/security/03_domain 1 - detection/007_amazon guardduty - multi-account strategy.txt
+outputs/aws speciality/security/03_domain 1 - detection/008_amazon guardduty - advanced.txt
+outputs/aws speciality/security/03_domain 1 - detection/009_[ccp] security hub overview.txt
+outputs/aws speciality/security/03_domain 1 - detection/010_security hub - advanced.txt
+outputs/aws speciality/security/03_domain 1 - detection/011_amazon detective.txt
+outputs/aws speciality/security/03_domain 1 - detection/012_detective - architectures.txt
+outputs/aws speciality/security/03_domain 1 - detection/013_[ccp_saa_soa] amazon inspector.txt
+outputs/aws speciality/security/03_domain 1 - detection/014_[important] aws console ui update.txt
+outputs/aws speciality/security/03_domain 1 - detection/015_[soa_dop] amazon inspector hands on.txt
+outputs/aws speciality/security/03_domain 1 - detection/038_[ccp_saa_soa] macie.txt
+outputs/aws speciality/security/03_domain 1 - detection/039_macie - advanced.txt
+outputs/aws storage and db/amazon-s3-deep-dive/04_amazon s3 storage classes/021_amazon s3 standard – infrequent access (ia).txt
+outputs/aws storage and db/amazon-s3-deep-dive/04_amazon s3 storage classes/022_amazon s3 one zone – infrequent access (ia).txt
+outputs/aws storage and db/awsdatabase/04_dynamodb/043_dynamodb indexes — search effectively with lsi and gsi.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/007_[important] aws console ui update.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/008_launching an ec2 instance.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/009_changing ec2 instance type.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/010_[saa] ec2 placement groups.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/011_[saa] ec2 placement groups - hands on.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/012_troubleshooting ec2 ssh issues.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/013_ec2 instance connect (eic) endpoint.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/014_cloudwatch metrics for ec2.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/015_cloudwatch - unified cloudwatch agent - overview.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/016_cloudwatch - unified cloudwatch agent - hands on.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/017_ec2 instance status checks.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/018_ec2 instance status checks hands on.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/019_[saa] ec2 hibernate.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/020_[saa] ec2 hibernate hands on.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/021_instance scheduler on aws.txt
+outputs/aws-certified-cloudops-associate/03_ec2 for cloudops/022_ec2 cleanup.txt
+outputs/aws-certified-cloudops-associate/04_ami - amazon machine image/023_[ccp_saa_dva] ami overview.txt
+outputs/aws-certified-cloudops-associate/04_ami - amazon machine image/024_[ccp_saa_dva] ami hands on.txt
+outputs/aws-certified-cloudops-associate/04_ami - amazon machine image/025_ami no reboot option.txt
+outputs/aws-certified-cloudops-associate/04_ami - amazon machine image/026_ec2 instance migration using amis.txt
+outputs/aws-certified-cloudops-associate/04_ami - amazon machine image/027_[ccp] ec2 image builder.txt
+outputs/aws-certified-cloudops-associate/04_ami - amazon machine image/028_ec2 image builder hands on.txt
+outputs/aws-certified-cloudops-associate/04_ami - amazon machine image/029_ami in production.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/031_systems manager overview.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/032_start ec2 instances with ssm agent.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/033_aws tags & ssm resource groups.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/034_ssm documents & ssm run command.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/035_ssm automations.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/036_ssm automations - patch ami & update asg.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/037_[saa_dva] ssm parameter store overview.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/038_[saa_dva] ssm parameter store hands on (cli).txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/039_ssm fleet manager.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/040_ssm default host management configuration (dhmc).txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/041_ssm default host management configuration (dhmc) - hands on.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/042_ssm inventory & state manager.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/043_ssm patch manager and maintenance windows.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/044_ssm patch manager and maintenance windows - hands on.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/045_ssm session manager overview.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/046_ssm session manager hands on.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/047_ssm distributor.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/048_ssm opscenter.txt
+outputs/aws-certified-cloudops-associate/05_managing ec2 at scale - systems manager (ssm)/049_ssm cleanup.txt
+outputs/aws-certified-cloudops-associate/08_lambda for cloudops/115_lambda - overview.txt
+outputs/aws-certified-cloudops-associate/08_lambda for cloudops/116_lambda - hands on.txt
+outputs/aws-certified-cloudops-associate/08_lambda for cloudops/117_lambda & cloudwatch events _ eventbridge.txt
+outputs/aws-certified-cloudops-associate/08_lambda for cloudops/118_lambda & cloudwatch events _ eventbridge - hands on.txt
+outputs/aws-certified-cloudops-associate/08_lambda for cloudops/119_lambda & s3 event notifications.txt
+outputs/aws-certified-cloudops-associate/08_lambda for cloudops/120_lambda & s3 event notifications - hands on.txt
+outputs/aws-certified-cloudops-associate/09_ec2 storage and data management - ebs and efs/121_[ccp_saa_dva] ebs overview.txt
+outputs/aws-certified-cloudops-associate/09_ec2 storage and data management - ebs and efs/122_[ccp_saa_dva] ebs hands on.txt
+outputs/aws-certified-cloudops-associate/09_ec2 storage and data management - ebs and efs/123_[saa_dva] ebs volume types deep dive.txt
+outputs/aws-certified-cloudops-associate/09_ec2 storage and data management - ebs and efs/124_ebs operation_ snapshots.txt
+outputs/aws-certified-cloudops-associate/09_ec2 storage and data management - ebs and efs/125_ebs operation_ snapshots hands on.txt
+outputs/aws-certified-cloudops-associate/09_ec2 storage and data management - ebs and efs/126_[saa_dva] amazon efs.txt
+outputs/aws-certified-cloudops-associate/09_ec2 storage and data management - ebs and efs/127_[saa_dva] amazon efs - hands on.txt
+outputs/aws-certified-cloudops-associate/09_ec2 storage and data management - ebs and efs/128_[saa_dva] efs vs ebs.txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/143_[saa_dva] s3 lifecycle rules (with s3 analytics).txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/144_[saa_dva] s3 lifecycle rules - hands on.txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/145_[saa_dva] s3 event notifications.txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/146_[saa_dva] s3 event notifications - hands on.txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/147_[saa_dva] s3 performance.txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/148_[saa] s3 batch operations.txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/149_s3 batch operations hands on.txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/150_s3 inventory.txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/151_s3 multi-part upload deep dive.txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/152_s3 multi-part upload - hands on.txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/153_[saa_dva] athena.txt
+outputs/aws-certified-cloudops-associate/11_advanced amazon s3 & athena/154_[saa_dva] athena hands on.txt
+outputs/aws-certified-cloudops-associate/12_amazon s3 security/155_[saa_dva] s3 mfa delete.txt
+outputs/aws-certified-cloudops-associate/12_amazon s3 security/156_[saa_dva] s3 mfa delete hands on.txt
+outputs/aws-certified-cloudops-associate/12_amazon s3 security/157_[saa_dva] s3 access logs.txt
+outputs/aws-certified-cloudops-associate/12_amazon s3 security/158_[saa_dva] s3 access logs - hands on.txt
+outputs/aws-certified-cloudops-associate/12_amazon s3 security/159_[saa] glacier vault lock & s3 object lock.txt
+outputs/aws-certified-cloudops-associate/12_amazon s3 security/160_s3 vpc endpoints.txt
+outputs/aws-certified-cloudops-associate/12_amazon s3 security/161_iam access analyzer for s3.txt
+outputs/aws-certified-cloudops-associate/13_advanced storage section/162_[saa_sap] amazon fsx.txt
+outputs/aws-certified-cloudops-associate/13_advanced storage section/163_[saa] amazon fsx - hands on.txt
+outputs/aws-certified-cloudops-associate/13_advanced storage section/164_fsx for cloudops.txt
+outputs/aws-certified-cloudops-associate/13_advanced storage section/165_[saa] storage gateway overview.txt
+outputs/aws-certified-cloudops-associate/13_advanced storage section/166_[saa] storage gateway hands on.txt
+outputs/aws-certified-cloudops-associate/13_advanced storage section/167_storage gateway for cloudops.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/168_[saa_dva] cloudfront overview.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/169_[saa_dva] cloudfront with s3 - hands on.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/170_cloudfront - caching.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/171_cloudfront - cache invalidations.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/172_cloudfront - origin shield.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/173_[saa_dva] cloudfront - alb_ec2 as an origin.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/174_[saa_dva] cloudfront - geo restriction.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/175_cloudfront reports, logs and troubleshooting.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/176_cloudfront caching - deep dive.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/177_cloudfront with alb sticky sessions.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/178_aws global accelerator.txt
+outputs/aws-certified-cloudops-associate/14_cloudfront/179_aws global accelerator - hands on.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/180_[saa_dva] rds overview.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/181_[saa_dva] rds multi az vs read replicas.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/182_[saa_dva] rds hands on.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/183_rds multi az – failover conditions.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/184_rds backups and snapshots.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/185_rds events and logs.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/186_rds & cloudwatch.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/187_rds performance insights.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/188_[saa_dva] amazon aurora.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/189_[saa_dva] amazon aurora - hands on.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/190_amazon aurora - backups.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/191_[saa_dva] rds & aurora security.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/192_amazon aurora for cloudops.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/193_amazon rds proxy.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/194_[saa_dva] elasticache overview.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/195_[saa_dva] elasticache hands on.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/196_elasticache redis for cloudops.txt
+outputs/aws-certified-cloudops-associate/15_databases for cloudops/197_elasticache memcached for cloudops.txt
+outputs/aws-certified-cloudops-associate/17_aws account management/232_section intro.txt
+outputs/aws-certified-cloudops-associate/17_aws account management/233_aws health dashboard - overview.txt
+outputs/aws-certified-cloudops-associate/17_aws account management/234_aws health dashboard - hands on.txt
+outputs/aws-certified-cloudops-associate/17_aws account management/235_aws health dashboard - events & notifications.txt
+outputs/aws-certified-cloudops-associate/17_aws account management/236_[saa] organizations overview.txt
+outputs/aws-certified-cloudops-associate/17_aws account management/241_[ccp] aws control tower hands on.txt
+outputs/aws-certified-cloudops-associate/18_disaster recovery/252_[saa] aws backup.txt
+outputs/aws-certified-cloudops-associate/19_security and compliance for cloudops/270_kms for cloudops.txt
+outputs/aws-certified-cloudops-associate/22_networking - vpc/322_[saa] internet gateways & route tables.txt
+outputs/aws-certified-cloudops-associate/22_networking - vpc/345_[saa] site to site vpn, virtual private gateway & customer gateway hands on.txt
+outputs/aws-certified-cloudops-associate/23_other services/378_[ccp] x-ray.txt
+outputs/aws-certified-developer-associate-dva-c01/03_getting started with aws/008_aws cloud overview - regions & az.txt
+outputs/aws-certified-developer-associate-dva-c01/03_getting started with aws/009_[important] aws console ui update.txt
+outputs/aws-certified-developer-associate-dva-c01/03_getting started with aws/010_tour of the aws console & services in aws.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/012_iam users & groups hands on.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/013_aws console simultaneous sign-in.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/014_iam policies.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/015_iam policies hands on.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/016_iam mfa overview.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/017_iam mfa hands on.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/018_aws access keys, cli and sdk.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/019_aws cli setup on windows.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/020_aws cli setup on mac os x.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/021_aws cli setup on linux.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/022_aws cli hands on.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/023_aws cloudshell.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/024_iam roles for aws services.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/025_iam roles hands on.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/026_iam security tools.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/027_iam security tools hands on.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/028_iam best practices.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/029_shared responsibility model for iam.txt
+outputs/aws-certified-developer-associate-dva-c01/04_iam & aws cli/030_iam summary.txt
+outputs/aws-certified-developer-associate-dva-c01/07_aws fundamentals_ elb + asg/059_elastic load balancing (elb) overview.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/088_what is a dns_.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/089_route 53 overview.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/090_route 53 - registering a domain.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/091_route 53 - creating our first records.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/093_route 53 - ttl.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/094_route 53 cname vs alias.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/095_routing policy - simple.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/096_routing policy - weighted.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/097_routing policy - latency.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/098_route 53 health checks.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/099_route 53 - health checks hands on.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/101_routing policy - geolocation.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/102_routing policy - geoproximity.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/103_routing policy - traffic flow & geoproximity hands on.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/104_routing policy - ip-based.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/105_routing policy - multi value.txt
+outputs/aws-certified-developer-associate-dva-c01/09_route 53/106_3rd party domains & route 53.txt
+outputs/aws-certified-developer-associate-dva-c01/10_vpc fundamentals/109_vpc, subnets, igw and nat.txt
+outputs/aws-certified-developer-associate-dva-c01/10_vpc fundamentals/111_vpc peering, endpoints, vpn, dx.txt
+outputs/aws-certified-developer-associate-dva-c01/10_vpc fundamentals/112_vpc cheat sheet & closing comments.txt
+outputs/aws-certified-developer-associate-dva-c01/10_vpc fundamentals/113_three tier architecture.txt
+outputs/aws-certified-developer-associate-dva-c01/12_aws cli, sdk, iam roles & policies/129_aws cli profiles.txt
+outputs/aws-certified-developer-associate-dva-c01/12_aws cli, sdk, iam roles & policies/130_aws cli with mfa.txt
+outputs/aws-certified-developer-associate-dva-c01/12_aws cli, sdk, iam roles & policies/131_aws sdk overview.txt
+outputs/aws-certified-developer-associate-dva-c01/12_aws cli, sdk, iam roles & policies/132_exponential backoff & service limit increase.txt
+outputs/aws-certified-developer-associate-dva-c01/12_aws cli, sdk, iam roles & policies/133_aws credentials provider & chain.txt
+outputs/aws-certified-developer-associate-dva-c01/12_aws cli, sdk, iam roles & policies/134_aws signature v4 signing (sigv4).txt
+outputs/aws-certified-developer-associate-dva-c01/15_cloudfront/155_cloudfront - overview.txt
+outputs/aws-certified-developer-associate-dva-c01/15_cloudfront/156_cloudfront hands on.txt
+outputs/aws-certified-developer-associate-dva-c01/15_cloudfront/157_cloudfront - caching & caching policies.txt
+outputs/aws-certified-developer-associate-dva-c01/15_cloudfront/158_cloudfront - cache invalidations.txt
+outputs/aws-certified-developer-associate-dva-c01/15_cloudfront/159_cloudfront - cache behaviors.txt
+outputs/aws-certified-developer-associate-dva-c01/15_cloudfront/160_cloudfront - caching & caching invalidations - hands on.txt
+outputs/aws-certified-developer-associate-dva-c01/15_cloudfront/161_cloudfront - alb_ec2 as an origin.txt

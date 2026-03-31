@@ -1,0 +1,1733 @@
+{
+  "count": 136,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 11815631,
+      "title": "Week 1",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 49739779,
+      "title": "Day 1 - Autonomous AI Agent Demo: Using N8n to Control Smart Home Devices",
+      "asset": {
+        "_class": "asset",
+        "id": 64461013,
+        "asset_type": "Video",
+        "title": "w1d1p1 v2.mp4",
+        "created": "2025-04-17T20:04:54Z"
+      },
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 49770319,
+      "title": "Day 1 - AI Agent Frameworks Explained: OpenAI SDK, Crew AI, LangGraph & AutoGen",
+      "asset": {
+        "_class": "asset",
+        "id": 64461235,
+        "asset_type": "Video",
+        "title": "w1d1p2 v2.mp4",
+        "created": "2025-04-17T20:18:50Z"
+      },
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 49770323,
+      "title": "Day 1 - Agent Engineering Setup: Understanding Cursor IDE, UV & API Options",
+      "asset": {
+        "_class": "asset",
+        "id": 64461233,
+        "asset_type": "Video",
+        "title": "w1d1p3 v1.mp4",
+        "created": "2025-04-17T20:18:45Z"
+      },
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 49770331,
+      "title": "Day 1 - Windows Setup for AI Development: Git, Cursor IDE & UV Package Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 64461209,
+        "asset_type": "Video",
+        "title": "w1d1p4_pc v1.mp4",
+        "created": "2025-04-17T20:16:15Z"
+      },
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 49770355,
+      "title": "Day 1 - Setting Up Your Mac for AI Projects: GitHub, Cursor IDE & OpenAI API Key",
+      "asset": {
+        "_class": "asset",
+        "id": 64461157,
+        "asset_type": "Video",
+        "title": "w1d1p5_mac v1.mp4",
+        "created": "2025-04-17T20:13:54Z"
+      },
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 49770893,
+      "title": "Day 1 - Building Your First Agentic AI Workflow with OpenAI API: Step-by-Step",
+      "asset": {
+        "_class": "asset",
+        "id": 64744403,
+        "asset_type": "Video",
+        "title": "w1d1p6 v2.mp4",
+        "created": "2025-04-30T08:01:07Z"
+      },
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 49770895,
+      "title": "Day 1 - Introduction to Agentic AI: Creating Multi-Step LLM Workflows + Autonomy",
+      "asset": {
+        "_class": "asset",
+        "id": 64461333,
+        "asset_type": "Video",
+        "title": "w1d1p7 v1.mp4",
+        "created": "2025-04-17T20:25:45Z"
+      },
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 49770897,
+      "title": "Day 2 - Building Effective Agents: LLM Autonomy & Tool Integration Explained",
+      "asset": {
+        "_class": "asset",
+        "id": 64461461,
+        "asset_type": "Video",
+        "title": "w1d2p1 v1.mp4",
+        "created": "2025-04-17T20:34:00Z"
+      },
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 49770901,
+      "title": "Day 2 - 5 Essential LLM Workflow Design Patterns for Building Robust AI Systems",
+      "asset": {
+        "_class": "asset",
+        "id": 64461487,
+        "asset_type": "Video",
+        "title": "w1d2p2 v1.mp4",
+        "created": "2025-04-17T20:36:36Z"
+      },
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 49770903,
+      "title": "Day 2 - Understanding Agent vs Workflow Patterns in LLM Application Design",
+      "asset": {
+        "_class": "asset",
+        "id": 64461469,
+        "asset_type": "Video",
+        "title": "w1d2p3 v1.mp4",
+        "created": "2025-04-17T20:34:30Z"
+      },
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 49771139,
+      "title": "Day 3 - Orchestrating Multiple LLMs: Comparing GPT-4o, Claude, Gemini & DeepSeek",
+      "asset": {
+        "_class": "asset",
+        "id": 64461773,
+        "asset_type": "Video",
+        "title": "w1d3p1 v1.mp4",
+        "created": "2025-04-17T21:04:14Z"
+      },
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 49771145,
+      "title": "Day 3 - Multi-LLM API Integration: Comparing OpenAI, Anthropic & Other Models",
+      "asset": {
+        "_class": "asset",
+        "id": 64461649,
+        "asset_type": "Video",
+        "title": "w1d3p2 v1.mp4",
+        "created": "2025-04-17T20:53:05Z"
+      },
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 49771147,
+      "title": "Day 3 - Comparing LLM APIs: Using OpenAI Client Library with Claude, Gemini & ++",
+      "asset": {
+        "_class": "asset",
+        "id": 64461723,
+        "asset_type": "Video",
+        "title": "w1d3p3 v2.mp4",
+        "created": "2025-04-17T20:57:16Z"
+      },
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 49771149,
+      "title": "Day 3 - Multi-Model Orchestration: Creating a System to Evaluate AI Responses",
+      "asset": {
+        "_class": "asset",
+        "id": 64461677,
+        "asset_type": "Video",
+        "title": "w1d3p4 v2.mp4",
+        "created": "2025-04-17T20:54:07Z"
+      },
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 49771155,
+      "title": "Day 3 - Connecting Agentic Patterns to Tool Use: Essential AI Building Blocks",
+      "asset": {
+        "_class": "asset",
+        "id": 64461621,
+        "asset_type": "Video",
+        "title": "w1d3p5 v1.mp4",
+        "created": "2025-04-17T20:50:01Z"
+      },
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 49771159,
+      "title": "Day 4 - Comparing AI Agent Frameworks: Simplicity vs Power in LLM Orchestration",
+      "asset": {
+        "_class": "asset",
+        "id": 64461727,
+        "asset_type": "Video",
+        "title": "w1d4p1 v1.mp4",
+        "created": "2025-04-17T20:58:01Z"
+      },
+      "object_index": 16
+    },
+    {
+      "_class": "lecture",
+      "id": 49771189,
+      "title": "Day 4 - Resources vs. Tools: Two Ways to Enhance LLM Capabilities in Agentic AI",
+      "asset": {
+        "_class": "asset",
+        "id": 64461777,
+        "asset_type": "Video",
+        "title": "w1d4p2 v2.mp4",
+        "created": "2025-04-17T21:04:42Z"
+      },
+      "object_index": 17
+    },
+    {
+      "_class": "lecture",
+      "id": 49771193,
+      "title": "Day 4 - Build a Web Chatbot That Acts Like You Using Gradio & OpenAI",
+      "asset": {
+        "_class": "asset",
+        "id": 64461741,
+        "asset_type": "Video",
+        "title": "w1d4p3 v2.mp4",
+        "created": "2025-04-17T20:59:58Z"
+      },
+      "object_index": 18
+    },
+    {
+      "_class": "lecture",
+      "id": 49771203,
+      "title": "Day 4 - Using Gemini to Evaluate GPT-4 Responses: A Multi-LLM Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 64461755,
+        "asset_type": "Video",
+        "title": "w1d4p4 v1.mp4",
+        "created": "2025-04-17T21:01:12Z"
+      },
+      "object_index": 19
+    },
+    {
+      "_class": "lecture",
+      "id": 49771205,
+      "title": "Day 4 - Building Agentic LLM Workflows: Resources, Tools & Structured Outputs",
+      "asset": {
+        "_class": "asset",
+        "id": 64461679,
+        "asset_type": "Video",
+        "title": "w1d4p5 v1.mp4",
+        "created": "2025-04-17T20:54:10Z"
+      },
+      "object_index": 20
+    },
+    {
+      "_class": "lecture",
+      "id": 49771207,
+      "title": "Day 5 - Building Your Career Alter Ego: LLM Function Calling with Push Alerts",
+      "asset": {
+        "_class": "asset",
+        "id": 64461739,
+        "asset_type": "Video",
+        "title": "w1d5p1 v2.mp4",
+        "created": "2025-04-17T20:59:27Z"
+      },
+      "object_index": 21
+    },
+    {
+      "_class": "lecture",
+      "id": 49771327,
+      "title": "Day 5 - LLM Tool Calls Demystified: How to Process and Execute Function Requests",
+      "asset": {
+        "_class": "asset",
+        "id": 64461919,
+        "asset_type": "Video",
+        "title": "w1d5p2 v1.mp4",
+        "created": "2025-04-17T21:15:37Z"
+      },
+      "object_index": 22
+    },
+    {
+      "_class": "lecture",
+      "id": 49771329,
+      "title": "Day 5- Building AI Assistants: Implementing Tools for Handling Unknown Questions",
+      "asset": {
+        "_class": "asset",
+        "id": 64461903,
+        "asset_type": "Video",
+        "title": "w1d5p3 v1.mp4",
+        "created": "2025-04-17T21:14:55Z"
+      },
+      "object_index": 23
+    },
+    {
+      "_class": "lecture",
+      "id": 49771331,
+      "title": "Day 5 - Creating & Deploying an AI Agent: From Chat Loop to HuggingFace Spaces",
+      "asset": {
+        "_class": "asset",
+        "id": 64461933,
+        "asset_type": "Video",
+        "title": "w1d5p4 v1.mp4",
+        "created": "2025-04-17T21:16:44Z"
+      },
+      "object_index": 24
+    },
+    {
+      "_class": "lecture",
+      "id": 49771335,
+      "title": "Day 5 - Deploying Career Conversation Chatbots to Gradio",
+      "asset": {
+        "_class": "asset",
+        "id": 64461927,
+        "asset_type": "Video",
+        "title": "w1d5p5 v1.mp4",
+        "created": "2025-04-17T21:16:18Z"
+      },
+      "object_index": 25
+    },
+    {
+      "_class": "lecture",
+      "id": 49771337,
+      "title": "Day 5 - Foundation Week Wrap-up: Building Complete AI Agents with APIs & Tools",
+      "asset": {
+        "_class": "asset",
+        "id": 64461917,
+        "asset_type": "Video",
+        "title": "w1d5p6 v1.mp4",
+        "created": "2025-04-17T21:15:27Z"
+      },
+      "object_index": 26
+    },
+    {
+      "_class": "lecture",
+      "id": 54173707,
+      "title": "Day 5 [Extra] - Building Your First Agent Loop with OpenAI Tools from Scratch",
+      "asset": {
+        "_class": "asset",
+        "id": 70390039,
+        "asset_type": "Video",
+        "title": "agentic_w1_d5_extra.mp4",
+        "created": "2026-01-02T14:56:30Z"
+      },
+      "object_index": 27
+    },
+    {
+      "_class": "chapter",
+      "id": 11832905,
+      "title": "Week 2",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 49820287,
+      "title": "Day 1 - Understanding Async Python: The Foundation for OpenAI Agents SDK",
+      "asset": {
+        "_class": "asset",
+        "id": 64745319,
+        "asset_type": "Video",
+        "title": "w2d1p1 v4.mp4",
+        "created": "2025-04-30T08:58:52Z"
+      },
+      "object_index": 28
+    },
+    {
+      "_class": "lecture",
+      "id": 49820365,
+      "title": "Day 1 - OpenAI Agents SDK Fundamentals: Creating, Tracing, and Running Agents",
+      "asset": {
+        "_class": "asset",
+        "id": 64745237,
+        "asset_type": "Video",
+        "title": "w2d1p2 -v3.mp4",
+        "created": "2025-04-30T08:53:14Z"
+      },
+      "object_index": 29
+    },
+    {
+      "_class": "lecture",
+      "id": 49820381,
+      "title": "Day 1 - Introduction to Agent, Runner, and Trace Classes in OpenAI Agents SDK",
+      "asset": {
+        "_class": "asset",
+        "id": 64744895,
+        "asset_type": "Video",
+        "title": "w2d1p3 v3.mp4",
+        "created": "2025-04-30T08:27:29Z"
+      },
+      "object_index": 30
+    },
+    {
+      "_class": "lecture",
+      "id": 49820399,
+      "title": "Day 1 - Vibe Coding: 5 Essential Tips for Efficient Code Generation with LLMs",
+      "asset": {
+        "_class": "asset",
+        "id": 64745269,
+        "asset_type": "Video",
+        "title": "w2d1p4 v3.mp4",
+        "created": "2025-04-30T08:54:46Z"
+      },
+      "object_index": 31
+    },
+    {
+      "_class": "lecture",
+      "id": 49820407,
+      "title": "Day 1 - OpenAI Agents SDK: Understanding Core Concepts for AI Development",
+      "asset": {
+        "_class": "asset",
+        "id": 64744843,
+        "asset_type": "Video",
+        "title": "w2d1p5 v3.mp4",
+        "created": "2025-04-30T08:24:40Z"
+      },
+      "object_index": 32
+    },
+    {
+      "_class": "lecture",
+      "id": 49820431,
+      "title": "Day 2 - Build AI Sales Agents with SendGrid: Tools & Collaboration in Agent SDK",
+      "asset": {
+        "_class": "asset",
+        "id": 64745043,
+        "asset_type": "Video",
+        "title": "w2d2p1 v2.mp4",
+        "created": "2025-04-30T08:38:42Z"
+      },
+      "object_index": 33
+    },
+    {
+      "_class": "lecture",
+      "id": 49820441,
+      "title": "Day 2 - Concurrent LLM Calls: Implementing Asyncio for Parallel Agent Execution",
+      "asset": {
+        "_class": "asset",
+        "id": 64525939,
+        "asset_type": "Video",
+        "title": "w2d2p2 v1.mp4",
+        "created": "2025-04-21T07:27:57Z"
+      },
+      "object_index": 34
+    },
+    {
+      "_class": "lecture",
+      "id": 49820447,
+      "title": "Day 2 - Converting Agents into Tools: Building Hierarchical AI Systems",
+      "asset": {
+        "_class": "asset",
+        "id": 64745065,
+        "asset_type": "Video",
+        "title": "w2d2p3 v2.mp4",
+        "created": "2025-04-30T08:39:41Z"
+      },
+      "object_index": 35
+    },
+    {
+      "_class": "lecture",
+      "id": 49820467,
+      "title": "Day 2 - Agent Control Flow: When to Use Handoffs vs. Agents as Tools",
+      "asset": {
+        "_class": "asset",
+        "id": 64745129,
+        "asset_type": "Video",
+        "title": "w2d2p4 v2.mp4",
+        "created": "2025-04-30T08:43:32Z"
+      },
+      "object_index": 36
+    },
+    {
+      "_class": "lecture",
+      "id": 49820479,
+      "title": "Day 2 - From Function Calls to Agent Autonomy: Sales Automation with OpenAI SDK",
+      "asset": {
+        "_class": "asset",
+        "id": 64745141,
+        "asset_type": "Video",
+        "title": "w2d2p5 v2.mp4",
+        "created": "2025-04-30T08:44:08Z"
+      },
+      "object_index": 37
+    },
+    {
+      "_class": "lecture",
+      "id": 49820485,
+      "title": "Day 2 - Agentic AI for Business: Creating Interactive Sales Outreach Tools",
+      "asset": {
+        "_class": "asset",
+        "id": 64745077,
+        "asset_type": "Video",
+        "title": "w2d2p6 v2.mp4",
+        "created": "2025-04-30T08:40:11Z"
+      },
+      "object_index": 38
+    },
+    {
+      "_class": "lecture",
+      "id": 49820713,
+      "title": "Day 3- Multi-Model Integration: Using Gemini, DeepSeek & Groq with OpenAI Agents",
+      "asset": {
+        "_class": "asset",
+        "id": 64745273,
+        "asset_type": "Video",
+        "title": "w2d3p1 v2.mp4",
+        "created": "2025-04-30T08:54:46Z"
+      },
+      "object_index": 39
+    },
+    {
+      "_class": "lecture",
+      "id": 49820721,
+      "title": "Day 3 - Implementing Guardrails & Structured Outputs for Robust AI Agent Systems",
+      "asset": {
+        "_class": "asset",
+        "id": 64745251,
+        "asset_type": "Video",
+        "title": "w2d3p2 v2.mp4",
+        "created": "2025-04-30T08:53:59Z"
+      },
+      "object_index": 40
+    },
+    {
+      "_class": "lecture",
+      "id": 49820725,
+      "title": "Day 3- AI Safety in Practice: Implementing Guardrails for LLM Agent Applications",
+      "asset": {
+        "_class": "asset",
+        "id": 64745201,
+        "asset_type": "Video",
+        "title": "w2d3p3 v2.mp4",
+        "created": "2025-04-30T08:49:19Z"
+      },
+      "object_index": 41
+    },
+    {
+      "_class": "lecture",
+      "id": 49820791,
+      "title": "Day 4 - Building Deep Research Agents: Implementing OpenAI's Web Search Tool",
+      "asset": {
+        "_class": "asset",
+        "id": 64745277,
+        "asset_type": "Video",
+        "title": "w2d4p1 v2.mp4",
+        "created": "2025-04-30T08:55:00Z"
+      },
+      "object_index": 42
+    },
+    {
+      "_class": "lecture",
+      "id": 49820797,
+      "title": "Day 4 - Building a Planner Agent: Using Structured Outputs with Pydantic in AI",
+      "asset": {
+        "_class": "asset",
+        "id": 64745239,
+        "asset_type": "Video",
+        "title": "w2d4p2 v2.mp4",
+        "created": "2025-04-30T08:53:43Z"
+      },
+      "object_index": 43
+    },
+    {
+      "_class": "lecture",
+      "id": 49820803,
+      "title": "Day 4 - Building an End-to-End Research Pipeline with GPT-4 Agents & Async Tasks",
+      "asset": {
+        "_class": "asset",
+        "id": 64745279,
+        "asset_type": "Video",
+        "title": "w2d4p3 v2.mp4",
+        "created": "2025-04-30T08:55:06Z"
+      },
+      "object_index": 44
+    },
+    {
+      "_class": "lecture",
+      "id": 49820805,
+      "title": "Day 4 - Building a Deep Research Agent: Parallel Searches with AsyncIO",
+      "asset": {
+        "_class": "asset",
+        "id": 64745771,
+        "asset_type": "Video",
+        "title": "w2d4p4 v2.mp4",
+        "created": "2025-04-30T09:19:10Z"
+      },
+      "object_index": 45
+    },
+    {
+      "_class": "lecture",
+      "id": 49820807,
+      "title": "Day 5 - Building a Modular AI Research System with Gradio UI Implementation",
+      "asset": {
+        "_class": "asset",
+        "id": 64745293,
+        "asset_type": "Video",
+        "title": "w2d5p1 v2.mp4",
+        "created": "2025-04-30T08:56:10Z"
+      },
+      "object_index": 46
+    },
+    {
+      "_class": "lecture",
+      "id": 49820809,
+      "title": "Day 5 - Deep Research App: Gradio to Visualize & Monitor Autonomous AI Agents",
+      "asset": {
+        "_class": "asset",
+        "id": 64745243,
+        "asset_type": "Video",
+        "title": "w2d5p2 v2.mp4",
+        "created": "2025-04-30T08:53:45Z"
+      },
+      "object_index": 47
+    },
+    {
+      "_class": "lecture",
+      "id": 49820815,
+      "title": "Day 5 - Deploying Smart Research Agents with Gradio and HuggingFace Spaces",
+      "asset": {
+        "_class": "asset",
+        "id": 64745299,
+        "asset_type": "Video",
+        "title": "w2d5p3 v2.mp4",
+        "created": "2025-04-30T08:56:30Z"
+      },
+      "object_index": 48
+    },
+    {
+      "_class": "chapter",
+      "id": 11832907,
+      "title": "Week 3",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 49821121,
+      "title": "Day 1 - Crew AI Framework: Creating Collaborative AI Agent Teams",
+      "asset": {
+        "_class": "asset",
+        "id": 64745507,
+        "asset_type": "Video",
+        "title": "w3d1p1 v2.mp4",
+        "created": "2025-04-30T09:09:17Z"
+      },
+      "object_index": 49
+    },
+    {
+      "_class": "lecture",
+      "id": 49821125,
+      "title": "Day 1 - Crew AI Framework Explained: Agents, Tasks & Processing Modes Tutorial",
+      "asset": {
+        "_class": "asset",
+        "id": 64745635,
+        "asset_type": "Video",
+        "title": "w3d1p2 v2.mp4",
+        "created": "2025-04-30T09:13:07Z"
+      },
+      "object_index": 50
+    },
+    {
+      "_class": "lecture",
+      "id": 49821129,
+      "title": "Day 1 - Crew AI & LightLLM: Flexible Framework for Integrating Multiple LLMs",
+      "asset": {
+        "_class": "asset",
+        "id": 64745547,
+        "asset_type": "Video",
+        "title": "w3d1p3 v2.mp4",
+        "created": "2025-04-30T09:11:03Z"
+      },
+      "object_index": 51
+    },
+    {
+      "_class": "lecture",
+      "id": 49821133,
+      "title": "Day 1 - Crew AI Tutorial: Setting Up a Debate Project with GPT-4o mini",
+      "asset": {
+        "_class": "asset",
+        "id": 64745499,
+        "asset_type": "Video",
+        "title": "w3d1p4 v2.mp4",
+        "created": "2025-04-30T09:08:39Z"
+      },
+      "object_index": 52
+    },
+    {
+      "_class": "lecture",
+      "id": 49821137,
+      "title": "Day 1 - How to Create an AI Debate System Using Crew AI and Multiple LLMs",
+      "asset": {
+        "_class": "asset",
+        "id": 64745543,
+        "asset_type": "Video",
+        "title": "w3d1p5 v2.mp4",
+        "created": "2025-04-30T09:10:52Z"
+      },
+      "object_index": 53
+    },
+    {
+      "_class": "lecture",
+      "id": 49821139,
+      "title": "Day 1 - Building AI Debate Systems with CrewAI: Compare Different LLMs",
+      "asset": {
+        "_class": "asset",
+        "id": 64745501,
+        "asset_type": "Video",
+        "title": "w3d1p6 v2.mp4",
+        "created": "2025-04-30T09:09:01Z"
+      },
+      "object_index": 54
+    },
+    {
+      "_class": "lecture",
+      "id": 49821161,
+      "title": "Day 2 - Building Crew AI Projects: Tools, Context & Google Search Integration",
+      "asset": {
+        "_class": "asset",
+        "id": 64746201,
+        "asset_type": "Video",
+        "title": "w3d2p1 v3.mp4",
+        "created": "2025-04-30T09:37:01Z"
+      },
+      "object_index": 55
+    },
+    {
+      "_class": "lecture",
+      "id": 49821169,
+      "title": "Day 2 - Building Multi-Agent Financial Research Systems with Crew.ai",
+      "asset": {
+        "_class": "asset",
+        "id": 64526629,
+        "asset_type": "Video",
+        "title": "w3d2p2 v2.mp4",
+        "created": "2025-04-21T08:21:51Z"
+      },
+      "object_index": 56
+    },
+    {
+      "_class": "lecture",
+      "id": 49821175,
+      "title": "Day 2- Enhancing AI Agents with Web Search: Solving the Knowledge Cutoff Problem",
+      "asset": {
+        "_class": "asset",
+        "id": 64526649,
+        "asset_type": "Video",
+        "title": "w3d2p3 v1.mp4",
+        "created": "2025-04-21T08:22:11Z"
+      },
+      "object_index": 57
+    },
+    {
+      "_class": "lecture",
+      "id": 49821179,
+      "title": "Day 3 - Building a Crew AI Stock Picker: Multi-Agent System for Investments",
+      "asset": {
+        "_class": "asset",
+        "id": 64746095,
+        "asset_type": "Video",
+        "title": "w3d3p1 v1.mp4",
+        "created": "2025-04-30T09:32:15Z"
+      },
+      "object_index": 58
+    },
+    {
+      "_class": "lecture",
+      "id": 49821185,
+      "title": "Day 3 - Implementing Pydantic Outputs in Crew AI: Stock Picker Agent Tutorial",
+      "asset": {
+        "_class": "asset",
+        "id": 64526641,
+        "asset_type": "Video",
+        "title": "w3d3p2 v1.mp4",
+        "created": "2025-04-21T08:22:05Z"
+      },
+      "object_index": 59
+    },
+    {
+      "_class": "lecture",
+      "id": 49821193,
+      "title": "Day 3 - Custom Tool Development for Crew AI: JSON Schema & Push Notifications",
+      "asset": {
+        "_class": "asset",
+        "id": 64526667,
+        "asset_type": "Video",
+        "title": "w3d3p3 v1.mp4",
+        "created": "2025-04-21T08:22:33Z"
+      },
+      "object_index": 60
+    },
+    {
+      "_class": "lecture",
+      "id": 49821197,
+      "title": "Day 4 - Crew AI Memory: Vector Storage & SQL Implementation for AI Agents",
+      "asset": {
+        "_class": "asset",
+        "id": 64526827,
+        "asset_type": "Video",
+        "title": "w3d4p1 v1.mp4",
+        "created": "2025-04-21T08:30:17Z"
+      },
+      "object_index": 61
+    },
+    {
+      "_class": "lecture",
+      "id": 49821201,
+      "title": "Day 4 - Crew AI for Coding Tasks: Agents That Generate & Run Python Code",
+      "asset": {
+        "_class": "asset",
+        "id": 64526709,
+        "asset_type": "Video",
+        "title": "w3d4p2 v1.mp4",
+        "created": "2025-04-21T08:23:37Z"
+      },
+      "object_index": 62
+    },
+    {
+      "_class": "lecture",
+      "id": 49821207,
+      "title": "Day 4 - Create a Python-Writing AI Agent: Practical Implementation with Crew AI",
+      "asset": {
+        "_class": "asset",
+        "id": 64526627,
+        "asset_type": "Video",
+        "title": "w3d4p3 v1.mp4",
+        "created": "2025-04-21T08:21:50Z"
+      },
+      "object_index": 63
+    },
+    {
+      "_class": "lecture",
+      "id": 49821233,
+      "title": "Day 5 - Building AI Teams: Configure Crew AI for Collaborative Development",
+      "asset": {
+        "_class": "asset",
+        "id": 64526707,
+        "asset_type": "Video",
+        "title": "w3d5p1 v1.mp4",
+        "created": "2025-04-21T08:23:30Z"
+      },
+      "object_index": 64
+    },
+    {
+      "_class": "lecture",
+      "id": 49821237,
+      "title": "Day 5 - Collaborative AI Agent Development for a Stock Trading Framework",
+      "asset": {
+        "_class": "asset",
+        "id": 64526661,
+        "asset_type": "Video",
+        "title": "w3d5p2 v1.mp4",
+        "created": "2025-04-21T08:22:26Z"
+      },
+      "object_index": 65
+    },
+    {
+      "_class": "lecture",
+      "id": 49821243,
+      "title": "Day 5 - Building a Trading Application Using GPT-4o & Claude",
+      "asset": {
+        "_class": "asset",
+        "id": 64526663,
+        "asset_type": "Video",
+        "title": "w3d5p3 v1.mp4",
+        "created": "2025-04-21T08:22:30Z"
+      },
+      "object_index": 66
+    },
+    {
+      "_class": "lecture",
+      "id": 49821253,
+      "title": "Day 5 - From Single Modules to Complete Systems: Advanced CrewAI Techniques",
+      "asset": {
+        "_class": "asset",
+        "id": 64526829,
+        "asset_type": "Video",
+        "title": "w3d5p4 v1.mp4",
+        "created": "2025-04-21T08:30:17Z"
+      },
+      "object_index": 67
+    },
+    {
+      "_class": "chapter",
+      "id": 11832909,
+      "title": "Week 4",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 49821315,
+      "title": "Day 1 - LangGraph Explained: Graph-Based Architecture for Robust AI Agents",
+      "asset": {
+        "_class": "asset",
+        "id": 64526773,
+        "asset_type": "Video",
+        "title": "fin_w4d1p1.mp4",
+        "created": "2025-04-21T08:27:13Z"
+      },
+      "object_index": 68
+    },
+    {
+      "_class": "lecture",
+      "id": 49821319,
+      "title": "Day 1 - LangGraph Explained: Framework, Studio, and Platform Components Compared",
+      "asset": {
+        "_class": "asset",
+        "id": 64526777,
+        "asset_type": "Video",
+        "title": "fin_w4d1p2.mp4",
+        "created": "2025-04-21T08:27:14Z"
+      },
+      "object_index": 69
+    },
+    {
+      "_class": "lecture",
+      "id": 49821325,
+      "title": "Day 1 - LangGraph Theory: Core Components for Building Advanced Agent Systems",
+      "asset": {
+        "_class": "asset",
+        "id": 64526775,
+        "asset_type": "Video",
+        "title": "fin_w4d1p3.mp4",
+        "created": "2025-04-21T08:27:14Z"
+      },
+      "object_index": 70
+    },
+    {
+      "_class": "lecture",
+      "id": 49821329,
+      "title": "Day 2 - LangGraph Deep Dive: Managing State in Graph-Based Agent Workflows",
+      "asset": {
+        "_class": "asset",
+        "id": 64526765,
+        "asset_type": "Video",
+        "title": "fin_w4d2p1.mp4",
+        "created": "2025-04-21T08:27:04Z"
+      },
+      "object_index": 71
+    },
+    {
+      "_class": "lecture",
+      "id": 49821333,
+      "title": "Day 2 - Mastering LangGraph: How to Define State Objects & Use Reducers",
+      "asset": {
+        "_class": "asset",
+        "id": 64526761,
+        "asset_type": "Video",
+        "title": "fin_w4d2p2.mp4",
+        "created": "2025-04-21T08:27:01Z"
+      },
+      "object_index": 72
+    },
+    {
+      "_class": "lecture",
+      "id": 49821335,
+      "title": "Day 2 - LangGraph Fundamentals: Creating Nodes, Edges & Workflows Step-by-Step",
+      "asset": {
+        "_class": "asset",
+        "id": 64526763,
+        "asset_type": "Video",
+        "title": "fin_w4d2p3.mp4",
+        "created": "2025-04-21T08:27:01Z"
+      },
+      "object_index": 73
+    },
+    {
+      "_class": "lecture",
+      "id": 49821339,
+      "title": "Day 2 - LangGraph Tutorial: Building an OpenAI Chatbot with Graph Structures",
+      "asset": {
+        "_class": "asset",
+        "id": 64526767,
+        "asset_type": "Video",
+        "title": "fin_w4d2p4.mp4",
+        "created": "2025-04-21T08:27:08Z"
+      },
+      "object_index": 74
+    },
+    {
+      "_class": "lecture",
+      "id": 49821341,
+      "title": "Day 3 - LangGraph Advanced Tutorial: Super Steps & Checkpointing Explained",
+      "asset": {
+        "_class": "asset",
+        "id": 64526795,
+        "asset_type": "Video",
+        "title": "fin_w4d3p1.mp4",
+        "created": "2025-04-21T08:28:16Z"
+      },
+      "object_index": 75
+    },
+    {
+      "_class": "lecture",
+      "id": 49821343,
+      "title": "Day 3 - Setting Up Langsmith & Creating Custom Tools for LangGraph Applications",
+      "asset": {
+        "_class": "asset",
+        "id": 64526813,
+        "asset_type": "Video",
+        "title": "fin_w4d3p2.mp4",
+        "created": "2025-04-21T08:29:39Z"
+      },
+      "object_index": 76
+    },
+    {
+      "_class": "lecture",
+      "id": 49821349,
+      "title": "Day 3 - LangGraph Tool Calling: Working with Conditional Edges & Tool Nodes",
+      "asset": {
+        "_class": "asset",
+        "id": 64526863,
+        "asset_type": "Video",
+        "title": "fin_w4d3p3.mp4",
+        "created": "2025-04-21T08:30:32Z"
+      },
+      "object_index": 77
+    },
+    {
+      "_class": "lecture",
+      "id": 49821351,
+      "title": "Day 3 - LangGraph Checkpointing: How to Maintain Memory Between Conversations",
+      "asset": {
+        "_class": "asset",
+        "id": 64526859,
+        "asset_type": "Video",
+        "title": "fin_w4d3p4.mp4",
+        "created": "2025-04-21T08:30:29Z"
+      },
+      "object_index": 78
+    },
+    {
+      "_class": "lecture",
+      "id": 49821359,
+      "title": "Day 3 - Building Persistent AI Memory with SQLite: LangGraph State Management",
+      "asset": {
+        "_class": "asset",
+        "id": 64526835,
+        "asset_type": "Video",
+        "title": "fin_w4d3p5.mp4",
+        "created": "2025-04-21T08:30:22Z"
+      },
+      "object_index": 79
+    },
+    {
+      "_class": "lecture",
+      "id": 49821363,
+      "title": "Day 4 - Playwright Integration with LangGraph: Creating Web-Browsing AI Agents",
+      "asset": {
+        "_class": "asset",
+        "id": 64526865,
+        "asset_type": "Video",
+        "title": "fin_w4d4p1.mp4",
+        "created": "2025-04-21T08:30:32Z"
+      },
+      "object_index": 80
+    },
+    {
+      "_class": "lecture",
+      "id": 49821367,
+      "title": "Day 4 - Create AI Web Assistants: Playwright, LangChain & Gradio Implementation",
+      "asset": {
+        "_class": "asset",
+        "id": 64526867,
+        "asset_type": "Video",
+        "title": "fin_w4d4p2.mp4",
+        "created": "2025-04-21T08:30:32Z"
+      },
+      "object_index": 81
+    },
+    {
+      "_class": "lecture",
+      "id": 49821381,
+      "title": "Day 4 - LLM Evaluator Agents: Creating Feedback Loops with Structured Outputs",
+      "asset": {
+        "_class": "asset",
+        "id": 64526871,
+        "asset_type": "Video",
+        "title": "fin_w4d4p3.mp4",
+        "created": "2025-04-21T08:30:32Z"
+      },
+      "object_index": 82
+    },
+    {
+      "_class": "lecture",
+      "id": 49821391,
+      "title": "Day 4- Creating LLM Feedback Loops: Worker-Evaluator Implementation in LangGraph",
+      "asset": {
+        "_class": "asset",
+        "id": 64526891,
+        "asset_type": "Video",
+        "title": "fin_w4d4p4.mp4",
+        "created": "2025-04-21T08:30:38Z"
+      },
+      "object_index": 83
+    },
+    {
+      "_class": "lecture",
+      "id": 49821409,
+      "title": "Day 4 - Building an AI Sidekick Using LangGraph, Gradio & Browser Automation",
+      "asset": {
+        "_class": "asset",
+        "id": 64526879,
+        "asset_type": "Video",
+        "title": "fin_w4d4p5.mp4",
+        "created": "2025-04-21T08:30:34Z"
+      },
+      "object_index": 84
+    },
+    {
+      "_class": "lecture",
+      "id": 49821415,
+      "title": "Day 5 - Agentic AI: Add Web Search, File System & Python REPL to Your Assistant",
+      "asset": {
+        "_class": "asset",
+        "id": 64526881,
+        "asset_type": "Video",
+        "title": "fin_w4d5p1.mp4",
+        "created": "2025-04-21T08:30:34Z"
+      },
+      "object_index": 85
+    },
+    {
+      "_class": "lecture",
+      "id": 49821423,
+      "title": "Day 5 - LangChain Tool Integration: Building a Powerful AI Sidekick from Scratch",
+      "asset": {
+        "_class": "asset",
+        "id": 64526897,
+        "asset_type": "Video",
+        "title": "fin_w4d5p2.mp4",
+        "created": "2025-04-21T08:30:42Z"
+      },
+      "object_index": 86
+    },
+    {
+      "_class": "lecture",
+      "id": 49821429,
+      "title": "Day 5 - Creating AI Workflows: Graph Builders & Node Communication Techniques",
+      "asset": {
+        "_class": "asset",
+        "id": 64526921,
+        "asset_type": "Video",
+        "title": "fin_w4d5p3.mp4",
+        "created": "2025-04-21T08:30:55Z"
+      },
+      "object_index": 87
+    },
+    {
+      "_class": "lecture",
+      "id": 49821435,
+      "title": "Day 5 - Creating Isolated User Sessions in Gradio Apps Using State Management",
+      "asset": {
+        "_class": "asset",
+        "id": 64526885,
+        "asset_type": "Video",
+        "title": "fin_w4d5p4.mp4",
+        "created": "2025-04-21T08:30:35Z"
+      },
+      "object_index": 88
+    },
+    {
+      "_class": "lecture",
+      "id": 49821439,
+      "title": "Day 5 - Inside AI Feedback Loops: Seeing How AI Evaluates & Corrects Errors",
+      "asset": {
+        "_class": "asset",
+        "id": 64526933,
+        "asset_type": "Video",
+        "title": "fin_w4d5p5.mp4",
+        "created": "2025-04-21T08:31:01Z"
+      },
+      "object_index": 89
+    },
+    {
+      "_class": "lecture",
+      "id": 49821451,
+      "title": "Day 5 - AI Assistant Upgrades: Memory, Clarifying Questions & Custom Tools",
+      "asset": {
+        "_class": "asset",
+        "id": 64526875,
+        "asset_type": "Video",
+        "title": "fin_w4d5p6.mp4",
+        "created": "2025-04-21T08:30:34Z"
+      },
+      "object_index": 90
+    },
+    {
+      "_class": "chapter",
+      "id": 11832911,
+      "title": "Week 5",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 49821563,
+      "title": "Day 1 - Microsoft Autogen 0.5.1: AI Agent Framework Explained for Beginners",
+      "asset": {
+        "_class": "asset",
+        "id": 64527411,
+        "asset_type": "Video",
+        "title": "fin_w5d1p1_v4.mp4",
+        "created": "2025-04-21T08:40:31Z"
+      },
+      "object_index": 91
+    },
+    {
+      "_class": "lecture",
+      "id": 49821583,
+      "title": "Day 1 - AutoGen vs Other Agent Frameworks: Features & Components Compared",
+      "asset": {
+        "_class": "asset",
+        "id": 64527189,
+        "asset_type": "Video",
+        "title": "fin_w5d1p2.mp4",
+        "created": "2025-04-21T08:38:11Z"
+      },
+      "object_index": 92
+    },
+    {
+      "_class": "lecture",
+      "id": 49821589,
+      "title": "Day 1 - AutoGen Agent Chat Tutorial: Creating Tools and Database Integration",
+      "asset": {
+        "_class": "asset",
+        "id": 64527237,
+        "asset_type": "Video",
+        "title": "fin_w5d1p3.mp4",
+        "created": "2025-04-21T08:39:00Z"
+      },
+      "object_index": 93
+    },
+    {
+      "_class": "lecture",
+      "id": 49821595,
+      "title": "Day 1 - Essential AI Components: Models, Messages & Agents Explained",
+      "asset": {
+        "_class": "asset",
+        "id": 64527131,
+        "asset_type": "Video",
+        "title": "fin_w5d1p4.mp4",
+        "created": "2025-04-21T08:35:15Z"
+      },
+      "object_index": 94
+    },
+    {
+      "_class": "lecture",
+      "id": 49821599,
+      "title": "Day 2 - Advanced Autogen Agent Chat: Multimodal Features & Structured Outputs",
+      "asset": {
+        "_class": "asset",
+        "id": 64527315,
+        "asset_type": "Video",
+        "title": "fin_w5d2p1.mp4",
+        "created": "2025-04-21T08:39:38Z"
+      },
+      "object_index": 95
+    },
+    {
+      "_class": "lecture",
+      "id": 49821605,
+      "title": "Day 2 - Implementing Primary and Evaluator Agents in AutoGen with Langchain",
+      "asset": {
+        "_class": "asset",
+        "id": 64527341,
+        "asset_type": "Video",
+        "title": "fin_w5d2p2.mp4",
+        "created": "2025-04-21T08:39:49Z"
+      },
+      "object_index": 96
+    },
+    {
+      "_class": "lecture",
+      "id": 49821613,
+      "title": "Day 2 - Headless Web Scraping Tutorial: MCP Server Fetch Integration in AutoGen",
+      "asset": {
+        "_class": "asset",
+        "id": 64527269,
+        "asset_type": "Video",
+        "title": "fin_w5d2p3.mp4",
+        "created": "2025-04-21T08:39:18Z"
+      },
+      "object_index": 97
+    },
+    {
+      "_class": "lecture",
+      "id": 49821621,
+      "title": "Day 3 - AutoGen Core: The Backbone of Distributed Agent Communications",
+      "asset": {
+        "_class": "asset",
+        "id": 64527239,
+        "asset_type": "Video",
+        "title": "fin_w5d3p1.mp4",
+        "created": "2025-04-21T08:39:02Z"
+      },
+      "object_index": 98
+    },
+    {
+      "_class": "lecture",
+      "id": 49821623,
+      "title": "Day 3 - Agent Communication in Autogen Core: Message Handlers & Dispatching",
+      "asset": {
+        "_class": "asset",
+        "id": 64527299,
+        "asset_type": "Video",
+        "title": "fin_w5d3p2.mp4",
+        "created": "2025-04-21T08:39:30Z"
+      },
+      "object_index": 99
+    },
+    {
+      "_class": "lecture",
+      "id": 49821629,
+      "title": "Day 3 - AutoGenCore Agent Registration and Message Handling: Practical Examples",
+      "asset": {
+        "_class": "asset",
+        "id": 64527319,
+        "asset_type": "Video",
+        "title": "fin_w5d3p3.mp4",
+        "created": "2025-04-21T08:39:38Z"
+      },
+      "object_index": 100
+    },
+    {
+      "_class": "lecture",
+      "id": 49821631,
+      "title": "Day 3 - AutoGenCore Standalone Agents: Rock Paper Scissors with GPT-4o & Llama",
+      "asset": {
+        "_class": "asset",
+        "id": 64527311,
+        "asset_type": "Video",
+        "title": "fin_w5d3p4.mp4",
+        "created": "2025-04-21T08:39:37Z"
+      },
+      "object_index": 101
+    },
+    {
+      "_class": "lecture",
+      "id": 49821633,
+      "title": "Day 4 - Autogen Core Distributed Runtime: Architecture & Components Explained",
+      "asset": {
+        "_class": "asset",
+        "id": 64527191,
+        "asset_type": "Video",
+        "title": "fin_w5d4p1.mp4",
+        "created": "2025-04-21T08:38:15Z"
+      },
+      "object_index": 102
+    },
+    {
+      "_class": "lecture",
+      "id": 49821641,
+      "title": "Day 4 - Implementing Distributed AI Agents with AutoGen Core and gRPC Runtime",
+      "asset": {
+        "_class": "asset",
+        "id": 64527329,
+        "asset_type": "Video",
+        "title": "fin_w5d4p2.mp4",
+        "created": "2025-04-21T08:39:44Z"
+      },
+      "object_index": 103
+    },
+    {
+      "_class": "lecture",
+      "id": 49821645,
+      "title": "Day 4 - Building Distributed Agent Systems: AutoGen Cross-Process Communication",
+      "asset": {
+        "_class": "asset",
+        "id": 64527271,
+        "asset_type": "Video",
+        "title": "fin_w5d4p3.mp4",
+        "created": "2025-04-21T08:39:19Z"
+      },
+      "object_index": 104
+    },
+    {
+      "_class": "lecture",
+      "id": 49821651,
+      "title": "Day 5 - Creating Autonomous Agents That Write & Deploy Other Agents in AutoGen",
+      "asset": {
+        "_class": "asset",
+        "id": 64527251,
+        "asset_type": "Video",
+        "title": "fin_w5d5p1.mp4",
+        "created": "2025-04-21T08:39:08Z"
+      },
+      "object_index": 105
+    },
+    {
+      "_class": "lecture",
+      "id": 49821665,
+      "title": "Day 5 - Implementing Agent-to-Agent Messaging with Autogen Core & Templates",
+      "asset": {
+        "_class": "asset",
+        "id": 64527343,
+        "asset_type": "Video",
+        "title": "fin_w5d5p2.mp4",
+        "created": "2025-04-21T08:39:50Z"
+      },
+      "object_index": 106
+    },
+    {
+      "_class": "lecture",
+      "id": 49821669,
+      "title": "Day 5 - Creating Autonomous AI Agents that Collaborate Using Async Python",
+      "asset": {
+        "_class": "asset",
+        "id": 64527363,
+        "asset_type": "Video",
+        "title": "fin_w5d5p3.mp4",
+        "created": "2025-04-21T08:40:04Z"
+      },
+      "object_index": 107
+    },
+    {
+      "_class": "chapter",
+      "id": 12040449,
+      "title": "Week 6 - MCP",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 50767541,
+      "title": "Day 1 - Intro to MCP: The USB-C of Agentic AI",
+      "asset": {
+        "_class": "asset",
+        "id": 65797755,
+        "asset_type": "Video",
+        "title": "fin_new_w6d1p1 v1.mp4",
+        "created": "2025-06-09T10:54:10Z"
+      },
+      "object_index": 108
+    },
+    {
+      "_class": "lecture",
+      "id": 50767593,
+      "title": "Day 1 - Understanding MCP Hosts, Clients, and Servers",
+      "asset": {
+        "_class": "asset",
+        "id": 65799681,
+        "asset_type": "Video",
+        "title": "fin_new_w6d1p2 v2.mp4",
+        "created": "2025-06-09T11:17:29Z"
+      },
+      "object_index": 109
+    },
+    {
+      "_class": "lecture",
+      "id": 50767597,
+      "title": "Day 1 - Using MCP Servers with OpenAI Agents SDK",
+      "asset": {
+        "_class": "asset",
+        "id": 65799381,
+        "asset_type": "Video",
+        "title": "fin_new_w6d1p3 v1.mp4",
+        "created": "2025-06-09T11:11:49Z"
+      },
+      "object_index": 110
+    },
+    {
+      "_class": "lecture",
+      "id": 50767605,
+      "title": "Day 1 - Exploring Node-Based MCP Servers & Tool Access",
+      "asset": {
+        "_class": "asset",
+        "id": 65799367,
+        "asset_type": "Video",
+        "title": "fin_new_w6d1p4 v1.mp4",
+        "created": "2025-06-09T11:11:40Z"
+      },
+      "object_index": 111
+    },
+    {
+      "_class": "lecture",
+      "id": 50767611,
+      "title": "Day 1 - Building an Agent That Uses Multiple MCP Servers",
+      "asset": {
+        "_class": "asset",
+        "id": 65799547,
+        "asset_type": "Video",
+        "title": "fin_new_w6d1p5 v1.mp4",
+        "created": "2025-06-09T11:14:22Z"
+      },
+      "object_index": 112
+    },
+    {
+      "_class": "lecture",
+      "id": 50767615,
+      "title": "Day 1 - MCP Marketplaces & Security Considerations",
+      "asset": {
+        "_class": "asset",
+        "id": 65799251,
+        "asset_type": "Video",
+        "title": "fin_new_w6d1p6 v1.mp4",
+        "created": "2025-06-09T11:10:32Z"
+      },
+      "object_index": 113
+    },
+    {
+      "_class": "lecture",
+      "id": 50767625,
+      "title": "Day 2 - Intro to Week 6 Day 2: Building Your Own MCP Server",
+      "asset": {
+        "_class": "asset",
+        "id": 65800017,
+        "asset_type": "Video",
+        "title": "fin_new_w6d2p1.mp4",
+        "created": "2025-06-09T11:24:49Z"
+      },
+      "object_index": 114
+    },
+    {
+      "_class": "lecture",
+      "id": 50767635,
+      "title": "Day 2 - Wiring Business Logic into Your MCP Server",
+      "asset": {
+        "_class": "asset",
+        "id": 65799995,
+        "asset_type": "Video",
+        "title": "fin_new_w6d2p2.mp4",
+        "created": "2025-06-09T11:23:42Z"
+      },
+      "object_index": 115
+    },
+    {
+      "_class": "lecture",
+      "id": 50767643,
+      "title": "Day 2 - Creating Client Code to Use Your MCP Server",
+      "asset": {
+        "_class": "asset",
+        "id": 65800033,
+        "asset_type": "Video",
+        "title": "fin_new_w6d2p3.mp4",
+        "created": "2025-06-09T11:25:18Z"
+      },
+      "object_index": 116
+    },
+    {
+      "_class": "lecture",
+      "id": 50767649,
+      "title": "Day 2 - Wrap-Up: Capabilities of Your Custom MCP Server",
+      "asset": {
+        "_class": "asset",
+        "id": 65799925,
+        "asset_type": "Video",
+        "title": "fin_new_w6d2p4.mp4",
+        "created": "2025-06-09T11:21:58Z"
+      },
+      "object_index": 117
+    },
+    {
+      "_class": "lecture",
+      "id": 50767765,
+      "title": "Day 3 - Exploring Types of MCP Servers and Agent Memory",
+      "asset": {
+        "_class": "asset",
+        "id": 65800557,
+        "asset_type": "Video",
+        "title": "fin_new_w6d3p1.mp4",
+        "created": "2025-06-09T11:53:11Z"
+      },
+      "object_index": 118
+    },
+    {
+      "_class": "lecture",
+      "id": 50767775,
+      "title": "Day 3 - Brave Search API: MCP Server Calling the Web",
+      "asset": {
+        "_class": "asset",
+        "id": 65800549,
+        "asset_type": "Video",
+        "title": "fin_new_w6d3p2.mp4",
+        "created": "2025-06-09T11:52:49Z"
+      },
+      "object_index": 119
+    },
+    {
+      "_class": "lecture",
+      "id": 50767791,
+      "title": "Day 3 - Integrating Polygon API for Stock Market Data",
+      "asset": {
+        "_class": "asset",
+        "id": 65800521,
+        "asset_type": "Video",
+        "title": "fin_new_w6d3p3.mp4",
+        "created": "2025-06-09T11:52:02Z"
+      },
+      "object_index": 120
+    },
+    {
+      "_class": "lecture",
+      "id": 50768267,
+      "title": "Day 3 - Advanced Market Tools Using Paid Polygon Plan",
+      "asset": {
+        "_class": "asset",
+        "id": 65800525,
+        "asset_type": "Video",
+        "title": "fin_new_w6d3p4.mp4",
+        "created": "2025-06-09T11:52:08Z"
+      },
+      "object_index": 121
+    },
+    {
+      "_class": "lecture",
+      "id": 50768309,
+      "title": "Day 4 - What\u2019s Next: Launching Our Agent Trading Floor",
+      "asset": {
+        "_class": "asset",
+        "id": 65800589,
+        "asset_type": "Video",
+        "title": "fin_new_w6d4p1.mp4",
+        "created": "2025-06-09T11:54:12Z"
+      },
+      "object_index": 122
+    },
+    {
+      "_class": "lecture",
+      "id": 50768327,
+      "title": "Day 4 - Viewing the User Interface for Trading Activity",
+      "asset": {
+        "_class": "asset",
+        "id": 65800587,
+        "asset_type": "Video",
+        "title": "fin_new_w6d4p2.mp4",
+        "created": "2025-06-09T11:54:11Z"
+      },
+      "object_index": 123
+    },
+    {
+      "_class": "lecture",
+      "id": 50768337,
+      "title": "Day 4 - How Trading Agents Operate and Make Decisions",
+      "asset": {
+        "_class": "asset",
+        "id": 65800579,
+        "asset_type": "Video",
+        "title": "fin_new_w6d4p3.mp4",
+        "created": "2025-06-09T11:53:58Z"
+      },
+      "object_index": 124
+    },
+    {
+      "_class": "lecture",
+      "id": 50768351,
+      "title": "Day 4 - Portfolio Management with Four Autonomous Agents",
+      "asset": {
+        "_class": "asset",
+        "id": 65800637,
+        "asset_type": "Video",
+        "title": "fin_new_w6d4p4.mp4",
+        "created": "2025-06-09T11:56:17Z"
+      },
+      "object_index": 125
+    },
+    {
+      "_class": "lecture",
+      "id": 50768373,
+      "title": "Day 5 - Which Agent Framework Should You Pick?",
+      "asset": {
+        "_class": "asset",
+        "id": 65800719,
+        "asset_type": "Video",
+        "title": "fin_new_w6d5p1.mp4",
+        "created": "2025-06-09T11:59:30Z"
+      },
+      "object_index": 126
+    },
+    {
+      "_class": "lecture",
+      "id": 50768387,
+      "title": "Day 5 - Key Settings and Launching the Trading System",
+      "asset": {
+        "_class": "asset",
+        "id": 65800657,
+        "asset_type": "Video",
+        "title": "fin_new_w6d5p2.mp4",
+        "created": "2025-06-09T11:57:21Z"
+      },
+      "object_index": 127
+    },
+    {
+      "_class": "lecture",
+      "id": 50769781,
+      "title": "Day 5 - Advice for Selecting Agentic Frameworks",
+      "asset": {
+        "_class": "asset",
+        "id": 65800757,
+        "asset_type": "Video",
+        "title": "fin_new_w6d5p3.mp4",
+        "created": "2025-06-09T12:00:06Z"
+      },
+      "object_index": 128
+    },
+    {
+      "_class": "lecture",
+      "id": 50769785,
+      "title": "Day 5 - 10 Essential Lessons for Building Agent Solutions",
+      "asset": {
+        "_class": "asset",
+        "id": 65800755,
+        "asset_type": "Video",
+        "title": "fin_new_w6d5p4.mp4",
+        "created": "2025-06-09T12:00:02Z"
+      },
+      "object_index": 129
+    },
+    {
+      "_class": "lecture",
+      "id": 50769797,
+      "title": "Day 5 - Course Recap and Final Goodbye \u2013 Keep Building!",
+      "asset": {
+        "_class": "asset",
+        "id": 65800749,
+        "asset_type": "Video",
+        "title": "fin_new_w6d5p5.mp4",
+        "created": "2025-06-09T11:59:55Z"
+      },
+      "object_index": 130
+    }
+  ]
+}

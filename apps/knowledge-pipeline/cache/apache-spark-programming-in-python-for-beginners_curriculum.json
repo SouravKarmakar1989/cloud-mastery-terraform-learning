@@ -1,0 +1,1144 @@
+{
+  "count": 95,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 12795257,
+      "title": "Understanding Big Data and Distributed Data Processing",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 54007609,
+      "title": "What is Big Data and How it Started",
+      "asset": {
+        "_class": "asset",
+        "id": 70167451,
+        "asset_type": "Video",
+        "title": "SP-101-What is Big Data and How it Started.mp4",
+        "created": "2025-12-21T16:58:31Z"
+      },
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 54007653,
+      "title": "Hadoop Architecture, History and Evolution",
+      "asset": {
+        "_class": "asset",
+        "id": 70167555,
+        "asset_type": "Video",
+        "title": "SP-102-Hadoop Architecture History and Evolution.mp4",
+        "created": "2025-12-21T17:03:57Z"
+      },
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 54008663,
+      "title": "Data Lake and Lakehouse Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 70169297,
+        "asset_type": "Video",
+        "title": "SP-103-Data Lake and Lakehouse Architecture.mp4",
+        "created": "2025-12-21T18:44:44Z"
+      },
+      "object_index": 3
+    },
+    {
+      "_class": "chapter",
+      "id": 12731477,
+      "title": "Introduction to Apache Spark",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 53729573,
+      "title": "What is Apache Spark",
+      "asset": {
+        "_class": "asset",
+        "id": 69799413,
+        "asset_type": "Video",
+        "title": "SP-201-Introduction to Apache Spark.mp4",
+        "created": "2025-12-02T16:48:10Z"
+      },
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 53729699,
+      "title": "Apache Spark System Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 69799809,
+        "asset_type": "Video",
+        "title": "SP-202-Spark System Architecture.mp4",
+        "created": "2025-12-02T17:19:31Z"
+      },
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 54037289,
+      "title": "Spark Platform and Development Environment",
+      "asset": {
+        "_class": "asset",
+        "id": 70207421,
+        "asset_type": "Video",
+        "title": "SP-202.1-Spark Platform and Spark Development Environments.mp4",
+        "created": "2025-12-23T16:49:11Z"
+      },
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 53729701,
+      "title": "What is Databricks Cloud",
+      "asset": {
+        "_class": "asset",
+        "id": 69799685,
+        "asset_type": "Video",
+        "title": "SP-203-What is Databricks Platform.mp4",
+        "created": "2025-12-02T17:10:27Z"
+      },
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 53729703,
+      "title": "Create your Databricks Free Account",
+      "asset": {
+        "_class": "asset",
+        "id": 69799567,
+        "asset_type": "Video",
+        "title": "SP-204-Create Databricks Free Account.mp4",
+        "created": "2025-12-02T17:00:32Z"
+      },
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 53729707,
+      "title": "Setup your hands-on environment",
+      "asset": {
+        "_class": "asset",
+        "id": 69799679,
+        "asset_type": "Video",
+        "title": "SP-205-Setup your hands-on environment.mp4",
+        "created": "2025-12-02T17:09:42Z"
+      },
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 54006813,
+      "title": "Download Resources",
+      "asset": {
+        "_class": "asset",
+        "id": 70166673,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2025-12-21T15:47:02Z"
+      },
+      "object_index": 10
+    },
+    {
+      "_class": "chapter",
+      "id": 12731513,
+      "title": "Getting Started with Spark Programming",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 54143143,
+      "title": "Starting Point - Data Engineering, Spark, and Spark Session",
+      "asset": {
+        "_class": "asset",
+        "id": 70349657,
+        "asset_type": "Video",
+        "title": "SP-301-Starting Point - Spark Session New.mp4",
+        "created": "2025-12-31T09:09:01Z"
+      },
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 54156663,
+      "title": "Dataframe - A view to Structured data",
+      "asset": {
+        "_class": "asset",
+        "id": 70368131,
+        "asset_type": "Video",
+        "title": "SP-302-Dataframe - A View to Structured Data New.mp4",
+        "created": "2026-01-01T13:06:56Z"
+      },
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 53729719,
+      "title": "Dataframe Transformations and Actions",
+      "asset": {
+        "_class": "asset",
+        "id": 69799923,
+        "asset_type": "Video",
+        "title": "SP-303-Dataframe Transformations and Actions.mp4",
+        "created": "2025-12-02T17:27:37Z"
+      },
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 53729721,
+      "title": "Dataframe Concepts",
+      "asset": {
+        "_class": "asset",
+        "id": 69799907,
+        "asset_type": "Video",
+        "title": "SP-304-Dataframe Concepts.mp4",
+        "created": "2025-12-02T17:27:16Z"
+      },
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 53729723,
+      "title": "Exploring Dataframe Transformations",
+      "asset": {
+        "_class": "asset",
+        "id": 69799701,
+        "asset_type": "Video",
+        "title": "SP-305-Exploring Dataframe Transformations.mp4",
+        "created": "2025-12-02T17:11:43Z"
+      },
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 53729725,
+      "title": "Creating Spark Dataframe",
+      "asset": {
+        "_class": "asset",
+        "id": 69799897,
+        "asset_type": "Video",
+        "title": "SP-306-Creating Spark Dataframe.mp4",
+        "created": "2025-12-02T17:25:47Z"
+      },
+      "object_index": 16
+    },
+    {
+      "_class": "chapter",
+      "id": 12731517,
+      "title": "Spark Data Types and Schema",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 53729747,
+      "title": "Spark Data Types",
+      "asset": {
+        "_class": "asset",
+        "id": 69799799,
+        "asset_type": "Video",
+        "title": "SP-401-Spark Data Types.mp4",
+        "created": "2025-12-02T17:19:23Z"
+      },
+      "object_index": 17
+    },
+    {
+      "_class": "lecture",
+      "id": 53729749,
+      "title": "Schema on read in Spark",
+      "asset": {
+        "_class": "asset",
+        "id": 69799983,
+        "asset_type": "Video",
+        "title": "SP-402-Schema on read.mp4",
+        "created": "2025-12-02T17:31:35Z"
+      },
+      "object_index": 18
+    },
+    {
+      "_class": "lecture",
+      "id": 53729753,
+      "title": "Correcting Data Types",
+      "asset": {
+        "_class": "asset",
+        "id": 69800063,
+        "asset_type": "Video",
+        "title": "SP-403-Correcting Data Types.mp4",
+        "created": "2025-12-02T17:35:19Z"
+      },
+      "object_index": 19
+    },
+    {
+      "_class": "lecture",
+      "id": 53729757,
+      "title": "Exploratory analysis and data type conversion",
+      "asset": {
+        "_class": "asset",
+        "id": 69806545,
+        "asset_type": "Video",
+        "title": "SP-404-EDA and Schema Correction.mp4",
+        "created": "2025-12-03T02:44:25Z"
+      },
+      "object_index": 20
+    },
+    {
+      "_class": "chapter",
+      "id": 12731519,
+      "title": "Dataframe Transformations",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 53729761,
+      "title": "Adding, Removing, and Renaming Columns",
+      "asset": {
+        "_class": "asset",
+        "id": 69799977,
+        "asset_type": "Video",
+        "title": "SP-501-Add Remove Rename Columns.mp4",
+        "created": "2025-12-02T17:31:12Z"
+      },
+      "object_index": 21
+    },
+    {
+      "_class": "lecture",
+      "id": 53729763,
+      "title": "Dataframe Column Expressions",
+      "asset": {
+        "_class": "asset",
+        "id": 69800183,
+        "asset_type": "Video",
+        "title": "SP-502-Column Expressions.mp4",
+        "created": "2025-12-02T17:38:25Z"
+      },
+      "object_index": 22
+    },
+    {
+      "_class": "lecture",
+      "id": 53729767,
+      "title": "Filtering and removing duplicates",
+      "asset": {
+        "_class": "asset",
+        "id": 69799889,
+        "asset_type": "Video",
+        "title": "SP-503-Filtering and Removing Duplicates.mp4",
+        "created": "2025-12-02T17:25:27Z"
+      },
+      "object_index": 23
+    },
+    {
+      "_class": "lecture",
+      "id": 53729769,
+      "title": "Sorting, Limiting and Collecting",
+      "asset": {
+        "_class": "asset",
+        "id": 69800035,
+        "asset_type": "Video",
+        "title": "SP-504-Sorting Limiting and Collecting.mp4",
+        "created": "2025-12-02T17:34:12Z"
+      },
+      "object_index": 24
+    },
+    {
+      "_class": "lecture",
+      "id": 53729771,
+      "title": "Transforming Unstructured data",
+      "asset": {
+        "_class": "asset",
+        "id": 69800067,
+        "asset_type": "Video",
+        "title": "SP-505-Unstructured Data Processing.mp4",
+        "created": "2025-12-02T17:35:34Z"
+      },
+      "object_index": 25
+    },
+    {
+      "_class": "lecture",
+      "id": 53729789,
+      "title": "Transforming data with LLM",
+      "asset": {
+        "_class": "asset",
+        "id": 69818755,
+        "asset_type": "Video",
+        "title": "SP-506-Transforming data using LLM.mp4",
+        "created": "2025-12-03T16:04:08Z"
+      },
+      "object_index": 26
+    },
+    {
+      "_class": "chapter",
+      "id": 12734535,
+      "title": "Working with different data types",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 53742747,
+      "title": "Working with Nulls",
+      "asset": {
+        "_class": "asset",
+        "id": 69818711,
+        "asset_type": "Video",
+        "title": "SP-601-Working with Nulls.mp4",
+        "created": "2025-12-03T16:00:26Z"
+      },
+      "object_index": 27
+    },
+    {
+      "_class": "lecture",
+      "id": 53742749,
+      "title": "Working with Numbers",
+      "asset": {
+        "_class": "asset",
+        "id": 69828253,
+        "asset_type": "Video",
+        "title": "SP-602-Working with Numbers.mp4",
+        "created": "2025-12-04T03:26:55Z"
+      },
+      "object_index": 28
+    },
+    {
+      "_class": "lecture",
+      "id": 53742751,
+      "title": "Manipulating Strings",
+      "asset": {
+        "_class": "asset",
+        "id": 69852349,
+        "asset_type": "Video",
+        "title": "SP-603-Manipulating Strings.mp4",
+        "created": "2025-12-05T03:06:26Z"
+      },
+      "object_index": 29
+    },
+    {
+      "_class": "lecture",
+      "id": 53742757,
+      "title": "Working with Date",
+      "asset": {
+        "_class": "asset",
+        "id": 69852989,
+        "asset_type": "Video",
+        "title": "SP-604-Working with Dates.mp4",
+        "created": "2025-12-05T04:31:58Z"
+      },
+      "object_index": 30
+    },
+    {
+      "_class": "lecture",
+      "id": 53742761,
+      "title": "Working with Timestamps",
+      "asset": {
+        "_class": "asset",
+        "id": 69854945,
+        "asset_type": "Video",
+        "title": "SP-605-Working with Timestamp.mp4",
+        "created": "2025-12-05T06:52:09Z"
+      },
+      "object_index": 31
+    },
+    {
+      "_class": "lecture",
+      "id": 53766085,
+      "title": "Handling Time Zone Information",
+      "asset": {
+        "_class": "asset",
+        "id": 69862829,
+        "asset_type": "Video",
+        "title": "SP-606-Handling Timezone Information.mp4",
+        "created": "2025-12-05T13:55:43Z"
+      },
+      "object_index": 32
+    },
+    {
+      "_class": "lecture",
+      "id": 53789859,
+      "title": "Working with Complex Data Types",
+      "asset": {
+        "_class": "asset",
+        "id": 69886159,
+        "asset_type": "Video",
+        "title": "SP-607-Working with Complex Types.mp4",
+        "created": "2025-12-06T15:27:46Z"
+      },
+      "object_index": 33
+    },
+    {
+      "_class": "lecture",
+      "id": 53789869,
+      "title": "Working with JSON data",
+      "asset": {
+        "_class": "asset",
+        "id": 69899529,
+        "asset_type": "Video",
+        "title": "SP-608-Working with JSON Data.mp4",
+        "created": "2025-12-07T13:32:06Z"
+      },
+      "object_index": 34
+    },
+    {
+      "_class": "lecture",
+      "id": 53789873,
+      "title": "Working with Variant Type",
+      "asset": {
+        "_class": "asset",
+        "id": 69900743,
+        "asset_type": "Video",
+        "title": "SP-608-Working with VARIANT Types.mp4",
+        "created": "2025-12-07T14:31:42Z"
+      },
+      "object_index": 35
+    },
+    {
+      "_class": "chapter",
+      "id": 12752427,
+      "title": "Joins in Spark Dataframe",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 53825597,
+      "title": "Introduction to Joins in Spark",
+      "asset": {
+        "_class": "asset",
+        "id": 69935987,
+        "asset_type": "Video",
+        "title": "SP-701-Introduction to Joins.mp4",
+        "created": "2025-12-09T08:17:14Z"
+      },
+      "object_index": 36
+    },
+    {
+      "_class": "lecture",
+      "id": 53825601,
+      "title": "Inner Joins",
+      "asset": {
+        "_class": "asset",
+        "id": 69937175,
+        "asset_type": "Video",
+        "title": "SP-702-Inner Joins in Spark.mp4",
+        "created": "2025-12-09T09:15:16Z"
+      },
+      "object_index": 37
+    },
+    {
+      "_class": "lecture",
+      "id": 53825605,
+      "title": "Outer Joins",
+      "asset": {
+        "_class": "asset",
+        "id": 69963509,
+        "asset_type": "Video",
+        "title": "SP-703-Outer Joins in Spark.mp4",
+        "created": "2025-12-10T14:16:53Z"
+      },
+      "object_index": 38
+    },
+    {
+      "_class": "lecture",
+      "id": 53825609,
+      "title": "Lateral Join",
+      "asset": {
+        "_class": "asset",
+        "id": 69998213,
+        "asset_type": "Video",
+        "title": "SP-704-Lateral Joins in Spak.mp4",
+        "created": "2025-12-12T07:55:02Z"
+      },
+      "object_index": 39
+    },
+    {
+      "_class": "lecture",
+      "id": 53825607,
+      "title": "Other Types of Joins",
+      "asset": {
+        "_class": "asset",
+        "id": 70005003,
+        "asset_type": "Video",
+        "title": "SP-705-Other Types of Joins.mp4",
+        "created": "2025-12-12T15:11:46Z"
+      },
+      "object_index": 40
+    },
+    {
+      "_class": "chapter",
+      "id": 12781651,
+      "title": "Aggregations in Spark Dataframe",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 53951367,
+      "title": "Simple Aggregation",
+      "asset": {
+        "_class": "asset",
+        "id": 70115129,
+        "asset_type": "Video",
+        "title": "SP-801-Simple Aggregation.mp4",
+        "created": "2025-12-18T14:35:26Z"
+      },
+      "object_index": 41
+    },
+    {
+      "_class": "lecture",
+      "id": 53951373,
+      "title": "Grouping Aggregation",
+      "asset": {
+        "_class": "asset",
+        "id": 70115191,
+        "asset_type": "Video",
+        "title": "SP-802-Grouping Aggregations.mp4",
+        "created": "2025-12-18T14:39:21Z"
+      },
+      "object_index": 42
+    },
+    {
+      "_class": "lecture",
+      "id": 53951379,
+      "title": "Multilevel Aggregation",
+      "asset": {
+        "_class": "asset",
+        "id": 70116703,
+        "asset_type": "Video",
+        "title": "SP-803-Multilevel Aggregations.mp4",
+        "created": "2025-12-18T16:12:55Z"
+      },
+      "object_index": 43
+    },
+    {
+      "_class": "lecture",
+      "id": 53951383,
+      "title": "Windowing Aggregation",
+      "asset": {
+        "_class": "asset",
+        "id": 70143615,
+        "asset_type": "Video",
+        "title": "SP-804-Window Aggregations.mp4",
+        "created": "2025-12-20T04:13:35Z"
+      },
+      "object_index": 44
+    },
+    {
+      "_class": "chapter",
+      "id": 12781653,
+      "title": "UDF and Unit Testing",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 53951391,
+      "title": "User-Defined Functions",
+      "asset": {
+        "_class": "asset",
+        "id": 70146335,
+        "asset_type": "Video",
+        "title": "SP-901-Introduction to Spark UDF.mp4",
+        "created": "2025-12-20T08:24:58Z"
+      },
+      "object_index": 45
+    },
+    {
+      "_class": "lecture",
+      "id": 53951397,
+      "title": "Vectorized UDF",
+      "asset": {
+        "_class": "asset",
+        "id": 70148911,
+        "asset_type": "Video",
+        "title": "SP-902-Vectorized UDF.mp4",
+        "created": "2025-12-20T12:35:48Z"
+      },
+      "object_index": 46
+    },
+    {
+      "_class": "lecture",
+      "id": 53951403,
+      "title": "User Defined Table Functions",
+      "asset": {
+        "_class": "asset",
+        "id": 70150231,
+        "asset_type": "Video",
+        "title": "SP-903-User Defined Table Functions.mp4",
+        "created": "2025-12-20T14:37:59Z"
+      },
+      "object_index": 47
+    },
+    {
+      "_class": "lecture",
+      "id": 53951409,
+      "title": "Unit Testing Spark Code",
+      "asset": {
+        "_class": "asset",
+        "id": 70166715,
+        "asset_type": "Video",
+        "title": "SP-904-Unit Testing Spark Application.mp4",
+        "created": "2025-12-21T15:51:43Z"
+      },
+      "object_index": 48
+    },
+    {
+      "_class": "chapter",
+      "id": 12802571,
+      "title": "Spark On Your Laptop IDE",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 54038423,
+      "title": "Setup your Laptop for Spark Development",
+      "asset": {
+        "_class": "asset",
+        "id": 70208963,
+        "asset_type": "Video",
+        "title": "SP-1001-Setup Local Machine for Spark Development.mp4",
+        "created": "2025-12-23T18:07:30Z"
+      },
+      "object_index": 49
+    },
+    {
+      "_class": "lecture",
+      "id": 54049827,
+      "title": "Developing Spark Application in the IDE",
+      "asset": {
+        "_class": "asset",
+        "id": 70225613,
+        "asset_type": "Video",
+        "title": "SP-1002-Developing Spark in Local IDE.mp4",
+        "created": "2025-12-24T17:58:10Z"
+      },
+      "object_index": 50
+    },
+    {
+      "_class": "lecture",
+      "id": 54099057,
+      "title": "Spark Connect - Remote Cluster Connection from Your IDE",
+      "asset": {
+        "_class": "asset",
+        "id": 70291917,
+        "asset_type": "Video",
+        "title": "SP-1003-Spark Connect-Connecting to remote cluster.mp4",
+        "created": "2025-12-28T16:12:59Z"
+      },
+      "object_index": 51
+    },
+    {
+      "_class": "chapter",
+      "id": 4786932,
+      "title": "Spark Execution Model - Old Videos",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 20161738,
+      "title": "Execution Methods - How to Run Spark Programs?",
+      "asset": {
+        "_class": "asset",
+        "id": 25083220,
+        "asset_type": "Video",
+        "title": "SP09-Execution Methods.mp4",
+        "created": "2020-05-30T12:44:17Z"
+      },
+      "object_index": 52
+    },
+    {
+      "_class": "lecture",
+      "id": 20162052,
+      "title": "Spark Distributed Processing Model - How your program runs?",
+      "asset": {
+        "_class": "asset",
+        "id": 25083438,
+        "asset_type": "Video",
+        "title": "SP10-Distributed Processing Model.mp4",
+        "created": "2020-05-30T12:55:31Z"
+      },
+      "object_index": 53
+    },
+    {
+      "_class": "lecture",
+      "id": 20162090,
+      "title": "Spark Execution Modes and Cluster Managers",
+      "asset": {
+        "_class": "asset",
+        "id": 25106706,
+        "asset_type": "Video",
+        "title": "SP11-Execution Modes.mp4",
+        "created": "2020-05-31T13:04:24Z"
+      },
+      "object_index": 54
+    },
+    {
+      "_class": "lecture",
+      "id": 20162092,
+      "title": "Summarizing Spark Execution Models - When to use What?",
+      "asset": {
+        "_class": "asset",
+        "id": 25111060,
+        "asset_type": "Video",
+        "title": "SP12- Execution Models - When to use What.mp4",
+        "created": "2020-05-31T15:50:58Z"
+      },
+      "object_index": 55
+    },
+    {
+      "_class": "lecture",
+      "id": 20162098,
+      "title": "Working with PySpark Shell - Demo",
+      "asset": {
+        "_class": "asset",
+        "id": 25110972,
+        "asset_type": "Video",
+        "title": "SP13-Local Mode Spark Shell and the Context UI.mp4",
+        "created": "2020-05-31T15:47:43Z"
+      },
+      "object_index": 56
+    },
+    {
+      "_class": "lecture",
+      "id": 20218636,
+      "title": "Installing Multi-Node Spark Cluster - Demo",
+      "asset": {
+        "_class": "asset",
+        "id": 25161176,
+        "asset_type": "Video",
+        "title": "SP14- Installing Multi-Node Spark Cluster.mp4",
+        "created": "2020-06-02T12:16:04Z"
+      },
+      "object_index": 57
+    },
+    {
+      "_class": "lecture",
+      "id": 20162104,
+      "title": "Working with Notebooks in Cluster - Demo",
+      "asset": {
+        "_class": "asset",
+        "id": 25187114,
+        "asset_type": "Video",
+        "title": "SP15- Working with Notebooks in Cluster.mp4",
+        "created": "2020-06-03T11:26:40Z"
+      },
+      "object_index": 58
+    },
+    {
+      "_class": "lecture",
+      "id": 20162116,
+      "title": "Working with Spark Submit - Demo",
+      "asset": {
+        "_class": "asset",
+        "id": 25244779,
+        "asset_type": "Video",
+        "title": "SP16-Working with Spark Submit - Demo.mp4",
+        "created": "2020-06-05T09:39:37Z"
+      },
+      "object_index": 59
+    },
+    {
+      "_class": "chapter",
+      "id": 4794646,
+      "title": "Spark Programming Model and Developer Experience - Old Videos",
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 20192560,
+      "title": "Creating Spark Project Build Configuration",
+      "asset": {
+        "_class": "asset",
+        "id": 25271453,
+        "asset_type": "Video",
+        "title": "SP18-Setting Up your IDE.mp4",
+        "created": "2020-06-06T09:51:25Z"
+      },
+      "object_index": 60
+    },
+    {
+      "_class": "lecture",
+      "id": 20192562,
+      "title": "Configuring Spark Project Application Logs",
+      "asset": {
+        "_class": "asset",
+        "id": 25290593,
+        "asset_type": "Video",
+        "title": "SP19-Configuring Spark Project Application Logs.mp4",
+        "created": "2020-06-07T07:18:35Z"
+      },
+      "object_index": 61
+    },
+    {
+      "_class": "lecture",
+      "id": 20192566,
+      "title": "Creating Spark Session",
+      "asset": {
+        "_class": "asset",
+        "id": 25297347,
+        "asset_type": "Video",
+        "title": "SP20- Creating Spark Session.mp4",
+        "created": "2020-06-07T13:27:24Z"
+      },
+      "object_index": 62
+    },
+    {
+      "_class": "lecture",
+      "id": 20192568,
+      "title": "Configuring Spark Session",
+      "asset": {
+        "_class": "asset",
+        "id": 25314789,
+        "asset_type": "Video",
+        "title": "SP21- Configuring Spark Session.mp4",
+        "created": "2020-06-08T07:18:58Z"
+      },
+      "object_index": 63
+    },
+    {
+      "_class": "lecture",
+      "id": 20192574,
+      "title": "Data Frame Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 25318993,
+        "asset_type": "Video",
+        "title": "SP22-DataFrame Introduction - Slides.mp4",
+        "created": "2020-06-08T11:05:10Z"
+      },
+      "object_index": 64
+    },
+    {
+      "_class": "lecture",
+      "id": 20192576,
+      "title": "Data Frame Partitions and Executors",
+      "asset": {
+        "_class": "asset",
+        "id": 25319077,
+        "asset_type": "Video",
+        "title": "SP23-DataFrame Partitions.mp4",
+        "created": "2020-06-08T11:08:07Z"
+      },
+      "object_index": 65
+    },
+    {
+      "_class": "lecture",
+      "id": 20192578,
+      "title": "Spark Transformations and Actions",
+      "asset": {
+        "_class": "asset",
+        "id": 25325141,
+        "asset_type": "Video",
+        "title": "SP24-Spark Transformations and Actions.mp4",
+        "created": "2020-06-08T14:41:26Z"
+      },
+      "object_index": 66
+    },
+    {
+      "_class": "lecture",
+      "id": 20192582,
+      "title": "Spark Jobs Stages and Task",
+      "asset": {
+        "_class": "asset",
+        "id": 25342975,
+        "asset_type": "Video",
+        "title": "SP25-Spark Jobs Stages and Task.mp4",
+        "created": "2020-06-09T07:17:59Z"
+      },
+      "object_index": 67
+    },
+    {
+      "_class": "lecture",
+      "id": 20192586,
+      "title": "Understanding your Execution Plan",
+      "asset": {
+        "_class": "asset",
+        "id": 25348491,
+        "asset_type": "Video",
+        "title": "SP26-Understanding your Execution Plan.mp4",
+        "created": "2020-06-09T13:08:23Z"
+      },
+      "object_index": 68
+    },
+    {
+      "_class": "chapter",
+      "id": 9538952,
+      "title": "Capstone Project",
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 54009043,
+      "title": "Project Source Code and Resources",
+      "asset": {
+        "_class": "asset",
+        "id": 70225491,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2025-12-24T17:52:55Z"
+      },
+      "object_index": 69
+    },
+    {
+      "_class": "lecture",
+      "id": 39876742,
+      "title": "Project Scope and Background",
+      "asset": {
+        "_class": "asset",
+        "id": 51392350,
+        "asset_type": "Video",
+        "title": "SCP01-Project Scope and Background.mp4",
+        "created": "2023-09-15T11:23:33Z"
+      },
+      "object_index": 70
+    },
+    {
+      "_class": "lecture",
+      "id": 39876752,
+      "title": "Data Transformation Requirement",
+      "asset": {
+        "_class": "asset",
+        "id": 51392344,
+        "asset_type": "Video",
+        "title": "SCP02-Data Transformation Requirement.mp4",
+        "created": "2023-09-15T11:23:23Z"
+      },
+      "object_index": 71
+    },
+    {
+      "_class": "lecture",
+      "id": 39876762,
+      "title": "Setup your starter project",
+      "asset": {
+        "_class": "asset",
+        "id": 51392428,
+        "asset_type": "Video",
+        "title": "SCP03-Setup your starter project.mp4",
+        "created": "2023-09-15T11:27:40Z"
+      },
+      "object_index": 72
+    },
+    {
+      "_class": "lecture",
+      "id": 39876766,
+      "title": "Test your starter project",
+      "asset": {
+        "_class": "asset",
+        "id": 51392358,
+        "asset_type": "Video",
+        "title": "SCP04-Test your starter project.mp4",
+        "created": "2023-09-15T11:24:21Z"
+      },
+      "object_index": 73
+    },
+    {
+      "_class": "lecture",
+      "id": 39876772,
+      "title": "Setup your source control and process",
+      "asset": {
+        "_class": "asset",
+        "id": 51392450,
+        "asset_type": "Video",
+        "title": "SCP05-Setup your source control and process.mp4",
+        "created": "2023-09-15T11:28:42Z"
+      },
+      "object_index": 74
+    },
+    {
+      "_class": "lecture",
+      "id": 39876780,
+      "title": "Creating your Project CI CD Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 51392454,
+        "asset_type": "Video",
+        "title": "SCP06-Creating your Project CI CD Pipline.mp4",
+        "created": "2023-09-15T11:28:51Z"
+      },
+      "object_index": 75
+    },
+    {
+      "_class": "lecture",
+      "id": 39876794,
+      "title": "Develop Code",
+      "asset": {
+        "_class": "asset",
+        "id": 51392408,
+        "asset_type": "Video",
+        "title": "SCP07-Develop Code.mp4",
+        "created": "2023-09-15T11:26:24Z"
+      },
+      "object_index": 76
+    },
+    {
+      "_class": "lecture",
+      "id": 39876804,
+      "title": "Write Test Cases",
+      "asset": {
+        "_class": "asset",
+        "id": 51392432,
+        "asset_type": "Video",
+        "title": "SCP08-Write Test Cases.mp4",
+        "created": "2023-09-15T11:27:45Z"
+      },
+      "object_index": 77
+    },
+    {
+      "_class": "lecture",
+      "id": 39876816,
+      "title": "Working with Kafka integration",
+      "asset": {
+        "_class": "asset",
+        "id": 51392402,
+        "asset_type": "Video",
+        "title": "SCP09-Working with Kafka integration.mp4",
+        "created": "2023-09-15T11:25:55Z"
+      },
+      "object_index": 78
+    },
+    {
+      "_class": "lecture",
+      "id": 39876830,
+      "title": "Estimating resources for your application",
+      "asset": {
+        "_class": "asset",
+        "id": 51392416,
+        "asset_type": "Video",
+        "title": "SCP10-Estimating resources for your application.mp4",
+        "created": "2023-09-15T11:27:05Z"
+      },
+      "object_index": 79
+    },
+    {
+      "_class": "chapter",
+      "id": 5363706,
+      "title": "Keep Learning",
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 23246848,
+      "title": "Final Word",
+      "asset": {
+        "_class": "asset",
+        "id": 70092915,
+        "asset_type": "Video",
+        "title": "SP-101-End is a new beginning.mp4",
+        "created": "2025-12-17T14:28:16Z"
+      },
+      "object_index": 80
+    },
+    {
+      "_class": "lecture",
+      "id": 22452586,
+      "title": "Bonus Lecture : Get Extra",
+      "asset": {
+        "_class": "asset",
+        "id": 70092667,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2025-12-17T14:13:53Z"
+      },
+      "object_index": 81
+    }
+  ]
+}

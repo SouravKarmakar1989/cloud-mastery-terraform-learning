@@ -102,11 +102,11 @@ jobs:
       - uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        working-directory: azure-infrastructure/${{ inputs.module }}
+        working-directory: platforms/github-iac-terraform/azure-infrastructure/${{ inputs.module }}
         run: terraform init -backend-config=env/${{ inputs.environment }}/backend.hcl
 
       - name: Terraform Plan
-        working-directory: azure-infrastructure/${{ inputs.module }}
+        working-directory: platforms/github-iac-terraform/azure-infrastructure/${{ inputs.module }}
         run: |
           terraform plan \
             -var-file=env/${{ inputs.environment }}/terraform.tfvars \
@@ -118,7 +118,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: tfplan-${{ inputs.module }}-${{ inputs.environment }}
-          path: azure-infrastructure/${{ inputs.module }}/tfplan
+          path: platforms/github-iac-terraform/azure-infrastructure/${{ inputs.module }}/tfplan
           retention-days: 1
 
   # ── Job 2: Apply — gated by GitHub Environment for prod ───────────────────
@@ -144,9 +144,9 @@ jobs:
       - uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        working-directory: azure-infrastructure/${{ inputs.module }}
+        working-directory: platforms/github-iac-terraform/azure-infrastructure/${{ inputs.module }}
         run: terraform init -backend-config=env/${{ inputs.environment }}/backend.hcl
 
       - name: Terraform Apply
-        working-directory: azure-infrastructure/${{ inputs.module }}
+        working-directory: platforms/github-iac-terraform/azure-infrastructure/${{ inputs.module }}
         run: terraform apply -auto-approve -var-file=env/${{ inputs.environment }}/terraform.tfvars ${{ env.TF_TARGET }}

@@ -1,0 +1,4522 @@
+{
+  "count": 299,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 5534566,
+      "title": "Introduction",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 28614322,
+      "title": "Course Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 36353016,
+        "asset_type": "Video",
+        "title": "ANS - Course Introduction v1.mp4",
+        "external_url": "",
+        "filename": "ANS-Course-Introduction-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 1,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 23156290,
+      "title": "Overview of AWS Networking - A Bird's eye view (MUST WATCH)",
+      "asset": {
+        "_class": "asset",
+        "id": 65958793,
+        "asset_type": "Video",
+        "title": "01-AWS-Networking-Overview-2025.mp4",
+        "external_url": "",
+        "filename": "01-AWS-Networking-Overview-2025.mp4",
+        "download_urls": null
+      },
+      "object_index": 2,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50886365,
+      "title": "Before we start the course - Important things to know",
+      "asset": {
+        "_class": "asset",
+        "id": 65959353,
+        "asset_type": "Video",
+        "title": "02-before-starting-the-course.mp4",
+        "external_url": "",
+        "filename": "02-before-starting-the-course.mp4",
+        "download_urls": null
+      },
+      "object_index": 3,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5339379,
+      "title": "AWS Networking fundamentals",
+      "object_index": 1
+    },
+    {
+      "_class": "chapter",
+      "id": 6872832,
+      "title": "Code & Slides Download",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 28614410,
+      "title": "Code & Slides Download",
+      "asset": {
+        "_class": "asset",
+        "id": 36353278,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 4,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 36353280,
+          "title": "Course Material Download",
+          "download_urls": null,
+          "filename": "Course-Material-Download",
+          "external_url": "https://courses.datacumulus.com/downloads/certified-networking-b7tg",
+          "asset_type": "ExternalLink"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 5768718,
+      "title": "Amazon VPC fundamentals",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 24111914,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 54640074,
+        "asset_type": "Video",
+        "title": "S2-01-VPC-fundamentals-Section-Introduction-v3.mp4",
+        "external_url": "",
+        "filename": "S2-01-VPC-fundamentals-Section-Introduction-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 5,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42823332,
+      "title": "What is Amazon VPC?",
+      "asset": {
+        "_class": "asset",
+        "id": 55330658,
+        "asset_type": "Video",
+        "title": "S3-02-Amazon-VPC.mp4",
+        "external_url": "",
+        "filename": "S3-02-Amazon-VPC.mp4",
+        "download_urls": null
+      },
+      "object_index": 6,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42823386,
+      "title": "Scope of VPC with respect to AWS Account, Region & AZ",
+      "asset": {
+        "_class": "asset",
+        "id": 55330700,
+        "asset_type": "Video",
+        "title": "S3-03-VPC-Region-AZ-Account-Relation.mp4",
+        "external_url": "",
+        "filename": "S3-03-VPC-Region-AZ-Account-Relation.mp4",
+        "download_urls": null
+      },
+      "object_index": 7,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42823402,
+      "title": "VPC Building blocks - core components",
+      "asset": {
+        "_class": "asset",
+        "id": 61477615,
+        "asset_type": "Video",
+        "title": "S3-04-VPC-building-blocks-v2.mp4",
+        "external_url": "",
+        "filename": "S3-04-VPC-building-blocks-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 8,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24111926,
+      "title": "VPC Addressing (CIDR)",
+      "asset": {
+        "_class": "asset",
+        "id": 55330732,
+        "asset_type": "Video",
+        "title": "S3-05-VPC-CIDR.mp4",
+        "external_url": "",
+        "filename": "S3-05-VPC-CIDR.mp4",
+        "download_urls": null
+      },
+      "object_index": 9,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112110,
+      "title": "VPC Route Tables",
+      "asset": {
+        "_class": "asset",
+        "id": 54639648,
+        "asset_type": "Video",
+        "title": "L004-3-VPC-RouteTables-IGW-v2.mp4",
+        "external_url": "",
+        "filename": "L004-3-VPC-RouteTables-IGW-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 10,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112310,
+      "title": "IP Addresses - IPv4 vs IPv6, Private vs Public vs Elastic IP",
+      "asset": {
+        "_class": "asset",
+        "id": 69623357,
+        "asset_type": "Video",
+        "title": "S3-06-IP-Addresses-v2.mp4",
+        "external_url": "",
+        "filename": "S3-06-IP-Addresses-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 11,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112436,
+      "title": "VPC Firewall - Security Group",
+      "asset": {
+        "_class": "asset",
+        "id": 36383362,
+        "asset_type": "Video",
+        "title": "L007-6-Security-Groups-10db.mp4",
+        "external_url": "",
+        "filename": "L007-6-Security-Groups-10db.mp4",
+        "download_urls": null
+      },
+      "object_index": 12,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112448,
+      "title": "VPC Firewall - Network Access Control List (NACL)",
+      "asset": {
+        "_class": "asset",
+        "id": 55062226,
+        "asset_type": "Video",
+        "title": "L008-7-Network-ACL-v3.mp4",
+        "external_url": "",
+        "filename": "L008-7-Network-ACL-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 13,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112456,
+      "title": "Default VPC",
+      "asset": {
+        "_class": "asset",
+        "id": 36382510,
+        "asset_type": "Video",
+        "title": "L009-8-Default-VPC-10db.mp4",
+        "external_url": "",
+        "filename": "L009-8-Default-VPC-10db.mp4",
+        "download_urls": null
+      },
+      "object_index": 14,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 47890777,
+      "title": "[Important] AWS Console UI Update",
+      "asset": {
+        "_class": "asset",
+        "id": 61950857,
+        "asset_type": "Video",
+        "title": "AWS_-_New_UI_2024.mp4",
+        "external_url": "",
+        "filename": "AWS-New-UI-2024.mp4",
+        "download_urls": null
+      },
+      "object_index": 15,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112482,
+      "title": "Hands On: Creating VPC with Public Subnet",
+      "asset": {
+        "_class": "asset",
+        "id": 36383814,
+        "asset_type": "Video",
+        "title": "L010-9-Demo-1-VPC-Public-Subnet-10db.mp4",
+        "external_url": "",
+        "filename": "L010-9-Demo-1-VPC-Public-Subnet-10db.mp4",
+        "download_urls": null
+      },
+      "object_index": 16,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112492,
+      "title": "Hands On: Add Private subnet",
+      "asset": {
+        "_class": "asset",
+        "id": 36384122,
+        "asset_type": "Video",
+        "title": "L011-10-Demo-2-VPC-Private-Subnet-10db.mp4",
+        "external_url": "",
+        "filename": "L011-10-Demo-2-VPC-Private-Subnet-10db.mp4",
+        "download_urls": null
+      },
+      "object_index": 17,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112500,
+      "title": "NAT Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 50979958,
+        "asset_type": "Video",
+        "title": "L012-11-NAT-Gateway-Intro-10db-v2.mp4",
+        "external_url": "",
+        "filename": "L012-11-NAT-Gateway-Intro-10db-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 18,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112506,
+      "title": "Hands On: Create NAT Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 36384370,
+        "asset_type": "Video",
+        "title": "L013-12-Demo-3-NAT-Gateway-10db.mp4",
+        "external_url": "",
+        "filename": "L013-12-Demo-3-NAT-Gateway-10db.mp4",
+        "download_urls": null
+      },
+      "object_index": 19,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112508,
+      "title": "NAT Gateway High Availability",
+      "asset": {
+        "_class": "asset",
+        "id": 36384388,
+        "asset_type": "Video",
+        "title": "L014-13-NAT-GW-HA-10db.mp4",
+        "external_url": "",
+        "filename": "L014-13-NAT-GW-HA-10db.mp4",
+        "download_urls": null
+      },
+      "object_index": 20,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112520,
+      "title": "NAT Instance (EC2 based NAT)",
+      "asset": {
+        "_class": "asset",
+        "id": 36384458,
+        "asset_type": "Video",
+        "title": "L015-14-Demo-4-NAT-EC2-Instance-10db.mp4",
+        "external_url": "",
+        "filename": "L015-14-Demo-4-NAT-EC2-Instance-10db.mp4",
+        "download_urls": null
+      },
+      "object_index": 21,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 54100957,
+      "title": "New ! Regional NAT Gateway (Re:invent 2025)",
+      "asset": {
+        "_class": "asset",
+        "id": 70294013,
+        "asset_type": "Video",
+        "title": "08-x-Regional-NAT-Gateway-for-courses.mp4",
+        "external_url": "",
+        "filename": "08-x-Regional-NAT-Gateway-for-courses.mp4",
+        "download_urls": null
+      },
+      "object_index": 22,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112536,
+      "title": "Exam Essentials",
+      "asset": {
+        "_class": "asset",
+        "id": 36384538,
+        "asset_type": "Video",
+        "title": "L016-15-Section-1-Exam-Essentials.mp4",
+        "external_url": "",
+        "filename": "L016-15-Section-1-Exam-Essentials.mp4",
+        "download_urls": null
+      },
+      "object_index": 23,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5793358,
+      "title": "VPC Fundamentals",
+      "object_index": 2
+    },
+    {
+      "_class": "chapter",
+      "id": 5768970,
+      "title": "Additional VPC features",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 42291804,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 66076407,
+        "asset_type": "Video",
+        "title": "01-additional-vpc-features-section-introduction.mp4",
+        "external_url": "",
+        "filename": "01-additional-vpc-features-section-introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 24,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50976121,
+      "title": "Egress-only Internet Gateway (IPv6)",
+      "asset": {
+        "_class": "asset",
+        "id": 66076417,
+        "asset_type": "Video",
+        "title": "02-egress-only-igw.mp4",
+        "external_url": "",
+        "filename": "02-egress-only-igw.mp4",
+        "download_urls": null
+      },
+      "object_index": 25,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50976129,
+      "title": "Hands-on: Egress-only internet gateway for IPv6 outbound traffic",
+      "asset": {
+        "_class": "asset",
+        "id": 66076437,
+        "asset_type": "Video",
+        "title": "03-hands-on-egress-only-internet-gateway.mp4",
+        "external_url": "",
+        "filename": "03-hands-on-egress-only-internet-gateway.mp4",
+        "download_urls": null
+      },
+      "object_index": 26,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112954,
+      "title": "Extending VPC address space",
+      "asset": {
+        "_class": "asset",
+        "id": 70424891,
+        "asset_type": "Video",
+        "title": "S3-1-Extending-VPC-CIDR-v4.mp4",
+        "external_url": "",
+        "filename": "S3-1-Extending-VPC-CIDR-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 27,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112972,
+      "title": "Elastic Network Interface (ENI)  deep dive",
+      "asset": {
+        "_class": "asset",
+        "id": 66076449,
+        "asset_type": "Video",
+        "title": "05-ENI-v4.mp4",
+        "external_url": "",
+        "filename": "05-ENI-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 28,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28781404,
+      "title": "Bring Your Own IP",
+      "asset": {
+        "_class": "asset",
+        "id": 66076445,
+        "asset_type": "Video",
+        "title": "06-BYOIP.mp4",
+        "external_url": "",
+        "filename": "06-BYOIP.mp4",
+        "download_urls": null
+      },
+      "object_index": 29,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5907866,
+      "title": "VPC features",
+      "object_index": 3
+    },
+    {
+      "_class": "chapter",
+      "id": 6221772,
+      "title": "VPC DNS and DHCP",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 42951580,
+      "title": "Section Introduction - How DNS works?",
+      "asset": {
+        "_class": "asset",
+        "id": 55490190,
+        "asset_type": "Video",
+        "title": "S4-01-VPC-DNS-DHCP-Section-Introduction.mp4",
+        "external_url": "",
+        "filename": "S4-01-VPC-DNS-DHCP-Section-Introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 30,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 25946870,
+      "title": "Amazon VPC DNS Server (Route53 Resolver)",
+      "asset": {
+        "_class": "asset",
+        "id": 55490198,
+        "asset_type": "Video",
+        "title": "S4-02-Amazon-VPC-DNS-Server.mp4",
+        "external_url": "",
+        "filename": "S4-02-Amazon-VPC-DNS-Server.mp4",
+        "download_urls": null
+      },
+      "object_index": 31,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26072538,
+      "title": "VPC DHCP Option sets",
+      "asset": {
+        "_class": "asset",
+        "id": 55490202,
+        "asset_type": "Video",
+        "title": "S4-03-VPC-DHCP-Option-Sets.mp4",
+        "external_url": "",
+        "filename": "S4-03-VPC-DHCP-Option-Sets.mp4",
+        "download_urls": null
+      },
+      "object_index": 32,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42951680,
+      "title": "Hands on exercises scenarios",
+      "asset": {
+        "_class": "asset",
+        "id": 55490232,
+        "asset_type": "Video",
+        "title": "S4-04-Hands-on-scenarios.mp4",
+        "external_url": "",
+        "filename": "S4-04-Hands-on-scenarios.mp4",
+        "download_urls": null
+      },
+      "object_index": 33,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26072698,
+      "title": "Hands On: VPC DNS with Route53 Private Hosted zone",
+      "asset": {
+        "_class": "asset",
+        "id": 55490214,
+        "asset_type": "Video",
+        "title": "S4-05-Hands-on-Route53-Private-Hosed-Zone.mp4",
+        "external_url": "",
+        "filename": "S4-05-Hands-on-Route53-Private-Hosed-Zone.mp4",
+        "download_urls": null
+      },
+      "object_index": 34,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33190000,
+      "title": "Hands On: VPC DNS with custom DNS server",
+      "asset": {
+        "_class": "asset",
+        "id": 55490218,
+        "asset_type": "Video",
+        "title": "S4-06-Hands-on-Custom-DNS-server-in-VPC.mp4",
+        "external_url": "",
+        "filename": "S4-06-Hands-on-Custom-DNS-server-in-VPC.mp4",
+        "download_urls": null
+      },
+      "object_index": 35,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26072746,
+      "title": "Introduction to Route53 DNS Resolver Endpoints (Hybrid DNS)",
+      "asset": {
+        "_class": "asset",
+        "id": 55490220,
+        "asset_type": "Video",
+        "title": "S4-07-Introduction-Route53-DNS-Resolver-Endpoints.mp4",
+        "external_url": "",
+        "filename": "S4-07-Introduction-Route53-DNS-Resolver-Endpoints.mp4",
+        "download_urls": null
+      },
+      "object_index": 36,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26072832,
+      "title": "Exam Essentials",
+      "asset": {
+        "_class": "asset",
+        "id": 55490230,
+        "asset_type": "Video",
+        "title": "S4-08-VPC-DNS-DHCP-Exam-essentials.mp4",
+        "external_url": "",
+        "filename": "S4-08-VPC-DNS-DHCP-Exam-essentials.mp4",
+        "download_urls": null
+      },
+      "object_index": 37,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5340113,
+      "title": "VPC DNS",
+      "object_index": 4
+    },
+    {
+      "_class": "chapter",
+      "id": 6221786,
+      "title": "Network Performance and Optimization",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 26072960,
+      "title": "Basics of Network performance - Bandwidth, Latency, Jitter, Throughput, PPS, MTU",
+      "asset": {
+        "_class": "asset",
+        "id": 69620847,
+        "asset_type": "Video",
+        "title": "S5-1-Network-Performance-Basics-MTU-v2.mp4",
+        "external_url": "",
+        "filename": "S5-1-Network-Performance-Basics-MTU-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 38,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26072990,
+      "title": "Placement Groups and EBS Optimized EC2 instances",
+      "asset": {
+        "_class": "asset",
+        "id": 32782226,
+        "asset_type": "Video",
+        "title": "S5-2-Network-Performance-PlacementGrp-EBSOptimizied.mp4",
+        "external_url": "",
+        "filename": "S5-2-Network-Performance-PlacementGrp-EBSOptimizied.mp4",
+        "download_urls": null
+      },
+      "object_index": 39,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26073034,
+      "title": "Enhanced Networking",
+      "asset": {
+        "_class": "asset",
+        "id": 45639048,
+        "asset_type": "Video",
+        "title": "S5-3-Enahanced-Networking-v2.mp4",
+        "external_url": "",
+        "filename": "S5-3-Enahanced-Networking-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 40,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26073066,
+      "title": "DPDK and Elastic Fabric Adapter (EFA)",
+      "asset": {
+        "_class": "asset",
+        "id": 64186679,
+        "asset_type": "Video",
+        "title": "S5-4-DPDK-EFA-v2.mp4",
+        "external_url": "",
+        "filename": "S5-4-DPDK-EFA-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 41,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26073172,
+      "title": "Bandwidth Limits inside and outside of VPC",
+      "asset": {
+        "_class": "asset",
+        "id": 37655226,
+        "asset_type": "Video",
+        "title": "S5-5-Bandwidth-Limits.mp4",
+        "external_url": "",
+        "filename": "S5-5-Bandwidth-Limits.mp4",
+        "download_urls": null
+      },
+      "object_index": 42,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 37655230,
+          "title": "Network Bandwidth Limits.pptx",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2021-11-20_19-53-23-2c5ae608132d97d5e3ae8e5fad224ca9/original.pptx?response-content-disposition=attachment%3B+filename%3DNetwork%2BBandwidth%2BLimits.pptx&Expires=1774134985&Signature=K0a~1aRb1hKqrcNeEDfujBhBZU0A3A-xBWX-fHPO5Kt-11j5geQOyKZhmZHA5Q3av5TeKFD~uxIDVFzMyvt93SmI2g0F7SOkTmDj8Doiw2ZwXbwj6ExHXfJoPpxLYvqtfytEorAsOrmJ44wleuiA6~W3E93iKbOdSoScT3-rylQ3pZG6KGtjxku5V~GxqKWb-Lr0mhqDiuzBAHVTF~qeGrz~XMBYMgrymRyB7g~x9j5VwfDg5Lcp33Ul8xRVAdejPODmiLWm6KYfwyE8VMsGmMXnHfGdtIihnM~34dRMqhxPLsf65r82GehkHgIf6OVFO4mXblf0dAydpHY-OXDHuQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "filename": "Network-Bandwidth-Limits.pptx",
+          "external_url": "",
+          "asset_type": "File"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 26073220,
+      "title": "Network I/O credits",
+      "asset": {
+        "_class": "asset",
+        "id": 32782232,
+        "asset_type": "Video",
+        "title": "S5-6-Network-IO-Credits.mp4",
+        "external_url": "",
+        "filename": "S5-6-Network-IO-Credits.mp4",
+        "download_urls": null
+      },
+      "object_index": 43,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26073302,
+      "title": "Network performance Summary",
+      "asset": {
+        "_class": "asset",
+        "id": 32782238,
+        "asset_type": "Video",
+        "title": "S5-7-Summary.mp4",
+        "external_url": "",
+        "filename": "S5-7-Summary.mp4",
+        "download_urls": null
+      },
+      "object_index": 44,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26073318,
+      "title": "Exam Essentials",
+      "asset": {
+        "_class": "asset",
+        "id": 69620933,
+        "asset_type": "Video",
+        "title": "S5-8-Exam-Essentials-v2.mp4",
+        "external_url": "",
+        "filename": "S5-8-Exam-Essentials-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 45,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5339393,
+      "title": "Network Peformance",
+      "object_index": 5
+    },
+    {
+      "_class": "chapter",
+      "id": 9117262,
+      "title": "VPC traffic Monitoring, Troubleshooting & Analysis",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 41570942,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 53663792,
+        "asset_type": "Video",
+        "title": "S03-Section-Introduction.mp4",
+        "external_url": "",
+        "filename": "S03-Section-Introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 46,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24112960,
+      "title": "VPC Traffic Monitoring with VPC Flow logs",
+      "asset": {
+        "_class": "asset",
+        "id": 53699164,
+        "asset_type": "Video",
+        "title": "S3-3-VPC-Traffic-Monitoring-with-flow-logs.mp4",
+        "external_url": "",
+        "filename": "S3-3-VPC-Traffic-Monitoring-with-flow-logs.mp4",
+        "download_urls": null
+      },
+      "object_index": 47,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53699170,
+          "title": "SampleCloudWatchQueries.txt",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-01-02_21-29-51-53ba415c9310cf3e806e89328eaa4136/original.txt?response-content-disposition=attachment%3B+filename%3DSampleCloudWatchQueries.txt&Expires=1774134985&Signature=lQhfvYARYds5x994yhDa8dMydoeDnnREJkdKqdz1O-fGVKuwlCqad7D8c7wWIkWC0TechQdNbi5pGFIfgHYi0E5JiLqoB2N~knrjDKu5AG2prMTYvrKIqYBYGMArcODS1IbehZJscmCbTtRo1QamvAe07VhmKro8D3buL31YooHbdAwTXfeqJ9tN7i3n4I3ST0GHpt~grDRTaVqJ4uQxJw~dq7~ubqYqCVscfEQ9qOXWQn4D34tWYij1KzE~bvj97Ij6E~K63O4KBvVwDnxQB6~qhLivA9SfajFa-yMSNmjuxfnDRSinvxtWmRj-QlZ9sM-xKa7YiUDo4Qhs05OYrw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "filename": "SampleCloudWatchQueries.txt",
+          "external_url": "",
+          "asset_type": "File"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 24112962,
+      "title": "VPC Traffic Mirroring",
+      "asset": {
+        "_class": "asset",
+        "id": 33106942,
+        "asset_type": "Video",
+        "title": "S3-4-VPC-Traffic-Mirroring.mp4",
+        "external_url": "",
+        "filename": "S3-4-VPC-Traffic-Mirroring.mp4",
+        "download_urls": null
+      },
+      "object_index": 48,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41577732,
+      "title": "VPC features for Network Analysis",
+      "asset": {
+        "_class": "asset",
+        "id": 53673898,
+        "asset_type": "Video",
+        "title": "S3-05-VPC-Network-Analysis-Intro.mp4",
+        "external_url": "",
+        "filename": "S3-05-VPC-Network-Analysis-Intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 49,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41570968,
+      "title": "VPC Reachability Analyzer",
+      "asset": {
+        "_class": "asset",
+        "id": 53663832,
+        "asset_type": "Video",
+        "title": "S3-06-VPC-reachability-analyzer.mp4",
+        "external_url": "",
+        "filename": "S3-06-VPC-reachability-analyzer.mp4",
+        "download_urls": null
+      },
+      "object_index": 50,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41570984,
+      "title": "Walkthrough: VPC Reachability Analyzer",
+      "asset": {
+        "_class": "asset",
+        "id": 53663852,
+        "asset_type": "Video",
+        "title": "S03-07-VPC-reachability-analyzer-hands-on.mp4",
+        "external_url": "",
+        "filename": "S03-07-VPC-reachability-analyzer-hands-on.mp4",
+        "download_urls": null
+      },
+      "object_index": 51,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41577750,
+      "title": "Walkthrough: VPC Network Access Analyzer",
+      "asset": {
+        "_class": "asset",
+        "id": 53673924,
+        "asset_type": "Video",
+        "title": "S03-08-Network-Access-Analyzer-hands-on.mp4",
+        "external_url": "",
+        "filename": "S03-08-Network-Access-Analyzer-hands-on.mp4",
+        "download_urls": null
+      },
+      "object_index": 52,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5339489,
+      "title": "VPC monitoring & troubleshooting",
+      "object_index": 6
+    },
+    {
+      "_class": "chapter",
+      "id": 6221790,
+      "title": "VPC Private Connectivity:  VPC Peering",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 26073660,
+      "title": "Introduction to VPC private connectivity options",
+      "asset": {
+        "_class": "asset",
+        "id": 54616232,
+        "asset_type": "Video",
+        "title": "S6-1-Introduction-Private-Connectivity-v2.mp4",
+        "external_url": "",
+        "filename": "S6-1-Introduction-Private-Connectivity-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 53,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26073692,
+      "title": "VPC Peering",
+      "asset": {
+        "_class": "asset",
+        "id": 32782328,
+        "asset_type": "Video",
+        "title": "S6-2-VPC-Peering-Intro.mp4",
+        "external_url": "",
+        "filename": "S6-2-VPC-Peering-Intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 54,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26073714,
+      "title": "Hands On: VPC Peering across AWS regions",
+      "asset": {
+        "_class": "asset",
+        "id": 32782324,
+        "asset_type": "Video",
+        "title": "S6-3-VPC-Peering-Demo.mp4",
+        "external_url": "",
+        "filename": "S6-3-VPC-Peering-Demo.mp4",
+        "download_urls": null
+      },
+      "object_index": 55,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26073748,
+      "title": "VPC Peering invalid scenarios",
+      "asset": {
+        "_class": "asset",
+        "id": 32782338,
+        "asset_type": "Video",
+        "title": "S6-4-VPC-Peering-Invalid-Scenarios.mp4",
+        "external_url": "",
+        "filename": "S6-4-VPC-Peering-Invalid-Scenarios.mp4",
+        "download_urls": null
+      },
+      "object_index": 56,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5339477,
+      "title": "VPC Peering",
+      "object_index": 7
+    },
+    {
+      "_class": "chapter",
+      "id": 11944717,
+      "title": "VPC Private Connectivity: VPC Endpoint & PrivateLink",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 50324575,
+      "title": "Introduction to VPC Endpoint and PrivateLink",
+      "asset": {
+        "_class": "asset",
+        "id": 65220139,
+        "asset_type": "Video",
+        "title": "01-Introduction-VPC-endpoint-PrivateLink.mp4",
+        "external_url": "",
+        "filename": "01-Introduction-VPC-endpoint-PrivateLink.mp4",
+        "download_urls": null
+      },
+      "object_index": 57,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324581,
+      "title": "VPC Gateway Endpoint",
+      "asset": {
+        "_class": "asset",
+        "id": 65220141,
+        "asset_type": "Video",
+        "title": "02-vpc-gateway-endpoint.mp4",
+        "external_url": "",
+        "filename": "02-vpc-gateway-endpoint.mp4",
+        "download_urls": null
+      },
+      "object_index": 58,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324591,
+      "title": "Hands On: VPC Gateway endpoint to access S3 bucket",
+      "asset": {
+        "_class": "asset",
+        "id": 65220159,
+        "asset_type": "Video",
+        "title": "03-vpc-gateway-endpoint-demo-v2.mp4",
+        "external_url": "",
+        "filename": "03-vpc-gateway-endpoint-demo-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 59,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324601,
+      "title": "Introduction to VPC PrivateLink powered endpoints",
+      "asset": {
+        "_class": "asset",
+        "id": 65220151,
+        "asset_type": "Video",
+        "title": "04-Introduction-to-VPC-privatelink-endpoint-types.mp4",
+        "external_url": "",
+        "filename": "04-Introduction-to-VPC-privatelink-endpoint-types.mp4",
+        "download_urls": null
+      },
+      "object_index": 60,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324611,
+      "title": "VPC PrivateLink - Important to know features",
+      "asset": {
+        "_class": "asset",
+        "id": 65220165,
+        "asset_type": "Video",
+        "title": "05-vpc-privatelink-important-to-know.mp4",
+        "external_url": "",
+        "filename": "05-vpc-privatelink-important-to-know.mp4",
+        "download_urls": null
+      },
+      "object_index": 61,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324613,
+      "title": "VPC endpoint DNS",
+      "asset": {
+        "_class": "asset",
+        "id": 65220167,
+        "asset_type": "Video",
+        "title": "06-vpc-endpoint-DNS.mp4",
+        "external_url": "",
+        "filename": "06-vpc-endpoint-DNS.mp4",
+        "download_urls": null
+      },
+      "object_index": 62,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324619,
+      "title": "Hands On: VPC interface endpoint to access Amazon SQS queue",
+      "asset": {
+        "_class": "asset",
+        "id": 65220199,
+        "asset_type": "Video",
+        "title": "07-hands-on-vpc-endpoint-sqs.mp4",
+        "external_url": "",
+        "filename": "07-hands-on-vpc-endpoint-sqs.mp4",
+        "download_urls": null
+      },
+      "object_index": 63,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324621,
+      "title": "VPC Endpoint Service",
+      "asset": {
+        "_class": "asset",
+        "id": 65220173,
+        "asset_type": "Video",
+        "title": "08-vpc-endpoint-service.mp4",
+        "external_url": "",
+        "filename": "08-vpc-endpoint-service.mp4",
+        "download_urls": null
+      },
+      "object_index": 64,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324625,
+      "title": "Hands On: Create VPC endpoint service and access through VPC endpoint",
+      "asset": {
+        "_class": "asset",
+        "id": 65220229,
+        "asset_type": "Video",
+        "title": "09-hands-on-vpc-endpoint-service-part-1.mp4",
+        "external_url": "",
+        "filename": "09-hands-on-vpc-endpoint-service-part-1.mp4",
+        "download_urls": null
+      },
+      "object_index": 65,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50330883,
+      "title": "Hands On: Accessing VPC endpoint service using Custom Domain Name (DNS)",
+      "asset": {
+        "_class": "asset",
+        "id": 65227943,
+        "asset_type": "Video",
+        "title": "10-hands-on-vpc-endpoint-service-private-dns-part2.mp4",
+        "external_url": "",
+        "filename": "10-hands-on-vpc-endpoint-service-private-dns-part2.mp4",
+        "download_urls": null
+      },
+      "object_index": 66,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324635,
+      "title": "VPC endpoints security",
+      "asset": {
+        "_class": "asset",
+        "id": 70425197,
+        "asset_type": "Video",
+        "title": "11-vpc-endpoint-security-v2.mp4",
+        "external_url": "",
+        "filename": "11-vpc-endpoint-security-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 67,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324639,
+      "title": "Other VPC endpoint types - Gateway Load Balancer, Resource, Service-network",
+      "asset": {
+        "_class": "asset",
+        "id": 65220189,
+        "asset_type": "Video",
+        "title": "12-Other-endpoint-types.mp4",
+        "external_url": "",
+        "filename": "12-Other-endpoint-types.mp4",
+        "download_urls": null
+      },
+      "object_index": 68,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324641,
+      "title": "VPC Endpoint architectures - Accessing on-premises services",
+      "asset": {
+        "_class": "asset",
+        "id": 65220197,
+        "asset_type": "Video",
+        "title": "13-vpc-endpoint-architect-hybrid-on-premises.mp4",
+        "external_url": "",
+        "filename": "13-vpc-endpoint-architect-hybrid-on-premises.mp4",
+        "download_urls": null
+      },
+      "object_index": 69,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324647,
+      "title": "VPC Endpoint architectures - Accessing from peered or connected VPC",
+      "asset": {
+        "_class": "asset",
+        "id": 65220205,
+        "asset_type": "Video",
+        "title": "14-vpc-endpoint-architecture-access-from-remote-vpc.mp4",
+        "external_url": "",
+        "filename": "14-vpc-endpoint-architecture-access-from-remote-vpc.mp4",
+        "download_urls": null
+      },
+      "object_index": 70,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324653,
+      "title": "VPC Endpoint architectures - Accessing from on-premises network",
+      "asset": {
+        "_class": "asset",
+        "id": 65220211,
+        "asset_type": "Video",
+        "title": "15-vpc-endpoint-architecture-access-from-on-premises.mp4",
+        "external_url": "",
+        "filename": "15-vpc-endpoint-architecture-access-from-on-premises.mp4",
+        "download_urls": null
+      },
+      "object_index": 71,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324659,
+      "title": "VPC Endpoint architectures - Centralized VPC endpoints",
+      "asset": {
+        "_class": "asset",
+        "id": 65220221,
+        "asset_type": "Video",
+        "title": "16-vpc-endpoint-architecture-centralized-endpoints.mp4",
+        "external_url": "",
+        "filename": "16-vpc-endpoint-architecture-centralized-endpoints.mp4",
+        "download_urls": null
+      },
+      "object_index": 72,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324663,
+      "title": "VPC Peering vs VPC Endpoints",
+      "asset": {
+        "_class": "asset",
+        "id": 65220223,
+        "asset_type": "Video",
+        "title": "17-vpc-endpoint-vs-vpc-peering.mp4",
+        "external_url": "",
+        "filename": "17-vpc-endpoint-vs-vpc-peering.mp4",
+        "download_urls": null
+      },
+      "object_index": 73,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50324665,
+      "title": "Exam Essentials",
+      "asset": {
+        "_class": "asset",
+        "id": 65220227,
+        "asset_type": "Video",
+        "title": "18-vpc-endpoint-privatelink-exam-essentials.mp4",
+        "external_url": "",
+        "filename": "18-vpc-endpoint-privatelink-exam-essentials.mp4",
+        "download_urls": null
+      },
+      "object_index": 74,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5339411,
+      "title": "VPC Endpoints",
+      "object_index": 8
+    },
+    {
+      "_class": "quiz",
+      "id": 5339437,
+      "title": "VPC PrivateLink and Interface endpoints",
+      "object_index": 9
+    },
+    {
+      "_class": "chapter",
+      "id": 6866027,
+      "title": "Transit Gateway",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 28586249,
+      "title": "Introduction to Transit Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 54589440,
+        "asset_type": "Video",
+        "title": "S20-01-Introduction-to-TransitGateway-v2.mp4",
+        "external_url": "",
+        "filename": "S20-01-Introduction-to-TransitGateway-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 75,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28586283,
+      "title": "Transit Gateway VPC attachments and Routing",
+      "asset": {
+        "_class": "asset",
+        "id": 36316445,
+        "asset_type": "Video",
+        "title": "S20-02-VPC-Attachment.mp4",
+        "external_url": "",
+        "filename": "S20-02-VPC-Attachment.mp4",
+        "download_urls": null
+      },
+      "object_index": 76,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28586295,
+      "title": "Hands On: Transit Gateway & VPCs with full routing",
+      "asset": {
+        "_class": "asset",
+        "id": 36316481,
+        "asset_type": "Video",
+        "title": "S20-03-Hands-on-Lab1-Transite-Gateway-VPC-Full.mp4",
+        "external_url": "",
+        "filename": "S20-03-Hands-on-Lab1-Transite-Gateway-VPC-Full.mp4",
+        "download_urls": null
+      },
+      "object_index": 77,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28586315,
+      "title": "Hands On: Transit Gateway & VPCs with restricted routing",
+      "asset": {
+        "_class": "asset",
+        "id": 36318241,
+        "asset_type": "Video",
+        "title": "S20-04-HandsOn-TGW-Attachment-Routes.mp4",
+        "external_url": "",
+        "filename": "S20-04-HandsOn-TGW-Attachment-Routes.mp4",
+        "download_urls": null
+      },
+      "object_index": 78,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33514718,
+      "title": "Transit Gateway VPC Network Patterns",
+      "asset": {
+        "_class": "asset",
+        "id": 43055368,
+        "asset_type": "Video",
+        "title": "S20-08-TGW-VPC-Flat-Segmented-Network.mp4",
+        "external_url": "",
+        "filename": "S20-08-TGW-VPC-Flat-Segmented-Network.mp4",
+        "download_urls": null
+      },
+      "object_index": 79,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28587759,
+      "title": "Transit Gateway AZ considerations",
+      "asset": {
+        "_class": "asset",
+        "id": 36318775,
+        "asset_type": "Video",
+        "title": "S20-05-VPC-Subnet-Design-For-TGW.mp4",
+        "external_url": "",
+        "filename": "S20-05-VPC-Subnet-Design-For-TGW.mp4",
+        "download_urls": null
+      },
+      "object_index": 80,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33514788,
+      "title": "Transit Gateway AZ affinity & Appliance mode",
+      "asset": {
+        "_class": "asset",
+        "id": 43055466,
+        "asset_type": "Video",
+        "title": "S20-07-TGW-AZ-Affinity-Appliance-Mode.mp4",
+        "external_url": "",
+        "filename": "S20-07-TGW-AZ-Affinity-Appliance-Mode.mp4",
+        "download_urls": null
+      },
+      "object_index": 81,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28587761,
+      "title": "Transit Gateway Peering",
+      "asset": {
+        "_class": "asset",
+        "id": 43055540,
+        "asset_type": "Video",
+        "title": "S20-06-TGW-Peering-v2.mp4",
+        "external_url": "",
+        "filename": "S20-06-TGW-Peering-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 82,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33514828,
+      "title": "Transit Gateway Connect Attachment",
+      "asset": {
+        "_class": "asset",
+        "id": 43055556,
+        "asset_type": "Video",
+        "title": "S20-15-Connect-Attachment.mp4",
+        "external_url": "",
+        "filename": "S20-15-Connect-Attachment.mp4",
+        "download_urls": null
+      },
+      "object_index": 83,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42272276,
+      "title": "Transit Gateway VPN Attachment",
+      "asset": {
+        "_class": "asset",
+        "id": 54589452,
+        "asset_type": "Video",
+        "title": "S20-Transit-Gateway-VPN-attachment.mp4",
+        "external_url": "",
+        "filename": "S20-Transit-Gateway-VPN-attachment.mp4",
+        "download_urls": null
+      },
+      "object_index": 84,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33514850,
+      "title": "Transit Gateway & Direct Connect",
+      "asset": {
+        "_class": "asset",
+        "id": 54589488,
+        "asset_type": "Video",
+        "title": "S20-12-TGW-and-DirectConnect-v2.mp4",
+        "external_url": "",
+        "filename": "S20-12-TGW-and-DirectConnect-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 85,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33514858,
+      "title": "Transit Gateway Multicast",
+      "asset": {
+        "_class": "asset",
+        "id": 43055682,
+        "asset_type": "Video",
+        "title": "S20-14-Multicast.mp4",
+        "external_url": "",
+        "filename": "S20-14-Multicast.mp4",
+        "download_urls": null
+      },
+      "object_index": 86,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29137606,
+      "title": "TGW Architecture: Centralized egress internet",
+      "asset": {
+        "_class": "asset",
+        "id": 54589538,
+        "asset_type": "Video",
+        "title": "S20-09-Centralized-Egress-NAT-Gateway-v2.mp4",
+        "external_url": "",
+        "filename": "S20-09-Centralized-Egress-NAT-Gateway-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 87,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29137644,
+      "title": "TGW Architecture: Centralized traffic inspection with Gateway Load Balancer",
+      "asset": {
+        "_class": "asset",
+        "id": 54589554,
+        "asset_type": "Video",
+        "title": "S20-10-Centralized-Inspection-GWLB-v2.mp4",
+        "external_url": "",
+        "filename": "S20-10-Centralized-Inspection-GWLB-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 88,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29137666,
+      "title": "TGW Architecture: Centralized VPC interface endpoints",
+      "asset": {
+        "_class": "asset",
+        "id": 55058816,
+        "asset_type": "Video",
+        "title": "S20-11-Centralized-VPC-Interface-Endpoints-v2.mp4",
+        "external_url": "",
+        "filename": "S20-11-Centralized-VPC-Interface-Endpoints-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 89,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28655222,
+      "title": "Transit Gateway vs VPC Peering",
+      "asset": {
+        "_class": "asset",
+        "id": 66488121,
+        "asset_type": "Video",
+        "title": "S20-VPC-Peering-vs-Transit-Gateway-v2.mp4",
+        "external_url": "",
+        "filename": "S20-VPC-Peering-vs-Transit-Gateway-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 90,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33514986,
+      "title": "Transit Gateway Sharing",
+      "asset": {
+        "_class": "asset",
+        "id": 43055826,
+        "asset_type": "Video",
+        "title": "S20-15-Sharing-Transit-Gateway.mp4",
+        "external_url": "",
+        "filename": "S20-15-Sharing-Transit-Gateway.mp4",
+        "download_urls": null
+      },
+      "object_index": 91,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5794018,
+      "title": "Transit Gateway",
+      "object_index": 10
+    },
+    {
+      "_class": "chapter",
+      "id": 6252692,
+      "title": "Hybrid Network Basics",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 26076900,
+      "title": "Introduction to Hybrid networking",
+      "asset": {
+        "_class": "asset",
+        "id": 53675888,
+        "asset_type": "Video",
+        "title": "Hybrid-network-in-aws-v2.mp4",
+        "external_url": "",
+        "filename": "Hybrid-network-in-aws-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 92,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26077054,
+      "title": "Static Routing vs Dynamic Routing",
+      "asset": {
+        "_class": "asset",
+        "id": 36486936,
+        "asset_type": "Video",
+        "title": "S7-04-Static-vs-Dynamic-Routing.mp4",
+        "external_url": "",
+        "filename": "S7-04-Static-vs-Dynamic-Routing.mp4",
+        "download_urls": null
+      },
+      "object_index": 93,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26077150,
+      "title": "How Border Gateway Protocol (BGP) works?",
+      "asset": {
+        "_class": "asset",
+        "id": 32782392,
+        "asset_type": "Video",
+        "title": "S7-5-BGP-Basics.mp4",
+        "external_url": "",
+        "filename": "S7-5-BGP-Basics.mp4",
+        "download_urls": null
+      },
+      "object_index": 94,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26077182,
+      "title": "BGP Route selection - ASPATH, LOCAL_PREF, MED",
+      "asset": {
+        "_class": "asset",
+        "id": 32782384,
+        "asset_type": "Video",
+        "title": "S7-06-BGP-ASPATH-LocalPref-MED.mp4",
+        "external_url": "",
+        "filename": "S7-06-BGP-ASPATH-LocalPref-MED.mp4",
+        "download_urls": null
+      },
+      "object_index": 95,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6252744,
+      "title": "AWS Site-to-Site VPN",
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 26077306,
+      "title": "Introduction to AWS Site-to-Site VPN",
+      "asset": {
+        "_class": "asset",
+        "id": 67141589,
+        "asset_type": "Video",
+        "title": "01-Introduction-to-AWS-Site-to-Site-VPN.mp4",
+        "external_url": "",
+        "filename": "01-Introduction-to-AWS-Site-to-Site-VPN.mp4",
+        "download_urls": null
+      },
+      "object_index": 96,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 51779035,
+      "title": "IPv4 and IPv6 traffic over AWS Site-to-Site VPN",
+      "asset": {
+        "_class": "asset",
+        "id": 67141601,
+        "asset_type": "Video",
+        "title": "02-IPv4-and-IPv6-traffic-over-VPN.mp4",
+        "external_url": "",
+        "filename": "02-IPv4-and-IPv6-traffic-over-VPN.mp4",
+        "download_urls": null
+      },
+      "object_index": 97,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26077586,
+      "title": "Hands On: Setup AWS Site-to-Site VPN",
+      "asset": {
+        "_class": "asset",
+        "id": 71510457,
+        "asset_type": "Video",
+        "title": "aws-site-to-site-vpn-feb-2026.mp4",
+        "external_url": "",
+        "filename": "aws-site-to-site-vpn-feb-2026.mp4",
+        "download_urls": null
+      },
+      "object_index": 98,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 71510501,
+          "title": "aws-site-to-site-vpn-setup-v2.pdf",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2026-02-24_16-54-35-8f65a5ffa8877ec83659d5a6f0a88c01/original.pdf?response-content-disposition=attachment%3B+filename%3Daws-site-to-site-vpn-setup-v2.pdf&Expires=1774134985&Signature=um1xiI9wDgK-lbo5pUACC5fF6RYVxSv9AMbYkuxJCtsLPyTo3bRX1d3mEeR5Waeip89EGA1TydopHN0JGt4ccFClRBppMQxSn~lQM4d97iIE1x9Hh8MKbEa~Q6ea-D8mP7BYswKUbs0nvALdW6Nw4QEdYv38j7duYz2nOzJYTs3ZZtPrR2SOq6IraqCjs42XxKOjrZEpfH9X18QeWPyFCDZpZ2wTjqwL83XAWKMvyFS-hao00pl1CuGmPRb5w7TI~45baxgE6kagPze1kdAZMH-XZvqUDYvE2nb53whLebu1oOyQKrZP0nLt~MUHfhsEZ1b7Gk6Enhln60TCKVLTzg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "filename": "aws-site-to-site-vpn-setup-v2.pdf",
+          "external_url": "",
+          "asset_type": "File"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 51791839,
+      "title": "Accelerated Site-to-Site VPN (Using AWS Global Accelerator)",
+      "asset": {
+        "_class": "asset",
+        "id": 67158017,
+        "asset_type": "Video",
+        "title": "03-Accelerated-Site-to-Site-VPN.mp4",
+        "external_url": "",
+        "filename": "03-Accelerated-Site-to-Site-VPN.mp4",
+        "download_urls": null
+      },
+      "object_index": 99,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26077674,
+      "title": "VPN NAT Traversal (NAT-T)",
+      "asset": {
+        "_class": "asset",
+        "id": 67158027,
+        "asset_type": "Video",
+        "title": "S8-03-VPN-NAT-T-v2.mp4",
+        "external_url": "",
+        "filename": "S8-03-VPN-NAT-T-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 100,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26077728,
+      "title": "VPN Route Propagation (Static vs Dynamic)",
+      "asset": {
+        "_class": "asset",
+        "id": 32947234,
+        "asset_type": "Video",
+        "title": "S8-04-VPN-Routes.mp4",
+        "external_url": "",
+        "filename": "S8-04-VPN-Routes.mp4",
+        "download_urls": null
+      },
+      "object_index": 101,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26077784,
+      "title": "VPN Transitive Routing scenarios",
+      "asset": {
+        "_class": "asset",
+        "id": 32947230,
+        "asset_type": "Video",
+        "title": "S8-05-VPN-Transitive-Routing.mp4",
+        "external_url": "",
+        "filename": "S8-05-VPN-Transitive-Routing.mp4",
+        "download_urls": null
+      },
+      "object_index": 102,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26077786,
+      "title": "VPN Tunnels - Active/Passive Mode",
+      "asset": {
+        "_class": "asset",
+        "id": 32947232,
+        "asset_type": "Video",
+        "title": "S8-06-VPN-Tunnels-Active-Passive.mp4",
+        "external_url": "",
+        "filename": "S8-06-VPN-Tunnels-Active-Passive.mp4",
+        "download_urls": null
+      },
+      "object_index": 103,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26077832,
+      "title": "VPN Dead Peer Detection (DPD)",
+      "asset": {
+        "_class": "asset",
+        "id": 32947242,
+        "asset_type": "Video",
+        "title": "S8-07-Dead-Peer-Detection-DPD.mp4",
+        "external_url": "",
+        "filename": "S8-07-Dead-Peer-Detection-DPD.mp4",
+        "download_urls": null
+      },
+      "object_index": 104,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26077896,
+      "title": "VPN Monitoring",
+      "asset": {
+        "_class": "asset",
+        "id": 32947238,
+        "asset_type": "Video",
+        "title": "S8-09-VPN-Monitoring.mp4",
+        "external_url": "",
+        "filename": "S8-09-VPN-Monitoring.mp4",
+        "download_urls": null
+      },
+      "object_index": 105,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26204038,
+      "title": "AWS Site-to-Site VPN Architectures",
+      "asset": {
+        "_class": "asset",
+        "id": 33118360,
+        "asset_type": "Video",
+        "title": "S8-10-VPN-Architectures.mp4",
+        "external_url": "",
+        "filename": "S8-10-VPN-Architectures.mp4",
+        "download_urls": null
+      },
+      "object_index": 106,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26204104,
+      "title": "AWS VPN CloudHub",
+      "asset": {
+        "_class": "asset",
+        "id": 33118400,
+        "asset_type": "Video",
+        "title": "S8-11-VPN-CloudHub.mp4",
+        "external_url": "",
+        "filename": "S8-11-VPN-CloudHub.mp4",
+        "download_urls": null
+      },
+      "object_index": 107,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26204186,
+      "title": "EC2 based VPN",
+      "asset": {
+        "_class": "asset",
+        "id": 47929186,
+        "asset_type": "Video",
+        "title": "S8-12-EC2-Based-VPN-v2.mp4",
+        "external_url": "",
+        "filename": "S8-12-EC2-Based-VPN-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 108,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26306060,
+      "title": "AWS Transit VPC architecture using VPN connections",
+      "asset": {
+        "_class": "asset",
+        "id": 46127364,
+        "asset_type": "Video",
+        "title": "S8-15-Transit-VPC-v2.mp4",
+        "external_url": "",
+        "filename": "S8-15-Transit-VPC-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 109,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5339403,
+      "title": "AWS Site-to-Site VPN Quiz",
+      "object_index": 11
+    },
+    {
+      "_class": "chapter",
+      "id": 6311652,
+      "title": "AWS Client VPN",
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 54982317,
+      "title": "Introduction to AWS Client VPN",
+      "asset": {
+        "_class": "asset",
+        "id": 71550847,
+        "asset_type": "Video",
+        "title": "01-aws-client-vpn-introduction.mp4",
+        "external_url": "",
+        "filename": "01-aws-client-vpn-introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 110,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 54982297,
+      "title": "Hands On: Set up AWS Client VPN",
+      "asset": {
+        "_class": "asset",
+        "id": 71550915,
+        "asset_type": "Video",
+        "title": "02-aws-client-vpn-setup-exercise.mp4",
+        "external_url": "",
+        "filename": "02-aws-client-vpn-setup-exercise.mp4",
+        "download_urls": null
+      },
+      "object_index": 111,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 54982327,
+      "title": "Hands On: AWS Client VPN Split Tunnel and remote network",
+      "asset": {
+        "_class": "asset",
+        "id": 71550877,
+        "asset_type": "Video",
+        "title": "03-aws-client-vpn-spit-tunnel-igw.mp4",
+        "external_url": "",
+        "filename": "03-aws-client-vpn-spit-tunnel-igw.mp4",
+        "download_urls": null
+      },
+      "object_index": 112,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6699072,
+      "title": "Direct Connect (DX)",
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 27890020,
+      "title": "Introduction to AWS Direct Connect",
+      "asset": {
+        "_class": "asset",
+        "id": 47917248,
+        "asset_type": "Video",
+        "title": "S10-01-Introduction-to-AWS-DirectConnect-v2.mp4",
+        "external_url": "",
+        "filename": "S10-01-Introduction-to-AWS-DirectConnect-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 113,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27890056,
+      "title": "Direct Connect network requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 51063680,
+        "asset_type": "Video",
+        "title": "DX-Network-requirement.mp4",
+        "external_url": "",
+        "filename": "DX-Network-requirement.mp4",
+        "download_urls": null
+      },
+      "object_index": 114,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39622856,
+      "title": "BGP Autonomous System (AS) and ASN",
+      "asset": {
+        "_class": "asset",
+        "id": 51063730,
+        "asset_type": "Video",
+        "title": "DX-BGP-AS-ASN.mp4",
+        "external_url": "",
+        "filename": "DX-BGP-AS-ASN.mp4",
+        "download_urls": null
+      },
+      "object_index": 115,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27890066,
+      "title": "Direct Connect Connection Types - Dedicated vs Hosted",
+      "asset": {
+        "_class": "asset",
+        "id": 35214908,
+        "asset_type": "Video",
+        "title": "S10-04-DX-Connection-Types.mp4",
+        "external_url": "",
+        "filename": "S10-04-DX-Connection-Types.mp4",
+        "download_urls": null
+      },
+      "object_index": 116,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27896458,
+      "title": "Steps to create Direct Connect Connections",
+      "asset": {
+        "_class": "asset",
+        "id": 46127290,
+        "asset_type": "Video",
+        "title": "S10-05-DX-Connection-Setup-Steps-v2.mp4",
+        "external_url": "",
+        "filename": "S10-05-DX-Connection-Setup-Steps-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 117,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27896406,
+      "title": "Walkthrough: Creating a DX Connection",
+      "asset": {
+        "_class": "asset",
+        "id": 51063928,
+        "asset_type": "Video",
+        "title": "S10-06-Walkthrough-DX-Dedicated-Connection-v2.mp4",
+        "external_url": "",
+        "filename": "S10-06-Walkthrough-DX-Dedicated-Connection-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 118,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27896480,
+      "title": "Introduction to DX Virtual Interfaces (VIFs)",
+      "asset": {
+        "_class": "asset",
+        "id": 51063980,
+        "asset_type": "Video",
+        "title": "S10-07-Virftual-Interfaces-Introduction-v2.mp4",
+        "external_url": "",
+        "filename": "S10-07-Virftual-Interfaces-Introduction-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 119,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27896534,
+      "title": "DX Virtual Interfaces (VIF) creation parameters",
+      "asset": {
+        "_class": "asset",
+        "id": 51064036,
+        "asset_type": "Video",
+        "title": "S10-08-VIF-Parameters_v3.mp4",
+        "external_url": "",
+        "filename": "S10-08-VIF-Parameters-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 120,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39623250,
+      "title": "ip-ranges.json",
+      "asset": {
+        "_class": "asset",
+        "id": 51064226,
+        "asset_type": "Video",
+        "title": "DX-ip-ranges-json.mp4",
+        "external_url": "",
+        "filename": "DX-ip-ranges-json.mp4",
+        "download_urls": null
+      },
+      "object_index": 121,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27896598,
+      "title": "Public VIF",
+      "asset": {
+        "_class": "asset",
+        "id": 35214904,
+        "asset_type": "Video",
+        "title": "S10-09-Pubic-VIF.mp4",
+        "external_url": "",
+        "filename": "S10-09-Pubic-VIF.mp4",
+        "download_urls": null
+      },
+      "object_index": 122,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27896610,
+      "title": "Private VIF",
+      "asset": {
+        "_class": "asset",
+        "id": 35214898,
+        "asset_type": "Video",
+        "title": "S10-10-Private-VIF.mp4",
+        "external_url": "",
+        "filename": "S10-10-Private-VIF.mp4",
+        "download_urls": null
+      },
+      "object_index": 123,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39623052,
+      "title": "Transit VIF",
+      "asset": {
+        "_class": "asset",
+        "id": 51064048,
+        "asset_type": "Video",
+        "title": "DX-Transit-VIF.mp4",
+        "external_url": "",
+        "filename": "DX-Transit-VIF.mp4",
+        "download_urls": null
+      },
+      "object_index": 124,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27896616,
+      "title": "Direct Connect Gateway with Private VIF and VGW",
+      "asset": {
+        "_class": "asset",
+        "id": 51064102,
+        "asset_type": "Video",
+        "title": "S10-11-DirectConnectGateway-VGW-v2.mp4",
+        "external_url": "",
+        "filename": "S10-11-DirectConnectGateway-VGW-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 125,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27896668,
+      "title": "Direct Connect with Transit VIF and TGW",
+      "asset": {
+        "_class": "asset",
+        "id": 51064124,
+        "asset_type": "Video",
+        "title": "S10-12-DirectConnectGateway-TransitGateway-v3.mp4",
+        "external_url": "",
+        "filename": "S10-12-DirectConnectGateway-TransitGateway-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 126,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37218058,
+      "title": "Direct Connect SiteLink",
+      "asset": {
+        "_class": "asset",
+        "id": 47923082,
+        "asset_type": "Video",
+        "title": "S10-13-SiteLink.mp4",
+        "external_url": "",
+        "filename": "S10-13-SiteLink.mp4",
+        "download_urls": null
+      },
+      "object_index": 127,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27896786,
+      "title": "DX Routing policies and BGP communities",
+      "asset": {
+        "_class": "asset",
+        "id": 51064152,
+        "asset_type": "Video",
+        "title": "DX-Routing-Policies-overview.mp4",
+        "external_url": "",
+        "filename": "DX-Routing-Policies-overview.mp4",
+        "download_urls": null
+      },
+      "object_index": 128,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898448,
+      "title": "Public VIF Routing policies",
+      "asset": {
+        "_class": "asset",
+        "id": 35214888,
+        "asset_type": "Video",
+        "title": "S10-15-Public-VIF-Routing-Policies.mp4",
+        "external_url": "",
+        "filename": "S10-15-Public-VIF-Routing-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 129,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898604,
+      "title": "Public VIF routing scenarios",
+      "asset": {
+        "_class": "asset",
+        "id": 35214890,
+        "asset_type": "Video",
+        "title": "S10-16-Public-VIF-Network-Scenarios.mp4",
+        "external_url": "",
+        "filename": "S10-16-Public-VIF-Network-Scenarios.mp4",
+        "download_urls": null
+      },
+      "object_index": 130,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898654,
+      "title": "Public VIF BGP Communities",
+      "asset": {
+        "_class": "asset",
+        "id": 35214886,
+        "asset_type": "Video",
+        "title": "S10-17-Public-VIF-BGP-Communities.mp4",
+        "external_url": "",
+        "filename": "S10-17-Public-VIF-BGP-Communities.mp4",
+        "download_urls": null
+      },
+      "object_index": 131,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898710,
+      "title": "Private VIF routing policies and BGP communities",
+      "asset": {
+        "_class": "asset",
+        "id": 35214966,
+        "asset_type": "Video",
+        "title": "S10-18-Private-VIF-Routing-BGP-Communities.mp4",
+        "external_url": "",
+        "filename": "S10-18-Private-VIF-Routing-BGP-Communities.mp4",
+        "download_urls": null
+      },
+      "object_index": 132,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898752,
+      "title": "DX Link Aggregation Groups (LAGs)",
+      "asset": {
+        "_class": "asset",
+        "id": 55060200,
+        "asset_type": "Video",
+        "title": "S10-19-LAGs-v2.mp4",
+        "external_url": "",
+        "filename": "S10-19-LAGs-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 133,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898780,
+      "title": "DX Connection Resiliency",
+      "asset": {
+        "_class": "asset",
+        "id": 35364946,
+        "asset_type": "Video",
+        "title": "S10-20-Resilient-DX.mp4",
+        "external_url": "",
+        "filename": "S10-20-Resilient-DX.mp4",
+        "download_urls": null
+      },
+      "object_index": 134,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898836,
+      "title": "DX Failure detection with BFD",
+      "asset": {
+        "_class": "asset",
+        "id": 47929486,
+        "asset_type": "Video",
+        "title": "S10-21-BFD-v2.mp4",
+        "external_url": "",
+        "filename": "S10-21-BFD-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 135,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898854,
+      "title": "DX Security & Encryption (VPN over DX and MACSec)",
+      "asset": {
+        "_class": "asset",
+        "id": 35364960,
+        "asset_type": "Video",
+        "title": "S10-22-DX-Security-VPN-MACSec.mp4",
+        "external_url": "",
+        "filename": "S10-22-DX-Security-VPN-MACSec.mp4",
+        "download_urls": null
+      },
+      "object_index": 136,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898874,
+      "title": "DX support for MTU and Jumbo Frames",
+      "asset": {
+        "_class": "asset",
+        "id": 35364958,
+        "asset_type": "Video",
+        "title": "S10-23-DX-MTU-JumboFrames.mp4",
+        "external_url": "",
+        "filename": "S10-23-DX-MTU-JumboFrames.mp4",
+        "download_urls": null
+      },
+      "object_index": 137,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898902,
+      "title": "DX Pricing",
+      "asset": {
+        "_class": "asset",
+        "id": 35364948,
+        "asset_type": "Video",
+        "title": "S10-24-DX-Billing.mp4",
+        "external_url": "",
+        "filename": "S10-24-DX-Billing.mp4",
+        "download_urls": null
+      },
+      "object_index": 138,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898974,
+      "title": "DX Monitoring using CloudWatch",
+      "asset": {
+        "_class": "asset",
+        "id": 35364952,
+        "asset_type": "Video",
+        "title": "S10-25-DX-Monitoring.mp4",
+        "external_url": "",
+        "filename": "S10-25-DX-Monitoring.mp4",
+        "download_urls": null
+      },
+      "object_index": 139,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27898984,
+      "title": "DX Troubleshooting - Layer1-4",
+      "asset": {
+        "_class": "asset",
+        "id": 35364962,
+        "asset_type": "Video",
+        "title": "S10-26-Troubleshooting-DX.mp4",
+        "external_url": "",
+        "filename": "S10-26-Troubleshooting-DX.mp4",
+        "download_urls": null
+      },
+      "object_index": 140,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37223004,
+      "title": "DX Architecture - Putting it together",
+      "asset": {
+        "_class": "asset",
+        "id": 47930176,
+        "asset_type": "Video",
+        "title": "S10-DX-Architecture-Putting-it-together.mp4",
+        "external_url": "",
+        "filename": "S10-DX-Architecture-Putting-it-together.mp4",
+        "download_urls": null
+      },
+      "object_index": 141,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27899000,
+      "title": "DX Summary and Exam Essentials",
+      "asset": {
+        "_class": "asset",
+        "id": 60443379,
+        "asset_type": "Video",
+        "title": "S10-27-DX-Summary-Exam-Essentials-v2.mp4",
+        "external_url": "",
+        "filename": "S10-27-DX-Summary-Exam-Essentials-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 142,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5793876,
+      "title": "Direct Connect Quiz",
+      "object_index": 12
+    },
+    {
+      "_class": "chapter",
+      "id": 10159220,
+      "title": "AWS Cloud WAN",
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 42504172,
+      "title": "What is AWS Cloud WAN?",
+      "asset": {
+        "_class": "asset",
+        "id": 54899844,
+        "asset_type": "Video",
+        "title": "S16-CloudWan-Introduction.mp4",
+        "external_url": "",
+        "filename": "S16-CloudWan-Introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 143,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42504216,
+      "title": "Core Network Policy",
+      "asset": {
+        "_class": "asset",
+        "id": 55025528,
+        "asset_type": "Video",
+        "title": "S16-Core-Network-Policy-v2.mp4",
+        "external_url": "",
+        "filename": "S16-Core-Network-Policy-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 144,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42504266,
+      "title": "Hands-On: Set up AWS Cloud WAN network, Segments & VPC attachments",
+      "asset": {
+        "_class": "asset",
+        "id": 55053842,
+        "asset_type": "Video",
+        "title": "S16-Cloud-WAN-Hands-On-v2.mp4",
+        "external_url": "",
+        "filename": "S16-Cloud-WAN-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 145,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42504358,
+      "title": "Connecting Transit Gateway & Direct Connect",
+      "asset": {
+        "_class": "asset",
+        "id": 54899986,
+        "asset_type": "Video",
+        "title": "S16-CloudWAN-and-TGW-DX.mp4",
+        "external_url": "",
+        "filename": "S16-CloudWAN-and-TGW-DX.mp4",
+        "download_urls": null
+      },
+      "object_index": 146,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42504406,
+      "title": "AWS Cloud WAN Summary",
+      "asset": {
+        "_class": "asset",
+        "id": 54900044,
+        "asset_type": "Video",
+        "title": "S16-CloudWAN-Summary.mp4",
+        "external_url": "",
+        "filename": "S16-CloudWAN-Summary.mp4",
+        "download_urls": null
+      },
+      "object_index": 147,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11408131,
+      "title": "VPC Lattice",
+      "object_index": 16
+    },
+    {
+      "_class": "lecture",
+      "id": 48015399,
+      "title": "VPC lattice introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 62108149,
+        "asset_type": "Video",
+        "title": "01-vpc-lattice-introduction.mp4",
+        "external_url": "",
+        "filename": "01-vpc-lattice-introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 148,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48015535,
+      "title": "VPC lattice components - Lattice Network, Service, Resource and more",
+      "asset": {
+        "_class": "asset",
+        "id": 62108313,
+        "asset_type": "Video",
+        "title": "02-vpc-lattice-components.mp4",
+        "external_url": "",
+        "filename": "02-vpc-lattice-components.mp4",
+        "download_urls": null
+      },
+      "object_index": 149,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48015551,
+      "title": "VPC lattice network associations",
+      "asset": {
+        "_class": "asset",
+        "id": 62108319,
+        "asset_type": "Video",
+        "title": "03-vpc-lattice-network-associations.mp4",
+        "external_url": "",
+        "filename": "03-vpc-lattice-network-associations.mp4",
+        "download_urls": null
+      },
+      "object_index": 150,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48015563,
+      "title": "VPC lattice traffic flow",
+      "asset": {
+        "_class": "asset",
+        "id": 62108327,
+        "asset_type": "Video",
+        "title": "04-vpc-lattice-traffic-flow.mp4",
+        "external_url": "",
+        "filename": "04-vpc-lattice-traffic-flow.mp4",
+        "download_urls": null
+      },
+      "object_index": 151,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48015637,
+      "title": "Hands on: VPC lattice service access with custom domain name",
+      "asset": {
+        "_class": "asset",
+        "id": 62108373,
+        "asset_type": "Video",
+        "title": "05-hands-on-vpc-lattice.mp4",
+        "external_url": "",
+        "filename": "05-hands-on-vpc-lattice.mp4",
+        "download_urls": null
+      },
+      "object_index": 152,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48015657,
+      "title": "VPC lattice features - Good to know",
+      "asset": {
+        "_class": "asset",
+        "id": 62108359,
+        "asset_type": "Video",
+        "title": "06-vpc-lattice-features.mp4",
+        "external_url": "",
+        "filename": "06-vpc-lattice-features.mp4",
+        "download_urls": null
+      },
+      "object_index": 153,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48015683,
+      "title": "VPC lattice common architectures",
+      "asset": {
+        "_class": "asset",
+        "id": 62108365,
+        "asset_type": "Video",
+        "title": "07-vpc-lattice-common-architectures.mp4",
+        "external_url": "",
+        "filename": "07-vpc-lattice-common-architectures.mp4",
+        "download_urls": null
+      },
+      "object_index": 154,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48015703,
+      "title": "VPC lattice section summary",
+      "asset": {
+        "_class": "asset",
+        "id": 62108371,
+        "asset_type": "Video",
+        "title": "08-vpc-lattice-section-summary.mp4",
+        "external_url": "",
+        "filename": "08-vpc-lattice-section-summary.mp4",
+        "download_urls": null
+      },
+      "object_index": 155,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6858865,
+      "title": "CloudFront",
+      "object_index": 17
+    },
+    {
+      "_class": "lecture",
+      "id": 28556129,
+      "title": "CloudFront Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 36274885,
+        "asset_type": "Video",
+        "title": "ANS_-_CloudFront_-_Overview_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 156,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556133,
+      "title": "CloudFront Origins",
+      "asset": {
+        "_class": "asset",
+        "id": 64327021,
+        "asset_type": "Video",
+        "title": "ANS - CloudFront - Origins v3.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-Origins-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 157,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556135,
+      "title": "Hands On: CloudFront Origin Groups",
+      "asset": {
+        "_class": "asset",
+        "id": 36517140,
+        "asset_type": "Video",
+        "title": "ANS - CloudFront - Origin Groups Hands On v1.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-Origin-Groups-Hands-On-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 158,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556139,
+      "title": "CloudFront Origin Headers",
+      "asset": {
+        "_class": "asset",
+        "id": 36274897,
+        "asset_type": "Video",
+        "title": "ANS_-_CloudFront_-_Origin_Headers_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-Origin-Headers-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 159,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556145,
+      "title": "CloudFront Origin Security",
+      "asset": {
+        "_class": "asset",
+        "id": 44831402,
+        "asset_type": "Video",
+        "title": "ANS_-_CloudFront_-_Origin_Security_v2.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-Origin-Security-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 160,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556153,
+      "title": "Hands On: Restrict an ALB to CloudFront",
+      "asset": {
+        "_class": "asset",
+        "id": 36274901,
+        "asset_type": "Video",
+        "title": "ANS_-_CloudFront_-_Origin_Security_Hands_On_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-Origin-Security-Hands-On-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 161,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556159,
+      "title": "CloudFront and HTTPS",
+      "asset": {
+        "_class": "asset",
+        "id": 36274917,
+        "asset_type": "Video",
+        "title": "ANS_-_CloudFront_-_HTTPS_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-HTTPS-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 162,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33170810,
+      "title": "End-to-End Encryption in CloudFront",
+      "asset": {
+        "_class": "asset",
+        "id": 42594800,
+        "asset_type": "Video",
+        "title": "ANS - CloudFront - End-to-End Encryption v1.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-End-to-End-Encryption-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 163,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556161,
+      "title": "CloudFront Geo Restrictions",
+      "asset": {
+        "_class": "asset",
+        "id": 36274907,
+        "asset_type": "Video",
+        "title": "ANS_-_CloudFront_-_Geo_Restrictions_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-Geo-Restrictions-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 164,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556165,
+      "title": "CloudFront Functions and Lambda@Edge",
+      "asset": {
+        "_class": "asset",
+        "id": 50650988,
+        "asset_type": "Video",
+        "title": "ANS_-_CloudFront_-_Edge_Functions_v2.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-Edge-Functions-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 165,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556171,
+      "title": "Hands On: CloudFront Functions",
+      "asset": {
+        "_class": "asset",
+        "id": 36274905,
+        "asset_type": "Video",
+        "title": "ANS_-_CloudFront_-_Functions_Hands_On_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-Functions-Hands-On-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 166,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556251,
+      "title": "CloudFront Cleanup",
+      "asset": {
+        "_class": "asset",
+        "id": 36274921,
+        "asset_type": "Video",
+        "title": "ANS_-_CloudFront_-_Cleanup_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-CloudFront-Cleanup-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 167,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556173,
+      "title": "AWS Global Accelerator",
+      "asset": {
+        "_class": "asset",
+        "id": 36275237,
+        "asset_type": "Video",
+        "title": "Global Accelerator - Overview v2.mp4",
+        "external_url": "",
+        "filename": "Global-Accelerator-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 168,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556213,
+      "title": "Hands On: AWS Global Accelerator",
+      "asset": {
+        "_class": "asset",
+        "id": 69142545,
+        "asset_type": "Video",
+        "title": "SAA - Global Accelerator - Hands On v3.mp4",
+        "external_url": "",
+        "filename": "SAA-Global-Accelerator-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 169,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5340121,
+      "title": "CloudFront",
+      "object_index": 13
+    },
+    {
+      "_class": "chapter",
+      "id": 6858869,
+      "title": "Elastic Load Balancers",
+      "object_index": 18
+    },
+    {
+      "_class": "lecture",
+      "id": 28555953,
+      "title": "ELB Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 48099016,
+        "asset_type": "Video",
+        "title": "SAA_-_ELB_-_Overview_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 170,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28555961,
+      "title": "Classic Load Balancer",
+      "asset": {
+        "_class": "asset",
+        "id": 36274935,
+        "asset_type": "Video",
+        "title": "ANS_-_ELB_-_Classic_Load_Balancer_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-Classic-Load-Balancer-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 171,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28555967,
+      "title": "Application Load Balancer",
+      "asset": {
+        "_class": "asset",
+        "id": 36274931,
+        "asset_type": "Video",
+        "title": "ANS_-_ELB_-_Application_Load_Balancer_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-Application-Load-Balancer-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 172,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28555969,
+      "title": "Network Load Balancer",
+      "asset": {
+        "_class": "asset",
+        "id": 60587737,
+        "asset_type": "Video",
+        "title": "ANS - ELB - Network Load Balancer v4.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-Network-Load-Balancer-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 173,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28555975,
+      "title": "Connection Idle Timeout",
+      "asset": {
+        "_class": "asset",
+        "id": 36274933,
+        "asset_type": "Video",
+        "title": "ANS_-_ELB_-_Connection_Idle_Timeout_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-Connection-Idle-Timeout-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 174,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28555983,
+      "title": "Request Routing Algorithm",
+      "asset": {
+        "_class": "asset",
+        "id": 36274915,
+        "asset_type": "Video",
+        "title": "ANS_-_ELB_-_Request_Routing_Algorithms_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-Request-Routing-Algorithms-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 175,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28555985,
+      "title": "Sticky Sessions (Session Affinity)",
+      "asset": {
+        "_class": "asset",
+        "id": 60516941,
+        "asset_type": "Video",
+        "title": "SOA_-_ELB_-_Sticky_Sessions_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-ELB-Sticky-Sessions-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 176,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28555989,
+      "title": "Cross-Zone Load Balancing",
+      "asset": {
+        "_class": "asset",
+        "id": 45199604,
+        "asset_type": "Video",
+        "title": "SAA_-_ELB_-_Cross_Zone_Load_Balancing_v5D.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-Cross-Zone-Load-Balancing-v5D.mp4",
+        "download_urls": null
+      },
+      "object_index": 177,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28555991,
+      "title": "ELB SSL/TLS",
+      "asset": {
+        "_class": "asset",
+        "id": 42594812,
+        "asset_type": "Video",
+        "title": "ANS - ELB - TLS v2.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-TLS-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 178,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28555993,
+      "title": "Connection Draining",
+      "asset": {
+        "_class": "asset",
+        "id": 36275653,
+        "asset_type": "Video",
+        "title": "SAA - ELB - Connection Draining v3.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-Connection-Draining-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 179,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28555997,
+      "title": "X-Forwarded Headers",
+      "asset": {
+        "_class": "asset",
+        "id": 36274923,
+        "asset_type": "Video",
+        "title": "ANS_-_ELB_-_X_Forwarded_Headers_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-X-Forwarded-Headers-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 180,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28555999,
+      "title": "Hands On: ALB X-Forwarded Headers",
+      "asset": {
+        "_class": "asset",
+        "id": 54586552,
+        "asset_type": "Video",
+        "title": "ANS_-_ELB_-_X_Forwarded_Headers_-_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-X-Forwarded-Headers-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 181,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556003,
+      "title": "Proxy Protocol",
+      "asset": {
+        "_class": "asset",
+        "id": 36274925,
+        "asset_type": "Video",
+        "title": "ANS_-_ELB_-_Proxy_Protocol_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-Proxy-Protocol-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 182,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556007,
+      "title": "Hands On: NLB Proxy Protocol",
+      "asset": {
+        "_class": "asset",
+        "id": 54586554,
+        "asset_type": "Video",
+        "title": "ANS_-_ELB_-_Proxy_Protocol_-_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-Proxy-Protocol-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 183,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33170788,
+      "title": "gRPC & ALB",
+      "asset": {
+        "_class": "asset",
+        "id": 42594804,
+        "asset_type": "Video",
+        "title": "ANS - ELB - gRPC v1.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-gRPC-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 184,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556011,
+      "title": "Hybrid Connectivity",
+      "asset": {
+        "_class": "asset",
+        "id": 36274919,
+        "asset_type": "Video",
+        "title": "ANS_-_ELB_-_Architectures_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-ELB-Architectures-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 185,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 46847149,
+      "title": "Security Groups Outbound Rules & Managed Prefixes",
+      "asset": {
+        "_class": "asset",
+        "id": 60587691,
+        "asset_type": "Video",
+        "title": "SCS_-_Security_Groups_Outbound_Rules_and_Managed_Prefixes_v1.mp4",
+        "external_url": "",
+        "filename": "SCS-Security-Groups-Outbound-Rules-and-Managed-Prefixes-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 186,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5340119,
+      "title": "Load Balancer",
+      "object_index": 14
+    },
+    {
+      "_class": "chapter",
+      "id": 6858871,
+      "title": "Route 53",
+      "object_index": 19
+    },
+    {
+      "_class": "lecture",
+      "id": 28556373,
+      "title": "What is a DNS ?",
+      "asset": {
+        "_class": "asset",
+        "id": 53653762,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_What_is_DNS_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-What-is-DNS-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 187,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556379,
+      "title": "Route 53 Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 38084078,
+        "asset_type": "Video",
+        "title": "SAA - Route 53 - Overview v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 188,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556381,
+      "title": "Route 53 - Registering a domain",
+      "asset": {
+        "_class": "asset",
+        "id": 49636090,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Registering_Domains_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Registering-Domains-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 189,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556383,
+      "title": "Route 53 - Creating our first records",
+      "asset": {
+        "_class": "asset",
+        "id": 36036572,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_First_Records_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-First-Records-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 190,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556385,
+      "title": "Route 53 - EC2 Setup",
+      "asset": {
+        "_class": "asset",
+        "id": 48635972,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_EC2_Setup_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-EC2-Setup-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 191,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556391,
+      "title": "Route 53 - TTL",
+      "asset": {
+        "_class": "asset",
+        "id": 38081134,
+        "asset_type": "Video",
+        "title": "SAA - Route 53 - TTL v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-TTL-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 192,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556395,
+      "title": "Route 53 CNAME vs Alias",
+      "asset": {
+        "_class": "asset",
+        "id": 36036576,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_CNAME_vs_Alias_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-CNAME-vs-Alias-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 193,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556397,
+      "title": "Routing Policy - Simple",
+      "asset": {
+        "_class": "asset",
+        "id": 36036550,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Simple_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Simple-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 194,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556401,
+      "title": "Routing Policy - Weighted",
+      "asset": {
+        "_class": "asset",
+        "id": 36036548,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Weighted_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Weighted-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 195,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556405,
+      "title": "Routing Policy - Latency",
+      "asset": {
+        "_class": "asset",
+        "id": 36036554,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Latency_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Latency-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 196,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556407,
+      "title": "Route 53 - Health Checks",
+      "asset": {
+        "_class": "asset",
+        "id": 36036558,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Health_Checks_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Health-Checks-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 197,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556411,
+      "title": "Route 53 - Health Checks Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 36036560,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Health_Checks_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Health-Checks-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 198,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556415,
+      "title": "Routing Policy - Failover",
+      "asset": {
+        "_class": "asset",
+        "id": 36036556,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Failover_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Failover-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 199,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556419,
+      "title": "Routing Policy - Geolocation",
+      "asset": {
+        "_class": "asset",
+        "id": 36036546,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Geolocation_-_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Geolocation-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 200,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556425,
+      "title": "Routing Policy - Geoproximity",
+      "asset": {
+        "_class": "asset",
+        "id": 36275627,
+        "asset_type": "Video",
+        "title": "SAA - Route 53 - GeoProximity Routing v1.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-GeoProximity-Routing-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 201,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556435,
+      "title": "Routing Policy - Traffic Flow & Geoproximity Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 36036544,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Traffic_Flow_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Traffic-Flow-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 202,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37045740,
+      "title": "Routing Policy - IP-based",
+      "asset": {
+        "_class": "asset",
+        "id": 47700008,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_IP_Based_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-IP-Based-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 203,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556439,
+      "title": "Routing Policy - Multi Value",
+      "asset": {
+        "_class": "asset",
+        "id": 36036552,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Multivalue_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Multivalue-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 204,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556443,
+      "title": "3rd Party Domains & Route 53",
+      "asset": {
+        "_class": "asset",
+        "id": 36036562,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_3rd_party_registar_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-3rd-party-registar-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 205,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33170636,
+      "title": "DNS Migration in Route 53",
+      "asset": {
+        "_class": "asset",
+        "id": 42594802,
+        "asset_type": "Video",
+        "title": "ANS - Route 53 - DNS Migration v1.mp4",
+        "external_url": "",
+        "filename": "ANS-Route-53-DNS-Migration-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 206,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556463,
+      "title": "Common Route 53 scenarios",
+      "asset": {
+        "_class": "asset",
+        "id": 36274895,
+        "asset_type": "Video",
+        "title": "ANS_-_Route_53_-_Common_Records_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-Route-53-Common-Records-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 207,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556465,
+      "title": "Route 53 - Subdomain Zones",
+      "asset": {
+        "_class": "asset",
+        "id": 36274891,
+        "asset_type": "Video",
+        "title": "ANS_-_Route_53_-_Subdomains_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-Route-53-Subdomains-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 208,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33170756,
+      "title": "Route 53 - DNSSEC",
+      "asset": {
+        "_class": "asset",
+        "id": 42594798,
+        "asset_type": "Video",
+        "title": "ANS - Route 53 - DNSSEC v1.mp4",
+        "external_url": "",
+        "filename": "ANS-Route-53-DNSSEC-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 209,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556469,
+      "title": "Route 53 Resolvers & Hybrid DNS",
+      "asset": {
+        "_class": "asset",
+        "id": 42594806,
+        "asset_type": "Video",
+        "title": "ANS - Route 53 - Resolvers and Hybrid DNS v2.mp4",
+        "external_url": "",
+        "filename": "ANS-Route-53-Resolvers-and-Hybrid-DNS-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 210,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33189960,
+      "title": "Hands On: Route53 Resolvers - Part 1 - Setting up VPN",
+      "asset": {
+        "_class": "asset",
+        "id": 61543979,
+        "asset_type": "Video",
+        "title": "Route53-Resolvers-Part1-VPN-Setup-v2.mp4",
+        "external_url": "",
+        "filename": "Route53-Resolvers-Part1-VPN-Setup-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 211,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 61544011,
+          "title": "HandsOn-Hybrid-DNS-Slides.pdf",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-12-19_17-14-14-a32d8dc03e1e2205a2200cadac97826f/original.pdf?response-content-disposition=attachment%3B+filename%3DHandsOn-Hybrid-DNS-Slides.pdf&Expires=1774134985&Signature=B4Rhz8YMhWev-LppTQwl5eMwzEQBVWxRJOoBvt3sPwAHFKsWYf0s7kk-kGqHXXl~IqyL2NVwaxQyRToLI2up9xuV8fu3Jrem0OiSAjm9nB8g8uJw0I45BfoXO2CUYN~bFKMffxcBEuLotbkBkstxOo7rTkkITTDQSUdxUW~6v4ItDp0mc9LJA8tX6xrYYJyod3Tk~acWE4cEjRKA3cO7kib5yaVUGWesY9RQ~FHg4scbVpArnTE~OMPe2evXvvAu~GYoP4hqgFGXeFMnMo6fTrvabIyMWuuccki65VyBkUr3y0Vfs7YGuhFKI-MuMQEDo5vzjNePTo5UCdZEqoXlNQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "filename": "HandsOn-Hybrid-DNS-Slides.pdf",
+          "external_url": "",
+          "asset_type": "File"
+        },
+        {
+          "_class": "asset",
+          "id": 61544017,
+          "title": "HandsOn-Hybrid-DNS-commands-and-configurations.txt",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-12-19_17-14-26-1fe2652d4e1ba69305edfd1b66068ffc/original.txt?response-content-disposition=attachment%3B+filename%3DHandsOn-Hybrid-DNS-commands-and-configurations.txt&Expires=1774134985&Signature=KqE2Y6tMdW0j6q27Ve1yhoE9fOmPb5GQXHEy9Jn5T-F0drn1X69dfU4BeW1Eg16AV-6N1kBYbhnZtRsUiM9yQn6tO3PCHrXnR7bVrag5XUg2ACFDJdDL~WTM6QT5Q910LCJc9b6ZHFyv9zUSXLv79eYViTwrP6Dq58f7s3XbmMzLqmA7oL5BaB-3LPu52XXQ3Vaioi-n3BakwCASwREHMigAM8TjPxTMajDtJCX6dJlwK5RC3FHRgSVFLYE8u0Ff-JSpYV4CXCgC~kdq9uyHHGL3~dKN2XjgyyofhLxvmD93ZubAexqEgW-6ouU58d3bvLScbswRO4grTEj4uJg~Zg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "filename": "HandsOn-Hybrid-DNS-commands-and-configurations.txt",
+          "external_url": "",
+          "asset_type": "File"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 33189972,
+      "title": "Hands On: Route53 Resolvers - Part 2 - DNS configuration",
+      "asset": {
+        "_class": "asset",
+        "id": 61543947,
+        "asset_type": "Video",
+        "title": "Route53-Resolvers-Part2-DNS-configuration-v2.mp4",
+        "external_url": "",
+        "filename": "Route53-Resolvers-Part2-DNS-configuration-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 212,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33189978,
+      "title": "Hands On: Route53 Resolvers - Part 3 - Resolver endpoints",
+      "asset": {
+        "_class": "asset",
+        "id": 61543945,
+        "asset_type": "Video",
+        "title": "Route53-Resolvers-Part3-Hybrid-DNS-v2.mp4",
+        "external_url": "",
+        "filename": "Route53-Resolvers-Part3-Hybrid-DNS-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 213,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33170768,
+      "title": "Route 53 Logging",
+      "asset": {
+        "_class": "asset",
+        "id": 42594808,
+        "asset_type": "Video",
+        "title": "ANS - Route 53 - Logging v1.mp4",
+        "external_url": "",
+        "filename": "ANS-Route-53-Logging-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 214,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33170764,
+      "title": "Route 53 DNS Firewall",
+      "asset": {
+        "_class": "asset",
+        "id": 42594810,
+        "asset_type": "Video",
+        "title": "ANS - Route 53 - Resolver DNS Firewall v1.mp4",
+        "external_url": "",
+        "filename": "ANS-Route-53-Resolver-DNS-Firewall-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 215,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556471,
+      "title": "Solution Architectures for DNS",
+      "asset": {
+        "_class": "asset",
+        "id": 36274887,
+        "asset_type": "Video",
+        "title": "ANS_-_Route_53_-_Solution_Architectures_v1.mp4",
+        "external_url": "",
+        "filename": "ANS-Route-53-Solution-Architectures-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 216,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28556535,
+      "title": "Route 53 - Cleanup",
+      "asset": {
+        "_class": "asset",
+        "id": 36036542,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Cleanup_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Cleanup-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 217,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5339773,
+      "title": "Route 53",
+      "object_index": 15
+    },
+    {
+      "_class": "chapter",
+      "id": 6871114,
+      "title": "AWS Network Security Services",
+      "object_index": 20
+    },
+    {
+      "_class": "lecture",
+      "id": 28622836,
+      "title": "Introduction to AWS Network Security Services",
+      "asset": {
+        "_class": "asset",
+        "id": 38521660,
+        "asset_type": "Video",
+        "title": "S21-01-Introduction-to-AWS-Network-Security-Services.mp4",
+        "external_url": "",
+        "filename": "S21-01-Introduction-to-AWS-Network-Security-Services.mp4",
+        "download_urls": null
+      },
+      "object_index": 218,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28714178,
+      "title": "Recap - Security Groups and Network ACL",
+      "asset": {
+        "_class": "asset",
+        "id": 67068811,
+        "asset_type": "Video",
+        "title": "S21-03-Recap-SG-NACL-v2.mp4",
+        "external_url": "",
+        "filename": "S21-03-Recap-SG-NACL-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 219,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30203324,
+      "title": "AWS Web Application Firewall (WAF)",
+      "asset": {
+        "_class": "asset",
+        "id": 38521678,
+        "asset_type": "Video",
+        "title": "S21-03-Web-Application-Firewall.mp4",
+        "external_url": "",
+        "filename": "S21-03-Web-Application-Firewall.mp4",
+        "download_urls": null
+      },
+      "object_index": 220,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 30203354,
+      "title": "Hands On: Cross-Site Scripting (XSS) attack simulation and prevention with WAF",
+      "asset": {
+        "_class": "asset",
+        "id": 38521704,
+        "asset_type": "Video",
+        "title": "S21-04-Hands-On-Web-Application-Firewall.mp4",
+        "external_url": "",
+        "filename": "S21-04-Hands-On-Web-Application-Firewall.mp4",
+        "download_urls": null
+      },
+      "object_index": 221,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42734228,
+      "title": "AWS Shield and Shield Advanced (DDoS protection)",
+      "asset": {
+        "_class": "asset",
+        "id": 55214562,
+        "asset_type": "Video",
+        "title": "S31-05-AWS-Shield-for-DDoS.mp4",
+        "external_url": "",
+        "filename": "S31-05-AWS-Shield-for-DDoS.mp4",
+        "download_urls": null
+      },
+      "object_index": 222,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28714194,
+      "title": "Introduction to AWS Network Firewall",
+      "asset": {
+        "_class": "asset",
+        "id": 36485712,
+        "asset_type": "Video",
+        "title": "S20-05-Introduction-network-firewall.mp4",
+        "external_url": "",
+        "filename": "S20-05-Introduction-network-firewall.mp4",
+        "download_urls": null
+      },
+      "object_index": 223,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28714204,
+      "title": "AWS Network Firewall - VPC and Route tables",
+      "asset": {
+        "_class": "asset",
+        "id": 36485722,
+        "asset_type": "Video",
+        "title": "S21-06-NFW-Route-Tables.mp4",
+        "external_url": "",
+        "filename": "S21-06-NFW-Route-Tables.mp4",
+        "download_urls": null
+      },
+      "object_index": 224,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28714800,
+      "title": "AWS Network Firewall Components & Rule groups",
+      "asset": {
+        "_class": "asset",
+        "id": 36486664,
+        "asset_type": "Video",
+        "title": "S21-07-NFWL-components-Rule-groups.mp4",
+        "external_url": "",
+        "filename": "S21-07-NFWL-components-Rule-groups.mp4",
+        "download_urls": null
+      },
+      "object_index": 225,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28606044,
+      "title": "Hands On: AWS Network Firewall",
+      "asset": {
+        "_class": "asset",
+        "id": 36340826,
+        "asset_type": "Video",
+        "title": "S21-01-AWS-Network-Firewall-Lab.mp4",
+        "external_url": "",
+        "filename": "S21-01-AWS-Network-Firewall-Lab.mp4",
+        "download_urls": null
+      },
+      "object_index": 226,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29240432,
+      "title": "The legacy way of using the Network appliances",
+      "asset": {
+        "_class": "asset",
+        "id": 37206032,
+        "asset_type": "Video",
+        "title": "S22-01-Introduction-GWLB.mp4",
+        "external_url": "",
+        "filename": "S22-01-Introduction-GWLB.mp4",
+        "download_urls": null
+      },
+      "object_index": 227,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29240466,
+      "title": "Gateway Load Balancer and Traffic flow",
+      "asset": {
+        "_class": "asset",
+        "id": 37206066,
+        "asset_type": "Video",
+        "title": "S22-02-Gateway-Load-Balancer-Traffic-Flow.mp4",
+        "external_url": "",
+        "filename": "S22-02-Gateway-Load-Balancer-Traffic-Flow.mp4",
+        "download_urls": null
+      },
+      "object_index": 228,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29240488,
+      "title": "Hands On: Gateway Load Balancer",
+      "asset": {
+        "_class": "asset",
+        "id": 37206118,
+        "asset_type": "Video",
+        "title": "S22-03-HandsOn-GWLB.mp4",
+        "external_url": "",
+        "filename": "S22-03-HandsOn-GWLB.mp4",
+        "download_urls": null
+      },
+      "object_index": 229,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 37206182,
+          "title": "Lab-Gateway-Load-Balancer.pdf",
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2021-10-31_18-33-51-21b8daf0db1e29e7cfbe51c7d0325de8/original.pdf?response-content-disposition=attachment%3B+filename%3DLab-Gateway-Load-Balancer.pdf&Expires=1774134985&Signature=cWwU9stKg4z0t4ZX6mc2PrJlLKafUWhu4a-N962KxJjj57q8zImb943JQXoH2DyH7DD4-QbuIBjP4Z-4j1ZOrlXfLm-xKGwCRG0Lm~GAqMKsMYiBn2i3Pd34dGeUrinQb4MpcIHAw5nbMyQNBmF6f2sHEnfejI3VuoLnwj1rCFpRJ6brZe9r07WnE5W1abQn73UmwK3CNrXxS1VGFn6xHsFYcgkmp4AB7nzvAfEvqTdQw9DDUL0vK-zVAcQbuJ0lPzoRNFnCvA8PpOcDCVv61tepl2BBot4v3nbUjtSGpomUr5XHjnQjlK2L4XMUCSdwKqYbAGOL6hvgvbP4tdt3Sw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "filename": "Lab-Gateway-Load-Balancer.pdf",
+          "external_url": "",
+          "asset_type": "File"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 29240550,
+      "title": "Summary: Gateway Load Balancer",
+      "asset": {
+        "_class": "asset",
+        "id": 37206186,
+        "asset_type": "Video",
+        "title": "S22-04-Summary.mp4",
+        "external_url": "",
+        "filename": "S22-04-Summary.mp4",
+        "download_urls": null
+      },
+      "object_index": 230,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29240556,
+      "title": "Gateway Load Balancer - Exam Essentails",
+      "asset": {
+        "_class": "asset",
+        "id": 37206198,
+        "asset_type": "Video",
+        "title": "S22-05-Exam-Essentials.mp4",
+        "external_url": "",
+        "filename": "S22-05-Exam-Essentials.mp4",
+        "download_urls": null
+      },
+      "object_index": 231,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42734234,
+      "title": "AWS Certificate Manager (ACM)",
+      "asset": {
+        "_class": "asset",
+        "id": 55214580,
+        "asset_type": "Video",
+        "title": "S31-06-AWS-Certificate-Manager.mp4",
+        "external_url": "",
+        "filename": "S31-06-AWS-Certificate-Manager.mp4",
+        "download_urls": null
+      },
+      "object_index": 232,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42734240,
+      "title": "AWS Firewall Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 55214594,
+        "asset_type": "Video",
+        "title": "S21-AWS-Firewall-Manager.mp4",
+        "external_url": "",
+        "filename": "S21-AWS-Firewall-Manager.mp4",
+        "download_urls": null
+      },
+      "object_index": 233,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 8557964,
+      "title": "Amazon EKS Networking",
+      "object_index": 21
+    },
+    {
+      "_class": "lecture",
+      "id": 41579130,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 53675358,
+        "asset_type": "Video",
+        "title": "EKS-Section-Introduction.mp4",
+        "external_url": "",
+        "filename": "EKS-Section-Introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 234,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35813094,
+      "title": "Kubernetes Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 53675332,
+        "asset_type": "Video",
+        "title": "Kubernetes-Architecture-v2.mp4",
+        "external_url": "",
+        "filename": "Kubernetes-Architecture-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 235,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53675342,
+          "title": "Learn about Containers, Microservices and Kubernetes",
+          "download_urls": null,
+          "filename": "Learn-about-Containers-Microservices-and-Kubernetes",
+          "external_url": "https://youtu.be/QekQLFWbkuM",
+          "asset_type": "ExternalLink"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 35813104,
+      "title": "Amazon EKS Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 46103612,
+        "asset_type": "Video",
+        "title": "3-Amazon-EKS-Architecture.mp4",
+        "external_url": "",
+        "filename": "3-Amazon-EKS-Architecture.mp4",
+        "download_urls": null
+      },
+      "object_index": 236,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35813112,
+      "title": "EKS Cluster Networking",
+      "asset": {
+        "_class": "asset",
+        "id": 46103640,
+        "asset_type": "Video",
+        "title": "4-EKS-Cluster-Networking.mp4",
+        "external_url": "",
+        "filename": "4-EKS-Cluster-Networking.mp4",
+        "download_urls": null
+      },
+      "object_index": 237,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35813122,
+      "title": "EKS Pod Networking - Part 1",
+      "asset": {
+        "_class": "asset",
+        "id": 46103684,
+        "asset_type": "Video",
+        "title": "5-EKS-Pod-Networking-Part-1.mp4",
+        "external_url": "",
+        "filename": "5-EKS-Pod-Networking-Part-1.mp4",
+        "download_urls": null
+      },
+      "object_index": 238,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35813138,
+      "title": "EKS Pod Networking - Part 2",
+      "asset": {
+        "_class": "asset",
+        "id": 46103692,
+        "asset_type": "Video",
+        "title": "5-EKS-Pod-Networking-Part-2-External-Network.mp4",
+        "external_url": "",
+        "filename": "5-EKS-Pod-Networking-Part-2-External-Network.mp4",
+        "download_urls": null
+      },
+      "object_index": 239,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35813150,
+      "title": "Security Group in EKS - Node and Pod level",
+      "asset": {
+        "_class": "asset",
+        "id": 46103702,
+        "asset_type": "Video",
+        "title": "6-EKS-Security-Group.mp4",
+        "external_url": "",
+        "filename": "6-EKS-Security-Group.mp4",
+        "download_urls": null
+      },
+      "object_index": 240,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35813160,
+      "title": "Exposing services using ClusterIP, NodePort, LoadBalancer and Ingress",
+      "asset": {
+        "_class": "asset",
+        "id": 46103716,
+        "asset_type": "Video",
+        "title": "7-Exposing-EKS-Services.mp4",
+        "external_url": "",
+        "filename": "7-Exposing-EKS-Services.mp4",
+        "download_urls": null
+      },
+      "object_index": 241,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35813170,
+      "title": "EKS Custom Networking - Extending IPv4 address space",
+      "asset": {
+        "_class": "asset",
+        "id": 46103724,
+        "asset_type": "Video",
+        "title": "8-EKS-Custom-Networking.mp4",
+        "external_url": "",
+        "filename": "8-EKS-Custom-Networking.mp4",
+        "download_urls": null
+      },
+      "object_index": 242,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35813182,
+      "title": "EKS Networking Summary",
+      "asset": {
+        "_class": "asset",
+        "id": 46103728,
+        "asset_type": "Video",
+        "title": "10-EKS-Networking-Summary.mp4",
+        "external_url": "",
+        "filename": "10-EKS-Networking-Summary.mp4",
+        "download_urls": null
+      },
+      "object_index": 243,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 8082994,
+      "title": "AWS Networking Management & Governance",
+      "object_index": 22
+    },
+    {
+      "_class": "lecture",
+      "id": 33789738,
+      "title": "Introduction to AWS Management & Governance Services",
+      "asset": {
+        "_class": "asset",
+        "id": 53675382,
+        "asset_type": "Video",
+        "title": "AWS-Mgmt-Introduction-v2.mp4",
+        "external_url": "",
+        "filename": "AWS-Mgmt-Introduction-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 244,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41579154,
+      "title": "Amazon VPC IP Address Manager (IPAM)",
+      "asset": {
+        "_class": "asset",
+        "id": 53675412,
+        "asset_type": "Video",
+        "title": "AWS-IPAM.mp4",
+        "external_url": "",
+        "filename": "AWS-IPAM.mp4",
+        "download_urls": null
+      },
+      "object_index": 245,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33789824,
+      "title": "AWS CloudFormation",
+      "asset": {
+        "_class": "asset",
+        "id": 43424058,
+        "asset_type": "Video",
+        "title": "AWS-CloudFormation.mp4",
+        "external_url": "",
+        "filename": "AWS-CloudFormation.mp4",
+        "download_urls": null
+      },
+      "object_index": 246,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33789848,
+      "title": "AWS Service Catalog",
+      "asset": {
+        "_class": "asset",
+        "id": 43424166,
+        "asset_type": "Video",
+        "title": "AWS-Service-Catalog.mp4",
+        "external_url": "",
+        "filename": "AWS-Service-Catalog.mp4",
+        "download_urls": null
+      },
+      "object_index": 247,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33789886,
+      "title": "AWS Config",
+      "asset": {
+        "_class": "asset",
+        "id": 43424232,
+        "asset_type": "Video",
+        "title": "AWS-Config.mp4",
+        "external_url": "",
+        "filename": "AWS-Config.mp4",
+        "download_urls": null
+      },
+      "object_index": 248,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33789974,
+      "title": "AWS CloudTrail",
+      "asset": {
+        "_class": "asset",
+        "id": 43424262,
+        "asset_type": "Video",
+        "title": "AWS-CloudTrail.mp4",
+        "external_url": "",
+        "filename": "AWS-CloudTrail.mp4",
+        "download_urls": null
+      },
+      "object_index": 249,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 8083058,
+      "title": "Additional Topics",
+      "object_index": 23
+    },
+    {
+      "_class": "lecture",
+      "id": 43420594,
+      "title": "VPC Sharing",
+      "asset": {
+        "_class": "asset",
+        "id": 56108656,
+        "asset_type": "Video",
+        "title": "VPC-Sharing.mp4",
+        "external_url": "",
+        "filename": "VPC-Sharing.mp4",
+        "download_urls": null
+      },
+      "object_index": 250,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33790046,
+      "title": "AWS Private NAT Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 43424372,
+        "asset_type": "Video",
+        "title": "AWS-Private-NAT-Gateway.mp4",
+        "external_url": "",
+        "filename": "AWS-Private-NAT-Gateway.mp4",
+        "download_urls": null
+      },
+      "object_index": 251,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33790106,
+      "title": "AWS Network architecture for Amazon Workspaces/Appstream 2.0",
+      "asset": {
+        "_class": "asset",
+        "id": 43424446,
+        "asset_type": "Video",
+        "title": "AWS-Workspaces-Appstream.mp4",
+        "external_url": "",
+        "filename": "AWS-Workspaces-Appstream.mp4",
+        "download_urls": null
+      },
+      "object_index": 252,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36245136,
+      "title": "AWS WaveLength",
+      "asset": {
+        "_class": "asset",
+        "id": 46661600,
+        "asset_type": "Video",
+        "title": "CCP_-_WaveLength_-_Overview_v1.mp4",
+        "external_url": "",
+        "filename": "CCP-WaveLength-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 253,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36245144,
+      "title": "AWS Local Zones",
+      "asset": {
+        "_class": "asset",
+        "id": 46661598,
+        "asset_type": "Video",
+        "title": "CCP_-_Global_-_Local_Zones.mp4",
+        "external_url": "",
+        "filename": "CCP-Global-Local-Zones.mp4",
+        "download_urls": null
+      },
+      "object_index": 254,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6872820,
+      "title": "Final section - Congratulations!",
+      "object_index": 24
+    },
+    {
+      "_class": "lecture",
+      "id": 43768490,
+      "title": "Exam Walkthrough and Signup",
+      "asset": {
+        "_class": "asset",
+        "id": 56556902,
+        "asset_type": "Video",
+        "title": "AWS_-_Exam_Sign_Up_v5.mp4",
+        "external_url": "",
+        "filename": "AWS-Exam-Sign-Up-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 255,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28614386,
+      "title": "Save 50% on your AWS Exam Cost!",
+      "asset": {
+        "_class": "asset",
+        "id": 56556900,
+        "asset_type": "Video",
+        "title": "AWS_-_Save_50_on_AWS_Exam_Cost_v2.mp4",
+        "external_url": "",
+        "filename": "AWS-Save-50-on-AWS-Exam-Cost-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 256,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28614388,
+      "title": "Get an Extra 30 Minutes on your AWS Exam - Non Native English Speakers only",
+      "asset": {
+        "_class": "asset",
+        "id": 59209733,
+        "asset_type": "Video",
+        "title": "AWS_-_Request_30_minute_accommodation_on_AWS_exam_v2.mp4",
+        "external_url": "",
+        "filename": "AWS-Request-30-minute-accommodation-on-AWS-exam-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 257,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39035440,
+      "title": "AWS Certification Paths",
+      "asset": {
+        "_class": "asset",
+        "id": 59209735,
+        "asset_type": "Video",
+        "title": "AWS_-_Common_-_Certification_Paths_v3.mp4",
+        "external_url": "",
+        "filename": "AWS-Common-Certification-Paths-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 258,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 45115989,
+      "title": "Congratulations",
+      "asset": {
+        "_class": "asset",
+        "id": 58316303,
+        "asset_type": "Video",
+        "title": "Conclusion_video_-_FINAL_RENDER.mp4",
+        "external_url": "",
+        "filename": "Conclusion-video-FINAL-RENDER.mp4",
+        "download_urls": null
+      },
+      "object_index": 259,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28614382,
+      "title": "Bonus Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 71597379,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 260,
+      "supplementary_assets": []
+    }
+  ]
+}

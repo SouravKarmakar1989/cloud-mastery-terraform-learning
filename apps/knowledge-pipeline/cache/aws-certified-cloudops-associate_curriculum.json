@@ -1,0 +1,6571 @@
+{
+  "count": 439,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 2971729,
+      "title": "Introduction & Requirements - AWS Certified CloudOps Engineer Associate",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 27512496,
+      "title": "SOA-C03 Course Presentation - DO NOT SKIP",
+      "asset": {
+        "_class": "asset",
+        "id": 69118939,
+        "asset_type": "Video",
+        "title": "SOA - Course Introduction v3.mp4",
+        "external_url": "",
+        "filename": "SOA-Course-Introduction-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 1,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 20327083,
+      "title": "PLEASE READ: Lectures you can skip if you took a course from me before",
+      "asset": {
+        "_class": "asset",
+        "id": 69119061,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 2,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17994047,
+      "title": "About your instructor",
+      "asset": {
+        "_class": "asset",
+        "id": 58251055,
+        "asset_type": "Video",
+        "title": "Promo_Course_(Stephane_Maarek_ver._2024)_-_FINAL_RENDER_v2.mp4",
+        "external_url": "",
+        "filename": "Promo-Course-Stephane-Maarek-ver.2024-FINAL-RENDER-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 3,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 22276179,
+          "filename": "https-stephanemaarek.com-",
+          "external_url": "https://stephanemaarek.com/",
+          "title": "https://stephanemaarek.com/",
+          "download_urls": null,
+          "asset_type": "ExternalLink"
+        }
+      ]
+    },
+    {
+      "_class": "quiz",
+      "id": 5293198,
+      "title": "Course Readiness Quiz",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 12706531,
+      "title": "Important Message",
+      "asset": {
+        "_class": "asset",
+        "id": 16114012,
+        "asset_type": "Video",
+        "title": "Important Message - Udemy.mp4",
+        "external_url": "",
+        "filename": "Important-Message-Udemy.mp4",
+        "download_urls": null
+      },
+      "object_index": 4,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 3097484,
+      "title": "Slides and Code Download - AWS Certified CloudOps Engineer Associate",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 13232028,
+      "title": "Slides and Code Download - AWS Certified CloudOps Engineer Associate",
+      "asset": {
+        "_class": "asset",
+        "id": 69128143,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 5,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 69128149,
+          "filename": "Course-Slides-and-Code-Download",
+          "external_url": "https://courses.datacumulus.com/downloads/certified-cloudops-engineer-dw1",
+          "title": "Course Slides and Code Download",
+          "download_urls": null,
+          "asset_type": "ExternalLink"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 2971731,
+      "title": "EC2 for CloudOps",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 21858888,
+      "title": "About the EC2 Console Changes",
+      "asset": {
+        "_class": "asset",
+        "id": 27332572,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 6,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 47890689,
+      "title": "[Important] AWS Console UI Update",
+      "asset": {
+        "_class": "asset",
+        "id": 61950891,
+        "asset_type": "Video",
+        "title": "AWS_-_New_UI_2024.mp4",
+        "external_url": "",
+        "filename": "AWS-New-UI-2024.mp4",
+        "download_urls": null
+      },
+      "object_index": 7,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512500,
+      "title": "Launching an EC2 Instance",
+      "asset": {
+        "_class": "asset",
+        "id": 41384636,
+        "asset_type": "Video",
+        "title": "SOA - EC2 - Launching EC2 Instance v3.mp4",
+        "external_url": "",
+        "filename": "SOA-EC2-Launching-EC2-Instance-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 8,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512502,
+      "title": "Changing EC2 Instance Type",
+      "asset": {
+        "_class": "asset",
+        "id": 34857884,
+        "asset_type": "Video",
+        "title": "SOA_-_EC2_-_Changing_EC2_Instance_Type_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-EC2-Changing-EC2-Instance-Type-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 9,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512508,
+      "title": "[SAA] EC2 Placement Groups",
+      "asset": {
+        "_class": "asset",
+        "id": 55574880,
+        "asset_type": "Video",
+        "title": "SAA_-_EC2_-_Placement_Groups_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-EC2-Placement-Groups-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 10,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512514,
+      "title": "[SAA] EC2 Placement Groups - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 43613792,
+        "asset_type": "Video",
+        "title": "SAA - EC2 - Placement Groups Hands On v5.mp4",
+        "external_url": "",
+        "filename": "SAA-EC2-Placement-Groups-Hands-On-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 11,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512540,
+      "title": "Troubleshooting EC2 SSH Issues",
+      "asset": {
+        "_class": "asset",
+        "id": 34857904,
+        "asset_type": "Video",
+        "title": "SOA_-_EC2_-_SSH_Troubleshooting_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-EC2-SSH-Troubleshooting-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 12,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218469,
+      "title": "EC2 Instance Connect (EIC) Endpoint",
+      "asset": {
+        "_class": "asset",
+        "id": 69115753,
+        "asset_type": "Video",
+        "title": "SOA - EC2 Instance Connect Endpoint v1.mp4",
+        "external_url": "",
+        "filename": "SOA-EC2-Instance-Connect-Endpoint-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 13,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512580,
+      "title": "CloudWatch Metrics for EC2",
+      "asset": {
+        "_class": "asset",
+        "id": 67390183,
+        "asset_type": "Video",
+        "title": "SOA - EC2 - CloudWatch Metrics v3.mp4",
+        "external_url": "",
+        "filename": "SOA-EC2-CloudWatch-Metrics-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 14,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512584,
+      "title": "CloudWatch - Unified CloudWatch Agent - Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 34857870,
+        "asset_type": "Video",
+        "title": "SOA_-_EC2_-_CloudWatch_Unified_Agent_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-EC2-CloudWatch-Unified-Agent-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 15,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22387052,
+      "title": "CloudWatch - Unified CloudWatch Agent - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 54049304,
+        "asset_type": "Video",
+        "title": "DOP_-_EC2_-_CloudWatch_Unified_Agent_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "DOP-EC2-CloudWatch-Unified-Agent-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 16,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512590,
+      "title": "EC2 Instance Status Checks",
+      "asset": {
+        "_class": "asset",
+        "id": 59209573,
+        "asset_type": "Video",
+        "title": "SOA_-_EC2_-_Status_Checks_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-EC2-Status-Checks-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 17,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512596,
+      "title": "EC2 Instance Status Checks Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 34857876,
+        "asset_type": "Video",
+        "title": "SOA_-_EC2_-_Status_Checks_Hands_On.mp4",
+        "external_url": "",
+        "filename": "SOA-EC2-Status-Checks-Hands-On.mp4",
+        "download_urls": null
+      },
+      "object_index": 18,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512600,
+      "title": "[SAA] EC2 Hibernate",
+      "asset": {
+        "_class": "asset",
+        "id": 40666042,
+        "asset_type": "Video",
+        "title": "SAA_-_EC2_-_Hibernate_Overview_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-EC2-Hibernate-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 19,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512602,
+      "title": "[SAA] EC2 Hibernate Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 54049184,
+        "asset_type": "Video",
+        "title": "SAA_-_EC2_-_Hibernate_Hands_On_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-EC2-Hibernate-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 20,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53219093,
+      "title": "Instance Scheduler on AWS",
+      "asset": {
+        "_class": "asset",
+        "id": 69116159,
+        "asset_type": "Video",
+        "title": "SAA - Instance Scheduler v1.mp4",
+        "external_url": "",
+        "filename": "SAA-Instance-Scheduler-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 21,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512652,
+      "title": "EC2 Cleanup",
+      "asset": {
+        "_class": "asset",
+        "id": 34857842,
+        "asset_type": "Video",
+        "title": "SOA_-_EC2_-_Section_Cleanup.mp4",
+        "external_url": "",
+        "filename": "SOA-EC2-Section-Cleanup.mp4",
+        "download_urls": null
+      },
+      "object_index": 22,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293224,
+      "title": "EC2 For CloudOps Quiz",
+      "object_index": 2
+    },
+    {
+      "_class": "chapter",
+      "id": 6608790,
+      "title": "AMI - Amazon Machine Image",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 27512710,
+      "title": "[CCP/SAA/DVA] AMI Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 34858262,
+        "asset_type": "Video",
+        "title": "CCP - EC2 - AMI Overview.mp4",
+        "external_url": "",
+        "filename": "CCP-EC2-AMI-Overview.mp4",
+        "download_urls": null
+      },
+      "object_index": 23,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512712,
+      "title": "[CCP/SAA/DVA] AMI Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 54049050,
+        "asset_type": "Video",
+        "title": "CCP_-_EC2_-_AMI_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "CCP-EC2-AMI-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 24,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512724,
+      "title": "AMI No Reboot Option",
+      "asset": {
+        "_class": "asset",
+        "id": 34857814,
+        "asset_type": "Video",
+        "title": "SOA_-_AMI_-_No_Reboot.mp4",
+        "external_url": "",
+        "filename": "SOA-AMI-No-Reboot.mp4",
+        "download_urls": null
+      },
+      "object_index": 25,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512776,
+      "title": "EC2 Instance Migration using AMIs",
+      "asset": {
+        "_class": "asset",
+        "id": 41384576,
+        "asset_type": "Video",
+        "title": "SOA - AMI - Instance Migration v2.mp4",
+        "external_url": "",
+        "filename": "SOA-AMI-Instance-Migration-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 26,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512778,
+      "title": "[CCP] EC2 Image Builder",
+      "asset": {
+        "_class": "asset",
+        "id": 54587252,
+        "asset_type": "Video",
+        "title": "CCP_-_EBS_-_EC2_Image_Builder_v3.mp4",
+        "external_url": "",
+        "filename": "CCP-EBS-EC2-Image-Builder-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 27,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512782,
+      "title": "EC2 Image Builder Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 55575038,
+        "asset_type": "Video",
+        "title": "CCP_-_EBS_-_EC2_Image_Builder_-_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-EBS-EC2-Image-Builder-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 28,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512790,
+      "title": "AMI In Production",
+      "asset": {
+        "_class": "asset",
+        "id": 34857882,
+        "asset_type": "Video",
+        "title": "SOA_-_AMI_-_In_Production.mp4",
+        "external_url": "",
+        "filename": "SOA-AMI-In-Production.mp4",
+        "download_urls": null
+      },
+      "object_index": 29,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512792,
+      "title": "AMI Section Cleanup",
+      "asset": {
+        "_class": "asset",
+        "id": 34857826,
+        "asset_type": "Video",
+        "title": "SOA_-_AMI_-_Cleaunup.mp4",
+        "external_url": "",
+        "filename": "SOA-AMI-Cleaunup.mp4",
+        "download_urls": null
+      },
+      "object_index": 30,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293966,
+      "title": "AMI Quiz",
+      "object_index": 3
+    },
+    {
+      "_class": "chapter",
+      "id": 2972459,
+      "title": "Managing EC2 at Scale - Systems Manager (SSM)",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 27512800,
+      "title": "Systems Manager Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 70815625,
+        "asset_type": "Video",
+        "title": "SOA - SSM - Overview v3.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 31,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512802,
+      "title": "Start EC2 Instances with SSM Agent",
+      "asset": {
+        "_class": "asset",
+        "id": 54049250,
+        "asset_type": "Video",
+        "title": "SOA_-_SSM_-_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 32,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512806,
+      "title": "AWS Tags & SSM Resource Groups",
+      "asset": {
+        "_class": "asset",
+        "id": 34857902,
+        "asset_type": "Video",
+        "title": "SOA_-_SSM_-_Tags_and_Resource_Groups.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Tags-and-Resource-Groups.mp4",
+        "download_urls": null
+      },
+      "object_index": 33,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512808,
+      "title": "SSM Documents & SSM Run Command",
+      "asset": {
+        "_class": "asset",
+        "id": 63040221,
+        "asset_type": "Video",
+        "title": "SOA - SSM - Documents and RunCommand.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Documents-and-RunCommand.mp4",
+        "download_urls": null
+      },
+      "object_index": 34,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512810,
+      "title": "SSM Automations",
+      "asset": {
+        "_class": "asset",
+        "id": 34857880,
+        "asset_type": "Video",
+        "title": "SOA_-_SSM_-_Automations.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Automations.mp4",
+        "download_urls": null
+      },
+      "object_index": 35,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218461,
+      "title": "SSM Automations - Patch AMI & Update ASG",
+      "asset": {
+        "_class": "asset",
+        "id": 69115751,
+        "asset_type": "Video",
+        "title": "SSM - Automations - Example ASG v1.mp4",
+        "external_url": "",
+        "filename": "SSM-Automations-Example-ASG-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 36,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512812,
+      "title": "[SAA/DVA] SSM Parameter Store Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 44752870,
+        "asset_type": "Video",
+        "title": "SAA_-_SSM_-_Parameter_Store_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-SSM-Parameter-Store-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 37,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512814,
+      "title": "[SAA/DVA] SSM Parameter Store Hands On (CLI)",
+      "asset": {
+        "_class": "asset",
+        "id": 67390793,
+        "asset_type": "Video",
+        "title": "DVA - SSM - Parameter Store CLI Hands On v3.mp4",
+        "external_url": "",
+        "filename": "DVA-SSM-Parameter-Store-CLI-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 38,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218447,
+      "title": "SSM Fleet Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 69115755,
+        "asset_type": "Video",
+        "title": "SOA - SSM - Fleet Manager v1.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Fleet-Manager-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 39,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53219079,
+      "title": "SSM Default Host Management Configuration (DHMC)",
+      "asset": {
+        "_class": "asset",
+        "id": 69116149,
+        "asset_type": "Video",
+        "title": "DOP - SSM - DHMC v1.mp4",
+        "external_url": "",
+        "filename": "DOP-SSM-DHMC-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 40,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53219083,
+      "title": "SSM Default Host Management Configuration (DHMC) - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69116157,
+        "asset_type": "Video",
+        "title": "DOP - SSM - DHMC Hands On v1.mp4",
+        "external_url": "",
+        "filename": "DOP-SSM-DHMC-Hands-On-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 41,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512816,
+      "title": "SSM Inventory & State Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 59209593,
+        "asset_type": "Video",
+        "title": "SOA_-_SSM_-_Inventory_and_State_Manager.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Inventory-and-State-Manager.mp4",
+        "download_urls": null
+      },
+      "object_index": 42,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512818,
+      "title": "SSM Patch Manager and Maintenance Windows",
+      "asset": {
+        "_class": "asset",
+        "id": 48777880,
+        "asset_type": "Video",
+        "title": "SOA_-_SSM_-_Patch_Manager_and_Maintenance_Windows_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Patch-Manager-and-Maintenance-Windows-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 43,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512820,
+      "title": "SSM Patch Manager and Maintenance Windows - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58203639,
+        "asset_type": "Video",
+        "title": "SOA_-_SSM_-_Patch_Manager_and_Maintenance_Windows_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Patch-Manager-and-Maintenance-Windows-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 44,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512826,
+      "title": "SSM Session Manager Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 34857898,
+        "asset_type": "Video",
+        "title": "SOA_-_SSM_-_Session_Manager_Overview.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Session-Manager-Overview.mp4",
+        "download_urls": null
+      },
+      "object_index": 45,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512828,
+      "title": "SSM Session Manager Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 34857892,
+        "asset_type": "Video",
+        "title": "SOA_-_SSM_-_Session_Manager_Hands_On.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Session-Manager-Hands-On.mp4",
+        "download_urls": null
+      },
+      "object_index": 46,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218433,
+      "title": "SSM Distributor",
+      "asset": {
+        "_class": "asset",
+        "id": 69115749,
+        "asset_type": "Video",
+        "title": "SOA - SSM - Distributor v1.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Distributor-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 47,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53219057,
+      "title": "SSM OpsCenter",
+      "asset": {
+        "_class": "asset",
+        "id": 69116153,
+        "asset_type": "Video",
+        "title": "DOP - SSM - OpsCenter v1.mp4",
+        "external_url": "",
+        "filename": "DOP-SSM-OpsCenter-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 48,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512834,
+      "title": "SSM Cleanup",
+      "asset": {
+        "_class": "asset",
+        "id": 34857844,
+        "asset_type": "Video",
+        "title": "SOA_-_SSM_-_Cleanup.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Cleanup.mp4",
+        "download_urls": null
+      },
+      "object_index": 49,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293272,
+      "title": "SSM Quiz",
+      "object_index": 4
+    },
+    {
+      "_class": "chapter",
+      "id": 2976025,
+      "title": "EC2 High Availability and Scalability",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 12726377,
+      "title": "[SAA/DVA] What is High Availability and Scalability ?",
+      "asset": {
+        "_class": "asset",
+        "id": 15471989,
+        "asset_type": "Video",
+        "title": "High Availability and Scalability.mp4",
+        "external_url": "",
+        "filename": "High-Availability-and-Scalability.mp4",
+        "download_urls": null
+      },
+      "object_index": 50,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26120918,
+      "title": "[SAA/DVA] Elastic Load Balancing (ELB) Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 36707726,
+        "asset_type": "Video",
+        "title": "SAA_-_ELB_-_Overview_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 51,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35136722,
+      "title": "Note: About the Classic Load Balancer (CLB)",
+      "asset": {
+        "_class": "asset",
+        "id": 45236340,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 52,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26120942,
+      "title": "[SAA/DVA] Application Load Balancer (ALB)",
+      "asset": {
+        "_class": "asset",
+        "id": 33008942,
+        "asset_type": "Video",
+        "title": "SAA_-_ELB_-_Application_Load_Balancer_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-Application-Load-Balancer-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 53,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35136730,
+      "title": "[SAA/DVA] Application Load Balancer (ALB) - Hands On - Part 1",
+      "asset": {
+        "_class": "asset",
+        "id": 58205523,
+        "asset_type": "Video",
+        "title": "CCP_-_ELB_-_Hands_On_v4D.mp4",
+        "external_url": "",
+        "filename": "CCP-ELB-Hands-On-v4D.mp4",
+        "download_urls": null
+      },
+      "object_index": 54,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26120938,
+      "title": "[SAA/DVA] Application Load Balancer (ALB) - Hands On - Part 2",
+      "asset": {
+        "_class": "asset",
+        "id": 50651008,
+        "asset_type": "Video",
+        "title": "SAA_-_ELB_-_Application_Load_Balancer_Hands_On_Part_2_v8.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-Application-Load-Balancer-Hands-On-Part-2-v8.mp4",
+        "download_urls": null
+      },
+      "object_index": 55,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512908,
+      "title": "[SAA/DVA] Network Load Balancer (NLB)",
+      "asset": {
+        "_class": "asset",
+        "id": 67390547,
+        "asset_type": "Video",
+        "title": "SAA - ELB - Network Load Balancer v6.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-Network-Load-Balancer-v6.mp4",
+        "download_urls": null
+      },
+      "object_index": 56,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512912,
+      "title": "[SAA/DVA] Network Load Balancer (NLB) - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 51220240,
+        "asset_type": "Video",
+        "title": "SAA_-_ELB_-_Network_Load_Balancer_Hands_On_v6.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-Network-Load-Balancer-Hands-On-v6.mp4",
+        "download_urls": null
+      },
+      "object_index": 57,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875332,
+      "title": "[SAA/DVA] Gateway Load Balancer (GWLB)",
+      "asset": {
+        "_class": "asset",
+        "id": 36707712,
+        "asset_type": "Video",
+        "title": "SAA_-_ELB_-_Gateway_Load_Balancer_-_Overview_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-Gateway-Load-Balancer-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 58,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512920,
+      "title": "[SAA/DVA] Elastic Load Balancer - Sticky Sessions",
+      "asset": {
+        "_class": "asset",
+        "id": 60516949,
+        "asset_type": "Video",
+        "title": "SOA_-_ELB_-_Sticky_Sessions_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-ELB-Sticky-Sessions-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 59,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26120956,
+      "title": "[SAA/DVA] Elastic Load Balancer - Cross Zone Load Balancing",
+      "asset": {
+        "_class": "asset",
+        "id": 45199616,
+        "asset_type": "Video",
+        "title": "SAA_-_ELB_-_Cross_Zone_Load_Balancing_v5D.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-Cross-Zone-Load-Balancing-v5D.mp4",
+        "download_urls": null
+      },
+      "object_index": 60,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26120958,
+      "title": "[SAA/DVA] Elastic Load Balancer - SSL Certificates",
+      "asset": {
+        "_class": "asset",
+        "id": 53082338,
+        "asset_type": "Video",
+        "title": "SAA_-_ELB_-_SSL_Certificates_Overview_-_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-SSL-Certificates-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 61,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35136732,
+      "title": "[SAA/DVA] Elastic Load Balancer - SSL Certificates - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 45236392,
+        "asset_type": "Video",
+        "title": "SAA_-_ELB_-_SSL_Certificates_-_Hands_On_-_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-SSL-Certificates-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 62,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26120964,
+      "title": "[SAA/DVA] Elastic Load Balancer - Connection Draining",
+      "asset": {
+        "_class": "asset",
+        "id": 36036578,
+        "asset_type": "Video",
+        "title": "SAA_-_ELB_-_Connection_Draining_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-ELB-Connection-Draining-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 63,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512932,
+      "title": "Elastic Load Balancer - Health Checks",
+      "asset": {
+        "_class": "asset",
+        "id": 34857822,
+        "asset_type": "Video",
+        "title": "SOA_-_ELB_-_Health_Checks.mp4",
+        "external_url": "",
+        "filename": "SOA-ELB-Health-Checks.mp4",
+        "download_urls": null
+      },
+      "object_index": 64,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512936,
+      "title": "Elastic Load Balancer - Monitoring, Troubleshooting, Logging and Tracing",
+      "asset": {
+        "_class": "asset",
+        "id": 45234704,
+        "asset_type": "Video",
+        "title": "SOA_-_ELB_-_Monitoring_Troubleshooting_Tracing_v2D.mp4",
+        "external_url": "",
+        "filename": "SOA-ELB-Monitoring-Troubleshooting-Tracing-v2D.mp4",
+        "download_urls": null
+      },
+      "object_index": 65,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512938,
+      "title": "Target Group Attributes",
+      "asset": {
+        "_class": "asset",
+        "id": 34857886,
+        "asset_type": "Video",
+        "title": "SOA_-_ELB_-_Target_Group_Attributes.mp4",
+        "external_url": "",
+        "filename": "SOA-ELB-Target-Group-Attributes.mp4",
+        "download_urls": null
+      },
+      "object_index": 66,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512942,
+      "title": "ALB Rules - Deep Dive",
+      "asset": {
+        "_class": "asset",
+        "id": 34857854,
+        "asset_type": "Video",
+        "title": "SOA_-_ELB_-_Rules_Deep_Dive.mp4",
+        "external_url": "",
+        "filename": "SOA-ELB-Rules-Deep-Dive.mp4",
+        "download_urls": null
+      },
+      "object_index": 67,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512980,
+      "title": "[SAA/DVA] Auto Scaling Groups (ASG) Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 41864152,
+        "asset_type": "Video",
+        "title": "SAA - ASG - Overview v3.mp4",
+        "external_url": "",
+        "filename": "SAA-ASG-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 68,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27512988,
+      "title": "[SAA/DVA] Auto Scaling Groups Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 63040091,
+        "asset_type": "Video",
+        "title": "SAA - ASG - Hands On v5.mp4",
+        "external_url": "",
+        "filename": "SAA-ASG-Hands-On-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 69,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513020,
+      "title": "[SAA/DVA] Auto Scaling Groups - Scaling Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 54048420,
+        "asset_type": "Video",
+        "title": "SAA_-_ASG_-_Scaling_Policies_v5.mp4",
+        "external_url": "",
+        "filename": "SAA-ASG-Scaling-Policies-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 70,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513028,
+      "title": "[SAA/DVA] Auto Scaling Groups - Scaling Policies Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58202543,
+        "asset_type": "Video",
+        "title": "SAA_-_ASG_-_Scaling_Policies_Hands_On_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-ASG-Scaling-Policies-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 71,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53219051,
+      "title": "Auto Scaling Groups - Instance Refresh",
+      "asset": {
+        "_class": "asset",
+        "id": 69116151,
+        "asset_type": "Video",
+        "title": "DVA - ASG - Instance Refresh v1.mp4",
+        "external_url": "",
+        "filename": "DVA-ASG-Instance-Refresh-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 72,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218419,
+      "title": "Auto Scaling Groups - Warm Pools",
+      "asset": {
+        "_class": "asset",
+        "id": 69115759,
+        "asset_type": "Video",
+        "title": "SOA - ASG - Warm Pools v1.mp4",
+        "external_url": "",
+        "filename": "SOA-ASG-Warm-Pools-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 73,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513036,
+      "title": "ASG for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 34857862,
+        "asset_type": "Video",
+        "title": "SOA_-_ASG_-_For_SysOps.mp4",
+        "external_url": "",
+        "filename": "SOA-ASG-For-SysOps.mp4",
+        "download_urls": null
+      },
+      "object_index": 74,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513042,
+      "title": "CloudWatch for ASG",
+      "asset": {
+        "_class": "asset",
+        "id": 34857836,
+        "asset_type": "Video",
+        "title": "SOA_-_ASG_-_CloudWatch_Metrics.mp4",
+        "external_url": "",
+        "filename": "SOA-ASG-CloudWatch-Metrics.mp4",
+        "download_urls": null
+      },
+      "object_index": 75,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513044,
+      "title": "Auto Scaling Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 34857910,
+        "asset_type": "Video",
+        "title": "SOA_-_Auto_Scaling_-_Overview.mp4",
+        "external_url": "",
+        "filename": "SOA-Auto-Scaling-Overview.mp4",
+        "download_urls": null
+      },
+      "object_index": 76,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513046,
+      "title": "Auto Scaling Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 34857900,
+        "asset_type": "Video",
+        "title": "SOA_-_Auto_Scaling_-_Hands_On.mp4",
+        "external_url": "",
+        "filename": "SOA-Auto-Scaling-Hands-On.mp4",
+        "download_urls": null
+      },
+      "object_index": 77,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513052,
+      "title": "Section Cleanup",
+      "asset": {
+        "_class": "asset",
+        "id": 34857860,
+        "asset_type": "Video",
+        "title": "SOA_-_ASG_-_Cleanup.mp4",
+        "external_url": "",
+        "filename": "SOA-ASG-Cleanup.mp4",
+        "download_urls": null
+      },
+      "object_index": 78,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293276,
+      "title": "EC2 High Availability & Scalability Quiz",
+      "object_index": 5
+    },
+    {
+      "_class": "chapter",
+      "id": 3017316,
+      "title": "CloudFormation for CloudOps",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 12905198,
+      "title": "[DVA] CloudFormation - Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 61951165,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Overview_v5.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Overview-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 79,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12905204,
+      "title": "[DVA] CloudFormation - Create Stack - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 61643417,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Creating_Stacks_v4.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Creating-Stacks-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 80,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12905210,
+      "title": "[DVA] CloudFormation - Update & Delete Stack - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 54648000,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Updating_and_Deleting_Stacks_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Updating-and-Deleting-Stacks-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 81,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12905422,
+      "title": "[DVA] YAML Crash Course",
+      "asset": {
+        "_class": "asset",
+        "id": 54647998,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_YAML_Crash_Course_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-YAML-Crash-Course-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 82,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12906476,
+      "title": "[DVA] CloudFormation - Resources",
+      "asset": {
+        "_class": "asset",
+        "id": 54648024,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Resources_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Resources-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 83,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12905430,
+      "title": "[DVA] CloudFormation - Parameters",
+      "asset": {
+        "_class": "asset",
+        "id": 54648018,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Parameters_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Parameters-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 84,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12905432,
+      "title": "[DVA] CloudFormation - Mappings",
+      "asset": {
+        "_class": "asset",
+        "id": 54648028,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Mappings_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Mappings-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 85,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12905436,
+      "title": "[DVA] CloudFormation - Outputs & Exports",
+      "asset": {
+        "_class": "asset",
+        "id": 54648030,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Outputs_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Outputs-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 86,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12905438,
+      "title": "[DVA] CloudFormation - Conditions",
+      "asset": {
+        "_class": "asset",
+        "id": 54648048,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Conditions_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Conditions-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 87,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12905442,
+      "title": "[DVA] CloudFormation - Intrinsic Functions",
+      "asset": {
+        "_class": "asset",
+        "id": 54648026,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Intrinsic_Functions_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Intrinsic-Functions-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 88,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314048,
+      "title": "[DVA] CloudFormation - Rollbacks",
+      "asset": {
+        "_class": "asset",
+        "id": 54648016,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Rollbacks_v4.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Rollbacks-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 89,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314064,
+      "title": "[DVA] CloudFormation - Service Role",
+      "asset": {
+        "_class": "asset",
+        "id": 54648280,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Service_Role_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Service-Role-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 90,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314090,
+      "title": "[DVA] CloudFormation - Capabilities",
+      "asset": {
+        "_class": "asset",
+        "id": 54648054,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Capabilities_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Capabilities-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 91,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314108,
+      "title": "[DVA] CloudFormation - Deletion Policy",
+      "asset": {
+        "_class": "asset",
+        "id": 54648022,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_DeletionPolicy_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-DeletionPolicy-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 92,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218369,
+      "title": "CloudFormation - UpdateReplace Policy",
+      "asset": {
+        "_class": "asset",
+        "id": 69115543,
+        "asset_type": "Video",
+        "title": "SOA - CloudFormation - UpdateReplacePolicy v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-UpdateReplacePolicy-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 93,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314120,
+      "title": "[DVA] CloudFormation - Stack Policy",
+      "asset": {
+        "_class": "asset",
+        "id": 54648214,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Stack_Policies_v1.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Stack-Policies-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 94,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314130,
+      "title": "[DVA] CloudFormation - Termination Protection",
+      "asset": {
+        "_class": "asset",
+        "id": 54648210,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Termination_Protection_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Termination-Protection-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 95,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314142,
+      "title": "[DVA] CloudFormation - Custom Resources",
+      "asset": {
+        "_class": "asset",
+        "id": 54648010,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_Custom_Resources_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-Custom-Resources-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 96,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314022,
+      "title": "[DVA] CloudFormation - Dynamic References",
+      "asset": {
+        "_class": "asset",
+        "id": 54648006,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudFormation_-_SSM_and_Secrets_Manager_Integration_v2.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudFormation-SSM-and-Secrets-Manager-Integration-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 97,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12905444,
+      "title": "==== CloudOps-specific lectures below ====",
+      "asset": {
+        "_class": "asset",
+        "id": 24597306,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 98,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314180,
+      "title": "CloudFormation - User Data",
+      "asset": {
+        "_class": "asset",
+        "id": 54648204,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudFormation_-_User_Data_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-User-Data-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 99,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314214,
+      "title": "CloudFormation - cfn-init",
+      "asset": {
+        "_class": "asset",
+        "id": 54648202,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudFormation_-_Cfn_Init_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-Cfn-Init-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 100,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314236,
+      "title": "CloudFormation - cfn-signal & Wait Condition",
+      "asset": {
+        "_class": "asset",
+        "id": 54648174,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudFormation_-_Cfn_Signal_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-Cfn-Signal-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 101,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314260,
+      "title": "CloudFormation - cfn-signal Failures",
+      "asset": {
+        "_class": "asset",
+        "id": 56533224,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudFormation_-_Cfn_Signal_Failure_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-Cfn-Signal-Failure-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 102,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314304,
+      "title": "CloudFormation - Nested Stacks",
+      "asset": {
+        "_class": "asset",
+        "id": 70815627,
+        "asset_type": "Video",
+        "title": "SOA - CloudFormation - Nested Stacks v3.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-Nested-Stacks-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 103,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314324,
+      "title": "CloudFormation - Depends On",
+      "asset": {
+        "_class": "asset",
+        "id": 54648198,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudFormation_-_DependsOn_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-DependsOn-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 104,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42320714,
+      "title": "StackSets - Warning",
+      "asset": {
+        "_class": "asset",
+        "id": 54656514,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 105,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314382,
+      "title": "CloudFormation - StackSets",
+      "asset": {
+        "_class": "asset",
+        "id": 54648200,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudFormation_-_StackSet_Deep_Dive_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-StackSet-Deep-Dive-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 106,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314448,
+      "title": "CloudFormation - Create StackSets - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 54648176,
+        "asset_type": "Video",
+        "title": "ACF_-_StackSets_Hands_On_v1.mp4",
+        "external_url": "",
+        "filename": "ACF-StackSets-Hands-On-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 107,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314476,
+      "title": "CloudFormation - Update StackSets - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 54648220,
+        "asset_type": "Video",
+        "title": "ACF_-_StackSets_Updates_Hands_On_v1.mp4",
+        "external_url": "",
+        "filename": "ACF-StackSets-Updates-Hands-On-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 108,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314494,
+      "title": "CloudFormation - Delete StackSets - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 54648190,
+        "asset_type": "Video",
+        "title": "ACF_-_StackSets_Delete_v1.mp4",
+        "external_url": "",
+        "filename": "ACF-StackSets-Delete-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 109,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53219043,
+      "title": "CloudFormation - Drift",
+      "asset": {
+        "_class": "asset",
+        "id": 69116155,
+        "asset_type": "Video",
+        "title": "DOP - CloudFormation - Drift v3.mp4",
+        "external_url": "",
+        "filename": "DOP-CloudFormation-Drift-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 110,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42314504,
+      "title": "CloudFormation - Troubleshooting",
+      "asset": {
+        "_class": "asset",
+        "id": 69142629,
+        "asset_type": "Video",
+        "title": "SOA - CloudFormation - Troubleshooting v4.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-Troubleshooting-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 111,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218355,
+      "title": "CloudFormation - Stack Failures",
+      "asset": {
+        "_class": "asset",
+        "id": 69115541,
+        "asset_type": "Video",
+        "title": "SOA - CloudFormation - Stack Failures v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-Stack-Failures-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 112,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218347,
+      "title": "CloudFormation - Stack-level Tags",
+      "asset": {
+        "_class": "asset",
+        "id": 69115539,
+        "asset_type": "Video",
+        "title": "SOA - CloudFormation - Stack Level Tags v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-Stack-Level-Tags-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 113,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218599,
+      "title": "CloudFormation - ASG Update Policy",
+      "asset": {
+        "_class": "asset",
+        "id": 69115535,
+        "asset_type": "Video",
+        "title": "SOA - CloudFormation - ASG Update Policy v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFormation-ASG-Update-Policy-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 114,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293316,
+      "title": "CloudFormation Quiz",
+      "object_index": 6
+    },
+    {
+      "_class": "chapter",
+      "id": 8744774,
+      "title": "Lambda for CloudOps",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 36566314,
+      "title": "Lambda - Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 58206041,
+        "asset_type": "Video",
+        "title": "SAA_-_Lambda_-_Overview_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-Lambda-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 115,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36566322,
+      "title": "Lambda - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 65120563,
+        "asset_type": "Video",
+        "title": "CCP - Lambda Hands On v4.mp4",
+        "external_url": "",
+        "filename": "CCP-Lambda-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 116,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36566332,
+      "title": "Lambda & CloudWatch Events / EventBridge",
+      "asset": {
+        "_class": "asset",
+        "id": 47075560,
+        "asset_type": "Video",
+        "title": "DVA_-_Lambda_-_EventBridge_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-Lambda-EventBridge-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 117,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36566336,
+      "title": "Lambda & CloudWatch Events / EventBridge - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 47075570,
+        "asset_type": "Video",
+        "title": "DVA_-_Lambda_-_EventBridge_Hands_On_v4.mp4",
+        "external_url": "",
+        "filename": "DVA-Lambda-EventBridge-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 118,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36566338,
+      "title": "Lambda & S3 Event Notifications",
+      "asset": {
+        "_class": "asset",
+        "id": 47075566,
+        "asset_type": "Video",
+        "title": "DVA_-_Lambda_-_S3_Events_v2.mp4",
+        "external_url": "",
+        "filename": "DVA-Lambda-S3-Events-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 119,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36566340,
+      "title": "Lambda & S3 Event Notifications - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 47075582,
+        "asset_type": "Video",
+        "title": "DVA_-_Lambda_-_S3_Events_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "DVA-Lambda-S3-Events-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 120,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5828048,
+      "title": "Lambda for CloudOps - Quiz",
+      "object_index": 7
+    },
+    {
+      "_class": "chapter",
+      "id": 3027128,
+      "title": "EC2 Storage and Data Management - EBS and EFS",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 27513408,
+      "title": "[CCP/SAA/DVA] EBS Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 67390713,
+        "asset_type": "Video",
+        "title": "CCP - EBS - Overview v3.mp4",
+        "external_url": "",
+        "filename": "CCP-EBS-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 121,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513412,
+      "title": "[CCP/SAA/DVA] EBS Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 48098216,
+        "asset_type": "Video",
+        "title": "CCP_-_EBS_-_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "CCP-EBS-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 122,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513464,
+      "title": "[SAA/DVA] EBS Volume Types Deep Dive",
+      "asset": {
+        "_class": "asset",
+        "id": 69142517,
+        "asset_type": "Video",
+        "title": "SAA - EBS Volume Types v4.mp4",
+        "external_url": "",
+        "filename": "SAA-EBS-Volume-Types-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 123,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513474,
+      "title": "EBS Operation: Snapshots",
+      "asset": {
+        "_class": "asset",
+        "id": 40666176,
+        "asset_type": "Video",
+        "title": "SOA_-_EBS_-_Snapshots_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-EBS-Snapshots-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 124,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513486,
+      "title": "EBS Operation: Snapshots Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 49694338,
+        "asset_type": "Video",
+        "title": "SOA_-_EBS_-_Snapshots_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-EBS-Snapshots-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 125,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513518,
+      "title": "[SAA/DVA] Amazon EFS",
+      "asset": {
+        "_class": "asset",
+        "id": 56533258,
+        "asset_type": "Video",
+        "title": "SAA_-_EFS_-_Overview_v6.mp4",
+        "external_url": "",
+        "filename": "SAA-EFS-Overview-v6.mp4",
+        "download_urls": null
+      },
+      "object_index": 126,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513522,
+      "title": "[SAA/DVA] Amazon EFS - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 56532942,
+        "asset_type": "Video",
+        "title": "SAA_-_EFS_-_Hands_On_v6.mp4",
+        "external_url": "",
+        "filename": "SAA-EFS-Hands-On-v6.mp4",
+        "download_urls": null
+      },
+      "object_index": 127,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513540,
+      "title": "[SAA/DVA] EFS vs EBS",
+      "asset": {
+        "_class": "asset",
+        "id": 56533260,
+        "asset_type": "Video",
+        "title": "SAA_-_EFS_-_EFS_vs_EBS_v5.mp4",
+        "external_url": "",
+        "filename": "SAA-EFS-EFS-vs-EBS-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 128,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513586,
+      "title": "EFS - Section Cleanup",
+      "asset": {
+        "_class": "asset",
+        "id": 34857866,
+        "asset_type": "Video",
+        "title": "SOA_-_EFS_-_EFS_and_EBS_Cleanup.mp4",
+        "external_url": "",
+        "filename": "SOA-EFS-EFS-and-EBS-Cleanup.mp4",
+        "download_urls": null
+      },
+      "object_index": 129,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293326,
+      "title": "EC2 Storage & Data Management Quiz",
+      "object_index": 8
+    },
+    {
+      "_class": "chapter",
+      "id": 3030092,
+      "title": "Amazon S3 Introduction",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 12957436,
+      "title": "[CCP/SAA/DVA] S3 Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 44165248,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-S3-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 130,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 23743858,
+      "title": "[CCP/SAA/DVA] S3 Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 56533120,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Hands_On_v5.mp4",
+        "external_url": "",
+        "filename": "CCP-S3-Hands-On-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 131,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12957442,
+      "title": "[CCP/SAA/DVA] S3 Security: Bucket Policy",
+      "asset": {
+        "_class": "asset",
+        "id": 44165252,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Bucket_Policy_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-S3-Bucket-Policy-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 132,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19785890,
+      "title": "[CCP/SAA/DVA] S3 Security: Bucket Policy Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70793849,
+        "asset_type": "Video",
+        "title": "CCP - S3 - Bucket Policy Hands On v3.mp4",
+        "external_url": "",
+        "filename": "CCP-S3-Bucket-Policy-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 133,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513906,
+      "title": "S3 Security: Bucket Policy Advanced",
+      "asset": {
+        "_class": "asset",
+        "id": 34857878,
+        "asset_type": "Video",
+        "title": "SOA_-_S3_-_Bucket_Policies_Advanced.mp4",
+        "external_url": "",
+        "filename": "SOA-S3-Bucket-Policies-Advanced.mp4",
+        "download_urls": null
+      },
+      "object_index": 134,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12957438,
+      "title": "[CCP/SAA/DVA] S3 Versioning",
+      "asset": {
+        "_class": "asset",
+        "id": 44165242,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Versioning_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-S3-Versioning-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 135,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 23743862,
+      "title": "[CCP/SAA/DVA] S3 Versioning - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 44165244,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Versioning_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-S3-Versioning-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 136,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218325,
+      "title": "S3 Versioning - Troubleshooting",
+      "asset": {
+        "_class": "asset",
+        "id": 69115537,
+        "asset_type": "Video",
+        "title": "SOA - S3 - Versioning Troubleshooting v1.mp4",
+        "external_url": "",
+        "filename": "SOA-S3-Versioning-Troubleshooting-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 137,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12957302,
+      "title": "[CCP/SAA/DVA] S3 Replication",
+      "asset": {
+        "_class": "asset",
+        "id": 44165246,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Replication_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-S3-Replication-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 138,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34357020,
+      "title": "[SAA/DVA] S3 Replication Notes",
+      "asset": {
+        "_class": "asset",
+        "id": 44165200,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Replication_Notes_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Replication-Notes-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 139,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 23743906,
+      "title": "[CCP/SAA/DVA] S3 Replication - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 56533068,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Replication_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Replication-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 140,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218307,
+      "title": "S3 Replication - Cross-Account Replication",
+      "asset": {
+        "_class": "asset",
+        "id": 69115533,
+        "asset_type": "Video",
+        "title": "SOA - S3 - Cross Account Replication v1.mp4",
+        "external_url": "",
+        "filename": "SOA-S3-Cross-Account-Replication-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 141,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218291,
+      "title": "S3 Replication Time Control (RTC)",
+      "asset": {
+        "_class": "asset",
+        "id": 69115529,
+        "asset_type": "Video",
+        "title": "SOA - S3 - S3 RTC v1.mp4",
+        "external_url": "",
+        "filename": "SOA-S3-S3-RTC-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 142,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293340,
+      "title": "S3 Fundamentals Quiz",
+      "object_index": 9
+    },
+    {
+      "_class": "chapter",
+      "id": 8215626,
+      "title": "Advanced Amazon S3 & Athena",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 12957390,
+      "title": "[SAA/DVA] S3 Lifecycle Rules (with S3 Analytics)",
+      "asset": {
+        "_class": "asset",
+        "id": 45998328,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Lifecycle_Rules_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Lifecycle-Rules-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 143,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 23743922,
+      "title": "[SAA/DVA] S3 Lifecycle Rules - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 44165212,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Lifecycle_Rules_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Lifecycle-Rules-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 144,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19786180,
+      "title": "[SAA/DVA] S3 Event Notifications",
+      "asset": {
+        "_class": "asset",
+        "id": 48855542,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Event_Notifications_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Event-Notifications-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 145,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 23743924,
+      "title": "[SAA/DVA] S3 Event Notifications - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 40666064,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Event_Notifications_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Event-Notifications-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 146,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 19786150,
+      "title": "[SAA/DVA] S3 Performance",
+      "asset": {
+        "_class": "asset",
+        "id": 48635224,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Performance_v5.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Performance-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 147,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513908,
+      "title": "[SAA] S3 Batch Operations",
+      "asset": {
+        "_class": "asset",
+        "id": 61967195,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_S3_Batch_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-S3-Batch-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 148,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513912,
+      "title": "S3 Batch Operations Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 49104776,
+        "asset_type": "Video",
+        "title": "SOA_-_S3_-_Batch_Operations_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-S3-Batch-Operations-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 149,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513780,
+      "title": "S3 Inventory",
+      "asset": {
+        "_class": "asset",
+        "id": 61960667,
+        "asset_type": "Video",
+        "title": "SOA_-_S3_-_Inventory_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-S3-Inventory-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 150,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513916,
+      "title": "S3 Multi-Part Upload Deep Dive",
+      "asset": {
+        "_class": "asset",
+        "id": 34857846,
+        "asset_type": "Video",
+        "title": "SOA_-_S3_-_Multi_Part_Upload_Deep_Dive.mp4",
+        "external_url": "",
+        "filename": "SOA-S3-Multi-Part-Upload-Deep-Dive.mp4",
+        "download_urls": null
+      },
+      "object_index": 151,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36519034,
+      "title": "S3 Multi-Part Upload - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 47014960,
+        "asset_type": "Video",
+        "title": "SOA_-_S3_-_Multi_Part_Upload_Hands_On_v1.mp4",
+        "external_url": "",
+        "filename": "SOA-S3-Multi-Part-Upload-Hands-On-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 152,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12957428,
+      "title": "[SAA/DVA] Athena",
+      "asset": {
+        "_class": "asset",
+        "id": 48099156,
+        "asset_type": "Video",
+        "title": "SAA_-_Analytics_-_Athena_Overview_v5.mp4",
+        "external_url": "",
+        "filename": "SAA-Analytics-Athena-Overview-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 153,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12957430,
+      "title": "[SAA/DVA] Athena Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 61960513,
+        "asset_type": "Video",
+        "title": "SAA_-_Athena_-_Hands_On_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-Athena-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 154,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293350,
+      "title": "Advanced Amazon S3 Quiz",
+      "object_index": 10
+    },
+    {
+      "_class": "chapter",
+      "id": 3030096,
+      "title": "Amazon S3 Security",
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 12957284,
+      "title": "[SAA/DVA] S3 MFA Delete",
+      "asset": {
+        "_class": "asset",
+        "id": 44165208,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_MFA_Delete_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-MFA-Delete-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 155,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 23743872,
+      "title": "[SAA/DVA] S3 MFA Delete Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 29840932,
+        "asset_type": "Video",
+        "title": "S3_-_MFA_Delete_v2_-_Hands_On.mp4",
+        "external_url": "",
+        "filename": "S3-MFA-Delete-v2-Hands-On.mp4",
+        "download_urls": null
+      },
+      "object_index": 156,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12957296,
+      "title": "[SAA/DVA] S3 Access Logs",
+      "asset": {
+        "_class": "asset",
+        "id": 44165222,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Access_Logs_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Access-Logs-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 157,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 23743902,
+      "title": "[SAA/DVA] S3 Access Logs - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 56533100,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Access_Logs_Hands_On_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-Access-Logs-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 158,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34357764,
+      "title": "[SAA] Glacier Vault Lock & S3 Object Lock",
+      "asset": {
+        "_class": "asset",
+        "id": 44166716,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_S3_Object_Lock_and_Glacier_Vault_Lock_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-S3-S3-Object-Lock-and-Glacier-Vault-Lock-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 159,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218567,
+      "title": "S3 VPC Endpoints",
+      "asset": {
+        "_class": "asset",
+        "id": 69115531,
+        "asset_type": "Video",
+        "title": "SOA - S3 - Endpoints v1.mp4",
+        "external_url": "",
+        "filename": "SOA-S3-Endpoints-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 160,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53219033,
+      "title": "IAM Access Analyzer for S3",
+      "asset": {
+        "_class": "asset",
+        "id": 69116147,
+        "asset_type": "Video",
+        "title": "CCP - S3 - IAM Access Analyzer v1.mp4",
+        "external_url": "",
+        "filename": "CCP-S3-IAM-Access-Analyzer-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 161,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5684350,
+      "title": "Amazon S3 Security Quiz",
+      "object_index": 11
+    },
+    {
+      "_class": "chapter",
+      "id": 6609122,
+      "title": "Advanced Storage Section",
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 27513940,
+      "title": "[SAA/SAP] Amazon FSx",
+      "asset": {
+        "_class": "asset",
+        "id": 43614836,
+        "asset_type": "Video",
+        "title": "SAA_-_FSx_-_Overview_v6.mp4",
+        "external_url": "",
+        "filename": "SAA-FSx-Overview-v6.mp4",
+        "download_urls": null
+      },
+      "object_index": 162,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513942,
+      "title": "[SAA] Amazon FSx - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 43613796,
+        "asset_type": "Video",
+        "title": "SAA - FSx - Hands On v4.mp4",
+        "external_url": "",
+        "filename": "SAA-FSx-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 163,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513944,
+      "title": "FSx for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 34857850,
+        "asset_type": "Video",
+        "title": "SOA_-_FSx_-_For_SysOps.mp4",
+        "external_url": "",
+        "filename": "SOA-FSx-For-SysOps.mp4",
+        "download_urls": null
+      },
+      "object_index": 164,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513932,
+      "title": "[SAA] Storage Gateway Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 67390545,
+        "asset_type": "Video",
+        "title": "SAA - Storage Gateway Overview v4.mp4",
+        "external_url": "",
+        "filename": "SAA-Storage-Gateway-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 165,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513934,
+      "title": "[SAA] Storage Gateway Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 67390193,
+        "asset_type": "Video",
+        "title": "SAA - Storage Gateway - Hands On v4.mp4",
+        "external_url": "",
+        "filename": "SAA-Storage-Gateway-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 166,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513936,
+      "title": "Storage Gateway for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 34857772,
+        "asset_type": "Video",
+        "title": "SOA_-_Storage_Gateway_-_For_SysOps.mp4",
+        "external_url": "",
+        "filename": "SOA-Storage-Gateway-For-SysOps.mp4",
+        "download_urls": null
+      },
+      "object_index": 167,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293380,
+      "title": "Advanced Storage Quiz",
+      "object_index": 12
+    },
+    {
+      "_class": "chapter",
+      "id": 6654090,
+      "title": "CloudFront",
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 27513972,
+      "title": "[SAA/DVA] CloudFront Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 70815563,
+        "asset_type": "Video",
+        "title": "CCP - CloudFront - Overview v4.mp4",
+        "external_url": "",
+        "filename": "CCP-CloudFront-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 168,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513982,
+      "title": "[SAA/DVA] CloudFront with S3 - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70793751,
+        "asset_type": "Video",
+        "title": "CCP - CloudFront - Hands On v6.mp4",
+        "external_url": "",
+        "filename": "CCP-CloudFront-Hands-On-v6.mp4",
+        "download_urls": null
+      },
+      "object_index": 169,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218253,
+      "title": "CloudFront - Caching",
+      "asset": {
+        "_class": "asset",
+        "id": 69115527,
+        "asset_type": "Video",
+        "title": "SOA - CloudFront - Cache Policy v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFront-Cache-Policy-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 170,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53219027,
+      "title": "CloudFront - Cache Invalidations",
+      "asset": {
+        "_class": "asset",
+        "id": 69116105,
+        "asset_type": "Video",
+        "title": "SAA - CloudFront - Cache Invalidation v1.mp4",
+        "external_url": "",
+        "filename": "SAA-CloudFront-Cache-Invalidation-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 171,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218247,
+      "title": "CloudFront - Origin Shield",
+      "asset": {
+        "_class": "asset",
+        "id": 69115517,
+        "asset_type": "Video",
+        "title": "SOA - CloudFront - Origin Shield v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFront-Origin-Shield-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 172,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34844194,
+      "title": "[SAA/DVA] CloudFront - ALB/EC2 as an Origin",
+      "asset": {
+        "_class": "asset",
+        "id": 64327417,
+        "asset_type": "Video",
+        "title": "SAA - CloudFront - ALB as Origin v4.mp4",
+        "external_url": "",
+        "filename": "SAA-CloudFront-ALB-as-Origin-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 173,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34844200,
+      "title": "[SAA/DVA] CloudFront - Geo Restriction",
+      "asset": {
+        "_class": "asset",
+        "id": 70793755,
+        "asset_type": "Video",
+        "title": "SAA - CloudFront - Geo Restrictions v5.mp4",
+        "external_url": "",
+        "filename": "SAA-CloudFront-Geo-Restrictions-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 174,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27513988,
+      "title": "CloudFront Reports, Logs and Troubleshooting",
+      "asset": {
+        "_class": "asset",
+        "id": 69118937,
+        "asset_type": "Video",
+        "title": "SOA - CloudFront - Reports Logging Troubleshooting v3.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFront-Reports-Logging-Troubleshooting-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 175,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514000,
+      "title": "CloudFront Caching - Deep Dive",
+      "asset": {
+        "_class": "asset",
+        "id": 34857762,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudFront_-_Caching_Deep_Dive.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFront-Caching-Deep-Dive.mp4",
+        "download_urls": null
+      },
+      "object_index": 176,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514008,
+      "title": "CloudFront with ALB Sticky Sessions",
+      "asset": {
+        "_class": "asset",
+        "id": 34857800,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudFront_-_with_ALB.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudFront-with-ALB.mp4",
+        "download_urls": null
+      },
+      "object_index": 177,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218997,
+      "title": "AWS Global Accelerator",
+      "asset": {
+        "_class": "asset",
+        "id": 69116101,
+        "asset_type": "Video",
+        "title": "Global Accelerator - Overview v2.mp4",
+        "external_url": "",
+        "filename": "Global-Accelerator-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 178,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53219001,
+      "title": "AWS Global Accelerator - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69143469,
+        "asset_type": "Video",
+        "title": "SAA - Global Accelerator - Hands On v3.mp4",
+        "external_url": "",
+        "filename": "SAA-Global-Accelerator-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 179,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293384,
+      "title": "CloudFront Quiz",
+      "object_index": 13
+    },
+    {
+      "_class": "chapter",
+      "id": 3038440,
+      "title": "Databases for CloudOps",
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 27514014,
+      "title": "[SAA/DVA] RDS Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 58202655,
+        "asset_type": "Video",
+        "title": "SAA_-_RDS_-_Overview_v6.mp4",
+        "external_url": "",
+        "filename": "SAA-RDS-Overview-v6.mp4",
+        "download_urls": null
+      },
+      "object_index": 180,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514018,
+      "title": "[SAA/DVA] RDS Multi AZ vs Read Replicas",
+      "asset": {
+        "_class": "asset",
+        "id": 47700202,
+        "asset_type": "Video",
+        "title": "SAA_-_RDS_-_Read_Replicas_and_Multi_AZ_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-RDS-Read-Replicas-and-Multi-AZ-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 181,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514020,
+      "title": "[SAA/DVA] RDS Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70792775,
+        "asset_type": "Video",
+        "title": "SAA - RDS - Hands On v5.mp4",
+        "external_url": "",
+        "filename": "SAA-RDS-Hands-On-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 182,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514072,
+      "title": "RDS Multi AZ \u2013 Failover Conditions",
+      "asset": {
+        "_class": "asset",
+        "id": 34857758,
+        "asset_type": "Video",
+        "title": "SOA_-_RDS_-_Failover_Conditions.mp4",
+        "external_url": "",
+        "filename": "SOA-RDS-Failover-Conditions.mp4",
+        "download_urls": null
+      },
+      "object_index": 183,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514100,
+      "title": "RDS Backups and Snapshots",
+      "asset": {
+        "_class": "asset",
+        "id": 34857752,
+        "asset_type": "Video",
+        "title": "SOA_-_RDS_-_Backups_vs_Snapshots.mp4",
+        "external_url": "",
+        "filename": "SOA-RDS-Backups-vs-Snapshots.mp4",
+        "download_urls": null
+      },
+      "object_index": 184,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514114,
+      "title": "RDS Events and Logs",
+      "asset": {
+        "_class": "asset",
+        "id": 34857764,
+        "asset_type": "Video",
+        "title": "SOA_-_RDS_-_Events_and_Logs.mp4",
+        "external_url": "",
+        "filename": "SOA-RDS-Events-and-Logs.mp4",
+        "download_urls": null
+      },
+      "object_index": 185,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12993856,
+      "title": "RDS & CloudWatch",
+      "asset": {
+        "_class": "asset",
+        "id": 15818002,
+        "asset_type": "Video",
+        "title": "RDS with CloudWatch.mp4",
+        "external_url": "",
+        "filename": "RDS-with-CloudWatch.mp4",
+        "download_urls": null
+      },
+      "object_index": 186,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12993860,
+      "title": "RDS Performance Insights",
+      "asset": {
+        "_class": "asset",
+        "id": 69118943,
+        "asset_type": "Video",
+        "title": "SOA - RDS - Performance Insights v2.mp4",
+        "external_url": "",
+        "filename": "SOA-RDS-Performance-Insights-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 187,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515778,
+      "title": "[SAA/DVA] Amazon Aurora",
+      "asset": {
+        "_class": "asset",
+        "id": 69142513,
+        "asset_type": "Video",
+        "title": "SAA - Aurora - Overview v6.mp4",
+        "external_url": "",
+        "filename": "SAA-Aurora-Overview-v6.mp4",
+        "download_urls": null
+      },
+      "object_index": 188,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12993872,
+      "title": "[SAA/DVA] Amazon Aurora - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70792777,
+        "asset_type": "Video",
+        "title": "SAA - Aurora - Hands On v5.mp4",
+        "external_url": "",
+        "filename": "SAA-Aurora-Hands-On-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 189,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515790,
+      "title": "Amazon Aurora - Backups",
+      "asset": {
+        "_class": "asset",
+        "id": 34857768,
+        "asset_type": "Video",
+        "title": "SOA_-_Aurora_-_Backups.mp4",
+        "external_url": "",
+        "filename": "SOA-Aurora-Backups.mp4",
+        "download_urls": null
+      },
+      "object_index": 190,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514080,
+      "title": "[SAA/DVA] RDS & Aurora Security",
+      "asset": {
+        "_class": "asset",
+        "id": 43614824,
+        "asset_type": "Video",
+        "title": "SAA_-_RDS_-_Security_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-RDS-Security-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 191,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515794,
+      "title": "Amazon Aurora for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 69118935,
+        "asset_type": "Video",
+        "title": "SOA - Aurora - For CloudOps v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Aurora-For-CloudOps-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 192,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218981,
+      "title": "Amazon RDS Proxy",
+      "asset": {
+        "_class": "asset",
+        "id": 69116091,
+        "asset_type": "Video",
+        "title": "SAA - RDS - RDS Proxy v2.mp4",
+        "external_url": "",
+        "filename": "SAA-RDS-RDS-Proxy-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 193,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515806,
+      "title": "[SAA/DVA] ElastiCache Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 60517899,
+        "asset_type": "Video",
+        "title": "SAA_-_ElastiCache_-_Overview_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-ElastiCache-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 194,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12993886,
+      "title": "[SAA/DVA] ElastiCache Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69142635,
+        "asset_type": "Video",
+        "title": "SAA - ElastiCache - Hands On v5.mp4",
+        "external_url": "",
+        "filename": "SAA-ElastiCache-Hands-On-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 195,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515816,
+      "title": "ElastiCache Redis for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 34857760,
+        "asset_type": "Video",
+        "title": "SOA_-_Redis_for_SysOps.mp4",
+        "external_url": "",
+        "filename": "SOA-Redis-for-SysOps.mp4",
+        "download_urls": null
+      },
+      "object_index": 196,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515826,
+      "title": "ElastiCache Memcached for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 34857784,
+        "asset_type": "Video",
+        "title": "SOA_-_Memcached_for_SysOps.mp4",
+        "external_url": "",
+        "filename": "SOA-Memcached-for-SysOps.mp4",
+        "download_urls": null
+      },
+      "object_index": 197,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293386,
+      "title": "Databases For CloudOps Quiz",
+      "object_index": 14
+    },
+    {
+      "_class": "chapter",
+      "id": 3067378,
+      "title": "Monitoring, Auditing and Performance",
+      "object_index": 16
+    },
+    {
+      "_class": "lecture",
+      "id": 27515828,
+      "title": "CloudWatch Metrics",
+      "asset": {
+        "_class": "asset",
+        "id": 46539988,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_-_Metrics.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Metrics.mp4",
+        "download_urls": null
+      },
+      "object_index": 198,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515836,
+      "title": "CloudWatch Custom Metrics",
+      "asset": {
+        "_class": "asset",
+        "id": 34857802,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_-_Custom_Metrics.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Custom-Metrics.mp4",
+        "download_urls": null
+      },
+      "object_index": 199,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218963,
+      "title": "CloudWatch Anomaly Detection",
+      "asset": {
+        "_class": "asset",
+        "id": 69116083,
+        "asset_type": "Video",
+        "title": "DOP - CloudWatch Anomaly Detection v1.mp4",
+        "external_url": "",
+        "filename": "DOP-CloudWatch-Anomaly-Detection-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 200,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515848,
+      "title": "CloudWatch Dashboards",
+      "asset": {
+        "_class": "asset",
+        "id": 34857812,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_-_Dashboards.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Dashboards.mp4",
+        "download_urls": null
+      },
+      "object_index": 201,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515850,
+      "title": "CloudWatch Logs",
+      "asset": {
+        "_class": "asset",
+        "id": 48823984,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_-_Logs_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Logs-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 202,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515858,
+      "title": "CloudWatch Logs - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 34857790,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_-_Logs_Hands_On.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Logs-Hands-On.mp4",
+        "download_urls": null
+      },
+      "object_index": 203,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41865684,
+      "title": "CloudWatch Logs - Live Tail - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 54048866,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_Logs_-_Live_Tail_v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Logs-Live-Tail-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 204,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218231,
+      "title": "CloudWatch Logs - Data Protection",
+      "asset": {
+        "_class": "asset",
+        "id": 69115523,
+        "asset_type": "Video",
+        "title": "SOA - CloudWatch - Logs Data Protection v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Logs-Data-Protection-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 205,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515862,
+      "title": "CloudWatch Alarms",
+      "asset": {
+        "_class": "asset",
+        "id": 59262645,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_-_Alarms_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Alarms-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 206,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516556,
+      "title": "CloudWatch Alarms Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 34857742,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_-_Alarms_Hands_On.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Alarms-Hands-On.mp4",
+        "download_urls": null
+      },
+      "object_index": 207,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36518990,
+      "title": "CloudWatch Synthetics",
+      "asset": {
+        "_class": "asset",
+        "id": 47014942,
+        "asset_type": "Video",
+        "title": "DVA_-_CloudWatch_-_Synthetics_Canary_v1.mp4",
+        "external_url": "",
+        "filename": "DVA-CloudWatch-Synthetics-Canary-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 208,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218219,
+      "title": "CloudWatch Synthetics - in a VPC",
+      "asset": {
+        "_class": "asset",
+        "id": 69115515,
+        "asset_type": "Video",
+        "title": "SOA - CloudWatch - Synthetics in a VPC v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Synthetics-in-a-VPC-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 209,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218207,
+      "title": "CloudWatch Container Insights",
+      "asset": {
+        "_class": "asset",
+        "id": 69115521,
+        "asset_type": "Video",
+        "title": "SOA - CloudWatch - Container Insights v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Container-Insights-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 210,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218201,
+      "title": "CloudWatch Internet Monitor",
+      "asset": {
+        "_class": "asset",
+        "id": 69115513,
+        "asset_type": "Video",
+        "title": "SOA - CloudWatch - Internet Monitor v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Internet-Monitor-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 211,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218197,
+      "title": "CloudWatch Network Synthetic Monitor",
+      "asset": {
+        "_class": "asset",
+        "id": 69115519,
+        "asset_type": "Video",
+        "title": "SOA - CloudWatch - Network Synthetic Monitor v1.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudWatch-Network-Synthetic-Monitor-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 212,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515872,
+      "title": "[SAA/DVA] Amazon EventBridge",
+      "asset": {
+        "_class": "asset",
+        "id": 48090702,
+        "asset_type": "Video",
+        "title": "SAA_-_EventBridge_-_Overview_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-EventBridge-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 213,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27515880,
+      "title": "[SAA/DVA] Amazon EventBridge - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70793911,
+        "asset_type": "Video",
+        "title": "SAA - EventBridge - Hands On v5.mp4",
+        "external_url": "",
+        "filename": "SAA-EventBridge-Hands-On-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 214,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36362928,
+      "title": "EventBridge Content Filtering - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 46816516,
+        "asset_type": "Video",
+        "title": "SOA_-_EventBridge_-_Event_Matching_v1.mp4",
+        "external_url": "",
+        "filename": "SOA-EventBridge-Event-Matching-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 215,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36362934,
+      "title": "EventBridge Input Transformation - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 46816514,
+        "asset_type": "Video",
+        "title": "SOA_-_EventBridge_-_Input_Transformer_v1.mp4",
+        "external_url": "",
+        "filename": "SOA-EventBridge-Input-Transformer-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 216,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218065,
+      "title": "EventBridge - Pipes",
+      "asset": {
+        "_class": "asset",
+        "id": 69115495,
+        "asset_type": "Video",
+        "title": "SOA - EventBridge - Pipes v1.mp4",
+        "external_url": "",
+        "filename": "SOA-EventBridge-Pipes-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 217,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218059,
+      "title": "EventBridge - Retries & DLQs",
+      "asset": {
+        "_class": "asset",
+        "id": 69115489,
+        "asset_type": "Video",
+        "title": "SOA - EventBridge - Retries and DLQ v1.mp4",
+        "external_url": "",
+        "filename": "SOA-EventBridge-Retries-and-DLQ-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 218,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218055,
+      "title": "EventBridge - Trigger SSM Automation",
+      "asset": {
+        "_class": "asset",
+        "id": 69115493,
+        "asset_type": "Video",
+        "title": "SOA - EventBridge - Trigger SSM Automation v1.mp4",
+        "external_url": "",
+        "filename": "SOA-EventBridge-Trigger-SSM-Automation-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 219,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218041,
+      "title": "EventBridge - Cross-account Targets",
+      "asset": {
+        "_class": "asset",
+        "id": 69115491,
+        "asset_type": "Video",
+        "title": "SOA - EventBridge - Cross Account v1.mp4",
+        "external_url": "",
+        "filename": "SOA-EventBridge-Cross-Account-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 220,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516002,
+      "title": "Service Quotas Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 34857730,
+        "asset_type": "Video",
+        "title": "SOA_-_Service_Quotas_-_Overview.mp4",
+        "external_url": "",
+        "filename": "SOA-Service-Quotas-Overview.mp4",
+        "download_urls": null
+      },
+      "object_index": 221,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516004,
+      "title": "Service Quotas Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 67390199,
+        "asset_type": "Video",
+        "title": "SOA - Service Quotas - Hands On v2.mp4",
+        "external_url": "",
+        "filename": "SOA-Service-Quotas-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 222,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13114824,
+      "title": "[SAA/DVA] CloudTrail",
+      "asset": {
+        "_class": "asset",
+        "id": 48855602,
+        "asset_type": "Video",
+        "title": "SAA_-_CloudTrail_-_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-CloudTrail-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 223,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26121152,
+      "title": "[CCP/SAA/DVA] CloudTrail - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 48086166,
+        "asset_type": "Video",
+        "title": "CCP_-_CloudTrail_-_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-CloudTrail-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 224,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37934002,
+      "title": "[SAA/DVA] CloudTrail - EventBridge Integration",
+      "asset": {
+        "_class": "asset",
+        "id": 48855600,
+        "asset_type": "Video",
+        "title": "SAA_-_CloudTrail_-_EventBridge_Integration_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-CloudTrail-EventBridge-Integration-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 225,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516016,
+      "title": "CloudTrail for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 34857792,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudTrail_-_for_SysOps.mp4",
+        "external_url": "",
+        "filename": "SOA-CloudTrail-for-SysOps.mp4",
+        "download_urls": null
+      },
+      "object_index": 226,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516072,
+      "title": "[SAA] Config Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 34857786,
+        "asset_type": "Video",
+        "title": "SOA_-_Config_-_Overview.mp4",
+        "external_url": "",
+        "filename": "SOA-Config-Overview.mp4",
+        "download_urls": null
+      },
+      "object_index": 227,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516078,
+      "title": "[SAA] Config Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 34857740,
+        "asset_type": "Video",
+        "title": "SOA_-_Config_-_Hands_On.mp4",
+        "external_url": "",
+        "filename": "SOA-Config-Hands-On.mp4",
+        "download_urls": null
+      },
+      "object_index": 228,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28757768,
+      "title": "Config - Aggregators",
+      "asset": {
+        "_class": "asset",
+        "id": 36543072,
+        "asset_type": "Video",
+        "title": "SOA_-_Config_-_Aggregators_v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Config-Aggregators-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 229,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218019,
+      "title": "Config - Remediation Examples",
+      "asset": {
+        "_class": "asset",
+        "id": 69115485,
+        "asset_type": "Video",
+        "title": "SOA - Config - Remediation Examples v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Config-Remediation-Examples-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 230,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13114838,
+      "title": "[SAA] CloudWatch vs CloudTrail vs Config",
+      "asset": {
+        "_class": "asset",
+        "id": 15969016,
+        "asset_type": "Video",
+        "title": "CloudWatch vs CloudTrail vs Config.mp4",
+        "external_url": "",
+        "filename": "CloudWatch-vs-CloudTrail-vs-Config.mp4",
+        "download_urls": null
+      },
+      "object_index": 231,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293388,
+      "title": "Monitoring, Auditing, and Performance Quiz",
+      "object_index": 15
+    },
+    {
+      "_class": "chapter",
+      "id": 3068072,
+      "title": "AWS Account Management",
+      "object_index": 17
+    },
+    {
+      "_class": "lecture",
+      "id": 13124660,
+      "title": "Section Intro",
+      "asset": {
+        "_class": "asset",
+        "id": 16169790,
+        "asset_type": "Video",
+        "title": "Account Management Section Intro.mp4",
+        "external_url": "",
+        "filename": "Account-Management-Section-Intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 232,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516094,
+      "title": "AWS Health Dashboard - Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 48856004,
+        "asset_type": "Video",
+        "title": "CCP_-_Health_Dashboard_-_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-Health-Dashboard-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 233,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516098,
+      "title": "AWS Health Dashboard - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 48856002,
+        "asset_type": "Video",
+        "title": "CCP_-_Health_Dashboard_-_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-Health-Dashboard-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 234,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37933646,
+      "title": "AWS Health Dashboard - Events & Notifications",
+      "asset": {
+        "_class": "asset",
+        "id": 48855566,
+        "asset_type": "Video",
+        "title": "SOA_-_Health_Dashboard_-_EventBridge_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-Health-Dashboard-EventBridge-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 235,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13116992,
+      "title": "[SAA] Organizations Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 58202843,
+        "asset_type": "Video",
+        "title": "SAA_-_Organizations_-_Overview_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-Organizations-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 236,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13116996,
+      "title": "[CCP/SAA] Organizations Hands-On",
+      "asset": {
+        "_class": "asset",
+        "id": 69142711,
+        "asset_type": "Video",
+        "title": "SAA - Organizations - Hands On - v3.mp4",
+        "external_url": "",
+        "filename": "SAA-Organizations-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 237,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516148,
+      "title": "AWS Organizations for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 34857708,
+        "asset_type": "Video",
+        "title": "SOA_-_Organizations_for_SysOps.mp4",
+        "external_url": "",
+        "filename": "SOA-Organizations-for-SysOps.mp4",
+        "download_urls": null
+      },
+      "object_index": 238,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218001,
+      "title": "Organizations - SCP Examples",
+      "asset": {
+        "_class": "asset",
+        "id": 69115487,
+        "asset_type": "Video",
+        "title": "SOA - Organizations - SCP Examples v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Organizations-SCP-Examples-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 239,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516154,
+      "title": "[CCP] AWS Control Tower Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 34862924,
+        "asset_type": "Video",
+        "title": "CCP - Control Tower.mp4",
+        "external_url": "",
+        "filename": "CCP-Control-Tower.mp4",
+        "download_urls": null
+      },
+      "object_index": 240,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516160,
+      "title": "[CCP] AWS Control Tower Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 51220346,
+        "asset_type": "Video",
+        "title": "CCP_-_Control_Tower_-_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-Control-Tower-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 241,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516214,
+      "title": "AWS Service Catalog Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 34857712,
+        "asset_type": "Video",
+        "title": "SOA_-_Service_Catalog_Overview.mp4",
+        "external_url": "",
+        "filename": "SOA-Service-Catalog-Overview.mp4",
+        "download_urls": null
+      },
+      "object_index": 242,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13117004,
+      "title": "AWS Service Catalog Hands-On",
+      "asset": {
+        "_class": "asset",
+        "id": 55143840,
+        "asset_type": "Video",
+        "title": "SOA_-_Service_Catalog_-_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-Service-Catalog-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 243,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516220,
+      "title": "AWS Billing Alarms",
+      "asset": {
+        "_class": "asset",
+        "id": 34857722,
+        "asset_type": "Video",
+        "title": "SOA_-_Billing_Alarms.mp4",
+        "external_url": "",
+        "filename": "SOA-Billing-Alarms.mp4",
+        "download_urls": null
+      },
+      "object_index": 244,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516224,
+      "title": "[SAA] AWS Cost Explorer",
+      "asset": {
+        "_class": "asset",
+        "id": 70793907,
+        "asset_type": "Video",
+        "title": "SAA - Cost Explorer - Overview v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Cost-Explorer-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 245,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516228,
+      "title": "AWS Budgets",
+      "asset": {
+        "_class": "asset",
+        "id": 45201130,
+        "asset_type": "Video",
+        "title": "SOA_-_Budget_-_Overview_v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Budget-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 246,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35112236,
+      "title": "AWS Budgets - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 45201128,
+        "asset_type": "Video",
+        "title": "SOA_-_Budgets_-_Hands_On_v1D.mp4",
+        "external_url": "",
+        "filename": "SOA-Budgets-Hands-On-v1D.mp4",
+        "download_urls": null
+      },
+      "object_index": 247,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516236,
+      "title": "AWS Cost Allocation Tags & Cost & Usage Reports",
+      "asset": {
+        "_class": "asset",
+        "id": 34857732,
+        "asset_type": "Video",
+        "title": "SOA_-_Cost_Allocation_Tags.mp4",
+        "external_url": "",
+        "filename": "SOA-Cost-Allocation-Tags.mp4",
+        "download_urls": null
+      },
+      "object_index": 248,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217967,
+      "title": "AWS Compute Optimizer",
+      "asset": {
+        "_class": "asset",
+        "id": 69115481,
+        "asset_type": "Video",
+        "title": "SOA - Compute Optimizer v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Compute-Optimizer-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 249,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217951,
+      "title": "AWS Billing Conductor",
+      "asset": {
+        "_class": "asset",
+        "id": 69115475,
+        "asset_type": "Video",
+        "title": "SOA - Billing Conductor v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Billing-Conductor-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 250,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293726,
+      "title": "AWS Account Management Quiz",
+      "object_index": 16
+    },
+    {
+      "_class": "chapter",
+      "id": 6609748,
+      "title": "Disaster Recovery",
+      "object_index": 18
+    },
+    {
+      "_class": "lecture",
+      "id": 27516258,
+      "title": "[SAA] AWS DataSync",
+      "asset": {
+        "_class": "asset",
+        "id": 43614820,
+        "asset_type": "Video",
+        "title": "SAA_-_DataSync_-_Overview_v5.mp4",
+        "external_url": "",
+        "filename": "SAA-DataSync-Overview-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 251,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516262,
+      "title": "[SAA] AWS Backup",
+      "asset": {
+        "_class": "asset",
+        "id": 40666062,
+        "asset_type": "Video",
+        "title": "SAA_-_AWS_Backup_-_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-AWS-Backup-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 252,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516266,
+      "title": "[SAA] AWS Backup Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58202523,
+        "asset_type": "Video",
+        "title": "SAA_-_AWS_Backup_-_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-AWS-Backup-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 253,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293734,
+      "title": "Disaster Recovery Quiz",
+      "object_index": 17
+    },
+    {
+      "_class": "chapter",
+      "id": 3073478,
+      "title": "Security and Compliance for CloudOps",
+      "object_index": 19
+    },
+    {
+      "_class": "lecture",
+      "id": 53218933,
+      "title": "AWS Web Application Firewall (WAF)",
+      "asset": {
+        "_class": "asset",
+        "id": 69116089,
+        "asset_type": "Video",
+        "title": "SAA - WAF - Overview v3.mp4",
+        "external_url": "",
+        "filename": "SAA-WAF-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 254,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218923,
+      "title": "AWS Shield",
+      "asset": {
+        "_class": "asset",
+        "id": 69116085,
+        "asset_type": "Video",
+        "title": "SAA - Shield - Overview v3.mp4",
+        "external_url": "",
+        "filename": "SAA-Shield-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 255,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218913,
+      "title": "AWS Firewall Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 69116087,
+        "asset_type": "Video",
+        "title": "SAA - Firewall Manager - Overview v1.mp4",
+        "external_url": "",
+        "filename": "SAA-Firewall-Manager-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 256,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218893,
+      "title": "WAF, Shield, Firewall Manager - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69116093,
+        "asset_type": "Video",
+        "title": "SAA - WAF Shield Firewall Manager - Hands On v2.mp4",
+        "external_url": "",
+        "filename": "SAA-WAF-Shield-Firewall-Manager-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 257,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516302,
+      "title": "[CCP/SAA/SAP] Amazon Inspector",
+      "asset": {
+        "_class": "asset",
+        "id": 45198984,
+        "asset_type": "Video",
+        "title": "CCP_-_Inspector_v3.mp4",
+        "external_url": "",
+        "filename": "CCP-Inspector-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 258,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516304,
+      "title": "Amazon Inspector - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 54049282,
+        "asset_type": "Video",
+        "title": "SOA_-_Inspector_-_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-Inspector-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 259,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13136342,
+      "title": "Logging in AWS",
+      "asset": {
+        "_class": "asset",
+        "id": 15996350,
+        "asset_type": "Video",
+        "title": "Logging in AWS for Security and Compliance.mp4",
+        "external_url": "",
+        "filename": "Logging-in-AWS-for-Security-and-Compliance.mp4",
+        "download_urls": null
+      },
+      "object_index": 260,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516314,
+      "title": "[CCP/SAA/SAP] Amazon GuardDuty",
+      "asset": {
+        "_class": "asset",
+        "id": 49104836,
+        "asset_type": "Video",
+        "title": "CCP_-_GuardDuty_-_Overview_v4.mp4",
+        "external_url": "",
+        "filename": "CCP-GuardDuty-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 261,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28647204,
+      "title": "[CCP/SAA] Amazon Macie",
+      "asset": {
+        "_class": "asset",
+        "id": 44754828,
+        "asset_type": "Video",
+        "title": "CCP_-_Macie_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-Macie-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 262,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516318,
+      "title": "Trusted Advisor",
+      "asset": {
+        "_class": "asset",
+        "id": 69142483,
+        "asset_type": "Video",
+        "title": "SOA - Trusted Advisor - Overview v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Trusted-Advisor-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 263,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218867,
+      "title": "Security Hub",
+      "asset": {
+        "_class": "asset",
+        "id": 69115981,
+        "asset_type": "Video",
+        "title": "CCP - Security Hub - Overview v2.mp4",
+        "external_url": "",
+        "filename": "CCP-Security-Hub-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 264,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217943,
+      "title": "Security Hub - Managing Multiple Accounts",
+      "asset": {
+        "_class": "asset",
+        "id": 69115465,
+        "asset_type": "Video",
+        "title": "SOA - Security Hub - Organizations v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Security-Hub-Organizations-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 265,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218851,
+      "title": "AWS Audit Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 69115977,
+        "asset_type": "Video",
+        "title": "AIF - Security - Audit Manager v1.mp4",
+        "external_url": "",
+        "filename": "AIF-Security-Audit-Manager-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 266,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516326,
+      "title": "[SAA/DVA] KMS Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 58202907,
+        "asset_type": "Video",
+        "title": "SAA_-_KMS_-_Overview_v5.mp4",
+        "external_url": "",
+        "filename": "SAA-KMS-Overview-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 267,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516328,
+      "title": "[SAA/DVA] KMS Hands On w/ CLI",
+      "asset": {
+        "_class": "asset",
+        "id": 58203039,
+        "asset_type": "Video",
+        "title": "SAA_-_KMS_-_Hands_On_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-KMS-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 268,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516334,
+      "title": "KMS Key Rotation",
+      "asset": {
+        "_class": "asset",
+        "id": 58202897,
+        "asset_type": "Video",
+        "title": "SOA_-_KMS_-_Key_Rotation_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-KMS-Key-Rotation-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 269,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516348,
+      "title": "KMS For CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 34857794,
+        "asset_type": "Video",
+        "title": "SOA_-_KMS_For_SysOps.mp4",
+        "external_url": "",
+        "filename": "SOA-KMS-For-SysOps.mp4",
+        "download_urls": null
+      },
+      "object_index": 270,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217909,
+      "title": "KMS - Multi-Region Keys",
+      "asset": {
+        "_class": "asset",
+        "id": 69115477,
+        "asset_type": "Video",
+        "title": "SOA - KMS - Multi Region Keys v1.mp4",
+        "external_url": "",
+        "filename": "SOA-KMS-Multi-Region-Keys-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 271,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516368,
+      "title": "[SAA] AWS Certificate Manager Overview (ACM)",
+      "asset": {
+        "_class": "asset",
+        "id": 55144212,
+        "asset_type": "Video",
+        "title": "SAA_-_ACM_-_Overview_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-ACM-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 272,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516374,
+      "title": "[DVA] AWS Certificate Manager (ACM) Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58202879,
+        "asset_type": "Video",
+        "title": "SOA_-_ACM_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-ACM-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 273,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516384,
+      "title": "[SAA/DVA] Secrets Manager Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 48098610,
+        "asset_type": "Video",
+        "title": "SAA_-_Secrets_Manager_-_Overview_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-Secrets-Manager-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 274,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516390,
+      "title": "[SAA/DVA] Secrets Manager Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 34863246,
+        "asset_type": "Video",
+        "title": "Secrets Manager - Hands On.mp4",
+        "external_url": "",
+        "filename": "Secrets-Manager-Hands-On.mp4",
+        "download_urls": null
+      },
+      "object_index": 275,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28757758,
+      "title": "Secrets Manager - Monitoring & Troubleshooting",
+      "asset": {
+        "_class": "asset",
+        "id": 36543068,
+        "asset_type": "Video",
+        "title": "SOA_-_Secrets_Manager_-_Monitoring_v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Secrets-Manager-Monitoring-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 276,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516402,
+      "title": "[DVA] SSM Parameter Store vs Secrets Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 52133974,
+        "asset_type": "Video",
+        "title": "SOA_-_SSM_Parameter_Store_vs_Secrets_Manager_v2.mp4",
+        "external_url": "",
+        "filename": "SOA-SSM-Parameter-Store-vs-Secrets-Manager-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 277,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293736,
+      "title": "Security & Compliance Quiz",
+      "object_index": 18
+    },
+    {
+      "_class": "chapter",
+      "id": 6609768,
+      "title": "Identity",
+      "object_index": 20
+    },
+    {
+      "_class": "lecture",
+      "id": 53218825,
+      "title": "IAM Permission Boundaries",
+      "asset": {
+        "_class": "asset",
+        "id": 69115975,
+        "asset_type": "Video",
+        "title": "SCS - IAM - Permission Boundaries v1.mp4",
+        "external_url": "",
+        "filename": "SCS-IAM-Permission-Boundaries-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 278,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516430,
+      "title": "[CCP/SAA/DVA] IAM Security Tools",
+      "asset": {
+        "_class": "asset",
+        "id": 34863262,
+        "asset_type": "Video",
+        "title": "CCP - IAM - Security Tools.mp4",
+        "external_url": "",
+        "filename": "CCP-IAM-Security-Tools.mp4",
+        "download_urls": null
+      },
+      "object_index": 279,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516432,
+      "title": "[CCP/SAA/DVA] IAM Security Tools Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 60749455,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_Security_Tools_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "CCP-IAM-Security-Tools-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 280,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516438,
+      "title": "IAM Access Analyzer",
+      "asset": {
+        "_class": "asset",
+        "id": 34857746,
+        "asset_type": "Video",
+        "title": "SOA_-_IAM_-_Access_Analyzer.mp4",
+        "external_url": "",
+        "filename": "SOA-IAM-Access-Analyzer.mp4",
+        "download_urls": null
+      },
+      "object_index": 281,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13136416,
+      "title": "Identity Federation with SAML & Cognito",
+      "asset": {
+        "_class": "asset",
+        "id": 16001922,
+        "asset_type": "Video",
+        "title": "Identity Federation with SAML & Cognito.mp4",
+        "external_url": "",
+        "filename": "Identity-Federation-with-SAML-Cognito.mp4",
+        "download_urls": null
+      },
+      "object_index": 282,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516446,
+      "title": "STS & Cross Account Access",
+      "asset": {
+        "_class": "asset",
+        "id": 46637166,
+        "asset_type": "Video",
+        "title": "SOA_-_STS_-_Overview_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-STS-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 283,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217839,
+      "title": "IAM Policy Simulator",
+      "asset": {
+        "_class": "asset",
+        "id": 69115479,
+        "asset_type": "Video",
+        "title": "SOA - IAM - Policy Simulator v1.mp4",
+        "external_url": "",
+        "filename": "SOA-IAM-Policy-Simulator-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 284,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293740,
+      "title": "Identity Quiz",
+      "object_index": 19
+    },
+    {
+      "_class": "chapter",
+      "id": 3087896,
+      "title": "Networking - Route 53",
+      "object_index": 21
+    },
+    {
+      "_class": "lecture",
+      "id": 28391430,
+      "title": "[SAA/DVA] What is a DNS?",
+      "asset": {
+        "_class": "asset",
+        "id": 53653766,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_What_is_DNS_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-What-is-DNS-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 285,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193830,
+      "title": "[SAA/DVA] Route 53 Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 38084070,
+        "asset_type": "Video",
+        "title": "SAA - Route 53 - Overview v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 286,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28391438,
+      "title": "[SAA/DVA] Route 53 - Registering a Domain",
+      "asset": {
+        "_class": "asset",
+        "id": 49636100,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Registering_Domains_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Registering-Domains-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 287,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193832,
+      "title": "[SAA/DVA] Route 53 - Creating our first records",
+      "asset": {
+        "_class": "asset",
+        "id": 36036630,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_First_Records_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-First-Records-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 288,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193834,
+      "title": "[SAA/DVA] Route 53 - EC2 Setup",
+      "asset": {
+        "_class": "asset",
+        "id": 48635976,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_EC2_Setup_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-EC2-Setup-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 289,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217611,
+      "title": "Roure 53 - Email Record Types",
+      "asset": {
+        "_class": "asset",
+        "id": 69115375,
+        "asset_type": "Video",
+        "title": "SOA - Route 53 - Integration with SES v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Route-53-Integration-with-SES-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 290,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193836,
+      "title": "[SAA/DVA] Route 53 - TTL",
+      "asset": {
+        "_class": "asset",
+        "id": 38081124,
+        "asset_type": "Video",
+        "title": "SAA - Route 53 - TTL v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-TTL-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 291,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193838,
+      "title": "[SAA/DVA] CNAME vs Alias",
+      "asset": {
+        "_class": "asset",
+        "id": 36036634,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_CNAME_vs_Alias_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-CNAME-vs-Alias-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 292,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193846,
+      "title": "[SAA/DVA] Routing Policy - Simple",
+      "asset": {
+        "_class": "asset",
+        "id": 36036608,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Simple_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Simple-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 293,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193852,
+      "title": "[SAA/DVA] Routing Policy - Weighted",
+      "asset": {
+        "_class": "asset",
+        "id": 36036606,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Weighted_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Weighted-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 294,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193854,
+      "title": "[SAA/DVA] Routing Policy - Latency",
+      "asset": {
+        "_class": "asset",
+        "id": 36036614,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Latency_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Latency-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 295,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193858,
+      "title": "[SAA/DVA] Route 53 Health Checks",
+      "asset": {
+        "_class": "asset",
+        "id": 36036616,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Health_Checks_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Health-Checks-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 296,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28391456,
+      "title": "[SAA/DVA] Route 53 Health Checks - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 36036618,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Health_Checks_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Health-Checks-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 297,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193860,
+      "title": "[SAA/DVA] Routing Policy - Failover",
+      "asset": {
+        "_class": "asset",
+        "id": 36036612,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Failover_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Failover-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 298,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193866,
+      "title": "[SAA/DVA] Routing Policy - Geolocation",
+      "asset": {
+        "_class": "asset",
+        "id": 36036604,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Geolocation_-_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Geolocation-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 299,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517998,
+      "title": "[SAA/DVA] Routing Policy - Geoproximity",
+      "asset": {
+        "_class": "asset",
+        "id": 34865004,
+        "asset_type": "Video",
+        "title": "SAA - Route 53 - GeoProximity Routing v1.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-GeoProximity-Routing-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 300,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28391468,
+      "title": "[SAA/DVA] Routing Policy - Traffic Flow & Geoproximity Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 36036602,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Traffic_Flow_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Traffic-Flow-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 301,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37045736,
+      "title": "[SAA/DVA] Routing Policy - IP-based",
+      "asset": {
+        "_class": "asset",
+        "id": 47700016,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_IP_Based_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-IP-Based-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 302,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193870,
+      "title": "[SAA/DVA] Routing Policy - Multi Value",
+      "asset": {
+        "_class": "asset",
+        "id": 36036610,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Routing_Multivalue_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Routing-Multivalue-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 303,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193874,
+      "title": "[SAA/DVA] 3rd Party Domains & Route 53",
+      "asset": {
+        "_class": "asset",
+        "id": 36036620,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_3rd_party_registar_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-3rd-party-registar-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 304,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516520,
+      "title": "S3 Website with Route 53",
+      "asset": {
+        "_class": "asset",
+        "id": 34857782,
+        "asset_type": "Video",
+        "title": "SOA_-_Route_53_-_S3_Buckets_Alias.mp4",
+        "external_url": "",
+        "filename": "SOA-Route-53-S3-Buckets-Alias.mp4",
+        "download_urls": null
+      },
+      "object_index": 305,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28647158,
+      "title": "Route 53 Resolvers & Hybrid DNS",
+      "asset": {
+        "_class": "asset",
+        "id": 67390177,
+        "asset_type": "Video",
+        "title": "SAA - Route 53 - Private Resolver v1.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Private-Resolver-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 306,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218801,
+      "title": "Route 53 - DNS Query Logging",
+      "asset": {
+        "_class": "asset",
+        "id": 69115971,
+        "asset_type": "Video",
+        "title": "ANS - Route 53 - Logging v1.mp4",
+        "external_url": "",
+        "filename": "ANS-Route-53-Logging-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 307,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217823,
+      "title": "Route 53 - Resolver DNS Firewall",
+      "asset": {
+        "_class": "asset",
+        "id": 69115467,
+        "asset_type": "Video",
+        "title": "SOA - Route 53 - Resolver DNS Firewall v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Route-53-Resolver-DNS-Firewall-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 308,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217805,
+      "title": "Route 53 - Application Recovery Controller",
+      "asset": {
+        "_class": "asset",
+        "id": 69115469,
+        "asset_type": "Video",
+        "title": "SOA - Route 53 - Application Recovery Controller v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Route-53-Application-Recovery-Controller-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 309,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217783,
+      "title": "Route 53 - Profiles",
+      "asset": {
+        "_class": "asset",
+        "id": 69115471,
+        "asset_type": "Video",
+        "title": "SOA - Route 53 - Profiles v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Route-53-Profiles-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 310,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217763,
+      "title": "Route 53 - Cross-Account Private Hosted Zone",
+      "asset": {
+        "_class": "asset",
+        "id": 69115391,
+        "asset_type": "Video",
+        "title": "SOA - Route 53 - Cross Account Private Hosted Zone v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Route-53-Cross-Account-Private-Hosted-Zone-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 311,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13193876,
+      "title": "[SAA/DVA] Route 53 - Section Cleanup",
+      "asset": {
+        "_class": "asset",
+        "id": 36036600,
+        "asset_type": "Video",
+        "title": "SAA_-_Route_53_-_Cleanup_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-Route-53-Cleanup-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 312,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293742,
+      "title": "Route 53 Quiz",
+      "object_index": 20
+    },
+    {
+      "_class": "chapter",
+      "id": 3095060,
+      "title": "Networking - VPC",
+      "object_index": 22
+    },
+    {
+      "_class": "lecture",
+      "id": 13221952,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 36707702,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Section_Introduction_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Section-Introduction-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 313,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221960,
+      "title": "[SAA] CIDR, Private vs Public IP",
+      "asset": {
+        "_class": "asset",
+        "id": 70792931,
+        "asset_type": "Video",
+        "title": "SAA - VPC - CIDR and IP v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-CIDR-and-IP-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 314,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221962,
+      "title": "[SAA] Default VPC Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 36707734,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Default_VPC_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Default-VPC-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 315,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221966,
+      "title": "[SAA] VPC Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 36707754,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_VPC_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-VPC-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 316,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875536,
+      "title": "[SAA] VPC Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 36707722,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_VPC_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-VPC-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 317,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221968,
+      "title": "[SAA] Subnet Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 36707742,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Subnet_Overview_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Subnet-Overview-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 318,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875410,
+      "title": "[SAA] Subnet Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 36707718,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Subnet_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Subnet-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 319,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217745,
+      "title": "VPC Troubleshooting",
+      "asset": {
+        "_class": "asset",
+        "id": 69115385,
+        "asset_type": "Video",
+        "title": "SOA - VPC - Troubleshooting v1.mp4",
+        "external_url": "",
+        "filename": "SOA-VPC-Troubleshooting-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 320,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217751,
+      "title": "VPC IP Address Manager (IPAM)",
+      "asset": {
+        "_class": "asset",
+        "id": 69115395,
+        "asset_type": "Video",
+        "title": "SOA - VPC - IPAM v1.mp4",
+        "external_url": "",
+        "filename": "SOA-VPC-IPAM-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 321,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221972,
+      "title": "[SAA] Internet Gateways & Route Tables",
+      "asset": {
+        "_class": "asset",
+        "id": 36707716,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Internet_Gateway_and_Route_Tables_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Internet-Gateway-and-Route-Tables-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 322,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875414,
+      "title": "[SAA] Internet Gateways & Route Tables Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 41581280,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Internet_Gateway_and_Route_Tables_-_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Internet-Gateway-and-Route-Tables-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 323,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221996,
+      "title": "[SAA] Bastion Hosts",
+      "asset": {
+        "_class": "asset",
+        "id": 43614844,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Bastion_Hosts_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Bastion-Hosts-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 324,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875424,
+      "title": "[SAA] Bastion Hosts Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 54049132,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Bastion_Hosts_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Bastion-Hosts-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 325,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221974,
+      "title": "[SAA] NAT Instances",
+      "asset": {
+        "_class": "asset",
+        "id": 36707696,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_NAT_Instances_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-NAT-Instances-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 326,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875428,
+      "title": "[SAA] NAT Instances Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 41581278,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_NAT_Instances_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-NAT-Instances-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 327,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221976,
+      "title": "[SAA] NAT Gateways",
+      "asset": {
+        "_class": "asset",
+        "id": 50651042,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_NAT_Gateway_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-NAT-Gateway-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 328,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875442,
+      "title": "[SAA] NAT Gateways Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 36707748,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_NAT_Gateways_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-NAT-Gateways-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 329,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221982,
+      "title": "[SAA] DNS Resolution Options & Route 53 Private Zones",
+      "asset": {
+        "_class": "asset",
+        "id": 36707682,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_DNS_Resolution_and_Private_Route_53_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-DNS-Resolution-and-Private-Route-53-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 330,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875444,
+      "title": "[SAA] DNS Resolution Options & Route 53 Private Zones Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 36707720,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_DNS_Resolution_and_Private_Route_53_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-DNS-Resolution-and-Private-Route-53-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 331,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221984,
+      "title": "[SAA] NACL & Security Groups",
+      "asset": {
+        "_class": "asset",
+        "id": 36707680,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_NACL_and_SG_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-NACL-and-SG-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 332,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875450,
+      "title": "[SAA] NACL & Security Groups Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 36707730,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_NACL_and_SG_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-NACL-and-SG-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 333,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217701,
+      "title": "VPC Managed Prefix List",
+      "asset": {
+        "_class": "asset",
+        "id": 69115389,
+        "asset_type": "Video",
+        "title": "SOA - VPC -  Managed Prefix List v1.mp4",
+        "external_url": "",
+        "filename": "SOA-VPC-Managed-Prefix-List-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 334,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28757750,
+      "title": "[SAA] VPC Reachability Analyzer",
+      "asset": {
+        "_class": "asset",
+        "id": 36543066,
+        "asset_type": "Video",
+        "title": "SOA_-_VPC_-_Reachability_Analyzer_v1.mp4",
+        "external_url": "",
+        "filename": "SOA-VPC-Reachability-Analyzer-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 335,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875466,
+      "title": "[SAA] VPC Reachability Analyzer Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 36707756,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Reachability_Analyzer_Hands_On_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Reachability-Analyzer-Hands-On-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 336,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217691,
+      "title": "VPC Block Public Access (BPA)",
+      "asset": {
+        "_class": "asset",
+        "id": 69115387,
+        "asset_type": "Video",
+        "title": "SOA - VPC - Block Public Access v1.mp4",
+        "external_url": "",
+        "filename": "SOA-VPC-Block-Public-Access-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 337,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221988,
+      "title": "[SAA] VPC Peering",
+      "asset": {
+        "_class": "asset",
+        "id": 50279896,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_VPC_Peering_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-VPC-Peering-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 338,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875454,
+      "title": "[SAA] VPC Peering Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 41581270,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_VPC_Peering_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-VPC-Peering-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 339,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221990,
+      "title": "[SAA] VPC Endpoints",
+      "asset": {
+        "_class": "asset",
+        "id": 43614814,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_VPC_Endpoints_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-VPC-Endpoints-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 340,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875456,
+      "title": "[SAA] VPC Endpoints Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 41581272,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_VPC_Endpoints_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-VPC-Endpoints-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 341,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28876036,
+      "title": "[SAA] VPC Flow Logs",
+      "asset": {
+        "_class": "asset",
+        "id": 69142631,
+        "asset_type": "Video",
+        "title": "SAA - VPC - Flow Logs v5.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Flow-Logs-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 342,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13221992,
+      "title": "[SAA] VPC Flow Logs Hands On + Athena",
+      "asset": {
+        "_class": "asset",
+        "id": 47699252,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Flow_Logs_Hands_On_v4.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Flow-Logs-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 343,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13222006,
+      "title": "[SAA] Site to Site VPN, Virtual Private Gateway & Customer Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 36707688,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Site_to_Site_VPN_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Site-to-Site-VPN-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 344,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875476,
+      "title": "[SAA] Site to Site VPN, Virtual Private Gateway & Customer Gateway Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 41581276,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Site_to_Site_VPN_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Site-to-Site-VPN-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 345,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218757,
+      "title": "AWS Client VPN",
+      "asset": {
+        "_class": "asset",
+        "id": 69115957,
+        "asset_type": "Video",
+        "title": "CCP - VPC - Client VPN v1.mp4",
+        "external_url": "",
+        "filename": "CCP-VPC-Client-VPN-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 346,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516542,
+      "title": "[SAA] Direct Connect & Direct Connect Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 43004410,
+        "asset_type": "Video",
+        "title": "SAA - VPC - Direct Connect and Direct Connect Gateway v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Direct-Connect-and-Direct-Connect-Gateway-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 347,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33935356,
+      "title": "[SAA] Site to Site VPN as a backup to Direct Connect",
+      "asset": {
+        "_class": "asset",
+        "id": 43614828,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Site_to_Site_VPN_as_a_backup_to_Direct_Connect_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Site-to-Site-VPN-as-a-backup-to-Direct-Connect-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 348,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516546,
+      "title": "[SAA] AWS PrivateLink - VPC Endpoint Services",
+      "asset": {
+        "_class": "asset",
+        "id": 36707706,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_PrivateLink_VPC_Endpoint_Services_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-PrivateLink-VPC-Endpoint-Services-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 349,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875482,
+      "title": "[SAA] AWS PrivateLink - VPC Endpoint Services Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 64327383,
+        "asset_type": "Video",
+        "title": "SAA - VPC - PrivateLink VPC Endpoint Services Hands On v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-PrivateLink-VPC-Endpoint-Services-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 350,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875488,
+      "title": "[SAA] AWS ClassicLink",
+      "asset": {
+        "_class": "asset",
+        "id": 36708488,
+        "asset_type": "Video",
+        "title": "VPC - ClassicLink v2.mp4",
+        "external_url": "",
+        "filename": "VPC-ClassicLink-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 351,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875496,
+      "title": "[SAA] Transit Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 70793387,
+        "asset_type": "Video",
+        "title": "SAA - VPC - Transit Gateway v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Transit-Gateway-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 352,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217687,
+      "title": "Transit Gateway for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 69115381,
+        "asset_type": "Video",
+        "title": "SOA - Transit Gateway - CloudOps v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Transit-Gateway-CloudOps-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 353,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28757748,
+      "title": "[SAA] VPC Traffic Mirroring",
+      "asset": {
+        "_class": "asset",
+        "id": 36543070,
+        "asset_type": "Video",
+        "title": "SOA_-_VPC_-_Traffic_Mirroring_v1.mp4",
+        "external_url": "",
+        "filename": "SOA-VPC-Traffic-Mirroring-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 354,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875502,
+      "title": "[SAA] IPv6 for VPC",
+      "asset": {
+        "_class": "asset",
+        "id": 63040107,
+        "asset_type": "Video",
+        "title": "SAA - VPC - IPv6 v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-IPv6-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 355,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875504,
+      "title": "[SAA] IPv6 for VPC Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 41581284,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_IPv6_Hands_On_v3.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-IPv6-Hands-On-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 356,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13222012,
+      "title": "[SAA] Egress Only Internet Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 36707698,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_EGress_Only_Internet_Gateway_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-EGress-Only-Internet-Gateway-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 357,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875506,
+      "title": "[SAA] Egress Only Internet Gateway Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 36707686,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_EGress_Only_Internet_Gateway_Hands_On_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-EGress-Only-Internet-Gateway-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 358,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28875510,
+      "title": "[SAA] VPC Section Cleanup",
+      "asset": {
+        "_class": "asset",
+        "id": 36707744,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Cleanup_v2.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Cleanup-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 359,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33935360,
+      "title": "[SAA] Network Firewall",
+      "asset": {
+        "_class": "asset",
+        "id": 43614832,
+        "asset_type": "Video",
+        "title": "SAA_-_VPC_-_Network_Firewall_v1.mp4",
+        "external_url": "",
+        "filename": "SAA-VPC-Network-Firewall-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 360,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293744,
+      "title": "VPC Quiz",
+      "object_index": 21
+    },
+    {
+      "_class": "chapter",
+      "id": 6609794,
+      "title": "Other Services",
+      "object_index": 23
+    },
+    {
+      "_class": "lecture",
+      "id": 27516552,
+      "title": "Other Services Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 34857718,
+        "asset_type": "Video",
+        "title": "SOA_-_Other_Services_Section.mp4",
+        "external_url": "",
+        "filename": "SOA-Other-Services-Section.mp4",
+        "download_urls": null
+      },
+      "object_index": 361,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218721,
+      "title": "Amazon SQS",
+      "asset": {
+        "_class": "asset",
+        "id": 69117527,
+        "asset_type": "Video",
+        "title": "SAA - SQS - Overview v3.mp4",
+        "external_url": "",
+        "filename": "SAA-SQS-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 362,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218723,
+      "title": "Amazon SQS - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69115973,
+        "asset_type": "Video",
+        "title": "SAA - SQS - Standard Hands On v4.mp4",
+        "external_url": "",
+        "filename": "SAA-SQS-Standard-Hands-On-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 363,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217679,
+      "title": "Amazon SQS for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 69115383,
+        "asset_type": "Video",
+        "title": "SOA - SQS - CloudOps v1.mp4",
+        "external_url": "",
+        "filename": "SOA-SQS-CloudOps-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 364,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218713,
+      "title": "Amazon SNS",
+      "asset": {
+        "_class": "asset",
+        "id": 69115961,
+        "asset_type": "Video",
+        "title": "SAA - SNS - Overview v4.mp4",
+        "external_url": "",
+        "filename": "SAA-SNS-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 365,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218711,
+      "title": "Amazon SNS - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69115969,
+        "asset_type": "Video",
+        "title": "SAA - SNS - Hands On v2.mp4",
+        "external_url": "",
+        "filename": "SAA-SNS-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 366,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217667,
+      "title": "Amazon SNS for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 69115377,
+        "asset_type": "Video",
+        "title": "SOA - SNS - CloudOps v1.mp4",
+        "external_url": "",
+        "filename": "SOA-SNS-CloudOps-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 367,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218703,
+      "title": "Amazon ECS",
+      "asset": {
+        "_class": "asset",
+        "id": 69115967,
+        "asset_type": "Video",
+        "title": "SAA - ECS - Overview v3.mp4",
+        "external_url": "",
+        "filename": "SAA-ECS-Overview-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 368,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218689,
+      "title": "Amazon ECS - Create Cluster - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70793839,
+        "asset_type": "Video",
+        "title": "SAA - ECS - Hands On - Create Cluster v6.mp4",
+        "external_url": "",
+        "filename": "SAA-ECS-Hands-On-Create-Cluster-v6.mp4",
+        "download_urls": null
+      },
+      "object_index": 369,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218697,
+      "title": "Amazon ECS - Create Service - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69115907,
+        "asset_type": "Video",
+        "title": "SAA - ECS - Hands On - Create Service v5.mp4",
+        "external_url": "",
+        "filename": "SAA-ECS-Hands-On-Create-Service-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 370,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218681,
+      "title": "Amazon ECS - Service Auto Scaling",
+      "asset": {
+        "_class": "asset",
+        "id": 69115895,
+        "asset_type": "Video",
+        "title": "SAA - ECS - Auto Scaling v3.mp4",
+        "external_url": "",
+        "filename": "SAA-ECS-Auto-Scaling-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 371,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218661,
+      "title": "Amazon ECS - Rolling Updates",
+      "asset": {
+        "_class": "asset",
+        "id": 69115889,
+        "asset_type": "Video",
+        "title": "SAA - ECS - Rolling Updates v2.mp4",
+        "external_url": "",
+        "filename": "SAA-ECS-Rolling-Updates-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 372,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217655,
+      "title": "Amazon ECS for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 69115371,
+        "asset_type": "Video",
+        "title": "SOA - ECS - CloudOps v1.mp4",
+        "external_url": "",
+        "filename": "SOA-ECS-CloudOps-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 373,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218657,
+      "title": "Amazon EKS",
+      "asset": {
+        "_class": "asset",
+        "id": 69115893,
+        "asset_type": "Video",
+        "title": "SAA - EKS - Overview v4.mp4",
+        "external_url": "",
+        "filename": "SAA-EKS-Overview-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 374,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218653,
+      "title": "Amazon EKS - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69115901,
+        "asset_type": "Video",
+        "title": "SAA - EKS - Hands On v1.mp4",
+        "external_url": "",
+        "filename": "SAA-EKS-Hands-On-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 375,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218645,
+      "title": "Amazon EKS - Logging",
+      "asset": {
+        "_class": "asset",
+        "id": 69115891,
+        "asset_type": "Video",
+        "title": "DOP - EKS - Logging v1.mp4",
+        "external_url": "",
+        "filename": "DOP-EKS-Logging-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 376,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217645,
+      "title": "Amazon EKS for CloudOps",
+      "asset": {
+        "_class": "asset",
+        "id": 69115785,
+        "asset_type": "Video",
+        "title": "SOA - EKS - CloudOps v1.mp4",
+        "external_url": "",
+        "filename": "SOA-EKS-CloudOps-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 377,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516568,
+      "title": "[CCP] X-Ray",
+      "asset": {
+        "_class": "asset",
+        "id": 34863496,
+        "asset_type": "Video",
+        "title": "CCP - X-Ray Overview.mp4",
+        "external_url": "",
+        "filename": "CCP-X-Ray-Overview.mp4",
+        "download_urls": null
+      },
+      "object_index": 378,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218637,
+      "title": "X-Ray & ECS",
+      "asset": {
+        "_class": "asset",
+        "id": 69115903,
+        "asset_type": "Video",
+        "title": "ECS & X-Ray.mp4",
+        "external_url": "",
+        "filename": "ECS-X-Ray.mp4",
+        "download_urls": null
+      },
+      "object_index": 379,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217627,
+      "title": "Amazon Managed Service for Grafana",
+      "asset": {
+        "_class": "asset",
+        "id": 69115379,
+        "asset_type": "Video",
+        "title": "SOA - Managed Grafana - Overview v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Managed-Grafana-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 380,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53217619,
+      "title": "Amazon Managed Service for Prometheus",
+      "asset": {
+        "_class": "asset",
+        "id": 69115373,
+        "asset_type": "Video",
+        "title": "SOA - Managed Prometheus - Overview v1.mp4",
+        "external_url": "",
+        "filename": "SOA-Managed-Prometheus-Overview-v1.mp4",
+        "download_urls": null
+      },
+      "object_index": 381,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 53218627,
+      "title": "AWS Resource Access Manager (RAM)",
+      "asset": {
+        "_class": "asset",
+        "id": 69115899,
+        "asset_type": "Video",
+        "title": "RAM - Overview Hands On v2.mp4",
+        "external_url": "",
+        "filename": "RAM-Overview-Hands-On-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 382,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5293748,
+      "title": "Other Services Quiz",
+      "object_index": 22
+    },
+    {
+      "_class": "chapter",
+      "id": 3097386,
+      "title": "Preparing for the Exam + Practice Exam - AWS Certified CloudOps Engineer",
+      "object_index": 24
+    },
+    {
+      "_class": "lecture",
+      "id": 13231664,
+      "title": "Exam Preparation - Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 16112692,
+        "asset_type": "Video",
+        "title": "Exam Tips Section Introduction.mp4",
+        "external_url": "",
+        "filename": "Exam-Tips-Section-Introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 383,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516574,
+      "title": "State of Learning Checkpoint - AWS Certified CloudOps Engineer Associate",
+      "asset": {
+        "_class": "asset",
+        "id": 55574478,
+        "asset_type": "Video",
+        "title": "SOA_-_State_of_Learning_v3.mp4",
+        "external_url": "",
+        "filename": "SOA-State-of-Learning-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 384,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37342572,
+      "title": "IMPORTANT NOTE ABOUT EXAM LABS",
+      "asset": {
+        "_class": "asset",
+        "id": 49718114,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 385,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13231674,
+      "title": "Exam Walkthrough and Signup",
+      "asset": {
+        "_class": "asset",
+        "id": 56556962,
+        "asset_type": "Video",
+        "title": "AWS_-_Exam_Sign_Up_v5.mp4",
+        "external_url": "",
+        "filename": "AWS-Exam-Sign-Up-v5.mp4",
+        "download_urls": null
+      },
+      "object_index": 386,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 16366948,
+      "title": "Save 50% on your AWS Exam Cost!",
+      "asset": {
+        "_class": "asset",
+        "id": 56556966,
+        "asset_type": "Video",
+        "title": "AWS_-_Save_50_on_AWS_Exam_Cost_v2.mp4",
+        "external_url": "",
+        "filename": "AWS-Save-50-on-AWS-Exam-Cost-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 387,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17109372,
+      "title": "Get an Extra 30 Minutes on your AWS Exam - Non Native English Speakers only",
+      "asset": {
+        "_class": "asset",
+        "id": 59209771,
+        "asset_type": "Video",
+        "title": "AWS_-_Request_30_minute_accommodation_on_AWS_exam_v2.mp4",
+        "external_url": "",
+        "filename": "AWS-Request-30-minute-accommodation-on-AWS-exam-v2.mp4",
+        "download_urls": null
+      },
+      "object_index": 388,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4573830,
+      "title": "Practice Test - AWS Certified CloudOps Engineer Associate",
+      "object_index": 1
+    },
+    {
+      "_class": "chapter",
+      "id": 3097464,
+      "title": "Congratulations - AWS Certified CloudOps Engineer Associate",
+      "object_index": 25
+    },
+    {
+      "_class": "lecture",
+      "id": 39035344,
+      "title": "AWS Certification Paths",
+      "asset": {
+        "_class": "asset",
+        "id": 59209769,
+        "asset_type": "Video",
+        "title": "AWS_-_Common_-_Certification_Paths_v3.mp4",
+        "external_url": "",
+        "filename": "AWS-Common-Certification-Paths-v3.mp4",
+        "download_urls": null
+      },
+      "object_index": 389,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 45115961,
+      "title": "Congratulations",
+      "asset": {
+        "_class": "asset",
+        "id": 58316331,
+        "asset_type": "Video",
+        "title": "Conclusion_video_-_FINAL_RENDER.mp4",
+        "external_url": "",
+        "filename": "Conclusion-video-FINAL-RENDER.mp4",
+        "download_urls": null
+      },
+      "object_index": 390,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13281936,
+      "title": "Bonus Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 71597343,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 391,
+      "supplementary_assets": []
+    }
+  ]
+}

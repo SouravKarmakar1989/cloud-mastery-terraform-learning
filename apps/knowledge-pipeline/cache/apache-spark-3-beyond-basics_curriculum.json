@@ -1,0 +1,449 @@
+{
+  "count": 32,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 6744684,
+      "title": "Before your begin",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 28077808,
+      "title": "Course Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 37202560,
+        "asset_type": "Video",
+        "title": "DC000-Course Introduction - Promo.mp4",
+        "external_url": "",
+        "filename": "DC000-Course-Introduction-Promo.mp4",
+        "download_urls": null
+      },
+      "object_index": 1,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6744686,
+      "title": "Spark Architecture",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 28250318,
+      "title": "Spark Cluster Runtime Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 37202616,
+        "asset_type": "Video",
+        "title": "DC005-Spark Cluster and Runtime architecture.mp4",
+        "external_url": "",
+        "filename": "DC005-Spark-Cluster-and-Runtime-architecture.mp4",
+        "download_urls": null
+      },
+      "object_index": 2,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28250326,
+      "title": "Spark Submit and Important Options",
+      "asset": {
+        "_class": "asset",
+        "id": 37202610,
+        "asset_type": "Video",
+        "title": "DC006-Spark submit and some important options.mp4",
+        "external_url": "",
+        "filename": "DC006-Spark-submit-and-some-important-options.mp4",
+        "download_urls": null
+      },
+      "object_index": 3,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28250336,
+      "title": "Deploy Modes - Client and Cluster mode",
+      "asset": {
+        "_class": "asset",
+        "id": 37202614,
+        "asset_type": "Video",
+        "title": "DC007-Deploy Modes - Client and Cluster mode.mp4",
+        "external_url": "",
+        "filename": "DC007-Deploy-Modes-Client-and-Cluster-mode.mp4",
+        "download_urls": null
+      },
+      "object_index": 4,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28250338,
+      "title": "Spark Jobs - Stage, Shuffle, Task, Slots",
+      "asset": {
+        "_class": "asset",
+        "id": 37202642,
+        "asset_type": "Video",
+        "title": "DC008-Spark Jobs - Stage, Shuffle, Task, Slots.mp4",
+        "external_url": "",
+        "filename": "DC008-Spark-Jobs-Stage-Shuffle-Task-Slots.mp4",
+        "download_urls": null
+      },
+      "object_index": 5,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28250340,
+      "title": "Spark SQL Engine and Query Planning",
+      "asset": {
+        "_class": "asset",
+        "id": 37202622,
+        "asset_type": "Video",
+        "title": "DC009-Spark SQL Engine and Query Planning.mp4",
+        "external_url": "",
+        "filename": "DC009-Spark-SQL-Engine-and-Query-Planning.mp4",
+        "download_urls": null
+      },
+      "object_index": 6,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5322050,
+      "title": "Lets Practice - Quiz 1",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 28250366,
+      "title": "Lets Practice - Quiz 1 Solution Video",
+      "asset": {
+        "_class": "asset",
+        "id": 37202670,
+        "asset_type": "Video",
+        "title": "DCS01-Lets Practice - Quiz 1 Solution Video.mp4",
+        "external_url": "",
+        "filename": "DCS01-Lets-Practice-Quiz-1-Solution-Video.mp4",
+        "download_urls": null
+      },
+      "object_index": 7,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5322052,
+      "title": "Lets Practice - Quiz 2",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 28250368,
+      "title": "Lets Practice - Quiz 2  Solution Video",
+      "asset": {
+        "_class": "asset",
+        "id": 37202674,
+        "asset_type": "Video",
+        "title": "DCS02-Lets Practice - Quiz 2 Solution Video.mp4",
+        "external_url": "",
+        "filename": "DCS02-Lets-Practice-Quiz-2-Solution-Video.mp4",
+        "download_urls": null
+      },
+      "object_index": 8,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6786146,
+      "title": "Performance and Applied Understanding",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 28250254,
+      "title": "Spark Memory Allocation",
+      "asset": {
+        "_class": "asset",
+        "id": 37218964,
+        "asset_type": "Video",
+        "title": "DC010-Spark Memory Allocation.mp4",
+        "external_url": "",
+        "filename": "DC010-Spark-Memory-Allocation.mp4",
+        "download_urls": null
+      },
+      "object_index": 9,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28250256,
+      "title": "Spark Memory Management",
+      "asset": {
+        "_class": "asset",
+        "id": 37218972,
+        "asset_type": "Video",
+        "title": "DC011-Spark Memory Management.mp4",
+        "external_url": "",
+        "filename": "DC011-Spark-Memory-Management.mp4",
+        "download_urls": null
+      },
+      "object_index": 10,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28250258,
+      "title": "Spark Adaptive Query Execution",
+      "asset": {
+        "_class": "asset",
+        "id": 37202694,
+        "asset_type": "Video",
+        "title": "DC012-Spark Adaptive Query Execution.mp4",
+        "external_url": "",
+        "filename": "DC012-Spark-Adaptive-Query-Execution.mp4",
+        "download_urls": null
+      },
+      "object_index": 11,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28956102,
+      "title": "Spark AQE Dynamic Join Optimization",
+      "asset": {
+        "_class": "asset",
+        "id": 37202676,
+        "asset_type": "Video",
+        "title": "DC013-Spark AQE Dynamic Join Optimization.mp4",
+        "external_url": "",
+        "filename": "DC013-Spark-AQE-Dynamic-Join-Optimization.mp4",
+        "download_urls": null
+      },
+      "object_index": 12,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28956112,
+      "title": "Handling Data Skew in Spark Joins",
+      "asset": {
+        "_class": "asset",
+        "id": 37202684,
+        "asset_type": "Video",
+        "title": "DC014-Handling Data Skew in Spark.mp4",
+        "external_url": "",
+        "filename": "DC014-Handling-Data-Skew-in-Spark.mp4",
+        "download_urls": null
+      },
+      "object_index": 13,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28250262,
+      "title": "Spark Dynamic Partition Pruning",
+      "asset": {
+        "_class": "asset",
+        "id": 37202704,
+        "asset_type": "Video",
+        "title": "DC015-Spark Dynamic Partition Pruning.mp4",
+        "external_url": "",
+        "filename": "DC015-Spark-Dynamic-Partition-Pruning.mp4",
+        "download_urls": null
+      },
+      "object_index": 14,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29237458,
+      "title": "Data Caching in Spark",
+      "asset": {
+        "_class": "asset",
+        "id": 37202710,
+        "asset_type": "Video",
+        "title": "DC016-Data Caching in Spark.mp4",
+        "external_url": "",
+        "filename": "DC016-Data-Caching-in-Spark.mp4",
+        "download_urls": null
+      },
+      "object_index": 15,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29237470,
+      "title": "Repartition and Coalesce",
+      "asset": {
+        "_class": "asset",
+        "id": 37202702,
+        "asset_type": "Video",
+        "title": "DC017-Repartition and Coalesce.mp4",
+        "external_url": "",
+        "filename": "DC017-Repartition-and-Coalesce.mp4",
+        "download_urls": null
+      },
+      "object_index": 16,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29237480,
+      "title": "Dataframe Hints",
+      "asset": {
+        "_class": "asset",
+        "id": 37202700,
+        "asset_type": "Video",
+        "title": "DC018-Dataframe Hints.mp4",
+        "external_url": "",
+        "filename": "DC018-Dataframe-Hints.mp4",
+        "download_urls": null
+      },
+      "object_index": 17,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29237486,
+      "title": "Broadcast Variables",
+      "asset": {
+        "_class": "asset",
+        "id": 37202714,
+        "asset_type": "Video",
+        "title": "DC019-Broadcast Variables.mp4",
+        "external_url": "",
+        "filename": "DC019-Broadcast-Variables.mp4",
+        "download_urls": null
+      },
+      "object_index": 18,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29237498,
+      "title": "Accumulators",
+      "asset": {
+        "_class": "asset",
+        "id": 37202726,
+        "asset_type": "Video",
+        "title": "DC020-Accumulators.mp4",
+        "external_url": "",
+        "filename": "DC020-Accumulators.mp4",
+        "download_urls": null
+      },
+      "object_index": 19,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29237514,
+      "title": "Speculative Execution",
+      "asset": {
+        "_class": "asset",
+        "id": 37202730,
+        "asset_type": "Video",
+        "title": "DC021-Speculative Execution.mp4",
+        "external_url": "",
+        "filename": "DC021-Speculative-Execution.mp4",
+        "download_urls": null
+      },
+      "object_index": 20,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29237518,
+      "title": "Dynamic Resource Allocation",
+      "asset": {
+        "_class": "asset",
+        "id": 37202736,
+        "asset_type": "Video",
+        "title": "DC022-Dynamic Resource Allocation.mp4",
+        "external_url": "",
+        "filename": "DC022-Dynamic-Resource-Allocation.mp4",
+        "download_urls": null
+      },
+      "object_index": 21,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29237524,
+      "title": "Spark Schedulers",
+      "asset": {
+        "_class": "asset",
+        "id": 37202742,
+        "asset_type": "Video",
+        "title": "DC023-Spark Schedulers.mp4",
+        "external_url": "",
+        "filename": "DC023-Spark-Schedulers.mp4",
+        "download_urls": null
+      },
+      "object_index": 22,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35800248,
+      "title": "Unit Testing in Spark",
+      "asset": {
+        "_class": "asset",
+        "id": 46087574,
+        "asset_type": "Video",
+        "title": "SC088-Unit Testing in Spark.mp4",
+        "external_url": "",
+        "filename": "SC088-Unit-Testing-in-Spark.mp4",
+        "download_urls": null
+      },
+      "object_index": 23,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5322046,
+      "title": "Lets Practice - Quiz 3",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 28250398,
+      "title": "Lets Practice - Quiz 3 Solution Video",
+      "asset": {
+        "_class": "asset",
+        "id": 37202760,
+        "asset_type": "Video",
+        "title": "DCS03-Lets Practice - Quiz 3 Solution Video.mp4",
+        "external_url": "",
+        "filename": "DCS03-Lets-Practice-Quiz-3-Solution-Video.mp4",
+        "download_urls": null
+      },
+      "object_index": 24,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 5322048,
+      "title": "Lets Practice - Quiz 4",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 28250402,
+      "title": "Lets Practice - Quiz 4 Solution Video",
+      "asset": {
+        "_class": "asset",
+        "id": 37202744,
+        "asset_type": "Video",
+        "title": "DCS04-Lets Practice - Quiz 4 Solution Video.mp4",
+        "external_url": "",
+        "filename": "DCS04-Lets-Practice-Quiz-4-Solution-Video.mp4",
+        "download_urls": null
+      },
+      "object_index": 25,
+      "supplementary_assets": []
+    }
+  ]
+}

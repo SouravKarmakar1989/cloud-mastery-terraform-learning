@@ -23,6 +23,8 @@ OUT_DIR ?=
 AZURE_DIR := azure-infrastructure
 AWS_DIR   := aws-infrastructure
 KB_APP_DIR := apps/knowledge-pipeline
+GHIAC_DIR := platforms/github-iac-terraform
+RUNNER_DIR := platforms/github-runner-platform
 PYTHON ?= python
 
 # ── Colour helpers ────────────────────────────────────────────────────────────
@@ -63,6 +65,16 @@ help:
 	@echo "    make kb-extract-section URL=<course_url> SECTION=<n> [OUT_DIR=name]"
 	@echo "    make kb-build                       Build domain KB + master index"
 	@echo "    make kb-audit                       Run line integrity audit"
+	@echo ""
+	@echo "  $(CYAN)Imported GitHub IAC$(RESET)"
+	@echo "    make ghiac-help                     Show imported GitHub IAC targets"
+	@echo "    make ghiac-install                  Run setup in imported GitHub IAC"
+	@echo "    make ghiac-plan MOD=<path> ENV=<env>    Terraform plan via imported GitHub IAC"
+	@echo "    make ghiac-apply MOD=<path> ENV=<env>   Terraform apply via imported GitHub IAC"
+	@echo "    make ghiac-destroy MOD=<path> ENV=<env> Terraform destroy via imported GitHub IAC"
+	@echo ""
+	@echo "  $(CYAN)Imported Runner Platform$(RESET)"
+	@echo "    make runner-readme                  Print runner platform location"
 	@echo ""
 	@echo "  $(CYAN)Pre-commit$(RESET)"
 	@echo "    make hooks            Run all pre-commit hooks against all files"
@@ -189,3 +201,34 @@ kb-build:
 kb-audit:
 	@echo "$(GREEN)→ Auditing knowledge base integrity$(RESET)"
 	cd $(KB_APP_DIR) && $(PYTHON) audit_knowledge_base_integrity.py
+
+# ── Imported GitHub IAC passthrough targets ────────────────────────────────
+.PHONY: ghiac-help
+ghiac-help:
+	@if [ ! -d "$(GHIAC_DIR)" ]; then echo "Missing $(GHIAC_DIR)"; exit 1; fi
+	$(MAKE) -C $(GHIAC_DIR) help
+
+.PHONY: ghiac-install
+ghiac-install:
+	@if [ ! -d "$(GHIAC_DIR)" ]; then echo "Missing $(GHIAC_DIR)"; exit 1; fi
+	$(MAKE) -C $(GHIAC_DIR) install
+
+.PHONY: ghiac-plan
+ghiac-plan:
+	@if [ ! -d "$(GHIAC_DIR)" ]; then echo "Missing $(GHIAC_DIR)"; exit 1; fi
+	$(MAKE) -C $(GHIAC_DIR) plan MOD="$(MOD)" ENV="$(ENV)"
+
+.PHONY: ghiac-apply
+ghiac-apply:
+	@if [ ! -d "$(GHIAC_DIR)" ]; then echo "Missing $(GHIAC_DIR)"; exit 1; fi
+	$(MAKE) -C $(GHIAC_DIR) apply MOD="$(MOD)" ENV="$(ENV)"
+
+.PHONY: ghiac-destroy
+ghiac-destroy:
+	@if [ ! -d "$(GHIAC_DIR)" ]; then echo "Missing $(GHIAC_DIR)"; exit 1; fi
+	$(MAKE) -C $(GHIAC_DIR) destroy MOD="$(MOD)" ENV="$(ENV)"
+
+.PHONY: runner-readme
+runner-readme:
+	@if [ ! -d "$(RUNNER_DIR)" ]; then echo "Missing $(RUNNER_DIR)"; exit 1; fi
+	@echo "Runner platform is available at $(RUNNER_DIR)"

@@ -1,0 +1,730 @@
+{
+  "count": 68,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 9644156,
+      "title": "Introduction",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 40317402,
+      "title": "Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 52384768,
+        "asset_type": "Video",
+        "title": "RDS and Aurora Intro.mp4",
+        "created": "2023-10-30T18:50:53Z"
+      },
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 47444925,
+      "title": "List of Commonly Used Acronyms",
+      "asset": {
+        "_class": "asset",
+        "id": 61354645,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2024-12-12T18:23:32Z"
+      },
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 40317406,
+      "title": "AWS Database Concepts",
+      "asset": {
+        "_class": "asset",
+        "id": 52140944,
+        "asset_type": "Video",
+        "title": "S1L1 - Database Basics.mp4",
+        "created": "2023-10-19T15:39:53Z"
+      },
+      "object_index": 3
+    },
+    {
+      "_class": "quiz",
+      "id": 6135816,
+      "title": "Quiz: AWS Database Concepts",
+      "object_index": 1
+    },
+    {
+      "_class": "chapter",
+      "id": 9644158,
+      "title": "RDS",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 40317418,
+      "title": "Introduction to RDS",
+      "asset": {
+        "_class": "asset",
+        "id": 52181676,
+        "asset_type": "Video",
+        "title": "S1L2 - Introduction to RDS.mp4",
+        "created": "2023-10-21T11:33:21Z"
+      },
+      "object_index": 4
+    },
+    {
+      "_class": "quiz",
+      "id": 6144650,
+      "title": "Quiz: Introduction to RDS",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 40412252,
+      "title": "RDS Networking and Subnet Groups",
+      "asset": {
+        "_class": "asset",
+        "id": 52181668,
+        "asset_type": "Video",
+        "title": "S1L3 - RDS Networking and Subnet Groups.mp4",
+        "created": "2023-10-21T11:33:13Z"
+      },
+      "object_index": 5
+    },
+    {
+      "_class": "quiz",
+      "id": 6144660,
+      "title": "Quiz: RDS Networking and Subnet Groups",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 40412352,
+      "title": "Demo: Create a VPC and RDS Subnet Group",
+      "asset": {
+        "_class": "asset",
+        "id": 52181698,
+        "asset_type": "Video",
+        "title": "S1L4 - Demo Create a VPC and Subnet Group.mp4",
+        "created": "2023-10-21T11:35:22Z"
+      },
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 40317426,
+      "title": "Demo: Create an RDS Instance",
+      "asset": {
+        "_class": "asset",
+        "id": 52185368,
+        "asset_type": "Video",
+        "title": "S1L5 - Demo Create an RDS Instance.mp4",
+        "created": "2023-10-21T15:06:25Z"
+      },
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 40412384,
+      "title": "Demo: View an RDS Instance Configuration and Details",
+      "asset": {
+        "_class": "asset",
+        "id": 52222258,
+        "asset_type": "Video",
+        "title": "S1L6 - Demo View an RDS Instance.mp4",
+        "created": "2023-10-23T14:48:15Z"
+      },
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 40317420,
+      "title": "RDS Backups and Snapshots",
+      "asset": {
+        "_class": "asset",
+        "id": 52222516,
+        "asset_type": "Video",
+        "title": "S1L7 - RDS Backups and Snapshots.mp4",
+        "created": "2023-10-23T15:02:16Z"
+      },
+      "object_index": 9
+    },
+    {
+      "_class": "quiz",
+      "id": 6226872,
+      "title": "Quiz - RDS Backups and Snapshots",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 40317438,
+      "title": "Demo: Restore RDS From Backup",
+      "asset": {
+        "_class": "asset",
+        "id": 52222550,
+        "asset_type": "Video",
+        "title": "S1L8 - Demo Restore RDS From Backup.mp4",
+        "created": "2023-10-23T15:04:09Z"
+      },
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 40317440,
+      "title": "Demo: Copy and Share RDS Snapshots",
+      "asset": {
+        "_class": "asset",
+        "id": 52223016,
+        "asset_type": "Video",
+        "title": "S1L9 - Demo Copy Snapshots.mp4",
+        "created": "2023-10-23T15:23:01Z"
+      },
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 40412468,
+      "title": "RDS Encryption in Transit",
+      "asset": {
+        "_class": "asset",
+        "id": 52225202,
+        "asset_type": "Video",
+        "title": "S1L10 - RDS Encryption in Transit.mp4",
+        "created": "2023-10-23T17:02:07Z"
+      },
+      "object_index": 12
+    },
+    {
+      "_class": "quiz",
+      "id": 6226924,
+      "title": "Quiz - RDS Encryption in Transit",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 40412482,
+      "title": "Demo: Delete an RDS Instance",
+      "asset": {
+        "_class": "asset",
+        "id": 52223006,
+        "asset_type": "Video",
+        "title": "S1L11 - Demo Delete an RDS Instance.mp4",
+        "created": "2023-10-23T15:22:47Z"
+      },
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 40412502,
+      "title": "Authenticating to RDS with Credentials, IAM, and Secrets Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 52226490,
+        "asset_type": "Video",
+        "title": "S1L12 - Authenticating to RDS.mp4",
+        "created": "2023-10-23T17:52:29Z"
+      },
+      "object_index": 14
+    },
+    {
+      "_class": "quiz",
+      "id": 6226958,
+      "title": "Quiz - Authenticating to RDS with Credentials, IAM, and Secrets Manager",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 40412538,
+      "title": "RDS Parameter Groups",
+      "asset": {
+        "_class": "asset",
+        "id": 52224318,
+        "asset_type": "Video",
+        "title": "S1L13 - Parameter Groups.mp4",
+        "created": "2023-10-23T16:19:14Z"
+      },
+      "object_index": 15
+    },
+    {
+      "_class": "quiz",
+      "id": 6227000,
+      "title": "Quiz - RDS Parameter Groups",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 40412558,
+      "title": "RDS Option Groups",
+      "asset": {
+        "_class": "asset",
+        "id": 52223948,
+        "asset_type": "Video",
+        "title": "S1L14 - Option Groups.mp4",
+        "created": "2023-10-23T16:05:04Z"
+      },
+      "object_index": 16
+    },
+    {
+      "_class": "quiz",
+      "id": 6228666,
+      "title": "Quiz - RDS Option Groups",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 40412566,
+      "title": "Demo: Parameter and Option Groups",
+      "asset": {
+        "_class": "asset",
+        "id": 52223884,
+        "asset_type": "Video",
+        "title": "S1L15 - Demo Parameter and Option Groups.mp4",
+        "created": "2023-10-23T16:00:57Z"
+      },
+      "object_index": 17
+    },
+    {
+      "_class": "lecture",
+      "id": 40412580,
+      "title": "RDS Proxy",
+      "asset": {
+        "_class": "asset",
+        "id": 52223880,
+        "asset_type": "Video",
+        "title": "S1L16 - RDS Proxy.mp4",
+        "created": "2023-10-23T16:00:34Z"
+      },
+      "object_index": 18
+    },
+    {
+      "_class": "quiz",
+      "id": 6228676,
+      "title": "Quiz - RDS Proxy",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 40412594,
+      "title": "Multi-AZ RDS",
+      "asset": {
+        "_class": "asset",
+        "id": 61376551,
+        "asset_type": "Video",
+        "title": "S1L17 - Multi-AZ RDS.mp4",
+        "created": "2024-12-13T14:21:13Z"
+      },
+      "object_index": 19
+    },
+    {
+      "_class": "quiz",
+      "id": 6228796,
+      "title": "Quiz: Multi-AZ RDS",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 40412600,
+      "title": "Demo: Configure Multi-AZ RDS and Test Failover with Reboot",
+      "asset": {
+        "_class": "asset",
+        "id": 52140948,
+        "asset_type": "Video",
+        "title": "S1L18 - Demo Multi-AZ RDS.mp4",
+        "created": "2023-10-19T15:40:05Z"
+      },
+      "object_index": 20
+    },
+    {
+      "_class": "lecture",
+      "id": 40412612,
+      "title": "RDS Read Replicas",
+      "asset": {
+        "_class": "asset",
+        "id": 52140938,
+        "asset_type": "Video",
+        "title": "S1L19 - Read Replicas.mp4",
+        "created": "2023-10-19T15:39:31Z"
+      },
+      "object_index": 21
+    },
+    {
+      "_class": "quiz",
+      "id": 6228800,
+      "title": "Quiz - RDS Read Replicas",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 40448892,
+      "title": "Demo: Read Replicas",
+      "asset": {
+        "_class": "asset",
+        "id": 52223828,
+        "asset_type": "Video",
+        "title": "S1L20 - Demo RDS Read Replicas.mp4",
+        "created": "2023-10-23T15:57:07Z"
+      },
+      "object_index": 22
+    },
+    {
+      "_class": "chapter",
+      "id": 9675726,
+      "title": "Aurora",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 40448894,
+      "title": "Introduction to Aurora",
+      "asset": {
+        "_class": "asset",
+        "id": 52246476,
+        "asset_type": "Video",
+        "title": "S2L1 - Introduction to Aurora.mp4",
+        "created": "2023-10-24T14:54:39Z"
+      },
+      "object_index": 23
+    },
+    {
+      "_class": "quiz",
+      "id": 6234220,
+      "title": "Quiz - Introduction to Aurora",
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 40448896,
+      "title": "Aurora Endpoints",
+      "asset": {
+        "_class": "asset",
+        "id": 52246488,
+        "asset_type": "Video",
+        "title": "S2L2 - Aurora Endpoints.mp4",
+        "created": "2023-10-24T14:54:50Z"
+      },
+      "object_index": 24
+    },
+    {
+      "_class": "quiz",
+      "id": 6228808,
+      "title": "Quiz - Aurora Endpoints",
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 40448898,
+      "title": "Aurora Storage and Caching",
+      "asset": {
+        "_class": "asset",
+        "id": 52246504,
+        "asset_type": "Video",
+        "title": "S2L3 - Aurora Storage and Caching.mp4",
+        "created": "2023-10-24T14:55:11Z"
+      },
+      "object_index": 25
+    },
+    {
+      "_class": "quiz",
+      "id": 6232388,
+      "title": "Quiz - Aurora Storage and Caching",
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 40448902,
+      "title": "Aurora Network Security and Authentication",
+      "asset": {
+        "_class": "asset",
+        "id": 52246540,
+        "asset_type": "Video",
+        "title": "S2L4 - Aurora Security.mp4",
+        "created": "2023-10-24T14:55:49Z"
+      },
+      "object_index": 26
+    },
+    {
+      "_class": "quiz",
+      "id": 6232394,
+      "title": "Quiz - Aurora Network Security and Authentication",
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 40448908,
+      "title": "Aurora High Availability",
+      "asset": {
+        "_class": "asset",
+        "id": 52318200,
+        "asset_type": "Video",
+        "title": "S2L5 - Aurora Availability.mp4",
+        "created": "2023-10-27T12:24:49Z"
+      },
+      "object_index": 27
+    },
+    {
+      "_class": "quiz",
+      "id": 6232420,
+      "title": "Quiz - Aurora High Availability",
+      "object_index": 16
+    },
+    {
+      "_class": "lecture",
+      "id": 40537979,
+      "title": "Aurora Global Databases",
+      "asset": {
+        "_class": "asset",
+        "id": 52281975,
+        "asset_type": "Video",
+        "title": "S2L6 - Aurora Global Databases.mp4",
+        "created": "2023-10-25T21:12:15Z"
+      },
+      "object_index": 28
+    },
+    {
+      "_class": "quiz",
+      "id": 6232444,
+      "title": "Quiz - Aurora Global Databases",
+      "object_index": 17
+    },
+    {
+      "_class": "lecture",
+      "id": 40448918,
+      "title": "Aurora Serverless",
+      "asset": {
+        "_class": "asset",
+        "id": 52318006,
+        "asset_type": "Video",
+        "title": "S2L8 - Aurora Serverless.mp4",
+        "created": "2023-10-27T12:13:32Z"
+      },
+      "object_index": 29
+    },
+    {
+      "_class": "quiz",
+      "id": 6232468,
+      "title": "Quiz - Aurora Serverless",
+      "object_index": 18
+    },
+    {
+      "_class": "lecture",
+      "id": 40552880,
+      "title": "Aurora Instance Classes",
+      "asset": {
+        "_class": "asset",
+        "id": 52318972,
+        "asset_type": "Video",
+        "title": "S2L7 - Aurora Instance Classes.mp4",
+        "created": "2023-10-27T12:58:09Z"
+      },
+      "object_index": 30
+    },
+    {
+      "_class": "quiz",
+      "id": 6232518,
+      "title": "Quiz - Aurora Instance Classes",
+      "object_index": 19
+    },
+    {
+      "_class": "lecture",
+      "id": 40448922,
+      "title": "Demo: Create an Aurora Database Cluster",
+      "asset": {
+        "_class": "asset",
+        "id": 52318036,
+        "asset_type": "Video",
+        "title": "S2L9 - Demo Create an Aurora Cluster.mp4",
+        "created": "2023-10-27T12:15:32Z"
+      },
+      "object_index": 31
+    },
+    {
+      "_class": "lecture",
+      "id": 40448932,
+      "title": "Demo: Add Serverless to a Provisioned Database Cluster",
+      "asset": {
+        "_class": "asset",
+        "id": 52318026,
+        "asset_type": "Video",
+        "title": "S2L10 - Demo Add Serverless to a Provisioned Cluster.mp4",
+        "created": "2023-10-27T12:14:52Z"
+      },
+      "object_index": 32
+    },
+    {
+      "_class": "lecture",
+      "id": 40448936,
+      "title": "Demo: Create an Aurora Serverless Database Cluster",
+      "asset": {
+        "_class": "asset",
+        "id": 52384774,
+        "asset_type": "Video",
+        "title": "S2L11 - Demo Create an Aurora Serverless Cluster.mp4",
+        "created": "2023-10-30T18:51:12Z"
+      },
+      "object_index": 33
+    },
+    {
+      "_class": "lecture",
+      "id": 40614302,
+      "title": "Demo: Add a Region to an Aurora Cluster (Global Database)",
+      "asset": {
+        "_class": "asset",
+        "id": 52384802,
+        "asset_type": "Video",
+        "title": "S2L12 - Demo Add a Region to an Aurora Cluster.mp4",
+        "created": "2023-10-30T18:53:17Z"
+      },
+      "object_index": 34
+    },
+    {
+      "_class": "chapter",
+      "id": 12578599,
+      "title": "DynamoDB",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 53066561,
+      "title": "Traditional Database Architecture with Relational Databases",
+      "asset": {
+        "_class": "asset",
+        "id": 69073933,
+        "asset_type": "Video",
+        "title": "S3L1 - Traditional Database Architecture.mp4",
+        "created": "2025-10-28T12:28:58Z"
+      },
+      "object_index": 35
+    },
+    {
+      "_class": "lecture",
+      "id": 53066603,
+      "title": "Database Scaling: Vertical vs. Horizontal",
+      "asset": {
+        "_class": "asset",
+        "id": 69073935,
+        "asset_type": "Video",
+        "title": "S3L2 - Horizontal and Vertical Scaling.mp4",
+        "created": "2025-10-28T12:29:05Z"
+      },
+      "object_index": 36
+    },
+    {
+      "_class": "lecture",
+      "id": 53066605,
+      "title": "Introduction to NoSQL Databases",
+      "asset": {
+        "_class": "asset",
+        "id": 69074663,
+        "asset_type": "Video",
+        "title": "S3L3 - Introduction to NoSQL Databases.mp4",
+        "created": "2025-10-28T13:13:39Z"
+      },
+      "object_index": 37
+    },
+    {
+      "_class": "lecture",
+      "id": 53066565,
+      "title": "Introduction to DyanmoDB - The AWS Managed NoSQL Database",
+      "asset": {
+        "_class": "asset",
+        "id": 69084423,
+        "asset_type": "Video",
+        "title": "S3L4 - Introduction to DynamoDB.mp4",
+        "created": "2025-10-28T22:43:39Z"
+      },
+      "object_index": 38
+    },
+    {
+      "_class": "lecture",
+      "id": 53109927,
+      "title": "Hands-On: Create a DynamoDB Table with Partition and Sort Keys",
+      "asset": {
+        "_class": "asset",
+        "id": 69124377,
+        "asset_type": "Video",
+        "title": "S3L5 - Demo DynamoDB Table with Partition and Sort Keys.mp4",
+        "created": "2025-10-30T14:19:37Z"
+      },
+      "object_index": 39
+    },
+    {
+      "_class": "lecture",
+      "id": 53112479,
+      "title": "Understanding DynamoDB Capacity - Properly Size DynamoDB and Reduce Costs",
+      "asset": {
+        "_class": "asset",
+        "id": 69125429,
+        "asset_type": "Video",
+        "title": "S3L6 - Provisioned and On-Demand Capacity.mp4",
+        "created": "2025-10-30T15:03:04Z"
+      },
+      "object_index": 40
+    },
+    {
+      "_class": "lecture",
+      "id": 53112829,
+      "title": "Hands-On: Configure DynamoDB Capacity - Provisioned and On-Demand",
+      "asset": {
+        "_class": "asset",
+        "id": 69125521,
+        "asset_type": "Video",
+        "title": "S3L7 - Demo Configure DynamoDB Capacity - Provisioned and On-Demand.mp4",
+        "created": "2025-10-30T15:06:58Z"
+      },
+      "object_index": 41
+    },
+    {
+      "_class": "lecture",
+      "id": 53225469,
+      "title": "DynamoDB API Basics for Cert Prep",
+      "asset": {
+        "_class": "asset",
+        "id": 69125611,
+        "asset_type": "Video",
+        "title": "S3L8 - DynamoDB API Basics for Certification Prep.mp4",
+        "created": "2025-10-30T15:12:35Z"
+      },
+      "object_index": 42
+    },
+    {
+      "_class": "lecture",
+      "id": 53115599,
+      "title": "DynamoDB Indexes \u2014 Search Effectively with LSI and GSI",
+      "asset": {
+        "_class": "asset",
+        "id": 69126387,
+        "asset_type": "Video",
+        "title": "S3L9 - DynamoDB Secondary Indexes LSI GSI.mp4",
+        "created": "2025-10-30T15:57:36Z"
+      },
+      "object_index": 43
+    },
+    {
+      "_class": "lecture",
+      "id": 53125909,
+      "title": "Hands-On: Configure DynamoDB Indexes",
+      "asset": {
+        "_class": "asset",
+        "id": 69147659,
+        "asset_type": "Video",
+        "title": "S3L10 - Demo - DynamoDB Secondary Indexes LSI GSI.mp4",
+        "created": "2025-10-31T15:22:49Z"
+      },
+      "object_index": 44
+    },
+    {
+      "_class": "lecture",
+      "id": 40448938,
+      "title": "Bonus Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 52167152,
+        "asset_type": "Video",
+        "title": "Bonus Lecture.mp4",
+        "created": "2023-10-20T15:39:15Z"
+      },
+      "object_index": 45
+    }
+  ]
+}

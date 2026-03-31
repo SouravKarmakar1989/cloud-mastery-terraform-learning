@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "kb_files_checked": 5,
+    "source_links_checked": 723,
+    "source_missing_on_disk": 0,
+    "sources_with_issues": 0,
+    "kb_files_with_issues": 0,
+    "total_transcript_units_checked": 41475,
+    "total_kb_key_insights_checked": 41475,
+    "required_source_total": 723,
+    "required_source_covered": 723,
+    "required_source_missing": 0,
+    "outside_required_source_root": 0
+  },
+  "issues_count": 0,
+  "issues": []
+}

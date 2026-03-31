@@ -1,0 +1,109 @@
+[
+  {
+    "title": "AWS Compute Knowledge Base",
+    "folder": "AWS Compute Knowledge Base",
+    "topics": [
+      "01_EC2_Foundations.md",
+      "02_Load_Balancing_Auto_Scaling.md",
+      "03_Containers_Orchestration.md",
+      "04_Serverless_Compute.md",
+      "05_Infrastructure_As_Code_Deployment.md",
+      "06_Specialized_Compute_Operations.md"
+    ],
+    "line_total": 17807
+  },
+  {
+    "title": "AWS Storage Knowledge Base",
+    "folder": "AWS Storage Knowledge Base",
+    "topics": [
+      "01_S3_Foundations.md",
+      "02_S3_Advanced_Data_Management.md",
+      "03_Block_File_Hybrid_Storage.md",
+      "04_Data_Protection_Archival.md",
+      "05_Storage_Transfer_Operations.md",
+      "06_Storage_Cost_Performance.md"
+    ],
+    "line_total": 13469
+  },
+  {
+    "title": "AWS Database Knowledge Base",
+    "folder": "AWS Database Knowledge Base",
+    "topics": [
+      "01_Relational_Databases.md",
+      "02_DynamoDB_Key_Value.md",
+      "03_Cache_Acceleration.md",
+      "04_Specialized_Databases.md",
+      "05_Database_Selection_Operations.md"
+    ],
+    "line_total": 6497
+  },
+  {
+    "title": "AWS Data Engineering Knowledge Base",
+    "folder": "AWS Data Engineering Knowledge Base",
+    "topics": [
+      "01_Data_Platform_Foundations.md",
+      "02_Spark_Core_Processing.md",
+      "03_Streaming_Messaging.md",
+      "04_Lakehouse_ETL_Governance.md",
+      "05_AWS_Analytics_Services.md",
+      "06_BI_Query_Consumption.md"
+    ],
+    "line_total": 75488
+  },
+  {
+    "title": "AWS AI Knowledge Base",
+    "folder": "AWS AI Knowledge Base",
+    "topics": [
+      "01_AI_Service_Foundations.md",
+      "02_SageMaker_ML_Lifecycle.md",
+      "03_Generative_AI_Bedrock.md",
+      "04_MLOps_Deployment_Runtime.md",
+      "05_AI_Governance_Security.md"
+    ],
+    "line_total": 41475
+  },
+  {
+    "title": "AWS Observability Knowledge Base",
+    "folder": "AWS Observability Knowledge Base",
+    "topics": [
+      "01_Metrics_Logs_Alarms.md",
+      "02_Audit_Config_Compliance.md",
+      "03_Tracing_Event_Driven_Automation.md",
+      "04_Log_Analytics_Investigation.md",
+      "05_Network_Observability_Telemetry.md"
+    ],
+    "line_total": 4567
+  },
+  {
+    "title": "AWS Cost Control Knowledge Base",
+    "folder": "AWS Cost Control Knowledge Base",
+    "topics": [
+      "01_Billing_Budgets_Visibility.md",
+      "02_Pricing_Commitments_Optimization.md",
+      "03_Advisor_Governance_Chargeback.md"
+    ],
+    "line_total": 726
+  },
+  {
+    "title": "AWS Disaster Recovery Knowledge Base",
+    "folder": "AWS Disaster Recovery Knowledge Base",
+    "topics": [
+      "01_DR_Strategies_Core.md",
+      "02_Backup_Restore_Recovery.md",
+      "03_Elastic_DR_Resilience.md",
+      "04_Service_Level_DR_Patterns.md"
+    ],
+    "line_total": 530
+  },
+  {
+    "title": "AWS Migration Knowledge Base",
+    "folder": "AWS Migration Knowledge Base",
+    "topics": [
+      "01_Migration_Strategies_Assessment.md",
+      "02_Data_Database_Migration.md",
+      "03_Server_App_Migration.md",
+      "04_Hybrid_Transfer_Execution.md"
+    ],
+    "line_total": 767
+  }
+]

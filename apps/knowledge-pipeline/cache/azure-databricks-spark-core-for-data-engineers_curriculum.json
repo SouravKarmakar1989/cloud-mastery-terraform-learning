@@ -1,0 +1,3778 @@
+{
+  "count": 221,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 6609324,
+      "title": "Introduction",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 27514570,
+      "title": "Course Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 60551515,
+        "asset_type": "Video",
+        "title": "ADB 1.1 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-1.1-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 1,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514574,
+      "title": "Course Structure",
+      "asset": {
+        "_class": "asset",
+        "id": 47322918,
+        "asset_type": "Video",
+        "title": "ADB 1.2 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-1.2-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 2,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514578,
+      "title": "Course Resources Download",
+      "asset": {
+        "_class": "asset",
+        "id": 47323842,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 3,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27550820,
+      "title": "Course Slides Download",
+      "asset": {
+        "_class": "asset",
+        "id": 47322796,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 4,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48878816,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-05-19_09-31-45-e2412238292d6beab36bc2d8961d85e9/original.pdf?response-content-disposition=attachment%3B+filename%3DAzure%2BDatabricks%2BCourse%2BSlide%2BDeck%2BV4.pdf&Expires=1773839554&Signature=afXhhLU4tbdWPOwfy1AMq~U4yjobOWr6U0t27H3UWjUhr1c8oFOLj~5q1NwnHO4-OoXlIijePWExV1BrszYpYqbrrpSOFvGp8C9cJU0yG1hZxcXJa-xcDNAvJAAJ14zD-9H6gymCbAYIP8rT1VKGVp3LZ00hH0qxSIEm7VIeKQvrbU8MyMnl7kr1XIYMo4CBpomRpgrxIDA7URvKo9yyLDrFX9Vc-aqeQBL-ZBADi4VFkAKywP7b4oxXpPNvHN2iNDf-L465BDf7F3F6~4hou76CuL2eVDkK5IY6UqlLctjSNXDFnAm4LGwSK3nZo8GSbmIG6eGKexKC4BYZDkBOUQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Azure Databricks Course Slide Deck V4.pdf",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "Azure-Databricks-Course-Slide-Deck-V4.pdf"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 6609326,
+      "title": "Azure Subscription (Optional)",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 27514586,
+      "title": "Creating Azure Free Account",
+      "asset": {
+        "_class": "asset",
+        "id": 65577497,
+        "asset_type": "Video",
+        "title": "DEA 2.1.mp4",
+        "external_url": "",
+        "filename": "DEA-2.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 5,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514590,
+      "title": "Azure Portal Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 65577495,
+        "asset_type": "Video",
+        "title": "DEA 2.2.mp4",
+        "external_url": "",
+        "filename": "DEA-2.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 6,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47190088,
+          "download_urls": null,
+          "title": "Azure Portal URL",
+          "external_url": "https://portal.azure.com/",
+          "asset_type": "ExternalLink",
+          "filename": "Azure-Portal-URL"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 6609334,
+      "title": "Azure Databricks Overview",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 27514596,
+      "title": "Introduction to Azure Databricks",
+      "asset": {
+        "_class": "asset",
+        "id": 65577511,
+        "asset_type": "Video",
+        "title": "ADB 3.1 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-3.1-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 7,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514606,
+      "title": "Creating Azure Databricks Service",
+      "asset": {
+        "_class": "asset",
+        "id": 65914847,
+        "asset_type": "Video",
+        "title": "ADB 3.2 V4.mp4",
+        "external_url": "",
+        "filename": "ADB-3.2-V4.mp4",
+        "download_urls": null
+      },
+      "object_index": 8,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 45455466,
+          "download_urls": null,
+          "title": "Azure Databricks Pricing",
+          "external_url": "https://www.databricks.com/product/azure-pricing",
+          "asset_type": "ExternalLink",
+          "filename": "Azure-Databricks-Pricing"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 27514610,
+      "title": "Databricks User Interface Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 65577517,
+        "asset_type": "Video",
+        "title": "ADB 3.4 V5.mp4",
+        "external_url": "",
+        "filename": "ADB-3.4-V5.mp4",
+        "download_urls": null
+      },
+      "object_index": 9,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514614,
+      "title": "Azure Databricks Architecture Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 68622625,
+        "asset_type": "Video",
+        "title": "ADB 3.3 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-3.3-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 10,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6609342,
+      "title": "Databricks Clusters",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 27514634,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 45455356,
+        "asset_type": "Video",
+        "title": "ADB 4.1 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-4.1-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 11,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514640,
+      "title": "Introduction to Azure Databricks Clusters",
+      "asset": {
+        "_class": "asset",
+        "id": 68682981,
+        "asset_type": "Video",
+        "title": "ADB 4.2 V3.mp4",
+        "external_url": "",
+        "filename": "ADB-4.2-V3.mp4",
+        "download_urls": null
+      },
+      "object_index": 12,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514642,
+      "title": "Azure Databricks Cluster Configuration",
+      "asset": {
+        "_class": "asset",
+        "id": 68683707,
+        "asset_type": "Video",
+        "title": "DEA 4.3.mp4",
+        "external_url": "",
+        "filename": "DEA-4.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 13,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514646,
+      "title": "Creating Azure Databricks Cluster",
+      "asset": {
+        "_class": "asset",
+        "id": 68709821,
+        "asset_type": "Video",
+        "title": "ADB 4.4 V3.mp4",
+        "external_url": "",
+        "filename": "ADB-4.4-V3.mp4",
+        "download_urls": null
+      },
+      "object_index": 14,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 52888293,
+      "title": "Troubleshooting Databricks Cluster Quota and VM Issues",
+      "asset": {
+        "_class": "asset",
+        "id": 68666739,
+        "asset_type": "Video",
+        "title": "ADB 4.9.mp4",
+        "external_url": "",
+        "filename": "ADB-4.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 15,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35298740,
+      "title": "Azure Databricks Pricing",
+      "asset": {
+        "_class": "asset",
+        "id": 49161742,
+        "asset_type": "Video",
+        "title": "ADB 4.6 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-4.6-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 16,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 45455494,
+          "download_urls": null,
+          "title": "Azure Databricks Pricing",
+          "external_url": "https://azure.microsoft.com/en-gb/pricing/details/databricks/",
+          "asset_type": "ExternalLink",
+          "filename": "Azure-Databricks-Pricing"
+        },
+        {
+          "_class": "asset",
+          "id": 45455514,
+          "download_urls": null,
+          "title": "Azure Linux Virtual Machine Pricing",
+          "external_url": "https://azure.microsoft.com/en-gb/pricing/details/virtual-machines/linux/#pricing",
+          "asset_type": "ExternalLink",
+          "filename": "Azure-Linux-Virtual-Machine-Pricing"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 35298750,
+      "title": "Azure Cost Control",
+      "asset": {
+        "_class": "asset",
+        "id": 45455424,
+        "asset_type": "Video",
+        "title": "ADB 4.7 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-4.7-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 17,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514650,
+      "title": "Azure Databricks Cluster Pool",
+      "asset": {
+        "_class": "asset",
+        "id": 45455410,
+        "asset_type": "Video",
+        "title": "ADB 4.5 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-4.5-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 18,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 35298768,
+      "title": "Azure Databricks Cluster Policy",
+      "asset": {
+        "_class": "asset",
+        "id": 45455454,
+        "asset_type": "Video",
+        "title": "ADB 4.8 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-4.8-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 19,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 45455548,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2022-12-14_16-54-50-de0837b805ff0b26a1bfa68671729071/original.json?response-content-disposition=attachment%3B+filename%3DLearning%2BCompute%2BCluster%2BPolicy.json&Expires=1773839554&Signature=U~5geKqezP6MlqAqm99x2HmJ1Zvb7KIMK5qeXi08TluBxaO6jhMPbxq0OOPWe-fhdsittmYTh3V55VZ7CM7B2HpDdx28FwwfrLy02K6QoOzqiB5s205eNmUKi98WzTm3B28M8Gjbl9Sr2CSEP884q6Tbg~ifVY4OCwqxwCLggGPvHaIAkQjpkA3tdkwVYdOMjh0ig8rQxBUc4U~jheA1OGvaPg3C2VkCSJ7ZHYe7xkmZFF0iD~z8FORp85oi2cfF~ZsHw21vHn5-EhCh0YwCMLzCv3IoMu6xuqfNG7b8sRaMPMTQg~QTJHCo7QfNhn0xa446GZgFw8XrmcuQc7uhqg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Learning Compute Cluster Policy.json",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "Learning-Compute-Cluster-Policy.json"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 6609346,
+      "title": "Databricks Notebooks",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 27514654,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 47322928,
+        "asset_type": "Video",
+        "title": "ADB 5.1 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-5.1-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 20,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514660,
+      "title": "Azure Databricks Notebooks Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 68765129,
+        "asset_type": "Video",
+        "title": "ADB 5.2 V3.mp4",
+        "external_url": "",
+        "filename": "ADB-5.2-V3.mp4",
+        "download_urls": null
+      },
+      "object_index": 21,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27514662,
+      "title": "Magic commands",
+      "asset": {
+        "_class": "asset",
+        "id": 68765127,
+        "asset_type": "Video",
+        "title": "ADB 5.3 V3.mp4",
+        "external_url": "",
+        "filename": "ADB-5.3-V3.mp4",
+        "download_urls": null
+      },
+      "object_index": 22,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 45455582,
+          "download_urls": null,
+          "title": "Markdown Cheat Sheet",
+          "external_url": "https://www.markdownguide.org/cheat-sheet/#basic-synta",
+          "asset_type": "ExternalLink",
+          "filename": "Markdown-Cheat-Sheet"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 27514664,
+      "title": "Databricks Utilities",
+      "asset": {
+        "_class": "asset",
+        "id": 68765125,
+        "asset_type": "Video",
+        "title": "ADB 5.4 V3.mp4",
+        "external_url": "",
+        "filename": "ADB-5.4-V3.mp4",
+        "download_urls": null
+      },
+      "object_index": 23,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27550896,
+      "title": "Project Solution Download - Databricks Notebooks",
+      "asset": {
+        "_class": "asset",
+        "id": 47322964,
+        "asset_type": "Video",
+        "title": "ADB 3.5 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-3.5-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 24,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47323028,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-03-08_22-43-44-b41f071d356f2441787d70ab2d22ea6c/original.dbc?response-content-disposition=attachment%3B+filename%3DFormula1-Project-Solutions.dbc&Expires=1773839554&Signature=kMZ5V1KdIRi~WDDwnMocTg3-PBWs-gnV2y5I3ty2N83Ud8U2lIzDYbUjITu6WL47gi8qkz9re~-9nBj~xp7h~Til7Evpbwt61AQ-Zr8sVZCZTU3hXtyfM17D2u3EknwbxSfnaZRKsA61adF4U4S5Aik~2pd4KeE~R3Pi1qm5HtQeqM0hldGvMbnUO9tRnWzyBlsh1ErU6ZEy~NjeFJa6rZ43XMQvxo5zTG3tGbHgtDsU-8MPF-b0GS9HUzIwU8kunMvszNY~xRk0mweHwmxP1FxDI9bjOz3g-wUszMd69fLgYDuQmF4Wdud34RupzyeVdf9LT6s8LHpspvtyJBJ8QQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Formula1-Project-Solutions.dbc",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "Formula1-Project-Solutions.dbc"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 36760226,
+      "title": "Project Solution Download - Python/SQL Files",
+      "asset": {
+        "_class": "asset",
+        "id": 47323006,
+        "asset_type": "Video",
+        "title": "ADB 3.6 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-3.6-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 25,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47323026,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-03-08_22-43-31-0c582db635a3e07301d5c3372e3f03c4/original.zip?response-content-disposition=attachment%3B+filename%3DFormula1-Project-Solutions.zip&Expires=1773839554&Signature=chalBz61Zu2Kjy4rtwYzGYZ4cRnxtY-FOnNQzF05mgDjsFUthXqMtoS3~JZ3HIjkklvBGqcXjKmDa5JySj0ilKK--Cvy0PUjiJi3VCv9CoWZBa8uXR4q~dWorUGTk0dWZd8nXcm4lDWiBzKjoKTS2nSgyfnZus2URFSu7bftovLPaDcNIpFWiOI7HwZhs8yfX6npK01-fldS4K~qSZflWrf8V4ZOgCuLKpzApUuWpm2Z2BiwEtpr4I~li56DnydJwmc3hoNJfv9XMS5bep9Ms7nPeD4p7A8SDLqe1x7~~ZwARE14jDB0xtsxDUxX6Dh2ksnXHJQN6SfONPMdpZSj3A__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Formula1-Project-Solutions.zip",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "Formula1-Project-Solutions.zip"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 8791846,
+      "title": "Accessing Azure Data Lake from Databricks",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 36760238,
+      "title": "Accessing Azure Data Lake Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 60069873,
+        "asset_type": "Video",
+        "title": "ADB 24.1 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-24.1-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 26,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36760244,
+      "title": "Creating Azure Data Lake Storage Gen2",
+      "asset": {
+        "_class": "asset",
+        "id": 47323082,
+        "asset_type": "Video",
+        "title": "ADB 24.2.mp4",
+        "external_url": "",
+        "filename": "ADB-24.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 27,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47323208,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-03-08_22-55-38-74f92877d9b4b209d5336b5623b8a95a/original.csv?response-content-disposition=attachment%3B+filename%3Dcircuits.csv&Expires=1773839554&Signature=Wd6b3xYAKyQaYmYtrA751QJJiwGonoZC~EyaUp~lCCPHYoNaHED3PWE~C8teKStYeLEidFgBYWiJPqU7mKzyzek1ElFRlwiWOeqJo0JkwL1zxEnzwls13pEf4ETvR7tdoAIEBsWsDWQ1OYJX2qTs~q-GhiLjcdi0PaCAwBHBLW4zxMobxqDhuv~Lj1T1ohjefLZZV9r1zn8aW0dE~MvGG~PJlfd0FCn4i81OHhgB~ffgAk1VpsTNAyDAP~fjdiRdgnxxJFqhoNzd-PB9CayAM87rePdWGnWox0URZ9VTOpsTvzgU2TZd7FvOtZ8VmDpxanLfHJ4gl0sKapUQJJJxew__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "circuits.csv",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "circuits.csv"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 36760250,
+      "title": "Azure Storage Explorer Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 47323090,
+        "asset_type": "Video",
+        "title": "ADB 24.3.mp4",
+        "external_url": "",
+        "filename": "ADB-24.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 28,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47323216,
+          "download_urls": null,
+          "title": "Azure Storage Explorer Download URL",
+          "external_url": "https://azure.microsoft.com/en-us/products/storage/storage-explorer/",
+          "asset_type": "ExternalLink",
+          "filename": "Azure-Storage-Explorer-Download-URL"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 36760252,
+      "title": "Access Azure Data Lake using Access Keys",
+      "asset": {
+        "_class": "asset",
+        "id": 47323120,
+        "asset_type": "Video",
+        "title": "ADB 24.4.mp4",
+        "external_url": "",
+        "filename": "ADB-24.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 29,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47323226,
+          "download_urls": null,
+          "title": "Azure Blob File System (abfs) Driver documentation URL",
+          "external_url": "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-abfs-driver",
+          "asset_type": "ExternalLink",
+          "filename": "Azure-Blob-File-System-abfs-Driver-documentation-URL"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 36760256,
+      "title": "Access Azure Data Lake using SAS Token",
+      "asset": {
+        "_class": "asset",
+        "id": 47323132,
+        "asset_type": "Video",
+        "title": "ADB 24.5.mp4",
+        "external_url": "",
+        "filename": "ADB-24.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 30,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47323234,
+          "download_urls": null,
+          "title": "Access Using SAS Documentation",
+          "external_url": "https://learn.microsoft.com/en-us/azure/databricks/storage/azure-storage#access-azure-data-lake-storage-gen2-or-blob-storage-using-a-sas-token",
+          "asset_type": "ExternalLink",
+          "filename": "Access-Using-SAS-Documentation"
+        },
+        {
+          "_class": "asset",
+          "id": 47323238,
+          "download_urls": null,
+          "title": "SAS Overview URL",
+          "external_url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+          "asset_type": "ExternalLink",
+          "filename": "SAS-Overview-URL"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 36760262,
+      "title": "Access Azure Data Lake using Service Principal",
+      "asset": {
+        "_class": "asset",
+        "id": 51774830,
+        "asset_type": "Video",
+        "title": "ADB 24.6 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-24.6-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 31,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47323254,
+          "download_urls": null,
+          "title": "Access using Service Principal Documentation URL",
+          "external_url": "https://learn.microsoft.com/en-us/azure/databricks/storage/azure-storage#--access-azure-data-lake-storage-gen2-or-blob-storage-using-oauth-20-with-an-azure-service-principal",
+          "asset_type": "ExternalLink",
+          "filename": "Access-using-Service-Principal-Documentation-URL"
+        },
+        {
+          "_class": "asset",
+          "id": 47323260,
+          "download_urls": null,
+          "title": "Python f-string help URL",
+          "external_url": "https://realpython.com/python-f-strings/#f-strings-a-new-and-improved-way-to-format-strings-in-python",
+          "asset_type": "ExternalLink",
+          "filename": "Python-f-string-help-URL"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 36760266,
+      "title": "Cluster Scoped Authentication",
+      "asset": {
+        "_class": "asset",
+        "id": 47323128,
+        "asset_type": "Video",
+        "title": "ADB 24.7.mp4",
+        "external_url": "",
+        "filename": "ADB-24.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 32,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36760270,
+      "title": "Access Azure Data Lake using Credential Passthrough",
+      "asset": {
+        "_class": "asset",
+        "id": 60069877,
+        "asset_type": "Video",
+        "title": "ADB 24.8 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-24.8-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 33,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36760272,
+      "title": "Recommended Approach for Course Project",
+      "asset": {
+        "_class": "asset",
+        "id": 47323130,
+        "asset_type": "Video",
+        "title": "ADB 24.9.mp4",
+        "external_url": "",
+        "filename": "ADB-24.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 34,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 8791856,
+      "title": "Securing Access to Azure Data Lake",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 36760276,
+      "title": "Securing Secrets Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 47323146,
+        "asset_type": "Video",
+        "title": "ADB 25.1.mp4",
+        "external_url": "",
+        "filename": "ADB-25.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 35,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36760278,
+      "title": "Creating Azure Key Vault",
+      "asset": {
+        "_class": "asset",
+        "id": 48929614,
+        "asset_type": "Video",
+        "title": "ADB 25.2.mp4",
+        "external_url": "",
+        "filename": "ADB-25.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 36,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36760280,
+      "title": "Creating Secret Scope",
+      "asset": {
+        "_class": "asset",
+        "id": 51800816,
+        "asset_type": "Video",
+        "title": "ADB 25.3 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-25.3-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 37,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36760282,
+      "title": "Databricks Secrets Utility",
+      "asset": {
+        "_class": "asset",
+        "id": 47323162,
+        "asset_type": "Video",
+        "title": "ADB 25.4.mp4",
+        "external_url": "",
+        "filename": "ADB-25.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 38,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36760286,
+      "title": "Using Secrets to Access Azure Data Lake using notebooks",
+      "asset": {
+        "_class": "asset",
+        "id": 47323164,
+        "asset_type": "Video",
+        "title": "ADB 25.5.mp4",
+        "external_url": "",
+        "filename": "ADB-25.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 39,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36760288,
+      "title": "Using Secrets to Access Azure Data Lake using notebooks (Assignment)",
+      "asset": {
+        "_class": "asset",
+        "id": 47323170,
+        "asset_type": "Video",
+        "title": "ADB 25.6.mp4",
+        "external_url": "",
+        "filename": "ADB-25.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 40,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36760290,
+      "title": "Using Secrets Utility in Clusters",
+      "asset": {
+        "_class": "asset",
+        "id": 47323172,
+        "asset_type": "Video",
+        "title": "ADB 25.7.mp4",
+        "external_url": "",
+        "filename": "ADB-25.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 41,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6609890,
+      "title": "Mounting Data Lake Container to Databricks",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 27516982,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 47323492,
+        "asset_type": "Video",
+        "title": "ADB 6.1 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-6.1-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 42,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 54097571,
+      "title": "\u203c\ufe0f Important Note for Subscriptions Created After 18th December 2025",
+      "asset": {
+        "_class": "asset",
+        "id": 70289681,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 43,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27516986,
+      "title": "Databricks File System (DBFS)",
+      "asset": {
+        "_class": "asset",
+        "id": 47323304,
+        "asset_type": "Video",
+        "title": "ADB 6.2 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-6.2-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 44,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 34905056,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2021-07-16_12-49-30-9c5a089ff77842508385de2874ed2871/original.csv?response-content-disposition=attachment%3B+filename%3Dcircuits.csv&Expires=1773839555&Signature=nzW8WR2OJAtx2Kq-~Or3pJ~lkdxFv5mn6YNhi-jiQJE0~onk1bEp4193xrCBEKBD45mOxMHSqM-Y~pDtX-~x7FXlMq8~LfMIbdOCRkwu~3UKrO06-0r~vVLMkOUNZ7UY34aNAzaI~qV6o~D2dD2nx8jpcChi5WyoAIMcg~MeDvFYRfWJG~BTFmQ9cwgPeSlGqNOcxkGIu~J~km01U9g3IdW4ZC-BUliCk6R2VakddbAFTpmUTK2k~nmbYEn0PX3CmzC-Xz0jym0ARl3nPVn-ds1Lvoa~DNoOH3C-Y9XgYlRlPiQ5fHt8cZfdBikPczYY6i7Woc-T8HVLtsbAn5QWGA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "circuits.csv",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "circuits.csv"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 27516988,
+      "title": "Databricks Mount overview",
+      "asset": {
+        "_class": "asset",
+        "id": 47323288,
+        "asset_type": "Video",
+        "title": "ADB 6.3 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-6.3-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 45,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47323318,
+          "download_urls": null,
+          "title": "Mounting Azure Data Lake Documentation URL",
+          "external_url": "https://learn.microsoft.com/en-us/azure/databricks/dbfs/mounts",
+          "asset_type": "ExternalLink",
+          "filename": "Mounting-Azure-Data-Lake-Documentation-URL"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 27517008,
+      "title": "Mounting Azure Data Lake Storage Gen2",
+      "asset": {
+        "_class": "asset",
+        "id": 47324120,
+        "asset_type": "Video",
+        "title": "ADB 6.6 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-6.6-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 46,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47323968,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-03-08_23-58-55-e565ddc46fd0a82bf93af67ca265d013/original.py?response-content-disposition=attachment%3B+filename%3D7.mount_adls_using_service_principal.py&Expires=1773839555&Signature=7MakbqYONHGZUt4u0AOIp34UjHVyGDT9t7AKsmMwwMEoRnGubPXPGDZDPaedrzW4LPvtvJUAJ9imgrDbX4-u9NkkPbLp8pgntQUBYx0sPI74v9W4v3XHH~Xj8ZMjgR5eUUnFp5bwnwj3jnQzBidWSDV4mDuvVIdKgqXdy446ygBFlz5ll57Lx8jgv4Oxwgb4h30Ycs-kjHtsdAHB3W5-aQ5~Z4rV3nj5RssCtozky7rXWC~ijW8Fm~7I~Dogq5dJy~YFw2zX4QZL-dlFR6rIt-iPyl3mMCjVcN526c6F~O8-9ZAiiryPUZ-eZAwgFfu5JgJQKBfUx4TQDrstLbrrqg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "7.mount_adls_using_service_principal.py",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "7.mount-adls-using-service-principal.py"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 36760366,
+      "title": "Mounting Azure Data Lake Storage Gen2 (Assignment)",
+      "asset": {
+        "_class": "asset",
+        "id": 47323322,
+        "asset_type": "Video",
+        "title": "ADB 6.10 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-6.10-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 47,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47323970,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-03-08_23-59-02-47dd7eb0140d7185e770d49e2963c0f8/original.py?response-content-disposition=attachment%3B+filename%3D8.mount_adls_containers_for_project.py&Expires=1773839555&Signature=3Vkv3Rb2j5RYkTomHz2Mgg1GE2E7uwWT~9UwnwWTKjIUbIlJBAJVoB1KC97yxqrwYY4uEqOwddSxP73RbGXrv5dFoWQZiYuj6FQW3N6dt1EYU3iEcv2SsvOwFyQOokUf6joUiRnNmBG1TzA2y1gGD-alfRBid-1H5CoZQ2SMr5dTqQcCkfSMJ7tgvNRMTgKGwtgfLzuwMgCCZdc7AAkB3hysnaNp5GHD-Pp35nAKzqHxWCG31xFIXXG1Z42Idud0hJdgxPrGcIZSt0KO0EBJD1wgbhTOqni6p2ecZbZF0M55o1kfGp1rkMBVxNzOZa-1Zyy1zCWT3KTecFu5170zug__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "8.mount_adls_containers_for_project.py",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "8.mount-adls-containers-for-project.py"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 6609900,
+      "title": "Formula1 Project Overview",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 27517034,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46908554,
+        "asset_type": "Video",
+        "title": "ADB 8.2.mp4",
+        "external_url": "",
+        "filename": "ADB-8.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 48,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517040,
+      "title": "Formula1 Data Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46908594,
+        "asset_type": "Video",
+        "title": "ADB 8.3.mp4",
+        "external_url": "",
+        "filename": "ADB-8.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 49,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 53251316,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-12-10_17-58-40-6f8476070995fc2dd9f27501f65c9892/original.txt?response-content-disposition=attachment%3B+filename%3Dformula1_ergast_data_user_guide.txt&Expires=1773839555&Signature=vNv1rxiLZ8lzzGcOubSzCx~6u5oQLXjhEHxft4CKfVLifSDmDhRVWza3fIns0fA~nGoHP7~0JnKg8vYZw537-Og1ORk7iSVLmvQdPIphC0xrtuH78GnAjSUVRp6eLe9F0TE8YzTo0l1inAHykTsDoZIUgNj-laKA59-j12mfm2mDKP1sNnO8Ka7iE2uL2CYfEjZAVi8Z6pKheuyZa4KNIkjHhP~dZWr~BE4HFyxQTGVsZBGFG87dC9rrPvsIxjas4qO459cpmRbLmJLOWzPuQ62xiAuQFIUkKc2UH18hDglebVIe5lHd9a6PAnlDAmunEUgD6Jfi7tgU12nStKeJsQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "formula1_ergast_data_user_guide.txt",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "formula1-ergast-data-user-guide.txt"
+        },
+        {
+          "_class": "asset",
+          "id": 53251318,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-12-10_17-58-40-e38d755119802b2b3c65c5c736be417c/original.png?response-content-disposition=attachment%3B+filename%3Dformula1_ergast_db_data_model.png&Expires=1773839555&Signature=1Bz6XGWAVAx8tDN6NhzbUk~uGJDdlXJZoVJe-69U2A3XsarFIYYIKtRGuPqNZvE2Bi17Y8Kor2y2d3s-MMrrUMpLFFnDwAvePlJoH8-MeUnEnPYRdhAM~S9BVInuUw8MIablOijdwP8sxftw5OUyM~~tFRzoyqZW5Ddm-LRG81DWcQPAQUJd~TQCgPTgR8gj6j1imfzHGi6sJwfHyd7r~XD1jKynE55pSYIfmRwKqIy1kLos7oGr48xURbOwcekbnhdSlCCGDfAepxzqT7-ikEwr2ztt78nwsexu6Rk9pAkAaHy2YFlZ4fiT8afhUkKE6GsUvGju5YOtrEk5l9exGg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "formula1_ergast_db_data_model.png",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "formula1-ergast-db-data-model.png"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 27517048,
+      "title": "Upload Formula1 Data to Data Lake",
+      "asset": {
+        "_class": "asset",
+        "id": 47323350,
+        "asset_type": "Video",
+        "title": "ADB 8.4 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-8.4-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 50,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 34905072,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2021-07-16_12-50-42-3651859972755e405f78d9590707276f/original.zip?response-content-disposition=attachment%3B+filename%3Draw.zip&Expires=1773839555&Signature=N24zkkKco46UXPSXqBEgTLEx0H~YcDRm3Nj1Vs99lzxrS07E-O4jbrQVdFJvmo~Vm8JD0YS-fqmFQf7A3xYK57Q9bqjoKTJ1AjhYCLbCLLwNKlnYvCCD1o29X1kfE0AhFZucCNDuYvBJwwkyOdyzbFVkMQqqtwycvH2DetRIHN6dey0jDg6Lcj5KklosPZKlC7CrRyWHSRzkFfLv54aRn--G8daB9vTSKzJXeFXsuHd107hTIQKJZ-EnMjdB1t3vIox3Juvjr2o5Os3~XWBzHdvGDuUZsbqKMwTS8O7YEuhP4XJvapdKe27oXlxuxI5XPEocCgnEHoL23DYF~j~YKA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "raw.zip",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "raw.zip"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 27517054,
+      "title": "Project Requirement Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46908586,
+        "asset_type": "Video",
+        "title": "ADB 8.5.mp4",
+        "external_url": "",
+        "filename": "ADB-8.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 51,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517056,
+      "title": "Solution Architecture Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46908596,
+        "asset_type": "Video",
+        "title": "ADB 8.6.mp4",
+        "external_url": "",
+        "filename": "ADB-8.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 52,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6609914,
+      "title": "Spark Introduction",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 27517062,
+      "title": "Spark Cluster Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 46908576,
+        "asset_type": "Video",
+        "title": "ADB 7.1.mp4",
+        "external_url": "",
+        "filename": "ADB-7.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 53,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517068,
+      "title": "Dataframe & Data Source API Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46908572,
+        "asset_type": "Video",
+        "title": "ADB 7.2.mp4",
+        "external_url": "",
+        "filename": "ADB-7.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 54,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6609918,
+      "title": "Data Ingestion - CSV",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 27517076,
+      "title": "Data Ingestion Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46908740,
+        "asset_type": "Video",
+        "title": "ADB 9.2.mp4",
+        "external_url": "",
+        "filename": "ADB-9.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 55,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517082,
+      "title": "Circuits File - Requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 46908742,
+        "asset_type": "Video",
+        "title": "ADB 9.3.mp4",
+        "external_url": "",
+        "filename": "ADB-9.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 56,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517086,
+      "title": "Circuits File - Dataframe Reader",
+      "asset": {
+        "_class": "asset",
+        "id": 47323382,
+        "asset_type": "Video",
+        "title": "ADB 9.4 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-9.4-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 57,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47190240,
+          "download_urls": null,
+          "title": "Spark API Documentation",
+          "external_url": "https://spark.apache.org/docs/latest/api/python/index.html",
+          "asset_type": "ExternalLink",
+          "filename": "Spark-API-Documentation"
+        },
+        {
+          "_class": "asset",
+          "id": 47190346,
+          "download_urls": null,
+          "title": "Spark API Reference",
+          "external_url": "https://spark.apache.org/docs/latest/api/python/reference/index.html",
+          "asset_type": "ExternalLink",
+          "filename": "Spark-API-Reference"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 27517090,
+      "title": "Circuits File - Specify Schema",
+      "asset": {
+        "_class": "asset",
+        "id": 46908928,
+        "asset_type": "Video",
+        "title": "ADB 9.5.mp4",
+        "external_url": "",
+        "filename": "ADB-9.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 58,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517100,
+      "title": "Circuits File - Select Columns",
+      "asset": {
+        "_class": "asset",
+        "id": 46908820,
+        "asset_type": "Video",
+        "title": "ADB 9.6.mp4",
+        "external_url": "",
+        "filename": "ADB-9.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 59,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517104,
+      "title": "Circuits File - WithColumnRenamed",
+      "asset": {
+        "_class": "asset",
+        "id": 46908774,
+        "asset_type": "Video",
+        "title": "ADB 9.7.mp4",
+        "external_url": "",
+        "filename": "ADB-9.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 60,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517110,
+      "title": "Circuits File - WithColumn",
+      "asset": {
+        "_class": "asset",
+        "id": 46908812,
+        "asset_type": "Video",
+        "title": "ADB 9.8.mp4",
+        "external_url": "",
+        "filename": "ADB-9.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 61,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517116,
+      "title": "Circuits File - Dataframe Writer",
+      "asset": {
+        "_class": "asset",
+        "id": 47323374,
+        "asset_type": "Video",
+        "title": "ADB 9.9 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-9.9-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 62,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517124,
+      "title": "Races File - Requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 46908782,
+        "asset_type": "Video",
+        "title": "ADB 9.10.mp4",
+        "external_url": "",
+        "filename": "ADB-9.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 63,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517126,
+      "title": "Races File - Spark Program (Assignment)",
+      "asset": {
+        "_class": "asset",
+        "id": 46908962,
+        "asset_type": "Video",
+        "title": "ADB 9.11.mp4",
+        "external_url": "",
+        "filename": "ADB-9.11.mp4",
+        "download_urls": null
+      },
+      "object_index": 64,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517134,
+      "title": "Races File - Partitioning",
+      "asset": {
+        "_class": "asset",
+        "id": 46908816,
+        "asset_type": "Video",
+        "title": "ADB 9.12.mp4",
+        "external_url": "",
+        "filename": "ADB-9.12.mp4",
+        "download_urls": null
+      },
+      "object_index": 65,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6609926,
+      "title": "Data Ingestion - JSON",
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 27517144,
+      "title": "Constructors File - Requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 46908920,
+        "asset_type": "Video",
+        "title": "ADB 10.1.mp4",
+        "external_url": "",
+        "filename": "ADB-10.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 66,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517146,
+      "title": "Constructors File - Read Data",
+      "asset": {
+        "_class": "asset",
+        "id": 46908934,
+        "asset_type": "Video",
+        "title": "ADB 10.2.mp4",
+        "external_url": "",
+        "filename": "ADB-10.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 67,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517152,
+      "title": "Constructors File - Transform & Write Data",
+      "asset": {
+        "_class": "asset",
+        "id": 46908954,
+        "asset_type": "Video",
+        "title": "ADB 10.3.mp4",
+        "external_url": "",
+        "filename": "ADB-10.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 68,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517156,
+      "title": "Drivers File - Requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 46908880,
+        "asset_type": "Video",
+        "title": "ADB 10.4.mp4",
+        "external_url": "",
+        "filename": "ADB-10.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 69,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517158,
+      "title": "Drivers File - Spark Program",
+      "asset": {
+        "_class": "asset",
+        "id": 46908972,
+        "asset_type": "Video",
+        "title": "ADB 10.5.mp4",
+        "external_url": "",
+        "filename": "ADB-10.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 70,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517162,
+      "title": "Results File - Requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 46908958,
+        "asset_type": "Video",
+        "title": "ADB 10.6.mp4",
+        "external_url": "",
+        "filename": "ADB-10.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 71,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517166,
+      "title": "Results File - Spark Program (Assignment)",
+      "asset": {
+        "_class": "asset",
+        "id": 46908898,
+        "asset_type": "Video",
+        "title": "ADB 10.7.mp4",
+        "external_url": "",
+        "filename": "ADB-10.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 72,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517170,
+      "title": "Pitstops File - Requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 46908882,
+        "asset_type": "Video",
+        "title": "ADB 10.8.mp4",
+        "external_url": "",
+        "filename": "ADB-10.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 73,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517180,
+      "title": "Pitstops File - Spark Program",
+      "asset": {
+        "_class": "asset",
+        "id": 46908952,
+        "asset_type": "Video",
+        "title": "ADB 10.9.mp4",
+        "external_url": "",
+        "filename": "ADB-10.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 74,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6609936,
+      "title": "Data Ingestion - Multiple Files",
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 27517188,
+      "title": "Lap Times - Requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 46908896,
+        "asset_type": "Video",
+        "title": "ADB 11.1.mp4",
+        "external_url": "",
+        "filename": "ADB-11.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 75,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517194,
+      "title": "Lap Times - Spark Program",
+      "asset": {
+        "_class": "asset",
+        "id": 46908966,
+        "asset_type": "Video",
+        "title": "ADB 11.2.mp4",
+        "external_url": "",
+        "filename": "ADB-11.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 76,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517196,
+      "title": "Qualifying - Requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 46908908,
+        "asset_type": "Video",
+        "title": "ADB 11.3.mp4",
+        "external_url": "",
+        "filename": "ADB-11.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 77,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517200,
+      "title": "Qualifying - Spark Program (Assignment)",
+      "asset": {
+        "_class": "asset",
+        "id": 46908938,
+        "asset_type": "Video",
+        "title": "ADB 11.4.mp4",
+        "external_url": "",
+        "filename": "ADB-11.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 78,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6609994,
+      "title": "Databricks Workflows",
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 27517414,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46909046,
+        "asset_type": "Video",
+        "title": "ADB 12.0.mp4",
+        "external_url": "",
+        "filename": "ADB-12.0.mp4",
+        "download_urls": null
+      },
+      "object_index": 79,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517416,
+      "title": "Including a Child Notebook",
+      "asset": {
+        "_class": "asset",
+        "id": 47323380,
+        "asset_type": "Video",
+        "title": "ADB 12.1 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-12.1-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 80,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517420,
+      "title": "Passing Parameters to Notebooks",
+      "asset": {
+        "_class": "asset",
+        "id": 46909100,
+        "asset_type": "Video",
+        "title": "ADB 12.2.mp4",
+        "external_url": "",
+        "filename": "ADB-12.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 81,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517424,
+      "title": "Notebook Workflows",
+      "asset": {
+        "_class": "asset",
+        "id": 46909136,
+        "asset_type": "Video",
+        "title": "ADB 12.3.mp4",
+        "external_url": "",
+        "filename": "ADB-12.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 82,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517428,
+      "title": "Databricks Jobs",
+      "asset": {
+        "_class": "asset",
+        "id": 46909158,
+        "asset_type": "Video",
+        "title": "ADB 12.4.mp4",
+        "external_url": "",
+        "filename": "ADB-12.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 83,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6610098,
+      "title": "Filter & Join Transformations",
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 27517892,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46909076,
+        "asset_type": "Video",
+        "title": "ADB 13.0.mp4",
+        "external_url": "",
+        "filename": "ADB-13.0.mp4",
+        "download_urls": null
+      },
+      "object_index": 84,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517896,
+      "title": "Filter Transformation",
+      "asset": {
+        "_class": "asset",
+        "id": 46909196,
+        "asset_type": "Video",
+        "title": "ADB 13.4.mp4",
+        "external_url": "",
+        "filename": "ADB-13.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 85,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517898,
+      "title": "Join Transformation - Inner Join",
+      "asset": {
+        "_class": "asset",
+        "id": 46909456,
+        "asset_type": "Video",
+        "title": "ADB 13.5.mp4",
+        "external_url": "",
+        "filename": "ADB-13.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 86,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517902,
+      "title": "Join Transformation - Outer Join",
+      "asset": {
+        "_class": "asset",
+        "id": 46909272,
+        "asset_type": "Video",
+        "title": "ADB 13.6.mp4",
+        "external_url": "",
+        "filename": "ADB-13.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 87,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517906,
+      "title": "Join Transformation - Semi, Anti & Cross Joins",
+      "asset": {
+        "_class": "asset",
+        "id": 46909286,
+        "asset_type": "Video",
+        "title": "ADB 13.7.mp4",
+        "external_url": "",
+        "filename": "ADB-13.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 88,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517916,
+      "title": "Join Race Results - Requirement",
+      "asset": {
+        "_class": "asset",
+        "id": 46909188,
+        "asset_type": "Video",
+        "title": "ADB 13.8.mp4",
+        "external_url": "",
+        "filename": "ADB-13.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 89,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517920,
+      "title": "Set-up Presentation Layer (Assignment)",
+      "asset": {
+        "_class": "asset",
+        "id": 47323372,
+        "asset_type": "Video",
+        "title": "ADB 13.9 V2.mp4",
+        "external_url": "",
+        "filename": "ADB-13.9-V2.mp4",
+        "download_urls": null
+      },
+      "object_index": 90,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517924,
+      "title": "Join Race Results - Solution (Assignment)",
+      "asset": {
+        "_class": "asset",
+        "id": 46909824,
+        "asset_type": "Video",
+        "title": "ADB 13.10.mp4",
+        "external_url": "",
+        "filename": "ADB-13.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 91,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6610104,
+      "title": "Aggregations",
+      "object_index": 16
+    },
+    {
+      "_class": "lecture",
+      "id": 27517934,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46909110,
+        "asset_type": "Video",
+        "title": "ADB 14.0.mp4",
+        "external_url": "",
+        "filename": "ADB-14.0.mp4",
+        "download_urls": null
+      },
+      "object_index": 92,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517936,
+      "title": "Simple Aggregate functions",
+      "asset": {
+        "_class": "asset",
+        "id": 46909388,
+        "asset_type": "Video",
+        "title": "ADB 14.1.mp4",
+        "external_url": "",
+        "filename": "ADB-14.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 93,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517942,
+      "title": "Group By",
+      "asset": {
+        "_class": "asset",
+        "id": 46909784,
+        "asset_type": "Video",
+        "title": "ADB 14.2.mp4",
+        "external_url": "",
+        "filename": "ADB-14.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 94,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517948,
+      "title": "Window Functions",
+      "asset": {
+        "_class": "asset",
+        "id": 46909612,
+        "asset_type": "Video",
+        "title": "ADB 14.3.mp4",
+        "external_url": "",
+        "filename": "ADB-14.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 95,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517952,
+      "title": "Driver Standings",
+      "asset": {
+        "_class": "asset",
+        "id": 46909916,
+        "asset_type": "Video",
+        "title": "ADB 14.4.mp4",
+        "external_url": "",
+        "filename": "ADB-14.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 96,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517954,
+      "title": "Constructor Standings (Assignment)",
+      "asset": {
+        "_class": "asset",
+        "id": 46909298,
+        "asset_type": "Video",
+        "title": "ADB 14.5.mp4",
+        "external_url": "",
+        "filename": "ADB-14.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 97,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6610108,
+      "title": "Using SQL in Spark Applications",
+      "object_index": 17
+    },
+    {
+      "_class": "lecture",
+      "id": 27517958,
+      "title": "Local Temp View",
+      "asset": {
+        "_class": "asset",
+        "id": 46909690,
+        "asset_type": "Video",
+        "title": "ADB 15.1.mp4",
+        "external_url": "",
+        "filename": "ADB-15.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 98,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517962,
+      "title": "Global Temp View",
+      "asset": {
+        "_class": "asset",
+        "id": 46909380,
+        "asset_type": "Video",
+        "title": "ADB 15.2.mp4",
+        "external_url": "",
+        "filename": "ADB-15.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 99,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6610112,
+      "title": "Spark SQL - Databases/ Tables/ Views",
+      "object_index": 18
+    },
+    {
+      "_class": "lecture",
+      "id": 27517970,
+      "title": "Spark SQL - Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 46909192,
+        "asset_type": "Video",
+        "title": "ADB 16.1.mp4",
+        "external_url": "",
+        "filename": "ADB-16.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 100,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 50605053,
+      "title": "Databricks Workspace Settings - Default Catalog hive_metastore",
+      "asset": {
+        "_class": "asset",
+        "id": 65577535,
+        "asset_type": "Video",
+        "title": "ADB 3.7.mp4",
+        "external_url": "",
+        "filename": "ADB-3.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 101,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517972,
+      "title": "Databases",
+      "asset": {
+        "_class": "asset",
+        "id": 46909632,
+        "asset_type": "Video",
+        "title": "ADB 16.2.mp4",
+        "external_url": "",
+        "filename": "ADB-16.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 102,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 47190396,
+          "download_urls": null,
+          "title": "Spark SQL Reference",
+          "external_url": "https://spark.apache.org/docs/latest/api/python/reference/index.html",
+          "asset_type": "ExternalLink",
+          "filename": "Spark-SQL-Reference"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 27517978,
+      "title": "Managed Tables",
+      "asset": {
+        "_class": "asset",
+        "id": 46909760,
+        "asset_type": "Video",
+        "title": "ADB 16.3.mp4",
+        "external_url": "",
+        "filename": "ADB-16.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 103,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517984,
+      "title": "External Tables",
+      "asset": {
+        "_class": "asset",
+        "id": 46909830,
+        "asset_type": "Video",
+        "title": "ADB 16.4.mp4",
+        "external_url": "",
+        "filename": "ADB-16.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 104,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27517992,
+      "title": "Views",
+      "asset": {
+        "_class": "asset",
+        "id": 46909782,
+        "asset_type": "Video",
+        "title": "ADB 16.6.mp4",
+        "external_url": "",
+        "filename": "ADB-16.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 105,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518004,
+      "title": "Formula1 Project SQL Requirement",
+      "asset": {
+        "_class": "asset",
+        "id": 46909204,
+        "asset_type": "Video",
+        "title": "ADB 16.5.mp4",
+        "external_url": "",
+        "filename": "ADB-16.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 106,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518010,
+      "title": "Create Table - CSV Source",
+      "asset": {
+        "_class": "asset",
+        "id": 46909484,
+        "asset_type": "Video",
+        "title": "ADB 16.7.mp4",
+        "external_url": "",
+        "filename": "ADB-16.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 107,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518020,
+      "title": "Create Table - JSON Source",
+      "asset": {
+        "_class": "asset",
+        "id": 46909726,
+        "asset_type": "Video",
+        "title": "ADB 16.8.mp4",
+        "external_url": "",
+        "filename": "ADB-16.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 108,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518026,
+      "title": "Create Table - Multi Files Source",
+      "asset": {
+        "_class": "asset",
+        "id": 46909558,
+        "asset_type": "Video",
+        "title": "ADB 16.9.mp4",
+        "external_url": "",
+        "filename": "ADB-16.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 109,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518034,
+      "title": "Create Table - Parquet Source (Processed Data)",
+      "asset": {
+        "_class": "asset",
+        "id": 46909812,
+        "asset_type": "Video",
+        "title": "ADB 16.10.mp4",
+        "external_url": "",
+        "filename": "ADB-16.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 110,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518040,
+      "title": "Create Table - Parquet Source (Presentation Data) - Assignment",
+      "asset": {
+        "_class": "asset",
+        "id": 46909400,
+        "asset_type": "Video",
+        "title": "ADB 16.11.mp4",
+        "external_url": "",
+        "filename": "ADB-16.11.mp4",
+        "download_urls": null
+      },
+      "object_index": 111,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6610118,
+      "title": "Spark SQL - Filters/ Joins/ Aggregations",
+      "object_index": 19
+    },
+    {
+      "_class": "lecture",
+      "id": 27518072,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46909220,
+        "asset_type": "Video",
+        "title": "ADB 17.0.mp4",
+        "external_url": "",
+        "filename": "ADB-17.0.mp4",
+        "download_urls": null
+      },
+      "object_index": 112,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518074,
+      "title": "SQL DML Basics",
+      "asset": {
+        "_class": "asset",
+        "id": 46909854,
+        "asset_type": "Video",
+        "title": "ADB 17.1.mp4",
+        "external_url": "",
+        "filename": "ADB-17.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 113,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518080,
+      "title": "SQL Simple Functions",
+      "asset": {
+        "_class": "asset",
+        "id": 46909768,
+        "asset_type": "Video",
+        "title": "ADB 17.2.mp4",
+        "external_url": "",
+        "filename": "ADB-17.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 114,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518084,
+      "title": "SQL Aggregates/ Window functions",
+      "asset": {
+        "_class": "asset",
+        "id": 46909742,
+        "asset_type": "Video",
+        "title": "ADB 17.3.mp4",
+        "external_url": "",
+        "filename": "ADB-17.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 115,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518086,
+      "title": "SQL Joins",
+      "asset": {
+        "_class": "asset",
+        "id": 46909990,
+        "asset_type": "Video",
+        "title": "ADB 17.4.mp4",
+        "external_url": "",
+        "filename": "ADB-17.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 116,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6610122,
+      "title": "Spark SQL - Analysis",
+      "object_index": 20
+    },
+    {
+      "_class": "lecture",
+      "id": 27518090,
+      "title": "Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 46909242,
+        "asset_type": "Video",
+        "title": "ADB 18.1.mp4",
+        "external_url": "",
+        "filename": "ADB-18.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 117,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518092,
+      "title": "Create Race Results table",
+      "asset": {
+        "_class": "asset",
+        "id": 46909900,
+        "asset_type": "Video",
+        "title": "ADB 18.2.mp4",
+        "external_url": "",
+        "filename": "ADB-18.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 118,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518100,
+      "title": "Dominant Drivers - Analysis",
+      "asset": {
+        "_class": "asset",
+        "id": 46909876,
+        "asset_type": "Video",
+        "title": "ADB 18.3.mp4",
+        "external_url": "",
+        "filename": "ADB-18.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 119,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518102,
+      "title": "Dominant Teams - Analysis",
+      "asset": {
+        "_class": "asset",
+        "id": 46909416,
+        "asset_type": "Video",
+        "title": "ADB 18.4.mp4",
+        "external_url": "",
+        "filename": "ADB-18.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 120,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518104,
+      "title": "Dominant Drivers - Visualisation",
+      "asset": {
+        "_class": "asset",
+        "id": 46909950,
+        "asset_type": "Video",
+        "title": "ADB 18.5.mp4",
+        "external_url": "",
+        "filename": "ADB-18.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 121,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518108,
+      "title": "Dominant Teams - Visualisation",
+      "asset": {
+        "_class": "asset",
+        "id": 46909766,
+        "asset_type": "Video",
+        "title": "ADB 18.6.mp4",
+        "external_url": "",
+        "filename": "ADB-18.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 122,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518110,
+      "title": "Create dashboards - Drivers",
+      "asset": {
+        "_class": "asset",
+        "id": 46909674,
+        "asset_type": "Video",
+        "title": "ADB 18.7.mp4",
+        "external_url": "",
+        "filename": "ADB-18.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 123,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518112,
+      "title": "Create dashboards - Teams",
+      "asset": {
+        "_class": "asset",
+        "id": 46909436,
+        "asset_type": "Video",
+        "title": "ADB 18.8.mp4",
+        "external_url": "",
+        "filename": "ADB-18.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 124,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6610126,
+      "title": "Incremental Load",
+      "object_index": 21
+    },
+    {
+      "_class": "lecture",
+      "id": 27518118,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46909256,
+        "asset_type": "Video",
+        "title": "ADB 19.0.mp4",
+        "external_url": "",
+        "filename": "ADB-19.0.mp4",
+        "download_urls": null
+      },
+      "object_index": 125,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518120,
+      "title": "Data Loading Design Patterns",
+      "asset": {
+        "_class": "asset",
+        "id": 46909680,
+        "asset_type": "Video",
+        "title": "ADB 19.1.mp4",
+        "external_url": "",
+        "filename": "ADB-19.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 126,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518124,
+      "title": "Formula1 Project Scenario",
+      "asset": {
+        "_class": "asset",
+        "id": 46909798,
+        "asset_type": "Video",
+        "title": "ADB 19.2.mp4",
+        "external_url": "",
+        "filename": "ADB-19.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 127,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518128,
+      "title": "Formula1 Project Data Set-up",
+      "asset": {
+        "_class": "asset",
+        "id": 46909588,
+        "asset_type": "Video",
+        "title": "ADB 19.3.mp4",
+        "external_url": "",
+        "filename": "ADB-19.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 128,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 34905088,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2021-07-16_12-51-29-87ec75f80285589b4a940159e51d47f1/original.zip?response-content-disposition=attachment%3B+filename%3Dincremental_load_data.zip&Expires=1773839555&Signature=XlN1GMwKnPTjso9vZRRqUJzGSmn35oRGPmValOdor7ZbLaGyXk0iWQR37bm-Rg2B-BuLHkUkEBo~VOzsbeWvxNkBlwGS60euvyxMq3fb8pJz8AX7jn9E03Ju4CQI0gPC~ECJp3~xxc-3B1dj6VpEoN4O~hb59NMUO3yj9SAMqqXEv1cP6sscGZp~I48d0-3ysFhwCGg0cUXNgCuMVO0vI1Tww1Qyj7r8nCLSFquOOyCoisW8if5xK7evmpV0TZHVsQ1mmqQMII8LiD~Umj0S09tC0wi-bHTtH8xvXQwLGEdvStRrtfdvT~jfVf29gks2xldh3jKbuk6je4xu-BK8ZA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "incremental_load_data.zip",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "incremental-load-data.zip"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 27518130,
+      "title": "Full Refresh Implementation",
+      "asset": {
+        "_class": "asset",
+        "id": 46909866,
+        "asset_type": "Video",
+        "title": "ADB 19.4.mp4",
+        "external_url": "",
+        "filename": "ADB-19.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 129,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518132,
+      "title": "Incremental Load - Method 1",
+      "asset": {
+        "_class": "asset",
+        "id": 46910054,
+        "asset_type": "Video",
+        "title": "ADB 19.5.mp4",
+        "external_url": "",
+        "filename": "ADB-19.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 130,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518136,
+      "title": "Incremental Load - Method 2",
+      "asset": {
+        "_class": "asset",
+        "id": 46909898,
+        "asset_type": "Video",
+        "title": "ADB 19.6.mp4",
+        "external_url": "",
+        "filename": "ADB-19.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 131,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518152,
+      "title": "Incremental Load Improvements - Assignment",
+      "asset": {
+        "_class": "asset",
+        "id": 46909592,
+        "asset_type": "Video",
+        "title": "ADB 19.7.mp4",
+        "external_url": "",
+        "filename": "ADB-19.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 132,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518158,
+      "title": "Incremental Load Improvements - Solution",
+      "asset": {
+        "_class": "asset",
+        "id": 46909992,
+        "asset_type": "Video",
+        "title": "ADB 19.8.mp4",
+        "external_url": "",
+        "filename": "ADB-19.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 133,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518164,
+      "title": "Incremental Load - Notebook Workflows",
+      "asset": {
+        "_class": "asset",
+        "id": 46909600,
+        "asset_type": "Video",
+        "title": "ADB 19.9.mp4",
+        "external_url": "",
+        "filename": "ADB-19.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 134,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518176,
+      "title": "Incremental Load - Race Results",
+      "asset": {
+        "_class": "asset",
+        "id": 46909954,
+        "asset_type": "Video",
+        "title": "ADB 19.10.mp4",
+        "external_url": "",
+        "filename": "ADB-19.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 135,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518178,
+      "title": "Incremental Load - Driver Standings",
+      "asset": {
+        "_class": "asset",
+        "id": 46910004,
+        "asset_type": "Video",
+        "title": "ADB 19.11.mp4",
+        "external_url": "",
+        "filename": "ADB-19.11.mp4",
+        "download_urls": null
+      },
+      "object_index": 136,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518184,
+      "title": "Incremental Load - Constructor Standings (Assignment)",
+      "asset": {
+        "_class": "asset",
+        "id": 46909808,
+        "asset_type": "Video",
+        "title": "ADB 19.12.mp4",
+        "external_url": "",
+        "filename": "ADB-19.12.mp4",
+        "download_urls": null
+      },
+      "object_index": 137,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6610226,
+      "title": "Delta Lake",
+      "object_index": 22
+    },
+    {
+      "_class": "lecture",
+      "id": 27518576,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46909374,
+        "asset_type": "Video",
+        "title": "ADB 20.0.mp4",
+        "external_url": "",
+        "filename": "ADB-20.0.mp4",
+        "download_urls": null
+      },
+      "object_index": 138,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518578,
+      "title": "Pitfalls of Data Lakes",
+      "asset": {
+        "_class": "asset",
+        "id": 46909758,
+        "asset_type": "Video",
+        "title": "ADB 20.1.mp4",
+        "external_url": "",
+        "filename": "ADB-20.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 139,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518580,
+      "title": "Data Lakehouse Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 46909660,
+        "asset_type": "Video",
+        "title": "ADB 20.2.mp4",
+        "external_url": "",
+        "filename": "ADB-20.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 140,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518584,
+      "title": "Read & Write to Delta Lake",
+      "asset": {
+        "_class": "asset",
+        "id": 46909996,
+        "asset_type": "Video",
+        "title": "ADB 20.3.mp4",
+        "external_url": "",
+        "filename": "ADB-20.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 141,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518588,
+      "title": "Updates and Deletes on Delta Lake",
+      "asset": {
+        "_class": "asset",
+        "id": 46909940,
+        "asset_type": "Video",
+        "title": "ADB 20.4.mp4",
+        "external_url": "",
+        "filename": "ADB-20.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 142,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518590,
+      "title": "Merge/ Upsert to Delta Lake",
+      "asset": {
+        "_class": "asset",
+        "id": 46910032,
+        "asset_type": "Video",
+        "title": "ADB 20.5.mp4",
+        "external_url": "",
+        "filename": "ADB-20.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 143,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518596,
+      "title": "History,  Time Travel, Vacuum",
+      "asset": {
+        "_class": "asset",
+        "id": 46910034,
+        "asset_type": "Video",
+        "title": "ADB 20.6.mp4",
+        "external_url": "",
+        "filename": "ADB-20.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 144,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518598,
+      "title": "Delta Lake Transaction Log",
+      "asset": {
+        "_class": "asset",
+        "id": 46910050,
+        "asset_type": "Video",
+        "title": "ADB 20.7.mp4",
+        "external_url": "",
+        "filename": "ADB-20.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 145,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518600,
+      "title": "Convert from Parquet to Delta",
+      "asset": {
+        "_class": "asset",
+        "id": 46909772,
+        "asset_type": "Video",
+        "title": "ADB 20.8.mp4",
+        "external_url": "",
+        "filename": "ADB-20.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 146,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518602,
+      "title": "Data Ingestion - Circuits File",
+      "asset": {
+        "_class": "asset",
+        "id": 46909894,
+        "asset_type": "Video",
+        "title": "ADB 20.9.mp4",
+        "external_url": "",
+        "filename": "ADB-20.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 147,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518604,
+      "title": "Data Ingestion - Results File",
+      "asset": {
+        "_class": "asset",
+        "id": 46910016,
+        "asset_type": "Video",
+        "title": "ADB 20.10.mp4",
+        "external_url": "",
+        "filename": "ADB-20.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 148,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518610,
+      "title": "Data Ingestion - Results File Improvements",
+      "asset": {
+        "_class": "asset",
+        "id": 46909874,
+        "asset_type": "Video",
+        "title": "ADB 20.11_1.mp4",
+        "external_url": "",
+        "filename": "ADB-20.11-1.mp4",
+        "download_urls": null
+      },
+      "object_index": 149,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518618,
+      "title": "Data Ingestion - All Other Files (Assignment)",
+      "asset": {
+        "_class": "asset",
+        "id": 46909832,
+        "asset_type": "Video",
+        "title": "ADB 20.11_2.mp4",
+        "external_url": "",
+        "filename": "ADB-20.11-2.mp4",
+        "download_urls": null
+      },
+      "object_index": 150,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518620,
+      "title": "Data Ingestion - Fix Duplicates in Results Data",
+      "asset": {
+        "_class": "asset",
+        "id": 46909976,
+        "asset_type": "Video",
+        "title": "ADB 20.15.mp4",
+        "external_url": "",
+        "filename": "ADB-20.15.mp4",
+        "download_urls": null
+      },
+      "object_index": 151,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518624,
+      "title": "Data Transformation - All PySpark Notebooks",
+      "asset": {
+        "_class": "asset",
+        "id": 46909980,
+        "asset_type": "Video",
+        "title": "ADB 20.12.mp4",
+        "external_url": "",
+        "filename": "ADB-20.12.mp4",
+        "download_urls": null
+      },
+      "object_index": 152,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518630,
+      "title": "Data Transformation - SQL Notebook",
+      "asset": {
+        "_class": "asset",
+        "id": 46910030,
+        "asset_type": "Video",
+        "title": "ADB 20.13.mp4",
+        "external_url": "",
+        "filename": "ADB-20.13.mp4",
+        "download_urls": null
+      },
+      "object_index": 153,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6610238,
+      "title": "Azure Data Factory",
+      "object_index": 23
+    },
+    {
+      "_class": "lecture",
+      "id": 27518638,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46909460,
+        "asset_type": "Video",
+        "title": "ADB 21.0.mp4",
+        "external_url": "",
+        "filename": "ADB-21.0.mp4",
+        "download_urls": null
+      },
+      "object_index": 154,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518640,
+      "title": "Azure Data Factory Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 46909744,
+        "asset_type": "Video",
+        "title": "ADB 21.1.mp4",
+        "external_url": "",
+        "filename": "ADB-21.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 155,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518644,
+      "title": "Create Azure Data Factory Service",
+      "asset": {
+        "_class": "asset",
+        "id": 46909896,
+        "asset_type": "Video",
+        "title": "ADB 21.2.mp4",
+        "external_url": "",
+        "filename": "ADB-21.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 156,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518646,
+      "title": "Azure Data Factory Components",
+      "asset": {
+        "_class": "asset",
+        "id": 46909580,
+        "asset_type": "Video",
+        "title": "ADB 21.3.mp4",
+        "external_url": "",
+        "filename": "ADB-21.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 157,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518652,
+      "title": "Create Pipeline - Circuits File Ingestion",
+      "asset": {
+        "_class": "asset",
+        "id": 46910040,
+        "asset_type": "Video",
+        "title": "ADB 21.4.mp4",
+        "external_url": "",
+        "filename": "ADB-21.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 158,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518662,
+      "title": "Debugging a Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 46909882,
+        "asset_type": "Video",
+        "title": "ADB 21.5.mp4",
+        "external_url": "",
+        "filename": "ADB-21.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 159,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518666,
+      "title": "Update Pipeline - Ingest All Other Files",
+      "asset": {
+        "_class": "asset",
+        "id": 46909924,
+        "asset_type": "Video",
+        "title": "ADB 21.6.mp4",
+        "external_url": "",
+        "filename": "ADB-21.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 160,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518670,
+      "title": "Improve Pipeline - Handle Missing Files",
+      "asset": {
+        "_class": "asset",
+        "id": 46910014,
+        "asset_type": "Video",
+        "title": "ADB 21.7.mp4",
+        "external_url": "",
+        "filename": "ADB-21.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 161,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518672,
+      "title": "Create Pipeline - Transformation Notebooks",
+      "asset": {
+        "_class": "asset",
+        "id": 46909986,
+        "asset_type": "Video",
+        "title": "ADB 21.8.mp4",
+        "external_url": "",
+        "filename": "ADB-21.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 162,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518676,
+      "title": "Create ADF Trigger",
+      "asset": {
+        "_class": "asset",
+        "id": 46910044,
+        "asset_type": "Video",
+        "title": "ADB 21.9.mp4",
+        "external_url": "",
+        "filename": "ADB-21.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 163,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6610250,
+      "title": "Connect to Other Services",
+      "object_index": 24
+    },
+    {
+      "_class": "lecture",
+      "id": 27518678,
+      "title": "Power BI",
+      "asset": {
+        "_class": "asset",
+        "id": 46909974,
+        "asset_type": "Video",
+        "title": "ADB 22.1.mp4",
+        "external_url": "",
+        "filename": "ADB-22.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 164,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 7270075,
+      "title": "Sample Quiz",
+      "object_index": 1
+    },
+    {
+      "_class": "chapter",
+      "id": 9075090,
+      "title": "Unity Catalog - Introduction",
+      "object_index": 25
+    },
+    {
+      "_class": "lecture",
+      "id": 37939522,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 48865474,
+        "asset_type": "Video",
+        "title": "ADB 26.0.mp4",
+        "external_url": "",
+        "filename": "ADB-26.0.mp4",
+        "download_urls": null
+      },
+      "object_index": 165,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37941348,
+      "title": "Unity Catalog Sections Resource Download",
+      "asset": {
+        "_class": "asset",
+        "id": 48868520,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 166,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48868448,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-05-18_16-48-36-e41e6724ad2ffa884fa65ac4f4680363/original.json?response-content-disposition=attachment%3B+filename%3Dresults.json&Expires=1773839555&Signature=WARdF5FhdoTPDWtZCPmXkzwdGOtD341i-mAG~26YE0epdvvV1hFW57LWlm1znC9Oj3NOsocBOmoPqSdKbO-wlujzhJ2kV-Z-lrGIvlefBgQB9jaRdjTiJ~tuloC4pXQQdCOIs3-j7S1mwWEBZbjQcyrJuKUJBHuakMqI0aiaRY0cx7uYaZgci1GSMrun--Wz5bzR7NP-65aaLby~ZX7YmpPeOexKlDbFW3nF3opJqYtEIzMe0Vnu6~MMcuS9aRVJ3pQ5J8QujeRzSFR1T06Bxb6O2OF~oHdHEhjHieu7W-D19zw4hVuR1h-pfjYsw9OsZDip5sA7DuYq3ihx2m6T9A__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "results.json",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "results.json"
+        },
+        {
+          "_class": "asset",
+          "id": 48868456,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-05-18_16-48-48-d938bb03a154ed7a5c1b25d8301cc70d/original.json?response-content-disposition=attachment%3B+filename%3Ddrivers.json&Expires=1773839555&Signature=fKx7KLMIo0VE3TTMJfhBWe3aekW82iLq~FO2o8fLe2AlbjP-wJ~TOv1JJ3uqdat73Q2NYO4PzVwExKAUrBKoaW5jyGlcseEKjuqC~tqj-w1qmK2k5p5JoUDK9WjvI1NJHVdvHEKtxszOsCIki7h0d0Y4sk2VfnhfD6vOADACXqDpSJJDPVd~23NpJR-DBUsqjyd-ZHwOj1smjlb19OaFmCGebixac7RpWBi~-GTf2R126Od9RTpbdXK3bqVaqjFft6D54jGbYr564sQKNCXJLRa7vY9Gz12~UFKnxS7hI~fhFCus3U977kxOvlmtVoGvcjGofO7xXxhFLHL2YmJuLg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "drivers.json",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "drivers.json"
+        },
+        {
+          "_class": "asset",
+          "id": 48868460,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-05-18_16-48-58-ed17f702b4c37b139085c9ba5d167821/original.zip?response-content-disposition=attachment%3B+filename%3Ddatabricks-course-uc.zip&Expires=1773839555&Signature=w26XHjlCyMdmaqHfCkumPP~xsBg4l6Nt~Wwhq6l-O-AuZIrsITbbQFoHtoDo-45mMtWwUSMyOVrHJh01pLc7GNOZvguOYXQ3-5DJb22l0Wl5CjPzwbT96I4Raj6aH~2sNlSYxSUjy8M8pwEhl6dS6v0vR8Kw2c5lOJOBsNP1DnuPr8IUXhgmf4Bu-E00UCc2nL8sGhZc746g-u8VIilQ~1irCi3aVLn1Ttt7rV1ev8iII9OHQFAAu1escK7P4D0SinhKW2kqbe9hKEjv0Twvodp4FTe3dXb806f7QOYAylvsexSmXYXhfbwUV5zo0Lq8tZU5X7Ft5vXVjuh1FwRcAQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "databricks-course-uc.zip",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "databricks-course-uc.zip"
+        },
+        {
+          "_class": "asset",
+          "id": 48868466,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-05-18_16-49-12-ce83d1461caabb40700b70b9ce3baab6/original.dbc?response-content-disposition=attachment%3B+filename%3Ddatabricks-course-uc.dbc&Expires=1773839555&Signature=aZ88n6fT5N7F3I8lEZTwD2Id3dNiywmUE51UpXA11TXhmCnvGdccizvrJx-bSQzrOuywtbD-rv8aQWemByEzrgv1GQItlAkjmRKu-LefP8bCbr8i3j79dSd06M4BabcXRSPoxuAd4m5nHFxW3xuCl5LdiNFqn7KbMkTuE5HwQfMSGx0UqMVjitBgeTIm3A~cFq2hn2yGgbdxqR6Un1gDr16VcDuZCheMjh42b-ZPpzvlaPTz1YE9653FpFDHaaZNGaoessii7hgNWa6XAsD7OKHa4KylO2FyjaU6d9qWa80A5ivPBIOiaLbtnjM3Y6Kz5Ff5togpyIDwRz-9GLDUvA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "databricks-course-uc.dbc",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "databricks-course-uc.dbc"
+        },
+        {
+          "_class": "asset",
+          "id": 48868474,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-05-18_16-49-18-259b0c7a393a7c26b9190ef3595ec589/original.csv?response-content-disposition=attachment%3B+filename%3Dcircuits.csv&Expires=1773839555&Signature=o-99L9P-JB4eZ0lqy7uRX83ysQ6~Tu9bZBSNGGqAGlSpHA-X-wwk4MgCO4LTouyyq0Z1HWD4tlMH7o3DYGJAV22YgQWgSLKB3HHtQeUqFld7QtAoCosNrRSqInNlRBSv4Ew4d~31jsPx4uE3fv-PUYflTD2iTpJ~6NUY2p4fjb5ejF8-xabsq0cZpifsb0mOVDYINFJcZPD40zkDTxMnPIdC~ku~ytbjNzVBTzr0JKpU3RYzBRCZegyI0yxNcETadyyaEu8dNkDjSV~2dkLRNDpvetJOwKwC8VHr5FdxwlC~g7Yo5G~mgApnAHMGpGS~CF8rBHV5BkC8alfIUjXDkA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "circuits.csv",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "circuits.csv"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37939526,
+      "title": "Unity Catalog Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 48865504,
+        "asset_type": "Video",
+        "title": "ADB 26.1.mp4",
+        "external_url": "",
+        "filename": "ADB-26.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 167,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939532,
+      "title": "Unity Catalog Set-up Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 48865492,
+        "asset_type": "Video",
+        "title": "ADB 26.2.mp4",
+        "external_url": "",
+        "filename": "ADB-26.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 168,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939538,
+      "title": "Create Unity Catalog Metastore - Prerequisites",
+      "asset": {
+        "_class": "asset",
+        "id": 48865516,
+        "asset_type": "Video",
+        "title": "ADB 26.3.mp4",
+        "external_url": "",
+        "filename": "ADB-26.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 169,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 48693337,
+      "title": "Important Note In Case You are Unable to Access Account Console",
+      "asset": {
+        "_class": "asset",
+        "id": 63009135,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 170,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939544,
+      "title": "Create Unity Catalog Metastore",
+      "asset": {
+        "_class": "asset",
+        "id": 48865524,
+        "asset_type": "Video",
+        "title": "ADB 26.4.mp4",
+        "external_url": "",
+        "filename": "ADB-26.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 171,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939548,
+      "title": "Cluster Configurations for Unity Catalog",
+      "asset": {
+        "_class": "asset",
+        "id": 48865510,
+        "asset_type": "Video",
+        "title": "ADB 26.5.mp4",
+        "external_url": "",
+        "filename": "ADB-26.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 172,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939556,
+      "title": "Unity Catalog Object Model Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 48865532,
+        "asset_type": "Video",
+        "title": "ADB 26.6.mp4",
+        "external_url": "",
+        "filename": "ADB-26.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 173,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939560,
+      "title": "Unity Catalog Object Model Demo (Data Explorer UI)",
+      "asset": {
+        "_class": "asset",
+        "id": 48865556,
+        "asset_type": "Video",
+        "title": "ADB 26.7.mp4",
+        "external_url": "",
+        "filename": "ADB-26.7.mp4",
+        "download_urls": null
+      },
+      "object_index": 174,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48865710,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-05-18_14-47-11-dab614289b2b52207bc0d5af8f89f2f6/original.csv?response-content-disposition=attachment%3B+filename%3Dcircuits.csv&Expires=1773839555&Signature=vc173EtG9pDuMouICjpWqfzzluUxUW-Cl4R6awzx8hc6jb~MaP7nK0ITsp40S901bmVodgxs49Eh~u-9okvluxYij7TTBxb1cpaniGjYwB1IWGr5PGsFWYQkH30u3Yw4dOspXwYm2Rd4K76ZzRW3OIKyvunILeYZQcdy-Gx9xMJtOPIhdgp7Wl3~D8jIPgGg45tZ7ckr7FmG1CsSTs6uDeQMCRgE2D29ienMMX2SyamLwDWT~gNz9kvqn9mUx7CyBJ4NoPD67z6HfJZYuspfv55bkfcwFLDeA6kIJ1oEnNJ6RNqUb14L5zck53ffgT0YhTj5c8QlR6kxlZJ1PnSl3Q__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "circuits.csv",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "circuits.csv"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37939564,
+      "title": "Unity Catalog Object Model Demo (SQL/ Python)",
+      "asset": {
+        "_class": "asset",
+        "id": 48865558,
+        "asset_type": "Video",
+        "title": "ADB 26.8.mp4",
+        "external_url": "",
+        "filename": "ADB-26.8.mp4",
+        "download_urls": null
+      },
+      "object_index": 175,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939566,
+      "title": "Accessing External Data Lake Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 48865542,
+        "asset_type": "Video",
+        "title": "ADB 26.9.mp4",
+        "external_url": "",
+        "filename": "ADB-26.9.mp4",
+        "download_urls": null
+      },
+      "object_index": 176,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939572,
+      "title": "Create Storage Credential",
+      "asset": {
+        "_class": "asset",
+        "id": 48868018,
+        "asset_type": "Video",
+        "title": "ADB 26.10.mp4",
+        "external_url": "",
+        "filename": "ADB-26.10.mp4",
+        "download_urls": null
+      },
+      "object_index": 177,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48865724,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-05-18_14-47-33-176cb9971f3766adf82efa748ca65ec4/original.csv?response-content-disposition=attachment%3B+filename%3Dcircuits.csv&Expires=1773839555&Signature=wOe6UDBX32-1XcgT0fKXgUs4jTh3liPK36V6h00R8vu8kmTS333X6UwupLBxnVHlGfT3ONUhnsaxnuHcI~ofLBtRf1Bd3yKmkgd6wdkmvx7DCNgIFAsaVEhgVtYXtyfpeoufQYjyuPTkorLEONxFVs7syHgLf8dB~gjImtvXHDN0eoIu-06XAgURkISl4Aifwel43n0of2YuLpJIkicVr9qv8u8tKc3FJ5ub5EueO6oyjlnf~Q7z6v0rW2PWPIWNWOuAs0oea60~-PxphBkK679gJ7po~m2u36jie~3G-UH-eifXcODacBhzbm9Hbq34hteyxdx84RMx0XTnHx1zJQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "circuits.csv",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "circuits.csv"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37939576,
+      "title": "Create External Location",
+      "asset": {
+        "_class": "asset",
+        "id": 48868010,
+        "asset_type": "Video",
+        "title": "ADB 26.11.mp4",
+        "external_url": "",
+        "filename": "ADB-26.11.mp4",
+        "download_urls": null
+      },
+      "object_index": 178,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 9075120,
+      "title": "Unity Catalog - Mini Project",
+      "object_index": 26
+    },
+    {
+      "_class": "lecture",
+      "id": 37939628,
+      "title": "Project Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 48865564,
+        "asset_type": "Video",
+        "title": "ADB 27.1.mp4",
+        "external_url": "",
+        "filename": "ADB-27.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 179,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939630,
+      "title": "Create External Location",
+      "asset": {
+        "_class": "asset",
+        "id": 48868210,
+        "asset_type": "Video",
+        "title": "ADB 27.2.mp4",
+        "external_url": "",
+        "filename": "ADB-27.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 180,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48865728,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-05-18_14-48-02-42247137157e9835db66c443067a837a/original.json?response-content-disposition=attachment%3B+filename%3Dresults.json&Expires=1773839555&Signature=fGdpoDDqICXBssjXMLu~aMnd4TZK10ludCAyTNI--15h3-JmA8sbR4cWHgnt2WgRWiSba1hRruP2zUvOhid3MzzvC9JgEu-1JTeOZ~bD7lNMubo0onVObUkg9iQoOJGRtZDCoAb1Xyp~5sctsXpHt-tExvf3NHSXw3pJWWFcTwrN04i2VSul0YYBxiBLGXxAhY7NHXv1q-JQitodDNBv~ZCzrE9K56RoV3Zr1j0sWXYB3hD0p7~BDbt6kLbIHf7QAp-TgtjjMMr3009e7NKViyp6GKJX06gRWQL79VqLtsUM0QxzOhR2w8rTuKGO7BUisOf0khOoW7WwTboselrSmQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "results.json",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "results.json"
+        },
+        {
+          "_class": "asset",
+          "id": 48865732,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-05-18_14-48-09-bbedf2bb901b5752fb56f1e981a3f9bd/original.json?response-content-disposition=attachment%3B+filename%3Ddrivers.json&Expires=1773839555&Signature=1wLLfaHHaUpPNrM1gHy3gtVXu6MAr40nGMN95ZoErZgT~mQ3BNEMVncsfYue5qqnPBvyKcjJ4HnQoDBNRYbQNv-jeH7zK2pp7ATw45DYKKbIbNXiDDXMf0TTw9yJ0rDJKWgNVBoDwWBoYQEnr0iRw1gxr4bq3DJqsQQAGgOyMlW4caCQFMPOBqVYX6AxYNUlTQJshOqZ7Wb4UCSC5iC0Xv4JwF3gHun31CcLqFhPh270ptS5hZpCepOZ2rzo4FxYwyFYmQE7rIytb9-zRKv0xA4~RMA-1H3dG5IA538mN36s9sQG4iyR7dB-rKObw~Pte4qGwvCaxg8B19rPTKKI~A__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "drivers.json",
+          "external_url": "",
+          "asset_type": "File",
+          "filename": "drivers.json"
+        },
+        {
+          "_class": "asset",
+          "id": 48867632,
+          "download_urls": null,
+          "title": "Create External Location Documentation",
+          "external_url": "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-external-locations-and-credentials#--create-an-external-location",
+          "asset_type": "ExternalLink",
+          "filename": "Create-External-Location-Documentation"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37939634,
+      "title": "Create Catalogs and Schema",
+      "asset": {
+        "_class": "asset",
+        "id": 48865594,
+        "asset_type": "Video",
+        "title": "ADB 27.3.mp4",
+        "external_url": "",
+        "filename": "ADB-27.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 181,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939638,
+      "title": "Create External Tables",
+      "asset": {
+        "_class": "asset",
+        "id": 48865578,
+        "asset_type": "Video",
+        "title": "ADB 27.4.mp4",
+        "external_url": "",
+        "filename": "ADB-27.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 182,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939640,
+      "title": "Create Managed Tables",
+      "asset": {
+        "_class": "asset",
+        "id": 48868224,
+        "asset_type": "Video",
+        "title": "ADB 27.5.mp4",
+        "external_url": "",
+        "filename": "ADB-27.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 183,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939642,
+      "title": "Create Databricks Workflow",
+      "asset": {
+        "_class": "asset",
+        "id": 48865606,
+        "asset_type": "Video",
+        "title": "ADB 27.6.mp4",
+        "external_url": "",
+        "filename": "ADB-27.6.mp4",
+        "download_urls": null
+      },
+      "object_index": 184,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 9075138,
+      "title": "Unity Catalog - Key Benefits",
+      "object_index": 27
+    },
+    {
+      "_class": "lecture",
+      "id": 37939698,
+      "title": "Section Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 48865608,
+        "asset_type": "Video",
+        "title": "ADB 28.0.mp4",
+        "external_url": "",
+        "filename": "ADB-28.0.mp4",
+        "download_urls": null
+      },
+      "object_index": 185,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939708,
+      "title": "Data Discovery",
+      "asset": {
+        "_class": "asset",
+        "id": 48865646,
+        "asset_type": "Video",
+        "title": "ADB 28.1.mp4",
+        "external_url": "",
+        "filename": "ADB-28.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 186,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939710,
+      "title": "Data Audit",
+      "asset": {
+        "_class": "asset",
+        "id": 48865622,
+        "asset_type": "Video",
+        "title": "ADB 28.2.mp4",
+        "external_url": "",
+        "filename": "ADB-28.2.mp4",
+        "download_urls": null
+      },
+      "object_index": 187,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939720,
+      "title": "Data Lineage",
+      "asset": {
+        "_class": "asset",
+        "id": 48865684,
+        "asset_type": "Video",
+        "title": "ADB 28.3.mp4",
+        "external_url": "",
+        "filename": "ADB-28.3.mp4",
+        "download_urls": null
+      },
+      "object_index": 188,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939734,
+      "title": "Data Access Control Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 48865662,
+        "asset_type": "Video",
+        "title": "ADB 28.4.mp4",
+        "external_url": "",
+        "filename": "ADB-28.4.mp4",
+        "download_urls": null
+      },
+      "object_index": 189,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37939740,
+      "title": "Data Access Control Demo",
+      "asset": {
+        "_class": "asset",
+        "id": 48865656,
+        "asset_type": "Video",
+        "title": "ADB 28.5.mp4",
+        "external_url": "",
+        "filename": "ADB-28.5.mp4",
+        "download_urls": null
+      },
+      "object_index": 190,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48867806,
+          "download_urls": null,
+          "title": "Transfer Ownership Documentation",
+          "external_url": "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/ownership#transfer-ownership",
+          "asset_type": "ExternalLink",
+          "filename": "Transfer-Ownership-Documentation"
+        },
+        {
+          "_class": "asset",
+          "id": 48867830,
+          "download_urls": null,
+          "title": "Manage Privileges Documentation",
+          "external_url": "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/privileges#manage-privileges",
+          "asset_type": "ExternalLink",
+          "filename": "Manage-Privileges-Documentation"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 6610254,
+      "title": "Next Steps",
+      "object_index": 28
+    },
+    {
+      "_class": "lecture",
+      "id": 27518682,
+      "title": "Good Luck",
+      "asset": {
+        "_class": "asset",
+        "id": 46909404,
+        "asset_type": "Video",
+        "title": "ADB 23.1.mp4",
+        "external_url": "",
+        "filename": "ADB-23.1.mp4",
+        "download_urls": null
+      },
+      "object_index": 191,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 27518686,
+      "title": "Bonus Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 66594585,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 192,
+      "supplementary_assets": []
+    }
+  ]
+}

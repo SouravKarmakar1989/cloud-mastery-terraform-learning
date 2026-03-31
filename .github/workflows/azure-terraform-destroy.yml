@@ -91,9 +91,9 @@ jobs:
       - uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        working-directory: azure-infrastructure/${{ inputs.module }}
+        working-directory: platforms/github-iac-terraform/azure-infrastructure/${{ inputs.module }}
         run: terraform init -backend-config=env/${{ inputs.environment }}/backend.hcl
 
       - name: Terraform Destroy
-        working-directory: azure-infrastructure/${{ inputs.module }}
+        working-directory: platforms/github-iac-terraform/azure-infrastructure/${{ inputs.module }}
         run: terraform destroy -auto-approve -var-file=env/${{ inputs.environment }}/terraform.tfvars ${{ env.TF_TARGET }}

@@ -1,24 +1,69 @@
-# Python cache
+# ----- Python ------------------------------------------
 __pycache__/
 *.py[cod]
+*$py.class
 *.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+.installed.cfg
+MANIFEST
 
-# Virtual environment
+# ----- Virtual environments ----------------------------
 .venv/
 venv/
+env/
+ENV/
+.env/
 
-# Runtime artifacts
-cache/*.json
-cache/*.md
-outputs/**
-Knowledge Base/**
-playwright-profile/**
-
-# Keep directory stubs
-!cache/.gitkeep
-!outputs/.gitkeep
-!Knowledge Base/.gitkeep
-!playwright-profile/.gitkeep
-
-# Local secrets
+# ----- Environment files (keep .env.example if used) --
 .env
+*.env
+
+# ----- Playwright browser profiles --------------------
+# These contain session cookies — never commit them
+playwright-profile/
+*-profile/
+*_profile/
+
+# ----- Tool output -------------------------------------
+udemy_output/
+out/
+output/
+
+# ----- Debug artefacts produced by the tool -----------
+debug/
+*.checkpoint.json
+
+# ----- Logs --------------------------------------------
+*.log
+run.log
+
+# ----- IDE / editor ------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ----- pytest / coverage -------------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ----- mypy --------------------------------------------
+.mypy_cache/

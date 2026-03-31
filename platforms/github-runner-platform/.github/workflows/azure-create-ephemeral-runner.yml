@@ -1,0 +1,104 @@
+name: azure-create-ephemeral-runner
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Parse IaC repo owner and name
+        id: iac-repo
+        env:
+          IAC_REPO: ${{ vars.IAC_REPO }}
+        run: |
+          echo "owner=${IAC_REPO%%/*}" >> "$GITHUB_OUTPUT"
+          echo "name=${IAC_REPO##*/}" >> "$GITHUB_OUTPUT"
+
+      - name: Generate GitHub App token (RBAC)
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+          owner: ${{ steps.iac-repo.outputs.owner }}
+          repositories: ${{ steps.iac-repo.outputs.name }}
+
+      - name: Get Runner Registration Token (IaC repo)
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          IAC_REPO: ${{ vars.IAC_REPO }}
+        run: |
+          set -euo pipefail
+          curl -sS -X POST             -H "Authorization: Bearer $GH_TOKEN"             -H "Accept: application/vnd.github+json"             "https://api.github.com/repos/$IAC_REPO/actions/runners/registration-token"             > token.json
+          TOKEN=$(cat token.json | jq -r .token)
+          if [ -z "$TOKEN" ] || [ "$TOKEN" = "null" ]; then
+            echo "Failed to get runner token"; cat token.json; exit 1
+          fi
+          echo "RUNNER_TOKEN=$TOKEN" >> $GITHUB_ENV
+
+      - name: Create Ephemeral Runner VM
+        env:
+          IAC_REPO: ${{ vars.IAC_REPO }}
+          RUNNER_TOKEN: ${{ env.RUNNER_TOKEN }}
+          AZURE_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+          IAC_RG: ${{ vars.IAC_RESOURCE_GROUP }}
+        run: |
+          set -euo pipefail
+          REPO_URL="https://github.com/${IAC_REPO}"
+          VM_NAME="gh-runner-$(date +%s)"
+
+          sed "s|__REPO_URL__|${REPO_URL}|g; s|__RUNNER_TOKEN__|${RUNNER_TOKEN}|g" \
+            scripts/cloud-init-template.sh > /tmp/cloud-init.sh
+
+          az vm create \
+            --resource-group rg-runner-platform \
+            --name "$VM_NAME" \
+            --image Ubuntu2204 \
+            --size Standard_B2s \
+            --admin-username azureuser \
+            --generate-ssh-keys \
+            --assign-identity "[system]" \
+            --custom-data /tmp/cloud-init.sh
+
+          echo "Runner VM created: $VM_NAME"
+
+          # Wait for the identity to propagate in AAD before assigning roles
+          sleep 20
+
+          PRINCIPAL_ID=$(az vm show \
+            --resource-group rg-runner-platform \
+            --name "$VM_NAME" \
+            --query "identity.principalId" \
+            --output tsv)
+
+          if [ -z "$PRINCIPAL_ID" ]; then
+            echo "ERROR: Could not retrieve principalId for VM $VM_NAME"; exit 1
+          fi
+          if [ -z "$IAC_RG" ]; then
+            echo "ERROR: vars.IAC_RESOURCE_GROUP is not set"; exit 1
+          fi
+
+          echo "Assigning Contributor on /subscriptions/${AZURE_SUBSCRIPTION_ID}/resourceGroups/${IAC_RG} to $PRINCIPAL_ID"
+
+          # Grant the runner Contributor on the IaC target resource group
+          az role assignment create \
+            --assignee-object-id "$PRINCIPAL_ID" \
+            --assignee-principal-type ServicePrincipal \
+            --role "Contributor" \
+            --scope "/subscriptions/${AZURE_SUBSCRIPTION_ID}/resourceGroups/${IAC_RG}"
+
+          echo "RBAC role assigned to runner identity."

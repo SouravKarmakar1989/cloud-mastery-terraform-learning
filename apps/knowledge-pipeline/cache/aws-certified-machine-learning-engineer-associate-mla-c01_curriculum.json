@@ -1,0 +1,4037 @@
+{
+  "count": 324,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 10786919,
+      "title": "Introduction",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 45270887,
+      "title": "Introduction and Course Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 58594725,
+        "asset_type": "Video",
+        "title": "CourseOverview.mp4",
+        "created": "2024-08-16T16:15:58Z"
+      },
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 45284737,
+      "title": "Udemy 101",
+      "asset": {
+        "_class": "asset",
+        "id": 58543783,
+        "asset_type": "Video",
+        "title": "Udemy101.mp4",
+        "created": "2024-08-14T15:42:50Z"
+      },
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 45284767,
+      "title": "Get the Course Materials and Slides",
+      "asset": {
+        "_class": "asset",
+        "id": 58619797,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2024-08-17T18:06:21Z"
+      },
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 47890715,
+      "title": "[Important] AWS Console UI Update",
+      "asset": {
+        "_class": "asset",
+        "id": 61950881,
+        "asset_type": "Video",
+        "title": "AWS_-_New_UI_2024.mp4",
+        "created": "2025-01-06T20:16:13Z"
+      },
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 45284771,
+      "title": "Setting Up an AWS Billing Alarm",
+      "asset": {
+        "_class": "asset",
+        "id": 58543815,
+        "asset_type": "Video",
+        "title": "SetupBillingAlarm.mp4",
+        "created": "2024-08-14T15:44:41Z"
+      },
+      "object_index": 5
+    },
+    {
+      "_class": "chapter",
+      "id": 10786921,
+      "title": "Data Ingestion and Storage",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 45284649,
+      "title": "Intro: Data Ingestion and Storage",
+      "asset": {
+        "_class": "asset",
+        "id": 58595841,
+        "asset_type": "Video",
+        "title": "IntroSec2.mp4",
+        "created": "2024-08-16T17:16:00Z"
+      },
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 45284653,
+      "title": "Types of Data",
+      "asset": {
+        "_class": "asset",
+        "id": 58543687,
+        "asset_type": "Video",
+        "title": "TypesOfData.mp4",
+        "created": "2024-08-14T15:39:06Z"
+      },
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 45284671,
+      "title": "Properties of Data (The Three V's)",
+      "asset": {
+        "_class": "asset",
+        "id": 58543713,
+        "asset_type": "Video",
+        "title": "PropertiesOfData.mp4",
+        "created": "2024-08-14T15:39:46Z"
+      },
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 45284683,
+      "title": "Data Warehouses, Lakes, and Lakehouses",
+      "asset": {
+        "_class": "asset",
+        "id": 58543725,
+        "asset_type": "Video",
+        "title": "DataWarehouseVsLake.mp4",
+        "created": "2024-08-14T15:40:30Z"
+      },
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 45337673,
+      "title": "Data Mesh",
+      "asset": {
+        "_class": "asset",
+        "id": 58613841,
+        "asset_type": "Video",
+        "title": "DataMesh.mp4",
+        "created": "2024-08-17T13:31:02Z"
+      },
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 45284695,
+      "title": "ETL & ETL Pipelines and Orchestration",
+      "asset": {
+        "_class": "asset",
+        "id": 58543733,
+        "asset_type": "Video",
+        "title": "ETLPipelines.mp4",
+        "created": "2024-08-14T15:40:43Z"
+      },
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 45284709,
+      "title": "Common Data Sources and Data Formats",
+      "asset": {
+        "_class": "asset",
+        "id": 58543763,
+        "asset_type": "Video",
+        "title": "DataSourcesAndFormats-Revised0424.mp4",
+        "created": "2024-08-14T15:41:53Z"
+      },
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 45356505,
+      "title": "Amazon S3",
+      "asset": {
+        "_class": "asset",
+        "id": 58635833,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Overview_v2.mp4",
+        "created": "2024-08-18T17:57:16Z"
+      },
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 45356509,
+      "title": "Amazon S3 - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58635841,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Hands_On_v5.mp4",
+        "created": "2024-08-18T17:57:17Z"
+      },
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 45356515,
+      "title": "Amazon S3 Security - Bucket Policy",
+      "asset": {
+        "_class": "asset",
+        "id": 58638079,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Bucket_Policy_v2.mp4",
+        "created": "2024-08-18T20:37:45Z"
+      },
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 45356517,
+      "title": "Amazon S3 Security - Bucket Policy - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70793381,
+        "asset_type": "Video",
+        "title": "CCP - S3 - Bucket Policy Hands On v3.mp4",
+        "created": "2026-01-21T15:35:32Z"
+      },
+      "object_index": 16
+    },
+    {
+      "_class": "lecture",
+      "id": 45356523,
+      "title": "Amazon S3 - Versioning",
+      "asset": {
+        "_class": "asset",
+        "id": 58635839,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Versioning_v2.mp4",
+        "created": "2024-08-18T17:57:17Z"
+      },
+      "object_index": 17
+    },
+    {
+      "_class": "lecture",
+      "id": 45356529,
+      "title": "Amazon S3 - Versioning - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58638087,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Versioning_Hands_On_v2.mp4",
+        "created": "2024-08-18T20:37:45Z"
+      },
+      "object_index": 18
+    },
+    {
+      "_class": "lecture",
+      "id": 45356533,
+      "title": "Amazon S3 - Replication",
+      "asset": {
+        "_class": "asset",
+        "id": 58635851,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Replication_v2.mp4",
+        "created": "2024-08-18T17:57:17Z"
+      },
+      "object_index": 19
+    },
+    {
+      "_class": "lecture",
+      "id": 45356535,
+      "title": "Amazon S3 - Replication - Notes",
+      "asset": {
+        "_class": "asset",
+        "id": 58636577,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Replication_Notes_v1.mp4",
+        "created": "2024-08-18T18:40:42Z"
+      },
+      "object_index": 20
+    },
+    {
+      "_class": "lecture",
+      "id": 45356537,
+      "title": "Amazon S3 - Replication - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636573,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Replication_Hands_On_v3.mp4",
+        "created": "2024-08-18T18:40:42Z"
+      },
+      "object_index": 21
+    },
+    {
+      "_class": "lecture",
+      "id": 45356545,
+      "title": "Amazon S3 - Storage Classes",
+      "asset": {
+        "_class": "asset",
+        "id": 58638157,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_Storage_Classes_v4.mp4",
+        "created": "2024-08-18T20:41:52Z"
+      },
+      "object_index": 22
+    },
+    {
+      "_class": "lecture",
+      "id": 45356551,
+      "title": "Amazon S3 - Storage Classes - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58635849,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Storage_Classes_Hands_On_v2.mp4",
+        "created": "2024-08-18T17:57:17Z"
+      },
+      "object_index": 23
+    },
+    {
+      "_class": "lecture",
+      "id": 45356561,
+      "title": "Amazon S3 - Lifecycle Rules",
+      "asset": {
+        "_class": "asset",
+        "id": 58636581,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Lifecycle_Rules_v4.mp4",
+        "created": "2024-08-18T18:40:42Z"
+      },
+      "object_index": 24
+    },
+    {
+      "_class": "lecture",
+      "id": 45356563,
+      "title": "Amazon S3 - Lifecycle Rules - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636575,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Lifecycle_Rules_Hands_On_v3.mp4",
+        "created": "2024-08-18T18:40:42Z"
+      },
+      "object_index": 25
+    },
+    {
+      "_class": "lecture",
+      "id": 45356567,
+      "title": "Amazon S3 - Event Notifications",
+      "asset": {
+        "_class": "asset",
+        "id": 58636579,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Event_Notifications_v4.mp4",
+        "created": "2024-08-18T18:40:42Z"
+      },
+      "object_index": 26
+    },
+    {
+      "_class": "lecture",
+      "id": 45356569,
+      "title": "Amazon S3 - Event Notifications - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636587,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Event_Notifications_Hands_On_v3.mp4",
+        "created": "2024-08-18T18:40:42Z"
+      },
+      "object_index": 27
+    },
+    {
+      "_class": "lecture",
+      "id": 45356575,
+      "title": "Amazon S3 - Performance",
+      "asset": {
+        "_class": "asset",
+        "id": 58636589,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Performance_v5.mp4",
+        "created": "2024-08-18T18:40:42Z"
+      },
+      "object_index": 28
+    },
+    {
+      "_class": "lecture",
+      "id": 45356585,
+      "title": "Amazon S3 - Encryption",
+      "asset": {
+        "_class": "asset",
+        "id": 58636583,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Encryption_v5.mp4",
+        "created": "2024-08-18T18:40:42Z"
+      },
+      "object_index": 29
+    },
+    {
+      "_class": "lecture",
+      "id": 45356597,
+      "title": "About DSSE-KMS",
+      "asset": {
+        "_class": "asset",
+        "id": 58635053,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2024-08-18T17:15:15Z"
+      },
+      "object_index": 30
+    },
+    {
+      "_class": "lecture",
+      "id": 45356611,
+      "title": "Amazon S3 - Encryption - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 64327379,
+        "asset_type": "Video",
+        "title": "SAA - S3 - Encryption Hands On v5.mp4",
+        "created": "2025-04-12T10:54:31Z"
+      },
+      "object_index": 31
+    },
+    {
+      "_class": "lecture",
+      "id": 45356621,
+      "title": "Amazon S3 - Default Encryption",
+      "asset": {
+        "_class": "asset",
+        "id": 58636593,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Default_Encryption_v5.mp4",
+        "created": "2024-08-18T18:40:42Z"
+      },
+      "object_index": 32
+    },
+    {
+      "_class": "lecture",
+      "id": 45356633,
+      "title": "Amazon S3 - Access Points",
+      "asset": {
+        "_class": "asset",
+        "id": 58636597,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Access_Points_-_Overview_v3.mp4",
+        "created": "2024-08-18T18:40:42Z"
+      },
+      "object_index": 33
+    },
+    {
+      "_class": "lecture",
+      "id": 45356641,
+      "title": "Amazon S3 - Object Lambda",
+      "asset": {
+        "_class": "asset",
+        "id": 58636585,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_-_Object_Lambda_v2.mp4",
+        "created": "2024-08-18T18:40:42Z"
+      },
+      "object_index": 34
+    },
+    {
+      "_class": "lecture",
+      "id": 45356651,
+      "title": "Amazon EBS",
+      "asset": {
+        "_class": "asset",
+        "id": 67390243,
+        "asset_type": "Video",
+        "title": "CCP - EBS - Overview v3.mp4",
+        "created": "2025-08-13T13:33:40Z"
+      },
+      "object_index": 35
+    },
+    {
+      "_class": "lecture",
+      "id": 45356655,
+      "title": "Amazon EBS - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58635857,
+        "asset_type": "Video",
+        "title": "CCP_-_EBS_-_Hands_On_v3.mp4",
+        "created": "2024-08-18T17:57:17Z"
+      },
+      "object_index": 36
+    },
+    {
+      "_class": "lecture",
+      "id": 45284791,
+      "title": "Amazon EBS Elastic Volumes",
+      "asset": {
+        "_class": "asset",
+        "id": 58543833,
+        "asset_type": "Video",
+        "title": "EBSElasticVolumes.mp4",
+        "created": "2024-08-14T15:45:52Z"
+      },
+      "object_index": 37
+    },
+    {
+      "_class": "lecture",
+      "id": 45356665,
+      "title": "Amazon EFS",
+      "asset": {
+        "_class": "asset",
+        "id": 58636599,
+        "asset_type": "Video",
+        "title": "SAA_-_EFS_-_Overview_v6.mp4",
+        "created": "2024-08-18T18:40:43Z"
+      },
+      "object_index": 38
+    },
+    {
+      "_class": "lecture",
+      "id": 45356675,
+      "title": "Amazon EFS - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636611,
+        "asset_type": "Video",
+        "title": "SAA_-_EFS_-_Hands_On_v6.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 39
+    },
+    {
+      "_class": "lecture",
+      "id": 45356679,
+      "title": "Amazon EFS vs. Amazon EBS",
+      "asset": {
+        "_class": "asset",
+        "id": 58636635,
+        "asset_type": "Video",
+        "title": "SAA_-_EFS_-_EFS_vs_EBS_v5.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 40
+    },
+    {
+      "_class": "lecture",
+      "id": 45356703,
+      "title": "Amazon FSx",
+      "asset": {
+        "_class": "asset",
+        "id": 58636603,
+        "asset_type": "Video",
+        "title": "SAA_-_FSx_-_Overview_v6.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 41
+    },
+    {
+      "_class": "lecture",
+      "id": 45356709,
+      "title": "Amazon FSx - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636631,
+        "asset_type": "Video",
+        "title": "SAA_-_FSx_-_Hands_On_v4.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 42
+    },
+    {
+      "_class": "lecture",
+      "id": 45356719,
+      "title": "Amazon Kinesis Data Streams",
+      "asset": {
+        "_class": "asset",
+        "id": 70793765,
+        "asset_type": "Video",
+        "title": "DVA - Kinesis - Overview v3.mp4",
+        "created": "2026-01-21T15:47:12Z"
+      },
+      "object_index": 43
+    },
+    {
+      "_class": "lecture",
+      "id": 45356733,
+      "title": "Amazon Kinesis Data Streams - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636689,
+        "asset_type": "Video",
+        "title": "DVA_-_Kinesis_-_KDS_Hands_On_v2.mp4",
+        "created": "2024-08-18T18:47:45Z"
+      },
+      "object_index": 44
+    },
+    {
+      "_class": "lecture",
+      "id": 45356757,
+      "title": "Amazon Data Firehose",
+      "asset": {
+        "_class": "asset",
+        "id": 61961155,
+        "asset_type": "Video",
+        "title": "DVA_-_Data_Firehose_-_Overview_v5.mp4",
+        "created": "2025-01-07T09:22:41Z"
+      },
+      "object_index": 45
+    },
+    {
+      "_class": "lecture",
+      "id": 45284803,
+      "title": "Kinesis Tuning and Troubleshooting",
+      "asset": {
+        "_class": "asset",
+        "id": 58543853,
+        "asset_type": "Video",
+        "title": "KinesisTroubleshooting.mp4",
+        "created": "2024-08-14T15:46:21Z"
+      },
+      "object_index": 46
+    },
+    {
+      "_class": "lecture",
+      "id": 45284813,
+      "title": "Amazon Managed Service for Apache Flink",
+      "asset": {
+        "_class": "asset",
+        "id": 58543867,
+        "asset_type": "Video",
+        "title": "KinesisAnalyticsSQLFlink.mp4",
+        "created": "2024-08-14T15:46:52Z"
+      },
+      "object_index": 47
+    },
+    {
+      "_class": "lecture",
+      "id": 52769147,
+      "title": "Managed Service for Apache Flink - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 68507589,
+        "asset_type": "Video",
+        "title": "MSF-Lab.mp4",
+        "created": "2025-10-01T14:23:28Z"
+      },
+      "object_index": 48
+    },
+    {
+      "_class": "lecture",
+      "id": 45284823,
+      "title": "Kinesis Analytics Costs; RANDOM_CUT_FOREST",
+      "asset": {
+        "_class": "asset",
+        "id": 65021555,
+        "asset_type": "Video",
+        "title": "02.KinesisAnalyticsCostsRandomCutForestWithKPU2025.mp4",
+        "created": "2025-05-10T12:26:48Z"
+      },
+      "object_index": 49
+    },
+    {
+      "_class": "lecture",
+      "id": 45356759,
+      "title": "Amazon MSK",
+      "asset": {
+        "_class": "asset",
+        "id": 58636785,
+        "asset_type": "Video",
+        "title": "DAS_-_MSK_v3.mp4",
+        "created": "2024-08-18T18:51:59Z"
+      },
+      "object_index": 50
+    },
+    {
+      "_class": "lecture",
+      "id": 45356761,
+      "title": "Amazon MSK - Connect",
+      "asset": {
+        "_class": "asset",
+        "id": 58638077,
+        "asset_type": "Video",
+        "title": "DAS_-_MSK_-_Connect_v1.mp4",
+        "created": "2024-08-18T20:37:45Z"
+      },
+      "object_index": 51
+    },
+    {
+      "_class": "lecture",
+      "id": 45356765,
+      "title": "Amazon MSK - Serverless",
+      "asset": {
+        "_class": "asset",
+        "id": 58638075,
+        "asset_type": "Video",
+        "title": "DAS_-_MSK_-_Serverless_v1.mp4",
+        "created": "2024-08-18T20:37:45Z"
+      },
+      "object_index": 52
+    },
+    {
+      "_class": "lecture",
+      "id": 45356767,
+      "title": "Amazon Kinesis vs. Amazon MSK",
+      "asset": {
+        "_class": "asset",
+        "id": 58638085,
+        "asset_type": "Video",
+        "title": "DAS_-_Kinesis_vs_MSK.mp4",
+        "created": "2024-08-18T20:37:45Z"
+      },
+      "object_index": 53
+    },
+    {
+      "_class": "quiz",
+      "id": 6496015,
+      "title": "Quiz: Data Ingestion and Storage",
+      "object_index": 1
+    },
+    {
+      "_class": "chapter",
+      "id": 10786925,
+      "title": "Data Transformation, Integrity, and Feature Engineering",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 45284847,
+      "title": "Intro: Data Transformation, Integrity, and Feature Engineering",
+      "asset": {
+        "_class": "asset",
+        "id": 58595843,
+        "asset_type": "Video",
+        "title": "IntroSec3.mp4",
+        "created": "2024-08-16T17:16:25Z"
+      },
+      "object_index": 54
+    },
+    {
+      "_class": "lecture",
+      "id": 45284859,
+      "title": "Elastic MapReduce (EMR) and Hadoop Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 58543925,
+        "asset_type": "Video",
+        "title": "S03L10EMROverview.mp4",
+        "created": "2024-08-14T15:49:57Z"
+      },
+      "object_index": 55
+    },
+    {
+      "_class": "lecture",
+      "id": 48185137,
+      "title": "EMR Serverless",
+      "asset": {
+        "_class": "asset",
+        "id": 63578573,
+        "asset_type": "Video",
+        "title": "EMRServerless.mp4",
+        "created": "2025-03-12T12:56:57Z"
+      },
+      "object_index": 56
+    },
+    {
+      "_class": "lecture",
+      "id": 45284871,
+      "title": "Apache Spark on EMR",
+      "asset": {
+        "_class": "asset",
+        "id": 58543943,
+        "asset_type": "Video",
+        "title": "S03L11SparkOnEMR.mp4",
+        "created": "2024-08-14T15:50:28Z"
+      },
+      "object_index": 57
+    },
+    {
+      "_class": "lecture",
+      "id": 45284887,
+      "title": "Feature Engineering and the Curse of Dimensionality",
+      "asset": {
+        "_class": "asset",
+        "id": 58543965,
+        "asset_type": "Video",
+        "title": "S03L13FeatureEngineeringDimensionality.mp4",
+        "created": "2024-08-14T15:51:42Z"
+      },
+      "object_index": 58
+    },
+    {
+      "_class": "lecture",
+      "id": 45284921,
+      "title": "Lab: Preparing Data for TF-IDF with Spark and EMR Studio, Part 1",
+      "asset": {
+        "_class": "asset",
+        "id": 58544181,
+        "asset_type": "Video",
+        "title": "S03L19Lab2-TFIDF-EMR-Spark-Pt1.mp4",
+        "created": "2024-08-14T16:00:59Z"
+      },
+      "object_index": 59
+    },
+    {
+      "_class": "lecture",
+      "id": 45285017,
+      "title": "Lab: Preparing Data for TF-IDF with Spark and EMR Studio, Part 2",
+      "asset": {
+        "_class": "asset",
+        "id": 61089071,
+        "asset_type": "Video",
+        "title": "tfidf-lab-2024-2.mp4",
+        "created": "2024-12-02T17:29:25Z"
+      },
+      "object_index": 60
+    },
+    {
+      "_class": "lecture",
+      "id": 45285025,
+      "title": "Imputing Missing Data",
+      "asset": {
+        "_class": "asset",
+        "id": 58544225,
+        "asset_type": "Video",
+        "title": "S03L14ImputingMissingData.mp4",
+        "created": "2024-08-14T16:02:45Z"
+      },
+      "object_index": 61
+    },
+    {
+      "_class": "lecture",
+      "id": 45285027,
+      "title": "Dealing with Unbalanced Data",
+      "asset": {
+        "_class": "asset",
+        "id": 58544237,
+        "asset_type": "Video",
+        "title": "S03L15UnbalancedData.mp4",
+        "created": "2024-08-14T16:03:13Z"
+      },
+      "object_index": 62
+    },
+    {
+      "_class": "lecture",
+      "id": 45285033,
+      "title": "Handling Outliers",
+      "asset": {
+        "_class": "asset",
+        "id": 58544245,
+        "asset_type": "Video",
+        "title": "S03L16Outliers.mp4",
+        "created": "2024-08-14T16:03:37Z"
+      },
+      "object_index": 63
+    },
+    {
+      "_class": "lecture",
+      "id": 45285045,
+      "title": "Binning, Transforming, Encoding, Scaling, and Shuffling",
+      "asset": {
+        "_class": "asset",
+        "id": 58544259,
+        "asset_type": "Video",
+        "title": "S03L17BinningTransformingEncodingScalingShuffling.mp4",
+        "created": "2024-08-14T16:04:09Z"
+      },
+      "object_index": 64
+    },
+    {
+      "_class": "lecture",
+      "id": 47852253,
+      "title": "UPDATE: SageMaker is now \"SageMaker AI\"",
+      "asset": {
+        "_class": "asset",
+        "id": 61902211,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2025-01-04T22:38:59Z"
+      },
+      "object_index": 65
+    },
+    {
+      "_class": "lecture",
+      "id": 45285053,
+      "title": "SageMaker AI Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 58544279,
+        "asset_type": "Video",
+        "title": "31.SageMakerOverview.mp4",
+        "created": "2024-08-14T16:04:39Z"
+      },
+      "object_index": 66
+    },
+    {
+      "_class": "lecture",
+      "id": 49341111,
+      "title": "SageMaker AI Domains",
+      "asset": {
+        "_class": "asset",
+        "id": 66619275,
+        "asset_type": "Video",
+        "title": "SageMakerAIDomains.mp4",
+        "created": "2025-07-11T14:15:36Z"
+      },
+      "object_index": 67
+    },
+    {
+      "_class": "lecture",
+      "id": 45285065,
+      "title": "Data Processing, Training, and Deployment with SageMaker AI",
+      "asset": {
+        "_class": "asset",
+        "id": 58544285,
+        "asset_type": "Video",
+        "title": "32.SageMakerDataTrainingDeployment.mp4",
+        "created": "2024-08-14T16:05:12Z"
+      },
+      "object_index": 68
+    },
+    {
+      "_class": "lecture",
+      "id": 45285145,
+      "title": "Amazon SageMaker Ground Truth and Label Generation",
+      "asset": {
+        "_class": "asset",
+        "id": 58544427,
+        "asset_type": "Video",
+        "title": "GroundTruthLabeling2022.mp4",
+        "created": "2024-08-14T16:12:40Z"
+      },
+      "object_index": 69
+    },
+    {
+      "_class": "lecture",
+      "id": 45356779,
+      "title": "Amazon Mechanical Turk",
+      "asset": {
+        "_class": "asset",
+        "id": 64326877,
+        "asset_type": "Video",
+        "title": "AIF - AI Services - Mechanical Turk Overview v1.mp4",
+        "created": "2025-04-12T10:36:46Z"
+      },
+      "object_index": 70
+    },
+    {
+      "_class": "lecture",
+      "id": 45285151,
+      "title": "SageMaker Data Wrangler",
+      "asset": {
+        "_class": "asset",
+        "id": 58544441,
+        "asset_type": "Video",
+        "title": "SageMakerDataWrangler.mp4",
+        "created": "2024-08-14T16:13:16Z"
+      },
+      "object_index": 71
+    },
+    {
+      "_class": "lecture",
+      "id": 53838329,
+      "title": "NOTICE: SageMaker Data Wrangler is getting hard to find",
+      "asset": {
+        "_class": "asset",
+        "id": 70070953,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2025-12-16T12:07:47Z"
+      },
+      "object_index": 72
+    },
+    {
+      "_class": "lecture",
+      "id": 45285175,
+      "title": "Demo: SageMaker Studio, Canvas, and Data Wrangler",
+      "asset": {
+        "_class": "asset",
+        "id": 58544463,
+        "asset_type": "Video",
+        "title": "SageMakerStudioCanvasWranglerDemo.mp4",
+        "created": "2024-08-14T16:14:43Z"
+      },
+      "object_index": 73
+    },
+    {
+      "_class": "lecture",
+      "id": 45285185,
+      "title": "SageMaker Model Monitor and SageMaker Clarify",
+      "asset": {
+        "_class": "asset",
+        "id": 66381611,
+        "asset_type": "Video",
+        "title": "35.SageMakerModelMonitorClarify.mp4",
+        "created": "2025-07-02T00:54:05Z"
+      },
+      "object_index": 74
+    },
+    {
+      "_class": "lecture",
+      "id": 45285211,
+      "title": "Partial Dependence Plots (PDPs), Shapley values, and SHAP",
+      "asset": {
+        "_class": "asset",
+        "id": 58594733,
+        "asset_type": "Video",
+        "title": "PDPsShapley.mp4",
+        "created": "2024-08-16T16:16:22Z"
+      },
+      "object_index": 75
+    },
+    {
+      "_class": "lecture",
+      "id": 45285213,
+      "title": "SageMaker Feature Store",
+      "asset": {
+        "_class": "asset",
+        "id": 58544507,
+        "asset_type": "Video",
+        "title": "SageMakerFeatureStore.mp4",
+        "created": "2024-08-14T16:16:34Z"
+      },
+      "object_index": 76
+    },
+    {
+      "_class": "lecture",
+      "id": 45536591,
+      "title": "SageMaker Canvas",
+      "asset": {
+        "_class": "asset",
+        "id": 58861857,
+        "asset_type": "Video",
+        "title": "SageMakerCanvas.mp4",
+        "created": "2024-08-28T18:10:35Z"
+      },
+      "object_index": 77
+    },
+    {
+      "_class": "lecture",
+      "id": 45285225,
+      "title": "AWS Glue",
+      "asset": {
+        "_class": "asset",
+        "id": 58544547,
+        "asset_type": "Video",
+        "title": "WhatIsGlueAndParitioningYourDataLake.mp4",
+        "created": "2024-08-14T16:18:22Z"
+      },
+      "object_index": 78
+    },
+    {
+      "_class": "lecture",
+      "id": 45285265,
+      "title": "AWS Glue Studio",
+      "asset": {
+        "_class": "asset",
+        "id": 66676888,
+        "asset_type": "Video",
+        "title": "AWSGlueStudioCorrected2025.mp4",
+        "created": "2025-07-14T11:27:47Z"
+      },
+      "object_index": 79
+    },
+    {
+      "_class": "lecture",
+      "id": 45285281,
+      "title": "AWS Glue Data Quality",
+      "asset": {
+        "_class": "asset",
+        "id": 58544569,
+        "asset_type": "Video",
+        "title": "GlueDataQuality.mp4",
+        "created": "2024-08-14T16:19:12Z"
+      },
+      "object_index": 80
+    },
+    {
+      "_class": "lecture",
+      "id": 45285287,
+      "title": "AWS Glue DataBrew",
+      "asset": {
+        "_class": "asset",
+        "id": 58544605,
+        "asset_type": "Video",
+        "title": "AWSGlueDatabrew2.mp4",
+        "created": "2024-08-14T16:20:20Z"
+      },
+      "object_index": 81
+    },
+    {
+      "_class": "lecture",
+      "id": 45285329,
+      "title": "Demo: Glue DataBrew",
+      "asset": {
+        "_class": "asset",
+        "id": 58544611,
+        "asset_type": "Video",
+        "title": "GlueDataBrewDemo.mp4",
+        "created": "2024-08-14T16:20:57Z"
+      },
+      "object_index": 82
+    },
+    {
+      "_class": "lecture",
+      "id": 45285349,
+      "title": "Handling PII in DataBrew Transformations",
+      "asset": {
+        "_class": "asset",
+        "id": 59479847,
+        "asset_type": "Video",
+        "title": "PIIInDataBrew.mp4",
+        "created": "2024-09-25T13:27:37Z"
+      },
+      "object_index": 83
+    },
+    {
+      "_class": "lecture",
+      "id": 46730209,
+      "title": "Intro to Amazon Athena",
+      "asset": {
+        "_class": "asset",
+        "id": 60422061,
+        "asset_type": "Video",
+        "title": "AthenaIntro.mp4",
+        "created": "2024-11-05T16:27:47Z"
+      },
+      "object_index": 84
+    },
+    {
+      "_class": "lecture",
+      "id": 46730253,
+      "title": "Athena and Glue",
+      "asset": {
+        "_class": "asset",
+        "id": 60422183,
+        "asset_type": "Video",
+        "title": "AthenaGlueWorkkgroupsCostsSecurity2022.mp4",
+        "created": "2024-11-05T16:34:22Z"
+      },
+      "object_index": 85
+    },
+    {
+      "_class": "lecture",
+      "id": 46730227,
+      "title": "Athena and CREATE TABLE AS SELECT",
+      "asset": {
+        "_class": "asset",
+        "id": 60422089,
+        "asset_type": "Video",
+        "title": "CTAS.mp4",
+        "created": "2024-11-05T16:29:06Z"
+      },
+      "object_index": 86
+    },
+    {
+      "_class": "lecture",
+      "id": 46730261,
+      "title": "Athena Performance",
+      "asset": {
+        "_class": "asset",
+        "id": 60422215,
+        "asset_type": "Video",
+        "title": "AthenaPerformance.mp4",
+        "created": "2024-11-05T16:36:16Z"
+      },
+      "object_index": 87
+    },
+    {
+      "_class": "lecture",
+      "id": 46730263,
+      "title": "Athena ACID Transactions",
+      "asset": {
+        "_class": "asset",
+        "id": 60422235,
+        "asset_type": "Video",
+        "title": "AthenaACID.mp4",
+        "created": "2024-11-05T16:36:52Z"
+      },
+      "object_index": 88
+    },
+    {
+      "_class": "lecture",
+      "id": 46730269,
+      "title": "Athena Fine-Grained Access",
+      "asset": {
+        "_class": "asset",
+        "id": 60422251,
+        "asset_type": "Video",
+        "title": "AthenaFineGrainedAccess.mp4",
+        "created": "2024-11-05T16:38:01Z"
+      },
+      "object_index": 89
+    },
+    {
+      "_class": "quiz",
+      "id": 6496099,
+      "title": "Quiz: Data Transformation, Integrity, and Feature Engineering",
+      "object_index": 2
+    },
+    {
+      "_class": "chapter",
+      "id": 10786927,
+      "title": "AWS Managed AI Services",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 45285369,
+      "title": "Intro: AWS Managed AI Services",
+      "asset": {
+        "_class": "asset",
+        "id": 58595847,
+        "asset_type": "Video",
+        "title": "IntroSec4.mp4",
+        "created": "2024-08-16T17:16:42Z"
+      },
+      "object_index": 90
+    },
+    {
+      "_class": "lecture",
+      "id": 45356791,
+      "title": "Why AWS Managed Services?",
+      "asset": {
+        "_class": "asset",
+        "id": 61951199,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Section_Intro_v2.mp4",
+        "created": "2025-01-06T20:30:58Z"
+      },
+      "object_index": 91
+    },
+    {
+      "_class": "lecture",
+      "id": 45356799,
+      "title": "Amazon Comprehend",
+      "asset": {
+        "_class": "asset",
+        "id": 59221009,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Comprehend_Overview_v2.mp4",
+        "created": "2024-09-13T17:56:09Z"
+      },
+      "object_index": 92
+    },
+    {
+      "_class": "lecture",
+      "id": 45536581,
+      "title": "Amazon Comprehend Custom Models",
+      "asset": {
+        "_class": "asset",
+        "id": 58861835,
+        "asset_type": "Video",
+        "title": "ComprehendCustomModels.mp4",
+        "created": "2024-08-28T18:10:05Z"
+      },
+      "object_index": 93
+    },
+    {
+      "_class": "lecture",
+      "id": 45356801,
+      "title": "Amazon Comprehend - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636861,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Comprehend_Hands_On_v1.mp4",
+        "created": "2024-08-18T18:56:04Z"
+      },
+      "object_index": 94
+    },
+    {
+      "_class": "lecture",
+      "id": 45356807,
+      "title": "Amazon Translate",
+      "asset": {
+        "_class": "asset",
+        "id": 58635853,
+        "asset_type": "Video",
+        "title": "CCP_-_ML_-_Translate.mp4",
+        "created": "2024-08-18T17:57:17Z"
+      },
+      "object_index": 95
+    },
+    {
+      "_class": "lecture",
+      "id": 45356811,
+      "title": "Amazon Translate - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636867,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Translate_Hands_On_v1.mp4",
+        "created": "2024-08-18T18:56:04Z"
+      },
+      "object_index": 96
+    },
+    {
+      "_class": "lecture",
+      "id": 45356813,
+      "title": "Amazon Transcribe",
+      "asset": {
+        "_class": "asset",
+        "id": 60516903,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Transcribe_v3.mp4",
+        "created": "2024-11-09T11:01:47Z"
+      },
+      "object_index": 97
+    },
+    {
+      "_class": "lecture",
+      "id": 45816193,
+      "title": "Amazon Transcribe - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 59220999,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Transcribe_Hands_On_v1.mp4",
+        "created": "2024-09-13T17:56:09Z"
+      },
+      "object_index": 98
+    },
+    {
+      "_class": "lecture",
+      "id": 45356817,
+      "title": "Amazon Polly",
+      "asset": {
+        "_class": "asset",
+        "id": 58666609,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Polly_v1.mp4",
+        "created": "2024-08-20T07:58:04Z"
+      },
+      "object_index": 99
+    },
+    {
+      "_class": "lecture",
+      "id": 45381367,
+      "title": "Amazon Polly - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58666607,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Polly_Hands_On_v1.mp4",
+        "created": "2024-08-20T07:58:04Z"
+      },
+      "object_index": 100
+    },
+    {
+      "_class": "lecture",
+      "id": 45356819,
+      "title": "Amazon Rekognition",
+      "asset": {
+        "_class": "asset",
+        "id": 59220995,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Rekognition_v2.mp4",
+        "created": "2024-09-13T17:56:09Z"
+      },
+      "object_index": 101
+    },
+    {
+      "_class": "lecture",
+      "id": 45816139,
+      "title": "Amazon Rekognition - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 59221001,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Rekognition_Hands_On_v1.mp4",
+        "created": "2024-09-13T17:56:09Z"
+      },
+      "object_index": 102
+    },
+    {
+      "_class": "lecture",
+      "id": 45381381,
+      "title": "Amazon Lex",
+      "asset": {
+        "_class": "asset",
+        "id": 58666599,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Lex_v1.mp4",
+        "created": "2024-08-20T07:58:04Z"
+      },
+      "object_index": 103
+    },
+    {
+      "_class": "lecture",
+      "id": 45381385,
+      "title": "Amazon Lex - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58666603,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Lex_Hands_On_v1.mp4",
+        "created": "2024-08-20T07:58:04Z"
+      },
+      "object_index": 104
+    },
+    {
+      "_class": "lecture",
+      "id": 45356829,
+      "title": "Amazon Personalize",
+      "asset": {
+        "_class": "asset",
+        "id": 59220997,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Personalize_v2.mp4",
+        "created": "2024-09-13T17:56:09Z"
+      },
+      "object_index": 105
+    },
+    {
+      "_class": "lecture",
+      "id": 45356833,
+      "title": "Amazon Textract",
+      "asset": {
+        "_class": "asset",
+        "id": 58638307,
+        "asset_type": "Video",
+        "title": "CCP_-_Amazon_Textract_v1.mp4",
+        "created": "2024-08-18T20:53:38Z"
+      },
+      "object_index": 106
+    },
+    {
+      "_class": "lecture",
+      "id": 45356835,
+      "title": "Amazon Textract - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636863,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Textract_Hands_On_v1.mp4",
+        "created": "2024-08-18T18:56:04Z"
+      },
+      "object_index": 107
+    },
+    {
+      "_class": "lecture",
+      "id": 45356837,
+      "title": "Amazon Kendra",
+      "asset": {
+        "_class": "asset",
+        "id": 58638315,
+        "asset_type": "Video",
+        "title": "CCP_-_ML_-_Kendra_v1.mp4",
+        "created": "2024-08-18T20:54:03Z"
+      },
+      "object_index": 108
+    },
+    {
+      "_class": "lecture",
+      "id": 45356841,
+      "title": "Amazon Augmented AI",
+      "asset": {
+        "_class": "asset",
+        "id": 58636871,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Amazon_Augmented_AI_A2I_Overview_v1.mp4",
+        "created": "2024-08-18T18:56:04Z"
+      },
+      "object_index": 109
+    },
+    {
+      "_class": "lecture",
+      "id": 45356845,
+      "title": "Amazon Augmented AI - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636885,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Amazon_Augmented_AI_A2I_Hands_On_v1.mp4",
+        "created": "2024-08-18T18:56:04Z"
+      },
+      "object_index": 110
+    },
+    {
+      "_class": "lecture",
+      "id": 45356847,
+      "title": "Amazon's Hardware for AI",
+      "asset": {
+        "_class": "asset",
+        "id": 59221007,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Amazon_EC2_for_AI_Overview_v2.mp4",
+        "created": "2024-09-13T17:56:09Z"
+      },
+      "object_index": 111
+    },
+    {
+      "_class": "lecture",
+      "id": 45356849,
+      "title": "Amazon's Hardware for AI - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636889,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Amazon_EC2_for_AI_Hands_On_v1.mp4",
+        "created": "2024-08-18T18:56:04Z"
+      },
+      "object_index": 112
+    },
+    {
+      "_class": "lecture",
+      "id": 45356855,
+      "title": "Amazon Q Business",
+      "asset": {
+        "_class": "asset",
+        "id": 58636883,
+        "asset_type": "Video",
+        "title": "AIF_-_Amazon_Q_Business_Overview_v1.mp4",
+        "created": "2024-08-18T18:56:04Z"
+      },
+      "object_index": 113
+    },
+    {
+      "_class": "lecture",
+      "id": 45356861,
+      "title": "Amazon Q Business - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 67441611,
+        "asset_type": "Video",
+        "title": "AIF - Amazon Q Business Hands On v2.mp4",
+        "created": "2025-08-15T13:30:48Z"
+      },
+      "object_index": 114
+    },
+    {
+      "_class": "lecture",
+      "id": 45356865,
+      "title": "Amazon Q Apps",
+      "asset": {
+        "_class": "asset",
+        "id": 58636869,
+        "asset_type": "Video",
+        "title": "AIF_-_Amazon_Q_Business_-_Q_Apps_v1.mp4",
+        "created": "2024-08-18T18:56:04Z"
+      },
+      "object_index": 115
+    },
+    {
+      "_class": "lecture",
+      "id": 45356867,
+      "title": "Amazon Q Apps - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636873,
+        "asset_type": "Video",
+        "title": "AIF_-_Amazon_Q_Business_-_Q_Apps_Hands_On_v1.mp4",
+        "created": "2024-08-18T18:56:04Z"
+      },
+      "object_index": 116
+    },
+    {
+      "_class": "lecture",
+      "id": 45356871,
+      "title": "Amazon Q Business - Hands On - Cleanup",
+      "asset": {
+        "_class": "asset",
+        "id": 58636879,
+        "asset_type": "Video",
+        "title": "AIF_-_Amazon_Q_Business_-_Cleanup_v1.mp4",
+        "created": "2024-08-18T18:56:04Z"
+      },
+      "object_index": 117
+    },
+    {
+      "_class": "lecture",
+      "id": 45356875,
+      "title": "Amazon Q Developer",
+      "asset": {
+        "_class": "asset",
+        "id": 70793087,
+        "asset_type": "Video",
+        "title": "AIF - Amazon Q Developer Overview v1.mp4",
+        "created": "2026-01-21T15:25:44Z"
+      },
+      "object_index": 118
+    },
+    {
+      "_class": "lecture",
+      "id": 45356879,
+      "title": "Amazon Q Developer - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70793073,
+        "asset_type": "Video",
+        "title": "AIF - Amazon Q Developer Hands On v1.mp4",
+        "created": "2026-01-21T15:25:40Z"
+      },
+      "object_index": 119
+    },
+    {
+      "_class": "quiz",
+      "id": 6496135,
+      "title": "Quiz: AWS Managed AI Services",
+      "object_index": 3
+    },
+    {
+      "_class": "chapter",
+      "id": 10786931,
+      "title": "SageMaker Built-In Algorithms",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 45285371,
+      "title": "Intro: SageMaker Built-In Algorithms",
+      "asset": {
+        "_class": "asset",
+        "id": 58595853,
+        "asset_type": "Video",
+        "title": "IntroSec5.mp4",
+        "created": "2024-08-16T17:16:59Z"
+      },
+      "object_index": 120
+    },
+    {
+      "_class": "lecture",
+      "id": 45285373,
+      "title": "Introducing Amazon SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544647,
+        "asset_type": "Video",
+        "title": "S04L12SageMakerIntro.mp4",
+        "created": "2024-08-14T16:23:01Z"
+      },
+      "object_index": 121
+    },
+    {
+      "_class": "lecture",
+      "id": 45285395,
+      "title": "SageMaker Input Modes",
+      "asset": {
+        "_class": "asset",
+        "id": 58594749,
+        "asset_type": "Video",
+        "title": "SageMakerInputModes.mp4",
+        "created": "2024-08-16T16:17:16Z"
+      },
+      "object_index": 122
+    },
+    {
+      "_class": "lecture",
+      "id": 45285403,
+      "title": "Linear Learner in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544661,
+        "asset_type": "Video",
+        "title": "LinearLearner2024.mp4",
+        "created": "2024-08-14T16:23:36Z"
+      },
+      "object_index": 123
+    },
+    {
+      "_class": "lecture",
+      "id": 45285417,
+      "title": "XGBoost in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544685,
+        "asset_type": "Video",
+        "title": "XGBoost.mp4",
+        "created": "2024-08-14T16:24:08Z"
+      },
+      "object_index": 124
+    },
+    {
+      "_class": "lecture",
+      "id": 45536577,
+      "title": "LightGBM in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58861809,
+        "asset_type": "Video",
+        "title": "LightGBM.mp4",
+        "created": "2024-08-28T18:09:43Z"
+      },
+      "object_index": 125
+    },
+    {
+      "_class": "lecture",
+      "id": 45285427,
+      "title": "Seq2Seq in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544707,
+        "asset_type": "Video",
+        "title": "S04L15Seq2Seq.mp4",
+        "created": "2024-08-14T16:24:50Z"
+      },
+      "object_index": 126
+    },
+    {
+      "_class": "lecture",
+      "id": 45285445,
+      "title": "DeepAR in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544739,
+        "asset_type": "Video",
+        "title": "DeepAR.mp4",
+        "created": "2024-08-14T16:25:46Z"
+      },
+      "object_index": 127
+    },
+    {
+      "_class": "lecture",
+      "id": 45285461,
+      "title": "BlazingText in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544755,
+        "asset_type": "Video",
+        "title": "S04L17BlazingText.mp4",
+        "created": "2024-08-14T16:26:13Z"
+      },
+      "object_index": 128
+    },
+    {
+      "_class": "lecture",
+      "id": 45285475,
+      "title": "Object2Vec in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544771,
+        "asset_type": "Video",
+        "title": "Object2Vec.mp4",
+        "created": "2024-08-14T16:26:46Z"
+      },
+      "object_index": 129
+    },
+    {
+      "_class": "lecture",
+      "id": 45285491,
+      "title": "Object Detection in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544785,
+        "asset_type": "Video",
+        "title": "ObjectDetection.mp4",
+        "created": "2024-08-14T16:27:18Z"
+      },
+      "object_index": 130
+    },
+    {
+      "_class": "lecture",
+      "id": 45285497,
+      "title": "Image Classification in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544805,
+        "asset_type": "Video",
+        "title": "ImageClassification.mp4",
+        "created": "2024-08-14T16:27:41Z"
+      },
+      "object_index": 131
+    },
+    {
+      "_class": "lecture",
+      "id": 45285503,
+      "title": "Semantic Segmentation in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544817,
+        "asset_type": "Video",
+        "title": "SemanticSegmentation.mp4",
+        "created": "2024-08-14T16:28:07Z"
+      },
+      "object_index": 132
+    },
+    {
+      "_class": "lecture",
+      "id": 45285517,
+      "title": "Random Cut Forest in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544837,
+        "asset_type": "Video",
+        "title": "S04L22RandomCutForest.mp4",
+        "created": "2024-08-14T16:28:42Z"
+      },
+      "object_index": 133
+    },
+    {
+      "_class": "lecture",
+      "id": 45285527,
+      "title": "Neural Topic Model in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544847,
+        "asset_type": "Video",
+        "title": "S04L23NeuralTopicModel.mp4",
+        "created": "2024-08-14T16:29:15Z"
+      },
+      "object_index": 134
+    },
+    {
+      "_class": "lecture",
+      "id": 45285535,
+      "title": "Latent Dirichlet Allocation (LDA) in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544879,
+        "asset_type": "Video",
+        "title": "S04L24LDA.mp4",
+        "created": "2024-08-14T16:29:45Z"
+      },
+      "object_index": 135
+    },
+    {
+      "_class": "lecture",
+      "id": 45285541,
+      "title": "K-Nearest-Neighbors (KNN) in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544899,
+        "asset_type": "Video",
+        "title": "S04L25KNN.mp4",
+        "created": "2024-08-14T16:30:14Z"
+      },
+      "object_index": 136
+    },
+    {
+      "_class": "lecture",
+      "id": 45285551,
+      "title": "K-Means Clustering in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544913,
+        "asset_type": "Video",
+        "title": "KMeans.mp4",
+        "created": "2024-08-14T16:30:45Z"
+      },
+      "object_index": 137
+    },
+    {
+      "_class": "lecture",
+      "id": 45285559,
+      "title": "Principal Component Analysis (PCA) in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544921,
+        "asset_type": "Video",
+        "title": "S04L27PCA.mp4",
+        "created": "2024-08-14T16:31:15Z"
+      },
+      "object_index": 138
+    },
+    {
+      "_class": "lecture",
+      "id": 45285569,
+      "title": "Factorization Machines in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58544925,
+        "asset_type": "Video",
+        "title": "S04L28FactorizationMachines.mp4",
+        "created": "2024-08-14T16:31:42Z"
+      },
+      "object_index": 139
+    },
+    {
+      "_class": "lecture",
+      "id": 45285581,
+      "title": "IP Insights in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58545059,
+        "asset_type": "Video",
+        "title": "S04L29IPInsights.mp4",
+        "created": "2024-08-14T16:32:05Z"
+      },
+      "object_index": 140
+    },
+    {
+      "_class": "quiz",
+      "id": 6496161,
+      "title": "Quiz: SageMaker Built-In Algorithms",
+      "object_index": 4
+    },
+    {
+      "_class": "chapter",
+      "id": 10786945,
+      "title": "Model Training, Tuning, and Evaluation",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 45285601,
+      "title": "Intro: Model Training, Tuning, and Evaluation",
+      "asset": {
+        "_class": "asset",
+        "id": 58595863,
+        "asset_type": "Video",
+        "title": "IntroSec6.mp4",
+        "created": "2024-08-16T17:17:19Z"
+      },
+      "object_index": 141
+    },
+    {
+      "_class": "lecture",
+      "id": 45285609,
+      "title": "Introduction to Deep Learning",
+      "asset": {
+        "_class": "asset",
+        "id": 58545747,
+        "asset_type": "Video",
+        "title": "S04L01ModelingIntro.mp4",
+        "created": "2024-08-14T17:02:24Z"
+      },
+      "object_index": 142
+    },
+    {
+      "_class": "lecture",
+      "id": 45285617,
+      "title": "Activation Functions",
+      "asset": {
+        "_class": "asset",
+        "id": 58545105,
+        "asset_type": "Video",
+        "title": "ActivationFunction2024.mp4",
+        "created": "2024-08-14T16:33:49Z"
+      },
+      "object_index": 143
+    },
+    {
+      "_class": "lecture",
+      "id": 45285627,
+      "title": "Convolutional Neural Networks",
+      "asset": {
+        "_class": "asset",
+        "id": 58545115,
+        "asset_type": "Video",
+        "title": "S04L03CNNsCut.mp4",
+        "created": "2024-08-14T16:34:26Z"
+      },
+      "object_index": 144
+    },
+    {
+      "_class": "lecture",
+      "id": 45285633,
+      "title": "Recurrent Neural Networks",
+      "asset": {
+        "_class": "asset",
+        "id": 58545751,
+        "asset_type": "Video",
+        "title": "S04L04RNNs.mp4",
+        "created": "2024-08-14T17:02:52Z"
+      },
+      "object_index": 145
+    },
+    {
+      "_class": "lecture",
+      "id": 45285645,
+      "title": "Tuning Neural Networks",
+      "asset": {
+        "_class": "asset",
+        "id": 58545153,
+        "asset_type": "Video",
+        "title": "TuningNeuralNetworksCorrected.mp4",
+        "created": "2024-08-14T16:35:27Z"
+      },
+      "object_index": 146
+    },
+    {
+      "_class": "lecture",
+      "id": 45285669,
+      "title": "Regularization Techniques for Neural Networks (Dropout, Early Stopping)",
+      "asset": {
+        "_class": "asset",
+        "id": 58545759,
+        "asset_type": "Video",
+        "title": "S04L06NeuralNetRegularization.mp4",
+        "created": "2024-08-14T17:03:14Z"
+      },
+      "object_index": 147
+    },
+    {
+      "_class": "lecture",
+      "id": 45285675,
+      "title": "L1 and L2 Regularization",
+      "asset": {
+        "_class": "asset",
+        "id": 58545191,
+        "asset_type": "Video",
+        "title": "S04L08L1L2Regularization.mp4",
+        "created": "2024-08-14T16:37:04Z"
+      },
+      "object_index": 148
+    },
+    {
+      "_class": "lecture",
+      "id": 45285689,
+      "title": "The Vanishing Gradient Problem",
+      "asset": {
+        "_class": "asset",
+        "id": 58545195,
+        "asset_type": "Video",
+        "title": "S04L07GriefWithGradients.mp4",
+        "created": "2024-08-14T16:37:33Z"
+      },
+      "object_index": 149
+    },
+    {
+      "_class": "lecture",
+      "id": 45285703,
+      "title": "The Confusion Matrix",
+      "asset": {
+        "_class": "asset",
+        "id": 58545213,
+        "asset_type": "Video",
+        "title": "S04L09ConfusionMatrix.mp4",
+        "created": "2024-08-14T16:38:03Z"
+      },
+      "object_index": 150
+    },
+    {
+      "_class": "lecture",
+      "id": 45285713,
+      "title": "Precision, Recall, F1, AUC, and more",
+      "asset": {
+        "_class": "asset",
+        "id": 58545223,
+        "asset_type": "Video",
+        "title": "S04L10ClassifierMetricsWithPRCurve.mp4",
+        "created": "2024-08-14T16:38:35Z"
+      },
+      "object_index": 151
+    },
+    {
+      "_class": "lecture",
+      "id": 45536603,
+      "title": "RMSE, R-squared, MAE",
+      "asset": {
+        "_class": "asset",
+        "id": 58861879,
+        "asset_type": "Video",
+        "title": "OtherTypesOfMetrics.mp4",
+        "created": "2024-08-28T18:11:19Z"
+      },
+      "object_index": 152
+    },
+    {
+      "_class": "lecture",
+      "id": 45285725,
+      "title": "Ensemble Methods: Bagging and Boosting",
+      "asset": {
+        "_class": "asset",
+        "id": 58545239,
+        "asset_type": "Video",
+        "title": "S04L11BaggingBoosting.mp4",
+        "created": "2024-08-14T16:39:10Z"
+      },
+      "object_index": 153
+    },
+    {
+      "_class": "lecture",
+      "id": 45285731,
+      "title": "Automatic Model Tuning (AMT) in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58545775,
+        "asset_type": "Video",
+        "title": "S04L31AutomaticModelTuning.mp4",
+        "created": "2024-08-14T17:03:44Z"
+      },
+      "object_index": 154
+    },
+    {
+      "_class": "lecture",
+      "id": 45285747,
+      "title": "Hyperparameter Tuning in AMT",
+      "asset": {
+        "_class": "asset",
+        "id": 58594755,
+        "asset_type": "Video",
+        "title": "HyperParameterTuningInAMT.mp4",
+        "created": "2024-08-16T16:17:32Z"
+      },
+      "object_index": 155
+    },
+    {
+      "_class": "lecture",
+      "id": 45285755,
+      "title": "SageMaker Autopilot / AutoML",
+      "asset": {
+        "_class": "asset",
+        "id": 58545277,
+        "asset_type": "Video",
+        "title": "SagemakerAutopilot2024Q1.mp4",
+        "created": "2024-08-14T16:40:34Z"
+      },
+      "object_index": 156
+    },
+    {
+      "_class": "lecture",
+      "id": 45285771,
+      "title": "SageMaker Studio, SageMaker Experiments",
+      "asset": {
+        "_class": "asset",
+        "id": 71176363,
+        "asset_type": "Video",
+        "title": "SageMakerStudioExperiments.mp4",
+        "created": "2026-02-08T18:30:15Z"
+      },
+      "object_index": 157
+    },
+    {
+      "_class": "lecture",
+      "id": 45285785,
+      "title": "SageMaker Debugger",
+      "asset": {
+        "_class": "asset",
+        "id": 58545307,
+        "asset_type": "Video",
+        "title": "SageMakerDebugger.mp4",
+        "created": "2024-08-14T16:41:48Z"
+      },
+      "object_index": 158
+    },
+    {
+      "_class": "lecture",
+      "id": 45285793,
+      "title": "SageMaker Model Registry",
+      "asset": {
+        "_class": "asset",
+        "id": 58594757,
+        "asset_type": "Video",
+        "title": "SageMakerModelRegistry.mp4",
+        "created": "2024-08-16T16:17:46Z"
+      },
+      "object_index": 159
+    },
+    {
+      "_class": "lecture",
+      "id": 45285799,
+      "title": "Analyzing Training Jobs with TensorBoard",
+      "asset": {
+        "_class": "asset",
+        "id": 58594761,
+        "asset_type": "Video",
+        "title": "AnalyzingWithTensorboard.mp4",
+        "created": "2024-08-16T16:17:55Z"
+      },
+      "object_index": 160
+    },
+    {
+      "_class": "lecture",
+      "id": 45285803,
+      "title": "SageMaker Training at Large Scale: Training Compiler, Warm Pools",
+      "asset": {
+        "_class": "asset",
+        "id": 58545349,
+        "asset_type": "Video",
+        "title": "SageMakerTrainingCompilerWarmPools.mp4",
+        "created": "2024-08-14T16:43:10Z"
+      },
+      "object_index": 161
+    },
+    {
+      "_class": "lecture",
+      "id": 45285823,
+      "title": "SageMaker Checkpointing, Cluster Health Checks, Automatic Restarts",
+      "asset": {
+        "_class": "asset",
+        "id": 58545361,
+        "asset_type": "Video",
+        "title": "SageMakerCheckpointingHealthChecks.mp4",
+        "created": "2024-08-14T16:43:32Z"
+      },
+      "object_index": 162
+    },
+    {
+      "_class": "lecture",
+      "id": 45285833,
+      "title": "SageMaker Distributed Training Libraries and Distributed Data Parallelism",
+      "asset": {
+        "_class": "asset",
+        "id": 58545373,
+        "asset_type": "Video",
+        "title": "SageMakerDistributedTraining.mp4",
+        "created": "2024-08-14T16:44:09Z"
+      },
+      "object_index": 163
+    },
+    {
+      "_class": "lecture",
+      "id": 45285843,
+      "title": "SageMaker Model Parallelism Library",
+      "asset": {
+        "_class": "asset",
+        "id": 58545383,
+        "asset_type": "Video",
+        "title": "SageMakerModelParallelismLibrary.mp4",
+        "created": "2024-08-14T16:44:30Z"
+      },
+      "object_index": 164
+    },
+    {
+      "_class": "lecture",
+      "id": 45285849,
+      "title": "Elastic Fabric Adapter (EFA) and MiCS",
+      "asset": {
+        "_class": "asset",
+        "id": 58545385,
+        "asset_type": "Video",
+        "title": "EFAandMiCS.mp4",
+        "created": "2024-08-14T16:44:58Z"
+      },
+      "object_index": 165
+    },
+    {
+      "_class": "quiz",
+      "id": 6496201,
+      "title": "Quiz: Model Tuning, Training, and Evaluation",
+      "object_index": 5
+    },
+    {
+      "_class": "chapter",
+      "id": 10786947,
+      "title": "Generative AI Model Fundamentals",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 45285865,
+      "title": "Intro: Generative AI Model Fundamentals",
+      "asset": {
+        "_class": "asset",
+        "id": 58595869,
+        "asset_type": "Video",
+        "title": "IntroSec7.mp4",
+        "created": "2024-08-16T17:17:35Z"
+      },
+      "object_index": 166
+    },
+    {
+      "_class": "lecture",
+      "id": 45285869,
+      "title": "The Transformer Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 58545439,
+        "asset_type": "Video",
+        "title": "GenAIEvolution.mp4",
+        "created": "2024-08-14T16:46:39Z"
+      },
+      "object_index": 167
+    },
+    {
+      "_class": "lecture",
+      "id": 45285875,
+      "title": "Self-Attention and Attention-Based Neural Networks",
+      "asset": {
+        "_class": "asset",
+        "id": 58545453,
+        "asset_type": "Video",
+        "title": "SelfAttentionInDepth.mp4",
+        "created": "2024-08-14T16:47:11Z"
+      },
+      "object_index": 168
+    },
+    {
+      "_class": "lecture",
+      "id": 45285883,
+      "title": "Applications of Transformers",
+      "asset": {
+        "_class": "asset",
+        "id": 58545461,
+        "asset_type": "Video",
+        "title": "TransformerApplications.mp4",
+        "created": "2024-08-14T16:48:18Z"
+      },
+      "object_index": 169
+    },
+    {
+      "_class": "lecture",
+      "id": 45285917,
+      "title": "Generative Pre-Trained Transformers: How they Work, Part 1",
+      "asset": {
+        "_class": "asset",
+        "id": 58545479,
+        "asset_type": "Video",
+        "title": "GPTArchitecture.mp4",
+        "created": "2024-08-14T16:49:07Z"
+      },
+      "object_index": 170
+    },
+    {
+      "_class": "lecture",
+      "id": 45285925,
+      "title": "Generative Pre-Trained Transformers: How they Work, Part 2",
+      "asset": {
+        "_class": "asset",
+        "id": 58545481,
+        "asset_type": "Video",
+        "title": "GPTOutputProcessing.mp4",
+        "created": "2024-08-14T16:49:24Z"
+      },
+      "object_index": 171
+    },
+    {
+      "_class": "lecture",
+      "id": 45536625,
+      "title": "LLM Key Terms and Controls (tokens, embeddings, temperature, etc.)",
+      "asset": {
+        "_class": "asset",
+        "id": 58861905,
+        "asset_type": "Video",
+        "title": "LLMKeyTerms.mp4",
+        "created": "2024-08-28T18:12:07Z"
+      },
+      "object_index": 172
+    },
+    {
+      "_class": "lecture",
+      "id": 45285941,
+      "title": "Fine-Tuning and Transfer Learning with Transformers",
+      "asset": {
+        "_class": "asset",
+        "id": 58545489,
+        "asset_type": "Video",
+        "title": "FineTuning.mp4",
+        "created": "2024-08-14T16:49:52Z"
+      },
+      "object_index": 173
+    },
+    {
+      "_class": "lecture",
+      "id": 45285951,
+      "title": "Lab: Tokenization and Positional Encoding with SageMaker Notebooks",
+      "asset": {
+        "_class": "asset",
+        "id": 58545501,
+        "asset_type": "Video",
+        "title": "Transformer-activities-Pt1.mp4",
+        "created": "2024-08-14T16:50:40Z"
+      },
+      "object_index": 174
+    },
+    {
+      "_class": "lecture",
+      "id": 45285963,
+      "title": "Lab: Multi-Headed, Masked Self-Attention in SageMaker",
+      "asset": {
+        "_class": "asset",
+        "id": 58545511,
+        "asset_type": "Video",
+        "title": "Transformer-Activities-pt2-SelfAttention.mp4",
+        "created": "2024-08-14T16:50:56Z"
+      },
+      "object_index": 175
+    },
+    {
+      "_class": "lecture",
+      "id": 45286023,
+      "title": "Lab: Using GPT within a SageMaker Notebook",
+      "asset": {
+        "_class": "asset",
+        "id": 58545545,
+        "asset_type": "Video",
+        "title": "Transformer-Activities-pt3-UsingGPT2.mp4",
+        "created": "2024-08-14T16:52:49Z"
+      },
+      "object_index": 176
+    },
+    {
+      "_class": "lecture",
+      "id": 45285981,
+      "title": "AWS Foundation Models and SageMaker JumpStart with Generative AI",
+      "asset": {
+        "_class": "asset",
+        "id": 65021757,
+        "asset_type": "Video",
+        "title": "AWSFoundationModelJumpstart.mp4",
+        "created": "2025-05-10T12:41:10Z"
+      },
+      "object_index": 177
+    },
+    {
+      "_class": "lecture",
+      "id": 45285997,
+      "title": "Lab: Using Amazon SageMaker JumpStart with Huggingface",
+      "asset": {
+        "_class": "asset",
+        "id": 64214689,
+        "asset_type": "Video",
+        "title": "SagemakerFoundationModels2025.mp4",
+        "created": "2025-04-07T19:34:57Z"
+      },
+      "object_index": 178
+    },
+    {
+      "_class": "quiz",
+      "id": 6496233,
+      "title": "Quiz: Generative AI Model Fundamentals",
+      "object_index": 6
+    },
+    {
+      "_class": "chapter",
+      "id": 10786949,
+      "title": "Building Generative AI Applications with Bedrock",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 45286251,
+      "title": "Intro: Building Generative AI Applications with Bedrock",
+      "asset": {
+        "_class": "asset",
+        "id": 58595875,
+        "asset_type": "Video",
+        "title": "IntroSec8.mp4",
+        "created": "2024-08-16T17:17:50Z"
+      },
+      "object_index": 179
+    },
+    {
+      "_class": "lecture",
+      "id": 45286257,
+      "title": "Building Generative AI with Amazon Bedrock and Foundation Models",
+      "asset": {
+        "_class": "asset",
+        "id": 58545821,
+        "asset_type": "Video",
+        "title": "BedrockOverview.mp4",
+        "created": "2024-08-14T17:05:46Z"
+      },
+      "object_index": 180
+    },
+    {
+      "_class": "lecture",
+      "id": 53757523,
+      "title": "A note on Bedrock model access",
+      "asset": {
+        "_class": "asset",
+        "id": 69839109,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2025-12-04T14:25:27Z"
+      },
+      "object_index": 181
+    },
+    {
+      "_class": "lecture",
+      "id": 45286275,
+      "title": "Lab: Chat, Text, and Image Foundation Models in the Bedrock Playground",
+      "asset": {
+        "_class": "asset",
+        "id": 70070575,
+        "asset_type": "Video",
+        "title": "BedrockPlaygroundCorrected.mp4",
+        "created": "2025-12-16T11:47:05Z"
+      },
+      "object_index": 182
+    },
+    {
+      "_class": "lecture",
+      "id": 45286309,
+      "title": "Fine-Tuning Custom Models and Continuous Pre-Training with Bedrock",
+      "asset": {
+        "_class": "asset",
+        "id": 58545841,
+        "asset_type": "Video",
+        "title": "BedrockFineTuning.mp4",
+        "created": "2024-08-14T17:07:06Z"
+      },
+      "object_index": 183
+    },
+    {
+      "_class": "lecture",
+      "id": 45286335,
+      "title": "Retrieval-Augmented Generation (RAG) Fundamentals with Bedrock",
+      "asset": {
+        "_class": "asset",
+        "id": 62803427,
+        "asset_type": "Video",
+        "title": "Bedrock-RAG-Overview-2025.mp4",
+        "created": "2025-02-10T13:49:16Z"
+      },
+      "object_index": 184
+    },
+    {
+      "_class": "lecture",
+      "id": 45286363,
+      "title": "Vector Stores and Embeddings with Amazon Bedrock Knowledge Bases",
+      "asset": {
+        "_class": "asset",
+        "id": 58545871,
+        "asset_type": "Video",
+        "title": "Bedrock-RAG-VectorStores.mp4",
+        "created": "2024-08-14T17:08:24Z"
+      },
+      "object_index": 185
+    },
+    {
+      "_class": "lecture",
+      "id": 45286375,
+      "title": "Implementing RAG with Amazon Bedrock Knowledge Bases",
+      "asset": {
+        "_class": "asset",
+        "id": 58545883,
+        "asset_type": "Video",
+        "title": "Bedrock-RAG-KnowledgeBases.mp4",
+        "created": "2024-08-14T17:08:58Z"
+      },
+      "object_index": 186
+    },
+    {
+      "_class": "lecture",
+      "id": 45286391,
+      "title": "Lab: Building and Querying a RAG System with Amazon Bedrock Knowledge Bases",
+      "asset": {
+        "_class": "asset",
+        "id": 70683235,
+        "asset_type": "Video",
+        "title": "BedrockKnowledgeBaseHandsOnRevised.mp4",
+        "created": "2026-01-16T00:58:22Z"
+      },
+      "object_index": 187
+    },
+    {
+      "_class": "lecture",
+      "id": 45953639,
+      "title": "Addendum: New chunking strategies in Bedrock",
+      "asset": {
+        "_class": "asset",
+        "id": 59400889,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2024-09-21T23:28:59Z"
+      },
+      "object_index": 188
+    },
+    {
+      "_class": "lecture",
+      "id": 45286425,
+      "title": "Content Filtering with Amazon Bedrock Guardrails",
+      "asset": {
+        "_class": "asset",
+        "id": 58545917,
+        "asset_type": "Video",
+        "title": "BedrockGuardrailsSlides.mp4",
+        "created": "2024-08-14T17:11:00Z"
+      },
+      "object_index": 189
+    },
+    {
+      "_class": "lecture",
+      "id": 45286437,
+      "title": "Lab: Building and Testing Guardrails with Amazon Bedrock",
+      "asset": {
+        "_class": "asset",
+        "id": 69987105,
+        "asset_type": "Video",
+        "title": "GuardrailsActivity.mp4",
+        "created": "2025-12-11T16:55:08Z"
+      },
+      "object_index": 190
+    },
+    {
+      "_class": "lecture",
+      "id": 45286443,
+      "title": "Building LLM Agents / Agentic AI with Amazon Bedrock Agents",
+      "asset": {
+        "_class": "asset",
+        "id": 58545951,
+        "asset_type": "Video",
+        "title": "Bedrock-Agents-Slides.mp4",
+        "created": "2024-08-14T17:12:13Z"
+      },
+      "object_index": 191
+    },
+    {
+      "_class": "lecture",
+      "id": 45286449,
+      "title": "Lab: Build a Bedrock Agent with Action Groups, Knowledge Bases, and Guardrails",
+      "asset": {
+        "_class": "asset",
+        "id": 69802539,
+        "asset_type": "Video",
+        "title": "BedrockAgentActivity.mp4",
+        "created": "2025-12-02T19:36:56Z"
+      },
+      "object_index": 192
+    },
+    {
+      "_class": "lecture",
+      "id": 53189257,
+      "title": "WARNING: Make sure you deleted all of your OpenSearch resources!",
+      "asset": {
+        "_class": "asset",
+        "id": 69078059,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2025-10-28T16:30:36Z"
+      },
+      "object_index": 193
+    },
+    {
+      "_class": "lecture",
+      "id": 45286455,
+      "title": "Other Amazon Bedrock Features (Model Evaluation, Bedrock Studio, Watermarks)",
+      "asset": {
+        "_class": "asset",
+        "id": 58546033,
+        "asset_type": "Video",
+        "title": "Bedrock-More-Features.mp4",
+        "created": "2024-08-14T17:14:10Z"
+      },
+      "object_index": 194
+    },
+    {
+      "_class": "quiz",
+      "id": 6496285,
+      "title": "Quiz: Developing Generative AI Applications with Bedrock",
+      "object_index": 7
+    },
+    {
+      "_class": "chapter",
+      "id": 10786951,
+      "title": "Machine Learning Operations (MLOps) with AWS",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 45286459,
+      "title": "Intro: MLOps",
+      "asset": {
+        "_class": "asset",
+        "id": 58595879,
+        "asset_type": "Video",
+        "title": "IntroSec9.mp4",
+        "created": "2024-08-16T17:18:06Z"
+      },
+      "object_index": 195
+    },
+    {
+      "_class": "lecture",
+      "id": 45286467,
+      "title": "Deployment Guardrails and Shadow Tests",
+      "asset": {
+        "_class": "asset",
+        "id": 58546059,
+        "asset_type": "Video",
+        "title": "DeploymentSafeguards.mp4",
+        "created": "2024-08-14T17:15:37Z"
+      },
+      "object_index": 196
+    },
+    {
+      "_class": "lecture",
+      "id": 45286781,
+      "title": "SageMaker's Inner Details and Production Variants",
+      "asset": {
+        "_class": "asset",
+        "id": 58546449,
+        "asset_type": "Video",
+        "title": "S05L02SageMakerSpecifics-Update-2023-2.mp4",
+        "created": "2024-08-14T17:40:28Z"
+      },
+      "object_index": 197
+    },
+    {
+      "_class": "lecture",
+      "id": 45286791,
+      "title": "SageMaker On the Edge: SageMaker Neo and IoT Greengrass",
+      "asset": {
+        "_class": "asset",
+        "id": 58617589,
+        "asset_type": "Video",
+        "title": "SagemakerOnEdge.mp4",
+        "created": "2024-08-17T16:15:02Z"
+      },
+      "object_index": 198
+    },
+    {
+      "_class": "lecture",
+      "id": 45286805,
+      "title": "SageMaker Resource Management: Instance Types and Spot Training",
+      "asset": {
+        "_class": "asset",
+        "id": 58546463,
+        "asset_type": "Video",
+        "title": "SageMakerResourcesPt1.mp4",
+        "created": "2024-08-14T17:41:40Z"
+      },
+      "object_index": 199
+    },
+    {
+      "_class": "lecture",
+      "id": 45286817,
+      "title": "SageMaker Resource Management: Automatic Scaling",
+      "asset": {
+        "_class": "asset",
+        "id": 58546515,
+        "asset_type": "Video",
+        "title": "S05L07SageMakerResourcesPt2-NoEI.mp4",
+        "created": "2024-08-14T17:44:42Z"
+      },
+      "object_index": 200
+    },
+    {
+      "_class": "lecture",
+      "id": 45286911,
+      "title": "SageMaker: Deploying Models for Inference",
+      "asset": {
+        "_class": "asset",
+        "id": 58861805,
+        "asset_type": "Video",
+        "title": "DeployingModelsForInference (1).mp4",
+        "created": "2024-08-28T18:09:13Z"
+      },
+      "object_index": 201
+    },
+    {
+      "_class": "lecture",
+      "id": 45286917,
+      "title": "SageMaker Serverless Inference and Inference Recommender",
+      "asset": {
+        "_class": "asset",
+        "id": 58546539,
+        "asset_type": "Video",
+        "title": "ServerlessInferenceInferenceRecommender.mp4",
+        "created": "2024-08-14T17:45:28Z"
+      },
+      "object_index": 202
+    },
+    {
+      "_class": "lecture",
+      "id": 45286929,
+      "title": "SageMaker Inference Pipelines",
+      "asset": {
+        "_class": "asset",
+        "id": 61356681,
+        "asset_type": "Video",
+        "title": "S05L08InferencePipelines.mp4",
+        "created": "2024-12-12T20:26:21Z"
+      },
+      "object_index": 203
+    },
+    {
+      "_class": "lecture",
+      "id": 45286931,
+      "title": "SageMaker Model Monitor",
+      "asset": {
+        "_class": "asset",
+        "id": 58546587,
+        "asset_type": "Video",
+        "title": "SageMakerModelMonitor.mp4",
+        "created": "2024-08-14T17:46:23Z"
+      },
+      "object_index": 204
+    },
+    {
+      "_class": "lecture",
+      "id": 45286935,
+      "title": "Model Monitor Data Capture",
+      "asset": {
+        "_class": "asset",
+        "id": 58594771,
+        "asset_type": "Video",
+        "title": "ModelMonitorDataCapture.mp4",
+        "created": "2024-08-16T16:18:41Z"
+      },
+      "object_index": 205
+    },
+    {
+      "_class": "lecture",
+      "id": 45286939,
+      "title": "MLOps with SageMaker, Kubernetes, SageMaker Projects, and SageMaker Pipelines",
+      "asset": {
+        "_class": "asset",
+        "id": 71297627,
+        "asset_type": "Video",
+        "title": "SagemakerMLOps2026.mp4",
+        "created": "2026-02-13T20:46:17Z"
+      },
+      "object_index": 206
+    },
+    {
+      "_class": "lecture",
+      "id": 45356911,
+      "title": "What is Docker?",
+      "asset": {
+        "_class": "asset",
+        "id": 58636607,
+        "asset_type": "Video",
+        "title": "SAA_-_ECS_-_Docker_Introduction_v3.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 207
+    },
+    {
+      "_class": "lecture",
+      "id": 45356913,
+      "title": "Amazon ECS",
+      "asset": {
+        "_class": "asset",
+        "id": 58636617,
+        "asset_type": "Video",
+        "title": "SAA_-_ECS_-_Overview_v3.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 208
+    },
+    {
+      "_class": "lecture",
+      "id": 45356915,
+      "title": "Amazon ECS - Create Cluster - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70793371,
+        "asset_type": "Video",
+        "title": "SAA - ECS - Hands On - Create Cluster v6.mp4",
+        "created": "2026-01-21T15:35:29Z"
+      },
+      "object_index": 209
+    },
+    {
+      "_class": "lecture",
+      "id": 45356917,
+      "title": "Amazon ECS - Create Service - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 67390519,
+        "asset_type": "Video",
+        "title": "SAA - ECS - Hands On - Create Service v5.mp4",
+        "created": "2025-08-13T13:42:14Z"
+      },
+      "object_index": 210
+    },
+    {
+      "_class": "lecture",
+      "id": 45356921,
+      "title": "Amazon ECR",
+      "asset": {
+        "_class": "asset",
+        "id": 58636637,
+        "asset_type": "Video",
+        "title": "SAA_-_ECR_-_Overview_v4.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 211
+    },
+    {
+      "_class": "lecture",
+      "id": 45356923,
+      "title": "Amazon EKS",
+      "asset": {
+        "_class": "asset",
+        "id": 58636645,
+        "asset_type": "Video",
+        "title": "SAA_-_EKS_-_Overview_v4.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 212
+    },
+    {
+      "_class": "lecture",
+      "id": 45356927,
+      "title": "Amazon EKS - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636605,
+        "asset_type": "Video",
+        "title": "SAA_-_EKS_-_Hands_On_v1.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 213
+    },
+    {
+      "_class": "lecture",
+      "id": 46732159,
+      "title": "AWS Batch",
+      "asset": {
+        "_class": "asset",
+        "id": 60425959,
+        "asset_type": "Video",
+        "title": "AWS_Batch.mp4",
+        "created": "2024-11-05T18:57:15Z"
+      },
+      "object_index": 214
+    },
+    {
+      "_class": "lecture",
+      "id": 45356947,
+      "title": "AWS CloudFormation",
+      "asset": {
+        "_class": "asset",
+        "id": 61951181,
+        "asset_type": "Video",
+        "title": "CCP_-_CloudFormation_-_Overview_v3.mp4",
+        "created": "2025-01-06T20:29:21Z"
+      },
+      "object_index": 215
+    },
+    {
+      "_class": "lecture",
+      "id": 45356951,
+      "title": "AWS CloudFormation - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 67390555,
+        "asset_type": "Video",
+        "title": "CCP - CloudFormation - Hands On v3.mp4",
+        "created": "2025-08-13T13:42:29Z"
+      },
+      "object_index": 216
+    },
+    {
+      "_class": "lecture",
+      "id": 45356955,
+      "title": "AWS CDK",
+      "asset": {
+        "_class": "asset",
+        "id": 58636683,
+        "asset_type": "Video",
+        "title": "DVA_-_CDK_-_Overview_v2.mp4",
+        "created": "2024-08-18T18:47:45Z"
+      },
+      "object_index": 217
+    },
+    {
+      "_class": "lecture",
+      "id": 45356961,
+      "title": "AWS CDK - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636687,
+        "asset_type": "Video",
+        "title": "DVA_-_CDK_-_Hands_On_v2.mp4",
+        "created": "2024-08-18T18:47:45Z"
+      },
+      "object_index": 218
+    },
+    {
+      "_class": "lecture",
+      "id": 45356971,
+      "title": "AWS CodeDeploy",
+      "asset": {
+        "_class": "asset",
+        "id": 58112979,
+        "asset_type": "Video",
+        "title": "CCP_-_CodeDeploy_Overview.mp4",
+        "created": "2024-07-25T21:39:53Z"
+      },
+      "object_index": 219
+    },
+    {
+      "_class": "lecture",
+      "id": 45356977,
+      "title": "AWS CodeBuild",
+      "asset": {
+        "_class": "asset",
+        "id": 58112983,
+        "asset_type": "Video",
+        "title": "CCP_-_CodeBuild.mp4",
+        "created": "2024-07-25T21:39:55Z"
+      },
+      "object_index": 220
+    },
+    {
+      "_class": "lecture",
+      "id": 45356979,
+      "title": "AWS CodePipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 58112987,
+        "asset_type": "Video",
+        "title": "CCP_-_CodePipeline.mp4",
+        "created": "2024-07-25T21:39:56Z"
+      },
+      "object_index": 221
+    },
+    {
+      "_class": "lecture",
+      "id": 45286945,
+      "title": "Git Review: Architecture and Commands",
+      "asset": {
+        "_class": "asset",
+        "id": 58546639,
+        "asset_type": "Video",
+        "title": "GitReview.mp4",
+        "created": "2024-08-14T17:47:45Z"
+      },
+      "object_index": 222
+    },
+    {
+      "_class": "lecture",
+      "id": 45286955,
+      "title": "Gitflow, GitHub Flow",
+      "asset": {
+        "_class": "asset",
+        "id": 58594781,
+        "asset_type": "Video",
+        "title": "GitFlow.mp4",
+        "created": "2024-08-16T16:18:53Z"
+      },
+      "object_index": 223
+    },
+    {
+      "_class": "lecture",
+      "id": 45356993,
+      "title": "Amazon EventBridge",
+      "asset": {
+        "_class": "asset",
+        "id": 58636639,
+        "asset_type": "Video",
+        "title": "SAA_-_EventBridge_-_Overview_v4.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 224
+    },
+    {
+      "_class": "lecture",
+      "id": 45356995,
+      "title": "Amazon EventBridge - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70793753,
+        "asset_type": "Video",
+        "title": "SAA - EventBridge - Hands On v5.mp4",
+        "created": "2026-01-21T15:47:08Z"
+      },
+      "object_index": 225
+    },
+    {
+      "_class": "lecture",
+      "id": 45286959,
+      "title": "AWS Step Functions",
+      "asset": {
+        "_class": "asset",
+        "id": 58547157,
+        "asset_type": "Video",
+        "title": "26.StepFunctions.mp4",
+        "created": "2024-08-14T18:13:29Z"
+      },
+      "object_index": 226
+    },
+    {
+      "_class": "lecture",
+      "id": 45286975,
+      "title": "AWS Step Functions: State Machines and States",
+      "asset": {
+        "_class": "asset",
+        "id": 58546663,
+        "asset_type": "Video",
+        "title": "StepFunctionStates.mp4",
+        "created": "2024-08-14T17:49:24Z"
+      },
+      "object_index": 227
+    },
+    {
+      "_class": "lecture",
+      "id": 45286987,
+      "title": "Amazon Managed Workflows for Apache Airflow (MWAA)",
+      "asset": {
+        "_class": "asset",
+        "id": 58546673,
+        "asset_type": "Video",
+        "title": "MWAA.mp4",
+        "created": "2024-08-14T17:49:53Z"
+      },
+      "object_index": 228
+    },
+    {
+      "_class": "lecture",
+      "id": 46730185,
+      "title": "AWS Lake Formation",
+      "asset": {
+        "_class": "asset",
+        "id": 60422041,
+        "asset_type": "Video",
+        "title": "AWSLakeFormation2022.mp4",
+        "created": "2024-11-05T16:26:15Z"
+      },
+      "object_index": 229
+    },
+    {
+      "_class": "lecture",
+      "id": 46730321,
+      "title": "Lake Formation Data Filters",
+      "asset": {
+        "_class": "asset",
+        "id": 60422321,
+        "asset_type": "Video",
+        "title": "LakeFormationDataFilters.mp4",
+        "created": "2024-11-05T16:41:38Z"
+      },
+      "object_index": 230
+    },
+    {
+      "_class": "quiz",
+      "id": 6496291,
+      "title": "Quiz: MLOps",
+      "object_index": 8
+    },
+    {
+      "_class": "chapter",
+      "id": 10786955,
+      "title": "Security, Identity, and Compliance",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 45286993,
+      "title": "Intro: Security, Identity, and Compliance",
+      "asset": {
+        "_class": "asset",
+        "id": 58595889,
+        "asset_type": "Video",
+        "title": "IntroSec10.mp4",
+        "created": "2024-08-16T17:18:20Z"
+      },
+      "object_index": 231
+    },
+    {
+      "_class": "lecture",
+      "id": 45286997,
+      "title": "Principle of Least Privilege",
+      "asset": {
+        "_class": "asset",
+        "id": 58547165,
+        "asset_type": "Video",
+        "title": "PrincipleOfLeastPrivilege.mp4",
+        "created": "2024-08-14T18:13:52Z"
+      },
+      "object_index": 232
+    },
+    {
+      "_class": "lecture",
+      "id": 45287001,
+      "title": "Data Masking and Anonymization",
+      "asset": {
+        "_class": "asset",
+        "id": 58547173,
+        "asset_type": "Video",
+        "title": "DataMaskingAnonymization.mp4",
+        "created": "2024-08-14T18:14:15Z"
+      },
+      "object_index": 233
+    },
+    {
+      "_class": "lecture",
+      "id": 45287015,
+      "title": "SageMaker Security: Encryption at Rest and in Transit",
+      "asset": {
+        "_class": "asset",
+        "id": 58547219,
+        "asset_type": "Video",
+        "title": "S05L04SageMakerSecurityPt1.mp4",
+        "created": "2024-08-14T18:17:06Z"
+      },
+      "object_index": 234
+    },
+    {
+      "_class": "lecture",
+      "id": 45287019,
+      "title": "SageMaker Security: VPC's, IAM, Logging and Monitoring",
+      "asset": {
+        "_class": "asset",
+        "id": 58547225,
+        "asset_type": "Video",
+        "title": "S05L05SagemakerSecurityPt2.mp4",
+        "created": "2024-08-14T18:17:20Z"
+      },
+      "object_index": 235
+    },
+    {
+      "_class": "lecture",
+      "id": 45357001,
+      "title": "IAM Introduction: Users, Groups, Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 58112835,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_Users_Groups_Policies.mp4",
+        "created": "2024-07-25T21:38:43Z"
+      },
+      "object_index": 236
+    },
+    {
+      "_class": "lecture",
+      "id": 45357003,
+      "title": "IAM Users & Groups - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69222177,
+        "asset_type": "Video",
+        "title": "CCP - IAM - Users Groups Hands On v7.mp4",
+        "created": "2025-11-04T08:29:51Z"
+      },
+      "object_index": 237
+    },
+    {
+      "_class": "lecture",
+      "id": 51960317,
+      "title": "AWS Console Simultaneous Sign-in",
+      "asset": {
+        "_class": "asset",
+        "id": 67390223,
+        "asset_type": "Video",
+        "title": "CCP - Console - Multi Session Support v1.mp4",
+        "created": "2025-08-13T13:33:29Z"
+      },
+      "object_index": 238
+    },
+    {
+      "_class": "lecture",
+      "id": 45357011,
+      "title": "IAM Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 58112839,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_Policies_v1.mp4",
+        "created": "2024-07-25T21:38:45Z"
+      },
+      "object_index": 239
+    },
+    {
+      "_class": "lecture",
+      "id": 45357013,
+      "title": "IAM Policies - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58112841,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_Policies_Hands_On_v4.mp4",
+        "created": "2024-07-25T21:38:45Z"
+      },
+      "object_index": 240
+    },
+    {
+      "_class": "lecture",
+      "id": 45357017,
+      "title": "IAM MFA",
+      "asset": {
+        "_class": "asset",
+        "id": 58112843,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_MFA_Overview_v2.mp4",
+        "created": "2024-07-25T21:38:47Z"
+      },
+      "object_index": 241
+    },
+    {
+      "_class": "lecture",
+      "id": 45357023,
+      "title": "IAM MFA - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58112845,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_MFA_Hands_On_v5.mp4",
+        "created": "2024-07-25T21:38:48Z"
+      },
+      "object_index": 242
+    },
+    {
+      "_class": "lecture",
+      "id": 45357027,
+      "title": "IAM Roles",
+      "asset": {
+        "_class": "asset",
+        "id": 58112847,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_Roles.mp4",
+        "created": "2024-07-25T21:38:49Z"
+      },
+      "object_index": 243
+    },
+    {
+      "_class": "lecture",
+      "id": 45357033,
+      "title": "IAM Roles - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58112849,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_Roles_Hands_On_v3.mp4",
+        "created": "2024-07-25T21:38:50Z"
+      },
+      "object_index": 244
+    },
+    {
+      "_class": "lecture",
+      "id": 45357043,
+      "title": "Encryption 101",
+      "asset": {
+        "_class": "asset",
+        "id": 58636789,
+        "asset_type": "Video",
+        "title": "DAS_-_Encryption_101_v2.mp4",
+        "created": "2024-08-18T18:51:59Z"
+      },
+      "object_index": 245
+    },
+    {
+      "_class": "lecture",
+      "id": 45357049,
+      "title": "AWS KMS",
+      "asset": {
+        "_class": "asset",
+        "id": 58636613,
+        "asset_type": "Video",
+        "title": "SAA_-_KMS_-_Overview_v5.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 246
+    },
+    {
+      "_class": "lecture",
+      "id": 45357051,
+      "title": "AWS KMS - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636615,
+        "asset_type": "Video",
+        "title": "SAA_-_KMS_-_Hands_On_v4.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 247
+    },
+    {
+      "_class": "lecture",
+      "id": 45357057,
+      "title": "Amazon Macie",
+      "asset": {
+        "_class": "asset",
+        "id": 58112857,
+        "asset_type": "Video",
+        "title": "CCP_-_Macie_v2.mp4",
+        "created": "2024-07-25T21:38:54Z"
+      },
+      "object_index": 248
+    },
+    {
+      "_class": "lecture",
+      "id": 45357061,
+      "title": "AWS Secrets Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 58636629,
+        "asset_type": "Video",
+        "title": "SAA_-_Secrets_Manager_-_Overview_v3.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 249
+    },
+    {
+      "_class": "lecture",
+      "id": 45357067,
+      "title": "AWS Secrets Manager - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636623,
+        "asset_type": "Video",
+        "title": "SAA_-_Secrets_Manager_-_Hands_On_v3.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 250
+    },
+    {
+      "_class": "lecture",
+      "id": 45357075,
+      "title": "AWS WAF",
+      "asset": {
+        "_class": "asset",
+        "id": 58636619,
+        "asset_type": "Video",
+        "title": "SAA_-_WAF_-_Overview_v3.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 251
+    },
+    {
+      "_class": "lecture",
+      "id": 45357081,
+      "title": "AWS Shield",
+      "asset": {
+        "_class": "asset",
+        "id": 58636641,
+        "asset_type": "Video",
+        "title": "SAA_-_Shield_-_Overview_v3.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 252
+    },
+    {
+      "_class": "lecture",
+      "id": 45357087,
+      "title": "VPC, Subnets, Internet Gateway, NAT Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 58636693,
+        "asset_type": "Video",
+        "title": "VPC_Developer_-_VPC_Subnets_IGW_and_NAT_v2.mp4",
+        "created": "2024-08-18T18:47:46Z"
+      },
+      "object_index": 253
+    },
+    {
+      "_class": "lecture",
+      "id": 45357093,
+      "title": "NACL, Security Groups, VPC Flow Logs",
+      "asset": {
+        "_class": "asset",
+        "id": 58636685,
+        "asset_type": "Video",
+        "title": "DVA_-_VPC_Developer_-_NACL_SG_Flow_Logs_v3.mp4",
+        "created": "2024-08-18T18:47:45Z"
+      },
+      "object_index": 254
+    },
+    {
+      "_class": "lecture",
+      "id": 45357099,
+      "title": "VPC Peering, Endpoints, VPN, Direct Connect",
+      "asset": {
+        "_class": "asset",
+        "id": 63040111,
+        "asset_type": "Video",
+        "title": "DVA - VPC Developer - Peering Endpoints VPN DX v3.mp4",
+        "created": "2025-02-19T13:30:51Z"
+      },
+      "object_index": 255
+    },
+    {
+      "_class": "lecture",
+      "id": 45357101,
+      "title": "VPC Cheat Sheet & Closing Comments",
+      "asset": {
+        "_class": "asset",
+        "id": 58636699,
+        "asset_type": "Video",
+        "title": "VPC_Developer_-_Closing_Comments_v2.mp4",
+        "created": "2024-08-18T18:47:46Z"
+      },
+      "object_index": 256
+    },
+    {
+      "_class": "lecture",
+      "id": 45357107,
+      "title": "AWS PrivateLink",
+      "asset": {
+        "_class": "asset",
+        "id": 58112887,
+        "asset_type": "Video",
+        "title": "CCP_-_VPC_-_PrivateLink_v1.mp4",
+        "created": "2024-07-25T21:39:07Z"
+      },
+      "object_index": 257
+    },
+    {
+      "_class": "quiz",
+      "id": 6496313,
+      "title": "Quiz: Security, Identity, and Compliance",
+      "object_index": 9
+    },
+    {
+      "_class": "chapter",
+      "id": 10786965,
+      "title": "Management and Governance",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 45287033,
+      "title": "Intro: Management and Governance",
+      "asset": {
+        "_class": "asset",
+        "id": 58595899,
+        "asset_type": "Video",
+        "title": "IntroSec11.mp4",
+        "created": "2024-08-16T17:18:35Z"
+      },
+      "object_index": 258
+    },
+    {
+      "_class": "lecture",
+      "id": 45357121,
+      "title": "Amazon CloudWatch - Metrics",
+      "asset": {
+        "_class": "asset",
+        "id": 58636621,
+        "asset_type": "Video",
+        "title": "SAA_-_CloudWatch_-_Metrics_v2.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 259
+    },
+    {
+      "_class": "lecture",
+      "id": 45357125,
+      "title": "Amazon CloudWatch - Logs",
+      "asset": {
+        "_class": "asset",
+        "id": 58636729,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_-_Logs_v2.mp4",
+        "created": "2024-08-18T18:50:15Z"
+      },
+      "object_index": 260
+    },
+    {
+      "_class": "lecture",
+      "id": 45357127,
+      "title": "Amazon CloudWatch - Logs - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636731,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_-_Logs_Hands_On.mp4",
+        "created": "2024-08-18T18:50:15Z"
+      },
+      "object_index": 261
+    },
+    {
+      "_class": "lecture",
+      "id": 45357129,
+      "title": "Amazon CloudWatch - Logs Unified Agent",
+      "asset": {
+        "_class": "asset",
+        "id": 58112913,
+        "asset_type": "Video",
+        "title": "SAA_-_CloudWatch_-_Agents_(Logs_Unified)_v3.mp4",
+        "created": "2024-07-25T21:39:20Z"
+      },
+      "object_index": 262
+    },
+    {
+      "_class": "lecture",
+      "id": 45357133,
+      "title": "Amazon CloudWatch - Alarms",
+      "asset": {
+        "_class": "asset",
+        "id": 59262641,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_-_Alarms_v3.mp4",
+        "created": "2024-09-15T20:23:37Z"
+      },
+      "object_index": 263
+    },
+    {
+      "_class": "lecture",
+      "id": 45357135,
+      "title": "Amazon CloudWatch - Alarms - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636737,
+        "asset_type": "Video",
+        "title": "SOA_-_CloudWatch_-_Alarms_Hands_On.mp4",
+        "created": "2024-08-18T18:50:15Z"
+      },
+      "object_index": 264
+    },
+    {
+      "_class": "lecture",
+      "id": 45357145,
+      "title": "AWS X-Ray",
+      "asset": {
+        "_class": "asset",
+        "id": 58636697,
+        "asset_type": "Video",
+        "title": "DVA_-_X-Ray_Overview_v2.mp4",
+        "created": "2024-08-18T18:47:46Z"
+      },
+      "object_index": 265
+    },
+    {
+      "_class": "lecture",
+      "id": 45357149,
+      "title": "AWS X-Ray - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69142521,
+        "asset_type": "Video",
+        "title": "DVA - X-Ray - Hands On v2.mp4",
+        "created": "2025-10-31T11:32:13Z"
+      },
+      "object_index": 266
+    },
+    {
+      "_class": "lecture",
+      "id": 54705129,
+      "title": "NOTE: Amazon QuickSight is being rebranded as Amazon Quick Suite",
+      "asset": {
+        "_class": "asset",
+        "id": 71137271,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2026-02-06T18:01:58Z"
+      },
+      "object_index": 267
+    },
+    {
+      "_class": "lecture",
+      "id": 45287043,
+      "title": "Overview of Amazon Quicksight",
+      "asset": {
+        "_class": "asset",
+        "id": 65006945,
+        "asset_type": "Video",
+        "title": "Quicksight2025.mp4",
+        "created": "2025-05-09T18:45:25Z"
+      },
+      "object_index": 268
+    },
+    {
+      "_class": "lecture",
+      "id": 45287061,
+      "title": "Types of Visualizations, and When to Use Them",
+      "asset": {
+        "_class": "asset",
+        "id": 58546855,
+        "asset_type": "Video",
+        "title": "QuicksightPt2.mp4",
+        "created": "2024-08-14T17:54:42Z"
+      },
+      "object_index": 269
+    },
+    {
+      "_class": "lecture",
+      "id": 45357155,
+      "title": "Amazon CloudTrail",
+      "asset": {
+        "_class": "asset",
+        "id": 58636633,
+        "asset_type": "Video",
+        "title": "SAA_-_CloudTrail_-_Overview_v2.mp4",
+        "created": "2024-08-18T18:40:45Z"
+      },
+      "object_index": 270
+    },
+    {
+      "_class": "lecture",
+      "id": 45357157,
+      "title": "Amazon CloudTrail - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58112921,
+        "asset_type": "Video",
+        "title": "CCP_-_CloudTrail_-_Hands_On_v2.mp4",
+        "created": "2024-07-25T21:39:24Z"
+      },
+      "object_index": 271
+    },
+    {
+      "_class": "lecture",
+      "id": 45357163,
+      "title": "AWS Config",
+      "asset": {
+        "_class": "asset",
+        "id": 58636743,
+        "asset_type": "Video",
+        "title": "SOA_-_Config_-_Overview.mp4",
+        "created": "2024-08-18T18:50:15Z"
+      },
+      "object_index": 272
+    },
+    {
+      "_class": "lecture",
+      "id": 45357165,
+      "title": "AWS Config - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636733,
+        "asset_type": "Video",
+        "title": "SOA_-_Config_-_Hands_On.mp4",
+        "created": "2024-08-18T18:50:15Z"
+      },
+      "object_index": 273
+    },
+    {
+      "_class": "lecture",
+      "id": 45357169,
+      "title": "CloudWatch vs. CloudTrail vs. Config",
+      "asset": {
+        "_class": "asset",
+        "id": 58636741,
+        "asset_type": "Video",
+        "title": "CloudWatch_vs_CloudTrail_vs_Config.mp4",
+        "created": "2024-08-18T18:50:15Z"
+      },
+      "object_index": 274
+    },
+    {
+      "_class": "lecture",
+      "id": 45357173,
+      "title": "AWS Budgets",
+      "asset": {
+        "_class": "asset",
+        "id": 58636745,
+        "asset_type": "Video",
+        "title": "SOA_-_Budget_-_Overview_v1.mp4",
+        "created": "2024-08-18T18:50:15Z"
+      },
+      "object_index": 275
+    },
+    {
+      "_class": "lecture",
+      "id": 45357175,
+      "title": "AWS Budgets - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58636739,
+        "asset_type": "Video",
+        "title": "SOA_-_Budgets_-_Hands_On_v1D.mp4",
+        "created": "2024-08-18T18:50:15Z"
+      },
+      "object_index": 276
+    },
+    {
+      "_class": "lecture",
+      "id": 45357179,
+      "title": "AWS Cost Explorer",
+      "asset": {
+        "_class": "asset",
+        "id": 70793767,
+        "asset_type": "Video",
+        "title": "SAA - Cost Explorer - Overview v2.mp4",
+        "created": "2026-01-21T15:47:13Z"
+      },
+      "object_index": 277
+    },
+    {
+      "_class": "lecture",
+      "id": 45358999,
+      "title": "AWS Trusted Advisor",
+      "asset": {
+        "_class": "asset",
+        "id": 69222199,
+        "asset_type": "Video",
+        "title": "CCP - AWS - Trusted Advisor v3.mp4",
+        "created": "2025-11-04T08:30:37Z"
+      },
+      "object_index": 278
+    },
+    {
+      "_class": "quiz",
+      "id": 6496335,
+      "title": "Quiz: Management and Governance",
+      "object_index": 10
+    },
+    {
+      "_class": "chapter",
+      "id": 10786967,
+      "title": "Machine Learning Best Practices",
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 45287081,
+      "title": "Intro: Machine Learning Best Practices",
+      "asset": {
+        "_class": "asset",
+        "id": 58595903,
+        "asset_type": "Video",
+        "title": "IntroSec12.mp4",
+        "created": "2024-08-16T17:18:49Z"
+      },
+      "object_index": 279
+    },
+    {
+      "_class": "lecture",
+      "id": 45287085,
+      "title": "Designing ML Systems with AWS: Responsible AI",
+      "asset": {
+        "_class": "asset",
+        "id": 58546865,
+        "asset_type": "Video",
+        "title": "MLArch-01-ResponsibleAI.mp4",
+        "created": "2024-08-14T17:55:34Z"
+      },
+      "object_index": 280
+    },
+    {
+      "_class": "lecture",
+      "id": 45287091,
+      "title": "ML Design Principles and Lifecycle",
+      "asset": {
+        "_class": "asset",
+        "id": 58546873,
+        "asset_type": "Video",
+        "title": "MLArch-02-Design-Principles-Lifecycle.mp4",
+        "created": "2024-08-14T17:56:00Z"
+      },
+      "object_index": 281
+    },
+    {
+      "_class": "lecture",
+      "id": 45287103,
+      "title": "ML Business Goal Identification",
+      "asset": {
+        "_class": "asset",
+        "id": 58546881,
+        "asset_type": "Video",
+        "title": "MLArch-03-BusinessGoalIdentification.mp4",
+        "created": "2024-08-14T17:56:26Z"
+      },
+      "object_index": 282
+    },
+    {
+      "_class": "lecture",
+      "id": 45287107,
+      "title": "Framing the ML Problem",
+      "asset": {
+        "_class": "asset",
+        "id": 58546889,
+        "asset_type": "Video",
+        "title": "MLArch-04-FrameMLProblem.mp4",
+        "created": "2024-08-14T17:56:52Z"
+      },
+      "object_index": 283
+    },
+    {
+      "_class": "lecture",
+      "id": 45287131,
+      "title": "Data Processing",
+      "asset": {
+        "_class": "asset",
+        "id": 58546941,
+        "asset_type": "Video",
+        "title": "MLArch-05-DataProcessing.mp4",
+        "created": "2024-08-14T17:59:29Z"
+      },
+      "object_index": 284
+    },
+    {
+      "_class": "lecture",
+      "id": 45287149,
+      "title": "Model Development",
+      "asset": {
+        "_class": "asset",
+        "id": 58546957,
+        "asset_type": "Video",
+        "title": "MLArch-06-ModelDevelopment.mp4",
+        "created": "2024-08-14T18:00:02Z"
+      },
+      "object_index": 285
+    },
+    {
+      "_class": "lecture",
+      "id": 45287155,
+      "title": "Deployment",
+      "asset": {
+        "_class": "asset",
+        "id": 58546961,
+        "asset_type": "Video",
+        "title": "MLArch-07-Deployment.mp4",
+        "created": "2024-08-14T18:00:12Z"
+      },
+      "object_index": 286
+    },
+    {
+      "_class": "lecture",
+      "id": 45287163,
+      "title": "Monitoring",
+      "asset": {
+        "_class": "asset",
+        "id": 58546967,
+        "asset_type": "Video",
+        "title": "MLArch-08-Monitoring.mp4",
+        "created": "2024-08-14T18:00:32Z"
+      },
+      "object_index": 287
+    },
+    {
+      "_class": "lecture",
+      "id": 45287173,
+      "title": "AWS Well-Architected Machine Learning Lens",
+      "asset": {
+        "_class": "asset",
+        "id": 58546977,
+        "asset_type": "Video",
+        "title": "MLArch-09-WellArchitectedMLLens.mp4",
+        "created": "2024-08-14T18:00:55Z"
+      },
+      "object_index": 288
+    },
+    {
+      "_class": "quiz",
+      "id": 6496347,
+      "title": "Quiz: Machine Learning Best Practices",
+      "object_index": 11
+    },
+    {
+      "_class": "chapter",
+      "id": 10853647,
+      "title": "Practice Test",
+      "object_index": 13
+    },
+    {
+      "_class": "quiz",
+      "id": 6519585,
+      "title": "20-Question Practice Exam: AWS Certified Machine Learning Engineer - Associate MLA-C01",
+      "object_index": 1
+    },
+    {
+      "_class": "chapter",
+      "id": 10786971,
+      "title": "Wrapping Up",
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 45320511,
+      "title": "Intro: Wrapping Up",
+      "asset": {
+        "_class": "asset",
+        "id": 58595913,
+        "asset_type": "Video",
+        "title": "IntroSec13.mp4",
+        "created": "2024-08-16T17:19:06Z"
+      },
+      "object_index": 289
+    },
+    {
+      "_class": "lecture",
+      "id": 45320497,
+      "title": "Walkthrough of the Exam Guide",
+      "asset": {
+        "_class": "asset",
+        "id": 58594797,
+        "asset_type": "Video",
+        "title": "MLA-Exam-Guide.mp4",
+        "created": "2024-08-16T16:19:56Z"
+      },
+      "object_index": 290
+    },
+    {
+      "_class": "lecture",
+      "id": 45320501,
+      "title": "Additional Training Resources",
+      "asset": {
+        "_class": "asset",
+        "id": 58594803,
+        "asset_type": "Video",
+        "title": "OtherTrainingResources.mp4",
+        "created": "2024-08-16T16:20:19Z"
+      },
+      "object_index": 291
+    },
+    {
+      "_class": "lecture",
+      "id": 45320505,
+      "title": "Overview of the New Question Types (Ordering, Matching, Case Study)",
+      "asset": {
+        "_class": "asset",
+        "id": 58594809,
+        "asset_type": "Video",
+        "title": "NewQuestionTypes.mp4",
+        "created": "2024-08-16T16:20:47Z"
+      },
+      "object_index": 292
+    },
+    {
+      "_class": "lecture",
+      "id": 45320509,
+      "title": "What to Expect",
+      "asset": {
+        "_class": "asset",
+        "id": 66215285,
+        "asset_type": "Video",
+        "title": "WhatToExpect.mp4",
+        "created": "2025-06-25T12:15:25Z"
+      },
+      "object_index": 293
+    },
+    {
+      "_class": "lecture",
+      "id": 45357185,
+      "title": "Exam Walkthrough and Signup",
+      "asset": {
+        "_class": "asset",
+        "id": 58636805,
+        "asset_type": "Video",
+        "title": "AWS_-_Exam_Sign_Up_v5.mp4",
+        "created": "2024-08-18T18:52:33Z"
+      },
+      "object_index": 294
+    },
+    {
+      "_class": "lecture",
+      "id": 45357189,
+      "title": "Save 50% on your AWS Exam Cost!",
+      "asset": {
+        "_class": "asset",
+        "id": 58638083,
+        "asset_type": "Video",
+        "title": "AWS_-_Save_50_on_AWS_Exam_Cost_v2.mp4",
+        "created": "2024-08-18T20:37:45Z"
+      },
+      "object_index": 295
+    },
+    {
+      "_class": "lecture",
+      "id": 45357197,
+      "title": "Get an Extra 30 Minutes on your AWS Exam - Non Native English Speakers Only",
+      "asset": {
+        "_class": "asset",
+        "id": 59209763,
+        "asset_type": "Video",
+        "title": "AWS_-_Request_30_minute_accommodation_on_AWS_exam_v2.mp4",
+        "created": "2024-09-13T07:23:30Z"
+      },
+      "object_index": 296
+    },
+    {
+      "_class": "lecture",
+      "id": 45357201,
+      "title": "AWS Certification Paths",
+      "asset": {
+        "_class": "asset",
+        "id": 59209761,
+        "asset_type": "Video",
+        "title": "AWS_-_Common_-_Certification_Paths_v3.mp4",
+        "created": "2024-09-13T07:23:30Z"
+      },
+      "object_index": 297
+    },
+    {
+      "_class": "lecture",
+      "id": 45341885,
+      "title": "Bonus Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 71597377,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2026-03-01T10:16:47Z"
+      },
+      "object_index": 298
+    }
+  ]
+}

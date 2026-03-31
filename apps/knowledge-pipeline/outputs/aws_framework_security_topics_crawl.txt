@@ -1,0 +1,18 @@
+Start: https://docs.aws.amazon.com/wellarchitected/latest/framework/security.html
+CrawlDate: 2026-03-27T08:35:27
+VisitedCount: 12
+ErrorCount: 0
+
+Visited Security Topic URLs:
+https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-appsec.html
+https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-bp.html
+https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-dataprot.html
+https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-def.html
+https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-design.html
+https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-detection.html
+https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-iam.html
+https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-incresp.html
+https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-infrastructure.html
+https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-resources.html
+https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-security.html
+https://docs.aws.amazon.com/wellarchitected/latest/framework/security.html

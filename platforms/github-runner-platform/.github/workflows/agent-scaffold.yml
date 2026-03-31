@@ -1,0 +1,35 @@
+name: Agent Infrastructure Generator (Scaffold PR)
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scaffold:
+    if: contains(github.event.issue.labels.*.name, 'infra-request') || startsWith(github.event.issue.title, '[STACK]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write request to agent-output
+        run: |
+          set -euo pipefail
+          mkdir -p agent-output
+          echo "Issue #${{ github.event.issue.number }}" > agent-output/request.txt
+          echo "${{ github.event.issue.body }}" >> agent-output/request.txt
+
+      - name: Open PR (placeholder scaffold)
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: "Agent: scaffold request #${{ github.event.issue.number }}"
+          branch: "agent/scaffold-${{ github.event.issue.number }}"
+          commit-message: "Agent scaffold placeholder for request #${{ github.event.issue.number }}"
+          body: |
+            Placeholder scaffold generated from issue #${{ github.event.issue.number }}.
+            Next step: generate full Terraform env folders + workflows.
+          add-paths: |
+            agent-output/**

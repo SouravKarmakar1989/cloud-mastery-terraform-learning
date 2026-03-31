@@ -1,0 +1,40 @@
+name: Create Infrastructure Stack
+description: Request new cloud infrastructure scaffold (agent-assisted placeholder)
+title: "[STACK] Create new environment"
+labels: ["infra-request"]
+body:
+  - type: dropdown
+    id: cloud
+    attributes:
+      label: Cloud Provider
+      options: [Azure, AWS]
+    validations:
+      required: true
+  - type: dropdown
+    id: stack
+    attributes:
+      label: Stack Type
+      options: [minimal, network, runner]
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: dev / uat / prod
+    validations:
+      required: true
+  - type: input
+    id: region
+    attributes:
+      label: Region
+      placeholder: centralus / eastus / etc
+    validations:
+      required: true
+  - type: input
+    id: prefix
+    attributes:
+      label: Resource Prefix
+      placeholder: sk
+    validations:
+      required: true

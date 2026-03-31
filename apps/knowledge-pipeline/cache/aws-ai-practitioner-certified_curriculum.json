@@ -1,0 +1,2101 @@
+{
+  "count": 174,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 10697055,
+      "title": "Artificial Intelligence & Course Introduction",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 44873933,
+      "title": "What to expect from this course",
+      "asset": {
+        "_class": "asset",
+        "id": 60587733,
+        "asset_type": "Video",
+        "title": "AIF - Intro - Course Introduction v4.mp4",
+        "created": "2024-11-12T09:35:26Z"
+      },
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 44962313,
+      "title": "Private Course Feedback Link",
+      "asset": {
+        "_class": "asset",
+        "id": 58110387,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2024-07-25T19:28:08Z"
+      },
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 44879475,
+      "title": "Important: Course Structure",
+      "asset": {
+        "_class": "asset",
+        "id": 58189367,
+        "asset_type": "Video",
+        "title": "AIF - Course Introduction v1.mp4",
+        "created": "2024-07-29T17:11:41Z"
+      },
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 44924425,
+      "title": "Important Message: Udemy",
+      "asset": {
+        "_class": "asset",
+        "id": 58061879,
+        "asset_type": "Video",
+        "title": "Important Message - Udemy.mp4",
+        "created": "2024-07-23T15:10:23Z"
+      },
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 44879479,
+      "title": "What is Artificial Intelligence (AI)?",
+      "asset": {
+        "_class": "asset",
+        "id": 59197663,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Introduction_v1.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 44924435,
+      "title": "About your Instructor",
+      "asset": {
+        "_class": "asset",
+        "id": 58251983,
+        "asset_type": "Video",
+        "title": "Promo_Course_(Stephane_Maarek_ver._2024)_-_FINAL_RENDER_v2.mp4",
+        "created": "2024-08-01T08:41:24Z"
+      },
+      "object_index": 6
+    },
+    {
+      "_class": "chapter",
+      "id": 10705065,
+      "title": "Code & Slides Download",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 44911063,
+      "title": "Code & Slides Download",
+      "asset": {
+        "_class": "asset",
+        "id": 58044215,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2024-07-22T18:26:07Z"
+      },
+      "object_index": 7
+    },
+    {
+      "_class": "chapter",
+      "id": 10698073,
+      "title": "Introduction to AWS & Cloud Computing",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 44976993,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 58128049,
+        "asset_type": "Video",
+        "title": "AIF_-_Section_Intro_-_AWS_Cloud_v1.mp4",
+        "created": "2024-07-26T14:35:37Z"
+      },
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 44879509,
+      "title": "Traditional IT - Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 58016167,
+        "asset_type": "Video",
+        "title": "CCP_-_Intro_-_Traditional_IT.mp4",
+        "created": "2024-07-21T10:49:26Z"
+      },
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 44879511,
+      "title": "What is Cloud Computing?",
+      "asset": {
+        "_class": "asset",
+        "id": 58016173,
+        "asset_type": "Video",
+        "title": "CCP_-_Intro_-_Cloud_Computing.mp4",
+        "created": "2024-07-21T10:49:26Z"
+      },
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 44879515,
+      "title": "The Different Types of Cloud Computing",
+      "asset": {
+        "_class": "asset",
+        "id": 59209665,
+        "asset_type": "Video",
+        "title": "CCP_-_Intro_-_Types_of_Cloud_Computing_v2.mp4",
+        "created": "2024-09-13T07:19:30Z"
+      },
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 44879519,
+      "title": "AWS Cloud Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 59209645,
+        "asset_type": "Video",
+        "title": "CCP_-_Intro_-_AWS_Overview_v2.mp4",
+        "created": "2024-09-13T07:19:04Z"
+      },
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 44879487,
+      "title": "Creating an AWS Account",
+      "asset": {
+        "_class": "asset",
+        "id": 67390721,
+        "asset_type": "Video",
+        "title": "CCP - Creating an AWS Account v4.mp4",
+        "created": "2025-08-13T13:48:31Z"
+      },
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 44924459,
+      "title": "AWS Account Activation Troubleshooting",
+      "asset": {
+        "_class": "asset",
+        "id": 58061795,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2024-07-23T15:07:45Z"
+      },
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 47890653,
+      "title": "[Important] AWS Console UI Update",
+      "asset": {
+        "_class": "asset",
+        "id": 61950921,
+        "asset_type": "Video",
+        "title": "AWS_-_New_UI_2024.mp4",
+        "created": "2025-01-06T20:17:53Z"
+      },
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 44879531,
+      "title": "Tour of the Console & Services in AWS",
+      "asset": {
+        "_class": "asset",
+        "id": 58016179,
+        "asset_type": "Video",
+        "title": "CCP_-_Intro_-_Tour_of_the_AWS_Console_v2.mp4",
+        "created": "2024-07-21T10:49:26Z"
+      },
+      "object_index": 16
+    },
+    {
+      "_class": "lecture",
+      "id": 44879551,
+      "title": "Shared Responsibility Model & AWS Acceptable Policy",
+      "asset": {
+        "_class": "asset",
+        "id": 58016177,
+        "asset_type": "Video",
+        "title": "CCP_-_Intro_-_Shared_Responsibility_and_Acceptable_Use_Policy.mp4",
+        "created": "2024-07-21T10:49:26Z"
+      },
+      "object_index": 17
+    },
+    {
+      "_class": "quiz",
+      "id": 6458841,
+      "title": "Introduction to AWS & Cloud Computing - Quiz",
+      "object_index": 1
+    },
+    {
+      "_class": "chapter",
+      "id": 10707101,
+      "title": "Course Cost & AWS Budget Setup",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 45022814,
+      "title": "Course Cost",
+      "asset": {
+        "_class": "asset",
+        "id": 58189357,
+        "asset_type": "Video",
+        "title": "AIF - Course Cost v1.mp4",
+        "created": "2024-07-29T17:11:14Z"
+      },
+      "object_index": 18
+    },
+    {
+      "_class": "lecture",
+      "id": 44879499,
+      "title": "AWS Budget Setup",
+      "asset": {
+        "_class": "asset",
+        "id": 58016183,
+        "asset_type": "Video",
+        "title": "CCP_-_Creating_an_AWS_Budget_v5.mp4",
+        "created": "2024-07-21T10:49:26Z"
+      },
+      "object_index": 19
+    },
+    {
+      "_class": "chapter",
+      "id": 10698079,
+      "title": "Amazon Bedrock and Generative AI (GenAI)",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 44977015,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 58128057,
+        "asset_type": "Video",
+        "title": "AIF_-_Section_Intro_-_Amazon_Bedrock_v1.mp4",
+        "created": "2024-07-26T14:35:37Z"
+      },
+      "object_index": 20
+    },
+    {
+      "_class": "lecture",
+      "id": 44879563,
+      "title": "What is Generative AI (GenAI)?",
+      "asset": {
+        "_class": "asset",
+        "id": 61960565,
+        "asset_type": "Video",
+        "title": "AIF_-_GenAI_Introduction_v1.mp4",
+        "created": "2025-01-07T08:50:36Z"
+      },
+      "object_index": 21
+    },
+    {
+      "_class": "lecture",
+      "id": 44879565,
+      "title": "Amazon Bedrock - Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 58015347,
+        "asset_type": "Video",
+        "title": "AIF_-_Bedrock_-_Overview_v1.mp4",
+        "created": "2024-07-21T09:46:57Z"
+      },
+      "object_index": 22
+    },
+    {
+      "_class": "lecture",
+      "id": 44879569,
+      "title": "Amazon Bedrock - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69198145,
+        "asset_type": "Video",
+        "title": "AIF - Bedrock - Hands On v3.mp4",
+        "created": "2025-11-03T10:05:50Z"
+      },
+      "object_index": 23
+    },
+    {
+      "_class": "lecture",
+      "id": 44886343,
+      "title": "Amazon Bedrock - Foundation Model (FM)",
+      "asset": {
+        "_class": "asset",
+        "id": 58660031,
+        "asset_type": "Video",
+        "title": "AIF_-_Bedrock_-_Foundation_Models_v2.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 24
+    },
+    {
+      "_class": "lecture",
+      "id": 44886347,
+      "title": "Amazon Bedrock - Foundation Model (FM) - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70792783,
+        "asset_type": "Video",
+        "title": "AIF - Bedrock - Foundation Model Hands On v3.mp4",
+        "created": "2026-01-21T15:13:33Z"
+      },
+      "object_index": 25
+    },
+    {
+      "_class": "lecture",
+      "id": 45375025,
+      "title": "Amazon Bedrock - Fine-Tuning a Model",
+      "asset": {
+        "_class": "asset",
+        "id": 70815617,
+        "asset_type": "Video",
+        "title": "AIF - Bedrock - Fine Tuning v5.mp4",
+        "created": "2026-01-22T14:47:03Z"
+      },
+      "object_index": 26
+    },
+    {
+      "_class": "lecture",
+      "id": 44886373,
+      "title": "Amazon Bedrock - FM Evaluation",
+      "asset": {
+        "_class": "asset",
+        "id": 59197659,
+        "asset_type": "Video",
+        "title": "AIF_-_Bedrock_-_FM_Evaluation_v3.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 27
+    },
+    {
+      "_class": "lecture",
+      "id": 44886377,
+      "title": "Amazon Bedrock - FM Evaluation - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 64329249,
+        "asset_type": "Video",
+        "title": "AIF - Bedrock - FM Evaluation Hands On v2.mp4",
+        "created": "2025-04-12T12:18:10Z"
+      },
+      "object_index": 28
+    },
+    {
+      "_class": "lecture",
+      "id": 44886389,
+      "title": "Amazon Bedrock - RAG & Knowledge Base",
+      "asset": {
+        "_class": "asset",
+        "id": 67390207,
+        "asset_type": "Video",
+        "title": "AIF - Bedrock - RAG Knowledge Bases v4.mp4",
+        "created": "2025-08-13T13:33:22Z"
+      },
+      "object_index": 29
+    },
+    {
+      "_class": "lecture",
+      "id": 44886393,
+      "title": "Amazon Bedrock - RAG & Knowledge Base - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 64329245,
+        "asset_type": "Video",
+        "title": "AIF - Bedrock - Knowledge Base Hands On v2.mp4",
+        "created": "2025-04-12T12:18:08Z"
+      },
+      "object_index": 30
+    },
+    {
+      "_class": "lecture",
+      "id": 44901525,
+      "title": "Amazon Bedrock - RAG & Knowledge Base - Complete Setup - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 64329243,
+        "asset_type": "Video",
+        "title": "AIF - Bedrock - Knowledge Base Full Hands On v2.mp4",
+        "created": "2025-04-12T12:18:07Z"
+      },
+      "object_index": 31
+    },
+    {
+      "_class": "lecture",
+      "id": 45375103,
+      "title": "More GenAI Concepts",
+      "asset": {
+        "_class": "asset",
+        "id": 59197627,
+        "asset_type": "Video",
+        "title": "AIF_-_GenAI_-_More_Concepts_v2.mp4",
+        "created": "2024-09-12T15:47:09Z"
+      },
+      "object_index": 32
+    },
+    {
+      "_class": "lecture",
+      "id": 44886425,
+      "title": "Amazon Bedrock - GuardRails",
+      "asset": {
+        "_class": "asset",
+        "id": 58015335,
+        "asset_type": "Video",
+        "title": "AIF_-_Bedrock_-_Guardrails_v1.mp4",
+        "created": "2024-07-21T09:46:57Z"
+      },
+      "object_index": 33
+    },
+    {
+      "_class": "lecture",
+      "id": 44886433,
+      "title": "Amazon Bedrock - GuardRails - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58015307,
+        "asset_type": "Video",
+        "title": "AIF_-_Bedrock_-_GuardRails_Hands_On_v1.mp4",
+        "created": "2024-07-21T09:46:57Z"
+      },
+      "object_index": 34
+    },
+    {
+      "_class": "lecture",
+      "id": 45375129,
+      "title": "Amazon Bedrock - Agents",
+      "asset": {
+        "_class": "asset",
+        "id": 58659987,
+        "asset_type": "Video",
+        "title": "AIF_-_Bedrock_-_Agents_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 35
+    },
+    {
+      "_class": "lecture",
+      "id": 45796635,
+      "title": "Amazon Bedrock - CloudWatch Integration",
+      "asset": {
+        "_class": "asset",
+        "id": 59197635,
+        "asset_type": "Video",
+        "title": "AIF_-_Bedrock_-_CloudWatch_Integration_v1.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 36
+    },
+    {
+      "_class": "lecture",
+      "id": 45796637,
+      "title": "Amazon Bedrock - CloudWatch Integration - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 59197637,
+        "asset_type": "Video",
+        "title": "AIF_-_Bedrock_-_CloudWatch_Integration_Hands_On_v1.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 37
+    },
+    {
+      "_class": "lecture",
+      "id": 44886445,
+      "title": "Amazon Bedrock - Pricing",
+      "asset": {
+        "_class": "asset",
+        "id": 63059521,
+        "asset_type": "Video",
+        "title": "AIF - Bedrock - Pricing v4.mp4",
+        "created": "2025-02-20T06:50:57Z"
+      },
+      "object_index": 38
+    },
+    {
+      "_class": "lecture",
+      "id": 44886455,
+      "title": "Amazon Bedrock - AI Stylist - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 64329247,
+        "asset_type": "Video",
+        "title": "AIF - Bedrock - AI Stylist Hands On v1.mp4",
+        "created": "2025-04-12T12:18:09Z"
+      },
+      "object_index": 39
+    },
+    {
+      "_class": "lecture",
+      "id": 54471251,
+      "title": "Amazon Nova",
+      "asset": {
+        "_class": "asset",
+        "id": 70793075,
+        "asset_type": "Video",
+        "title": "AIF - Bedrock - Nova Overview v1.mp4",
+        "created": "2026-01-21T15:25:40Z"
+      },
+      "object_index": 40
+    },
+    {
+      "_class": "quiz",
+      "id": 6457409,
+      "title": "Amazon Bedrock and Generative AI (GenAI) - Quiz",
+      "object_index": 2
+    },
+    {
+      "_class": "chapter",
+      "id": 10698083,
+      "title": "Prompt Engineering",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 44977025,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 58128053,
+        "asset_type": "Video",
+        "title": "AIF_-_Section_Intro_-_Prompt_Engineering_v1.mp4",
+        "created": "2024-07-26T14:35:37Z"
+      },
+      "object_index": 41
+    },
+    {
+      "_class": "lecture",
+      "id": 44886465,
+      "title": "What is Prompt Engineering?",
+      "asset": {
+        "_class": "asset",
+        "id": 58015291,
+        "asset_type": "Video",
+        "title": "AIF_-_Prompt_Engineering_-_Basics_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 42
+    },
+    {
+      "_class": "lecture",
+      "id": 44886473,
+      "title": "Prompt Engineering - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58015257,
+        "asset_type": "Video",
+        "title": "AIF_-_Prompt_Engineering_-_Basics_Hands_On_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 43
+    },
+    {
+      "_class": "lecture",
+      "id": 44886483,
+      "title": "Prompt Performance Optimization",
+      "asset": {
+        "_class": "asset",
+        "id": 61951141,
+        "asset_type": "Video",
+        "title": "AIF_-_Prompt_Engineering_-_Performance_v2.mp4",
+        "created": "2025-01-06T20:26:17Z"
+      },
+      "object_index": 44
+    },
+    {
+      "_class": "lecture",
+      "id": 44886491,
+      "title": "Prompt Performance Optimization - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58015245,
+        "asset_type": "Video",
+        "title": "AIF_-_Prompt_Engineering_-_Performance_Hands_On_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 45
+    },
+    {
+      "_class": "lecture",
+      "id": 44886495,
+      "title": "Prompt Engineering Techniques",
+      "asset": {
+        "_class": "asset",
+        "id": 59197621,
+        "asset_type": "Video",
+        "title": "AIF_-_Prompt_Engineering_-_Prompting_Techniques_v2.mp4",
+        "created": "2024-09-12T15:47:09Z"
+      },
+      "object_index": 46
+    },
+    {
+      "_class": "lecture",
+      "id": 45375209,
+      "title": "Prompt Templates",
+      "asset": {
+        "_class": "asset",
+        "id": 58659979,
+        "asset_type": "Video",
+        "title": "AIF_-_Prompt_Engineering_-_Prompt_Templates_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 47
+    },
+    {
+      "_class": "quiz",
+      "id": 6457411,
+      "title": "Prompt Engineering - Quiz",
+      "object_index": 3
+    },
+    {
+      "_class": "chapter",
+      "id": 10698085,
+      "title": "Amazon Q - Deep Dive",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 44977031,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 58128059,
+        "asset_type": "Video",
+        "title": "AIF_-_Section_Intro_-_Amazon_Q_v1.mp4",
+        "created": "2024-07-26T14:35:37Z"
+      },
+      "object_index": 48
+    },
+    {
+      "_class": "lecture",
+      "id": 44886505,
+      "title": "Amazon Q Business",
+      "asset": {
+        "_class": "asset",
+        "id": 59197647,
+        "asset_type": "Video",
+        "title": "AIF_-_Amazon_Q_Business_Overview_v1.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 49
+    },
+    {
+      "_class": "lecture",
+      "id": 44886509,
+      "title": "Amazon Q Business - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 67398889,
+        "asset_type": "Video",
+        "title": "AIF - Amazon Q Business Hands On v2.mp4",
+        "created": "2025-08-13T18:38:46Z"
+      },
+      "object_index": 50
+    },
+    {
+      "_class": "lecture",
+      "id": 44886515,
+      "title": "Amazon Q Apps",
+      "asset": {
+        "_class": "asset",
+        "id": 61943349,
+        "asset_type": "Video",
+        "title": "AIF - Amazon Q Business - Q Apps v2.mp4",
+        "created": "2025-01-06T14:59:57Z"
+      },
+      "object_index": 51
+    },
+    {
+      "_class": "lecture",
+      "id": 44886543,
+      "title": "Amazon Q Developer",
+      "asset": {
+        "_class": "asset",
+        "id": 70793403,
+        "asset_type": "Video",
+        "title": "AIF - Amazon Q Developer Overview v1.mp4",
+        "created": "2026-01-21T15:35:41Z"
+      },
+      "object_index": 52
+    },
+    {
+      "_class": "lecture",
+      "id": 44886547,
+      "title": "Amazon Q Developer - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70793399,
+        "asset_type": "Video",
+        "title": "AIF - Amazon Q Developer Hands On v1.mp4",
+        "created": "2026-01-21T15:35:39Z"
+      },
+      "object_index": 53
+    },
+    {
+      "_class": "lecture",
+      "id": 45796557,
+      "title": "Amazon Q for AWS Services",
+      "asset": {
+        "_class": "asset",
+        "id": 61950827,
+        "asset_type": "Video",
+        "title": "AIF_-_Amazon_Q_for_AWS_Services_v2.mp4",
+        "created": "2025-01-06T20:14:21Z"
+      },
+      "object_index": 54
+    },
+    {
+      "_class": "lecture",
+      "id": 45375243,
+      "title": "PartyRock",
+      "asset": {
+        "_class": "asset",
+        "id": 58660027,
+        "asset_type": "Video",
+        "title": "AIF_-_PartyRock_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 55
+    },
+    {
+      "_class": "quiz",
+      "id": 6457413,
+      "title": "Amazon Q - Quiz",
+      "object_index": 4
+    },
+    {
+      "_class": "chapter",
+      "id": 10698089,
+      "title": "Artificial Intelligence (AI) & Machine Learning (ML)",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 44977041,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 58128047,
+        "asset_type": "Video",
+        "title": "AIF_-_Section_Intro_-_AI_ML_v1.mp4",
+        "created": "2024-07-26T14:35:37Z"
+      },
+      "object_index": 56
+    },
+    {
+      "_class": "lecture",
+      "id": 44886569,
+      "title": "AI, ML, Deep Learning, and GenAI",
+      "asset": {
+        "_class": "asset",
+        "id": 58015299,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_What_is_AI_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 57
+    },
+    {
+      "_class": "lecture",
+      "id": 45796543,
+      "title": "ML Terms You May Encounter in the Exam",
+      "asset": {
+        "_class": "asset",
+        "id": 59197651,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_ML_Terms_v1.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 58
+    },
+    {
+      "_class": "lecture",
+      "id": 44886593,
+      "title": "Training Data",
+      "asset": {
+        "_class": "asset",
+        "id": 58015271,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_Training_Data_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 59
+    },
+    {
+      "_class": "lecture",
+      "id": 44886601,
+      "title": "Supervised Learning",
+      "asset": {
+        "_class": "asset",
+        "id": 61950825,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_Supervised_Learning_v2.mp4",
+        "created": "2025-01-06T20:14:20Z"
+      },
+      "object_index": 60
+    },
+    {
+      "_class": "lecture",
+      "id": 44886623,
+      "title": "Unsupervised Learning",
+      "asset": {
+        "_class": "asset",
+        "id": 60517885,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_Unsupervised_Learning_v3.mp4",
+        "created": "2024-11-09T11:28:50Z"
+      },
+      "object_index": 61
+    },
+    {
+      "_class": "lecture",
+      "id": 46803227,
+      "title": "Self-Supervised Learning",
+      "asset": {
+        "_class": "asset",
+        "id": 60516921,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_Self_Supervised_Learning_v1.mp4",
+        "created": "2024-11-09T11:02:36Z"
+      },
+      "object_index": 62
+    },
+    {
+      "_class": "lecture",
+      "id": 44886629,
+      "title": "Reinforcement Learning",
+      "asset": {
+        "_class": "asset",
+        "id": 58015295,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_Reinforcement_Learning_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 63
+    },
+    {
+      "_class": "lecture",
+      "id": 45375323,
+      "title": "RLHF - Reinforcement Learning from Human Feedback",
+      "asset": {
+        "_class": "asset",
+        "id": 58659977,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_RLHF_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 64
+    },
+    {
+      "_class": "lecture",
+      "id": 44886641,
+      "title": "Model Fit, Bias, and Variance",
+      "asset": {
+        "_class": "asset",
+        "id": 58015303,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_Bias_and_Variance_v1.mp4",
+        "created": "2024-07-21T09:46:57Z"
+      },
+      "object_index": 65
+    },
+    {
+      "_class": "lecture",
+      "id": 45375513,
+      "title": "Model Evaluation Metrics",
+      "asset": {
+        "_class": "asset",
+        "id": 67395319,
+        "asset_type": "Video",
+        "title": "AIF - AI Deep Dive - Model Evaluation Metrics v2.mp4",
+        "created": "2025-08-13T15:57:25Z"
+      },
+      "object_index": 66
+    },
+    {
+      "_class": "lecture",
+      "id": 44886645,
+      "title": "Machine Learning - Inferencing",
+      "asset": {
+        "_class": "asset",
+        "id": 59197655,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_Inferencing_v2.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 67
+    },
+    {
+      "_class": "lecture",
+      "id": 44886663,
+      "title": "Phases of a Machine Learning Project",
+      "asset": {
+        "_class": "asset",
+        "id": 59197649,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_Phases_of_a_ML_Project_v3.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 68
+    },
+    {
+      "_class": "lecture",
+      "id": 45796455,
+      "title": "Hyperparameters",
+      "asset": {
+        "_class": "asset",
+        "id": 70792933,
+        "asset_type": "Video",
+        "title": "AIF - AI Deep Dive - HyperParameters v3.mp4",
+        "created": "2026-01-21T15:21:08Z"
+      },
+      "object_index": 69
+    },
+    {
+      "_class": "lecture",
+      "id": 45796429,
+      "title": "When is ML not appropriate?",
+      "asset": {
+        "_class": "asset",
+        "id": 59197667,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Deep_Dive_-_When_is_ML_not_appropriate_v1.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 70
+    },
+    {
+      "_class": "quiz",
+      "id": 6457417,
+      "title": "Artificial Intelligence (AI) & Machine Learning (ML) - Quiz",
+      "object_index": 5
+    },
+    {
+      "_class": "chapter",
+      "id": 10698091,
+      "title": "AWS Managed AI Services",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 44977047,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 58128051,
+        "asset_type": "Video",
+        "title": "AIF_-_Section_Intro_-_AI_Managed_Services_v1.mp4",
+        "created": "2024-07-26T14:35:37Z"
+      },
+      "object_index": 71
+    },
+    {
+      "_class": "lecture",
+      "id": 44886679,
+      "title": "Why AWS Managed Services?",
+      "asset": {
+        "_class": "asset",
+        "id": 61951205,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Section_Intro_v2.mp4",
+        "created": "2025-01-06T20:31:17Z"
+      },
+      "object_index": 72
+    },
+    {
+      "_class": "lecture",
+      "id": 44886687,
+      "title": "Amazon Comprehend",
+      "asset": {
+        "_class": "asset",
+        "id": 59197661,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Comprehend_Overview_v2.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 73
+    },
+    {
+      "_class": "lecture",
+      "id": 44977263,
+      "title": "Amazon Comprehend - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58128117,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Comprehend_Hands_On_v1.mp4",
+        "created": "2024-07-26T14:39:19Z"
+      },
+      "object_index": 74
+    },
+    {
+      "_class": "lecture",
+      "id": 44886711,
+      "title": "Amazon Translate",
+      "asset": {
+        "_class": "asset",
+        "id": 58015429,
+        "asset_type": "Video",
+        "title": "CCP_-_ML_-_Translate.mp4",
+        "created": "2024-07-21T09:51:22Z"
+      },
+      "object_index": 75
+    },
+    {
+      "_class": "lecture",
+      "id": 44977265,
+      "title": "Amazon Translate - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58128119,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Translate_Hands_On_v1.mp4",
+        "created": "2024-07-26T14:39:19Z"
+      },
+      "object_index": 76
+    },
+    {
+      "_class": "lecture",
+      "id": 44887629,
+      "title": "Amazon Transcribe",
+      "asset": {
+        "_class": "asset",
+        "id": 60516913,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Transcribe_v3.mp4",
+        "created": "2024-11-09T11:02:03Z"
+      },
+      "object_index": 77
+    },
+    {
+      "_class": "lecture",
+      "id": 45806381,
+      "title": "Amazon Transcribe - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 59208375,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Transcribe_Hands_On_v1.mp4",
+        "created": "2024-09-13T04:52:18Z"
+      },
+      "object_index": 78
+    },
+    {
+      "_class": "lecture",
+      "id": 44887635,
+      "title": "Amazon Polly",
+      "asset": {
+        "_class": "asset",
+        "id": 58660037,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Polly_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 79
+    },
+    {
+      "_class": "lecture",
+      "id": 45375379,
+      "title": "Amazon Polly - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58659999,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Polly_Hands_On_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 80
+    },
+    {
+      "_class": "lecture",
+      "id": 44887649,
+      "title": "Amazon Rekognition",
+      "asset": {
+        "_class": "asset",
+        "id": 59197657,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Rekognition_v2.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 81
+    },
+    {
+      "_class": "lecture",
+      "id": 45806375,
+      "title": "Amazon Rekognition - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 59208377,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Rekognition_Hands_On_v1.mp4",
+        "created": "2024-09-13T04:52:18Z"
+      },
+      "object_index": 82
+    },
+    {
+      "_class": "lecture",
+      "id": 45375411,
+      "title": "Amazon Lex",
+      "asset": {
+        "_class": "asset",
+        "id": 58659991,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Lex_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 83
+    },
+    {
+      "_class": "lecture",
+      "id": 45375435,
+      "title": "Amazon Lex - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58660023,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Lex_Hands_On_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 84
+    },
+    {
+      "_class": "lecture",
+      "id": 44887675,
+      "title": "Amazon Personalize",
+      "asset": {
+        "_class": "asset",
+        "id": 59197653,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Personalize_v2.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 85
+    },
+    {
+      "_class": "lecture",
+      "id": 44887679,
+      "title": "Amazon Textract",
+      "asset": {
+        "_class": "asset",
+        "id": 58017233,
+        "asset_type": "Video",
+        "title": "CCP_-_Amazon_Textract_v1.mp4",
+        "created": "2024-07-21T12:00:08Z"
+      },
+      "object_index": 86
+    },
+    {
+      "_class": "lecture",
+      "id": 44977269,
+      "title": "Amazon Textract - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58128123,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Textract_Hands_On_v1.mp4",
+        "created": "2024-07-26T14:39:19Z"
+      },
+      "object_index": 87
+    },
+    {
+      "_class": "lecture",
+      "id": 44887681,
+      "title": "Amazon Kendra",
+      "asset": {
+        "_class": "asset",
+        "id": 58015421,
+        "asset_type": "Video",
+        "title": "CCP_-_ML_-_Kendra_v1.mp4",
+        "created": "2024-07-21T09:51:22Z"
+      },
+      "object_index": 88
+    },
+    {
+      "_class": "lecture",
+      "id": 44887683,
+      "title": "Amazon Mechanical Turk",
+      "asset": {
+        "_class": "asset",
+        "id": 64327375,
+        "asset_type": "Video",
+        "title": "AIF - AI Services - Mechanical Turk Overview v1.mp4",
+        "created": "2025-04-12T10:54:29Z"
+      },
+      "object_index": 89
+    },
+    {
+      "_class": "lecture",
+      "id": 44887687,
+      "title": "Amazon Augmented AI",
+      "asset": {
+        "_class": "asset",
+        "id": 58015285,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Amazon_Augmented_AI_A2I_Overview_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 90
+    },
+    {
+      "_class": "lecture",
+      "id": 44887691,
+      "title": "Amazon Augmented AI - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58015255,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Amazon_Augmented_AI_A2I_Hands_On_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 91
+    },
+    {
+      "_class": "lecture",
+      "id": 44887711,
+      "title": "Amazon Comprehend Medical & Transcribe Medical",
+      "asset": {
+        "_class": "asset",
+        "id": 58015267,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Comprehend_Transcribe_Medical_Overview_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 92
+    },
+    {
+      "_class": "lecture",
+      "id": 44887731,
+      "title": "Amazon Comprehend Medical & Transcribe Medical - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58015241,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Comprehend_Transcribe_Medical_Hands_On_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 93
+    },
+    {
+      "_class": "lecture",
+      "id": 54471271,
+      "title": "AWS HealthScribe",
+      "asset": {
+        "_class": "asset",
+        "id": 70793077,
+        "asset_type": "Video",
+        "title": "AIF - HealthScribe - Overview v1.mp4",
+        "created": "2026-01-21T15:25:40Z"
+      },
+      "object_index": 94
+    },
+    {
+      "_class": "lecture",
+      "id": 44887747,
+      "title": "Amazon's Hardware for AI",
+      "asset": {
+        "_class": "asset",
+        "id": 59197665,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Amazon_EC2_for_AI_Overview_v2.mp4",
+        "created": "2024-09-12T15:47:12Z"
+      },
+      "object_index": 95
+    },
+    {
+      "_class": "lecture",
+      "id": 44887749,
+      "title": "Amazon's Hardware for AI - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58015235,
+        "asset_type": "Video",
+        "title": "AIF_-_AI_Services_-_Amazon_EC2_for_AI_Hands_On_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 96
+    },
+    {
+      "_class": "quiz",
+      "id": 6457513,
+      "title": "AWS Managed AI Services - Quiz",
+      "object_index": 6
+    },
+    {
+      "_class": "chapter",
+      "id": 10698093,
+      "title": "Amazon SageMaker - Deep Dive",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 44977055,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 58128041,
+        "asset_type": "Video",
+        "title": "AIF_-_Section_Intro_-_SageMaker_v1.mp4",
+        "created": "2024-07-26T14:35:37Z"
+      },
+      "object_index": 97
+    },
+    {
+      "_class": "lecture",
+      "id": 44887763,
+      "title": "Amazon SageMaker AI - Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 67389935,
+        "asset_type": "Video",
+        "title": "AIF - SageMaker - Overview v2.mp4",
+        "created": "2025-08-13T13:17:55Z"
+      },
+      "object_index": 98
+    },
+    {
+      "_class": "lecture",
+      "id": 44887769,
+      "title": "Amazon SageMaker - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 70792787,
+        "asset_type": "Video",
+        "title": "AIF - SageMaker - Hands On v3.mp4",
+        "created": "2026-01-21T15:13:37Z"
+      },
+      "object_index": 99
+    },
+    {
+      "_class": "lecture",
+      "id": 44887771,
+      "title": "Amazon SageMaker - Data Tools",
+      "asset": {
+        "_class": "asset",
+        "id": 70793081,
+        "asset_type": "Video",
+        "title": "AIF - SageMaker - Data Tools v1.mp4",
+        "created": "2026-01-21T15:25:42Z"
+      },
+      "object_index": 100
+    },
+    {
+      "_class": "lecture",
+      "id": 44887781,
+      "title": "Amazon SageMaker - Models and Humans",
+      "asset": {
+        "_class": "asset",
+        "id": 59197617,
+        "asset_type": "Video",
+        "title": "AIF_-_SageMaker_-_Models_and_Humans_v2.mp4",
+        "created": "2024-09-12T15:47:09Z"
+      },
+      "object_index": 101
+    },
+    {
+      "_class": "lecture",
+      "id": 44887783,
+      "title": "Amazon SageMaker - Governance",
+      "asset": {
+        "_class": "asset",
+        "id": 58660007,
+        "asset_type": "Video",
+        "title": "AIF_-_SageMaker_-_Governance_v2.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 102
+    },
+    {
+      "_class": "lecture",
+      "id": 44887789,
+      "title": "Amazon SageMaker - Consoles",
+      "asset": {
+        "_class": "asset",
+        "id": 58660013,
+        "asset_type": "Video",
+        "title": "AIF_-_SageMaker_-_Consoles_v2.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 103
+    },
+    {
+      "_class": "lecture",
+      "id": 44887795,
+      "title": "Amazon SageMaker - Summary",
+      "asset": {
+        "_class": "asset",
+        "id": 58659997,
+        "asset_type": "Video",
+        "title": "AIF_-_SageMaker_-_Summary_v2.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 104
+    },
+    {
+      "_class": "lecture",
+      "id": 47890573,
+      "title": "Amazon SageMaker - Extra Features",
+      "asset": {
+        "_class": "asset",
+        "id": 61950831,
+        "asset_type": "Video",
+        "title": "AIF_-_SageMaker_-_Extra_Features_v1.mp4",
+        "created": "2025-01-06T20:14:21Z"
+      },
+      "object_index": 105
+    },
+    {
+      "_class": "quiz",
+      "id": 6457515,
+      "title": "Amazon SageMaker - Quiz",
+      "object_index": 7
+    },
+    {
+      "_class": "chapter",
+      "id": 10698095,
+      "title": "AI Challenges and Responsibilities",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 44977059,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 58128061,
+        "asset_type": "Video",
+        "title": "AIF_-_Section_Intro_-_Responsible_AI_v1.mp4",
+        "created": "2024-07-26T14:35:37Z"
+      },
+      "object_index": 106
+    },
+    {
+      "_class": "lecture",
+      "id": 44887815,
+      "title": "AI Challenges and Responsibilities - Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 58015277,
+        "asset_type": "Video",
+        "title": "AIF_-_Responsible_-_Section_Intro_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 107
+    },
+    {
+      "_class": "lecture",
+      "id": 44887825,
+      "title": "Responsible AI",
+      "asset": {
+        "_class": "asset",
+        "id": 59197625,
+        "asset_type": "Video",
+        "title": "AIF_-_Responsible_-_Responsible_AI_v2.mp4",
+        "created": "2024-09-12T15:47:09Z"
+      },
+      "object_index": 108
+    },
+    {
+      "_class": "lecture",
+      "id": 44887829,
+      "title": "GenAI Challenges",
+      "asset": {
+        "_class": "asset",
+        "id": 59197623,
+        "asset_type": "Video",
+        "title": "AIF_-_Responsible_-_Gen_AI_Challenges_v3.mp4",
+        "created": "2024-09-12T15:47:09Z"
+      },
+      "object_index": 109
+    },
+    {
+      "_class": "lecture",
+      "id": 44887837,
+      "title": "Compliance for AI",
+      "asset": {
+        "_class": "asset",
+        "id": 64326869,
+        "asset_type": "Video",
+        "title": "AIF - Responsible - Compliance v1.mp4",
+        "created": "2025-04-12T10:36:45Z"
+      },
+      "object_index": 110
+    },
+    {
+      "_class": "lecture",
+      "id": 44887839,
+      "title": "Governance for AI",
+      "asset": {
+        "_class": "asset",
+        "id": 58015279,
+        "asset_type": "Video",
+        "title": "AIF_-_Responsible_-_Governance_v1.mp4",
+        "created": "2024-07-21T09:46:56Z"
+      },
+      "object_index": 111
+    },
+    {
+      "_class": "lecture",
+      "id": 44887843,
+      "title": "Security and Privacy for AI",
+      "asset": {
+        "_class": "asset",
+        "id": 58015329,
+        "asset_type": "Video",
+        "title": "AIF_-_Responsible_-_Security_v1.mp4",
+        "created": "2024-07-21T09:46:57Z"
+      },
+      "object_index": 112
+    },
+    {
+      "_class": "lecture",
+      "id": 45375487,
+      "title": "GenAI Security Scoping Matrix",
+      "asset": {
+        "_class": "asset",
+        "id": 59197631,
+        "asset_type": "Video",
+        "title": "AIF_-_Responsible_-_Generative_AI_Security_Scoping_Matrix_v2.mp4",
+        "created": "2024-09-12T15:47:09Z"
+      },
+      "object_index": 113
+    },
+    {
+      "_class": "lecture",
+      "id": 45375491,
+      "title": "MLOps",
+      "asset": {
+        "_class": "asset",
+        "id": 58660029,
+        "asset_type": "Video",
+        "title": "AIF_-_Responsible_-_MLOps_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 114
+    },
+    {
+      "_class": "quiz",
+      "id": 6457525,
+      "title": "AI Challenges and Responsibilities - Quiz",
+      "object_index": 8
+    },
+    {
+      "_class": "chapter",
+      "id": 10809709,
+      "title": "AWS Security Services & More",
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 45375567,
+      "title": "Section Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 58660033,
+        "asset_type": "Video",
+        "title": "AIF_-_Security_-_Section_Overview_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 115
+    },
+    {
+      "_class": "lecture",
+      "id": 45375575,
+      "title": "IAM Introduction: Users, Groups, Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 58660091,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_Users_Groups_Policies.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 116
+    },
+    {
+      "_class": "lecture",
+      "id": 45375581,
+      "title": "IAM Users & Groups - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 69222215,
+        "asset_type": "Video",
+        "title": "CCP - IAM - Users Groups Hands On v7.mp4",
+        "created": "2025-11-04T08:31:28Z"
+      },
+      "object_index": 117
+    },
+    {
+      "_class": "lecture",
+      "id": 51960277,
+      "title": "AWS Console Simultaneous Sign-in",
+      "asset": {
+        "_class": "asset",
+        "id": 67390859,
+        "asset_type": "Video",
+        "title": "CCP - Console - Multi Session Support v1.mp4",
+        "created": "2025-08-13T13:54:36Z"
+      },
+      "object_index": 118
+    },
+    {
+      "_class": "lecture",
+      "id": 45375587,
+      "title": "IAM Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 58660085,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_Policies_v1.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 119
+    },
+    {
+      "_class": "lecture",
+      "id": 45375589,
+      "title": "IAM Policies - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58660089,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_Policies_Hands_On_v4.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 120
+    },
+    {
+      "_class": "lecture",
+      "id": 45375595,
+      "title": "IAM Roles",
+      "asset": {
+        "_class": "asset",
+        "id": 58660087,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_Roles.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 121
+    },
+    {
+      "_class": "lecture",
+      "id": 45375597,
+      "title": "IAM Roles - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58660097,
+        "asset_type": "Video",
+        "title": "CCP_-_IAM_-_Roles_Hands_On_v3.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 122
+    },
+    {
+      "_class": "lecture",
+      "id": 47906241,
+      "title": "Amazon S3",
+      "asset": {
+        "_class": "asset",
+        "id": 61968677,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Overview_v2.mp4",
+        "created": "2025-01-07T15:59:03Z"
+      },
+      "object_index": 123
+    },
+    {
+      "_class": "lecture",
+      "id": 47906243,
+      "title": "Amazon S3 - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 61968675,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Hands_On_v5.mp4",
+        "created": "2025-01-07T15:59:03Z"
+      },
+      "object_index": 124
+    },
+    {
+      "_class": "lecture",
+      "id": 47906245,
+      "title": "Amazon S3 - Storage Classes",
+      "asset": {
+        "_class": "asset",
+        "id": 61968783,
+        "asset_type": "Video",
+        "title": "SAA_-_S3_Storage_Classes_v4.mp4",
+        "created": "2025-01-07T16:05:49Z"
+      },
+      "object_index": 125
+    },
+    {
+      "_class": "lecture",
+      "id": 47906247,
+      "title": "Amazon S3 - Storage Classes - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 61988521,
+        "asset_type": "Video",
+        "title": "CCP_-_S3_-_Storage_Classes_Hands_On_v2.mp4",
+        "created": "2025-01-08T13:02:37Z"
+      },
+      "object_index": 126
+    },
+    {
+      "_class": "lecture",
+      "id": 45375599,
+      "title": "Amazon EC2",
+      "asset": {
+        "_class": "asset",
+        "id": 67803295,
+        "asset_type": "Video",
+        "title": "CCP - EC2 - Overview v4.mp4",
+        "created": "2025-08-31T09:12:59Z"
+      },
+      "object_index": 127
+    },
+    {
+      "_class": "lecture",
+      "id": 45375605,
+      "title": "Create an EC2 Instance with EC2 User Data to have a Website - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58660107,
+        "asset_type": "Video",
+        "title": "CCP_-_EC2_-_Hands_On_v2.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 128
+    },
+    {
+      "_class": "lecture",
+      "id": 45375609,
+      "title": "AWS Lambda",
+      "asset": {
+        "_class": "asset",
+        "id": 58660093,
+        "asset_type": "Video",
+        "title": "CCP_-_Lambda_Overview_v2.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 129
+    },
+    {
+      "_class": "lecture",
+      "id": 45375611,
+      "title": "AWS Lambda - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 65120585,
+        "asset_type": "Video",
+        "title": "CCP - Lambda Hands On v4.mp4",
+        "created": "2025-05-14T09:57:17Z"
+      },
+      "object_index": 130
+    },
+    {
+      "_class": "lecture",
+      "id": 45375619,
+      "title": "Amazon Macie",
+      "asset": {
+        "_class": "asset",
+        "id": 58660099,
+        "asset_type": "Video",
+        "title": "CCP_-_Macie_v2.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 131
+    },
+    {
+      "_class": "lecture",
+      "id": 45375623,
+      "title": "AWS Config",
+      "asset": {
+        "_class": "asset",
+        "id": 58660101,
+        "asset_type": "Video",
+        "title": "CCP_-_Config.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 132
+    },
+    {
+      "_class": "lecture",
+      "id": 45375625,
+      "title": "Amazon Inspector",
+      "asset": {
+        "_class": "asset",
+        "id": 58660095,
+        "asset_type": "Video",
+        "title": "CCP_-_Inspector_v3.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 133
+    },
+    {
+      "_class": "lecture",
+      "id": 45375627,
+      "title": "AWS CloudTrail",
+      "asset": {
+        "_class": "asset",
+        "id": 58660105,
+        "asset_type": "Video",
+        "title": "CCP_-_CloudTrail_-_Overview_v2.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 134
+    },
+    {
+      "_class": "lecture",
+      "id": 45375629,
+      "title": "AWS CloudTrail - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 58660111,
+        "asset_type": "Video",
+        "title": "CCP_-_CloudTrail_-_Hands_On_v2.mp4",
+        "created": "2024-08-19T21:45:03Z"
+      },
+      "object_index": 135
+    },
+    {
+      "_class": "lecture",
+      "id": 45375631,
+      "title": "AWS Artifact",
+      "asset": {
+        "_class": "asset",
+        "id": 59197609,
+        "asset_type": "Video",
+        "title": "AIF_-_Security_-_Artifact_v2.mp4",
+        "created": "2024-09-12T15:47:08Z"
+      },
+      "object_index": 136
+    },
+    {
+      "_class": "lecture",
+      "id": 45796389,
+      "title": "AWS Artifact - Hands On",
+      "asset": {
+        "_class": "asset",
+        "id": 59197613,
+        "asset_type": "Video",
+        "title": "AIF_-_Security_-_Artifact_Hands_On_v1.mp4",
+        "created": "2024-09-12T15:47:08Z"
+      },
+      "object_index": 137
+    },
+    {
+      "_class": "lecture",
+      "id": 45796381,
+      "title": "AWS Audit Manager",
+      "asset": {
+        "_class": "asset",
+        "id": 59197611,
+        "asset_type": "Video",
+        "title": "AIF_-_Security_-_Audit_Manager_v1.mp4",
+        "created": "2024-09-12T15:47:08Z"
+      },
+      "object_index": 138
+    },
+    {
+      "_class": "lecture",
+      "id": 45375633,
+      "title": "AWS Trusted Advisor",
+      "asset": {
+        "_class": "asset",
+        "id": 69222213,
+        "asset_type": "Video",
+        "title": "CCP - AWS - Trusted Advisor v3.mp4",
+        "created": "2025-11-04T08:31:26Z"
+      },
+      "object_index": 139
+    },
+    {
+      "_class": "lecture",
+      "id": 45796371,
+      "title": "VPC & Network Security",
+      "asset": {
+        "_class": "asset",
+        "id": 59197607,
+        "asset_type": "Video",
+        "title": "AIF_-_Security_-_VPC_and_Network_Security_v2.mp4",
+        "created": "2024-09-12T15:47:08Z"
+      },
+      "object_index": 140
+    },
+    {
+      "_class": "lecture",
+      "id": 45375637,
+      "title": "AWS Security Services - Summary",
+      "asset": {
+        "_class": "asset",
+        "id": 58660017,
+        "asset_type": "Video",
+        "title": "AIF_-_Security_-_Section_Summary_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 141
+    },
+    {
+      "_class": "lecture",
+      "id": 45796349,
+      "title": "Scenarios for Security",
+      "asset": {
+        "_class": "asset",
+        "id": 59198093,
+        "asset_type": "Video",
+        "title": "AIF_-_Security_-_Common_Security_Scenarios_v1.mp4",
+        "created": "2024-09-12T16:12:55Z"
+      },
+      "object_index": 142
+    },
+    {
+      "_class": "quiz",
+      "id": 6500701,
+      "title": "AWS Security Services - Quiz",
+      "object_index": 9
+    },
+    {
+      "_class": "chapter",
+      "id": 10699985,
+      "title": "Preparing for the Exam + Practice Exam - AWS Certified AI Practitioner",
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 45381073,
+      "title": "State of Learning Checkpoint",
+      "asset": {
+        "_class": "asset",
+        "id": 58659989,
+        "asset_type": "Video",
+        "title": "AIF_-_Exam_-_State_of_Learning_v1.mp4",
+        "created": "2024-08-19T21:42:59Z"
+      },
+      "object_index": 143
+    },
+    {
+      "_class": "lecture",
+      "id": 45381089,
+      "title": "Example Sample Exam Questions Walkthrough",
+      "asset": {
+        "_class": "asset",
+        "id": 69142549,
+        "asset_type": "Video",
+        "title": "AIF - Exam - Sample Questions Walkthrough v1.mp4",
+        "created": "2025-10-31T11:32:25Z"
+      },
+      "object_index": 144
+    },
+    {
+      "_class": "lecture",
+      "id": 44887971,
+      "title": "Exam Walkthrough and Signup",
+      "asset": {
+        "_class": "asset",
+        "id": 57796495,
+        "asset_type": "Video",
+        "title": "AWS_-_Exam_Sign_Up_v5.mp4",
+        "created": "2024-07-10T11:01:44Z"
+      },
+      "object_index": 145
+    },
+    {
+      "_class": "lecture",
+      "id": 44887975,
+      "title": "Save 50% on your AWS Exam Cost!",
+      "asset": {
+        "_class": "asset",
+        "id": 57796497,
+        "asset_type": "Video",
+        "title": "AWS_-_Save_50_on_AWS_Exam_Cost_v2.mp4",
+        "created": "2024-07-10T11:01:46Z"
+      },
+      "object_index": 146
+    },
+    {
+      "_class": "lecture",
+      "id": 44887977,
+      "title": "Get an Extra 30 Minutes on your AWS Exam - Non Native English Speakers only",
+      "asset": {
+        "_class": "asset",
+        "id": 59209789,
+        "asset_type": "Video",
+        "title": "AWS_-_Request_30_minute_accommodation_on_AWS_exam_v2.mp4",
+        "created": "2024-09-13T07:24:19Z"
+      },
+      "object_index": 147
+    },
+    {
+      "_class": "quiz",
+      "id": 6463763,
+      "title": "Practice Exam - AWS Certified AI Practitioner",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 45033297,
+      "title": "AWS Certification Paths",
+      "asset": {
+        "_class": "asset",
+        "id": 59209783,
+        "asset_type": "Video",
+        "title": "AWS_-_Common_-_Certification_Paths_v3.mp4",
+        "created": "2024-09-13T07:24:12Z"
+      },
+      "object_index": 148
+    },
+    {
+      "_class": "chapter",
+      "id": 10699991,
+      "title": "Congratulations",
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 44887991,
+      "title": "Congratulations",
+      "asset": {
+        "_class": "asset",
+        "id": 58316343,
+        "asset_type": "Video",
+        "title": "Conclusion_video_-_FINAL_RENDER.mp4",
+        "created": "2024-08-04T08:30:44Z"
+      },
+      "object_index": 149
+    },
+    {
+      "_class": "lecture",
+      "id": 44887999,
+      "title": "Bonus Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 71597375,
+        "asset_type": "Article",
+        "title": "",
+        "created": "2026-03-01T10:16:44Z"
+      },
+      "object_index": 150
+    }
+  ]
+}
