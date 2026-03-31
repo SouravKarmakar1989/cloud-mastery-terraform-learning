@@ -76,8 +76,8 @@ After setup, test it:
 
 3. **Merge only via PR** after:
        - ✅ CI passes (`CI Gate`, `Compute Modules Plan Gate`)
-   - ✅ Code review approved (if required)
-   - ✅ Branch up to date with main
+       - ✅ Code review approved (if required)
+       - ✅ Branch up to date with main
 
 ---
 
