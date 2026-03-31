@@ -70,7 +70,7 @@ jobs:
     name: Plan AWS Module - ${{ matrix.module }}
     runs-on: ubuntu-latest
     needs: detect-modules
-    if: fromJson(needs.detect-modules.outputs.aws-modules)[0] != null
+    if: fromJson(needs.detect-modules.outputs.aws-modules)[0] != null && vars.AWS_ROLE_ARN != ''
     strategy:
       matrix:
         module: ${{ fromJson(needs.detect-modules.outputs.aws-modules) }}
@@ -87,7 +87,7 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_OIDC_ROLE_ARN }}
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Terraform init - ${{ matrix.module }}
@@ -167,7 +167,7 @@ jobs:
     name: Plan Azure Module - ${{ matrix.module }}
     runs-on: ubuntu-latest
     needs: detect-modules
-    if: fromJson(needs.detect-modules.outputs.azure-modules)[0] != null
+    if: fromJson(needs.detect-modules.outputs.azure-modules)[0] != null && vars.AZURE_CLIENT_ID != '' && vars.AZURE_TENANT_ID != '' && vars.AZURE_SUBSCRIPTION_ID != ''
     strategy:
       matrix:
         module: ${{ fromJson(needs.detect-modules.outputs.azure-modules) }}
@@ -183,9 +183,9 @@ jobs:
       - name: Configure Azure credentials (OIDC)
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
 
       - name: Terraform init - ${{ matrix.module }}
         run: |
@@ -247,7 +247,7 @@ jobs:
     name: Plan GCP Module - ${{ matrix.module }}
     runs-on: ubuntu-latest
     needs: detect-modules
-    if: fromJson(needs.detect-modules.outputs.gcp-modules)[0] != null
+    if: fromJson(needs.detect-modules.outputs.gcp-modules)[0] != null && vars.GCP_WORKLOAD_IDENTITY_PROVIDER != '' && vars.GCP_SERVICE_ACCOUNT != ''
     strategy:
       matrix:
         module: ${{ fromJson(needs.detect-modules.outputs.gcp-modules) }}
@@ -264,8 +264,8 @@ jobs:
       - name: Configure GCP credentials (Workload Identity)
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
 
       - name: Terraform init - ${{ matrix.module }}
         run: |

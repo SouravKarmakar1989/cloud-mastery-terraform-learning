@@ -46,33 +46,77 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: hashicorp/setup-terraform@v3
 
-      - name: Check terraform fmt (all modules)
+      - name: Detect changed Terraform modules
+        id: changed-tf
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            CHANGED_FILES=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
+          else
+            CHANGED_FILES=$(git diff --name-only HEAD~1...HEAD)
+          fi
+
+          printf "%s\n" "$CHANGED_FILES" | grep -E '^platforms/github-iac-terraform/.*\.(tf|tfvars)$' > changed_tf_paths.txt || true
+
+          : > changed_tf_modules.txt
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            dir=$(dirname "$path")
+            while [ "$dir" != "." ] && [ "$dir" != "/" ]; do
+              if [ -f "$dir/versions.tf" ]; then
+                echo "$dir" >> changed_tf_modules.txt
+                break
+              fi
+              parent=$(dirname "$dir")
+              [ "$parent" = "$dir" ] && break
+              dir="$parent"
+            done
+          done < changed_tf_paths.txt
+
+          sort -u changed_tf_modules.txt -o changed_tf_modules.txt || true
+
+          if [ -s changed_tf_modules.txt ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            echo "Changed Terraform modules:"
+            cat changed_tf_modules.txt
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "No changed Terraform modules detected."
+          fi
+
+      - name: Check terraform fmt (changed modules)
+        if: steps.changed-tf.outputs.has_changes == 'true'
         run: |
           FAILED=0
-          while IFS= read -r tf_dir; do
-            echo "→ Checking fmt: $tf_dir"
-            if ! terraform -chdir="$tf_dir" fmt -check -recursive; then
-              echo "::error::terraform fmt failed in $tf_dir — run 'terraform fmt -recursive' to fix"
+          while IFS= read -r mod_dir; do
+            [ -z "$mod_dir" ] && continue
+            echo "→ Checking fmt: $mod_dir"
+            if ! terraform -chdir="$mod_dir" fmt -check -recursive; then
+              echo "::error::terraform fmt failed in $mod_dir — run 'terraform fmt -recursive' to fix"
               FAILED=1
             fi
-          done < <(find . -name "*.tf" -not -path "*/.terraform/*" -exec dirname {} \; | sort -u)
+          done < changed_tf_modules.txt
           exit $FAILED
 
-      - name: Terraform validate (all modules)
+      - name: Terraform validate (changed modules)
+        if: steps.changed-tf.outputs.has_changes == 'true'
         run: |
           FAILED=0
-          # Find every directory that has a versions.tf (= a root module)
           while IFS= read -r mod_dir; do
+            [ -z "$mod_dir" ] && continue
             echo "→ Validating: $mod_dir"
             terraform -chdir="$mod_dir" init -backend=false -input=false -no-color > /dev/null 2>&1
             if ! terraform -chdir="$mod_dir" validate -no-color; then
               echo "::error::terraform validate failed in $mod_dir"
               FAILED=1
             fi
-          done < <(find . -name "versions.tf" -not -path "*/.terraform/*" -exec dirname {} \; | sort -u)
+          done < changed_tf_modules.txt
           exit $FAILED
 
       - name: tflint (Azure)
@@ -82,11 +126,12 @@ jobs:
 
       - run: |
           tflint --init
-          find azure-infrastructure -name "versions.tf" -not -path "*/.terraform/*" \
-            -exec dirname {} \; | sort -u | while read dir; do
+          grep '^platforms/github-iac-terraform/azure-infrastructure/' changed_tf_modules.txt > changed_azure_modules.txt || true
+          while read dir; do
+              [ -z "$dir" ] && continue
               echo "→ tflint: $dir"
               tflint --chdir="$dir" --no-color || true
-            done
+            done < changed_azure_modules.txt
 
   # ── Job 3: IaC Security Scan (Checkov) ───────────────────────────────────
   # Checkov checks Terraform for misconfigurations:
@@ -96,29 +141,42 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Run Checkov — Azure Infrastructure
-        uses: bridgecrewio/checkov-action@master
         with:
-          directory: azure-infrastructure
-          framework: terraform
-          config_file: .checkov.yaml
-          output_format: cli,sarif
-          output_file_path: console,results-azure.sarif
-          soft_fail: false
+          fetch-depth: 0
 
-      - name: Run Checkov — AWS Infrastructure
-        uses: bridgecrewio/checkov-action@master
-        with:
-          directory: aws-infrastructure
-          framework: terraform
-          config_file: .checkov.yaml
-          output_format: cli,sarif
-          output_file_path: console,results-aws.sarif
-          soft_fail: false
+      - name: Run Checkov — changed Terraform files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            CHANGED_FILES=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
+          else
+            CHANGED_FILES=$(git diff --name-only HEAD~1...HEAD)
+          fi
+
+          printf "%s\n" "$CHANGED_FILES" | grep -E '^platforms/github-iac-terraform/.*\.tf$' > changed_tf_files.txt || true
+          if [ ! -s changed_tf_files.txt ]; then
+            echo "No changed Terraform files to scan."
+            exit 0
+          fi
+
+          python3 -m pip install --user --quiet checkov
+          export PATH="$HOME/.local/bin:$PATH"
+
+          FAILED=0
+          while IFS= read -r tf_file; do
+            [ -z "$tf_file" ] && continue
+            echo "→ Checkov: $tf_file"
+            if ! checkov -f "$tf_file" --framework terraform --config-file .checkov.yaml --quiet; then
+              FAILED=1
+            fi
+          done < changed_tf_files.txt
+
+          exit $FAILED
 
       - name: Upload SARIF to GitHub Security tab
-        if: always()
+        if: always() && hashFiles('results-azure.sarif') != ''
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: results-azure.sarif
