@@ -94,7 +94,7 @@ Quick commands from this root:
 │  Microsoft Entra ID                                                          │
 │                                                                              │
 │  App Registration: github-iac-terraform                                      │
-│  ├── Federated Credential → repo:*/github-iac-terraform:ref:refs/heads/main  │
+│  ├── Federated Credential → repo:*/cloud-mastery-terraform-learning:ref:refs/heads/main  │
 │  └── Service Principal                                                       │
 │       ├── Contributor           → /subscriptions/<id>                        │
 │       ├── Reader                → satfstate2301 storage account              │
@@ -300,7 +300,7 @@ GitHub Actions uses **OpenID Connect (OIDC)** to obtain a short-lived Azure acce
 
 3. Entra ID validates:
    - issuer  = https://token.actions.githubusercontent.com
-   - subject = repo:SouravKarmakar1989/github-iac-terraform:ref:refs/heads/main
+  - subject = repo:SouravKarmakar1989/cloud-mastery-terraform-learning:ref:refs/heads/main
    - audience = api://AzureADTokenExchange
 
 4. Entra ID returns a short-lived access token (≤ 1 hour)
@@ -822,13 +822,13 @@ az storage account create \
 az storage container create -n tfstate --account-name satfstate2301
 
 # 2. Create App Registration + Federated Credential
-az ad app create --display-name github-iac-terraform
+az ad app create --display-name cloud-mastery-terraform-learning-oidc
 # Note the appId from the output
 
 az ad app federated-credential create --id <appId> --parameters '{
   "name": "github-main",
   "issuer": "https://token.actions.githubusercontent.com",
-  "subject": "repo:SouravKarmakar1989/github-iac-terraform:ref:refs/heads/main",
+  "subject": "repo:SouravKarmakar1989/cloud-mastery-terraform-learning:ref:refs/heads/main",
   "audiences": ["api://AzureADTokenExchange"]
 }'
 
@@ -836,7 +836,7 @@ az ad app federated-credential create --id <appId> --parameters '{
 az ad app federated-credential create --id <appId> --parameters '{
   "name": "github-pr",
   "issuer": "https://token.actions.githubusercontent.com",
-  "subject": "repo:SouravKarmakar1989/github-iac-terraform:pull_request",
+  "subject": "repo:SouravKarmakar1989/cloud-mastery-terraform-learning:pull_request",
   "audiences": ["api://AzureADTokenExchange"]
 }'
 
@@ -894,6 +894,7 @@ az storage blob lease break \
 
 - Check that `id-token: write` permission is set in the workflow.
 - Confirm the federated credential `subject` matches the exact branch/PR ref — e.g., `ref:refs/heads/main` (not `ref:main`).
+- For this repository, PR workflows require `repo:SouravKarmakar1989/cloud-mastery-terraform-learning:pull_request`.
 - Ensure the GitHub Actions runner can reach `login.microsoftonline.com` (no egress block).
 
 ### `terraform validate` fails: `Error: Missing required argument`

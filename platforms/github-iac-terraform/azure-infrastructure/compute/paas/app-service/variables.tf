@@ -27,3 +27,12 @@ variable "always_on" {
   default     = false
   description = "Always-on requires at least B1. Must be false for F1."
 }
+
+# ── Tagging ───────────────────────────────────────────────────────────────────
+variable "tags" {
+  type        = map(string)
+  default     = {}
+  description = "Additional tags merged with module common_tags (e.g. cost_centre, team)."
+}
+# end
+# rbac-fix
