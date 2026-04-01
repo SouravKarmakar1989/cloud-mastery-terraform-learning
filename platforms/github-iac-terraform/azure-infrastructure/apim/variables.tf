@@ -1,8 +1,14 @@
-variable "location"        { type = string }
-variable "env"             { type = string }
-variable "prefix"          { type = string }
-variable "publisher_name"  { type = string; description = "Name of the API publisher / organisation" }
-variable "publisher_email" { type = string; description = "Contact email for the API publisher" }
+variable "location" { type = string }
+variable "env" { type = string }
+variable "prefix" { type = string }
+variable "publisher_name" {
+  type        = string
+  description = "Name of the API publisher / organisation"
+}
+variable "publisher_email" {
+  type        = string
+  description = "Contact email for the API publisher"
+}
 
 variable "sku_name" {
   type        = string

@@ -39,12 +39,10 @@ resource "azurerm_mssql_database" "db" {
   name      = "${local.name_prefix}-sqldb"
   server_id = azurerm_mssql_server.sql.id
 
-  sku_name                       = "GP_S_Gen5_1"
-  min_capacity                   = 0.5
-  auto_pause_delay_in_minutes    = 60
-  max_size_gb                    = 32
-
-  free_limit_exhaustion_behavior = var.use_free_tier ? "AutoPause" : null
+  sku_name                    = "GP_S_Gen5_1"
+  min_capacity                = 0.5
+  auto_pause_delay_in_minutes = 60
+  max_size_gb                 = 32
 
   tags = local.common_tags
 }

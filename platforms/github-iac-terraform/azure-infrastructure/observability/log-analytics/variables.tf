@@ -1,6 +1,6 @@
 variable "location" { type = string }
-variable "env"      { type = string }
-variable "prefix"   { type = string }
+variable "env" { type = string }
+variable "prefix" { type = string }
 
 variable "log_analytics_sku" {
   type        = string

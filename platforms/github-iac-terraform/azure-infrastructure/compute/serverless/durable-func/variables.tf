@@ -1,10 +1,10 @@
 variable "location" { type = string }
-variable "env"      { type = string }
-variable "prefix"   { type = string }
+variable "env" { type = string }
+variable "prefix" { type = string }
 
 variable "runtime_version" {
-  type    = string
-  default = "20"
+  type        = string
+  default     = "20"
   description = "Node.js version for the Durable Functions host."
 }
 

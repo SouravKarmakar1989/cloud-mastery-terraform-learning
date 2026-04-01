@@ -1,12 +1,12 @@
 variable "location" { type = string }
-variable "env"      { type = string }
-variable "prefix"   { type = string }
+variable "env" { type = string }
+variable "prefix" { type = string }
 
 # ── Network core remote state ─────────────────────────────────────────────────
-variable "network_core_state_resource_group_name"  { type = string }
+variable "network_core_state_resource_group_name" { type = string }
 variable "network_core_state_storage_account_name" { type = string }
-variable "network_core_state_container_name"       { type = string }
-variable "network_core_state_key"                  { type = string }
+variable "network_core_state_container_name" { type = string }
+variable "network_core_state_key" { type = string }
 
 # ── Firewall config ───────────────────────────────────────────────────────────
 variable "sku_name" {

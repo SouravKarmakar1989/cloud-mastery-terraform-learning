@@ -1,6 +1,6 @@
-variable "location"               { type = string }
-variable "env"                    { type = string }
-variable "prefix"                 { type = string }
+variable "location" { type = string }
+variable "env" { type = string }
+variable "prefix" { type = string }
 
 variable "pg_admin" {
   type    = string
@@ -26,5 +26,5 @@ variable "pg_sku" {
 
 variable "storage_mb" {
   type    = number
-  default = 32768  # 32 GB minimum
+  default = 32768 # 32 GB minimum
 }

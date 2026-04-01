@@ -1,6 +1,6 @@
-variable "location"   { type = string }
-variable "env"        { type = string }
-variable "prefix"     { type = string }
+variable "location" { type = string }
+variable "env" { type = string }
+variable "prefix" { type = string }
 
 variable "redis_capacity" {
   type        = number
@@ -9,13 +9,13 @@ variable "redis_capacity" {
 }
 
 variable "redis_family" {
-  type    = string
-  default = "C"
+  type        = string
+  default     = "C"
   description = "C = Basic/Standard. P = Premium."
 }
 
 variable "redis_sku" {
-  type    = string
-  default = "Basic"
+  type        = string
+  default     = "Basic"
   description = "Basic: dev/test only, no SLA, no replication. Standard: replicated, SLA. Premium: advanced features."
 }

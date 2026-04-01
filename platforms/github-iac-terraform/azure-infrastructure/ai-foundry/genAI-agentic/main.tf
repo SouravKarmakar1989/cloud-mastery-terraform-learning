@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "genai_agentic" {
   tags     = local.common_tags
 }
 
-# ── Azure OpenAI Service ───────────────────────────────────────────────────────
+# -- Azure OpenAI Service ------------------------------------------------------
 # Single OpenAI account serving both generative AI and agentic workloads.
 # GPT-4o supports chat completion, function calling, structured outputs, and tool use.
 
@@ -23,43 +23,43 @@ resource "azurerm_cognitive_account" "openai" {
   tags = local.common_tags
 }
 
-# ── Model Deployments ──────────────────────────────────────────────────────────
+# -- Model Deployments ---------------------------------------------------------
 
-# GPT-4o — chat completion, function calling, structured outputs, tool use
-resource "azurerm_cognitive_deployment" "gpt" {
-  name                 = "${local.name_prefix}-gpt4o"
-  cognitive_account_id = azurerm_cognitive_account.openai.id
+# GPT-4o - chat completion, function calling, structured outputs, tool use
+# resource "azurerm_cognitive_deployment" "gpt" {
+#   name                 = "${local.name_prefix}-gpt4o"
+#   cognitive_account_id = azurerm_cognitive_account.openai.id
 
-  model {
-    format  = "OpenAI"
-    name    = var.gpt_model
-    version = var.gpt_model_version
-  }
+#   model {
+#     format  = "OpenAI"
+#     name    = var.gpt_model
+#     version = var.gpt_model_version
+#   }
 
-  scale {
-    type     = "Standard"
-    capacity = var.gpt_capacity
-  }
-}
+#   scale {
+#     type     = "Standard"
+#     capacity = var.gpt_capacity
+#   }
+# }
 
-# text-embedding-ada-002 — vector embeddings for RAG and semantic memory
-resource "azurerm_cognitive_deployment" "embedding" {
-  name                 = "${local.name_prefix}-embedding"
-  cognitive_account_id = azurerm_cognitive_account.openai.id
+# # text-embedding-ada-002 - vector embeddings for RAG and semantic memory
+# resource "azurerm_cognitive_deployment" "embedding" {
+#   name                 = "${local.name_prefix}-embedding"
+#   cognitive_account_id = azurerm_cognitive_account.openai.id
 
-  model {
-    format  = "OpenAI"
-    name    = var.embedding_model
-    version = var.embedding_model_version
-  }
+#   model {
+#     format  = "OpenAI"
+#     name    = var.embedding_model
+#     version = var.embedding_model_version
+#   }
 
-  scale {
-    type     = "Standard"
-    capacity = var.embedding_capacity
-  }
-}
+#   scale {
+#     type     = "Standard"
+#     capacity = var.embedding_capacity
+#   }
+# }
 
-# ── Storage — agent state, tool outputs, and document source data ─────────────
+# -- Storage - agent state, tool outputs, and document source data ------------
 
 resource "azurerm_storage_account" "genai" {
   name                            = local.sa_name
@@ -84,7 +84,7 @@ resource "azurerm_storage_container" "documents" {
   container_access_type = "private"
 }
 
-# ── Container Apps — agentic runtime (Semantic Kernel / AutoGen / LangChain) ──
+# -- Container Apps - agentic runtime (Semantic Kernel / AutoGen / LangChain) --
 # Scales to zero when idle (min_replicas = 0)
 
 resource "azurerm_log_analytics_workspace" "law" {

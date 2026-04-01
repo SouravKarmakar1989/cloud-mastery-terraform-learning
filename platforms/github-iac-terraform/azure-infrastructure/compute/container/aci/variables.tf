@@ -1,6 +1,6 @@
 variable "location" { type = string }
-variable "env"      { type = string }
-variable "prefix"   { type = string }
+variable "env" { type = string }
+variable "prefix" { type = string }
 
 variable "container_image" {
   type    = string
@@ -13,8 +13,8 @@ variable "container_cpu" {
 }
 
 variable "container_memory" {
-  type    = number
-  default = 1.5
+  type        = number
+  default     = 1.5
   description = "Memory in GB."
 }
 

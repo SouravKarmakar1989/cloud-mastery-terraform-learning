@@ -13,7 +13,7 @@ resource "azurerm_cognitive_account" "content_und" {
   name                  = "${local.name_prefix}-cog-contund"
   location              = azurerm_resource_group.content_und.location
   resource_group_name   = azurerm_resource_group.content_und.name
-  kind                  = "ContentUnderstanding"
+  kind                  = "CognitiveServices"
   sku_name              = var.content_sku
   custom_subdomain_name = "${local.name_prefix}-cog-contund"
 

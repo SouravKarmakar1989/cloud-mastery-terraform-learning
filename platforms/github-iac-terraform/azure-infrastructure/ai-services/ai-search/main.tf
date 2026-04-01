@@ -15,9 +15,9 @@ resource "azurerm_search_service" "search" {
   resource_group_name = azurerm_resource_group.ai_search.name
   sku                 = var.search_sku
 
-  local_authentication_enabled   = false
-  authentication_failure_mode    = "http403"
-  semantic_search_sku            = var.semantic_search_sku
+  local_authentication_enabled = false
+  authentication_failure_mode  = "http403"
+  semantic_search_sku          = var.semantic_search_sku
 
   identity {
     type = "SystemAssigned"
