@@ -1,0 +1,341 @@
+name: Compute Modules Plan & Infracost
+
+# ── Triggers ───────────────────────────────────────────────────────────────────
+# Runs on PR changes to compute modules. Only plan, no apply.
+# Runs in parallel for each affected compute module.
+# Posts plan output + Infracost estimate as PR comment for review.
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      - 'platforms/github-iac-terraform/aws-infrastructure/compute/**'
+      - 'platforms/github-iac-terraform/azure-infrastructure/compute/**'
+      - 'platforms/github-iac-terraform/gcp-infrastructure/compute/**'
+      - 'platforms/github-iac-terraform/aws-infrastructure/aws-compute-platform/**'
+      - 'platforms/github-iac-terraform/azure-infrastructure/azure-compute-platform/**'
+
+permissions:
+  id-token: write           # OIDC token for cloud login
+  contents: read            # checkout
+  pull-requests: write      # post comments on PR
+
+concurrency:
+  group: plan-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  # ── Detect Changed Modules ──────────────────────────────────────────────────
+  # Matrix job that identifies which compute modules changed in this PR.
+  # Outputs them so parallel jobs below can run plan for each changed module.
+  detect-modules:
+    name: Detect Changed Compute Modules
+    runs-on: ubuntu-latest
+    outputs:
+      aws-modules: ${{ steps.detect.outputs.aws-modules }}
+      azure-modules: ${{ steps.detect.outputs.azure-modules }}
+      gcp-modules: ${{ steps.detect.outputs.gcp-modules }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed compute modules
+        id: detect
+        run: |
+          # Use latest commit scope so validation runs match what was just pushed.
+          if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
+            CHANGED_FILES=$(git diff --name-only HEAD~1...HEAD)
+          else
+            CHANGED_FILES=$(git show --name-only --pretty='' HEAD)
+          fi
+
+          # Extract unique module paths (everything up to the first .tf or env directory)
+          AWS_MODULES=$(echo "$CHANGED_FILES" | grep 'platforms/github-iac-terraform/aws-infrastructure/compute/' | sed 's|platforms/github-iac-terraform/aws-infrastructure/compute/\([^/]*\)/\([^/]*\).*|\1/\2|' | sort -u | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          AZURE_MODULES=$(echo "$CHANGED_FILES" | grep 'platforms/github-iac-terraform/azure-infrastructure/compute/' | sed 's|platforms/github-iac-terraform/azure-infrastructure/compute/\([^/]*\)/\([^/]*\).*|\1/\2|' | sort -u | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          GCP_MODULES=$(echo "$CHANGED_FILES" | grep 'platforms/github-iac-terraform/gcp-infrastructure/compute/' | sed 's|platforms/github-iac-terraform/gcp-infrastructure/compute/\([^/]*\)/\([^/]*\).*|\1/\2|' | sort -u | jq -R -s -c 'split("\n") | map(select(length > 0))')
+
+          echo "aws-modules=$AWS_MODULES" >> $GITHUB_OUTPUT
+          echo "azure-modules=$AZURE_MODULES" >> $GITHUB_OUTPUT
+          echo "gcp-modules=$GCP_MODULES" >> $GITHUB_OUTPUT
+
+          echo "AWS modules detected: $AWS_MODULES"
+          echo "Azure modules detected: $AZURE_MODULES"
+          echo "GCP modules detected: $GCP_MODULES"
+
+  # ── AWS Compute Module Plans ────────────────────────────────────────────────
+  # Run terraform plan + infracost for each changed AWS compute module
+  aws-compute-plan:
+    name: Plan AWS Module - ${{ matrix.module }}
+    runs-on: ubuntu-latest
+    needs: detect-modules
+    if: fromJson(needs.detect-modules.outputs.aws-modules)[0] != null && vars.AWS_ROLE_ARN
+    strategy:
+      matrix:
+        module: ${{ fromJson(needs.detect-modules.outputs.aws-modules) }}
+      max-parallel: 5
+    env:
+      TF_IN_AUTOMATION: true
+      TF_INPUT: false
+      AWS_REGION: us-east-1
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Terraform init - ${{ matrix.module }}
+        run: |
+          cd platforms/github-iac-terraform/aws-infrastructure/compute/${{ matrix.module }}
+          terraform init -backend=true -input=false
+
+      - name: Terraform plan - ${{ matrix.module }}
+        id: plan
+        run: |
+          cd platforms/github-iac-terraform/aws-infrastructure/compute/${{ matrix.module }}
+          terraform plan -no-color -out=tfplan > plan.txt 2>&1 || true
+          
+          # Convert plan to JSON for Infracost
+          terraform show -json tfplan > tfplan.json
+
+      - name: Upload plan artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: aws-${{ matrix.module }}-plan
+          path: platforms/github-iac-terraform/aws-infrastructure/compute/${{ matrix.module }}/tfplan
+          retention-days: 1
+
+      - name: Run Infracost
+        env:
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
+        run: |
+          cd platforms/github-iac-terraform/aws-infrastructure/compute/${{ matrix.module }}
+          
+          # Install Infracost (or use pre-installed version)
+          curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh || true
+          
+          infracost breakdown --path tfplan.json \
+            --format table \
+            --out-file infracost-report.txt || true
+          
+          # Also generate JSON for comment
+          infracost breakdown --path tfplan.json \
+            --format json-with-metadata \
+            --out-file infracost-report.json || true
+
+      - name: Post plan + Infracost to PR
+        uses: actions/github-script@v7
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            const moduleDir = 'platforms/github-iac-terraform/aws-infrastructure/compute/${{ matrix.module }}';
+            const planFile = path.join(moduleDir, 'plan.txt');
+            const infracostFile = path.join(moduleDir, 'infracost-report.txt');
+            
+            let comment = `## ☁️ AWS Compute Module: \`${{ matrix.module }}\`\n\n`;
+            
+            // Attach terraform plan
+            if (fs.existsSync(planFile)) {
+              const planContent = fs.readFileSync(planFile, 'utf8');
+              comment += `### Terraform Plan\n\`\`\`\n${planContent.slice(0, 2000)}\n\`\`\`\n\n`;
+            }
+            
+            // Attach infracost estimate
+            if (fs.existsSync(infracostFile)) {
+              const infracostContent = fs.readFileSync(infracostFile, 'utf8');
+              comment += `### Infracost Estimate\n\`\`\`\n${infracostContent}\n\`\`\`\n`;
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  # ── Azure Compute Module Plans ──────────────────────────────────────────────
+  azure-compute-plan:
+    name: Plan Azure Module - ${{ matrix.module }}
+    runs-on: ubuntu-latest
+    needs: detect-modules
+    if: fromJson(needs.detect-modules.outputs.azure-modules)[0] != null && vars.AZURE_CLIENT_ID && vars.AZURE_TENANT_ID && vars.AZURE_SUBSCRIPTION_ID
+    strategy:
+      matrix:
+        module: ${{ fromJson(needs.detect-modules.outputs.azure-modules) }}
+      max-parallel: 5
+    env:
+      TF_IN_AUTOMATION: true
+      TF_INPUT: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+
+      - name: Configure Azure credentials (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Terraform init - ${{ matrix.module }}
+        run: |
+          cd platforms/github-iac-terraform/azure-infrastructure/compute/${{ matrix.module }}
+          terraform init -backend=true -input=false
+
+      - name: Terraform plan - ${{ matrix.module }}
+        id: plan
+        run: |
+          cd platforms/github-iac-terraform/azure-infrastructure/compute/${{ matrix.module }}
+          terraform plan -no-color -out=tfplan > plan.txt 2>&1 || true
+          terraform show -json tfplan > tfplan.json
+
+      - name: Run Infracost
+        env:
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
+        run: |
+          cd platforms/github-iac-terraform/azure-infrastructure/compute/${{ matrix.module }}
+          
+          curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh || true
+          
+          infracost breakdown --path tfplan.json \
+            --format table \
+            --out-file infracost-report.txt || true
+
+      - name: Post plan + Infracost to PR
+        uses: actions/github-script@v7
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            const moduleDir = 'platforms/github-iac-terraform/azure-infrastructure/compute/${{ matrix.module }}';
+            const planFile = path.join(moduleDir, 'plan.txt');
+            const infracostFile = path.join(moduleDir, 'infracost-report.txt');
+            
+            let comment = `## ☁️ Azure Compute Module: \`${{ matrix.module }}\`\n\n`;
+            
+            if (fs.existsSync(planFile)) {
+              const planContent = fs.readFileSync(planFile, 'utf8');
+              comment += `### Terraform Plan\n\`\`\`\n${planContent.slice(0, 2000)}\n\`\`\`\n\n`;
+            }
+            
+            if (fs.existsSync(infracostFile)) {
+              const infracostContent = fs.readFileSync(infracostFile, 'utf8');
+              comment += `### Infracost Estimate\n\`\`\`\n${infracostContent}\n\`\`\`\n`;
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  # ── GCP Compute Module Plans ────────────────────────────────────────────────
+  gcp-compute-plan:
+    name: Plan GCP Module - ${{ matrix.module }}
+    runs-on: ubuntu-latest
+    needs: detect-modules
+    if: fromJson(needs.detect-modules.outputs.gcp-modules)[0] != null && vars.GCP_WORKLOAD_IDENTITY_PROVIDER && vars.GCP_SERVICE_ACCOUNT
+    strategy:
+      matrix:
+        module: ${{ fromJson(needs.detect-modules.outputs.gcp-modules) }}
+      max-parallel: 5
+    env:
+      TF_IN_AUTOMATION: true
+      TF_INPUT: false
+      GOOGLE_REGION: us-central1
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+
+      - name: Configure GCP credentials (Workload Identity)
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+
+      - name: Terraform init - ${{ matrix.module }}
+        run: |
+          cd platforms/github-iac-terraform/gcp-infrastructure/compute/${{ matrix.module }}
+          terraform init -backend=true -input=false
+
+      - name: Terraform plan - ${{ matrix.module }}
+        id: plan
+        run: |
+          cd platforms/github-iac-terraform/gcp-infrastructure/compute/${{ matrix.module }}
+          terraform plan -no-color -out=tfplan > plan.txt 2>&1 || true
+          terraform show -json tfplan > tfplan.json
+
+      - name: Run Infracost
+        env:
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
+        run: |
+          cd platforms/github-iac-terraform/gcp-infrastructure/compute/${{ matrix.module }}
+          
+          curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh || true
+          
+          infracost breakdown --path tfplan.json \
+            --format table \
+            --out-file infracost-report.txt || true
+
+      - name: Post plan + Infracost to PR
+        uses: actions/github-script@v7
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            const moduleDir = 'platforms/github-iac-terraform/gcp-infrastructure/compute/${{ matrix.module }}';
+            const planFile = path.join(moduleDir, 'plan.txt');
+            const infracostFile = path.join(moduleDir, 'infracost-report.txt');
+            
+            let comment = `## ☁️ GCP Compute Module: \`${{ matrix.module }}\`\n\n`;
+            
+            if (fs.existsSync(planFile)) {
+              const planContent = fs.readFileSync(planFile, 'utf8');
+              comment += `### Terraform Plan\n\`\`\`\n${planContent.slice(0, 2000)}\n\`\`\`\n\n`;
+            }
+            
+            if (fs.existsSync(infracostFile)) {
+              const infracostContent = fs.readFileSync(infracostFile, 'utf8');
+              comment += `### Infracost Estimate\n\`\`\`\n${infracostContent}\n\`\`\`\n`;
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  # ── Aggregation Gate ────────────────────────────────────────────────────────
+  # This job ensures all compute module plans succeeded.
+  # Required by branch protection to enforce "plan before merge".
+  plan-gate:
+    name: Compute Modules Plan Gate
+    runs-on: ubuntu-latest
+    needs: [detect-modules, aws-compute-plan, azure-compute-plan, gcp-compute-plan]
+    if: always()
+    steps:
+      - name: Check all plans succeeded
+        run: |
+          if [ "${{ needs.aws-compute-plan.result }}" == "failure" ] || \
+             [ "${{ needs.azure-compute-plan.result }}" == "failure" ] || \
+             [ "${{ needs.gcp-compute-plan.result }}" == "failure" ]; then
+            echo "::error::One or more compute module plans failed"
+            exit 1
+          fi
