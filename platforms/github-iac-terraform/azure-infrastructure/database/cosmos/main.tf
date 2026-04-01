@@ -21,8 +21,7 @@ resource "azurerm_cosmosdb_account" "cosmos" {
   location            = azurerm_resource_group.cosmos.location
   resource_group_name = azurerm_resource_group.cosmos.name
   offer_type          = "Standard"
-  kind                = "GlobalDocumentDB"  # SQL / NoSQL API
-  enable_free_tier    = var.enable_free_tier
+  kind                = "GlobalDocumentDB" # SQL / NoSQL API
 
   consistency_policy {
     consistency_level = "Session"
@@ -31,6 +30,10 @@ resource "azurerm_cosmosdb_account" "cosmos" {
   geo_location {
     location          = var.location
     failover_priority = 0
+  }
+
+  capabilities {
+    name = "EnableServerless"
   }
 
   identity {
@@ -53,6 +56,6 @@ resource "azurerm_cosmosdb_sql_container" "container" {
   resource_group_name = azurerm_resource_group.cosmos.name
   account_name        = azurerm_cosmosdb_account.cosmos.name
   database_name       = azurerm_cosmosdb_sql_database.db.name
-  partition_key_path  = var.partition_key_path
+  partition_key_paths = [var.partition_key_path]
   # No throughput set — inherits database shared throughput (400 RU/s)
 }

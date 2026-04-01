@@ -1,6 +1,6 @@
 variable "location" { type = string }
-variable "env"      { type = string }
-variable "prefix"   { type = string }
+variable "env" { type = string }
+variable "prefix" { type = string }
 
 variable "synapse_sql_admin" {
   type    = string

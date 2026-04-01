@@ -1,6 +1,6 @@
 variable "location" { type = string }
-variable "env"      { type = string }
-variable "prefix"   { type = string }
+variable "env" { type = string }
+variable "prefix" { type = string }
 
 variable "container_image" {
   type        = string
@@ -19,8 +19,8 @@ variable "container_memory" {
 }
 
 variable "min_replicas" {
-  type    = number
-  default = 0
+  type        = number
+  default     = 0
   description = "Set to 0 for scale-to-zero (no idle charge)."
 }
 

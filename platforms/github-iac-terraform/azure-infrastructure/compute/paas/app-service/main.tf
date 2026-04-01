@@ -51,8 +51,8 @@ resource "azurerm_windows_web_app" "app" {
     always_on = var.always_on
 
     application_stack {
-      current_stack  = "node"
-      node_version   = "~20"
+      current_stack = "node"
+      node_version  = "~20"
     }
   }
 

@@ -1,12 +1,12 @@
 variable "location" { type = string }
-variable "env"      { type = string }
-variable "prefix"   { type = string }
+variable "env" { type = string }
+variable "prefix" { type = string }
 
 # ── Network remote state ──────────────────────────────────────────────────────
-variable "network_state_resource_group_name"  { type = string }
+variable "network_state_resource_group_name" { type = string }
 variable "network_state_storage_account_name" { type = string }
-variable "network_state_container_name"       { type = string }
-variable "network_state_key"                  { type = string }
+variable "network_state_container_name" { type = string }
+variable "network_state_key" { type = string }
 
 # ── VM config ─────────────────────────────────────────────────────────────────
 variable "vm_size" {

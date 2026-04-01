@@ -38,10 +38,10 @@ resource "azurerm_linux_function_app" "func" {
 
   site_config {
     application_stack {
-      node_version            = var.runtime == "node" ? var.runtime_version : null
-      python_version          = var.runtime == "python" ? var.runtime_version : null
-      dotnet_version          = var.runtime == "dotnet" ? var.runtime_version : null
-      java_version            = var.runtime == "java" ? var.runtime_version : null
+      node_version                = var.runtime == "node" ? var.runtime_version : null
+      python_version              = var.runtime == "python" ? var.runtime_version : null
+      dotnet_version              = var.runtime == "dotnet" ? var.runtime_version : null
+      java_version                = var.runtime == "java" ? var.runtime_version : null
       use_dotnet_isolated_runtime = var.runtime == "dotnet-isolated" ? true : null
     }
   }
