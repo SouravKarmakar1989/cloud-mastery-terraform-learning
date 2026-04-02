@@ -1,0 +1,1 @@
+output "vision_api_enabled" { value = google_project_service.vision.service }

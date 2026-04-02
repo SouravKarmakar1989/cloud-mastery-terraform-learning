@@ -1,0 +1,1 @@
+output "apigee_instance_id" { value = google_apigee_instance.apim.id }

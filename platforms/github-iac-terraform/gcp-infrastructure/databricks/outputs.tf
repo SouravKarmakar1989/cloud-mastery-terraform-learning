@@ -1,0 +1,1 @@
+output "dataproc_cluster" { value = google_dataproc_cluster.spark.name }

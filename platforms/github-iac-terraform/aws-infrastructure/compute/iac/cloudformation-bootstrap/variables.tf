@@ -11,4 +11,13 @@ variable "project" {
   type    = string
   default = "compute"
 }
-variable "bucket_suffix" { type = string default = "cfn-templates" }
+
+variable "bucket_suffix" {
+  type    = string
+  default = "cfn-templates"
+}
+
+variable "trusted_principal_arn" {
+  type    = string
+  default = "arn:aws:iam::123456789012:root"
+}

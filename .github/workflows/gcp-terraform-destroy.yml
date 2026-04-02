@@ -36,6 +36,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Validate GCP OIDC variables
+        run: |
+          if [ -z "${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}" ] || [ -z "${{ vars.GCP_SERVICE_ACCOUNT }}" ]; then
+            echo "::error::Missing required repository variables GCP_WORKLOAD_IDENTITY_PROVIDER and/or GCP_SERVICE_ACCOUNT. See .github/GCP_OIDC_SETUP.md"
+            exit 1
+          fi
+
       - name: GCP Auth (OIDC)
         uses: google-github-actions/auth@v2
         with:
