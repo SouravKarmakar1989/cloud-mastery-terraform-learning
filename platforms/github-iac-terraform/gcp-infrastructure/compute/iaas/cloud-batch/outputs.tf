@@ -1,0 +1,1 @@
+output "batch_job_name" { value = google_batch_job.job.name }

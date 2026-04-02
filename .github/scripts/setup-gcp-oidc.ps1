@@ -24,114 +24,117 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-function Require-Command {
+function Get-CommandPathOrThrow {
     param([Parameter(Mandatory = $true)][string]$Name)
-    if (-not (Get-Command $Name -ErrorAction SilentlyContinue)) {
+
+    $resolved = Get-Command -Name $Name -ErrorAction SilentlyContinue
+    if (-not $resolved) {
         throw "Required command not found in PATH: $Name"
     }
+
+    return $resolved.Source
 }
 
-function Try-Run {
-    param([Parameter(Mandatory = $true)][scriptblock]$Script)
-    try {
-        & $Script | Out-Null
-        return ($LASTEXITCODE -eq 0)
-    }
-    catch {
-        return $false
-    }
-}
+function Invoke-ExternalCommand {
+    param(
+        [Parameter(Mandatory = $true)][string]$CommandPath,
+        [Parameter(Mandatory = $true)][string[]]$Args,
+        [string]$FailureMessage,
+        [switch]$CaptureOutput
+    )
 
-function Invoke-Checked {
-    param([Parameter(Mandatory = $true)][scriptblock]$Script, [Parameter(Mandatory = $true)][string]$FailureMessage)
-    & $Script | Out-Null
+    $output = & $CommandPath @Args
     if ($LASTEXITCODE -ne 0) {
-        throw $FailureMessage
+        if ($FailureMessage) {
+            throw $FailureMessage
+        }
+        throw "Command failed: $CommandPath $($Args -join ' ')"
+    }
+
+    if ($CaptureOutput) {
+        return $output
     }
 }
 
-Require-Command -Name gcloud
+function Test-ExternalCommand {
+    param(
+        [Parameter(Mandatory = $true)][string]$CommandPath,
+        [Parameter(Mandatory = $true)][string[]]$Args
+    )
+
+    & $CommandPath @Args | Out-Null
+    return ($LASTEXITCODE -eq 0)
+}
+
+function New-GcloudFlag {
+    param([Parameter(Mandatory = $true)][string]$Name)
+    return ("-" + "-" + $Name)
+}
+
+$gcloudPath = Get-CommandPathOrThrow -Name gcloud
 if ($SetGithubVariables) {
-    Require-Command -Name gh
+    $ghPath = Get-CommandPathOrThrow -Name gh
 }
 
 Write-Host "Checking gcloud auth context..."
-gcloud auth list --filter=status:ACTIVE --format="value(account)" | Out-Null
+$activeAccount = Invoke-ExternalCommand -CommandPath $gcloudPath -Args @("auth", "list", (New-GcloudFlag "filter") + "=status:ACTIVE", (New-GcloudFlag "format") + "=value(account)") -FailureMessage "Failed to read active gcloud account" -CaptureOutput
+if (-not ($activeAccount -join "").Trim()) {
+    throw "No active gcloud account found. Run 'gcloud auth login' first."
+}
 
 Write-Host "Setting active GCP project: $ProjectId"
-gcloud config set project $ProjectId | Out-Null
+Invoke-ExternalCommand -CommandPath $gcloudPath -Args @("config", "set", "project", $ProjectId) -FailureMessage "Failed setting gcloud project to $ProjectId"
 
-$projectNumber = gcloud projects describe $ProjectId --format="value(projectNumber)"
-if (-not $projectNumber) {
+$projectNumber = Invoke-ExternalCommand -CommandPath $gcloudPath -Args @("projects", "describe", $ProjectId, (New-GcloudFlag "format") + "=value(projectNumber)") -FailureMessage "Failed resolving project number for project $ProjectId" -CaptureOutput
+if (-not ($projectNumber -join "").Trim()) {
     throw "Unable to resolve project number for project: $ProjectId"
 }
 
+$projectNumber = ($projectNumber -join "").Trim()
 $serviceAccountEmail = "$ServiceAccountId@$ProjectId.iam.gserviceaccount.com"
 $repositoryFullName = "$Owner/$Repository"
 $providerResource = "projects/$projectNumber/locations/global/workloadIdentityPools/$WorkloadIdentityPoolId/providers/$WorkloadIdentityProviderId"
 
 Write-Host "Ensuring required IAM APIs are enabled..."
-Invoke-Checked -FailureMessage "Failed enabling required IAM APIs in project $ProjectId" -Script {
-    gcloud services enable iam.googleapis.com iamcredentials.googleapis.com sts.googleapis.com --project $ProjectId
-}
+Invoke-ExternalCommand -CommandPath $gcloudPath -Args @("services", "enable", "iam.googleapis.com", "iamcredentials.googleapis.com", "sts.googleapis.com", (New-GcloudFlag "project"), $ProjectId) -FailureMessage "Failed enabling required IAM APIs in project $ProjectId"
 
 Write-Host "Ensuring Workload Identity Pool exists: $WorkloadIdentityPoolId"
-$poolExists = Try-Run {
-    gcloud iam workload-identity-pools describe $WorkloadIdentityPoolId --project $ProjectId --location global --format="value(name)"
-}
+$poolExists = Test-ExternalCommand -CommandPath $gcloudPath -Args @("iam", "workload-identity-pools", "describe", $WorkloadIdentityPoolId, (New-GcloudFlag "project"), $ProjectId, (New-GcloudFlag "location"), "global", (New-GcloudFlag "format") + "=value(name)")
 if (-not $poolExists) {
-    Invoke-Checked -FailureMessage "Failed creating Workload Identity Pool $WorkloadIdentityPoolId" -Script {
-        gcloud iam workload-identity-pools create $WorkloadIdentityPoolId `
-            --project $ProjectId `
-            --location global `
-            --display-name "GitHub Actions Pool"
-    }
+    Invoke-ExternalCommand -CommandPath $gcloudPath -Args @("iam", "workload-identity-pools", "create", $WorkloadIdentityPoolId, (New-GcloudFlag "project"), $ProjectId, (New-GcloudFlag "location"), "global", (New-GcloudFlag "display-name"), "GitHub Actions Pool") -FailureMessage "Failed creating Workload Identity Pool $WorkloadIdentityPoolId"
 }
 
 Write-Host "Ensuring OIDC provider exists: $WorkloadIdentityProviderId"
-$providerExists = Try-Run {
-    gcloud iam workload-identity-pools providers describe $WorkloadIdentityProviderId --project $ProjectId --location global --workload-identity-pool $WorkloadIdentityPoolId --format="value(name)"
-}
+$providerExists = Test-ExternalCommand -CommandPath $gcloudPath -Args @("iam", "workload-identity-pools", "providers", "describe", $WorkloadIdentityProviderId, (New-GcloudFlag "project"), $ProjectId, (New-GcloudFlag "location"), "global", (New-GcloudFlag "workload-identity-pool"), $WorkloadIdentityPoolId, (New-GcloudFlag "format") + "=value(name)")
 if (-not $providerExists) {
-    Invoke-Checked -FailureMessage "Failed creating OIDC provider $WorkloadIdentityProviderId" -Script {
-        gcloud iam workload-identity-pools providers create-oidc $WorkloadIdentityProviderId `
-            --project $ProjectId `
-            --location global `
-            --workload-identity-pool $WorkloadIdentityPoolId `
-            --display-name "GitHub Provider" `
-            --issuer-uri "https://token.actions.githubusercontent.com" `
-            --attribute-mapping "google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.repository=assertion.repository,attribute.repository_owner=assertion.repository_owner,attribute.ref=assertion.ref,attribute.aud=assertion.aud" `
-            --attribute-condition "assertion.repository=='$repositoryFullName'"
-    }
+    Invoke-ExternalCommand -CommandPath $gcloudPath -Args @(
+        "iam", "workload-identity-pools", "providers", "create-oidc", $WorkloadIdentityProviderId,
+        (New-GcloudFlag "project"), $ProjectId,
+        (New-GcloudFlag "location"), "global",
+        (New-GcloudFlag "workload-identity-pool"), $WorkloadIdentityPoolId,
+        (New-GcloudFlag "display-name"), "GitHub Provider",
+        (New-GcloudFlag "issuer-uri"), "https://token.actions.githubusercontent.com",
+        (New-GcloudFlag "attribute-mapping"), "google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.repository=assertion.repository,attribute.repository_owner=assertion.repository_owner,attribute.ref=assertion.ref,attribute.aud=assertion.aud",
+        (New-GcloudFlag "attribute-condition"), "assertion.repository=='$repositoryFullName'"
+    ) -FailureMessage "Failed creating OIDC provider $WorkloadIdentityProviderId"
 }
 
 Write-Host "Ensuring service account exists: $serviceAccountEmail"
-$serviceAccountExists = Try-Run {
-    gcloud iam service-accounts describe $serviceAccountEmail --project $ProjectId --format="value(email)"
-}
+$serviceAccountExists = Test-ExternalCommand -CommandPath $gcloudPath -Args @("iam", "service-accounts", "describe", $serviceAccountEmail, (New-GcloudFlag "project"), $ProjectId, (New-GcloudFlag "format") + "=value(email)")
 if (-not $serviceAccountExists) {
-    Invoke-Checked -FailureMessage "Failed creating service account $serviceAccountEmail" -Script {
-        gcloud iam service-accounts create $ServiceAccountId `
-            --project $ProjectId `
-            --display-name "GitHub Actions Terraform"
-    }
+    Invoke-ExternalCommand -CommandPath $gcloudPath -Args @("iam", "service-accounts", "create", $ServiceAccountId, (New-GcloudFlag "project"), $ProjectId, (New-GcloudFlag "display-name"), "GitHub Actions Terraform") -FailureMessage "Failed creating service account $serviceAccountEmail"
 }
 
 $member = "principalSet://iam.googleapis.com/projects/$projectNumber/locations/global/workloadIdentityPools/$WorkloadIdentityPoolId/attribute.repository/$repositoryFullName"
 
 Write-Host "Granting roles/iam.workloadIdentityUser to repository principalSet"
-Invoke-Checked -FailureMessage "Failed granting roles/iam.workloadIdentityUser on $serviceAccountEmail" -Script {
-    gcloud iam service-accounts add-iam-policy-binding $serviceAccountEmail `
-        --project $ProjectId `
-        --role "roles/iam.workloadIdentityUser" `
-        --member $member
-}
+Invoke-ExternalCommand -CommandPath $gcloudPath -Args @("iam", "service-accounts", "add-iam-policy-binding", $serviceAccountEmail, (New-GcloudFlag "project"), $ProjectId, (New-GcloudFlag "role"), "roles/iam.workloadIdentityUser", (New-GcloudFlag "member"), $member) -FailureMessage "Failed granting roles/iam.workloadIdentityUser on $serviceAccountEmail"
 
 if ($SetGithubVariables) {
     Write-Host "Setting GitHub repository variables..."
-    gh variable set GCP_WORKLOAD_IDENTITY_PROVIDER --repo $repositoryFullName --body $providerResource | Out-Null
-    gh variable set GCP_SERVICE_ACCOUNT --repo $repositoryFullName --body $serviceAccountEmail | Out-Null
-    gh variable set GCP_PROJECT_ID --repo $repositoryFullName --body $ProjectId | Out-Null
+    Invoke-ExternalCommand -CommandPath $ghPath -Args @("variable", "set", "GCP_WORKLOAD_IDENTITY_PROVIDER", (New-GcloudFlag "repo"), $repositoryFullName, (New-GcloudFlag "body"), $providerResource) -FailureMessage "Failed setting GitHub variable GCP_WORKLOAD_IDENTITY_PROVIDER"
+    Invoke-ExternalCommand -CommandPath $ghPath -Args @("variable", "set", "GCP_SERVICE_ACCOUNT", (New-GcloudFlag "repo"), $repositoryFullName, (New-GcloudFlag "body"), $serviceAccountEmail) -FailureMessage "Failed setting GitHub variable GCP_SERVICE_ACCOUNT"
+    Invoke-ExternalCommand -CommandPath $ghPath -Args @("variable", "set", "GCP_PROJECT_ID", (New-GcloudFlag "repo"), $repositoryFullName, (New-GcloudFlag "body"), $ProjectId) -FailureMessage "Failed setting GitHub variable GCP_PROJECT_ID"
 }
 
 Write-Host ""

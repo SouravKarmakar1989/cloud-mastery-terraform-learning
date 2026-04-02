@@ -1,0 +1,1 @@
+output "search_datastore_id" { value = google_discovery_engine_data_store.search.id }

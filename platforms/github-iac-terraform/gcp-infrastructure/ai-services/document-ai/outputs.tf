@@ -1,0 +1,1 @@
+output "processor_id" { value = google_document_ai_processor.processor.id }
