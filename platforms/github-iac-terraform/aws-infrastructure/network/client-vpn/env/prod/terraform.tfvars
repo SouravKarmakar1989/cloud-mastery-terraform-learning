@@ -1,0 +1,12 @@
+region                            = "us-east-1"
+environment                       = "prod"
+project                           = "network"
+server_certificate_arn            = "REPLACE_ME_ACM_CERTIFICATE_ARN"
+client_root_certificate_chain_arn = "REPLACE_ME_CLIENT_CA_ARN"
+client_cidr_block                 = "10.250.0.0/22"
+vpc_id                            = "REPLACE_ME_VPC_ID"
+association_subnet_ids            = ["REPLACE_ME_SUBNET_ID_A", "REPLACE_ME_SUBNET_ID_B"]
+security_group_ids                = ["REPLACE_ME_SECURITY_GROUP_ID"]
+authorize_cidr_blocks             = ["10.0.0.0/8", "192.168.0.0/16"]
+split_tunnel                      = true
+transport_protocol                = "udp"

@@ -1,0 +1,5 @@
+﻿us-east-1\
+environment=\dev\
+project=\storage\
+s3_bucket_arn=\REPLACE_ME_S3_BUCKET_ARN\
+bucket_access_role_arn=\REPLACE_ME_IAM_ROLE_ARN\

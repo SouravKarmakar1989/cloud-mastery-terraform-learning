@@ -11,4 +11,7 @@ variable "project" {
   type    = string
   default = "compute"
 }
-variable "log_retention_days" { type = number default = 30 }
+variable "log_retention_days" {
+  type    = number
+  default = 30
+}
