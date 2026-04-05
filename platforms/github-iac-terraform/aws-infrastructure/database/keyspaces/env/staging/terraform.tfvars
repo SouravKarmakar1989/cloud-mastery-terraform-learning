@@ -1,3 +1,4 @@
-﻿us-east-1\
-environment = \dev\
-project = \database\
+region        = "us-east-1"
+environment   = "staging"
+project       = "database"
+keyspace_name = "app"

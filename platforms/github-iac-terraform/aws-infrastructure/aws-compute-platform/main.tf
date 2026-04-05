@@ -17,38 +17,20 @@
 #
 # ─────────────────────────────────────────────────────────────────────────────
 
-# ── Module 1: VPC (Networking Foundation) ──────────────────────────────────
-# PRODUCES: vpc_id, public_subnets[], private_subnets[]
-# CONSUMED BY: security groups, EC2, RDS, ElastiCache
+# ── Module 1: Secure VPC Foundation ────────────────────────────────────────
+# PRODUCES: vpc_id, public_subnets[], private app/data subnets[], SG IDs
+# CONSUMED BY: ALB, EC2, RDS, ElastiCache
 
 module "vpc" {
-  source = "../networking/vpc"
+  source = "../security/vpc-secure"
 
-  cidr_block         = var.vpc_cidr
-  availability_zones = var.availability_zones
+  region             = var.aws_region
+  vpc_cidr           = var.vpc_cidr
+  single_nat_gateway = var.environment == "dev"
   environment        = var.environment
   project            = var.project
 
-  tags = local.common_tags
-}
-
-# ── Module 2: Security Groups (Network Access Control) ────────────────────
-# CONSUMES: vpc_id (from VPC module)
-# PRODUCES: app_sg_id, db_sg_id, cache_sg_id, alb_sg_id
-# CONSUMED BY: EC2, RDS, ElastiCache, ALB
-
-module "security_groups" {
-  source = "../security/security-groups"
-
-  vpc_id = module.vpc.vpc_id  # ← CROSS-MODULE WIRING: VPC → Security Groups
-
-  environment        = var.environment
-  project            = var.project
-  ec2_allowed_cidrs  = var.ec2_allowed_ssh_cidrs
-
-  tags = local.common_tags
-
-  depends_on = [module.vpc]  # Optional: Terraform auto-figures this out
+  # tags = local.common_tags
 }
 
 # ── Module 3: Application Load Balancer (Entry Point) ───────────────────
@@ -58,16 +40,17 @@ module "security_groups" {
 module "load_balancer" {
   source = "../compute/networking/elb-alb"
 
-  vpc_id             = module.vpc.vpc_id
-  subnet_ids         = module.vpc.public_subnets
-  security_group_id  = module.security_groups.alb_sg_id  # ← WIRING
-  
+  vpc_id            = module.vpc.vpc_id
+  subnet_ids        = values(module.vpc.public_subnet_ids)
+  security_group_id = module.vpc.sg_alb_id
+
+  region      = var.aws_region
   environment = var.environment
   project     = var.project
 
   tags = local.common_tags
 
-  depends_on = [module.vpc, module.security_groups]
+  depends_on = [module.vpc]
 }
 
 # ── Module 4: EC2 App Tier (Compute - IaaS) ───────────────────────────────
@@ -79,19 +62,21 @@ module "ec2_app_tier" {
   source = "../compute/iaas/ec2"
 
   # Cross-module wiring: Use outputs from other modules
-  subnet_id         = module.vpc.public_subnets[0]           # ← WIRING: VPC subnets
-  security_group_id = module.security_groups.app_sg_id       # ← WIRING: Security groups
+  subnet_id         = values(module.vpc.private_app_subnet_ids)[0]
+  security_group_id = module.vpc.sg_app_id
   key_name          = var.ec2_key_name
+  allowed_ssh_cidrs = var.ec2_allowed_ssh_cidrs
 
-  instance_type = var.ec2_instance_type
+  region         = var.aws_region
+  instance_type  = var.ec2_instance_type
   instance_count = var.ec2_instance_count
-  
+
   environment = var.environment
   project     = var.project
 
   tags = local.common_tags
 
-  depends_on = [module.vpc, module.security_groups]
+  depends_on = [module.vpc, module.load_balancer]
 }
 
 # ── Module 5: RDS Database (Data Persistence) ─────────────────────────────
@@ -106,12 +91,12 @@ module "ec2_app_tier" {
 #   source = "../compute/database/rds"
 #
 #   # Cross-module wiring: Database in private subnets only
-#   subnet_ids        = module.vpc.private_subnets           # ← WIRING: Private subnets
-#   security_group_id = module.security_groups.db_sg_id      # ← WIRING: DB security group
+#   subnet_ids        = values(module.vpc.private_data_subnet_ids)
+#   security_group_id = module.vpc.sg_data_id
 #
 #   # Grant app tier access to database
 #   # (RDS security group ingress rule allows app_sg_id)
-#   app_instance_security_groups = [module.security_groups.app_sg_id]
+#   app_instance_security_groups = [module.vpc.sg_app_id]
 #
 #   engine        = var.rds_engine
 #   engine_version = var.rds_engine_version
@@ -120,7 +105,7 @@ module "ec2_app_tier" {
 #
 #   tags = local.common_tags
 #
-#   depends_on = [module.vpc, module.security_groups, module.ec2_app_tier]
+#   depends_on = [module.vpc, module.ec2_app_tier]
 # }
 
 # ── Module 6: ElastiCache (In-Memory Cache) ────────────────────────────────
@@ -136,8 +121,8 @@ module "ec2_app_tier" {
 #   source = "../compute/cache/elasticache"
 #
 #   # Cross-module wiring: Cache in private subnets only
-#   subnet_ids        = module.vpc.private_subnets           # ← WIRING: Private subnets
-#   security_group_id = module.security_groups.cache_sg_id   # ← WIRING: Cache security group
+#   subnet_ids        = values(module.vpc.private_data_subnet_ids)
+#   security_group_id = module.vpc.sg_data_id
 #
 #   node_type   = var.cache_node_type
 #   environment = var.environment
@@ -145,7 +130,7 @@ module "ec2_app_tier" {
 #
 #   tags = local.common_tags
 #
-#   depends_on = [module.vpc, module.security_groups]
+#   depends_on = [module.vpc]
 # }
 
 # ─────────────────────────────────────────────────────────────────────────────

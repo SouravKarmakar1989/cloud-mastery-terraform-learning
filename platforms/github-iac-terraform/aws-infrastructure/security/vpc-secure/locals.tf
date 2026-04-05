@@ -4,11 +4,14 @@ locals {
 
   nat_count = var.single_nat_gateway ? 1 : length(var.public_subnets)
 
-  common_tags = {
-    project     = var.project
-    environment = var.environment
-    module      = "vpc-secure"
-    managed_by  = "terraform"
-    repo        = "github-iac-terraform"
-  }
+  common_tags = merge(
+    {
+      project     = var.project
+      environment = var.environment
+      module      = "vpc-secure"
+      managed_by  = "terraform"
+      repo        = "github-iac-terraform"
+    },
+    var.tags,
+  )
 }

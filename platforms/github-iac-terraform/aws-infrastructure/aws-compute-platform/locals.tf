@@ -5,8 +5,8 @@ locals {
       Environment = var.environment
       ManagedBy   = "Terraform"
       RootStack   = "aws-compute-platform"
-      CreatedAt   = timestamp()
     },
+    var.created_at != null ? { CreatedAt = var.created_at } : {},
     var.tags
   )
 

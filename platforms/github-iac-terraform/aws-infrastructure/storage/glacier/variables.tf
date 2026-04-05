@@ -14,3 +14,9 @@ variable "project" {
   type        = string
   default     = "storage"
 }
+
+variable "vault_name" {
+  description = "Suffix used for the Glacier vault name"
+  type        = string
+  default     = "archive"
+}

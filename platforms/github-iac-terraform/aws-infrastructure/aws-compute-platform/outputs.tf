@@ -11,22 +11,22 @@ output "vpc_cidr" {
 }
 
 output "public_subnet_ids" {
-  value       = module.vpc.public_subnets
+  value       = values(module.vpc.public_subnet_ids)
   description = "Public subnet IDs (app tier placement)"
 }
 
 output "private_subnet_ids" {
-  value       = module.vpc.private_subnets
+  value       = values(module.vpc.private_data_subnet_ids)
   description = "Private subnet IDs (database/cache placement)"
 }
 
 output "app_security_group_id" {
-  value       = module.security_groups.app_sg_id
+  value       = module.vpc.sg_app_id
   description = "Security group ID for app tier (EC2)"
 }
 
 output "db_security_group_id" {
-  value       = module.security_groups.db_sg_id
+  value       = module.vpc.sg_data_id
   description = "Security group ID for database tier (RDS)"
 }
 
@@ -73,6 +73,6 @@ output "stack_environment" {
 }
 
 output "stack_deployed_at" {
-  value       = local.common_tags.CreatedAt
+  value       = try(local.common_tags.CreatedAt, null)
   description = "Timestamp when stack was deployed"
 }

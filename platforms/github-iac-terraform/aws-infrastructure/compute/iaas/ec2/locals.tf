@@ -1,5 +1,5 @@
 locals {
-  prefix = "-"
+  prefix = join("-", [var.project, var.environment])
 
   common_tags = {
     project     = var.project

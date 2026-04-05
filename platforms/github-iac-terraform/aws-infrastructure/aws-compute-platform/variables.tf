@@ -57,7 +57,7 @@ variable "ec2_key_name" {
 variable "ec2_allowed_ssh_cidrs" {
   type        = list(string)
   description = "CIDR blocks allowed to SSH to EC2 instances"
-  default     = ["0.0.0.0/0"]  # This should be restricted in production
+  default     = ["0.0.0.0/0"] # This should be restricted in production
 }
 
 # ── RDS Configuration (Future) ─────────────────────────────────────────────
@@ -90,4 +90,10 @@ variable "tags" {
   type        = map(string)
   description = "Additional tags to apply to all resources"
   default     = {}
+}
+
+variable "created_at" {
+  type        = string
+  description = "Optional static deployment timestamp tag value (for example: 2026-04-03T10:00:00Z)"
+  default     = null
 }

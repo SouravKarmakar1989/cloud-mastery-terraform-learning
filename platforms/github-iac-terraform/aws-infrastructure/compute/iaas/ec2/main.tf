@@ -20,6 +20,8 @@ data "aws_ami" "al2023" {
 }
 
 resource "aws_security_group" "ec2" {
+  count = var.security_group_id == null ? 1 : 0
+
   name_prefix = "${local.prefix}-ec2-"
   description = "EC2 baseline security group"
   vpc_id      = data.aws_vpc.default.id
@@ -38,19 +40,21 @@ resource "aws_security_group" "ec2" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = merge(local.common_tags, { Name = "${local.prefix}-ec2-sg" })
+  tags = merge(local.common_tags, var.tags, { Name = "${local.prefix}-ec2-sg" })
 }
 
 resource "aws_instance" "this" {
+  count = var.instance_count
+
   ami                    = data.aws_ami.al2023.id
   instance_type          = var.instance_type
   subnet_id              = coalesce(var.subnet_id, data.aws_subnets.default.ids[0])
-  vpc_security_group_ids = [aws_security_group.ec2.id]
+  vpc_security_group_ids = var.security_group_id != null ? [var.security_group_id] : [aws_security_group.ec2[0].id]
   key_name               = var.key_name
 
   metadata_options {
     http_tokens = "required"
   }
 
-  tags = merge(local.common_tags, { Name = "${local.prefix}-ec2" })
+  tags = merge(local.common_tags, var.tags, { Name = "${local.prefix}-ec2-${count.index + 1}" })
 }

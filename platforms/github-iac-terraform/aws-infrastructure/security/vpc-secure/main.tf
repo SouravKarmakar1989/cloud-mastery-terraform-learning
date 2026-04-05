@@ -349,7 +349,7 @@ resource "aws_security_group" "app" {
     security_groups = [aws_security_group.alb.id]
   }
   egress {
-    description = "All outbound (NAT → internet, data subnet)"
+    description = "All outbound (NAT to internet, data subnet)"
     from_port   = 0
     to_port     = 0
     protocol    = "-1"

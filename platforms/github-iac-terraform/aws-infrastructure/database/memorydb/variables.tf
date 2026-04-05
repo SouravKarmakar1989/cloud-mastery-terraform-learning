@@ -1,4 +1,4 @@
-﻿variable "region" {
+variable "region" {
   description = "AWS region"
   type        = string
   default     = "us-east-1"
@@ -16,5 +16,12 @@ variable "project" {
 }
 variable "subnet_ids" { type = list(string) }
 variable "security_group_ids" { type = list(string) }
-variable "node_type" { type = string default = "db.t4g.small" }
-variable "num_shards" { type = number default = 1 }
+variable "node_type" {
+  type    = string
+  default = "db.t4g.small"
+}
+
+variable "num_shards" {
+  type    = number
+  default = 1
+}

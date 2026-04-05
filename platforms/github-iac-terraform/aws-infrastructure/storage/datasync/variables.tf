@@ -1,4 +1,4 @@
-﻿variable "region" {
+variable "region" {
   description = "AWS region"
   type        = string
   default     = "us-east-1"
@@ -16,4 +16,7 @@ variable "project" {
 }
 variable "s3_bucket_arn" { type = string }
 variable "bucket_access_role_arn" { type = string }
-variable "subdirectory" { type = string default = "/" }
+variable "subdirectory" {
+  type    = string
+  default = "/"
+}

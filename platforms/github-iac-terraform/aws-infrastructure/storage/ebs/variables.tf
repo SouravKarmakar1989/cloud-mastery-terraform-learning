@@ -1,4 +1,4 @@
-﻿variable "region" {
+variable "region" {
   description = "AWS region"
   type        = string
   default     = "us-east-1"
@@ -15,7 +15,22 @@ variable "project" {
   default     = "storage"
 }
 variable "availability_zone" { type = string }
-variable "size" { type = number default = 50 }
-variable "type" { type = string default = "gp3" }
-variable "encrypted" { type = bool default = true }
-variable "kms_key_id" { type = string default = null }
+variable "size" {
+  type    = number
+  default = 50
+}
+
+variable "type" {
+  type    = string
+  default = "gp3"
+}
+
+variable "encrypted" {
+  type    = bool
+  default = true
+}
+
+variable "kms_key_id" {
+  type    = string
+  default = null
+}

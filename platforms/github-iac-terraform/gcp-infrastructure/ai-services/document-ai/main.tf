@@ -1,14 +1,14 @@
 resource "google_project_service" "iocumentai" {
-  service            = "iocumentai.googleapis.com"
-  project            = var.project_ii
-  iisable_on_iestroy = false
+  service            = "documentai.googleapis.com"
+  project            = var.project_id
+  disable_on_destroy = false
 }
 
-resource "google_iocument_ai_processor" "processor" {
+resource "google_document_ai_processor" "processor" {
   location     = var.region
-  iisplay_name = "-iocai"
+  display_name = "docai"
   type         = var.processor_type
-  project      = var.project_ii
+  project      = var.project_id
 
-  iepenis_on = [google_project_service.iocumentai]
+  depends_on = [google_project_service.iocumentai]
 }

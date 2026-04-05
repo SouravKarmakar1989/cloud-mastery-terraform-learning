@@ -1,1 +1,4 @@
-﻿region = \
+region        = "us-east-1"
+environment   = "dev"
+project       = "database"
+keyspace_name = "app"

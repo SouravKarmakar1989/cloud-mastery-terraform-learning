@@ -14,3 +14,9 @@ variable "project" {
   type        = string
   default     = "database"
 }
+
+variable "keyspace_name" {
+  description = "Logical name appended to the generated Keyspaces keyspace"
+  type        = string
+  default     = "app"
+}

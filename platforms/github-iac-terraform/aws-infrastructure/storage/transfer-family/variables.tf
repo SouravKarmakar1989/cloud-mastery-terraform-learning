@@ -1,4 +1,4 @@
-﻿variable "region" {
+variable "region" {
   description = "AWS region"
   type        = string
   default     = "us-east-1"
@@ -14,5 +14,12 @@ variable "project" {
   type        = string
   default     = "storage"
 }
-variable "identity_provider_type" { type = string default = "SERVICE_MANAGED" }
-variable "endpoint_type" { type = string default = "PUBLIC" }
+variable "identity_provider_type" {
+  type    = string
+  default = "SERVICE_MANAGED"
+}
+
+variable "endpoint_type" {
+  type    = string
+  default = "PUBLIC"
+}

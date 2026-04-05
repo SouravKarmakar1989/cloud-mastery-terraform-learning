@@ -15,6 +15,12 @@ variable "project" {
   default     = "security"
 }
 
+variable "tags" {
+  description = "Additional tags to merge into all resources"
+  type        = map(string)
+  default     = {}
+}
+
 # ── VPC CIDR ──────────────────────────────────────────────────────────────────
 
 variable "vpc_cidr" {
