@@ -1,4 +1,4 @@
-$base = "C:\Practice\Learning\Video Extractor to Terraform IAC\cloud-mastery-terraform-learning\apps\knowledge-pipeline"
+$base = Split-Path -Parent $PSCommandPath
 Set-Location $base
 
 $mdFiles = Get-ChildItem -Path "Knowledge Base\AWS" -Filter "*.md" -Recurse | Select-Object -ExpandProperty FullName

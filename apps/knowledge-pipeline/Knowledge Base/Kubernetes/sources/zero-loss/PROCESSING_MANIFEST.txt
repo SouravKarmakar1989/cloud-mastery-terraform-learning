@@ -1,0 +1,383 @@
+# Kubernetes Transcript Processing Manifest
+# Paths are relative to this manifest file.
+
+../course-outputs/learn-kubernetes/01_Introduction/001_Introduction.txt
+../course-outputs/learn-kubernetes/01_Introduction/002_Accessing the Lab.txt
+../course-outputs/learn-kubernetes/02_Kubernetes Overview/005_Containers Overview.txt
+../course-outputs/learn-kubernetes/02_Kubernetes Overview/006_Container Orchestration.txt
+../course-outputs/learn-kubernetes/02_Kubernetes Overview/007_Kubernetes Architecture.txt
+../course-outputs/learn-kubernetes/02_Kubernetes Overview/008_Docker-vs-ContainerD.txt
+../course-outputs/learn-kubernetes/02_Kubernetes Overview/009_A note on Docker deprecation.txt
+../course-outputs/learn-kubernetes/02_Kubernetes Overview/011_A Quick Reminder.txt
+../course-outputs/learn-kubernetes/03_Kubernetes Concepts/012_Kubernetes Setup - Introduction and Minikube.txt
+../course-outputs/learn-kubernetes/03_Kubernetes Concepts/013_Demo - Minikube-Setup.txt
+../course-outputs/learn-kubernetes/03_Kubernetes Concepts/014_Pods.txt
+../course-outputs/learn-kubernetes/03_Kubernetes Concepts/015_Demo - Pods.txt
+../course-outputs/learn-kubernetes/04_YAML Introduction/017_Introduction to YAML.txt
+../course-outputs/learn-kubernetes/04_YAML Introduction/018_Introduction to Coding Exercises.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/020_Pods with YAML.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/021_Demo - Pods with YAML.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/022_Demo - YAML - Tips.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/025_Solution _ Pods with YAML Lab.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/026_Replication Controllers and ReplicaSets.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/027_Demo - ReplicaSets.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/029_Solution - ReplicaSets.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/030_Deployments.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/031_Demo - Deployments.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/033_Solution - Deployments.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/034_Deployments - Update and Rollback.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/035_Demo - Deployments - Update and Rollback.txt
+../course-outputs/learn-kubernetes/05_Kubernetes Concepts - Pods, ReplicaSets, Deployments/037_Solution - Rolling Updates and Rollbacks.txt
+../course-outputs/learn-kubernetes/06_Networking in Kubernetes/038_Basics of Networking in Kubernetes.txt
+../course-outputs/learn-kubernetes/07_Services/039_Services - NodePort.txt
+../course-outputs/learn-kubernetes/07_Services/040_Demo - Services.txt
+../course-outputs/learn-kubernetes/07_Services/041_Services - ClusterIP.txt
+../course-outputs/learn-kubernetes/07_Services/042_Services - Load Balancer.txt
+../course-outputs/learn-kubernetes/07_Services/044_Solution - Services.txt
+../course-outputs/learn-kubernetes/08_Microservices Architecture/045_Microservices Application.txt
+../course-outputs/learn-kubernetes/08_Microservices Architecture/046_Deploying Voting App on Kubernetes.txt
+../course-outputs/learn-kubernetes/08_Microservices Architecture/047_Demo - Deploying Voting App on Kubernetes.txt
+../course-outputs/learn-kubernetes/08_Microservices Architecture/048_Demo - Deploying Voting App on Kubernetes With Deployments.txt
+../course-outputs/learn-kubernetes/09_Kubernetes on Cloud/050_Kubernetes on Cloud - Introduction.txt
+../course-outputs/learn-kubernetes/09_Kubernetes on Cloud/051_Kubernetes on GCP (GKE).txt
+../course-outputs/learn-kubernetes/09_Kubernetes on Cloud/053_Kubernetes on AWS (EKS).txt
+../course-outputs/learn-kubernetes/09_Kubernetes on Cloud/054_Kubernetes on Azure (AKS).txt
+../course-outputs/learn-kubernetes/10_Conclusion/055_Conclusion.txt
+../course-outputs/learn-kubernetes/11_Appendix - Setup Multi Node cluster using Kubeadm/058_Kubernetes Setup - Kubeadm.txt
+../course-outputs/learn-kubernetes/11_Appendix - Setup Multi Node cluster using Kubeadm/059_Demo - Setting Up Virtual Machines on Windows.txt
+../course-outputs/learn-kubernetes/11_Appendix - Setup Multi Node cluster using Kubeadm/060_Demo - Setting Up Virtual Machines on Mac.txt
+../course-outputs/learn-kubernetes/11_Appendix - Setup Multi Node cluster using Kubeadm/061_Demo - Kubeadm - Configuring Cluster With Kubeadm.txt
+../course-outputs/certified-kubernetes-application-developer/01_Introduction/001_Introduction.txt
+../course-outputs/certified-kubernetes-application-developer/01_Introduction/002_Kubernetes Series of Courses.txt
+../course-outputs/certified-kubernetes-application-developer/01_Introduction/004_Certification Details.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/007_Recap - Kubernetes Architecture.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/008_Docker-vs-ContainerD.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/009_A note on Docker deprecation.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/010_Recap - Pods.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/012_Recap - Pods with YAML.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/013_Recap - Demo - Creating Pods with YAML.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/015_Introduction to Kubernetes Practice Test.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/016_Demo_ Accessing Labs.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/019_Solution - Pods (optional).txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/021_Recap - ReplicaSets.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/023_Solution - ReplicaSets (optional).txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/024_Recap - Deployments.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/026_Solution - Deployments (optional).txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/027_Recap - Namespaces.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/029_Solution - Namespaces (optional).txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/030_Services.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/031_Services - Cluster IP.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/033_Solution - Services (optional).txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/036_Kubectl Explain Command.txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/038_Solution - Imperative Commands (optional).txt
+../course-outputs/certified-kubernetes-application-developer/02_Core Concepts/040_A Quick Reminder.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/041_Define, build and modify container images.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/043_Commands and Arguments in Docker.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/044_Commands and Arguments in Kubernetes.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/047_Solution - Commands and Arguments (Optional).txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/048_Environment Variables.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/049_ConfigMaps.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/051_Solution_ ConfigMaps (Optional).txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/052_Secrets.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/056_Solution - Secrets (Optional).txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/057_Demo_ Encrypting Secret Data at Rest.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/058_Pre-requisite - Security in Docker.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/059_Security Contexts.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/061_Solution_ Security Contexts.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/062_Resource Requirements.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/064_Solution_ Resource Requirements.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/065_Service Account.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/067_Solution_ Service Account.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/069_Taints and Tolerations.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/071_Solution - Taints and Tolerations (Optional).txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/072_Node Selectors Logging.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/073_Node Affinity.txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/075_Solution - Node Affinity (Optional).txt
+../course-outputs/certified-kubernetes-application-developer/03_Configuration/076_Taints & Tolerations vs Node Affinity.txt
+../course-outputs/certified-kubernetes-application-developer/04_Multi-Container Pods/080_Multi-Container Pods.txt
+../course-outputs/certified-kubernetes-application-developer/04_Multi-Container Pods/081_Multi-container Pods Design Patterns.txt
+../course-outputs/certified-kubernetes-application-developer/04_Multi-Container Pods/085_Solution – Init Containers (Optional).txt
+../course-outputs/certified-kubernetes-application-developer/05_Observability/086_Readiness and Liveness Probes.txt
+../course-outputs/certified-kubernetes-application-developer/05_Observability/087_Liveness Probes.txt
+../course-outputs/certified-kubernetes-application-developer/05_Observability/089_Solution_ Readiness and Liveness Probes.txt
+../course-outputs/certified-kubernetes-application-developer/05_Observability/090_Logging.txt
+../course-outputs/certified-kubernetes-application-developer/05_Observability/092_Solution - Logging (optional).txt
+../course-outputs/certified-kubernetes-application-developer/05_Observability/093_Monitor and Debug Applications.txt
+../course-outputs/certified-kubernetes-application-developer/05_Observability/095_Solution - Monitoring (optional).txt
+../course-outputs/certified-kubernetes-application-developer/06_POD Design/096_Labels, Selectors and Annotations.txt
+../course-outputs/certified-kubernetes-application-developer/06_POD Design/098_Solution - Labels and Selectors (optional).txt
+../course-outputs/certified-kubernetes-application-developer/06_POD Design/099_Rolling Updates & Rollbacks in Deployments.txt
+../course-outputs/certified-kubernetes-application-developer/06_POD Design/102_Solution - Rolling Updates (Optional).txt
+../course-outputs/certified-kubernetes-application-developer/06_POD Design/103_Deployment Strategy - Blue Green.txt
+../course-outputs/certified-kubernetes-application-developer/06_POD Design/104_Deployment Strategy - Canary.txt
+../course-outputs/certified-kubernetes-application-developer/06_POD Design/106_Solution_ Deployment strategies.txt
+../course-outputs/certified-kubernetes-application-developer/06_POD Design/107_Jobs.txt
+../course-outputs/certified-kubernetes-application-developer/06_POD Design/108_CronJobs.txt
+../course-outputs/certified-kubernetes-application-developer/06_POD Design/110_Solution - Jobs and Cronjobs (optional).txt
+../course-outputs/certified-kubernetes-application-developer/07_Services & Networking/111_Network Policies.txt
+../course-outputs/certified-kubernetes-application-developer/07_Services & Networking/112_Developing network policies.txt
+../course-outputs/certified-kubernetes-application-developer/07_Services & Networking/114_Solution - Network Policies (optional).txt
+../course-outputs/certified-kubernetes-application-developer/07_Services & Networking/115_Ingress Networking.txt
+../course-outputs/certified-kubernetes-application-developer/07_Services & Networking/118_Solution_ Ingress Networking - 1.txt
+../course-outputs/certified-kubernetes-application-developer/07_Services & Networking/120_Solution_ Ingress Networking - 2.txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/122_Introduction to Docker Storage.txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/123_Storage in Docker.txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/124_Volume Driver Plugins in Docker.txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/125_Volumes in Kubernetes.txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/126_Persistent Volumes.txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/127_Persistent Volume Claims.txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/130_Solution - Persistent Volume and Persistent Volume Claims (Optional).txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/132_Storage Classes.txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/134_Why Stateful Sets_.txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/135_Stateful Sets Introduction.txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/136_Headless Services.txt
+../course-outputs/certified-kubernetes-application-developer/08_State Persistence/137_Storage in StatefulSets.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/138_Kubernetes Security Primitives.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/139_Authentication.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/142_KubeConfig.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/144_Solution KubeConfig.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/145_API Groups.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/146_Authorization.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/147_Role Based Access Controls.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/149_Solution Role Based Access Controls.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/150_Cluster Roles.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/152_Solution Cluster Roles.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/153_Admission Controllers.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/155_Solution_ Admission Controllers.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/156_Validating and Mutating Admission Controllers.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/158_Solution_ Validating and Mutating Admission Controllers.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/159_API Versions.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/160_API Deprecations.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/162_Solution_ API Versions_Deprecations.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/163_Custom Resource Definition.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/165_Custom Controllers.txt
+../course-outputs/certified-kubernetes-application-developer/09_Security/166_Operator Framework.txt
+../course-outputs/certified-kubernetes-application-developer/10_Helm Fundamentals/167_Helm Introduction.txt
+../course-outputs/certified-kubernetes-application-developer/10_Helm Fundamentals/168_Install Helm.txt
+../course-outputs/certified-kubernetes-application-developer/10_Helm Fundamentals/170_Solution_ Install Helm.txt
+../course-outputs/certified-kubernetes-application-developer/10_Helm Fundamentals/171_Helm Concepts.txt
+../course-outputs/certified-kubernetes-application-developer/10_Helm Fundamentals/173_Solution_ Helm Concepts.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/174_Kustomize Problem Statement & idealogy.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/175_Kustomize vs Helm.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/176_Installation_Setup.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/177_kustomization.yaml file.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/178_Kustomize Output.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/179_Kustomize ApiVersion & Kind.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/180_Managing Directories.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/181_Managing Directories Demo.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/183_Common Transformers.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/184_Image Transformers.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/185_Transformers Demo.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/187_Patches Intro.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/188_Different Types of Patches.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/189_Patches Dictionary.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/190_Patches list.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/192_Overlays.txt
+../course-outputs/certified-kubernetes-application-developer/11_(2025 Updates) Kustomize Basics/194_Components.txt
+../course-outputs/certified-kubernetes-application-developer/13_Certification Tips/198_Time Management.txt
+../course-outputs/certified-kubernetes-application-developer/14_Lightning Labs/202_Solution_ Lightning Lab1.txt
+../course-outputs/certified-kubernetes-application-developer/14_Lightning Labs/204_Solution_ Lightning Lab - 2.txt
+../course-outputs/certified-kubernetes-application-developer/15_Mock Exams/206_Mock Exam -1 (Solution).txt
+../course-outputs/certified-kubernetes-application-developer/15_Mock Exams/208_Mock Exam -2 (Solution).txt
+../course-outputs/certified-kubernetes-application-developer/15_Mock Exams/209_Bonus Lecture.txt
+../course-outputs/certified-kubernetes-application-developer/15_Mock Exams/211_What's Next_.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/01_Introduction/001_Course Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/01_Introduction/002_Certification.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/01_Introduction/004_The Kubernetes Trilogy.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/006_Core Concepts - Section Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/007_Cluster Architecture.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/008_Docker-vs-ContainerD.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/009_A note on Docker deprecation.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/010_ETCD For Beginners.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/011_ETCD in Kubernetes.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/013_Kube-API Server.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/014_Kube Controller Manager.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/015_Kube Scheduler.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/016_Kubelet.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/017_Kube Proxy.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/018_Pods.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/019_Pods with YAML.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/020_Demo - Pods with YAML.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/021_Practice Test Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/025_Lab Solution - Pods (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/026_Recap - ReplicaSets.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/028_Lab Solution - ReplicaSets (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/029_Deployments.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/032_Lab Solution - Deployments (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/033_Services.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/034_Services Cluster IP.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/035_Services - Loadbalancer.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/037_Lab Solution - Services (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/038_Namespaces.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/040_Lab Solution - Namespaces (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/041_Imperative vs Declarative.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/043_Kubectl Explain Command.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/045_Lab Solution - Imperative Commands (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/046_Kubectl Apply Command.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/02_Core Concepts/048_A Quick Reminder.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/050_Scheduling - Section Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/051_Manual Scheduling.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/053_Lab Solution - Manual Scheduling (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/054_Labels and Selectors.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/056_Lab Solution _ Labels and Selectors _ (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/057_Taints and Tolerations.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/059_Lab Solution - Taints and Tolerations (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/060_Node Selectors.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/061_Node Affinity.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/063_Lab Solution - Node Affinity (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/064_Taints and Tolerations vs Node Affinity.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/065_Resource Requirements.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/068_Lab Solution - Resource Limits.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/069_DaemonSets.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/071_Lab Solution - DaemonSets (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/072_Static Pods.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/074_Lab Solution - Static Pods (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/075_Priority Classes.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/077_Multiple Schedulers.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/079_Lab Solution - Multiple Scheduler.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/080_Configuring Scheduler Profiles.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/082_(2025 Updates)Admission Controllers.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/084_(2025 Updates)Lab Solution_ Admission Controllers.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/085_(2025 Updates)Validating and Mutating Admission Controllers.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/03_Scheduling/087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/04_Logging & Monitoring/088_Logging and Monitoring - Section Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/04_Logging & Monitoring/089_Monitor Cluster Components.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/04_Logging & Monitoring/091_Lab Solution_ Monitor Cluster Components.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/04_Logging & Monitoring/092_Managing Application Logs.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/04_Logging & Monitoring/094_Lab Solution_ Logging _ (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/095_Application Lifecycle Management - Section Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/096_Rolling Updates and Rollbacks.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/098_Lab Solution_ Rolling update.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/100_Commands and Arguments in Docker.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/101_Commands and Arguments in Kubernetes.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/103_Lab Solution - Commands and Arguments (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/104_Configure Environment Variables in Applications.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/105_Configuring ConfigMaps in Applications.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/107_Lab Solution - Env Variables (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/108_Secrets.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/111_Lab Solution - Secrets (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/112_Demo_ Encrypting Secret Data at Rest.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/115_Multi Container Pods.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/116_Multi container Pods Design Pattern.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/120_Lab Solution - Init Containers (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/122_(2025 Updates) Introduction to Autoscaling_.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/123_(2025 Updates) Horizontal Pod Autoscaler (HPA)_.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/126_(2025 Updates) In-Place Resize of Pods_.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/05_Application Lifecycle Management/127_(2025 Updates) Vertical Pod Autoscaling (VPA)_.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/06_Cluster Maintenance/130_Cluster Maintenance - Section Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/06_Cluster Maintenance/131_OS Upgrades.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/06_Cluster Maintenance/133_Kubernetes Releases.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/06_Cluster Maintenance/135_Cluster Upgrade Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/06_Cluster Maintenance/136_Demo - Cluster upgrade.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/06_Cluster Maintenance/138_Backup and Restore Methods.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/143_Security - Section Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/144_Kubernetes Security Primitives.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/145_Authentication.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/146_TLS Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/147_TLS Basics.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/148_TLS in Kubernetes.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/149_TLS in Kubernetes - Certificate Creation.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/150_View Certificate Details.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/153_Lab Solution - View Certification Details.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/154_Certificates API.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/156_Lab Solution - Certificates API.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/157_KubeConfig.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/159_Lab Solution - KubeConfig.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/161_API Groups.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/162_Authorization.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/163_Role Based Access Controls.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/165_Lab Solution - Role-Based Access Controls.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/166_Cluster Roles.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/168_Lab Solution - Cluster Roles.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/169_Service Accounts.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/171_Lab Solution_ Service Accounts.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/172_Image Security.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/174_Lab Solution - Image Security.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/175_Pre-requisite - Security in Docker.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/176_Security Contexts.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/178_Lab Solution - Security Contexts.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/179_Network Policy.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/180_Developing network policies.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/182_Lab Solution - Network Policies (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/184_(2025 Updates)Custorm Resource Definition (CRD).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/186_(2025 Updates) Custom Controllers.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/07_Security/187_(2025 Updates) Operator Framework.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/08_Storage/188_Storage - Section Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/08_Storage/189_Docker Storage - Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/08_Storage/190_Storage in Docker.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/08_Storage/191_Volume Driver Plugins in Docker.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/08_Storage/192_Container Storage Interface.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/08_Storage/193_Volumes.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/08_Storage/194_Persistent Volumes.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/08_Storage/195_Persistent Volume Claims.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/08_Storage/198_Lab Solution - Persistent Volumes and Persistent Volume Claims.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/08_Storage/201_Storage Class.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/08_Storage/203_Lab Solution - Storage Class.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/204_Networking - Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/206_Prerequisite DNS.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/208_Prerequisite Network Namespaces.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/210_Prerequisite Docker Networking.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/211_Prerequisite CNI.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/212_Cluster Networking.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/215_Lab Solution - Explore Environment (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/216_Pod Networking.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/217_CNI in kubernetes.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/219_CNI weave.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/221_Lab Solution - Explore CNI (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/222_ipam weave.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/224_Service Networking.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/226_Lab Solution - Service Networking (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/227_DNS in kubernetes.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/228_CoreDNS in Kubernetes.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/230_Lab Solution - Explore DNS (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/231_Ingress.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/235_Lab Solution - Ingress Networking 1 - (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/237_Lab Solution - Ingress Networking - 2 (optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/09_Networking/238_Introduction to Gateway API (2025 updates).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/10_Design and Install a Kubernetes Cluster/241_Design a Kubernetes Cluster.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/10_Design and Install a Kubernetes Cluster/242_Choosing Kubernetes Infrastructure.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/10_Design and Install a Kubernetes Cluster/243_Configure High Availability.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/10_Design and Install a Kubernetes Cluster/244_ETCD in HA.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/11_Install _Kubernetes the kubeadm way_/246_Deployment With kubeadm - Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/11_Install _Kubernetes the kubeadm way_/248_Deployment With Kubeadm - Provision VMs With Vagrant.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/11_Install _Kubernetes the kubeadm way_/249_Demo - Deployment with Kubeadm.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/11_Install _Kubernetes the kubeadm way_/251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/12_(2025 Updates)Helm Basics/252_Helm - Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/12_(2025 Updates)Helm Basics/253_Installation and Configuration.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/12_(2025 Updates)Helm Basics/255_A Quick Note on Helm2 vs Helm3.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/12_(2025 Updates)Helm Basics/256_Helm Components.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/12_(2025 Updates)Helm Basics/257_Helm Charts.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/12_(2025 Updates)Helm Basics/258_Working With Helm - Basics.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/12_(2025 Updates)Helm Basics/259_Customizing Chart Parameters.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/12_(2025 Updates)Helm Basics/261_Lifecycle Management With Helm.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/263_Kustomize Problem Statement and Ideology.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/264_Kustomize vs Helm.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/265_Installation_Setup.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/266_The kustomization.yaml File.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/267_Kustomize Output.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/268_Kustomize ApiVersion & Kind.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/269_Managing Directories.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/270_Managing Directories Demo.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/272_Common Transformers.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/273_Image Transformers.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/274_Transformers Demo.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/276_Patches Intro.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/277_Different Types of Patches.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/278_Patches Dictionary.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/279_Patches List.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/281_Overlays.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/13_(2025 Updates)Kustomize Basics/283_Components.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/14_Troubleshooting/285_Troubleshooting - Section Introduction.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/14_Troubleshooting/286_Application Failure.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/14_Troubleshooting/288_Lab Solution - Application Failure _ (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/14_Troubleshooting/289_Control Plane Failure.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/14_Troubleshooting/291_Lab Solution - Control Plane Failure _ (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/14_Troubleshooting/292_Worker Node Failure.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/14_Troubleshooting/294_Lab Solution - Worker Node Failure _ (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/15_Other Topics/299_JSON Path in Kubernetes.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/17_Mock Exams/304_Solution - Mock Exam -1 (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/17_Mock Exams/306_Mock Exam - 2 - Solution _ (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/17_Mock Exams/308_Mock Exam - 3 - Solution _ (Optional).txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/18_Bonus Section/312_Conclusion.txt
+../course-outputs/certified-kubernetes-administrator-with-practice-tests/18_Bonus Section/313_What's Next_.txt

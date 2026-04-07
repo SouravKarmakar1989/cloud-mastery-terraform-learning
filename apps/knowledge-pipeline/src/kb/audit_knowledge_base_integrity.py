@@ -8,6 +8,10 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
+APP_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_KB_ROOT = APP_ROOT / "Knowledge Base" / "Kubernetes"
+DEFAULT_REPORT = DEFAULT_KB_ROOT / "cache" / "kubernetes_kb_line_integrity_report.json"
+EXCLUDED_KB_PARTS = {"sources", "build", "cache", "reports", "derived"}
 
 SPLIT_RE = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9\[])")
 
@@ -20,17 +24,40 @@ def split_units(text: str) -> list[str]:
 
 
 def collect_kb_topic_files(kb_root: Path) -> list[Path]:
-    return sorted(path for path in kb_root.rglob("*.md") if path.name != "00_Master_Index.md")
+    return sorted(
+        path
+        for path in kb_root.rglob("*.md")
+        if path.name != "00_Master_Index.md"
+        and not any(part in EXCLUDED_KB_PARTS for part in path.relative_to(kb_root).parts)
+    )
 
 
 def collect_required_sources(repo_root: Path, required_source_root: str) -> set[str]:
-    source_root = repo_root / required_source_root.replace("/", "\\")
+    source_root = Path(required_source_root)
+    if not source_root.is_absolute():
+        source_root = repo_root / required_source_root.replace("/", "\\")
     if not source_root.exists():
         return set()
     return {
         path.relative_to(repo_root).as_posix()
         for path in source_root.rglob("*.txt")
     }
+
+
+def resolve_source_reference(source: str, repo_root: Path, kb_file: Path) -> str | None:
+    normalized = source.strip().replace("\\", "/")
+    candidates = [repo_root / normalized]
+    if not Path(normalized).is_absolute():
+        candidates.append((kb_file.parent / normalized).resolve())
+
+    for candidate in candidates:
+        if not candidate.exists():
+            continue
+        try:
+            return candidate.relative_to(repo_root).as_posix()
+        except ValueError:
+            continue
+    return None
 
 
 def audit_file(kb_file: Path, repo_root: Path) -> tuple[dict[str, int], list[dict[str, object]], set[str]]:
@@ -42,7 +69,7 @@ def audit_file(kb_file: Path, repo_root: Path) -> tuple[dict[str, int], list[dic
     for line in lines:
         if line.startswith("### File: "):
             source = line[len("### File: ") :].strip()
-            current_source = source if source.startswith("outputs/") else None
+            current_source = resolve_source_reference(source, repo_root, kb_file)
             continue
         if line.startswith("- Key Insights: ") and current_source:
             source_to_kb_lines[current_source].append(line[len("- Key Insights: ") :].strip())
@@ -183,23 +210,23 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Audit line-level integrity between KB Key Insights and source transcripts.")
     parser.add_argument(
         "--repo-root",
-        default=r"c:\Users\91824\OneDrive\Desktop\udemy extractor\udemy_transcript_extractor",
+        default=str(APP_ROOT.parents[1]),
         help="Repository root path",
     )
     parser.add_argument(
         "--kb-root",
-        default=r"c:\Users\91824\OneDrive\Desktop\udemy extractor\udemy_transcript_extractor\Knowledge Base",
+        default=str(DEFAULT_KB_ROOT),
         help="Knowledge Base root path",
     )
     parser.add_argument(
         "--report",
-        default=r"c:\Users\91824\OneDrive\Desktop\udemy extractor\udemy_transcript_extractor\cache\kb_line_integrity_report.json",
+        default=str(DEFAULT_REPORT),
         help="Path for JSON report output",
     )
     parser.add_argument(
         "--required-source-root",
         default=None,
-        help="Optional transcript root (relative to repo root, e.g. outputs/AWS AI) that must be fully covered by KB source links.",
+        help="Optional transcript root (relative to repo root, e.g. apps/knowledge-pipeline/Knowledge Base/Kubernetes/sources/course-outputs) that must be fully covered by KB source links.",
     )
     parser.add_argument(
         "--fail-on-issues",

@@ -5,17 +5,21 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+APP_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_KB_ROOT = APP_ROOT / "Knowledge Base"
+DEFAULT_MASTER_INDEX = DEFAULT_KB_ROOT / "00_Master_Index.md"
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build top-level master index across all knowledge base folders.")
     parser.add_argument(
         "--kb-root",
-        default=r"c:\Users\91824\OneDrive\Desktop\udemy extractor\udemy_transcript_extractor\Knowledge Base",
+        default=str(DEFAULT_KB_ROOT),
         help="Knowledge Base root folder",
     )
     parser.add_argument(
         "--out-file",
-        default=r"c:\Users\91824\OneDrive\Desktop\udemy extractor\udemy_transcript_extractor\Knowledge Base\00_Master_Index.md",
+        default=str(DEFAULT_MASTER_INDEX),
         help="Top-level master index markdown file path",
     )
     return parser.parse_args()
