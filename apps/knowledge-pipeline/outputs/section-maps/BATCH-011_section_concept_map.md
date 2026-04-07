@@ -1,0 +1,1097 @@
+# Section Concept Map: BATCH-011
+
+## Section
+- Course: `certified-kubernetes-administrator-with-practice-tests`
+- Section: `11_Install _Kubernetes the kubeadm way_`
+
+## Source Files Used
+- `246_Deployment With kubeadm - Introduction.extraction.md`
+- `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md`
+- `249_Demo - Deployment with Kubeadm.extraction.md`
+- `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md`
+
+## Concept Groups
+
+### Deployment With kubeadm - Introduction
+
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture, we will look at the cube admin tool, which can be used to bootstrap a Kubernetes cluster.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 2 | **Type:** Best Practice
+  - The cube admin tool helps us set up a multi-node cluster following the Kubernetes best practices.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 3 | **Type:** Architecture
+  - As we discussed, the Kubernetes cluster consists of various components such as the cube API server, etcd controllers, etc. and we have seen some of the requirements around security and certificates to enable communication between these components.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Installing all of these various components individually on different nodes, and modifying the configuration files to make sure these components point to each other, and setting up certificates to make it work is a tedious task.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - The cube admin tool helps us by taking care of all of those tasks.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - Let's go through the steps to set up a Kubernetes cluster using the cube admin tool at a high level.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 7 | **Type:** Exam Tip
+  - First, you must have multiple systems or virtual machines provisioned for configuring a cluster.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - We will see how to set up your laptop to do just that.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - That's if you're not familiar with it.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - Once the systems are created, designate one node as master and others as worker nodes.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - The next step is to install a container runtime on the hosts.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - We will be using container D, so we must install container D on all the nodes.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - The next step is to install kube admin tool on all the nodes.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The kube admin tool helps us bootstrap the Kubernetes solution by installing and configuring all the required components in the right nodes in the right order.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - The next step is to initialize the master server.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - During this process, all the required components are installed and configured on the master server.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Once the master is initialized and before joining the worker nodes to the master, you must ensure that the network prerequisites are met.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - A normal network connectivity between the systems is not sufficient for this.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Kubernetes requires a special networking solution between the master and worker nodes, which is called as the pod network.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - The last step is to join the worker nodes to the master node, where then all set to launch our application in the Kubernetes environment.
+- **File:** `246_Deployment With kubeadm - Introduction.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - We will now see a demo of setting up Kubernetes using the Kube admin tool in our local environment.
+
+### Deployment With Kubeadm - Provision VMs With Vagrant
+
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: In this demo, we will see how to provision VMs for our Kubernetes cluster that will include a single master node and two worker nodes.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - And we're gonna accomplish this by using two different pieces of software.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - The first one is going to be VirtualBox. so this is our hypervisor which is ultimately responsible for running our virtual machines.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And the other tool is going to be Vagrant, so this is like a automation tool that makes it really easy to spin up a whole bunch of VMs with a specific configuration.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So we're gonna make use of Vagrant so that all of us can kind of follow along with the exact same configuration for our VMs and we can get those VMs up and running with just one single command.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So the prerequisites, obviously, for this video is you have to install VirtualBox and you have to install Vagrant.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So if you take a look at VirtualBox, you could just go to the virtualbox.org and there's going to be a downloads page, and you could just select the specific operating system you're using, and then you could just follow the steps.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Pretty simple.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - And then Vagrant, if you go to the Vagrant documentation, they have a walkthrough on how to install Vagrant as well.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Couple of different ways to do that depending on what your operating system is, just use whichever is most convenient for you.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Now for Vagrant, we have a Vagrant file which is going to contain all of our configurations for our VMs.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And this file has already been written out for all of you guys and you can find that at the repository for the course.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So, go ahead and just clone this repository so that you can have access to the Vagrant file and you can use that to spin up the VMs.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - And to clone the repository, all we have to do is go to this code dropdown right here and just copy the URL of this specific repository.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Then once you do that, go to your Terminal and run a git clone, and then pass in the URL, and that's going to clone the repository.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - All right, so I cleared out the Terminal but after we cloned the repository, it's going to create a folder with all of those files.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And so, I'm going to cd into that folder.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 18 | **Type:** Best Practice
+  - And within here, if I just do an ls, you should see the Vagrant file right here.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So let's open up the Vagrant file and let's take a look at the configuration.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - All right, and so, in the configuration, you could see here we've set it up to have one master node and two worker nodes.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - The IP address is for the host, so this has nothing to do with Kubernetes yet.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - The IP addresses of the actual VMs or the nodes, they're going to make use of the 192.168.56 network.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 23 | **Type:** Warning/Pitfall
+  - And if you'd like to, you can go ahead and poke around at the rest of the configuration but we don't need to worry too much about that.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - The great part about Vagrant is we could just run one command and get all of our VMs up with the same exact configuration.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So I'm gonna close this out and I'm going to run a vagrant status.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - And so, what this is gonna do is it's gonna check the status of the VMs.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - And for these statuses for the VMs, we can see that they're all set to not created.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - And so, you could see that we've got the three different VMs here, kubemaster, which is going to be our master node, and then the two worker nodes.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - And they're all in a not created state because we actually haven't brought up the VMs.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So let's go ahead and do that now and we can do that with a vagrant up.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And this is going to provision all three of those VMs with the exact specifications from the Vagrant file.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And so, what it's going to do is it's actually going to pull the Ubuntu Bionic 64 base image.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - And then once that image is pulled, it's able to then provision all of the different VMs.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - This part is going to take a decent amount of time to get all of those VMs up and running, so we're just gonna have to sit there and wait.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Just understand that it's not a big deal if it takes a long time, it's kind of expected.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - Okay, so now that it's complete, if you just take a look at the logs, you can see it actually goes step by step and provision the different VMs.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So it first started provisioning the kubemaster, after it provisioned that, it then moved down to the kubenode01, which is the first worker node, and then it wrapped up by provisioning the kubenode02.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So we've got all three VMs provisioned.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And now if I do a vagrant status, we could take a look at the status of the VMs now that they're provisioned.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - And we can see that all three nodes are in a running state, which is exactly what we want.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So now that we've got the three nodes in a running state, how do we connect to it?
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - Well, we do this by running the command vagrant ssh and then the name of the specific node we want to connect to.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So if I want to connect to kubemaster, I'm just gonna copy that, and this is automatically going to connect us to the kubemaster node.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - And so, now you can see, based off of the command prompt, you can see we are now in the kubemaster.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And if I just do an ls -la, we can see that I am in fact in the kubemaster.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So to log out, or to exit out of the session, I can just do a logout and that's going to take me back to my local machine.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - And if I once again do a vagrant status, I can then do a vagrant ssh, and I'll connect to kubenode01.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And connected to kubenode01, if I just run an uptime, we can see that it's been up for three minutes so we are, in fact, connected to kubenode01.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - And then I'll log out of this one and then we'll just quickly connect to kubenode02.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So I'll do a vagrant ssh kubenode02 and now we're successfully connected onto kubenode02.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So that's how you access all of your VMs.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So we've got all of our VMs provisioned and we're good to go.
+- **File:** `248_Deployment With Kubeadm - Provision VMs With Vagrant.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - So in the next video, we're going to actually bootstrap the Kubernetes cluster using Kubeadm.
+
+### Demo - Deployment with Kubeadm
+
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Okay.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So in this video we're going to be doing a demonstration of bootstrapping a Kubernetes cluster using the kube ADM tool.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Now I've already provisioned three virtual machines using a tool called vagrant.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And we've got three nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - In this case I've got a master node here I've got a worker node which I'll call node one.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Or you'll look for kube node one on the terminal or in the prompt.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - And then we've got node two which you'll see is kube node two here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So we've got one master node and two worker nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And the one thing I want to point out is if you take a look at the IP addresses we've got a couple of different interfaces.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - The main interface that we're going to be using for communication between the cluster is INP zero eight.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So you can see the master node has an IP address of 192.168.56.11.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Node one has 192.168.56.21, and node two has an IP address of 192.168.56.22.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Okay, so that's the interface that we're going to use for all of the communications.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So for deploying a Kubernetes cluster, there's going to be a couple of tabs that we want to get open, because you're going to see that for the most part the Kubernetes documentation is very good.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - So you want this installing kube ADM page right here which is under installing Kubernetes with deployment tools and then under bootstrapping clusters with kube ADM.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And then you can see all of the different instructions for the different versions.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - I'm going to be using version 1.31 which is at the moment the latest version.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - And then you also want to open up this tab right here which is creating a cluster with Kube ADM.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - You can see it's in the same section.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - So you've got installing kube ADM and then two slots down you've got creating a cluster with kube ADM.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 21 | **Type:** Exam Tip
+  - And if you're going to be deploying a highly available Kubernetes cluster that's with multiple master nodes, then you want to select creating highly available clusters with kube ADM.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Now we just have a single master node.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So we're just going to follow this page here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - But if you have more than one go ahead and follow that one.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So let's go to the installing kube ADM.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So this is going to be the tool that we use to actually bootstrap a cluster and it's going to give you some prerequisites.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So it's just letting you know what are the requirements for your machine.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - All of my machines already match those requirements.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So that's not a big deal.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - But if you are going to be deploying your own cluster, make sure that it's actually compatible.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - And then we're just going to keep scrolling down for a bit.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 32 | **Type:** Operational Insight
+  - And we want to see this section right here which is installing a container runtime.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 33 | **Type:** Operational Insight
+  - So before we can utilize the kube ADM tool you want to make sure that you install a container runtime.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So we're going to have to do that.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - But we're going to come back to that in a second.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - Let's first go ahead and at least get the kube ADM tool installed on all of our machines.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And so here if I just keep scrolling down you can see this is where the instructions begin.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 38 | **Type:** Exam Tip
+  - So the first thing that we're going to do is download the public signing keys for the Kubernetes package repositories.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And you can see they've got a different one for each of the different versions.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So if you're going to do version 1.31 you're going to select version one dot 31.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - If it's a version one dot 32, then you'll have to replace this with one dot 32.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - But I'm going to copy this command, and we're going to paste it on all of our, um, all of our nodes because we're going to need cube ADM installed on all three of them.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So I'm just going to paste it on all three.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - And it looks like my copy broke.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So let me just copy that again.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - Then down here we have to add the specific Kubernetes repository.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So this is once again we're just going to copy and paste this.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And I'm going to paste this in all three nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - Then the last thing that we have to do is we're going to do a sudo apt update.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 50 | **Type:** Exam Tip
+  - And then we have to install the cube ADM package.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - You can see here in the command here we're installing Cubelet cube adm cube CTL.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 52 | **Type:** Warning/Pitfall
+  - We don't technically need cube CTL and Cubelet at the moment.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - We just want cube ADM.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - But at some point we're going to need to download cube CTL as well.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So let's go ahead and just install all of them right now.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So I'm just going to copy these three commands.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - And then we're going to go ahead and run them on once again all three nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Okay.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So it looks like it's done.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Let's go ahead and take a look at the version of cube ADM that we installed.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So we'll say cube ADM version.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And we can see that we are running major version one minor version 31.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - And we can see version 1.31.1.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - All right.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - So now that we've got cube ADM installed, if we go to the bottom of this page we can see that the next step is to install our cluster using cube ADM.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So you can go ahead and click on this link.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - But I've already got that tab open.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - It's the same one as creating a cluster with cube ADM.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So I'm going to go to that page.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - And if you take a look at this page it's going to give us, you know, first of all, the prerequisites for system requirements for any Kubernetes node, which we've already verified.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - And then if we go down here, we want to start at the instructions page.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - And the first thing that we have to do is we have to install a container runtime.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - And we're going to have to install it on all of the nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - That's going to be both master and worker nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 75 | **Type:** Operational Insight
+  - The reason why is that, you know, obviously the worker nodes will need to have a container runtime so they can run the containers, but all of the control plane components on our master node will be run as pods or as containers.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 76 | **Type:** Operational Insight
+  - And so since we have containers running, we're going to need a container runtime.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - So let's open this tab.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 78 | **Type:** Operational Insight
+  - And here it's going to give you the directions on how to utilize one of these supported container runtimes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - I'm going to be using container D for this demonstration.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So if you're going to follow along go ahead and use container D.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - But feel free to use whichever one you'd like.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - And we can select container D.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - And this is going to give us some information onto as to some of the things that you'll need to configure for container D.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 84 | **Type:** Operational Insight
+  - So now let's install our container runtime.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - And for the directions on that, just go ahead and just search for install and then the name of the runtime.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - And then that's going to take you to the documentation for container D.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - And you can just follow these directions.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - We're just going to use use the app repository to install system D.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - So here I'm just going to do a sudo apt update and then a sudo apt install dash y container d.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - And that's going to install container d.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - And I'm going to do this on every node.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - Now after we install our container runtime the next thing that we have to do is take a look at this important section in the documentation, which is cgroup drivers.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - Now, if you guys aren't familiar with Cgroups.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - Cgroups is the Linux feature, the Linux primitive that allows whether you're working with Docker or Kubernetes, it allows you to specify resource limits on your containers.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So if you want to say this container can only use 512MB of Ram, it's using the Cgroups under the hood.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 96 | **Type:** Architecture
+  - Now, when you configure the Kubelet process and when you configure the the runtime, which in our case is container D, there's two different drivers that are available.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 97 | **Type:** Implementation Step
+  - You have cgroup FS which is the default, and then you have system D.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 98 | **Type:** Architecture
+  - Now you can use whichever one you'd like, but you have to make sure that whichever one you select, both the Kubelet and your container runtime are configured to use the same Cgroup driver.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 99 | **Type:** Architecture
+  - So if the Kubelet is set to Cgroup fs, then the container runtime has to be set to the same thing.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - Now if we keep reading, you can see there's a section here that says when system D is chosen as the init system for your Linux distribution, you want to make sure that you set the Cgroup driver to be system D.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So let's go ahead and verify what our init system is.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 102 | **Type:** Implementation Step
+  - If it's set to system D, then we're going to have to use the system D driver as per the instructions.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - So the way that you verify is you do PS dash P and then one.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - And if it says system D that means that's what our init system is.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - So we'll go ahead and use the system D Cgroup driver.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 106 | **Type:** Architecture
+  - So first things first let's make sure that we know how to set the cgroup driver to be systemd for the kubelet process.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 107 | **Type:** Exam Tip
+  - Now here it gives you an example on how to do that.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 108 | **Type:** Architecture
+  - You have to create a kubelet configuration file.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - And if you actually want to, you could scroll down a little bit further.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - And this will give you more detailed instructions on how to do that with kube adm.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 111 | **Type:** Implementation Step
+  - Now the first note is important for us, which is in version 1.22 and later.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 112 | **Type:** Architecture
+  - If the user does not set the Cgroup driver field under the Kubelet configuration, kube adm will default to systemd, which is perfect because we are going to be using the.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - We want systemd, and since we are using a version later than 1.22, it already defaults to that.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - But if you want to see how to actually set it, you're going to create this, um, cluster configuration.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 115 | **Type:** Architecture
+  - And then here you create the Kubelet configuration.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - And you want to set the Cgroup driver property to be systemd.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 117 | **Type:** Architecture
+  - And then when you run the kube adm init command, you pass the dash dash config flag so that you can pass in the kube adm config file, which is going to make sure that the kubelet process uses the systemd.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - Once again, it's the default for anything later than 1.22.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 119 | **Type:** Warning/Pitfall
+  - So we're going to just not pass in that file because we don't need to change anything.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 120 | **Type:** Warning/Pitfall
+  - So we don't have to worry about the kubelet process.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 121 | **Type:** Operational Insight
+  - But we do have to make sure that the container runtime is set to utilize the Cgroup driver.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - So by default it's not going to be using systemd.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 123 | **Type:** Operational Insight
+  - So if we go to the top of the container runtime page and we select container D and we scroll down, this is the directions on how to set the cgroup driver to be systemd.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 124 | **Type:** Implementation Step
+  - So we create a file which is going to be the config file for container D which is going to be stored in slash Etsy slash container D in a file called config.toml.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 125 | **Type:** Implementation Step
+  - And then you have to configure this.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - So you just got to make sure that this is in there.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 127 | **Type:** Concept
+  - And that's going to make sure that the secret driver is set to version two.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - All right.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 129 | **Type:** Implementation Step
+  - So I'm going to go ahead and create this directory if it hasn't already been made.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 130 | **Type:** Warning/Pitfall
+  - So and so I'll go to slash Etsy container D and it looks like I don't have a container d directory.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 131 | **Type:** Implementation Step
+  - So I'm going to manually create that.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - And so I'll say sudo mkdir p slash Etsy slash container d.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 133 | **Type:** Concept
+  - And I'm going to copy this.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - And we're going to run this on all three of our nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 135 | **Type:** Implementation Step
+  - And so then at this point we're going to have to generate the configs.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 136 | **Type:** Concept
+  - Now the container D process allows us to generate default configuration.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 137 | **Type:** Warning/Pitfall
+  - So if you don't specify a config file it's going to use these default configurations.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 138 | **Type:** Concept
+  - And you can actually take a look at these configurations by running the command container D config default.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 139 | **Type:** Concept
+  - And it's going to spit out the default configuration.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 140 | **Type:** Warning/Pitfall
+  - So if we don't provide a file it's going to look like this.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 141 | **Type:** Concept
+  - So I'm going to use this command to generate the configs.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 142 | **Type:** Implementation Step
+  - And then we're going to make the necessary changes as per the documentation.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 143 | **Type:** Concept
+  - Now I've got this nice command right here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 144 | **Type:** Concept
+  - And I'm going to show you guys what this command does.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 145 | **Type:** Concept
+  - But I'm going to paste this command here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 146 | **Type:** Concept
+  - And if we take a look at it it's going to run that same command.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 147 | **Type:** Implementation Step
+  - And then in the output it's going to pipe it into said.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 148 | **Type:** Concept
+  - And what it's going to do is it's going to change where it says systemd group set to false, and it's going to change it to systemd group equals true.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 149 | **Type:** Implementation Step
+  - And then we're going to then send it to a file in slash Etsy slash containerd slash config.toml.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 150 | **Type:** Concept
+  - And that's going to be as per the directions.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 151 | **Type:** Concept
+  - Right.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 152 | **Type:** Concept
+  - It's got to be in that file.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 153 | **Type:** Concept
+  - And we got to have that config.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 154 | **Type:** Concept
+  - And so all it's doing is it's going to change this from false which is the default configuration.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 155 | **Type:** Concept
+  - It's going to change it to true.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 156 | **Type:** Concept
+  - So I'll run that and I'm going to hit up and I'm going to take this and I'm going to pipe it I'm going to paste it in the other two nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 157 | **Type:** Concept
+  - And so now if I cat that file.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 158 | **Type:** Concept
+  - So it's going to be containerd um slash config.toml.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 159 | **Type:** Concept
+  - And I'm going to grep for.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 160 | **Type:** Concept
+  - System D Cgroup just to see if that command actually said it.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 161 | **Type:** Concept
+  - And I'm going to pass in one extra flag, which is, um, I'm printing out a whole bunch of lines before it just so I can make sure it's in the right section.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 162 | **Type:** Concept
+  - And so you can see here systemd.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 163 | **Type:** Concept
+  - Cgroup equals true.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 164 | **Type:** Operational Insight
+  - And we have it's under this config section which is the container runtimes dot run c dot options.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 165 | **Type:** Concept
+  - And so if we take a look at the documentation right that's going to be this line right here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 166 | **Type:** Concept
+  - So that did properly set it.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 167 | **Type:** Concept
+  - And so now the last thing that we need to do is after we make some config changes we have to make sure that we restart container D.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 168 | **Type:** Concept
+  - And we can just run the systemctl command to restart container D.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 169 | **Type:** Concept
+  - And that's not what I wanted.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 170 | **Type:** Concept
+  - So restart container D restart on this one.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 171 | **Type:** Concept
+  - And looks like I never ran this command on here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 172 | **Type:** Implementation Step
+  - So let me run it real quick and then restart container D All right.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 173 | **Type:** Concept
+  - Perfect.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 174 | **Type:** Concept
+  - So now what we're going to do is we're going to go back to creating a cluster with cube ADM.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 175 | **Type:** Concept
+  - That's this document here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 176 | **Type:** Implementation Step
+  - And we're going to take a look at what are the next steps.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 177 | **Type:** Operational Insight
+  - So we've got the container runtime installed.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 178 | **Type:** Concept
+  - We've made sure that the proper Cgroup driver has been set.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 179 | **Type:** Concept
+  - And we want to just keep scrolling down and keep going.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 180 | **Type:** Concept
+  - And here we want to look for initializing control plane node.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 181 | **Type:** Implementation Step
+  - So the the first instance, the first node in Kubernetes that we're going to actually initialize is going to be the control plane node.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 182 | **Type:** Concept
+  - Now in this case once again we have just a single master node.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 183 | **Type:** Concept
+  - And so we're just going to run the command on there.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 184 | **Type:** Exam Tip
+  - If you have multiple master nodes then you're going to have to pick one that you want to run the command first.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 185 | **Type:** Concept
+  - Now there's going to be some important instructions that you want to follow here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 186 | **Type:** Exam Tip
+  - And if you take a look at step one, is that if you have plans to upgrade a single control plane node to a high available cluster with multiple control plane nodes, you want to make sure you pass in the dash dash control plane dash endpoint and set...
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 187 | **Type:** Implementation Step
+  - So this could be some load balancer and then have it sent to your single instance.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 188 | **Type:** Warning/Pitfall
+  - That way when you migrate over, you don't really have to change anything for the most part, and you've already got the load balancer set up to forward it.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 189 | **Type:** Architecture
+  - So if you have plans to do that, you want to make sure you set this to whatever IP you want to use for your API server.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 190 | **Type:** Concept
+  - We're not going to do that.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 191 | **Type:** Concept
+  - We're we're just going to run this as a single control plane.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 192 | **Type:** Warning/Pitfall
+  - Note that we don't have to pass that flag in.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 193 | **Type:** Concept
+  - The other thing they have to do is you have to choose a, um, you have to make sure you specify whatever pod subnet you're going to utilize.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 194 | **Type:** Concept
+  - So the dash dash pod network Cidr is going to be the subnet that the IP addresses for your pods are actually going to pull from.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 195 | **Type:** Concept
+  - So you set it to be 10.0.0.0 slash 16.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 196 | **Type:** Implementation Step
+  - Then all of your pods are going to get an IP address from that 10.0.0.0 slash 16 subnet.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 197 | **Type:** Concept
+  - So we're going to pass in that flag.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 198 | **Type:** Concept
+  - So and I'll show you guys what that looks like.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 199 | **Type:** Implementation Step
+  - Um and then on top of that kube ADM tries to detect the container runtimes by using a list of well-known endpoints.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 200 | **Type:** Operational Insight
+  - So if you actually go here under the container runtime page.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 201 | **Type:** Concept
+  - This is going to just quickly show you, I think somewhere in this document, what are the default locations to look for?
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 202 | **Type:** Concept
+  - Uh, let me see if I can find it here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 203 | **Type:** Warning/Pitfall
+  - And I don't think it's here actually it might be under installing kube adm.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 204 | **Type:** Concept
+  - And I'm going to just scroll down here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 205 | **Type:** Concept
+  - Here we go.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 206 | **Type:** Implementation Step
+  - So these are going to be the paths to um you know the, the way that, that each one of these container runtimes are set to be configured.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 207 | **Type:** Concept
+  - And these are usually the default ones.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 208 | **Type:** Implementation Step
+  - This is just saying that if for some reason it was not one of the default ones, you have to pass in the dash dash CRE, dash socket and then pass in the path to that socket, but it automatically detects it.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 209 | **Type:** Warning/Pitfall
+  - So we don't need to actually pass in that flag.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 210 | **Type:** Architecture
+  - Now, the last thing that we are going to cover when it comes to the flags for the kube ADM utility is the dash dash API server advertise address.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 211 | **Type:** Architecture
+  - So when you're working with a single control plane node cluster, we're going to use this one to tell the cluster what IP address is going to be for your cube API server.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 212 | **Type:** Concept
+  - So this will set this to be the IP address of our master node.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 213 | **Type:** Concept
+  - And if I go back and I go to my master node and I do an iPad, we're going to pass in that flag and we're going to set it to be the IP address of the master node, which is 192.168.56.11.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 214 | **Type:** Concept
+  - So whatever IP address your other nodes will want to talk to your master node through.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 215 | **Type:** Concept
+  - You can see I've got another interface.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 216 | **Type:** Warning/Pitfall
+  - I don't want to use this one.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 217 | **Type:** Concept
+  - This is this is like an internal interface used by vagrant which I use to spin up my cluster.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 218 | **Type:** Concept
+  - So this is kind of like a irrelevant interface.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 219 | **Type:** Concept
+  - So that's why I'm going to pass in that flag to make sure that it picks the right interface.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 220 | **Type:** Concept
+  - So we're now officially ready to run the cube adm init command.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 221 | **Type:** Concept
+  - And we're going to run it on the master node.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 222 | **Type:** Concept
+  - And I'm going to show you the full command here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 223 | **Type:** Concept
+  - And so this is what the command is going to look like.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 224 | **Type:** Concept
+  - We do pseudo cube ADM init.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 225 | **Type:** Architecture
+  - Then once again we're going to pass in the Dash Dash API server advertise address.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 226 | **Type:** Concept
+  - It's going to be whatever the IP address of our master node is.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 227 | **Type:** Implementation Step
+  - Then we're going to specify the pod network Cidr.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 228 | **Type:** Concept
+  - So remember this is going to be the subnet that all of your pods are going to pull an IP address from.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 229 | **Type:** Concept
+  - So all of my pods are going to be in the 10.244.0.0 slash 16 subnet.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 230 | **Type:** Implementation Step
+  - And then we have the upload cert.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 231 | **Type:** Concept
+  - So this is going to make sure that we upload all of the certificates to a secret, so that all of the other nodes will have access to the certificates.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 232 | **Type:** Concept
+  - And at that point we can go ahead and hit run.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 233 | **Type:** Concept
+  - And it's going to run all of the necessary checks beforehand.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 234 | **Type:** Implementation Step
+  - And then after it's done, then it's going to set up and initialize our control plane node.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 235 | **Type:** Concept
+  - All right.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 236 | **Type:** Concept
+  - So it finished initializing our master node.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 237 | **Type:** Concept
+  - And I want to just kind of quickly go over some of the output.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 238 | **Type:** Concept
+  - So if we take a look here we can see that it's generating the CA certificates.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 239 | **Type:** Architecture
+  - And then it's going to go ahead and generate the certificates for the API server.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 240 | **Type:** Implementation Step
+  - And then you can see it's configuring that.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 241 | **Type:** Architecture
+  - It also generated all the certificates for the etcd server and all of the other different components that you can see. just go one by one, creating all the necessary things for each of the different components.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 242 | **Type:** Concept
+  - You could see the conf file for your cubelet.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 243 | **Type:** Architecture
+  - You could see the controller manager configuration, and then it went ahead and provisioned.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 244 | **Type:** Implementation Step
+  - The static pod manifests for the different components and you can see it then brought up the different components.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 245 | **Type:** Concept
+  - And so that's really all it's doing under the hood.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 246 | **Type:** Implementation Step
+  - If you just take a look at the output, it just explains the step by step exactly what it's doing.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 247 | **Type:** Implementation Step
+  - And then after it's done, it's going to have provisioned a config file so that we can actually connect to our Kubernetes cluster.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 248 | **Type:** Implementation Step
+  - And then if we want to just take a look at it, we could just do a cat and then just go to that path of that file.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 249 | **Type:** Concept
+  - So it's going to be Kubernetes admin conf.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 250 | **Type:** Concept
+  - And I'll need a sudo.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 251 | **Type:** Concept
+  - And you can see here it's got a kube config file so that we can actually talk to our master node.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 252 | **Type:** Concept
+  - So here we're going to just copy it to the default home directory in this case.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 253 | **Type:** Concept
+  - And I'm going to paste that in.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 254 | **Type:** Best Practice
+  - And now I should be able to do a kubectl.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 255 | **Type:** Best Practice
+  - And then here if I do get nodes, it should be able to connect and give back all of the nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 256 | **Type:** Concept
+  - You can see we've got one node and it's currently in a not ready state.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 257 | **Type:** Concept
+  - That's not a problem.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 258 | **Type:** Concept
+  - We expect it to be in a not ready state because we haven't set up the the network plugin that we're going to use.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 259 | **Type:** Concept
+  - So we have to get the network plugin up and running.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 260 | **Type:** Implementation Step
+  - And then this will move into a ready status.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 261 | **Type:** Implementation Step
+  - Now if I go back up to the output of the cube adm init command, it's going to tell us what we have to do next.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 262 | **Type:** Concept
+  - And so you know I already did this section right here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 263 | **Type:** Implementation Step
+  - And then what we need to do is you need to deploy a pod network for your cluster.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 264 | **Type:** Concept
+  - That's basically your network CNI, your network plugin or your CNI.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 265 | **Type:** Implementation Step
+  - And then afterwards it says you can then join any number of worker nodes by running the following command on the worker nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 266 | **Type:** Concept
+  - So setting up the worker nodes is very easy.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 267 | **Type:** Concept
+  - You just run this command.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 268 | **Type:** Concept
+  - So I'm going to copy this and save this to my notepad so that I have it for reference that we could use later on.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 269 | **Type:** Implementation Step
+  - Um, and then that's all we have to do.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 270 | **Type:** Concept
+  - Now, if I go to the documentation and we take a look at, uh, creating a high availability cluster.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 271 | **Type:** Exam Tip
+  - And I'm going to just show you what the output would look like if we were using a setup with multiple master nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 272 | **Type:** Concept
+  - When we do a cube adm init, you're going to see an output that looks like this.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 273 | **Type:** Concept
+  - So ours right.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 274 | **Type:** Concept
+  - If you look at this and I wish it was a little bit wider, you can see you could join any number of worker nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 275 | **Type:** Concept
+  - So we saw the same thing.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 276 | **Type:** Concept
+  - However when you're doing a multi master node you can also it'll print out the the command that you need to run with the proper token for setting up all of the other control plane nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 277 | **Type:** Exam Tip
+  - So at this point, if you had multiple master nodes, you would run this command that it gave us right here, so that you can then bootstrap the other control plane nodes and connect them to the cluster.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 278 | **Type:** Concept
+  - We only have one control plane node.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 279 | **Type:** Concept
+  - So we didn't get that output.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 280 | **Type:** Concept
+  - And that's exactly what we want.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 281 | **Type:** Concept
+  - We only have to set up the worker nodes here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 282 | **Type:** Concept
+  - I just wanted to make sure you guys understand how to do it.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 283 | **Type:** Exam Tip
+  - If you did have multiple control plane nodes.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 284 | **Type:** Concept
+  - All right.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 285 | **Type:** Concept
+  - So I'm back at the creating a cluster with cube ADM documentation.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 286 | **Type:** Concept
+  - We can see that we ran the cube adm init command.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 287 | **Type:** Concept
+  - We saw this output.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 288 | **Type:** Concept
+  - So we know how to get the worker node to join.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 289 | **Type:** Concept
+  - If we take a look at the directions, it's going to tell us to install a pod network add on.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 290 | **Type:** Concept
+  - So we have to install our CNI plugin.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 291 | **Type:** Concept
+  - And we can refer to this documentation if we want to see the different add ons.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 292 | **Type:** Concept
+  - And so here's a list of the different add ons that we can utilize.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 293 | **Type:** Concept
+  - I'm going to use in this case flannel.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 294 | **Type:** Concept
+  - So we're going to go to flannel.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 295 | **Type:** Concept
+  - Select that one.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 296 | **Type:** Concept
+  - And it's going to take us to the documentation page for flannel.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 297 | **Type:** Concept
+  - I'm going to zoom in a little bit for you guys.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 298 | **Type:** Implementation Step
+  - And you're going to see that usually it's pretty easy to deploy a network plugin.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 299 | **Type:** Implementation Step
+  - Usually they give you a um, basically a Kubernetes manifest to actually deploy all of the necessary resources.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 300 | **Type:** Implementation Step
+  - And so in this case we have this command right here kubectl apply f and you just pass in that URL and it's going to deploy it.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 301 | **Type:** Concept
+  - And that's really all you have to do.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 302 | **Type:** Implementation Step
+  - However if you are using a custom pod Cidr network, which is basically if you're not using the default ten 244 .0.0 16, you have to first download the above manifest and modify the network to match your own.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 303 | **Type:** Warning/Pitfall
+  - So we are using the default one so we don't have to do that.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 304 | **Type:** Concept
+  - But I want to show you guys where you would change this just so that you guys know exactly what to do.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 305 | **Type:** Concept
+  - So we're going to go back.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 306 | **Type:** Concept
+  - I'm going to go to my master node and I'm going to do just a curl.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 307 | **Type:** Concept
+  - And I'm going to download that file.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 308 | **Type:** Concept
+  - I'm going to open that file up.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 309 | **Type:** Concept
+  - Let's see where is it.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 310 | **Type:** Concept
+  - I'm sorry I didn't mean to do a curl.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 311 | **Type:** Concept
+  - I wanted to do a double wget.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 312 | **Type:** Concept
+  - So I actually download it.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 313 | **Type:** Concept
+  - Okay so we've got the file.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 314 | **Type:** Concept
+  - Let's open this up here.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 315 | **Type:** Implementation Step
+  - And we take a look at all of the resources it's going to create for us.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 316 | **Type:** Implementation Step
+  - We can see it's going to create a namespace a service account a cluster role.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 317 | **Type:** Warning/Pitfall
+  - Don't worry too much about those cluster role binding and all of that.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 318 | **Type:** Implementation Step
+  - Now this is where we would configure our pod network.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 319 | **Type:** Concept
+  - So here you can see it's set to 210 244 .0.0 slash 16.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 320 | **Type:** Implementation Step
+  - If you want to change that make sure it just matches up with whatever pod Cidr network you configured when you ran the Kube cube adm command.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 321 | **Type:** Concept
+  - So we use ten 244 .0.0 slash 16.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 322 | **Type:** Concept
+  - So we're just going to leave this as the default.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 323 | **Type:** Concept
+  - All right.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 324 | **Type:** Implementation Step
+  - And so at this point I could just do a cube CTL apply dash f cube flannel.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 325 | **Type:** Implementation Step
+  - And it's going to go ahead and deploy the network plugin.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 326 | **Type:** Implementation Step
+  - So after it's been deployed we can go ahead and take a look at all the resources it created.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 327 | **Type:** Concept
+  - So I'm going to do a kubectl get pods dash n.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 328 | **Type:** Concept
+  - Let's check the kube system namespace.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 329 | **Type:** Implementation Step
+  - We can see that it didn't deploy anything there.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 330 | **Type:** Concept
+  - But I believe it's going to use a namespace called I think it's flannel.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 331 | **Type:** Concept
+  - And let's just do a kubectl get namespace because I cube flannel.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 332 | **Type:** Concept
+  - So that's the namespace that's using.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 333 | **Type:** Concept
+  - All right.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 334 | **Type:** Concept
+  - We can see that we've got one pod running.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 335 | **Type:** Concept
+  - And so at this point I would assume that everything is up and ready to go.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 336 | **Type:** Implementation Step
+  - So if I just do a kubectl get nodes now we can see that the cube Master moved into a ready state because we successfully deployed the network plugin.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 337 | **Type:** Concept
+  - And so now the last thing that we have to do is just get the nodes to join the cluster.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 338 | **Type:** Implementation Step
+  - And the way we do that is by utilizing that command I saved, we just copy it and we just say sudo and then paste it in and then just run that.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 339 | **Type:** Concept
+  - And it's going to make sure that this worker node joins the cluster.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 340 | **Type:** Implementation Step
+  - And I'll do the same thing here sudo then paste that command in and we can see that the first one already finished successfully joined the cluster.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 341 | **Type:** Concept
+  - And it you know did a few checks.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 342 | **Type:** Architecture
+  - The Kubelet was informed of a new secure connection details.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 343 | **Type:** Architecture
+  - So it was able to connect to the API server and everything's good to go.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 344 | **Type:** Concept
+  - So now if I go back to the master node and I do a kubectl get node, we can see that we've got our Kubernetes state and we've got node one and node two in a ready state.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 345 | **Type:** Concept
+  - And if I check that kube flannel namespace again you're going to see that we'll have two more pods running.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 346 | **Type:** Implementation Step
+  - And so it's going to deploy a instance of the that the network plugin agent on every single one of the nodes so that it can actually handle network on all of them.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 347 | **Type:** Implementation Step
+  - So every time you add a new node it's going to deploy one of these pods onto there.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 348 | **Type:** Concept
+  - So that's why you'll see three of them in that case.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 349 | **Type:** Best Practice
+  - So at this point our cluster should be ready to go.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 350 | **Type:** Implementation Step
+  - Let's go ahead and test it out I'm going to just deploy a single pod.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 351 | **Type:** Concept
+  - So I'll say kubectl run I'll give this pod a name of web and I'll say dash dash image equals.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 352 | **Type:** Concept
+  - And I'll just say nginx in this case.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 353 | **Type:** Implementation Step
+  - So here we created the pod.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 354 | **Type:** Concept
+  - We'll do a kubectl get pod.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 355 | **Type:** Concept
+  - And let's take a look.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 356 | **Type:** Concept
+  - We can see it's in a container creating state.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 357 | **Type:** Concept
+  - And I'm going to do a dash w so we can watch.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 358 | **Type:** Concept
+  - It's going to oh it looks like it already moved into a running state.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 359 | **Type:** Concept
+  - So we've got in a running state.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 360 | **Type:** Concept
+  - So it looks like everything's working.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 361 | **Type:** Concept
+  - Everything's good to go.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 362 | **Type:** Concept
+  - We could just go ahead and delete that now.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 363 | **Type:** Concept
+  - And there you go.
+- **File:** `249_Demo - Deployment with Kubeadm.extraction.md` | **Entry:** 364 | **Type:** Implementation Step
+  - We have now successfully deployed a Kubernetes cluster using the kube adm CLI utility.
+
+### Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional)
+
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 1 | **Type:** Exam Tip
+  - Instructor: For the first question, it's asking us to install kubeadm and the kubelet package on the control plane, as well as node1.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So we've got the terminal open here and we can see we're automatically connected to node1.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So I'm gonna open up a second terminal.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - The first one's connected to the control plane.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - The second one, I'm gonna SSH into node1.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And I've got the documentation right here for installing kubeadm.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - And so the first thing that we have to do is let's go to the container runtime and let's set up these forwarding rules first.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - So we always have to set these rules up first.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So I'm gonna copy this and we're gonna go back and we're gonna paste this in both terminals.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So we're gonna set this up on the control plane, as well as node1.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 11 | **Type:** Exam Tip
+  - Now, the next thing that we have to do is install kubeadm and the kubelet package.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And it's telling us to install this specific version.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So that's something to keep in mind.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So let's go back to the documentation.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And if we scroll down here, this is gonna give us instructions on how to set up the kubeadm tool.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And there's gonna be different instructions based off of which distribution you're using.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So let's verify what distribution we're actually using.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And so we could do that by running, cat /etc/*-release.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Okay, and we could see that this is using Ubuntu and I'm gonna run this on the control plane node, as well.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Yep, and we could see that this is using Ubuntu as well.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - All right, so we're gonna leave this on Debian and we're gonna just copy this and I'm gonna paste this into both terminals.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - Then, we have to download the Google Cloud public signing key.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So we'll copy this and we're gonna run this on both nodes.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 24 | **Type:** Troubleshooting
+  - So when we paste this, we see that we get this error.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - It says, curl failed writing body.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 26 | **Type:** Troubleshooting
+  - This error is a little misleading, but what's happening is, we're downloading the gpg key and we're downloading it to this folder /etc/apt/keyrings.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And if we actually go back to the documentation, it says that in releases older than Debian 12 and Ubuntu 22.04, this folder doesn't exist.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - So you're gonna have to create this yourself.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - So let's go ahead and just do a mkdir to create the folder.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - So we'll do etc/apt/keyrings, and we'll run this on both to create that directory.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 31 | **Type:** Troubleshooting
+  - And after we create it, if we run the same command, we should see that there's no issues when we run it now.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - And then, we'll run it on the node1.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - Then, we'll add the Kubernetes apt repository on both nodes.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - And then here, we're going to do an update.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - Then, we're going to install all of these.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - And we're gonna, instead of copying all of this all at once, I'm gonna do this one by one.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And that's because this is going to install the latest version.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 38 | **Type:** Warning/Pitfall
+  - We don't want the latest version.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - The instructions are specifically asking 1.26.0.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So let's do this one by one.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 41 | **Type:** Warning/Pitfall
+  - And then, I'm gonna copy this, but I don't actually wanna run the command.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - So we'll do, sudo apt install, we want kubeadm and then to specify a version, we'll say =, and then we'll copy this version.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And I'm gonna do a -y here.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 44 | **Type:** Architecture
+  - So we'll do kubeadm, we want kubelet and we'll copy this same version.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - And then we want kubectl, as well.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - And I will copy this command and we will run this on the other node, as well.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Okay, so that's set up and then, we'll just copy this last command, as well.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 48 | **Type:** Best Practice
+  - All right, and so that should be everything we need to do for the first question.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So we'll just validate that.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 50 | **Type:** Architecture
+  - Okay, so the next question is asking us, what version of the kubelet is installed.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 51 | **Type:** Architecture
+  - So we can just run a, kubelet --version and we already know it's gonna be version 1.26.0.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - The next question is asking, how many nodes are part of the Kubernetes cluster?
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So for that, we'll go to the control plane and run, kubectl get nodes.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 54 | **Type:** Troubleshooting
+  - We can see that there's an error, couldn't get current server API group list.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 55 | **Type:** Troubleshooting
+  - So this error is actually expected because we actually haven't initialized our cluster yet.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - We haven't run the kubeadm tool to actually initialize it.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So that's to be expected.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So go ahead and just select a zero.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Okay, so now, we're going to bootstrap our Kubernetes cluster using the kubeadm tool.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - And so, we want to initialize the control plane node, the master node, and we're gonna pass in two flags.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 61 | **Type:** Architecture
+  - So here, we're gonna set the API server advertise IP address to be whatever the IP address of ethernet zero is.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - And then, we're also going to set the pod network CIDR flag to be 10.244.0.0/16.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So let's go ahead and get the IP address.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So if we run an, ip add, we can see that for eth0, the IP address is 192.7.220.6.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - So now, we can just do a, kubeadm init, and then we gotta do, --, and I'm gonna copy the name of this flag and we're gonna set it to this IP address.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - And then, we'll do a, --pod-network-cidr, which is gonna be set to 10.244.0.0/16.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - And that's going to initialize the control plane.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - And I realize there's a typo.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - This is just kubeadm, and we'll let that run.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Okay, and once that's complete, the instructions does say, once done, set up the default kubeconfig file and wait for the node to be part of the cluster.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - So I'm going to, then, just copy these instructions right here, paste that, that's going to set up our kubeconfig.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 72 | **Type:** Best Practice
+  - And so now, we can just do a, kubectl get nodes and we should see that we've got our one control plane node, which at the moment is in a NotReady state, but that's to be expected.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - And we'll go ahead and run the verification.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - The next question is asking us to generate a kubeadm join token.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Or you can just copy the one we received from the kubeadm init command.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - And that's gonna be this one right here.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - So just go ahead and copy that.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - We'll hit OK.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - The next question is telling us to have node1 join the cluster using this join token.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So make sure you copy that, go to node1 and all you have to do is just paste the join token.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 81 | **Type:** Best Practice
+  - We run the validation, we should see it should be good.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - And then, we'll go to the next question.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - And so for the final question, we want to install a network plugin.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And in this case, the instructions are telling us to install flannel.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So we're gonna have to go to the documentation to figure out how to do that.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - And if you go back to the output of the kubeadm init command, it's gonna give us a link where we can take a look at all of the network addons.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 87 | **Type:** Implementation Step
+  - So we'll just hit control and then click.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - That's gonna open up a tab.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - In here, there's gonna be all of the network addons.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So look for, what was it, flannel.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So we wanna select flannel and it's gonna take us to this link.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - And you'll see that deploying flannel is very easy.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - It's just one command.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 94 | **Type:** Implementation Step
+  - So we can just copy this, go to our control plane, hit paste and it's going to create all of the necessary configurations to get flannel up and running.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - We'll go ahead and hit Check and we'll probably need to give it a couple seconds to actually initialize.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - And so let's do, kubectl get pod -A and we can see that's up and running now.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So let's go ahead and run the validation again and we can see it's succeeded.
+- **File:** `251_Lab Solution - Deploy a Kubernetes Cluster using kubeadm _ (Optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - And so, that's going to wrap up this lab.

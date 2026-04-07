@@ -1,0 +1,773 @@
+# Section Concept Map: BATCH-031
+
+## Section
+- Course: `certified-kubernetes-application-developer`
+- Section: `15_Mock Exams`
+
+## Source Files Used
+- `206_Mock Exam -1 (Solution).extraction.md`
+- `208_Mock Exam -2 (Solution).extraction.md`
+- `209_Bonus Lecture.extraction.md`
+- `211_What's Next_.extraction.md`
+
+## Concept Groups
+
+### Mock Exam -1 (Solution)
+
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 1 | **Type:** Exam Tip
+  - -: In this video, I'm gonna walk you through these solutions for the mock exam one.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - For the first question, we have to deploy a pod with this specific name using the Nginx Alpine image.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - But to do that we'll do a kubectl run, and then we'll provide the name which is gonna be Nginx, and then we'll pass in the image flag.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So, we'll set this to Nginx Alpine.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Next question is asking us to create a namespace with this following name.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So, I'm gonna copy this.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Now, I do a kubectl, create namespace.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Next question is asking for a new deployment.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - Create a new deployment named httpd-frontend with three replicas using the following image.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So, do the kubectl, create command and we'll create a deployment, and we'll call this httpd-frontend as per the question.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - And then we'll pass in the dash, dash image flag which is gonna be httpd:2.4-alpine.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - And then finally we can specify the replicas which is gonna be set to three.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - For the next question, we have to deploy messaging pod using the redis alpine image with the label set to tier equals message or MSG.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So, I'll say kubectl run messaging, we're gonna specify the image which is gonna be redis alpine.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - And then to set a label, you pass in the dash L flag and you say tier equals MSG.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 16 | **Type:** Troubleshooting
+  - A replica set with the name of rs-d333393 is created, how are the pods are not coming up, identify and fix this issue, and ensure that the replica set has four in a ready state.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So, I'm gonna do a kubectl, get replica set.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - We can see the replica set in question, we can see desired current, and then ready is zero.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - So, let's take a look at what could be wrong with this by doing a kubectl, describe, replica set, and then we'll pass in the name.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 20 | **Type:** Warning/Pitfall
+  - And so if we just take a look events wise, I don't think we see anything interesting here.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Everything looks fine.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - The name, configuration all seems to be look good.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - However when we get down to the container section, we can see that the image, it looks like there was a typo on the image because it's set to busybox x x x x.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 24 | **Type:** Best Practice
+  - So, this should just be busybox.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 25 | **Type:** Troubleshooting
+  - So, this is most likely what's causing this issue.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - So, what we're gonna do is, I'm gonna do a kubectl, edit, replica set, and then the name of the replica set so we can modify the configuration, and I'm gonna change the image, we'll remove the extra Xs.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - And after that's been edited, we have to then go in and delete the old, misconfigured pod.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So if I do a kubectl, get pod, we can see the four old pods, so we're gonna delete all of these.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - I can go one by one and just do a kubectl, delete pod, and then provide the name but I wanna just delete all of them all at once.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So, what I'm gonna do is I'm gonna see if all of them have a label.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So, I'm gonna do kubectl, describe pod.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And if we take a look at the pod, it looks like they all have a label of name equals busybox dash pod.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So, I'm gonna copy this, I'm gonna say delete pod, and I'm gonna pass in the dash L flag, so we're gonna delete all the pods with this label.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 34 | **Type:** Best Practice
+  - And this should be a kubectl, and it's gonna delete the four pods.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 35 | **Type:** Best Practice
+  - And now if I do a kubectl, get replica set, we should see that the replica set now has four and ready state.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - The next question's asking us to create a service called messaging-service to expose the redis deployment in the marketing name phase within the cluster on port 6379.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - And so the way we do that is kubectl, and then we'll say expose deployment and then we'll call the redis deployment.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - And then for the port, all right, we wanna use port 6379.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And the name, I'm gonna call this messaging-service.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And then for the namespace, this is gonna be marketing.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - For the next question.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - We have to update the environment variable on the pod webapp-color to use the green background.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So if we do a kubectl, get pod, let's take a look at that pod real quick.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - We can see under environment variables.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Right now it's set to app_color pink.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So, we just have to change this environment variable to be green.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - And so what I'm gonna do is I'm gonna do a kubectl, get pod and then pass the name of the pod.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - I do dash O.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Yeah, so we can get the configuration, I'm gonna pipe this to...
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - We'll call this webapp-color.yaml, and we'll go into this configuration and we're gonna just change the environment variable.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So, I'll see, I'll just search for E and V, and we go and we can just change the value to be green here.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - And so after we make that change, we now have to redeploy this, so we can delete it and then reapply it.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - So I can do a kubectl, delete pod, you know, blah, and then do a kubectl, apply.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - But instead of doing that, what I can do is because the configuration is going to have the same name, the pod is going to have the same exact name, What I can do instead is I can say kubectl, replace-f, and then provide the name of the file, and I...
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So, this is going to replace the preexisting pod with the new one.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - So, you can see it's deleting it and then it's eventually going to create the new one.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - All right, and then we can see that it was replaced.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Perfect.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - So, let's go to the next question.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - Now we have to create a new config map named cm3392845, and we have to provide the following specs.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 61 | **Type:** Warning/Pitfall
+  - So we'll do a kubectl, create, config map, and I'm just gonna copy the name, so I don't mistype anything.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - And then we have to provide these three key value pairs.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - So I'm gonna say dash, dash from dash literal equals and we'll copy this and then we'll pass in the dash, dash from dash literal flag again, and then copy the second one, and we'll do the last one as well.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 64 | **Type:** Best Practice
+  - And if we do a kubectl, describe, config map, we should see all of the key value pairs in there.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - For the next one, we have to create a new secret name db-secret with the data given below.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - So, do a kubectl, create, secret generic and then we'll provide the name here, and we'll do the dash, dash from dash literal, and we'll call this again.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - And then one last time for the last one.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - So, the next question we have to update this pod so that it runs as a root user with the CS underscore time capability.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So, let's get the information on that pod.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - We have appsec, kff, 3, 4, 4, 5.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - I'm gonna do a kubectl , get pod, and so right now I'm just getting the configuration.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So, we'll get the YAML config.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - I'm just gonna pipe it to a file, I'll call this app-sec.yaml, and then we'll go into the file now and we'll make the necessary changes.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So, to make this operate as the root user, we wanna go under spec.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So, I'm gonna search for spec.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So, under spec, I'm gonna pass security context.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - And actually I realize it's probably already in there.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Let's see if I can find it.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - Here we go, security context.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - And then in here we wanna do run as user and then set that to zero.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 81 | **Type:** Implementation Step
+  - So, that's going to get the first requirement of running this as a root user.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - And the next time, the next thing we wanna do is give the cs time capability.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - And so that's going to be under the actual container, so we'll go under this specific container here and you can put this wherever you'd like.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So, I'm just gonna put it right here.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 85 | **Type:** Best Practice
+  - And we'll say security context, and then capabilities, and we'll say add cs underscore time, and that should be all that we have to do.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - And so now we can do two things.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 87 | **Type:** Implementation Step
+  - Once again, we can do a kubectl, delete, and then we'll delete this pod and then reapply this one.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Or we can do the kubectl, replace command.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So I'll do a kubectl, replace, appsec dash, dash force.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - So, that's gonna delete the old one and then replace it with the new one.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - Okay, for this, we have to export the logs of this specific pod to this file.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - So, all we have to do is kubectl, logs, grab the name of the pod.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - All right, and it looks, like, this is actually in a different namespace.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - We have to identify the namespace.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 95 | **Type:** Implementation Step
+  - So, let's see, let's first do kubectl, get pods.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Is it in this namespace?
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - Does not look like it.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - Let's do a kubectl, get namespace.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Let's check e-commerce, just because it has that name in there.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - So kubectl, get.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - Okay, so it looks like it's in there.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - So, we know what namespace it is.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - And so now we can do a kubectl, logs, and then namespace equals e-commerce.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - And then we wanna redirect this to a file, and we're gonna redirect it to this specific path.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 105 | **Type:** Implementation Step
+  - And we'll go to the next question.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 106 | **Type:** Implementation Step
+  - And for this, we have to create a persistent volume with the following requirements.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 107 | **Type:** Concept
+  - And for this, instead of writing everything out by hand, I'm gonna go pull up the documentation for persistent volumes.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 108 | **Type:** Exam Tip
+  - So, there's gonna be a section here under storage persistent volume, which gonna give us an example.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 109 | **Type:** Concept
+  - So, I'm just gonna copy this just up to here, I only need that much.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - And then I'm gonna create a file, also say, I'll call this vip.yaml, and I'm just gonna paste this in here, and so let's make the necessary changes.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 111 | **Type:** Implementation Step
+  - So, the first thing is we're gonna have to change the name.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 112 | **Type:** Concept
+  - And this is gonna be pv-analytics.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 113 | **Type:** Concept
+  - For capacity, this is going to be 100.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 114 | **Type:** Concept
+  - And for access mode, this is going to be read, write many.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 115 | **Type:** Concept
+  - And the last thing that we need to do is add the host path, and the path is going to be /pv/data-analytics.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 116 | **Type:** Implementation Step
+  - And then we can do a kubectl, apply-fpv.yaml.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 117 | **Type:** Implementation Step
+  - And we'll go to the next question.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 118 | **Type:** Implementation Step
+  - And so for this question, we have to create a redis deployment using the image redis alpine with one replica and a label of app equals redis.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 119 | **Type:** Implementation Step
+  - And then there's a couple other steps, We have to then expose it via cluster IP service called redis on port 6379.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 120 | **Type:** Implementation Step
+  - And then we have to create an English type network policy called redis access which allows only the pod with the labeler to access the deployment.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - So, first we're gonna do the first step which is creating a redis deployment with this following spec.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 122 | **Type:** Implementation Step
+  - We'll do a kubectl, create deployment.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - We'll call it redis--image which equals to reads alpine.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 124 | **Type:** Implementation Step
+  - And then we're gonna set the replicas to one.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 125 | **Type:** Implementation Step
+  - So, that's the first step.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 126 | **Type:** Implementation Step
+  - Then, we have to expose that part via cluster IP.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 127 | **Type:** Implementation Step
+  - So, I'll do a kubectl, expose deployment, and then we'll call that redis deployment that we just created.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 128 | **Type:** Concept
+  - And this name is going to be redis as well.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 129 | **Type:** Concept
+  - We're gonna call this service redis.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 130 | **Type:** Implementation Step
+  - And then we're gonna provide the port which is gonna be 6379, and then the target port equals 6379.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 131 | **Type:** Implementation Step
+  - And so now that service is created.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 132 | **Type:** Implementation Step
+  - And the last step that we have to do is create that English type network policy.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 133 | **Type:** Implementation Step
+  - And so to do that, I'm gonna create a new file, and I'm gonna call this networkpolicy.yaml.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 134 | **Type:** Concept
+  - And instead of writing this out by scratch, I'm gonna pull up the documentation again.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 135 | **Type:** Exam Tip
+  - And we're gonna take a look at an example and just copy this.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 136 | **Type:** Concept
+  - So, if you go under service load balancing and networking, there's a network policy section.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 137 | **Type:** Exam Tip
+  - And here we have an example config.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 138 | **Type:** Implementation Step
+  - So, I'm just gonna copy this whole thing and then paste it into here and then just change what we need to change.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 139 | **Type:** Implementation Step
+  - Okay, so the specs that it has to meet is let's see, created network called redis access, so let's change the name.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 140 | **Type:** Concept
+  - It's gotta be called redis access.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 141 | **Type:** Implementation Step
+  - And then for pod selector, we have to specify the label that we gave the pod.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 142 | **Type:** Concept
+  - So, that's going to be app equals redis.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 143 | **Type:** Concept
+  - So for the pod selector, it's gonna be app redis.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 144 | **Type:** Best Practice
+  - And the requirement says we should only allow traffic that comes from pods with the label of access equals redis.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 145 | **Type:** Concept
+  - So, under ingress, under from...
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 146 | **Type:** Concept
+  - We wanna delete everything except for the pod selector.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 147 | **Type:** Concept
+  - So, we just wanna define a pod selector.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 148 | **Type:** Concept
+  - I'm gonna delete the rest of this.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 149 | **Type:** Concept
+  - And so what we're saying here is we wanna match labels of access equals redis only.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 150 | **Type:** Concept
+  - And for the ports it's already set to the correct value ports.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 151 | **Type:** Implementation Step
+  - We wanna do protocol TCP, and then the port is gonna be 6379, the redis port. and then we can delete everything under egress.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 152 | **Type:** Concept
+  - And since we no longer have egress, I'm gonna delete the policy type there.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 153 | **Type:** Concept
+  - So it's just ingress.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 154 | **Type:** Implementation Step
+  - We have the policy, I'm gonna do a kubectl, apply-f network policy.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 155 | **Type:** Concept
+  - That's great.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 156 | **Type:** Implementation Step
+  - We'll go to the next step.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 157 | **Type:** Implementation Step
+  - And so now we have to create a pod called sega with two containers, one that's called tails with the image of busybox with this command, and the second is we called sonic with an image of Nginx and an environment variable of Nginx export with the ...
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 158 | **Type:** Implementation Step
+  - So, let's create a new file.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 159 | **Type:** Implementation Step
+  - So, I'm gonna say vi and I'll call this sega.yaml And so I'll just set the API version to be V1 kind to be pod, and then the metadata is gonna be sega.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 160 | **Type:** Implementation Step
+  - And then now let's configure our containers under spec.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 161 | **Type:** Concept
+  - So, there's gonna be two containers.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 162 | **Type:** Implementation Step
+  - The first one is gonna have a name of tails and it's gonna have an image of busybox.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 163 | **Type:** Concept
+  - And the command that's gonna run is sleep and it's gonna sleep for 3,600 seconds.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 164 | **Type:** Implementation Step
+  - The next container is gonna be sonic and the image is gonna be Nginx, and the environment variables that we have to specify.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 165 | **Type:** Implementation Step
+  - The first one is gonna have a name of nginx_port and the value is gonna have a value of 8008.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 166 | **Type:** Best Practice
+  - And that should be all that we need, We'll do a kubectl, apply-f, sega.yaml and it's successfully created.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 167 | **Type:** Concept
+  - And so that's going to wrap up the final question.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 168 | **Type:** Concept
+  - Let's go ahead and run the results.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 169 | **Type:** Concept
+  - And it looks like I made a mistake.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 170 | **Type:** Concept
+  - So, I'm gonna just open up this last question and I realize I just...
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 171 | **Type:** Best Practice
+  - This should be 8080, not 8008, so I'll change that to 8080.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 172 | **Type:** Concept
+  - So, here we're just gonna change this to be busybox not busyboxy.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 173 | **Type:** Implementation Step
+  - And then I'm gonna run that same replace command as well.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 174 | **Type:** Concept
+  - Okay, and now let's test again.
+- **File:** `206_Mock Exam -1 (Solution).extraction.md` | **Entry:** 175 | **Type:** Exam Tip
+  - And that's going to wrap up the mock exam one.
+
+### Mock Exam -2 (Solution)
+
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 1 | **Type:** Exam Tip
+  - Instructor: In this video, I'm gonna walk you through the solutions for the mock exam two.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - For the first question, we have to create a deployment called MyDashWebApp with an image of NGINX, a label of Tier Frontend, and a replicas of two.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So we're gonna do a kubectl, create deployment, and it's gonna be called mywebapp, then the image is going to be nginx, and we wanna set the replicas to two.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - I'm gonna do a --dry-run=client and I'm gonna do -o yaml so we can pipe it to a file, and I'll just call this mydashwebapp.yaml.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - And then if you wanna take a look at it, we can open this up and just take a look at the configs that generates.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 6 | **Type:** Best Practice
+  - We shouldn't have to change anything here.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - And I'm gonna do a kubectl apply -f and so that's going to create a deployment.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - You can just verify that by doing a kubectl get deployment.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - Now the next thing that we have to do is we have to expose the deployment as a node port service with the name of frontend-service with a port of 80 and a node port of 30083.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So let's run the imperative command kubectl expose deployment and then we'll pass in the name of the deployment, which is mydashwebapp.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - And then the name of the service is gonna be called frontend-service.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And the type is going to be of type node port.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - The port is gonna be port 80.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - I'm gonna do a --dry-run=client -o yaml, and then we'll pipe this out to frontend-service, and I'm gonna open up this file.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - We're gonna have to make one change, we have to add the node port here, and that's gonna be 30083.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And then I can do a kubectl apply.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - And let's just quickly verify that it got created.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - So I'll do a kubectl get svc, and we can see our new service created.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - For the next question, we have to add a taint to the node, node one of the cluster using the following specs, and then after that we have to create a pod called alpha with an image of Redis and with a toleration to node one.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - So let's add the label first.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - That's gonna be kubectl taint, and then node.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And it's gonna be node one.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And if you want to, we can just quickly do a kubectl get nodes just to take a look at them.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - So we've got node01 here. we'll do kubectl taint node node01, and then it's gonna be app_type=alpha, effect is gonna be NoSchedule.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 25 | **Type:** Best Practice
+  - And so now if I do a kubectl describe node node1, and we go under taints near the top, we should see the new taint that we just created.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - So now that we've completed that, let's move on and create the pod.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 27 | **Type:** Best Practice
+  - So I'll do a kubectl run, and then the pod should be called alpha, image is going to be redis.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - And then once again, I'll pipe this out to a file.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - And so in the pod spec we have to add a toleration.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So I'm gonna go under spec add toleration.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - The effect is going to be the same NoSchedule.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - The key that's gonna be app_type, and the value is going to be alpha.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - And now we can just do a kubectl apply -f alpha.yaml.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - And now we wanna just quickly verify that the pod was in fact deployed to node1.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - We can do kubectl get pod -o wide, and if we take a look at the alpha pod, it was successfully deployed on node1.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - For the next question, we have to add a label app_type=beta to the node called controlplane.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 37 | **Type:** Best Practice
+  - So if I do a kubectl get node, we should see that we have a node called controlplane, and we want to add a new label to that.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - So I'll do kubectl label node controlplane and then we'll add the label, which is gonna be app_type=beta.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - And now if you do a kubectl get node, and then we'll call specifically controlplane.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - We do a --show-labels to see all the labels.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - And under the labels column, we can see that the new label that we created is there now.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - Now for the next step, we have to create a new deployment with the following specs of a name of beta-apps, with an image of an NGINX and then a replicas of three, and then configure the node affinity.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - So I'll do kubectl create deploy beta-apps -: -image=nginx --replicas is equal to three.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - And let's open up that file.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And so we're gonna have to add the node affinity configuration.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 46 | **Type:** Exam Tip
+  - So if you go to the Kubernetes documentation, under this section here, node affinity, this is gonna give you an example of how to configure a node affinity.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 47 | **Type:** Troubleshooting
+  - So I'm gonna just copy this, and under spec, let's add that in there, and let me fix the spacings.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And the only thing that we have to change is the key and the values.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So I'm gonna change the key, and this is going to be app_type.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - We're gonna leave the operator as in.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - And then the values, I'm just gonna, you can pass in a list, and this is just going to be beta.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - We'll save that.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - And then now I can do a kubectl apply -f beta-apps.yaml, and if I do a kubectl get pods -: o wide, and we can see that all of the beta-apps pods are gonna be deployed on the controlplane node.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - In the next question, we have to create a new ingress resource for the MyVideo service, so that it's available at the following URL.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 55 | **Type:** Best Practice
+  - And we did the configuration the host should be set to this, and then the specific path is gonna be a /video.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - So first let's do a kubectl get service.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - And so if we take a look at the MyVideo service, we could see it's running on port 8080, and that's something to, that we'll need to know when we create our ingress.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - And then let's create our ingress imperatively, and then we'll create, we'll save it to our configuration file.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - So I'll do a kubectl create ingress ingress, and then we'll have to provide --rule flag.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - And so here this is going to be the host that we specified here.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 61 | **Type:** Warning/Pitfall
+  - So I'm gonna copy this, and I'm gonna delete the host part here, I don't need that.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So I just need the URL, and after it's gonna be for the /video path.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - And what I'm gonna do is I'm gonna say anything that goes to /video, I wanna send it to MyVideo service.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - And this is gonna be listening on port 8080.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - And if we take a look at the configurations, you can see we've got the host set as requested.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - And then for anything that goes to the /video path, we wanna send it to a service called MyVideo service that's listening on port 8080.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - And so that's all we need.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - I can just do kubectl apply now.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - If I do a kubectl get ingress, we can see the new ingress that was created.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - The next question, a new pod has been created called pod-with-rprobe, and what we have to do is we have to update it with a readiness probe configuration provided below.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So what I'm gonna do is kubectl get pod, and I'm gonna do a kubectl get pod pod-with-rprobe -: o yaml, so we can take a look at the configuration and modify it, and I'll just call this pod.yaml, and we'll open up pod.yaml, and we want to go under ...
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So I'm just gonna add it right above ports.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - And so here to add a readiness probe, I'll just do readiness probe.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And this is asking for an http get.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So we'll do http get, and there's gonna be two configurations here.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - So the first one is path, and this is gonna be a path to /ready.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - And this is gonna be a port of 8080.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - And now what we can do, is we can do a kubectl replace -f pod.yaml --force.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - For the next question, we have to create a new pod called nginx141 in the default name phase with an image of NGINX.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 80 | **Type:** Troubleshooting
+  - And we have to add a liveness probe to the container to restart if the command ls/bar/www/atm/probe fails.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 81 | **Type:** Best Practice
+  - And this check should start after a delay of 10 seconds and run every 60 seconds.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - And so what we're gonna do is we're gonna create a new file, and I'm just gonna call this nginx1401.yaml It's gonna be a standard pod configuration.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So we'll start off with the API version v1.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - The kind is gonna be pod and the metadata.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - We're gonna set the name.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - We're gonna set the name to be nginx1401, and the name space to be default.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - The spec will add the container.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - The image will be an nginx image.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - And then here we have to specify the liveness probe, and we're gonna do an exec, and the command we wanna run.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - And then now we'll set the initial delay to 10 seconds, and the period seconds to be 60.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 91 | **Type:** Best Practice
+  - So this is gonna run every 60 seconds, and I made a mistake this should be moved back so it lines up with exec.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - We'll try that again.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - And now the pod's successfully created.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 94 | **Type:** Implementation Step
+  - For the next question, we have to create a job called Whalesay, which is going to use the following image, with the following command.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - And it's gonna have the following requirements, of a completion of 10, and a backoffLimit of six, and a restartPolicy of Never.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 96 | **Type:** Implementation Step
+  - So let's create the configurations for our job, so I'm gonna run a kubectl create job -: -image=docker/whalesay, the name of the job's gonna be whalesay.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 97 | **Type:** Implementation Step
+  - And then we're gonna do --dry-run=client -o yaml, and we'll save this in a file called whalesay.yaml.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 98 | **Type:** Implementation Step
+  - And then I'm gonna open this up.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - And if you take a look at the configuration there's gonna be a couple things that we have to change.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 100 | **Type:** Implementation Step
+  - So under spec, the first thing that we wanna do, is we wanna define the completions and the backoffLimit.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 101 | **Type:** Implementation Step
+  - So I'll say completions, there's gonna be 10, and then the backoffLimit is gonna be six.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 102 | **Type:** Implementation Step
+  - And then for the container, we have to change the command.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 103 | **Type:** Best Practice
+  - So I'll say command, I'm gonna do sh -c, and then I'll copy in, copy in that, and that should be all that we have to change.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - So now I can do a kubectl apply -f whalesay.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - If I do a kubectl get jobs, you can see right now we have a zero out of 10 completed.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 106 | **Type:** Concept
+  - And we'll let this run for a bit until we get all 10 completed.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 107 | **Type:** Concept
+  - All right, and so that's completed.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 108 | **Type:** Implementation Step
+  - So we'll go to the next question.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 109 | **Type:** Exam Tip
+  - For the next question, we have to create a pod called Multipod that's going to have two containers with the following configurations.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - The first one is going to be called Jupiter with an image of NGINX.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 111 | **Type:** Concept
+  - And the second one is what you called Europa with an image of Busybox, and a command of sleep 4,800.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 112 | **Type:** Concept
+  - And each one is going to have a different environment variable.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 113 | **Type:** Concept
+  - So this is gonna be pretty straightforward.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - Let's just create a new file for our pods spec.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 115 | **Type:** Exam Tip
+  - So I'll just call this multipod.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 116 | **Type:** Implementation Step
+  - And this is gonna have the usual API version V1, kind is gonna be a pod, and then metadata name, which is going to be multi-pod.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 117 | **Type:** Implementation Step
+  - And then let's provide the spec.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 118 | **Type:** Concept
+  - And there's gonna have a two containers now.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 119 | **Type:** Implementation Step
+  - So let's start with the first one, which is gonna have a name of Jupiter, and an image of NGINX.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 120 | **Type:** Concept
+  - The second one is going to have a name of Europa, with an image of Busybox, with the command of /bin/sh.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 121 | **Type:** Concept
+  - And now let's define the environment variable.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 122 | **Type:** Implementation Step
+  - So for the first one, the type is gonna be a value and planet.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - And for the second container, the name is once again gonna be type, and the value is going to be Moon.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 124 | **Type:** Exam Tip
+  - And then we'll do a kubectl apply multipod.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 125 | **Type:** Implementation Step
+  - And let's move on to the next question now.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 126 | **Type:** Implementation Step
+  - And for the final question, we have to create a persistent volume called custom volume, with the size of 50 Mebibytes, a reclaim policy of retain, AccessMode to ReadWriteMany, and a host path of /op/data.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 127 | **Type:** Exam Tip
+  - So if you want to, you can pull up the Kubernetes documentations for a volume, and you could just grab one of the examples, and then you use that as a base.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 128 | **Type:** Implementation Step
+  - So I'm just gonna create a new file, and we'll call this pv.yaml.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 129 | **Type:** Concept
+  - I'm gonna paste this in here, and we'll just change all of the necessary fields.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So the name is going to be called custom-volume.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 131 | **Type:** Concept
+  - The storage, this is gonna be 50 Mi, and we wanna change the AccessMode to ReadWriteMany.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 132 | **Type:** Concept
+  - We won't need the volume mode, the persistent volume claim is set to retain accordingly.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 133 | **Type:** Implementation Step
+  - And then finally, we have to set the post path.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 134 | **Type:** Concept
+  - So this is going to be path/opt/data.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 135 | **Type:** Implementation Step
+  - And now we can just do a kubectl apply -f pv.yaml.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 136 | **Type:** Concept
+  - And that's going to be the final question.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 137 | **Type:** Concept
+  - So now we can just run the validation.
+- **File:** `208_Mock Exam -2 (Solution).extraction.md` | **Entry:** 138 | **Type:** Exam Tip
+  - And so that's going to wrap up mock exam two.
+
+### Bonus Lecture
+
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: And there you have it.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - We have come to the end of this incredible learning journey together.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We sincerely hope that you've had a fantastic experience with us and that you have gained valuable knowledge and skills throughout this course.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - As you prepare for your exams, I wanna wish you all the best.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - I have complete faith in your abilities, and I know that you're going to excel and remember, hard work and dedication are the keys to success.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - I believe that you have what it takes to achieve your goals.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - When you do achieve those victories, we would be thrilled if you could share your success stories with us on social media.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 8 | **Type:** Warning/Pitfall
+  - Don't forget to tag us in your posts so we can celebrate your accomplishments with you and the rest of our community.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - If you're looking to gain more practice before attending the CKAD exam, check out the Ultimate CKAD Mock Exam Series that we recently released on KodeKloud.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 10 | **Type:** Exam Tip
+  - This is a special course to gain hands-on experience in a real exam like environment.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 11 | **Type:** Exam Tip
+  - This is a perfect addition to the mock exams that you already have in this course.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 12 | **Type:** Exam Tip
+  - This series replicates the exam environment closely with multiple clusters and patterns of questions.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And as this requires a larger lab infrastructure to host, this is only available on KodeKloud and requires a KodeKloud page subscription.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 14 | **Type:** Exam Tip
+  - If you're planning for the CKS Kubernetes Security Specialist certification exam, then check out the CKS course on KodeKloud.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 15 | **Type:** Exam Tip
+  - We cover all the topics needed to help you clear your CKS certification exam.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 16 | **Type:** Exam Tip
+  - And of course, along with hands-on labs and mock exams.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 17 | **Type:** Exam Tip
+  - And we also have the KCNA, the Kubernetes and Cloud-Native Associate entry level certification exam prep course.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - All of these are exclusively available on KodeKloud, so it requires a KodeKloud subscription.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 19 | **Type:** Warning/Pitfall
+  - But don't worry, use the coupon code UDEMY10 to get a special extra discount where you purchase your subscription.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Apart from the courses that are available here on Udemy, we have 40 plus other courses that are only available on KodeKloud, plus another 50 plus courses that are planned for the rest of the year on Linux DevOps and Cloud technologies.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Our Linux learning path helps you go from an absolute beginner to a certified expert on Linux.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - You will learn Linux by doing in a completely new way with a hands-on approach.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 23 | **Type:** Exam Tip
+  - And our cloud learning paths help you learn the basics of popular cloud platforms and prepare you for certifications, and then deep dive into each of the services offered on the cloud platforms with a hands-on approach.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Additionally, with the KodeKloud Pro Plan, you also gain access to the Cloud Playgrounds for all three cloud platforms.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - You get instant access to a cloud sandbox environment, as well as 50 plus DevOps playgrounds.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - No more worry about forgetting to clean up your environments and incurring cloud costs.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - We will take care of all of that for you.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So once again, use that coupon code UDEMY10 to get a special extra discount when you purchase your KodeKloud subscription.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 29 | **Type:** Exam Tip
+  - Well, all the best for your exams.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Thank you for choosing our course, and we hope that it has been a truly enriching experience.
+- **File:** `209_Bonus Lecture.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Until next time, goodbye. (pleasant music)
+
+### What's Next_
+
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hello everyone.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 2 | **Type:** Exam Tip
+  - This is Vijin Palazhi from KodeKloud and I would like to welcome you all to the Ultimate Mock Exam Series for the CKAD exam.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - Now, this series will help you prepare for your CKAD certification, with tons of hands-on practice.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - As you may be aware, the CKAD certification exam is divided into five key knowledge areas.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - The application design and build section is of 20%.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - Application deployment is also 20%.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Application environment configuration and security is the largest section, with 25% of the questions.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Then we have observability and maintenance, which comprises of 15% of the questions.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - And finally, service networking is another 20%. (upbeat music) So this series provides you with a simulated exam experience that closely resembles the real exam.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 10 | **Type:** Exam Tip
+  - The mock exam consists of a series of tasks that must be completed within a set frame of time, just like the real exam, which is designed and curated by our KodeKloud experts.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 11 | **Type:** Exam Tip
+  - The exam environment in this series allows you to interact up to three Kubernetes clusters in total and you will have up to two hours to complete your mock exam.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 12 | **Type:** Exam Tip
+  - With that said, let's jump right in and explore one of these mock exams.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 13 | **Type:** Best Practice
+  - All right, so I'm going to launch the very first exam here and it should load up in a couple of minutes.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So the questions have loaded, and as you can see, there are 20 questions here.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - You'll find this to be very consistent.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 16 | **Type:** Exam Tip
+  - All the exams will have 20 questions in total.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 17 | **Type:** Exam Tip
+  - The questions, however, can change across multiple attempts.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - So as you can see here, the first question belongs to the application design and build section.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And you can see this right on the top.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And on top of that, you can see the weightage, which is allocated to each question.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So in this case, it is 4%.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 22 | **Type:** Exam Tip
+  - Now, you can scroll freely back and forth between multiple questions using the Next Question button or the Back Question button here.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And you can see that each question has its own weightage.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 24 | **Type:** Exam Tip
+  - So in total, to pass this mock exam, you'll have to score a minimum of 66%.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - If you scroll a bit further, you'll see that there are questions which belong to other knowledge areas.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - As you can see, this fifth question belongs to the section Application Deployment.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 27 | **Type:** Exam Tip
+  - So once you're done with your exam and you have attempted all the questions, you can click on the End Exam button and this will automatically start validating your questions.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 28 | **Type:** Best Practice
+  - And if you've got any of the questions incorrect, the solution should be displayed right here.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Well, that's it for this video.
+- **File:** `211_What's Next_.extraction.md` | **Entry:** 30 | **Type:** Exam Tip
+  - I wish you the best of luck in your preparation and for your certification exam.

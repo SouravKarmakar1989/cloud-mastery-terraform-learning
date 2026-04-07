@@ -1,0 +1,699 @@
+# Section Concept Map: BATCH-010
+
+## Section
+- Course: `certified-kubernetes-administrator-with-practice-tests`
+- Section: `10_Design and Install a Kubernetes Cluster`
+
+## Source Files Used
+- `241_Design a Kubernetes Cluster.extraction.md`
+- `242_Choosing Kubernetes Infrastructure.extraction.md`
+- `243_Configure High Availability.extraction.md`
+- `244_ETCD in HA.extraction.md`
+
+## Concept Groups
+
+### Design a Kubernetes Cluster
+
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will discuss about designing a Kubernetes cluster.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Before you head into designing a cluster, you must ask the following questions.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - What is the purpose of this cluster?
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Is it for learning or development or testing purpose or for hosting production grade applications?
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - What is the cloud adoption at your organization?
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Do you prefer your platform to be managed by a cloud provider or a self-hosted?
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - What kind of workloads are you going to run on this cluster?
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - How many applications are to be hosted on the cluster?
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Few or many?
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - What kind of applications are going to be hosted on the cluster?
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Web applications or big data or analytics?
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Depending on the kind of application, the resource requirements may vary.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - What type of network traffic are these applications expecting?
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Continuous heavy traffic or burst?
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Well, let's try and break down some of these.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 16 | **Type:** Best Practice
+  - If you want to deploy a cluster for learning purposes, then a solution based on minikube or a single node cluster deployed using kube ADM on local VMs or cloud providers like GCP or AWS should do.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - We have deployed such a cluster in the beginner's course to deploy a cluster for development and testing purposes.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 18 | **Type:** Exam Tip
+  - A multi-node cluster with a single master and multiple worker nodes would help again.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 19 | **Type:** Command
+  - 
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - Or if on managed cloud environments, then quickly provision a cluster using the Google Container Engine on GCP or AWS or AKS on Azure.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Let's talk about production level clusters for hosting production grade applications.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 22 | **Type:** Best Practice
+  - A highly available multi-node cluster with multiple master nodes is recommended.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 23 | **Type:** Exam Tip
+  - We look at more details about high availability setup with multiple master nodes later in this section.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Again, this can be set up with Kube, ADM or GCP or using Kops on AWS or other supported platforms.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - You can have up to 5000 nodes in the cluster.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - A total of 150,000 pods in the cluster.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - 300,000 containers in total and up to 100 pods per node.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Now, depending on the size of your cluster, the resource requirement of your node varies.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Cloud service providers like GCP and AWS automatically selects the right sized nodes for you based on the number of nodes in the cluster.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - This table shows the size of the instances and their resource specifications for specific number of nodes.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - If you're deploying on prem nodes, then you could probably start with these numbers as base.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Cloud or on prem.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - We've already discussed that all of these deployment options are available in any environment for on prem.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Kube admin is a very useful tool.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Google Container Engine makes provisioning Kubernetes clusters on GCP very easy.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - It comes with a one click cluster upgrade feature that makes it very easy to maintain the cluster.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - Kops is a nice tool to deploy Kubernetes cluster on AWS, and the Azure Kubernetes Service, or AKS, helps in managing the hosted Kubernetes environment on Azure.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Depending on the workloads configured, your node and disk configurations will differ.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 39 | **Type:** Exam Tip
+  - For high performance workloads, rely on SSD backed storage for multiple concurrent Current access.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 40 | **Type:** Exam Tip
+  - Consider network based storage for shared access to volumes across multiple pods.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Consider persistent storage volumes that we discussed in the storage section.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Consider defining different classes of storage and allocating the right class to the right applications.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - The nodes forming a Kubernetes cluster can be physical or virtual.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - In our case, we will be deploying virtual machines on VirtualBox environments as nodes of our cluster.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - You may choose to deploy on physical machines or virtual machines, or cloud environments like GCP, AWS, Azure, or any other platform of your choice.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - We will be building a cluster with three nodes, one master and two worker nodes.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 47 | **Type:** Architecture
+  - Now we know that master nodes are for hosting control plane components like the cube API server, etcd server and others, while worker nodes are for hosting workloads.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - However, this is not a strict requirement.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - The master nodes are also considered as nodes and can host workloads.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 50 | **Type:** Best Practice
+  - As a best practice, it is recommended to dedicate master nodes for control plane components only, especially in a production environment.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - Deployment tools like kube ADM prevent workloads from being hosted on master nodes by adding a taint to the master node.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - You must use 64 bit Linux operating system for nodes.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Another thing to note is that typically you have all the control plane components on the master nodes.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 54 | **Type:** Architecture
+  - However, in large clusters, you may choose to separate the etcd clusters from the master node to its own cluster nodes.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - We will discuss more about the different topologies for that in the upcoming lecture when we talk about high availability setup.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Well, those are some of the considerations for designing a Kubernetes cluster.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Refer to the links in the references section for more details and some interesting reads.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 59 | **Type:** Exam Tip
+  - Before you go from a certification exam standpoint, there's really nothing much you need to remember from this section.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 60 | **Type:** Warning/Pitfall
+  - You don't have to memorize the numbers that we discussed as these are available in the documentation page.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Well, we'll get into more interesting topics in the upcoming lectures in this section where we will provision an actual cluster from scratch by ourselves.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - Well that's it for this lecture.
+- **File:** `241_Design a Kubernetes Cluster.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - I'll see you in the next lecture.
+
+### Choosing Kubernetes Infrastructure
+
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - In the previous lecture, we discussed about the various options we have in deploying a Kubernetes cluster.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Let's look at it in a bit more detail here.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - Kubernetes can be deployed on various systems in different ways, starting with your laptops to physical or virtual servers within your organization, as well as those in the cloud.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - Depending on your requirements, your cloud ecosystem, and the kind of applications you wish to deploy.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - You may choose one of these solutions on a laptop or a local machine.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - There are a number of ways to get started.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - First of all, on a supported Linux machine, you can get started with installing the binaries manually and setting up a local cluster.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - However, that is too tedious, especially if you are just getting started.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So relying on a solution that automates all that will help in setting up a cluster in a matter of minutes.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - We will look at some of those solutions in a bit.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - On windows, on the other hand, you cannot set up Kubernetes natively as there are no windows binaries.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - You must rely on a virtualization software like Hyper-V or VMware workstation or VirtualBox to create Linux VMs on which you can run Kubernetes.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - There are also solutions available to run Kubernetes components as Docker containers on windows VMs.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - But remember, even then, the Docker images are Linux based and under the hoods they run on a Linux OS created by Hyper-V for running Linux Docker containers.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - So what are some of the solutions available to easily get started with Kubernetes on a local machine, minikube deploys a single node cluster easily.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - It relies on one of the virtualization software, like Oracle VirtualBox, to create virtual machines that run the Kubernetes cluster components.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - We have seen this in the beginner's course.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - The kube ADM tool can be used to deploy a single node or a multi-node cluster real quick.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - But for this you must provision the required hosts with supported configuration yourself.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 20 | **Type:** Comparison
+  - So the difference between the first two and kube adm is that the first two provisions of VM were supported configuration by itself, whereas kube ADM expects the VMs provisioned already.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - At the same time, it allows for deploying multi-node clusters, whereas the former doesn't.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - Again, deploying a Kubernetes cluster locally on a laptop is usually for learning, testing and development purposes.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - For production purposes.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - There are many ways to get started with a Kubernetes cluster, both in a private or a public cloud environment.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - I would categorize them as turnkey solutions or hosted or managed solutions.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - Turnkey solutions are where you provision the required VMs and use some kind of tools or scripts to configure Kubernetes cluster on them.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - At the end of the day, you are responsible for maintaining those VMs and patching them and upgrading them, etc. but cluster management and maintenance are mostly made easy using these tools and scripts.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 28 | **Type:** Exam Tip
+  - For example, deploying a Kubernetes cluster on AWS using the Cops tool.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - Hosted solutions are more like Kubernetes as a service solution where the cluster, along with the required VMs, are deployed by the provider and Kubernetes is configured by them by the provider.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - The VMs are maintained by the provider.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 31 | **Type:** Exam Tip
+  - For example, Google Kubernetes Engine lets you deploy a Kubernetes cluster in a matter of minutes without you having to perform any configuration by yourself.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Let us look at some of the turnkey solutions.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - OpenShift is a popular on prem Kubernetes platform by Red hat.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - For those of you who may not be familiar, OpenShift is an open source container application platform and is built on top of Kubernetes.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - It provides a set of additional tools and a nice GUI to create and manage Kubernetes constructs, and easily integrate with CI, CD pipelines, etc..
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - We have an OpenShift for beginners course in our catalog.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Check it out if you're interested.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Cloud Foundry Container Runtime is an open source project from Cloud Foundry that helps in deploying and managing highly available Kubernetes clusters using their open source tool called Bosh.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 39 | **Type:** Best Practice
+  - If you wish to leverage your existing VMware environment for Kubernetes, then the VMware cloud PXE solution is one that should be evaluated.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - Vagrant provides a set of useful scripts to deploy a Kubernetes cluster on different cloud service providers.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - All of these solutions makes it easy to deploy and manage a Kubernetes cluster privately within your organization.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - You must have a few virtual machines with supported configurations in place.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - These are a few of the many Kubernetes certified solutions.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Well, there are many more, so check them out in the Kubernetes documentation page.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Let us look at some of the hosted solutions.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Google Kubernetes Engine is a very popular Kubernetes as a service offering on Google Cloud Platform.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - OpenShift online is an offering from Red hat where you gain access to a fully functional Kubernetes cluster online.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Azure has the Azure Kubernetes Service.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And finally, Amazon Elastic Container Service for Kubernetes is Amazon's hosted Kubernetes offering.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Again, these are just some of the solutions.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - There are many more.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So what is our choice?
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - In our case, since this is for learning purposes, and considering the fact that some of you may not have access to a public cloud account, and since most of you mentioned in the poll we sent out that you prefer a local setup with VirtualBox, we ch...
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - So our design now has three nodes one master, two worker to be deployed on a laptop with virtual machines provisioned on VirtualBox.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `242_Choosing Kubernetes Infrastructure.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Check out the reference page to read more about many more such solutions.
+
+### Configure High Availability
+
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - We now look at high availability in Kubernetes.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So what happens when you lose the master node in your cluster?
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - As long as the workers are up and continuous are alive, your applications are still running.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Users can access the application until things start to fail.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 5 | **Type:** Exam Tip
+  - For example, a container or pod on the worker node crashes.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - Now, if that pod was part of a replica set, then the replication controller on the master needs to instruct the worker to load a new pod.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 7 | **Type:** Architecture
+  - But the master is not available and so are the controllers and schedulers on the master.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - There is no one to recreate the pod and no one to schedule it on nodes.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - Similarly, since the kube API server is not available, you cannot access the cluster externally through kube control tool or through API for management purposes, which is why you must consider multiple master nodes in a high availability configura...
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 10 | **Type:** Troubleshooting
+  - A high availability configuration is where you have redundancy across every component in the cluster, so as to avoid a single point of failure.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - The master nodes.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The worker nodes.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - The control plane components.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 14 | **Type:** Exam Tip
+  - The application, of course, which we already have multiple copies in the form of replica sets and services.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So our focus in this lecture is going to be on the master and control plane components.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Let's take a better look at how it works.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - We've been looking at a three node cluster with one master and two worker nodes throughout this course.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - In this lecture we will focus on just the master node.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 19 | **Type:** Architecture
+  - As we learned already, the master node hosts the control plane components, including the API controller, manager, scheduler and etcd server in a setup with an additional master node.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - You have the same components running on the new master as well.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So how does that work?
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 22 | **Type:** Exam Tip
+  - Running multiple instances of the same components?
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Are they going to do the same thing twice?
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - How do they share the work among themselves?
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Well, that differs based on what they do.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 26 | **Type:** Architecture
+  - Now we know that the API server is responsible for receiving requests and processing them or providing information about the cluster.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - They work on one request at a time.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 28 | **Type:** Architecture
+  - So the API servers on all cluster nodes can be alive and running at the same time in an active active mode.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 29 | **Type:** Architecture
+  - So far in this course, we know that the kube control utility talks to the API server to get things done, and we point the kube control utility to reach the master node at port 643.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 30 | **Type:** Architecture
+  - That's where the API server listens.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - And this is configured in the kube config file.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Well now with two masters where do we point the kube control to.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - We can send the request to either one of them.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 34 | **Type:** Best Practice
+  - But we shouldn't be sending the same request to both of them.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 35 | **Type:** Architecture
+  - So it is better to have a load balancer of some kind configured in the front of the master nodes that split traffic between the API servers.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - So we then point the kube control utility to that load balancer.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - You may use nginx or HAProxy or any other load balancer for this purpose.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 38 | **Type:** Architecture
+  - What about the scheduler and the controller manager.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - These are controllers that watch the state of the cluster and take actions.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 40 | **Type:** Troubleshooting
+  - For example, the controller manager consists of controllers like the replication controller that is constantly watching the state of pots and taking necessary actions like creating a new pot when one fails, etc..
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 41 | **Type:** Exam Tip
+  - If multiple instances of these run in parallel, then they might duplicate actions resulting in more pots than actually needed.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 42 | **Type:** Architecture
+  - The same is true with scheduler.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - As such, they must not run in parallel.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - They run in an active standby mode.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - So then who decides which among the two is active and which is passive?
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - This is achieved through a leader election process.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So how does that work?
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 48 | **Type:** Architecture
+  - Let's look at controller manager for instance.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 49 | **Type:** Architecture
+  - When a controller manager process is configured, you may specify the leader elect option, which is by default set to true.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 50 | **Type:** Architecture
+  - With this option, when the controller manager process starts, it tries to gain a lease or a lock on an endpoint object in Kubernetes named as Kube Controller Manager endpoint.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - Whichever process first updates the endpoint with its information, gains the lease, and becomes the active of the two.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - The other becomes passive.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - It holds the lock for the lease duration specified using the lease duration option, which is by default set to 15 seconds.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - The active process then renews the lease every 10s, which is the default value for the option.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Leader elect.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Renew deadline.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Both the processes try to become the leader every two seconds set by the leader elect retry period option.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 58 | **Type:** Troubleshooting
+  - That way, if one process fails, maybe because the first master crashes, then the second process can acquire the lock and become the leader.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 59 | **Type:** Architecture
+  - The scheduler follows a similar approach and has the same command line options.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 60 | **Type:** Architecture
+  - Next up etcd.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 61 | **Type:** Architecture
+  - We discussed about etcd earlier in this course.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - It's a good idea to go through that again.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 63 | **Type:** Architecture
+  - Now, just to quickly refresh your memory as we're going to discuss some more related topics to how etcd works.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 64 | **Type:** Architecture
+  - In this lecture with etcd, There are two topologies that you can configure in Kubernetes.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 65 | **Type:** Architecture
+  - One is as it looks here, and the same architecture that we've been following throughout this course where etcd is part of the Kubernetes master nodes.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - It's called as a stacked control plane nodes topology.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - This is easier to set up and easier to manage and requires fewer nodes.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 68 | **Type:** Architecture
+  - But if one node goes down, both an etcd member and the control plane instances are lost and redundancy is compromised.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 69 | **Type:** Architecture
+  - The other is where etcd is separated from the control plane nodes and run on its own set of servers.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 70 | **Type:** Comparison
+  - This is a topology with external etcd servers compared to the previous topology.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 71 | **Type:** Architecture
+  - This is less risky, as a failed control plane node does not impact the etcd cluster and the data it stores.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 72 | **Type:** Architecture
+  - However, it is harder to set up and requires twice the number of servers for the external etcd nodes.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 73 | **Type:** Architecture
+  - So remember, the API server is the only component that talks to the etcd server.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 74 | **Type:** Architecture
+  - And if you look into the API service configuration options, we have a set of options specifying where the etcd server is.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 75 | **Type:** Architecture
+  - So regardless of the topology we use and wherever we configure etcd servers, whether on the same server or on a separate server, ultimately we need to make sure that the API server is pointing to the right address of the etcd servers.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 76 | **Type:** Architecture
+  - Now remember etcd is a distributed system, so the API server or any other component that wishes to talk to it can reach etcd server at any of its instances.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 77 | **Type:** Architecture
+  - You can read and write data to any of the available etcd server instances.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 78 | **Type:** Architecture
+  - This is why we specify a list of etcd servers in the kube API server configuration.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 79 | **Type:** Best Practice
+  - In the next lecture, we discuss more about how etcd server works in a cluster setup and the best practices around the number of recommended nodes in a cluster.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So back to our design.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - We had originally planned for a single master node in our cluster.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 82 | **Type:** Exam Tip
+  - Now with Ha, we decided to configure multiple masters.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 83 | **Type:** Architecture
+  - We also mentioned about a load balancer for the API server, so we will have that as well.
+- **File:** `243_Configure High Availability.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So we now have a total of five nodes in our cluster.
+
+### ETCD in HA
+
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 1 | **Type:** Architecture
+  - In this lecture we will talk about etcd in a high availability setup.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So this is really a prerequisite lecture for the next lecture where we talk about configuring Kubernetes in a highly available mode.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 3 | **Type:** Architecture
+  - Well one portion of that deals with configuring etcd in a Ha mode.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 4 | **Type:** Architecture
+  - So in this lecture we will discuss about etcd in Ha mode.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 5 | **Type:** Architecture
+  - So in the beginning of this course we took a quick look at etcd.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 6 | **Type:** Architecture
+  - We will now recap real quick and more importantly focus on the cluster configuration on etcd.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So let's recap real quick and look at the number of nodes in the cluster, what raft protocol is, etc..
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So what is STD?
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - It's a distributed, reliable key value store that is simple, secure and fast.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So let's break it up.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Traditionally, data was organized and stored in tables like this.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 12 | **Type:** Exam Tip
+  - For example, to store details about a number of individuals.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - A key value store stores information in the form of documents or pages.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So each individual gets a document and all information about that individual is stored within that file.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - These files can be in any format or structure, and changes to one file does not affect the others.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - In this case, the working individuals can have their files with salary fields.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - While you could store and retrieve simple key and values.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - When your data gets complex, you typically end up transacting in data formats like JSON or YAML.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 19 | **Type:** Architecture
+  - So that's what etcd is and how you quickly get started with it.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 20 | **Type:** Architecture
+  - We also said that etcd is distributed.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So what does that mean.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And that is what we're going to focus in this lecture.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 23 | **Type:** Architecture
+  - We had etcd on a single server but it's a database and maybe storing critical data.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 24 | **Type:** Exam Tip
+  - So it is possible to have your data store across multiple servers.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 25 | **Type:** Architecture
+  - Now you have three servers, all running etcd and all maintaining an identical copy of the database.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So if you lose one, you still have two copies of your data.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Perfect.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - But how does it ensure the data on all the nodes are consistent?
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - You can write to any instance and read your data from any instance.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 30 | **Type:** Architecture
+  - Etcd ensures that the same consistent copy of the data is available on all instances at the same time.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So how does it do that with reads is easy since the same data is available across all nodes.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - You can easily read it from any node, but that is not the case with writes.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - What if two write requests come in on two different instances?
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Which one goes through?
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 35 | **Type:** Exam Tip
+  - For example, I have writes coming in for the name set to John on one and with the name Joe on the other.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Of course, we cannot have two different data on two different nodes.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - When I said SSHd can write through any instance, I wasn't 100% right.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 38 | **Type:** Architecture
+  - Etcd does not process the writes on each node.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 39 | **Type:** Operational Insight
+  - Instead, only one of the instances is responsible for processing the rights internally.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - The two nodes elect a leader among them.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Of the total instances, one node becomes the leader and the other node becomes the followers.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - If the rights came in through the leader node, then the leader processes the right.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - The leader makes sure that the other nodes are sent a copy of the data.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - If the rights came in through any of the other follower nodes, then they forward the rights to the leader internally and then the leader processes the rights again.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - When the rights are processed, the leader ensures that copies of the rights are distributed to other instances in the cluster.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Thus, a right is only considered complete if the leader gets consent from the other members in the cluster.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So how do they elect the leader among themselves, and how do they ensure a right is propagated across all instances?
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 48 | **Type:** Architecture
+  - Etcd implements distributed consensus using Raft protocol.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Let's see how that works in a three node cluster.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 50 | **Type:** Warning/Pitfall
+  - When the cluster is set up, we have three nodes that do not have a leader elected.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Raft algorithm uses random timers for initiating requests.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 52 | **Type:** Exam Tip
+  - For example, a random timer is kicked off on the three managers.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - The first one to finish the timer sends out a request to the other nodes requesting permission to be the leader.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - The other managers, on receiving the request responds with their vote, and the node assumes the leader role.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 55 | **Type:** Warning/Pitfall
+  - Now that it is elected the leader, it sends out notification at regular intervals to other masters, informing them that it is continuing to assume the role of the leader in case the other nodes do not receive a notification from the leader at some...
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 56 | **Type:** Exam Tip
+  - Going back to our previous example, where a right comes in, it is processed by the leader and is replicated to other nodes in the cluster.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - The right is considered to be complete only once it is replicated to the other instances in the cluster.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 58 | **Type:** Best Practice
+  - We said that the etcd cluster is highly available, so even if we lose a node, it should still function.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 59 | **Type:** Exam Tip
+  - Say for example, a new raid comes in, but one of the node is not responding, and hence the leader is only able to write to two nodes in the cluster.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Is the write considered to be complete?
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Does it wait for the third node to be up or does it fail?
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - A write is considered to be complete if it can be written on the majority of the nodes in the cluster.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 63 | **Type:** Exam Tip
+  - For example, in this case of three nodes, the majority is two.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So if the data can be written on two of the nodes, then the write is considered to be complete.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - If the third node was to come online, then the data is copied to that as well.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So what is the majority?
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Well, a more appropriate term to use would be quorum.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Quorum is the minimum number of nodes that must be available for the cluster to function properly, or make a successful write in case of three.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - We know is two for any given number of nodes, quorum is the total number of nodes divided by two plus one.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So quorum of three nodes is three by two, which is 1.5 plus one equals 2.5.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - If there is a 0.5, consider the whole number only.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So that's two.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Similarly, quorum of five nodes is three.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So here is a table that shows the quorum of clusters of size 1 to 7.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Quorum of three and five are what we calculated.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - Quorum of one is one itself, meaning if you have a single node cluster, none of these really apply.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - If you lose that node, everything is gone.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - If you look at two and apply the same formula, the quorum is two itself, two by two is one and one plus one is two.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So even if you have two instances in the cluster.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - The majority is still two.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 81 | **Type:** Troubleshooting
+  - If one fails, there is no quorum, so rights won't be processed.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So having two instances is like having one instance.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 83 | **Type:** Best Practice
+  - It doesn't offer you any real value as quorum cannot be met, which is why it is recommended to have a minimum of three instances in an etcd cluster.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - That way it offers a fault tolerance of at least one node.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - If you lose one, you can still have quorum and the cluster will continue to function.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - So the first column minus the second column gives you the fault tolerance.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - The number of nodes that you can afford to lose while keeping the cluster alive.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - So we have 1 to 7 nodes here.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - One and two are out of consideration.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So from 3 to 7 what do we consider.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - As you can see, three and four have the same fault.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Tolerance of one five and six have the same fault tolerance of two.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 93 | **Type:** Best Practice
+  - When deciding on the number of master nodes, it is recommended to select an odd number as highlighted in the table.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - Three or 5 or 7.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - Say we have a six node cluster.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 96 | **Type:** Troubleshooting
+  - Say for example, due to a disruption in the network, it fails and causes the network to partition.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - We now have four nodes on one and two on the other.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - In this case, the group with four nodes have quorum and continues to operate normally.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - However, if the network got partitioned in a different way, resulting in nodes being distributed equally between the two, each group now has three nodes only, but since we originally had six nodes, the quorum for the cluster to stay alive is four.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - But if you look at the groups here, neither of these groups have four managers to meet the quorum, so it results in a failed cluster.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So with even number of nodes, there is possibility of the cluster failing during a network segmentation.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 102 | **Type:** Implementation Step
+  - In case we had odd number of managers originally say seven, then after the network Segmentation.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - We have four on one segmented network and three on the other.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - And so our clusters still lives on the group with four managers as it meets the quorum of four.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - No matter how the network segments, there are better chances for your cluster to stay alive in case of network segmentation with odd number of nodes.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - So an odd number of nodes is preferred over even number.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 107 | **Type:** Architecture
+  - Having five is preferred over six, and having more than five nodes is really not necessary, as five gives you enough fault tolerance to install etcd on a server, download the latest supported binary, extract it, create the required directory struc...
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - We discussed how to generate these certificates in detail in the TLS certificate section.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 109 | **Type:** Architecture
+  - Then configure the etcd service.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - What's important here is to note that the initial cluster option where we pass in the peer's information.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 111 | **Type:** Architecture
+  - That's how each etcd service knows that it is part of a cluster and where its peers are.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 112 | **Type:** Architecture
+  - Once installed and configured, use the etcd cuddle utility to store and retrieve data.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 113 | **Type:** Architecture
+  - Run the etcd cuddle command and specify the key as name and value as John.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 114 | **Type:** Architecture
+  - To retrieve data, run the etcd cuddle git command with the key name and it returns the value.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 115 | **Type:** Architecture
+  - John to get all keys from the etcd cuddle.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - Get keys.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - Only command.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 118 | **Type:** Best Practice
+  - Going back to our design, how many nodes should our cluster have in an Ha environment?
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - As you can see, having 1 or 2 instances doesn't really make any sense, as losing one node in either case will leave you without quorum and thus render the cluster non-functional.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - Hence, the minimum required nodes in an Ha setup is three.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 121 | **Type:** Concept
+  - We also discussed why we prefer odd number of instances over even number.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - Having even number of instances can leave the cluster without quorum in certain network partition Scenarios.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 123 | **Type:** Concept
+  - So all the even number of nodes is out of scope.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - So we are left with three, five and seven or any odd number above that.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 125 | **Type:** Implementation Step
+  - Three is a good start, but if you prefer a higher level of fault tolerance, then five is better.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - But anything beyond that is just unnecessary.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 127 | **Type:** Best Practice
+  - So considering your environment, the fault tolerance requirements, and the cost that you can bear, you should be able to choose one number from this list.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - In our case we go with three.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - So how does our design look now with the minimum required number of nodes for fault tolerance is three.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 130 | **Type:** Concept
+  - Now, while it would be great to have three master nodes, we are limited by our capacity of our laptop, so we will just go with two.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 131 | **Type:** Implementation Step
+  - But if you're deploying this setup in another environment and have sufficient capacity, feel free to go with three.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 132 | **Type:** Architecture
+  - We also chose to go with the stacked topology, where we will have the etcd servers on the master nodes itself.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 133 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `244_ETCD in HA.extraction.md` | **Entry:** 134 | **Type:** Implementation Step
+  - Thank you for listening and I will see you in the next.

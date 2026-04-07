@@ -1,0 +1,1425 @@
+# Section Concept Map: BATCH-025
+
+## Section
+- Course: `certified-kubernetes-application-developer`
+- Section: `08_State Persistence`
+
+## Source Files Used
+- `122_Introduction to Docker Storage.extraction.md`
+- `123_Storage in Docker.extraction.md`
+- `124_Volume Driver Plugins in Docker.extraction.md`
+- `125_Volumes in Kubernetes.extraction.md`
+- `126_Persistent Volumes.extraction.md`
+- `127_Persistent Volume Claims.extraction.md`
+- `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md`
+- `132_Storage Classes.extraction.md`
+- `134_Why Stateful Sets_.extraction.md`
+- `135_Stateful Sets Introduction.extraction.md`
+- `136_Headless Services.extraction.md`
+- `137_Storage in StatefulSets.extraction.md`
+
+## Concept Groups
+
+### Introduction to Docker Storage
+
+- **File:** `122_Introduction to Docker Storage.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Let us now look at storage in Kubernetes to understand storage in container orchestration tools like Kubernetes.
+- **File:** `122_Introduction to Docker Storage.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - It is important to first understand how storage works with containers.
+- **File:** `122_Introduction to Docker Storage.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - Understanding how storage works with Docker first and getting all the basics right will later make it so much easier to understand how it works in Kubernetes.
+- **File:** `122_Introduction to Docker Storage.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - When it comes to storage in Docker, there are two concepts you must know about storage drivers and volume driver plugins.
+- **File:** `122_Introduction to Docker Storage.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - In the upcoming video, we will discuss about storage drivers.
+- **File:** `122_Introduction to Docker Storage.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - It's something that we've discussed in the Docker course, so if you have gone through that already, feel free to skip this video or you may choose to stay and refresh your memory.
+- **File:** `122_Introduction to Docker Storage.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Once done, we will talk about volume drivers.
+
+### Storage in Docker
+
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we are going to talk about Docker storage drivers and file systems.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - We're going to see where and how Docker stores data and how it manages file systems of the containers.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Let us start with how Docker stores data on the local file system.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - When you install Docker on a system, it creates this folder structure at var lib docker.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 5 | **Type:** Exam Tip
+  - You have multiple folders under it called aufs, containers, image volumes, etc. this is where Docker stores all its data by default.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - When I say data, I mean files related to images and containers running on the Docker host.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 7 | **Type:** Exam Tip
+  - For example, all files related to containers are stored under the containers folder, and the files related to images are stored under the image folder.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Any volumes created by the Docker containers are created under the volumes folder.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 9 | **Type:** Warning/Pitfall
+  - Well, don't worry about that for now.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - We will come back to that in a bit.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - For now, let's just understand where Docker stores its files and in what format.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So how exactly does Docker store the files of an image and a container?
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 13 | **Type:** Architecture
+  - To understand that, we need to understand Docker's layered architecture.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 14 | **Type:** Architecture
+  - Let's quickly recap something we learned when Docker builds images, it builds these in a layered architecture.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Each line of instruction in the Docker file creates a new layer in the Docker image, with just the changes from the previous layer.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 16 | **Type:** Exam Tip
+  - For example, the first layer is a base ubuntu distribution, followed by the second instruction that creates a second layer which installs all the apt packages, and then the third instruction creates a third layer, which with the Python packages, f...
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Since each layer only stores the changes from the previous layer, it is reflected in the size as well.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - If you look at the base ubuntu image, it is around 120MB in size.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 19 | **Type:** Exam Tip
+  - The APT packages that are installed is around 300 MB and then the remaining layers are small.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 20 | **Type:** Architecture
+  - To understand the advantages of this layered architecture, let's consider a second application.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - This application has a different Docker file, but is very similar to our first application, as it uses the same base image as ubuntu, uses the same Python and Flask dependencies, but uses a different source code to create a different application, ...
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - When I run the docker build command to build a new image for this application, since the first three layers of both the applications are the same, Docker is not going to build the first three layers.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - Instead, it reuses the same three layers it built for the first application from the cache, and only creates the last two layers with the new sources and the new entry point.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - This way Docker builds images faster and efficiently saves disk space.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - This is also applicable if you were to update your application code whenever you update your application code, such as the App.py.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - In this case, Docker simply reuses all the previous layers from cache and rebuilds the application image by updating the latest source code, thus saving us a lot of time during rebuilds and updates.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Let's rearrange the layers bottom up so we can understand it better.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 28 | **Type:** Exam Tip
+  - At the bottom we have the base ubuntu layer, then the packages, then the dependencies, and then the source code of the application and then the entry point.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - All of these layers are created when we run the docker build command to form the final Docker image.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So all of these are the Docker image layers.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Once the build is complete, you cannot modify the contents of these layers.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And so they are read only.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - And you can only modify them by initiating a new build.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - When you run a container based off of this image using the docker run command, Docker creates a container based off of these layers and creates a new writable layer on top of the image layer.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - The writable layer is used to store data created by the container, such as log files written by the applications.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Any temporary files generated by the container, or just any file modified by the user on that container.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - The life of this layer, though, is only as long as the container is alive.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - When the container is destroyed, this layer and all of the changes stored in it are also destroyed.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - Remember that the same image layer is shared by all containers created using this image.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - If I were to log in to the newly created container and say create a new file called temp dot txt, it will create that file in the container layer which is read and write.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - We just said that the files in the image layer are read only, meaning you cannot edit anything in those layers.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 42 | **Type:** Exam Tip
+  - Let's take an example of our application code.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Since we bake our code into the image, the code is part of the image layer and as such is read only.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - After running a container, what if I wish to modify the source code to say test a change?
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 45 | **Type:** Exam Tip
+  - Remember, the same image layer may be shared between multiple containers created from this image.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So does it mean that I cannot modify this file inside the container?
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - No.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - I can still modify this file.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - But before I save the modified file.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 50 | **Type:** Command
+  - 
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - All future modifications will be done on this copy of the file in the read write layer.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - This is called copy on write mechanism.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - The image layer being read only just means that the files in these layers will not be modified in the image itself.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So the image will remain the same all the time until you rebuild the image using the docker build command.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - What happens when we get rid of the container?
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - All of the data that was stored in the container layer also gets deleted.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - The change we made to the App.py and the new temp file we created will also get removed.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So what if we wish to persist this data.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 59 | **Type:** Exam Tip
+  - For example, if we were working with a database and we would like to preserve the data created by the container, we could add a persistent volume to the container.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - To do this, first create a volume using the Docker volume create command.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - So when I run the Docker volume create data underscore volume command, it creates a folder called data underscore volume under the var lib docker volumes directory.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - Then when I run the docker container using the docker run command, I could mount this volume inside the Docker containers.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Read write layer using the dash v option like this.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So I would do a docker run dash v, then specify my newly created volume name, followed by a colon and the location inside my container, which is the default location where MySQL stores data.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - And that is var lib MySQL and then the image name MySQL.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - This will create a new container and mount the data volume we created into var lib mysql folder inside the container.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - So all data written by the database is in fact stored on the volume created on the docker host.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Even if the container is destroyed, the data is still active.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Now what if you didn't run the Docker volume?
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - Create command to create the volume before the docker run command.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 71 | **Type:** Exam Tip
+  - For example, if I run the docker run command to create a new instance of MySQL container with the volume data underscore volume two, which I have not created yet, Docker will automatically create a volume named data, underscore volume two and moun...
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 72 | **Type:** Best Practice
+  - You should be able to see all these volumes if you list the contents of the var lib docker volumes folder.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - This is called volume mounting as we are mounting a volume created by Docker under the var lib docker volumes folder.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - But what if we had our data already at another location?
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 75 | **Type:** Exam Tip
+  - For example, let's say we have some external storage on the docker host at forward slash data, and we would like to store database data on that volume and not in the default var lib docker volumes folder.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - In that case we would run a container using the command docker run dash v, but in this case we will provide the complete path to the folder we would like to mount.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - That is slash data or slash MySQL.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - And so it will create a container and mount the folder to the container.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - This is called bind mounting.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So there are two types of mounts a volume mounting and a bind mount.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Volume mount mounts a volume from the volumes directory and bind mount mounts a directory from any location on the docker host.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - One final point to note before I let you go.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - Using the dash V is an old style.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - The new way is to use dash mount option.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - The dash dash mount is the preferred way, as it is more verbose, so you have to specify each parameter in a key equals value format.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 86 | **Type:** Exam Tip
+  - For example, the previous command can be written with the dash mount option as this using the type, source and target options.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - The type in this case is bind.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - The source is the location on my host, and target is the location on my container.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So who is responsible for doing all of these operations?
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 90 | **Type:** Architecture
+  - Maintaining the layered architecture, creating a writable layer, moving files across layers to enable copy and write, etc. it's the storage drivers.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 91 | **Type:** Architecture
+  - So Docker uses storage drivers to enable layered architecture, some of the common storage drivers are UFS, btrfs, ZFS Device Mapper, overlay and Overlay.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Two.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - The selection of the storage driver depends on the underlying OS being used.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 94 | **Type:** Exam Tip
+  - For example, with ubuntu, the default storage driver is UFS, whereas this storage driver is not available on other operating systems like fedora or CentOS.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - In that case, device Mapper may be a better option.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 96 | **Type:** Command
+  - 
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - The different storage drivers also provide different performance and stability characteristics, so you may want to choose one that fits the needs of your application and your organization.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - If you would like to read more on any of these storage drivers, please refer to the links in the attached documentation.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 99 | **Type:** Architecture
+  - For now, that is all from the Docker architecture concepts.
+- **File:** `123_Storage in Docker.extraction.md` | **Entry:** 100 | **Type:** Implementation Step
+  - See you in the next lecture.
+
+### Volume Driver Plugins in Docker
+
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Okay, so in the previous lecture we discussed about storage drivers.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Storage drivers help manage storage on images and containers.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We also briefly touched upon volumes in the previous lecture.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - We learned that if you want to persist storage, you must create volumes.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Remember that volumes are not handled by storage drivers.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Volumes are handled by volume driver plugins.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - The default volume driver plugin is local.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - The local volume plugin helps create a volume on the Docker host and store its data under the var lib docker volumes directory.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 9 | **Type:** Comparison
+  - There are many other volume driver plugins that allow you to create a volume on third party solutions like Azure File Storage, convoy, DigitalOcean, Block Storage Locker, Google Compute, Persistent Disks, cluster, EFS, NetApp, Rex, Ray, Port Works...
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - These are just a few of the many.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Some of these volume drivers support different storage providers.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - For instance, Rex Ray storage driver can be used to provision storage on AWS, EBS, S3, EMC storage arrays like Isilon and Scaleio or Google Persistent Disk or OpenStack cinder.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - When you run a Docker container, you can choose to use a specific volume driver, such as the Rex ray EBS to provision a volume from Amazon EBS.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - This will create a container and attach a volume from the AWS cloud.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - When the container exits, your data is safe in the cloud.
+- **File:** `124_Volume Driver Plugins in Docker.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - In the upcoming lectures, we will see more about volumes in Kubernetes.
+
+### Volumes in Kubernetes
+
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Before we head into persistent volumes, let us start with volumes in Kubernetes.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - Let us look at volumes in Docker first.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 3 | **Type:** Command
+  - 
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - They are called upon when required to process data and destroyed once finished.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - The same is true for the data within the container.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - The data is destroyed along with the container to persist data processed by the containers.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - We attach a volume to the containers when they are created.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - The data processed by the container is now placed in this volume, thereby retaining it permanently even if the container is deleted.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - The data generated or processed by it remains.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So how does that work in the Kubernetes world?
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Just as in Docker, the pods created in Kubernetes are transient in nature.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - When a pod is created to process data and then deleted the data processed by it gets deleted as well.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - For this, we attach a volume to the pod.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The data generated by the pod is now stored in the volume, and even after the pod is deleted, the data remains.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Let's look at a simple implementation of volumes.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - We have a single node Kubernetes cluster.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - We create a simple pod that generates a random number between 1 and 100, and writes that to a file at slash opt out.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - It then gets deleted along with the random number to retain the number generated by the pod.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - We create a volume, and a volume needs a storage.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - When you create a volume, you can choose to configure its storage in different ways.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - We will look at the various options in a bit, but for now we will simply configure it to use a directory on the host.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - In this case, I specify a path forward slash data on the host.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - This way any files created in the volume would be stored in the directory data on my node.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Once the volume is created to access it from a container, we mount the volume to a directory inside the container.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - We use the volume mounts field in each container to mount the data volume to the directory slash opt.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Within the container, the random number will now be written to opt mount inside the container, which happens to be on the data volume, which is in fact the data directory on the host.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - When the pod gets deleted, the file with the random number still lives on the host.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - Let's take a step back and look at the volume storage options.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - We just used the host path option to configure a directory on the host as storage space for the volume.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Now that works fine on a single node.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 31 | **Type:** Best Practice
+  - However, it is not recommended for use in a multi node cluster.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - This is because the pods would use the slash data directory on all the nodes and expect all of them to be the same and have the same data, since they are on different servers.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - They are in fact not the same unless you configure some kind of external replicated cluster storage solution.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Kubernetes supports several types of different storage solutions such as NFS, Glusterfs, Flocker.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Fibre channel CFS, Scaleio or public cloud solutions like AWS, EBS, Azure Disk or File or Google's Persistent Disk.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 36 | **Type:** Exam Tip
+  - For example, to configure an AWS Elastic Block Store volume as the storage option for the volume, we replace Hostpath field of the volume with the AWS Elastic Block Store field.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Along with the volume ID and filesystem type.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - The volume storage will now be on AWS EBS.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Well, that's it about volumes in Kubernetes.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - We will now head over to discuss persistent volumes.
+- **File:** `125_Volumes in Kubernetes.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Next.
+
+### Persistent Volumes
+
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In the last lecture, we learned about volumes.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Now we will discuss persistent volumes in Kubernetes.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - When we created volumes in the previous section, we configured volumes within the pod definition file.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - So every configuration information required to configure storage for the volume goes within the pod definition file.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Now when you have a large environment with a lot of users deploying a lot of pods, the users would have to configure storage every time.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - For each pod, whatever storage solution is used, the users who deploys the pods would have to configure that on all pod definition files in his environment.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Every time a change is to be made, the user would have to make them on all of his pods.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Instead, you would like to manage storage more centrally.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - You would like it to be configured in a way that an administrator can create a large pool of storage, and then have users carve out pieces from it as required.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - That is where persistent volumes can help us.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - A persistent volume is a cluster wide pool of storage volumes configured by an administrator, to be used by users deploying applications on the cluster.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The users can now select storage from this pool using persistent volume claims.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - Let us now create a persistent volume.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - We start with the base template and update the API version.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Set the kind to persistent volume and name it PV Vol one.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Under the specs section, specify the access modes.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 17 | **Type:** Best Practice
+  - Access mode defines how a volume should be mounted on the hosts, whether in a read only mode or read write mode, etc. the supported values are read only, read write once or read write.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Mini mode.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - Next is the capacity.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Specify the amount of storage to be reserved for this persistent volume, which is set to one GB here.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - Next comes the volume type.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - We will start with the host path option that uses storage from the node's local directory.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Remember, this option is not to be used in a production environment.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - To create the volume, run kube control, create command and to list the created volume from the kube control.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Get persistent volume command.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Replace the host path option with one of the supported storage solutions.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - As we saw in the previous lecture like AWS Elastic Block Store, etc..
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Well, that's it on persistent volumes in this lecture.
+- **File:** `126_Persistent Volumes.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - In the next lecture, we will look at how we use persistent volume claims to claim the volume configured with persistent volumes.
+
+### Persistent Volume Claims
+
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - In the previous lecture, we created a persistent volume.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - Now we will try to create a persistent volume claim to make storage available to a pod.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Persistent volumes and persistent volume claims are two separate objects in the Kubernetes namespace.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - An administrator creates a set of persistent volumes, and a user creates persistent volume claims to use the storage.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Once the persistent volume claims are created, Kubernetes binds the persistent volumes to claims based on the request and properties set on the volume.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Every persistent volume claim is bound to a single persistent volume.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - During the binding process, Kubernetes tries to find a persistent volume that has sufficient capacity as requested by the claim and any other request.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Properties such as access modes, volume modes, storage class, etc.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - However, if there are multiple possible matches for a single claim and you would like to specifically use a particular volume, you could still use labels and selectors to bind to the right volumes.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Finally, note that a smaller claim may get bound to a larger volume if all the other criteria matches and there are no better options.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - There is a 1 to 1 relationship between claims and volumes, so no other claims can utilize the remaining capacity in the volume.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - If there are no volumes available, the persistent volume claim will remain in a pending state until newer volumes are made available to the cluster.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Once newer volumes are available, the claim would automatically be bound to the newly available volume.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - Let us now create a persistent volume claim.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - We start with a blank template, set the API version to v1, and kind to persistent volume claim.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - We will name it my claim under specification.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Set the access modes to read, write once and set resources to request the storage of 500MB.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Create the claim using cube control.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - Create command to view the created claim.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Run the cube control.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Get persistent volume claim command.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - We see the claim in a pending state.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - When the claim is created, Kubernetes looks at the volume created previously.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - The access modes match.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - The capacity requested is 500MB, but the volume is configured with one GB of storage.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Since there are no other volumes available, the persistent volume claim is bound to the persistent volume.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - When we run the Get volumes command again, we see the claim is bound to the persistent volume we created.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Perfect.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - To delete a PVC we run the kubectl delete persistent volume claim command.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - But what happens to the underlying persistent volume when the claim is deleted?
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - You can choose what is to happen to the volume.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - By default, it is set to retain meaning the persistent volume will remain until it is manually deleted by the administrator.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - It is not available for reuse by any other claims, or it can be deleted automatically.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - This way, as soon as the claim is deleted, the volume will be deleted as well.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Or a third option is to recycle.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - In this case, the data in the volume will be scrubbed before making it available to other claims.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 37 | **Type:** Warning/Pitfall
+  - However, note that this is an older option and is deprecated now because the Recycle controller originally did a best effort wipe by launching a tiny recycler pod that mounted the volume and ran a shell command like rm rf scrub star to clear files.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - It basically tried to do the admins manual cleanup for you with a simple file level delete.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - But this isn't sufficient in practice.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - It didn't guarantee secure erasure, didn't handle snapshots, or provide provider metadata, and only worked for certain entry volume plugins on cloud or block backends like EBS, Google Cloud PD, Azure Disk, or an network storage like NFS or Sis dri...
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Proper cleanup can involve unmount, detach, filesystem, reformat, snapshot, retain, policy handling, encryption, key rotation, or provider level delete calls.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - A plain rm rf leaves a inode metadata and may fail under permissions.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Because of these portability and security gaps, Kubernetes moved to a newer model.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - The modern approach is dynamic provisioning with a storage class and CSI drivers, which we will discuss next.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `127_Persistent Volume Claims.extraction.md` | **Entry:** 46 | **Type:** Troubleshooting
+  - Head over to the labs and practice configuring and troubleshooting persistent volumes and volume claims in Kubernetes.
+
+### Solution - Persistent Volume and Persistent Volume Claims (Optional)
+
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, so let's go through the lab on persistent volumes and persistent volume claims.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So, we have deployed a pod, inspect the pod, and wait for it to start running.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Let's do that.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - We have the web app pod and it's in running state.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - The application stores logs at location logapp.log/log/app.log.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So, view the logs.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So, for this, in order to view a file within the pod we'll do kubectl exec, and provide the pod name, and then the command.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So, cat log app.log.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Okay, so we're able to view the logs and we see that some of the events that are logged by the application.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Now, if the pod was to get deleted now, would you be able to view the logs?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So, let's check out where those logs are.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So, describe pod web app?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So, there are no other volumes configured.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So, you have the kube-api-access, which is the default volume, but there are no other volumes.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So, anything that's stored in the log app.log is stored within the container within the pod.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So, if the pod gets deleted, the logs get deleted as well.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Right, so, we're able to view the logs.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Now, are we're not going be able to view the logs.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - Now, configure a volume to store these logs at this path on the host.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So, currently all the logs are stored at /log/app.log within the pod or within the container.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Now, we would like to store those.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - We would like to use a volume to store those logs at var/log/webapp.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So, that's var/log/webapp on the host.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So, currently there's nothing here.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So, let's try and set up a volume.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Okay, so we're going to edit the pod.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So, we'll do kubectl edit on web app.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - And there are, there's a lot of information.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 30 | **Type:** Architecture
+  - So, here we have the volume mount, which is the default volume mount for accessing the the kube-api server.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And below we have the volumes, which is again, the default volume used for that.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So, we're just gonna add our own volume here.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So, we'll add, we'll call the the volume, log volume, because we're gonna use this to store the logs.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And this is going to be a host path.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And the path is going to be whatever path is given here, to var/log/webapp, var/log/webapp.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Okay, So we have the volume.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So, basically what's happening, what's gonna happen is when this part is recreated, and it's going to mount this directory.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - And we have to specify where it's gonna be mounted to.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - It is gonna create a volume out of that directory.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And then we have to specify where it's going to mount to it.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So, we're gonna add a volume mount.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And we'll call the mount path as it is above.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And that would be a log.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - And then we will have a name for the volume.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And the name of the volume is, log volume.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Okay?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - So, what's gonna happen is when the pod is recreated, it's going to create a volume which will store all data in this path on the host.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And we call this log volume.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - And then we can mount this volume within any container on this pod.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So, here, there's only one container.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So, under volume mounts we have the mount path and we're gonna specify the name of the volume and it's gonna mount that here.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So, basically this is going to be mount to this path within the container.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Okay, so, let's try and save that.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - It's a pod, it's not gonna allow us to save that.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So, we're gonna do a kubectl replace force.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Okay.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - Support is now recreated.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So, now let's check the path, at var/log/webapp.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Okay, and we can see that the file, the storage logs called app.log is in this path.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - We're gonna do app.log.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - We see the logs of the pod are indeed here.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So, the logs of the pod are now available on the host at this particular path.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - That indicates that that's working.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - Okay, so, the next task is to create a persistent volume with the given specification.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Let's go to the kubernetes documentation pages and find persistent volume, and go to persistent volumes.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And so, here, we have a template for a pod.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Persistent volume claim.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Persistent volume.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - But, this doesn't have enough information, so, I'm just gonna keep looking.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Okay, so this is a persistent volume.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - So, I'm going to get copy this much for your home and I'm going create a file called pv.yaml for persistent volume.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Okay.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - Then here we have pv-log.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - That's the persistent volume name.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - Then we have storage.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So, there's a 100 maybe, bytes.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - And then we have volume modes.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 78 | **Type:** Warning/Pitfall
+  - We don't need volume mode.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - We have access mode.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - And the access mode is read, write.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Many.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - And the persistent volume reclaim policy, we're going to be retained.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - Okay.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - And then the type is going to be host path.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - So, we're gonna, host path, and then specify the path, and that's going to be /pv/log.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - So, that's the path, Okay.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 87 | **Type:** Implementation Step
+  - So, let's create the file.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - Okay, so let's create it, let's check it out.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - We have the pv log, 100, and my capacity, read, write, many.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So, this indicates read, write many, and the reclaim policy is retained.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - Check our work.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Okay, now let us claim some of that storage for our application.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - So, create a persistent volume claim with a given specification.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So, let's find a persistent volume claim template.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So, we had one here.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Yeah, so right here we have persistent volume claims and we'll use this template.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 97 | **Type:** Warning/Pitfall
+  - So, we don't need the advanced selectors.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - Our use case is simple.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - So, we are just going to copy this much.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - So, let's do a pvc.yamal.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - If a persistent volume claim, the name is going to be claim-log-one, and access mode is going to be read, write.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - Once.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 103 | **Type:** Warning/Pitfall
+  - We don't need a volume mode, and the storage is gonna be 50 Mi.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - Okay, now we're gonna do a kubectl create minus half bc.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - Let's check out the status.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 106 | **Type:** Implementation Step
+  - Okay, so that's created.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 107 | **Type:** Implementation Step
+  - Let's go Next.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 108 | **Type:** Concept
+  - So, what is the state of the persistent volume claim?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 109 | **Type:** Concept
+  - If you look at the state, it is in a pending state.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 110 | **Type:** Concept
+  - So, that's that.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 111 | **Type:** Concept
+  - Now, what is the state of the persistent volume, or the state of the persistent volume?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 112 | **Type:** Concept
+  - It is available.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 113 | **Type:** Concept
+  - So, let's check, try it now, again.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 114 | **Type:** Concept
+  - So, it's in an available state.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 115 | **Type:** Concept
+  - So, why is the claim not bound to the available persistent volume?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 116 | **Type:** Concept
+  - So, we have a persistent volume which has a 100 megabytes of capacity.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 117 | **Type:** Implementation Step
+  - And then, we have the PVC, which requested about 50, but it's still in a pending state.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 118 | **Type:** Concept
+  - So, why is that?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 119 | **Type:** Implementation Step
+  - So, if you look at it, it's not a capacity mismatch because we know that when you create a persistent volume claim, if there's a volume that has higher capacity it's gonna bind that volume to that persistent volume claim.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 120 | **Type:** Concept
+  - So, that's not the case here.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 121 | **Type:** Concept
+  - We have the recurring policy set.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 122 | **Type:** Concept
+  - The name of these policies, the PV and PVC, does not really matter.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - The only other thing that it looks at is the access mode, right?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 124 | **Type:** Implementation Step
+  - So, if you look at the PV that we created, it had an access mode of rewrite many, and if you look at the PVC, it has rewrite once.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 125 | **Type:** Concept
+  - So, we're going to, and that's the reason.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 126 | **Type:** Concept
+  - So, access mode mismatch is the reason.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 127 | **Type:** Implementation Step
+  - Now, the next question is, update the access mode on the claim to bind it to the PV.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 128 | **Type:** Concept
+  - So, we're going to do an update on the claim.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 129 | **Type:** Concept
+  - So, we wanna change it to... ... so we wanna change the access mode on the PVC to read, write, many, which is on the PV.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 130 | **Type:** Concept
+  - Right, so, that's what is requested here.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 131 | **Type:** Concept
+  - Okay.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 132 | **Type:** Concept
+  - So, now we're going to do a replace force -f pvc.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 133 | **Type:** Concept
+  - Okay, now you requested for 50 megabytes, how much capacity is now available to the PVC?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 134 | **Type:** Concept
+  - So, let's look at that.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 135 | **Type:** Concept
+  - Lets do a kubectl get pv.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 136 | **Type:** Command
+  - 
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 137 | **Type:** Concept
+  - And, if you look at the PVC, the capacity that it has is 100 megabytes.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 138 | **Type:** Concept
+  - Now, update the web app part to use the persistent volume claim as it's storage.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 139 | **Type:** Concept
+  - So, what we are gonna do now is we're gonna replace host path with the persistent volume claim to use the persistent volume claim.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 140 | **Type:** Implementation Step
+  - Okay, so, but, before that we've created the PV to store the logs to use the host path at lspv/log.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 141 | **Type:** Concept
+  - So, right now there is nothing in there.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 142 | **Type:** Concept
+  - So, let's go ahead and edit the pod web app.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 143 | **Type:** Concept
+  - And what we're gonna do is, so, this is okay, the mount path, we're gonna leave it as is.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 144 | **Type:** Concept
+  - We're gonna go down and we're gonna change this from host path to persistent.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 145 | **Type:** Concept
+  - Let's see what that is.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 146 | **Type:** Concept
+  - So, if you look here.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 147 | **Type:** Best Practice
+  - Should be able to see how to use a persistent volume in a pod.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 148 | **Type:** Concept
+  - So, you have claim as volumes.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 149 | **Type:** Concept
+  - So, within volumes you use a persistent volume claims.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 150 | **Type:** Concept
+  - So, that's what we're looking for.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 151 | **Type:** Concept
+  - Okay.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 152 | **Type:** Concept
+  - And we have claim name.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 153 | **Type:** Warning/Pitfall
+  - So, we don't need these lines.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 154 | **Type:** Implementation Step
+  - And then, the claim name is going to be claim log one.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 155 | **Type:** Concept
+  - So, we have persistent log claim, claim name, and log one.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 156 | **Type:** Best Practice
+  - So, that should be it.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 157 | **Type:** Concept
+  - Let's replace the file.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 158 | **Type:** Concept
+  - Let's replace the pod forcefully.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 159 | **Type:** Concept
+  - Okay, so that is done.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 160 | **Type:** Concept
+  - Let's check our work.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 161 | **Type:** Concept
+  - All right, so now let's see, if you look at /pv/log, you see the logs there and you look at log app.log, you can see the logs of the application there.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 162 | **Type:** Implementation Step
+  - So, now, the PV is using a host path as the location for storing data, but then the PV is then claimed by the PVC, and then the PVC is configured as a volume for the pod, and then that's how it is mounted to the pod.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 163 | **Type:** Concept
+  - So, that's how this is working right now.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 164 | **Type:** Implementation Step
+  - Okay, so, the next question is what is the reclaim policy set on the persistent volume pv-log?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 165 | **Type:** Concept
+  - So, let's see, kubectl get pv pv-log.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 166 | **Type:** Concept
+  - And we can see that it is retained.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 167 | **Type:** Concept
+  - So, retain is the answer.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 168 | **Type:** Concept
+  - Now, what would happen to the PV if the PVC was destroyed?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 169 | **Type:** Concept
+  - So, we know that with the reclaim policy set to retain, the PV is going to be retained.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 170 | **Type:** Concept
+  - So, it's not going to be deleted along with the PVC.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 171 | **Type:** Concept
+  - So, the PV is deleted as well.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 172 | **Type:** Concept
+  - Now, the PV is made available again, No, it's not made available again, that would be recycling the PV scrub.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 173 | **Type:** Concept
+  - Now, the PV is not deleted, but not available.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 174 | **Type:** Concept
+  - So, it's not deleted, but it's not available either.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 175 | **Type:** Concept
+  - So, that's the status.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 176 | **Type:** Concept
+  - Now, try deleting the PVC and notice what happens.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 177 | **Type:** Concept
+  - Let's do that. kubectl pvc delete pvc claim log one.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 178 | **Type:** Concept
+  - So, let's wait for that to be deleted.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 179 | **Type:** Concept
+  - Okay, so, it's not going to get deleted because it's actually going to be stuck.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 180 | **Type:** Concept
+  - Let's, let's look at the status in a new terminal.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 181 | **Type:** Concept
+  - So, let's do a kubectl get pvc.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 182 | **Type:** Concept
+  - And we see that it's in a terminating state, so, it's stuck in a terminating state.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 183 | **Type:** Concept
+  - So, let's do a describe.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 184 | **Type:** Concept
+  - And yeah, so you see it's stuck in terminating state for the last 30 seconds or so.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 185 | **Type:** Concept
+  - So, why is the PVC stuck in a terminating state?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 186 | **Type:** Concept
+  - So, that's obviously because it is associated as a volume with a pod.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 187 | **Type:** Concept
+  - So, it is being used by a pod.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 188 | **Type:** Concept
+  - That's the reason it's stuck in a terminating state.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 189 | **Type:** Concept
+  - Now, let's now delete the web app pod and let's go ahead and do that.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 190 | **Type:** Concept
+  - Do that.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 191 | **Type:** Concept
+  - So, let's delete pod web app, and let's see what happens.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 192 | **Type:** Concept
+  - Okay, so, that was deleted and we see we're now unstuck and the PV was deleted as well.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 193 | **Type:** Concept
+  - Check that out.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 194 | **Type:** Concept
+  - Yep.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 195 | **Type:** Concept
+  - So, the pod was deleted and the PVC was deleted as well.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 196 | **Type:** Concept
+  - So, what is the state of the PVC now?
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 197 | **Type:** Concept
+  - It is deleted.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 198 | **Type:** Concept
+  - And what is state of the PV now.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 199 | **Type:** Concept
+  - Let's try that.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 200 | **Type:** Concept
+  - We see that it is in a released state.
+- **File:** `130_Solution - Persistent Volume and Persistent Volume Claims (Optional).extraction.md` | **Entry:** 201 | **Type:** Concept
+  - Okay, so, yeah, that's the end of this lab.
+
+### Storage Classes
+
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will look at storage classes.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 2 | **Type:** Comparison
+  - In the previous lectures, we discussed about how to create PVS and then create PVCs to claim that storage and then use the PVCs in the Pod definition files as volumes.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - In this case, we create a PVC from a Google Cloud persistent disk.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - The problem here is that before this PV is created, you must have created the disk on Google Cloud.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Every time an application requires storage, you have to first manually provision the disk on Google Cloud and then manually create a persistent volume definition file using the same name as that of the disk that you created.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - That's called static provisioning volumes.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - It would have been nice if the volume gets provisioned automatically when the application requires it, and that's where storage classes come in.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - With storage classes, you can define a provisioner, such as Google Storage, that can automatically provision storage on Google Cloud and attach that to pods.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - When a claim is made, that's called dynamic provisioning of volumes.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - You do that by creating a storage class object with the API version set to storage IO v1.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Specify a name and use provisioner as kubernetes.io/pd.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So going back to our original state where we have a pod using a PVC for storage and the PVC is bound to a PV, we now have a storage class.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - So we no longer need the PV definition because the PV and any associated storage is going to be created automatically when the storage class is created for the PVC to use the storage class we defined, we specify the storage class name in the PVC d...
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - That's how the PVC knows which storage class to use.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Next time a PVC is created, the storage class associated with it uses the defined provisioner to provision a new disk with the required size on GCP, and then creates a persistent volume and then binds the PVC to that volume.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So remember that it still creates a PVC.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 17 | **Type:** Warning/Pitfall
+  - It's just that you don't have to manually create PVC anymore.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - It's created automatically by the storage class.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - We used the GCE provisioner to create a volume on GCP.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - There are many other provisioners as well, such as for AWS, EBS, Azure File, Azure Disk, CIFs, Portworx, Scaleio, and so on With each of these provisioners, you can pass in additional parameters such as the type of disk to provision the replicatio...
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - You can specify the type which could be standard or SSD.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - You can specify the replication mode which could be none or regional PD.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - So you see you can create different storage classes, each using different types of disks.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 24 | **Type:** Exam Tip
+  - For example, a silver storage class with the standard disks, a gold class with SSD drives, and a platinum class with SSD drives and replication.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - And that's why it's called storage class.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - You can create different classes of service.
+- **File:** `132_Storage Classes.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - Next time you create a PVC, you can simply specify the class of storage you need for your volumes.
+
+### Why Stateful Sets_
+
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: In this lecture, we will look at stateful sets in Kubernetes.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - Before we talk about stateful sets, we must first understand why we need it.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - Why can we just live with deployments?
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So let's start from the very basics.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - So for a minute, let's keep aside everything that we learned so far such as deployments or Kubernetes, or Docker, or containers, or virtual machines.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Let's just start with a simple server, our good old physical server.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - And we are tasked to deploy a database server.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - So we install and set up MySQL on the server and create a database.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 9 | **Type:** Operational Insight
+  - Our database is now operational.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Other applications can now write data to our database.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 11 | **Type:** Troubleshooting
+  - To withstand failures, we are tasked to deploy a high availability solution so we deploy additional servers and install MySQL on those as well.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - We have a blank database on the new servers.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So how do we replicate that data from the original database to the new databases on the new servers?
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 14 | **Type:** Exam Tip
+  - Now, before we get into that, for the sake of this lecture, we will use MySQL replication as an example.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 15 | **Type:** Warning/Pitfall
+  - Now, you don't have to be a database admin or be an expert on MySQL to follow through.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - I'm going to simplify the whole MySQL replication concepts within a few slides.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And that also means that I'm not going to get into the nitty gritty details of my SQL replication and I'm not going to talk about how the commands or configuration or anything works, right?
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - All we need to understand from this exercise is the high level procedure of setting up a database replication and the requirements from a deployment perspective.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - There are many ways of doing this and we're just going to talk about one.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So back to our question on how do we replicate the database to the databases in the new server.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - There are different topologies available, the most straightforward one being a single master multislave topology where all rights come into the master server and reads can be served by either the master or any of the slave servers.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 22 | **Type:** Best Practice
+  - So the master server should be set up first before deploying the slaves.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - Once the slaves are deployed, perform an initial clone of the database from the master server to the first slave.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - After the initial copy, enable continuous replication from the master to that slave so that the database on the slave node is always in sync with the database on the master.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - We then proceed to set up the second slave.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - We could do it the same way where we clone data from the master, but every time you do that, it's going to impact the resources on the master, especially the network interface.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - Since we have a copy of the master's data on the first slave, it is better to just copy the data from it instead of the master.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - So we wait for slave one to be ready and then clone data from slave one to slave two.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - And finally, we enable continuous replication on slave two from the master.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - Note that both these slaves are configured with the address of the master host.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - When replication is initialized, you point the slave to the master with a master's host name or address.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - That way, the slaves know where the master is.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - So to summarize, we want the master to come up first and then the slaves.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - We want to clone data from master to slave one first and then enable replication from master to slave one and then wait for slave one to be ready, and then clone data from slave one to slave two, and then enable continuous replication from master ...
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - So this is the high level plan for deploying a MySQL cluster.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - Let us now go back to the world of Kubernetes and containers and try to deploy this setup.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - Now, in the Kubernetes world, we have learned so far that such kind of a deployment in each of these instances, including the master and slaves, are a POD, part of a deployment.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - That way, we can easily scale it up or down as required.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - In step one, we want the master to come up first and then the slaves.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And in case of the slaves, we want slave one to come up first, perform an initial clone of data from the master.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - And in step four, as you can see, we want slave two to come up next and clone data from slave one.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - Now, with deployments, you can't guarantee that order.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - With deployments, all PODs, part of the deployment come up at the same time.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - So the first step can't be implemented with a deployment.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - In the following steps while cloning data from master to slave one or slave one to slave two or while enabling continuous replication on the slaves in steps two, three, five, six, and seven, we must be able to differentiate the master and slave PO...
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So we want to designate one of these PODs as master and others as slave.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So we need the master to have a constant host name or address, one that does not change.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - We cannot rely on the IP address as we know by now that IP addresses of PODs are dynamically assigned and they may change when the POD gets recreated.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So we definitely need a static host name.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - As we have seen while working with deployments, the PODs come up with random names, so that won't help us here.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - Even if we decide to designate one of these PODs as the master and use its name to configure the slaves, if that POD crashes and the deployment creates a new POD in its place, it's going to come up with a totally new POD name.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And now, the slaves are pointing to an address that does not exist.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - And because of all of these, the remaining steps can be executed.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And that's where stateful sets come in.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - Stateful sets are similar to deployment sets as in they create PODs based on a template.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - They can scale up and scale down.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 57 | **Type:** Comparison
+  - They can perform rolling updates and rollbacks, but there are some differences.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - With stateful sets, PODs are created in a sequential order.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - After the first POD is deployed, it must be in a running and ready state before the next POD is deployed.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - So that helps us ensure that the master is deployed first and then slave one and then slave two.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - So that helps us with steps one and four.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - Stateful sets assign a unique original index to each POD, a number starting from zero for the first POD and increments by one.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Each POD gets a unique name derived from this index combined with the stateful set name.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So the first POD gets MySQL dash zero, the second gets MySQL dash one, the third gets MySQL dash two, et cetera.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So no more random names.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - You can rely on these names going forward.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - You can be sure that the first POD in any stateful set is always going to be the name of the stateful set followed by dash zero.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So you can always use that as the master in any setup.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - The POD MySQL dash two knows that it has to perform an initial clone of data from the POD MySQL dash one.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - Say if you were to scale up the deployment by deploying another POD, MySQL dash three, for instance, then it would know that it can perform a clone from MySQL dash two.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - To enable continuous replication, you can now point the slaves to the master at MySQL dash zero.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 72 | **Type:** Troubleshooting
+  - Even if the master fails and the POD is recreated, it would still come up with the same name.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - Stateful sets maintain a sticky identity for each of their PODs, and these help with the remaining steps.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - The master is now always the master and available at the address MySQL dash zero.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - And that is why you need stateful sets.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Well, that's all for now.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - And in the upcoming lectures, we will talk a lot more about creating stateful sets, headless services, what they are and why do you need headless services.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - And we'll talk about persistent volumes and much more.
+- **File:** `134_Why Stateful Sets_.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - So I'll see you in the next lectures.
+
+### Stateful Sets Introduction
+
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: In this lecture we will talk about, StatefulSets in Kubernetes.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Now, in the previous lecture we discussed why you need a StatefulSet.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Note that you might not always need a StatefulSet.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - It really depends on the kind of application you're trying to deploy.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - If the instances need to come up in a particular order, if the instances need a stable name, et cetera.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - So once you evaluate your requirements and decide that StatefulSet is the right choice for you, you can create a StatefulSet, just like how you created a deployment.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Create a deployment definition file, with a pod definition template inside it.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - And then all you need to do, is change the kind to StatefulSet instead of deployment.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Note that both SS in the StatefulSet is uppercase.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Apart from that, a StatefulSet also requires a service name specified.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - You must specify the name of a headless service, we will discuss about headless services and why you need to specify a service name here in the upcoming lecture.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - As discussed before, when you create a StatefulSet using this definition file, it creates pods one after the other, that's ordered graceful deployment.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now each pod gets a stable, unique DNS record on the network that any other application can use to access a pod.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - When you scale the StatefulSet, it scales in an ordered graceful fashion.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Where each pod comes up, becomes ready and only then the next one comes up.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - This helps when you want to scale MySQL databases, as each new instance can clone from the previous instance.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - It works in the reverse order when you scale it down.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - The last instance is removed first, followed by the second last one.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - The same is true on termination.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - When you delete a StatefulSet, the pods are deleted in the reverse order.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 21 | **Type:** Operational Insight
+  - Now, that's the default behavior of a StatefulSet, but you can override that behavior to cause StatefulSet to not follow an ordered launch.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - But still have the other benefits of StatefulSet such as a stable and unique network ID.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - For that, you could set the pod management policy field to parallel to instruct StatefulSet to not follow an ordered approach.
+- **File:** `135_Stateful Sets Introduction.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Instead deploy all parts in parallel, the default value of this field is ordered ready.
+
+### Headless Services
+
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Presenter: Let us now look at headless services.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - In the previous lecture, we said that, when you create a stateful set, it deploys one pod at a time.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Gets an ordinal index, and that each pod has a stable, unique name.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Which is mysql-0, -1 and -2.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - And so we can point the slaves, to reach the master at mysql-0.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - But there is something missing here.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - From what we know about services, and DNS specifically in Kubernetes.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - The way you point one application, within the cluster to another application, is through a service.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - So if we had a web server, then to make, the database server accessible, to the web server.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - We create a service for the database.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - We name it mysql.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The service, as we know, acts as a load balancer.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - The traffic coming into the service, is balanced across all the pods in the deployment.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The service has a cluster IP, and a DNS name associated with it.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Which usually goes like, mysql.default.service.cluster.local.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So any other application within the environment, like a web server for instance, can now use this DNS name, to reach the mysql database.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Now remember in the previous lecture, we said that since this is a master slave topology, the reads could be served by master or slaves.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - But the writes must only be processed by the master.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - So it is okay for the web server, to read from the mysql service we created, but you can't write to that service, as it's going to load balance the writes, to all pods under the service.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And that's not what we want for our mysql cluster.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So you wanna point the web server, to the master database server only.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - But how do you do that?
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So what's one way to reach the master pod directly?
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - If you know the IP address of the master pod, you can configure that in the web server.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - But as we know, IP addresses are dynamic, and can change if the pod is recreated.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So we can't use that.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - We also learned that each pod, can be reached through its DNS address, but the pod's DNS address is created, from its IP address, something like this.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So we can't use that either.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - What we need is a service that, does not load balance requests, but gives us a DNS entry to reach each pod.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And that's what a headless service is.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - A headless service is created like a normal service, but it does not have an IP of its own.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Like a cluster IP, for a normal service.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - It does not perform any load balancing.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - All it does is create DNS entries, for each pod using the pod name and a subdomain.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - So when you create a headless service, say with the name mysql-h each pod gets a DNS record created, in the form, pod name.the name of the headless service .namespace followed by the cluster domain.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - In this case, each pod gets pod name.headless service, which happens to be the, mysql-0.mysql-h .default.service.cluster.local.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - The web application can now point to the DNS entry, for the master mysql server at, mysql-0.msql-h.defalult .svc.cluster.local.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 38 | **Type:** Best Practice
+  - And that should always work.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - That DNS entry will always point, to the master pod in the mysql deployment.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - To create a headless service, create a service definition file, as we did while creating services.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Use the API version v1, kind service.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Name it mysql-h, for headless service.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Specify the ports, the selector to select the pods.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - What differentiates a headless service, from a normal service, is setting cluster IP to none.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - Creating the service, using this definition file, now creates a headless service.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - When the headless service is created, the DNS entries are created for pods, only if the two conditions are met, while creating the pod.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Under the spec section of a pod definition file, you have two optional fields, host name and subdomain.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - You must specify the subdomain to a value, the same as the name of the service.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - When you do that, it creates a DNS record, for the name of the service to point, to the pod.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - However it still doesn't create, A records for individual pods.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - For that, you must specify the host name option, in the pod definition file.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - Only then does it create a DNS record, with a pod name as well.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - So those are two properties that, are required on the pod for a headless service, to create a DNS record for the pod.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 54 | **Type:** Exam Tip
+  - Here I have shown an example of a pod definition file.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Now let's see how this works.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - When you deploy the pod as part of a deployment, by default if there is no host name, or subdomain specified the deployment does not, add a host name or subdomain to the pod.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - So the headless service does not create, A records for the pods.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - If we specified the host name or subdomain, in the pod template section, like we did for the pod in the previous slide, then it assigns the same host name and subdomain for all the pods.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - Because a deployment simply duplicates, all the properties for the same pod.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - And that results in creating DNS A records for all pods, but with the same name.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Mysql-pod.msql-h .default.service.cluster.local But all the pods now have the same host name.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So this doesn't help us meet our requirement, of addressing the pods separately, with separate DNS records.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - And that is yet another way, how a stateful set, differs from a deployment.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 64 | **Type:** Warning/Pitfall
+  - When creating a stateful set, you do not need to specify a subdomain or host name.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - The stateful set automatically assigns, the right host name for each pod, based on the pod name.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And it automatically assigns the right subdomain based on the headless service name.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - But wait, how does a stateful set know, which headless service we are using?
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - There could be many headless services, created for different applications.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - How would it know which is the headless service, we created for this application?
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - When creating a stateful set, you must specify the service name explicitly, using the service name option, in the stateful set definition file.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - That's how it knows what subdomain to assign to the pod.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - The stateful set takes the names, that we specified and adds that, as a subdomain property, when the pod is created.
+- **File:** `136_Headless Services.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - All pods now get a separate DNS record created.
+
+### Storage in StatefulSets
+
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: This lecture, we will talk about storage in stateful sets.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Before I begin, let me quickly recap what we know already about storage in Kubernetes.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - It's only going to take a minute, so bear with me.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And I think this is important.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Earlier we discussed that with persistent volumes.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - We create volume objects and Kubernetes which are then claimed by persistent volume claims and finally used in pod definition files within pods.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Now, that's a single persistent volume mapped to a single persistent volume claim to a single pod definition file.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Now with dynamic provisioning we then said with storage class definition we take out the manual creation of persistent volumes and use storage provisioners to automatically provision volume on cloud providers.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - Now the PV is created automatically.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - We still create a PVC manually and associate that to a pod.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Now this works just fine for a pod with a volume.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - How does that change with deployments or stateful sets?
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - With stateful sets, when you specify the same PVC under the pod definition, all pods created by that stateful set tries to use the same volume.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 14 | **Type:** Exam Tip
+  - Now, that is possible if that is what is desired as in you really want multiple pods or multiple instances of your application to share and access the same storage.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - That's how you would configure it.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And that also depends on the kind of volume created and the provision are used.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 17 | **Type:** Exam Tip
+  - Note that, not all storage types support that operation read or write from multiple instances at the same time.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Now, what if you want separate volumes for each pod?
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - As in the My SQL replication use case that we have been talking about?
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 20 | **Type:** Warning/Pitfall
+  - The pods don't want to share data.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Instead, each pod needs its own local storage.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Each instance has its own database, and the replication of data between the databases is done at the database level.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - So then each pod needs a PVC for itself.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - A PVC is bound to a pv, so each PVC needs a pv.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 25 | **Type:** Comparison
+  - And of course, these PVS can be created from a single or different storage classes.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - So how do you automatically create a PVC for each part in a stateful set?
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - You can achieve that using a volume claim template.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - A volume claim template is really a persistent volume claim but templateized, it just means instead of creating a PVC manually and then specifying it in the stateful set definition file you move the entire PVC definition into a section named volum...
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Volume claim templates is an array.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 30 | **Type:** Exam Tip
+  - So you can specify multiple templates here.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So how does it look now?
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - We now have a stateful set with volume claim templates and a storage class definition with the right provisioner for gce.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - When the stateful set is created first it creates the first part, and during the creation of the pod, a PVC is created.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - The PVC is associated to a storage class so the storage class provisions a volume on GCP and then creates a PV and associates the PV with the volume and binds the PVC to the pv.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - Then the second part is created the second part creates a pvc.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - Then the stories, class provisions a new volume associates that to a PV and binds the PV to the PVC and so on, for the third part.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - What if one of these pods fail and is recreated or rescheduled onto a note?
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 38 | **Type:** Warning/Pitfall
+  - State full sets do not automatically delete the PVC or the associated volume to the pod.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Instead, it ensures that the pod is reattached to the same PVC that it was attached to before.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Thus, state stateful sets ensure stable storage for pots.
+- **File:** `137_Storage in StatefulSets.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Well, that's it for now, and thank you so much for listening.

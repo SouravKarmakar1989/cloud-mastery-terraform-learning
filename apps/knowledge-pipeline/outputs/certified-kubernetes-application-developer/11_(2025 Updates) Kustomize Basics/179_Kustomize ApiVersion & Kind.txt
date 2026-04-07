@@ -1,0 +1,1 @@
+(gentle music) Instructor: Just like any other Kubernetes resource file, you can set the apiVersion and kind properties on a kustomization.yaml file. They are technically optional, kustomize will pick up default values, but I recommend that you hard code these values just in case there's any kind of breaking changes in the future.

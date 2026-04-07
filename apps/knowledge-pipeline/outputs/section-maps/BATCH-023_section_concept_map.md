@@ -1,0 +1,1257 @@
+# Section Concept Map: BATCH-023
+
+## Section
+- Course: `certified-kubernetes-application-developer`
+- Section: `06_POD Design`
+
+## Source Files Used
+- `096_Labels, Selectors and Annotations.extraction.md`
+- `098_Solution - Labels and Selectors (optional).extraction.md`
+- `099_Rolling Updates & Rollbacks in Deployments.extraction.md`
+- `102_Solution - Rolling Updates (Optional).extraction.md`
+- `103_Deployment Strategy - Blue Green.extraction.md`
+- `104_Deployment Strategy - Canary.extraction.md`
+- `106_Solution_ Deployment strategies.extraction.md`
+- `107_Jobs.extraction.md`
+- `108_CronJobs.extraction.md`
+- `110_Solution - Jobs and Cronjobs (optional).extraction.md`
+
+## Concept Groups
+
+### Labels, Selectors and Annotations
+
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - What do we know about labels and selectors already?
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Labels and selectors are a standard method to group things together.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Say you have a set of different species.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - A user wants to be able to filter them based on different criteria, such as based on their class or kind, if they are domestic or wild, or say by their color and not just group, you want to be able to filter them based on a criteria such as all gr...
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Whatever that classification may be, you need the ability to group things together and filter them based on your needs.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And the best way to do that is with labels.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Labels are properties attached to each item, so you add properties to each item for their class.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Kind and color selectors help you filter these items.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - For example, when you say class equals mammal, we get a list of mammals.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And when you say color equals green, we get the green mammals.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - We see labels and selectors used everywhere, such as the keywords you tag to YouTube videos or blogs that help users filter and find the right content.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - We see labels added to items in an online store that help you add different kinds of filters to view your products.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So how are labels and selectors used in Kubernetes?
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - We have created a lot of different types of objects in Kubernetes pods, services, replica sets, deployments, etc. for Kubernetes.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - All of these are different objects.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Over time, you may end up having hundreds or thousands of these objects in your cluster.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - Then you will need a way to filter and view different objects by different categories, such as to group objects by their type or view objects by application or by their functionality, whatever it may be.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - You can group and select objects using labels and selectors for each object.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Attach labels as per your needs like app, function, etc..
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - Then, while selecting, specify a condition to filter specific objects.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 21 | **Type:** Exam Tip
+  - For example, app equals app one.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So how exactly do you specify labels in Kubernetes in a Pod definition file under metadata?
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - Create a section called labels.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Under that, add the labels in a key value format like this.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - You can add as many labels as you like.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - Once the pod is created to select the pod with labels, use the Kube control get pods command along with the selector option and specify the condition like app equals app one.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Now this is one use case of labels and selectors.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 28 | **Type:** Operational Insight
+  - Kubernetes objects use labels and selectors internally to connect different objects together.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 29 | **Type:** Exam Tip
+  - For example, to create a replica set consisting of three different parts, we first label the part definition and use selector in a replica set to group the parts in a replica set definition file.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - You will see labels defined in two places.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Note that this is an area where beginners tend to make a mistake.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - The labels defined under the templates section are the labels configured on the pods.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - The labels you see at the top are the labels of the replica set itself.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - We're not really concerned about the labels of the replica set for now, because we are trying to get the replica set to discover the pods.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - The labels on the replica set will be used.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - If you were to configure some other object to discover the replica set.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - In order to connect the replica set to the pods, we configure the selector field under the Replica set specification to match the labels defined on the pod.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - A single label will do if it matches correctly.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - However, if you feel there could be other pods parts with the same label, but with a different function.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - Then you could specify both the labels to ensure that the right parts are discovered by the replica set on creation.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - If the labels match, the replica set is created successfully.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - It works the same for other objects like a service.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - When a service is created, it uses the selector defined in the service definition file to match the labels set on the pods in the replica set definition file.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Finally, let's look at annotations.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - While labels and selectors are used to group and select objects, annotations are used to record other details for informatory purpose.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 46 | **Type:** Exam Tip
+  - For example, tool details like name version, build information, etc. or contact details, phone numbers, email IDs, etc. that may be used for some kind of integration purpose.
+- **File:** `096_Labels, Selectors and Annotations.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Well, that's it for this lecture on labels and selectors and annotations, head over to the Coding Exercises section and practice working with labels and selectors.
+
+### Solution - Labels and Selectors (optional)
+
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hey, in this video, we're gonna walk through the practice test for labels and selectors.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the question is, we have deployed a number of pods.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - They are labeled with a tier ENV and BU.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And how many pods exist in the dev environment?
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So we have to use selectors.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - So first let's do a get pods.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And we see that there are a number of pods.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Now we've got to filter it and identify the pods that are in the dev environment.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So I'm assuming ENV is for environment.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So that's the label.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - And the, so this is the key and this is the value.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So if we have to find pods using the selector and then we'll say ENV equals dev.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And we see that these are the pods in the dev environment.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So that's 1, 2, 3, 4, 5, 6, 7, 7 of them.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - If you want to find So now let's say since there are just seven, it's easy to for us to just count.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - But let's say there are a lot of them there that now where it becomes difficult to count mentally, one thing you could do is just do a word count, right?
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So you could do a word count dash L.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Now the problem with this is this also counts this top line which is the header.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So there's a way to print this without the headers and that's using the no headers option.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And when you run that you just get the output without the header.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - And then we can do a word count on that.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And that's seven.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So seven is the answer here.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Okay, so the next question is how many pods are in the finance business unit?
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So we saw that the that label key is BUS for business unit.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - And the business unit, we are looking at is finance.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And we'll just use same command for this.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And this time is six.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Okay?
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And how many objects are in the prod environment including pods ReplicaSets and any other objects.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So let's use the same command and change the labels.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So the environment is prod and now we are only listing the pods.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So to list all objects what you could do is give all instead of pods So all lists all the objects in that name space.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So here we have pods, we have surveys, and we have replica sets, right?
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So if you count this, that's, let's do a word count.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - And so that's number seven.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So there are seven objects.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - And then the next question is to identify the pod which is part of the prod environment, the finance BU and the front end tier.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So one that has all of it.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So the environment is prod.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Then we can just add additional labels separated by a comma.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - BU equals finance and tier is front end.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Okay?
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So that happens to be this particular pod, which is, it starts with ZZXTF.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - It's this one right here.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Okay?
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - The final question is about, again, labels.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So there is a file called ReplicaSet definition file.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - And the request is to create the ReplicaSet.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 50 | **Type:** Troubleshooting
+  - And, but there's an issue with this, so we've got to fix it.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So let's try creating it.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Okay?
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And it says the ReplicaSet is invalid.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Invalid value selector does not match template labels.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So selector is this and template labels, so this template and template labels is this.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 56 | **Type:** Troubleshooting
+  - So the error message is that this does not match this.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Now we know that for ReplicaSet to manage the pod so this is basically the pod definition.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - The ReplicaSet needs to have these two match otherwise it won't be able to manage the pod.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 59 | **Type:** Troubleshooting
+  - So that's the validation error here.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 60 | **Type:** Troubleshooting
+  - So we're gonna fix this by changing this to the value below.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - Save that and let's create pod, sorry the ReplicaSet and it's created.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - That's verify creation.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Yep, that's working.
+- **File:** `098_Solution - Labels and Selectors (optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Okay, so that's the end of this lab.
+
+### Rolling Updates & Rollbacks in Deployments
+
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - In this lecture we will talk about updates and rollbacks in a deployment.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - Before we look at how we upgrade our application, let's try to understand rollouts and versioning in a deployment.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - When you first create a deployment it triggers a rollout.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - A new rollout creates a new replica set, which is recorded as a new deployment revision in the future when the application is upgraded, meaning when the container version is updated to a new one, a new rollout is triggered and a new deployment rev...
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - This helps us keep track of the changes made to our deployment, and enables us to roll back to a previous version of deployment if necessary.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - You can see the status of your rollout by running the command kube control rollout status, followed by the name of the deployment.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - To see the revisions and history of rollout, run the Kube control rollout history command followed by the deployment name, and this will show you the revisions and history of our deployment.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - There are two types of deployment strategies.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - Say for example you have five replicas of your web application instance deployed.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - One way to upgrade these to a newer version is to destroy all of these, and then create newer versions of application instances.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Meaning first destroy the five running instances and then deploy five new instances of the new application version.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The problem with this, as you can imagine, is that during the period after the older versions are down and before any newer version is up, the application is down and inaccessible to users.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - This strategy is known as the recreate strategy, and thankfully this is not the default deployment strategy.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 14 | **Type:** Warning/Pitfall
+  - The second strategy is where we do not destroy all of them at once.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Instead, we take down the older version and bring up a newer version one by one.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - This way the application never goes down and the upgrade is seamless.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 17 | **Type:** Warning/Pitfall
+  - Remember, if you do not specify a strategy while creating the deployment, it will assume it to be rolling.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Update.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - In other words, rolling update is the default deployment strategy.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So we talked about upgrades.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - How exactly do you update your deployment?
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - When I say update it could be different things, such as updating your application version by updating the version of Docker containers used, updating their labels, or updating the number of replicas, etc. since we already have a deployment definit...
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - We run the kube control apply command to apply the changes.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - A new rollout is triggered and a new revision of the deployment is created.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - But there is another way to do the same thing.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - You could use the kube control set image command to update the image of your application.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - But remember, doing it this way will result in the deployment definition file having a different configuration.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So you must be careful when using the same definition file to make changes in the future.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 29 | **Type:** Comparison
+  - The difference between the recreate and rolling update strategies can also be seen when you view the deployments in detail.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - From the cube control.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Describe deployment command to see the detailed information regarding the deployments.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - You will notice when the recreate strategy was used.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - The events indicate that the old replica set was scaled down to zero first, and then the new replica sets scaled up to five.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - However, when the rolling update strategy was used, the old replica set was scaled down one at a time, simultaneously scaling up the new replica set one at a time.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - Let's look at how a deployment performs an upgrade under the hood when a new deployment is created, say, to deploy five replicas, it first creates a replica set automatically, which in turn creates the number of pods required to meet the number of...
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - When you upgrade your application, as we saw in the previous slide, the Kubernetes deployment object creates a new replica set under the hood and starts deploying the containers there.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - At the same time taking down the pods in the old replica set following a rolling update strategy.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - This can be seen when you try to list the replica sets using the Kube control get replica sets command.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Here we see the old replica set with zero pods and the new replica set with five parts.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Say for instance, once you upgrade your application, you realize something isn't very right.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Something's wrong with the new version of build you used to upgrade.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So you would like to roll back your update.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - Kubernetes deployments allow you to roll back to a previous revision To undo a change.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - Run the kube control rollout undo command followed by the name of the deployment.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - The deployment will then destroy the pods in the new replica set and bring the older ones up in the old replica set, and your application is back to its older format.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 46 | **Type:** Comparison
+  - When you compare the output of the cube control, get replica sets command before and after the rollback.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 47 | **Type:** Comparison
+  - You will be able to notice this difference before the rollback.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - The first replica set had zero pods and new replica set had five pods, and this is reversed after the rollback is finished.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - To summarize the commands real quick, use the cube control create command to create the deployment.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - Get deployments command to list the deployments.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - Apply and set image commands to update the deployments and rollout status command to see the status of rollouts and rollout.
+- **File:** `099_Rolling Updates & Rollbacks in Deployments.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - Undo command to roll back a deployment operation.
+
+### Solution - Rolling Updates (Optional)
+
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, so in this lab we're going to look at rolling updates and rollbacks.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So rolling updates mainly.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So I'm going forward, I'm going to try and use the alias K for kubectl.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So I've already set an alias K for, for kubectl, so I'm gonna try and use that going forward.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - So we have deployed a simple web application inspect the pods and services.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So let's do, get pod.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So there seems to be a front end, a set of front end pods.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Most likely there is a deployment we look at.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - So there's a front end deployment which deploys for pods, then wait for the application to fully deploy and view the application using the link called the back portal.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So there is a link here you can click to view the application and opens it up in a new window.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - It's called, it just says, "Hello, front end moment".
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Okay, so let's, let's look at the first or second question.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So what is the current color of the web application?
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So if you look here, it is blue in color.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So it's blue.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 16 | **Type:** Exam Tip
+  - Now run the script named "Cold Test" to send multiple requests to the web application.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So we have roll test here.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So I'll run that.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And as you can see, all it does is it paints the application and returns to color.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So the color is blue and it just keeps running that for a few seconds.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So that's, that's done.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 22 | **Type:** Exam Tip
+  - So we're gonna use this script to run tests on to kind of simulate accessing the web application by now either like multiple users, so, or, or sending multiple requests to the web application.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So we'll, we'll use that to basically just do a small round of tests on, on the, on the application.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Now inspect the deployment and identify the number of pods deployed by it.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - So we just looked at that and we saw that creates four parts.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So it's four.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - That's the answer here.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - Now what container image is used to deploy the application?
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - So let's look at the deployment in more detail and content.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And here we have the pod template.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - You have containers, image.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - The image is codecloud/webappcolorv1.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So it's this one right here.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - That's the image we've used to deploy the application.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - Now inspect the deployment and identify the current strategy.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So if you look at this we have the, the strategy type given here and that is rolling update.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So that's, that's the rolling update is the current strategy.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Now, if you were to deploy, if you were to upgrade the application, now, what would happen?
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So we know that the rolling update takes down one pod at a time and brings up the new pod.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So it does not wait, it does not take all of it down and, and bring the new ones up.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So answer here is all ports are taken down before upgrading.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - No, that's not the correct one.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Ports are upgraded a few at a time.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So that's the correct one.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - Now let us try that, upgrade the application by setting the image on deployment to Code Cloud, web app, color V2.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So we're going to update the image.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Now, one way to do that is you could do a kubectl edit and deployment and front end and then go here and change the image.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Another way to do that is just using the kubectl set command.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So you could do a set image, run the help to find that out.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So that's a kubectl set image.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - You can, you can say deployment, deployment name and then the container name and the image, right?
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So let's try that.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - So that's kubectl set image or the deployment.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - The deployment name is front end and the container name.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - We need to find out the container name.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - So let's do a deploy front end.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - The container name is "Sample Web App".
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Okay, so let's do that again.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 59 | **Type:** Command
+  - 
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - And that's updated.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Let's make sure it's updated from the describe command again.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And we see that the image is set to V2.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Okay, that's success.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So let's run the curl test again and see what we're seeing.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So we are still seeing blue, but we see green occasionally.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So we're, so there's a lot of blue and there's, there's some green.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - So green is the new version that we have deployed.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - And blue, blue is the older version.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - And now we, we see, we have a lot of green, right?
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - So if you look at this, there was a lot of blue at first and then there's some green and then there's green and blue at one point of time.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - And then we just have green.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - So that's how it's up, updated, the application deployment.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So that's the, the, the rolling update.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - Now up to how many parts can be down for upgrade at a time.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Consider the current strategy settings.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So if you look at this, the strategy type is rolling update which we have already seen.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - There's rolling updates, strategy, the additional details here.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So 25% max unavailable.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So that means it's going to take down only 25% of the pods at a time before bringing the new ones up.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So you have four replicas and 25% of that is, is just one.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - So let's select one.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - Now change the deployment strategy to recreate and delete and recreate the deployment if if necessary.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - So let's go ahead and try and change the deployment strategy.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - So let's do a kubectl edit deployment content and we'll just go here and we'll just change this strategy type to recreate.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - And the recreate does not require the rolling update parameters, so we're just going to get rid of this.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - Okay, and let's verify.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 87 | **Type:** Implementation Step
+  - And we see the strategy type is changed to recreate.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - Okay, now the next one is to upgrade the application by setting the image on the deployment to V3.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So currently we have V2 and we've got to change it to V3.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - And let's use the same command the, the kubectl set mage deploy command.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - And we'll just change this to three.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Okay, so that's updated.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - And next let's run the call test again.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 94 | **Type:** Troubleshooting
+  - And when we run this, this time, unlike the previous time we see a lot of failures.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 95 | **Type:** Implementation Step
+  - So some of the requests are failing and this is because it took down, it took down some of the, the pods as part of the upgrade because we are doing a recreate.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - So let's just give it some time.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - If you look at the application here, it says "Bad Gateway".
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - Okay, and now we can see it started to respond.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - We have the red colors coming up and when we refresh this you see that we have application B3 and the red colors are coming up.
+- **File:** `102_Solution - Rolling Updates (Optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - Okay, so that's the end of this lab.
+
+### Deployment Strategy - Blue Green
+
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - -: We will now discuss about additional deployment strategies.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - Earlier, we had discussed about two deployment strategies.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - The recreate strategy is where a newer version is deployed by first destroying all of the existing versions, and then creating newer versions of application instances.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Now, the problem with this approach is that during the period after the older versions are down and before any newer version is up, the application is down and inaccessible to users.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 5 | **Type:** Warning/Pitfall
+  - The second is the rolling update strategy where we do not destroy all of them at once.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Instead, we take down the older version and bring up a newer version one by one.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - This way the application never goes down and the upgrade is seamless.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Now, rolling update is the default deployment strategy.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - Now, there are a couple of other strategies as well, which are not really strategies that you can specify as an option in the deployment, but they can be implemented in a different way.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So let's look at those.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So they are blue-green and canary updates.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Blue-green is a deployment strategy where we have the new version deployed alongside the old version.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So the old version is called blue, and the new version is called green, and 100% of the traffic is still routed to the old version.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So at this point in time, tests are run on the new version.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And once all tests are passed, we switch traffic to the new version all at once.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So that's the blue-green deployment strategy.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Now these strategies are best implemented with service measures like Istio.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So we discuss this in detail in our course on service mesh with Istio.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So check that out.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - For now, we will look at how to implement these strategies using just native Kubernetes primitives of deployments and services.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So here's how it works.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - First, we have the original version of our application deployed as a service.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - We will call it the blue deployment.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Then we create a service to route traffic to it.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - Now, to associate the service to the pods in the deployment, we set a label on the pods, let's call it version set to v1.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - We use the same label as selector on the service.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - We then deploy a second deployment.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Let's call it green with a new version of the application.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - Once all tests are passed, we route traffic from the service to the green deployment by switching the label selector on the service.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - So for the new deployment, we set a label version to v2.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - So now that we have set the label version to v2 to the pods on the new deployment, all we need to do is switch the labels specified under the selector of the service to v2 as well.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - And then the service switches traffic to the pods in the green deployment.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 33 | **Type:** Exam Tip
+  - So let's see this with some code examples.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - So first we have a deployment called myapp with let's say five replicas of version v1 of our application.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And we have a service that exposes the application to the users.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So currently all traffic to the service is directed to version v1 of our application.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - For this, the service uses the labels set on the pod template which is version set to v1.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - With a blue-green strategy, our goal is to deploy the newer version first and then route traffic there.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - So for that, we deploy the newer version, and then we call that green as a new separate deployment.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So we will name it myapp-green, and notice the image name now has changed to a new version, version 2.0.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Also note that the label version is now said to v2.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So now we have the green version of the application ready.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - However, there is no traffic being routed to it yet.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - We can perform all the tests that we want to make sure everything is working as expected.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And once done, to switch traffic to the green version, we simply change the label on the service selector to v2.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - And now all traffic will be routed to pods within the label version set to v2.
+- **File:** `103_Deployment Strategy - Blue Green.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - So that's how a blue-green deployment strategy is implemented on Kubernetes.
+
+### Deployment Strategy - Canary
+
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Let's now look at canary updates in Kubernetes.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - In this strategy, we deploy the new version and route only a small percentage of traffic to it.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So the majority of traffic is being routed to the older version, but we have a small percentage routed to the new version.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - At this point, we run tests, and if everything looks good, we upgrade the original deployment with the newer version of the application.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 5 | **Type:** Exam Tip
+  - Say that could be done with a rolling upgrade strategy, for example, and then we get rid of the canary deployment.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - So let's look at how to implement these strategies using native Kubernetes primitives of deployments and services.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So here's how it works.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - So first, we have the original version of our application deployed as a deployment.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - We will call it the primary deployment.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - As you can see, it has five pods.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Then we create a service to route traffic to it.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Now, to associate the service to the pods in the deployment, so we set a label on the pods.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - We called it version, which is set to V1.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - We then deploy a second deployment.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Let's call it Canary with the new version of the application.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Now, as of now, all traffic is going to version one.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - With canary deployment, we want to achieve two things.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - We want the traffic to go to both versions at the same time.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - However, we only want to route a small percentage of traffic to version two, so how do we do that?
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Let's try to solve each one of these problems one by one.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - So let's first see how we can route traffic from a single service to the pods in both the deployments at the same time?
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - For this, we create a common label.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Let's call it App, which is set to front end, and we update the selector label in the service to match this common label.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - So that solves the first problem.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - We now have traffic going to both the versions of applications, but it's routing it equally.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - That's 50% to each deployment.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - So how do we reduce the traffic to the canary deployment?
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - We only want a small percentage of traffic to go to the canary deployment.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - We can do that by simply reducing the number of pods in the canary deployment to the minimum possible, in this case one.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - So since a service distributes traffic between all pods equally, together, the pods in the primary deployment gets 83% of traffic, and the single pod in the canary deployment gets 17% of traffic.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Now, once tests are performed and we're confident with the new version, we can now upgrade the version of pods in the primary deployment and delete the canary deployment altogether.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - So one of the caveats of performing a canary update this way with just Kubernetes deployments and services is that we have limited control over the split of traffic between each deployment.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - The traffic split is always going to be governed by the number of pods present in each deployment.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 34 | **Type:** Exam Tip
+  - So for example, we cannot say route just 1% of traffic to the canary deployment.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - For that, we would need at least 100 pods altogether, and that's why service meshes like Istio comes with better control.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - With Istio, you can define the exact percentage of traffic to be distributed between each deployment, and it's not really dependent upon the number of pods in a deployment.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - Let's say if you have just one pod in each deployment, you can still route 1% of traffic to one deployment and 99% to the other.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So we discuss that in more detail in our course on service mesh with Istio.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 39 | **Type:** Exam Tip
+  - So let's see this with some code examples.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - With canary deployment, as before, you deploy the application as a deployment, so let's call it MyApp-Primary, and we create a service with the selector set to label app and value front end.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - The new version is deployed as a separate deployment.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - Let's call it MyApp-Canary, and this deployment uses the newer image, version 2.0.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - To start with, we only want to send a small percentage of traffic to it, so we deploy a single container only, and so we set the replicas count to one.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - We need to route the traffic from the same service to both the deployments, and for this, we make sure that we use the same labels and selector combination under the pod spec labels to match what is already in the service definition.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - So the label app is set to front end in both the deployments, and that routes traffic to both the deployments.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `104_Deployment Strategy - Canary.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Head over to the practice labs, and get your hands dirty, and I'll see you in the next one.
+
+### Solution_ Deployment strategies
+
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - -: In this video, I'm gonna go over the solutions for the deployment strategy lab.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - For the first question, it says, a deployment has been created in the default namespace.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - We need to figure out what is the deployment strategy used for this deployment.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - So we'll do a kubectl get deployments, and here we have one deployment called frontend.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - So I'm gonna do a kubectl describe frontend deployment frontend.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And if we go up to strategy type, we can see that it is a rolling update strategy.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - The deployment called frontend app is exposed on the node port via service.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Identify the name of the service.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - We do a kubectl get service, we can see that we have the frontend-service.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And if you wanna just double check and verify that this is the right service, we could do a kubectl describe service, and we could just make sure that the labels or the selectors are a match up.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So here we are using a selector called app=frontend.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - And if we go back to the deployment, we could see for the pod template, we have a label of app=frontend.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So the answer to this question, is gonna be frontend-service.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - For the next question, it's asking, "What is the selector used by this service?" We already saw that it's going to be app=frontend.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Next question is just telling us to take a look at the web application by clicking on the web app button right here, and that's gonna be the application.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - The next question, "I need deployment called frontend-v2 has been created in the default namespace using the image listed below.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - And this deployment will be used to test a newer version of the same app.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Configure the deployment in such a way that the service called frontend-service routes less than 20% of the traffic to the new deployment.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 19 | **Type:** Warning/Pitfall
+  - Do not increase the replicas of the frontend deployment." So if we do a kubectl get deployments, we can see that the frontend, the original version one has five pods, and then frontend v2 has two pods.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And if we go back to the service, you can see that we're using the selector app=frontend.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So let's take a look at the selector used on the frontend-v2. (mouse clicks) And we can see that it's also using app=frontend.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And so that means it's traffic's gonna get load balanced across both of these right now.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And so there's five here and there's two here.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And so what that means is, to see how much or what percent of the traffic is going to frontend v2, is just gonna be two outta seven, which roughly equals 28%.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So to get that down below 20%, we're gonna just remove the number of pods down to one, or the number of replicas sets down to one.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - And so to reduce the replica sets down to one, we're gonna run the command, "kubectl scale deployment -: -replicas=1" and then we're gonna call, frontend-v2.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 27 | **Type:** Best Practice
+  - So that's gonna scale it down, if I do a kubectl get deployments now, we should see only one pod for frontend v2 and that's gonna be a one out of six now.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 28 | **Type:** Best Practice
+  - And that should be less than 20%.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So let's check this.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - All right, so let's check out the app now.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So if we open this up in a new tab, you can see right now it's still v1, but remember less than 20% of the traffic will get hashed to v2.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So we just have to keep refreshing a couple times, until we get to v2.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - There we go, and I went right past it.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And so we can see it's about, a little bit less than 20%.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And so this is just saying, that we've now established that the new version two of the applications working expected.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - And so now we wanna safely redirect all users to version two.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And to do that, we need to scale down version one down to zero replicas, and scale up version two to five replicas.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So we can run the same command, basically.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - This is just gonna be frontend and so we call version one, and then we're gonna set the replicas to zero.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And then this time we're gonna call v2 and set the replicas to five.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - This is gonna force all traffic to go to just v2.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - If I do a kubectl get deployment, we can see zero to frontend v1, and five to frontend v2.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - Now delete the deployment called frontend completely.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 44 | **Type:** Best Practice
+  - So I'll do a kubectl delete deployment frontend, and when we do a get deployment, we should see only frontend v2.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 45 | **Type:** Best Practice
+  - And now if we reload the web app tab, we should see that only version two of the app exists.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So I'm gonna refresh, version two, version two, version two, it's always gonna be version two.
+- **File:** `106_Solution_ Deployment strategies.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - And so that's going to wrap up the deployment strategy lab.
+
+### Jobs
+
+- **File:** `107_Jobs.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hello, and welcome to this lecture.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In this lecture, we will look at jobs in Kubernetes.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - There are different types of workloads that a container can serve.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - A few that we have seen through this course are web, application and database.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - We have deployed simple web servers that serve users.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - These workloads are meant to continue to run for a long period of time until manually taken down.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - There are other kinds of workloads, such as batch processing, analytics, or reporting that are meant to carry out a specific task and then finish.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 8 | **Type:** Exam Tip
+  - For example, performing a computation, processing an image, performing some kind of analytics on a large dataset, generating a report and sending an email, et cetera.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - These are workloads that are meant to live for a short period of time, perform a set of tasks and then finish.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - Let us first see how such a workload works in Docker.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - And then we will relate the same concept to Kubernetes.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So I'm going to run a Docker container to perform a simple math operation to add two numbers.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - The Docker container comes up, performs the requested operation, prints the output, and exits.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - When you run the Docker ps command, you see the container in an exited state.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - The return code of the operation performed is shown in the bracket as well.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - In this case, since the task was completed successfully, the return code is zero.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Let's just replicate the same with Kubernetes.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - We will create a pod definition file to perform the same operation.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - When the pod is created, it runs a container, performs the computation task and exits, and the pod goes into a completed state.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - But it then recreates the container in an attempt to leave it running.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Again, the container performs the required computation task and exits.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And Kubernetes continues to bring it up again.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And this continues to happen until a threshold is reached.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So why does that happen?
+- **File:** `107_Jobs.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Kubernetes wants your applications to live forever.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 26 | **Type:** Operational Insight
+  - The default behavior of pods is to attempt to restart the container in an effort to keep it running.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 27 | **Type:** Operational Insight
+  - This behavior is defined by the property restart policy set on the pod, which is by default set to always.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - And that is why the pod always recreates the container when it exits.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 29 | **Type:** Troubleshooting
+  - You can override this behavior by setting this property to never or on failure.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - That way Kubernetes does not restart the container once the job is finished.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Now, that works just fine.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - We have new use cases for batch processing.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 33 | **Type:** Exam Tip
+  - We have large datasets that require multiple pods to process the data in parallel.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - We wanna make sure that all pods perform the task assigned to them successfully and then exit.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - So we need a manager that can create as many pods as we want to get a work done and ensure that work gets done successfully.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 36 | **Type:** Exam Tip
+  - But we have learned about replica sets that help us create multiple pods.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - While a replica set is used to make sure a specified number of pods are running at all times, a job is used to run a set of pods to perform a given task to completion.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Let us now see how we can create a job.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - We create a job using a definition file.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - So we start with a pod definition file to create a job using it.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - We start with a blank template that has API version, kind, metadata and spec.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - The API version is batch/v1 as of today but remember to verify this against the version of Kubernetes released that you are running on.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - The kind is job, of course.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - We will name it Math Add Job.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - Then under the Spec section, just like in replica sets or deployments, we have template.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - And under template, we move all of the content from pod definitions specification.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Once done, create the job using the kubectl create command.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - Once created, use the kubectl get jobs command to see the newly created job.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - We now see that the job was created and was completed successfully.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - To see the pods created, run the kubectl get pods command.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - We see that it is in a completed state with zero restarts, indicating that Kubernetes did not try to restart the pod.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Perfect, but what about the output of the job?
+- **File:** `107_Jobs.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - In our case, we just had the addition performed on the command line inside the container.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 54 | **Type:** Best Practice
+  - So the output should be in the pod's standard output.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - The standard output of a container can be seen using the logs command as we have seen in a previous lecture.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So we run the kubectl logs command with the name of the pod to see the output.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Finally, to delete the job, run the kubectl delete job command.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - Deleting the job will also result in deleting the pods that were created by the job.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 59 | **Type:** Exam Tip
+  - Now, I hope you realize that this example was made simple so we understand what jobs are and of course, this is not typically how jobs are implemented in the real world.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 60 | **Type:** Exam Tip
+  - For example, if the job was created to process an image, the processed image stored in a persistent volume would be the output.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - Or if the job was to generate and email a report, then the email with the report would be the result of the job.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So I hope you get the gist of it.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 63 | **Type:** Exam Tip
+  - And for the sake of understanding jobs, we will continue with this example.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 64 | **Type:** Exam Tip
+  - So we just ran one instance of the pod in the previous example.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 65 | **Type:** Exam Tip
+  - To run multiple pods, we set a value for completions under the job specification.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And we set it to three to run three pods.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - This time, when we create the job, we see the desired count is three, and the successful count is three.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - Now, by default, the pods are created one after the other.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - The second part is created only after the first is finished.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - That was straightforward but what if the pods fail?
+- **File:** `107_Jobs.extraction.md` | **Entry:** 71 | **Type:** Troubleshooting
+  - For example, I'm now going to create a job using a different image called Random Error.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 72 | **Type:** Troubleshooting
+  - It's a simple Docker image that randomly completes or fails.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - When I create this job, the first part completes successfully.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 74 | **Type:** Troubleshooting
+  - The second one fails.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 75 | **Type:** Troubleshooting
+  - So a third one is created and that completes successfully and the fourth one fails.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - And so does the fifth.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - And so to have three completions, the job tries to create new pods until it has three successful completions.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - And that completes the job.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - Instead of getting the pods created sequentially, we can get them created in parallel.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - For this, add a property called parallelism to the jobs specification.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 81 | **Type:** Implementation Step
+  - We set it to three to create three pods in parallel.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - So the job first creates three pods at once, two of which complete successfully.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - So we only need one more so it's intelligent enough to create one pod at a time until we get a total of three completed pods.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - Head over to the coding quiz and have fun playing around with jobs.
+- **File:** `107_Jobs.extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - I will see you in the next lecture.
+
+### CronJobs
+
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hello and welcome to this lecture.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In this lecture, we will look at CronJobs in Kubernetes.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - A CronJob is a job that can be scheduled just like Crontab in Linux, if you're familiar with it.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - Say for example you have a job that generates a report and sends an email.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - You can create the job using the cube control create command but it runs instantly.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - Instead, you could create a CronJob to schedule and run it periodically.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - To create a CronJob we start with a blank template.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - The API version as of today is batch/v1beta1.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - The kind is CronJob with a capital C and J.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - I will name it Reporting CronJob.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Under spec you specify a schedule.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The schedule option takes a Cron-like format string where you can specify the time when the job is to be run.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 13 | **Type:** Best Practice
+  - Then you have the job template which is the actual job that should be run.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Move all of the content from the spec section of the job definition under this.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Notice that the CronJob definition now gets a little complex, so you must be extra careful.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - There are now three spec sections.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - One for the CronJob, one for the job, and one for the pod.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Once the file is ready, run the cube control create command to create the CronJob and run the cube control get CronJob command to see the newly created job.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - It would in turn create the required jobs and pods.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Well that's it for this lecture, head over to the coding exercises and play around with CronJobs.
+- **File:** `108_CronJobs.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - I will see you in the next lecture.
+
+### Solution - Jobs and Cronjobs (optional)
+
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: In this video, I'm gonna take you through the solutions for the Kubernetes Jobs lab.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - For question one, it states that a pod definition file named, throw-dice-pod.yaml, was given, and what this image is going to do, is it's going to randomly return a value between one and six.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 3 | **Type:** Troubleshooting
+  - Six is considered a success, and all others are considered a failure.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - And so, what it is asking us to do, is deploy a pod using this image, and then, view the pod logs to see what number the image generated.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - If I type in, ls, this is going to show us the throw-dice-pod.yaml.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So, I'm gonna, cat, so we can see the contents of this file, and we can see all it's doing is, it's creating a container using that throw-dice image.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So, I'm gonna deploy this, we'll do a, kubectl apply -f, and we'll call the name of that file.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - So, that's going to create the pod.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - And then, what we can do is do a, kubectl get pod, so we can see what status that the pod is in.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 10 | **Type:** Troubleshooting
+  - And, we can see that it is currently in an error status.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So, it looks like, it returned a value that wasn't a six.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So, if we do a, kubectl logs, we can actually take a look at the logs to see what number was deployed.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And, we can see it returns a value of four, so it returned a value of four.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So, we'll go ahead and do a validation and go to, Next.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - The next question is asking us to create a job using this pod definition file, or from the imperative command, and look at how many attempts does it take to get a six.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And, it's telling us to provide the following specifications.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - So, we've got the job name, which is gonna be throw-dice-job, and then the image has to be that same image.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 18 | **Type:** Warning/Pitfall
+  - And so, what I recommend you do is, if you don't remember how to create a job, I recommend you go to the Kubernetes documentation, and under, Concepts, Workloads, and then, Workload Resources, there's one for jobs, and it's gonna give us an example.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And so, we could just use this as a template for creating a job.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And, that's what I'm actually gonna do.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - I'm gonna copy this, go back to the lab, and I'm gonna create a file.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - So, I'll do a VI, and then, we'll say, throw-dice-job.yaml.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And, I'm just gonna paste this in here, and we're gonna update a few things.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - So, first of all, we have to change the name of the job, gotta match up for validation purposes.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So, this is gonna be, throw-dice-job, the name, I can just call this whatever.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - We'll just say, throw-dice.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - And then, the image has to be that throw-dice image.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And, there isn't gonna be any other commands.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Now, the back-off limit, just because we are going to want to see if we can get a six, so, it could take up to more than six attempts.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So, I'm just gonna put this at an artificially high number, just so that we can actually get a success.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So, I'm just gonna say it's a 25.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - That means, it'll attempt 25 times to get a six.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - And then, we can do a, kubectl apply -f, and then, we'll call the throw-dice-job.yaml.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - So, that's been created, and if I do a, kubectl get job, we can see our job.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So, far it hasn't completed, and if I do a, kubectl describe job throw-dice-job, we can see one active, zero succeeded, three failed.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - And so, we can see all the pods that it created.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So, let's just keep hitting the up arrow and see what happens.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - And so, it looks like we finally got one that was completed.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And so, now, we can see one was successful, so this is the one that registered as six.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - If I hit check, it's gonna run the validation that was successful.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Okay, then it's just telling us, monitor and wait for the job to succeed.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - And then, it's just letting us know, you know, it's best to bump up the back-off limit, which we already did, so that the job doesn't close up before it's successful.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - We'll run the validation again because we already waited for it to complete.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So, I'll just hit check.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And, this is gonna ask us, how many attempts did it take to complete the job?
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So, we have one succeeded, three failed.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So, that's four total attempts.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - The next thing that we need to do is update the job, so that it runs until we have three successful sixes.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So, I'm going to delete the current job.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So, I'll say, kubectl delete -f throw-dice-job.yaml.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - That's gonna delete it.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - Then I'm gonna open up that file, and what we wanna do is we want to add the completions property, and set this to be three.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Right, because we wanna see three successful sixes, so we need this to complete three times.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And, you know, this could potentially take up to more than 25 attempts.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So if you wanted to, we could just change this to maybe like 35, just in case, so, it doesn't exit out before we get three completions.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - And then, I'll do a, kubectl apply -f, and I'm gonna do a, kubectl describe job.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 57 | **Type:** Troubleshooting
+  - And so, right now, we've had one success, one failure, and, now, we have two successes.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So, oh, there we go.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So, now, we got three successes.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So, fairly quickly, it might take a little longer for you guys, just, you know, it's just a matter of luck.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - So, just wait it out, once it's done, go ahead and hit check, and we can move on to the next question.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - How many attempts did it take to complete this job this time?
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 63 | **Type:** Troubleshooting
+  - So, we had three successful ones, and one failure.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So, that's gonna be four.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - All right, so, for the next question, it's telling us to run these jobs in parallel instead of doing this one by one.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - So, once again, we're gonna delete our current job, and then, we're gonna modify the file.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - And, to make them run in parallel, we just have to provide one property.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - And so, we need to add the parallelism property, so I'll say, parallelism, and we want three to be able to run in parallel.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So, I'll set that to three.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - And then, we can do a, kubectl apply -f.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - If we do a kubectl apply, oh, sorry, not apply, kubectl get jobs, actually, we'll do a describe job.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - And so, we've got two succeeded, three failed.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - And so, I'm just gonna wait for this to get three successes but we can see that they're running in parallel now, so it's a little bit quicker.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And there we go, we have had three successes.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - So, I will run a check, go to the next question.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Notice how quickly that finished over.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 77 | **Type:** Comparison
+  - Obviously, if you're gonna run your jobs in parallel, they're gonna finish a little bit quicker, versus doing them in series.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - Now, the final question, is asking us to create a CronJob that will run the job at 2130 hours every single day.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - And so, these are gonna be the specs for the CronJob.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - This is gonna be the name, this is gonna be the image, and then, if you wanna configure the schedule, it's gonna be 30-21.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 81 | **Type:** Implementation Step
+  - So, the first one's for the half an hour, the first one's for the hour, so, this is the minutes, basically, and then, this is the hour.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - And then, the stars, or the asterisks on the other ones, is basically saying, I want this to happen every day.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 83 | **Type:** Exam Tip
+  - And, if you wanna take a look at the logs, we can just search for CronJob, and we can probably get an example one.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 84 | **Type:** Exam Tip
+  - And, so this is an example one, so I'm just gonna copy this.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - And, I'm gonna create a new file.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - And, I'm going to paste this now, and we can delete the command stuff, and I'm gonna update the image to be the image that we want.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So, we want, code cloud throw-dice, and I'll just call this, throw-dice.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - And, we wanna update the schedule to be this, so I'm just gonna copy this, and then paste it in there.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - And then, we'll update the name as well, so this is gonna be, throw-dice-cron-job.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - And then, we wanna change the restart policy to be, Never.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - And then, again, it's been created.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - I'll then run a check to see if it was successfully created, and, looks like everything's good to go.
+- **File:** `110_Solution - Jobs and Cronjobs (optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - And, that's going to wrap up the Kubernetes Jobs and Cron Jobs lab.

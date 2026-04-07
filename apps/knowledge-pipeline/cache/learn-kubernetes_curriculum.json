@@ -1,0 +1,1315 @@
+{
+  "count": 113,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 2334924,
+      "title": "Introduction",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 9703196,
+      "title": "Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 44057268,
+        "asset_type": "Video",
+        "title": "Kubernetes For Beginners.mp4",
+        "external_url": "",
+        "filename": "Kubernetes-For-Beginners.mp4",
+        "download_urls": null
+      },
+      "object_index": 1,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22027940,
+      "title": "Accessing the Lab",
+      "asset": {
+        "_class": "asset",
+        "id": 54909540,
+        "asset_type": "Video",
+        "title": "5555-accessing-labs-beta-site-new.mp4",
+        "external_url": "",
+        "filename": "5555-accessing-labs-beta-site-new.mp4",
+        "download_urls": null
+      },
+      "object_index": 2,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22030420,
+      "title": "Course setup",
+      "asset": {
+        "_class": "asset",
+        "id": 55285546,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 3,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 31704296,
+      "title": "Course release notes",
+      "asset": {
+        "_class": "asset",
+        "id": 54988404,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 4,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2339312,
+      "title": "Kubernetes Overview",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 9723214,
+      "title": "Containers Overview",
+      "asset": {
+        "_class": "asset",
+        "id": 66416791,
+        "asset_type": "Video",
+        "title": "010-000-containers-overview.mp4",
+        "external_url": "",
+        "filename": "010-000-containers-overview.mp4",
+        "download_urls": null
+      },
+      "object_index": 5,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723216,
+      "title": "Container Orchestration",
+      "asset": {
+        "_class": "asset",
+        "id": 66416759,
+        "asset_type": "Video",
+        "title": "010-010-container-orchestration.mp4",
+        "external_url": "",
+        "filename": "010-010-container-orchestration.mp4",
+        "download_urls": null
+      },
+      "object_index": 6,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723222,
+      "title": "Kubernetes Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 66416781,
+        "asset_type": "Video",
+        "title": "010-015-kubernetes-architecture.mp4",
+        "external_url": "",
+        "filename": "010-015-kubernetes-architecture.mp4",
+        "download_urls": null
+      },
+      "object_index": 7,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37105778,
+      "title": "Docker-vs-ContainerD",
+      "asset": {
+        "_class": "asset",
+        "id": 66416811,
+        "asset_type": "Video",
+        "title": "010-020-docker-vs-containerd-.mp4",
+        "external_url": "",
+        "filename": "010-020-docker-vs-containerd.mp4",
+        "download_urls": null
+      },
+      "object_index": 8,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 46253633,
+      "title": "A note on Docker deprecation",
+      "asset": {
+        "_class": "asset",
+        "id": 66416779,
+        "asset_type": "Video",
+        "title": "010-025-a-note-on-docker-deprecation (1).mp4",
+        "external_url": "",
+        "filename": "010-025-a-note-on-docker-deprecation-1.mp4",
+        "download_urls": null
+      },
+      "object_index": 9,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4406848,
+      "title": "Architecture",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 10177126,
+      "title": "Student Preferences",
+      "asset": {
+        "_class": "asset",
+        "id": 12284720,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 10,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 36884734,
+      "title": "A Quick Reminder",
+      "asset": {
+        "_class": "asset",
+        "id": 47492160,
+        "asset_type": "Video",
+        "title": "Nudge Video-C0103.mp4",
+        "external_url": "",
+        "filename": "Nudge-Video-C0103.mp4",
+        "download_urls": null
+      },
+      "object_index": 11,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2339316,
+      "title": "Kubernetes Concepts",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 51227765,
+      "title": "Kubernetes Setup - Introduction and Minikube",
+      "asset": {
+        "_class": "asset",
+        "id": 66416925,
+        "asset_type": "Video",
+        "title": "010-045-kubernetes-setup---introductio.mp4",
+        "external_url": "",
+        "filename": "010-045-kubernetes-setup-introductio.mp4",
+        "download_urls": null
+      },
+      "object_index": 12,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723304,
+      "title": "Demo - Minikube-Setup",
+      "asset": {
+        "_class": "asset",
+        "id": 66417291,
+        "asset_type": "Video",
+        "title": "010-050-demo---minikube-setup-esv2-90p-bg-10p.mp4",
+        "external_url": "",
+        "filename": "010-050-demo-minikube-setup-esv2-90p-bg-10p.mp4",
+        "download_urls": null
+      },
+      "object_index": 13,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723232,
+      "title": "Pods",
+      "asset": {
+        "_class": "asset",
+        "id": 66417145,
+        "asset_type": "Video",
+        "title": "010-055-pods-.mp4",
+        "external_url": "",
+        "filename": "010-055-pods.mp4",
+        "download_urls": null
+      },
+      "object_index": 14,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723312,
+      "title": "Demo - Pods",
+      "asset": {
+        "_class": "asset",
+        "id": 66417005,
+        "asset_type": "Video",
+        "title": "010-060-demo---pods-esv2-90p-bg-10p.mp4",
+        "external_url": "",
+        "filename": "010-060-demo-pods-esv2-90p-bg-10p.mp4",
+        "download_urls": null
+      },
+      "object_index": 15,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9808452,
+      "title": "Reference - Pods",
+      "asset": {
+        "_class": "asset",
+        "id": 54020832,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 16,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4410254,
+      "title": "Pods",
+      "object_index": 2
+    },
+    {
+      "_class": "chapter",
+      "id": 2358332,
+      "title": "YAML Introduction",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 9742476,
+      "title": "Introduction to YAML",
+      "asset": {
+        "_class": "asset",
+        "id": 66416827,
+        "asset_type": "Video",
+        "title": "020-000-introduction-to-yaml-.mp4",
+        "external_url": "",
+        "filename": "020-000-introduction-to-yaml.mp4",
+        "download_urls": null
+      },
+      "object_index": 17,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9742502,
+      "title": "Introduction to Coding Exercises",
+      "asset": {
+        "_class": "asset",
+        "id": 11787412,
+        "asset_type": "Video",
+        "title": "Coding_Exercises.mp4",
+        "external_url": "",
+        "filename": "Coding-Exercises.mp4",
+        "download_urls": null
+      },
+      "object_index": 18,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4408052,
+      "title": "YAML - 1",
+      "object_index": 1
+    },
+    {
+      "_class": "quiz",
+      "id": 4408054,
+      "title": "YAML - 2",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 9835732,
+      "title": "Coding Exercises - Answer Keys",
+      "asset": {
+        "_class": "asset",
+        "id": 11878080,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 19,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4408058,
+      "title": "YAML - 3",
+      "object_index": 3
+    },
+    {
+      "_class": "quiz",
+      "id": 4408060,
+      "title": "YAML - 4",
+      "object_index": 4
+    },
+    {
+      "_class": "quiz",
+      "id": 4408062,
+      "title": "YAML - 5",
+      "object_index": 5
+    },
+    {
+      "_class": "quiz",
+      "id": 4408064,
+      "title": "YAML - 6",
+      "object_index": 6
+    },
+    {
+      "_class": "chapter",
+      "id": 2358338,
+      "title": "Kubernetes Concepts - Pods, ReplicaSets, Deployments",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 9742478,
+      "title": "Pods with YAML",
+      "asset": {
+        "_class": "asset",
+        "id": 66417119,
+        "asset_type": "Video",
+        "title": "030-000-pods-with-yaml.mp4",
+        "external_url": "",
+        "filename": "030-000-pods-with-yaml.mp4",
+        "download_urls": null
+      },
+      "object_index": 20,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 15252968,
+      "title": "Demo - Pods with YAML",
+      "asset": {
+        "_class": "asset",
+        "id": 66417135,
+        "asset_type": "Video",
+        "title": "030-010-demo---pods-with-yaml-esv2-90p-bg-10p.mp4",
+        "external_url": "",
+        "filename": "030-010-demo-pods-with-yaml-esv2-90p-bg-10p.mp4",
+        "download_urls": null
+      },
+      "object_index": 21,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9742480,
+      "title": "Demo - YAML - Tips",
+      "asset": {
+        "_class": "asset",
+        "id": 66417285,
+        "asset_type": "Video",
+        "title": "030-015-demo---yaml---tips-esv2-90p-bg-10p.mp4",
+        "external_url": "",
+        "filename": "030-015-demo-yaml-tips-esv2-90p-bg-10p.mp4",
+        "download_urls": null
+      },
+      "object_index": 22,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4406754,
+      "title": "Pods - 1",
+      "object_index": 7
+    },
+    {
+      "_class": "quiz",
+      "id": 4406756,
+      "title": "Pods - 2",
+      "object_index": 8
+    },
+    {
+      "_class": "quiz",
+      "id": 4406758,
+      "title": "Pods - 3",
+      "object_index": 9
+    },
+    {
+      "_class": "quiz",
+      "id": 4406760,
+      "title": "Pods - 4",
+      "object_index": 10
+    },
+    {
+      "_class": "quiz",
+      "id": 4406764,
+      "title": "Pods - 5",
+      "object_index": 11
+    },
+    {
+      "_class": "quiz",
+      "id": 4406766,
+      "title": "Pods - 6",
+      "object_index": 12
+    },
+    {
+      "_class": "quiz",
+      "id": 4406770,
+      "title": "Pods - 7",
+      "object_index": 13
+    },
+    {
+      "_class": "quiz",
+      "id": 4406772,
+      "title": "Pods - 8",
+      "object_index": 14
+    },
+    {
+      "_class": "quiz",
+      "id": 4406774,
+      "title": "Pods - 9",
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 18017749,
+      "title": "Hands-On Labs - Familiarise with the lab environment",
+      "asset": {
+        "_class": "asset",
+        "id": 33698746,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 23,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18017771,
+      "title": "Hands-On Labs- PODs with YAML",
+      "asset": {
+        "_class": "asset",
+        "id": 33698396,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 24,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22175054,
+      "title": "Solution : Pods with YAML Lab",
+      "asset": {
+        "_class": "asset",
+        "id": 42721750,
+        "asset_type": "Video",
+        "title": "0182-cka_-_pods (1080p).mp4",
+        "external_url": "",
+        "filename": "0182-cka-pods-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 25,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723234,
+      "title": "Replication Controllers and ReplicaSets",
+      "asset": {
+        "_class": "asset",
+        "id": 67035427,
+        "asset_type": "Video",
+        "title": "030-030-replication-controllers-and-re- (1).mp4",
+        "external_url": "",
+        "filename": "030-030-replication-controllers-and-re-1.mp4",
+        "download_urls": null
+      },
+      "object_index": 26,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723314,
+      "title": "Demo - ReplicaSets",
+      "asset": {
+        "_class": "asset",
+        "id": 66417357,
+        "asset_type": "Video",
+        "title": "030-035-demo---replicasets-esv2-90p-bg-10p.mp4",
+        "external_url": "",
+        "filename": "030-035-demo-replicasets-esv2-90p-bg-10p.mp4",
+        "download_urls": null
+      },
+      "object_index": 27,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4406778,
+      "title": "ReplicaSet - 1",
+      "object_index": 16
+    },
+    {
+      "_class": "quiz",
+      "id": 4406780,
+      "title": "ReplicaSet - 2",
+      "object_index": 17
+    },
+    {
+      "_class": "quiz",
+      "id": 4406782,
+      "title": "ReplicaSet - 3",
+      "object_index": 18
+    },
+    {
+      "_class": "quiz",
+      "id": 4406784,
+      "title": "ReplicaSet - 4",
+      "object_index": 19
+    },
+    {
+      "_class": "quiz",
+      "id": 4406786,
+      "title": "ReplicaSet - 5",
+      "object_index": 20
+    },
+    {
+      "_class": "quiz",
+      "id": 4406788,
+      "title": "ReplicaSet - 6",
+      "object_index": 21
+    },
+    {
+      "_class": "quiz",
+      "id": 4406792,
+      "title": "ReplicaSet - 7",
+      "object_index": 22
+    },
+    {
+      "_class": "lecture",
+      "id": 18017799,
+      "title": "Hands-On Labs- Replica Sets",
+      "asset": {
+        "_class": "asset",
+        "id": 33698388,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 28,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22175060,
+      "title": "Solution - ReplicaSets",
+      "asset": {
+        "_class": "asset",
+        "id": 42722982,
+        "asset_type": "Video",
+        "title": "0186-cka_-_replicasets (1080p).mp4",
+        "external_url": "",
+        "filename": "0186-cka-replicasets-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 29,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723238,
+      "title": "Deployments",
+      "asset": {
+        "_class": "asset",
+        "id": 69789725,
+        "asset_type": "Video",
+        "title": "030-050-deployments-.mp4",
+        "external_url": "",
+        "filename": "030-050-deployments.mp4",
+        "download_urls": null
+      },
+      "object_index": 30,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723316,
+      "title": "Demo - Deployments",
+      "asset": {
+        "_class": "asset",
+        "id": 66417361,
+        "asset_type": "Video",
+        "title": "030-055-demo--deployments-esv2-90p-bg-10p.mp4",
+        "external_url": "",
+        "filename": "030-055-demo-deployments-esv2-90p-bg-10p.mp4",
+        "download_urls": null
+      },
+      "object_index": 31,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4406796,
+      "title": "Deployment - 1",
+      "object_index": 23
+    },
+    {
+      "_class": "quiz",
+      "id": 4406798,
+      "title": "Deployment - 2",
+      "object_index": 24
+    },
+    {
+      "_class": "quiz",
+      "id": 4406800,
+      "title": "Deployment - 3",
+      "object_index": 25
+    },
+    {
+      "_class": "quiz",
+      "id": 4406802,
+      "title": "Deployment - 4",
+      "object_index": 26
+    },
+    {
+      "_class": "quiz",
+      "id": 4406806,
+      "title": "Deployment - 5",
+      "object_index": 27
+    },
+    {
+      "_class": "quiz",
+      "id": 4406808,
+      "title": "Deployment - 6",
+      "object_index": 28
+    },
+    {
+      "_class": "quiz",
+      "id": 4406810,
+      "title": "Deployment - 7",
+      "object_index": 29
+    },
+    {
+      "_class": "lecture",
+      "id": 18017869,
+      "title": "Hands-On Labs- Deployments",
+      "asset": {
+        "_class": "asset",
+        "id": 33698382,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 32,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22175064,
+      "title": "Solution - Deployments",
+      "asset": {
+        "_class": "asset",
+        "id": 42722936,
+        "asset_type": "Video",
+        "title": "cka_-_solution_-_deployments (1080p).mp4",
+        "external_url": "",
+        "filename": "cka-solution-deployments-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 33,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723240,
+      "title": "Deployments - Update and Rollback",
+      "asset": {
+        "_class": "asset",
+        "id": 69532273,
+        "asset_type": "Video",
+        "title": "040-010-rolling-updates-and-rollbacks (1).mp4",
+        "external_url": "",
+        "filename": "040-010-rolling-updates-and-rollbacks-1.mp4",
+        "download_urls": null
+      },
+      "object_index": 34,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723324,
+      "title": "Demo - Deployments - Update and Rollback",
+      "asset": {
+        "_class": "asset",
+        "id": 66417619,
+        "asset_type": "Video",
+        "title": "030-075-demo---deployments---update-an-esv2-90p-bg-10p.mp4",
+        "external_url": "",
+        "filename": "030-075-demo-deployments-update-an-esv2-90p-bg-10p.mp4",
+        "download_urls": null
+      },
+      "object_index": 35,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29267710,
+      "title": "Hands-On Lab: Practice Test Rolling Updates and Rollbacks",
+      "asset": {
+        "_class": "asset",
+        "id": 54914750,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 36,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33267956,
+      "title": "Solution - Rolling Updates and Rollbacks",
+      "asset": {
+        "_class": "asset",
+        "id": 42722948,
+        "asset_type": "Video",
+        "title": "0415-rolling_updates_produced (1080p).mp4",
+        "external_url": "",
+        "filename": "0415-rolling-updates-produced-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 37,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2339320,
+      "title": "Networking in Kubernetes",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 9723254,
+      "title": "Basics of Networking in Kubernetes",
+      "asset": {
+        "_class": "asset",
+        "id": 66417391,
+        "asset_type": "Video",
+        "title": "040-000-basics-of-networking-in-kubern-.mp4",
+        "external_url": "",
+        "filename": "040-000-basics-of-networking-in-kubern.mp4",
+        "download_urls": null
+      },
+      "object_index": 38,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2339326,
+      "title": "Services",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 9723260,
+      "title": "Services - NodePort",
+      "asset": {
+        "_class": "asset",
+        "id": 66417439,
+        "asset_type": "Video",
+        "title": "050-000-services---nodeport.mp4",
+        "external_url": "",
+        "filename": "050-000-services-nodeport.mp4",
+        "download_urls": null
+      },
+      "object_index": 39,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723326,
+      "title": "Demo - Services",
+      "asset": {
+        "_class": "asset",
+        "id": 66464679,
+        "asset_type": "Video",
+        "title": "050-010-demo---services-esv2-90p-bg-10p.mp4",
+        "external_url": "",
+        "filename": "050-010-demo-services-esv2-90p-bg-10p.mp4",
+        "download_urls": null
+      },
+      "object_index": 40,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723262,
+      "title": "Services - ClusterIP",
+      "asset": {
+        "_class": "asset",
+        "id": 66417417,
+        "asset_type": "Video",
+        "title": "050-015-services---clusterip.mp4",
+        "external_url": "",
+        "filename": "050-015-services-clusterip.mp4",
+        "download_urls": null
+      },
+      "object_index": 41,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21126338,
+      "title": "Services - Load Balancer",
+      "asset": {
+        "_class": "asset",
+        "id": 66417427,
+        "asset_type": "Video",
+        "title": "050-020-services---load-balancer.mp4",
+        "external_url": "",
+        "filename": "050-020-services-load-balancer.mp4",
+        "download_urls": null
+      },
+      "object_index": 42,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4406812,
+      "title": "Services - 1",
+      "object_index": 30
+    },
+    {
+      "_class": "quiz",
+      "id": 4406814,
+      "title": "Services - 2",
+      "object_index": 31
+    },
+    {
+      "_class": "quiz",
+      "id": 4406818,
+      "title": "Services - 3",
+      "object_index": 32
+    },
+    {
+      "_class": "quiz",
+      "id": 4406820,
+      "title": "Services - 4",
+      "object_index": 33
+    },
+    {
+      "_class": "quiz",
+      "id": 4406822,
+      "title": "Services - 5",
+      "object_index": 34
+    },
+    {
+      "_class": "quiz",
+      "id": 4406824,
+      "title": "Services - 6",
+      "object_index": 35
+    },
+    {
+      "_class": "quiz",
+      "id": 4406826,
+      "title": "Services - 7",
+      "object_index": 36
+    },
+    {
+      "_class": "quiz",
+      "id": 4406828,
+      "title": "Services - 8",
+      "object_index": 37
+    },
+    {
+      "_class": "lecture",
+      "id": 18017897,
+      "title": "Hands-On Labs- Services",
+      "asset": {
+        "_class": "asset",
+        "id": 33698364,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 43,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22175066,
+      "title": "Solution - Services",
+      "asset": {
+        "_class": "asset",
+        "id": 42722952,
+        "asset_type": "Video",
+        "title": "0162-cka_-_solution_-_services (1080p).mp4",
+        "external_url": "",
+        "filename": "0162-cka-solution-services-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 44,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2345680,
+      "title": "Microservices Architecture",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 9752886,
+      "title": "Microservices Application",
+      "asset": {
+        "_class": "asset",
+        "id": 66417441,
+        "asset_type": "Video",
+        "title": "060-000-microservices-architecture.mp4",
+        "external_url": "",
+        "filename": "060-000-microservices-architecture.mp4",
+        "download_urls": null
+      },
+      "object_index": 45,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21126242,
+      "title": "Deploying Voting App on Kubernetes",
+      "asset": {
+        "_class": "asset",
+        "id": 66420305,
+        "asset_type": "Video",
+        "title": "060-010-deploying-voting-app-on-kubern.mp4",
+        "external_url": "",
+        "filename": "060-010-deploying-voting-app-on-kubern.mp4",
+        "download_urls": null
+      },
+      "object_index": 46,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9752888,
+      "title": "Demo - Deploying Voting App on Kubernetes",
+      "asset": {
+        "_class": "asset",
+        "id": 66417969,
+        "asset_type": "Video",
+        "title": "060-015-demo---deploying-voting-app-on.mp4",
+        "external_url": "",
+        "filename": "060-015-demo-deploying-voting-app-on.mp4",
+        "download_urls": null
+      },
+      "object_index": 47,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21126556,
+      "title": "Demo - Deploying Voting App on Kubernetes With Deployments",
+      "asset": {
+        "_class": "asset",
+        "id": 66418013,
+        "asset_type": "Video",
+        "title": "060-020-demo---deploying-voting-app-on.mp4",
+        "external_url": "",
+        "filename": "060-020-demo-deploying-voting-app-on.mp4",
+        "download_urls": null
+      },
+      "object_index": 48,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 32600276,
+      "title": "Article: Demo lecture manifest files",
+      "asset": {
+        "_class": "asset",
+        "id": 63368701,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 49,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 5037062,
+      "title": "Kubernetes on Cloud",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 21126612,
+      "title": "Kubernetes on Cloud - Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 66417597,
+        "asset_type": "Video",
+        "title": "070-000-section-introduction.mp4",
+        "external_url": "",
+        "filename": "070-000-section-introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 50,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21126622,
+      "title": "Kubernetes on GCP (GKE)",
+      "asset": {
+        "_class": "asset",
+        "id": 66417665,
+        "asset_type": "Video",
+        "title": "070-010-kubernetes-on-gcp--gke-.mp4",
+        "external_url": "",
+        "filename": "070-010-kubernetes-on-gcp-gke.mp4",
+        "download_urls": null
+      },
+      "object_index": 51,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9808208,
+      "title": "Reference - Google Cloud Platform",
+      "asset": {
+        "_class": "asset",
+        "id": 11855916,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 52,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21126624,
+      "title": "Kubernetes on AWS (EKS)",
+      "asset": {
+        "_class": "asset",
+        "id": 66417851,
+        "asset_type": "Video",
+        "title": "070-015-kubernetes-on-aws--eks-.mp4",
+        "external_url": "",
+        "filename": "070-015-kubernetes-on-aws-eks.mp4",
+        "download_urls": null
+      },
+      "object_index": 53,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21126626,
+      "title": "Kubernetes on Azure (AKS)",
+      "asset": {
+        "_class": "asset",
+        "id": 66417687,
+        "asset_type": "Video",
+        "title": "070-020-kubernetes-on-azure--aks-.mp4",
+        "external_url": "",
+        "filename": "070-020-kubernetes-on-azure-aks.mp4",
+        "download_urls": null
+      },
+      "object_index": 54,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2339330,
+      "title": "Conclusion",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 9723266,
+      "title": "Conclusion",
+      "asset": {
+        "_class": "asset",
+        "id": 66417615,
+        "asset_type": "Video",
+        "title": "080-000-conclusion.mp4",
+        "external_url": "",
+        "filename": "080-000-conclusion.mp4",
+        "download_urls": null
+      },
+      "object_index": 55,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 4238043,
+      "title": "Appendix - Setup Multi Node cluster using Kubeadm",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 32880180,
+      "title": "Bonus Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 54915038,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 56,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9808148,
+      "title": "Reference",
+      "asset": {
+        "_class": "asset",
+        "id": 26444748,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 57,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723230,
+      "title": "Kubernetes Setup - Kubeadm",
+      "asset": {
+        "_class": "asset",
+        "id": 66417623,
+        "asset_type": "Video",
+        "title": "090-000-kubernetes-setup---kubeadm.mp4",
+        "external_url": "",
+        "filename": "090-000-kubernetes-setup-kubeadm.mp4",
+        "download_urls": null
+      },
+      "object_index": 58,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723288,
+      "title": "Demo - Setting Up Virtual Machines on Windows",
+      "asset": {
+        "_class": "asset",
+        "id": 66780059,
+        "asset_type": "Video",
+        "title": "090-010-demo---setting-up-virtual-mach.mp4",
+        "external_url": "",
+        "filename": "090-010-demo-setting-up-virtual-mach.mp4",
+        "download_urls": null
+      },
+      "object_index": 59,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723308,
+      "title": "Demo - Setting Up Virtual Machines on Mac",
+      "asset": {
+        "_class": "asset",
+        "id": 66779873,
+        "asset_type": "Video",
+        "title": "090-011-demo---setting-up-virtual-mach.mp4",
+        "external_url": "",
+        "filename": "090-011-demo-setting-up-virtual-mach.mp4",
+        "download_urls": null
+      },
+      "object_index": 60,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 9723310,
+      "title": "Demo - Kubeadm - Configuring Cluster With Kubeadm",
+      "asset": {
+        "_class": "asset",
+        "id": 66780091,
+        "asset_type": "Video",
+        "title": "090-015-demo---kubeadm---configuring-c.mp4",
+        "external_url": "",
+        "filename": "090-015-demo-kubeadm-configuring-c.mp4",
+        "download_urls": null
+      },
+      "object_index": 61,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 32770158,
+      "title": "References",
+      "asset": {
+        "_class": "asset",
+        "id": 43466010,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 62,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41933516,
+      "title": "Kubernetes Update and Project Videos - Your Essential Guide",
+      "asset": {
+        "_class": "asset",
+        "id": 54134658,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 63,
+      "supplementary_assets": []
+    }
+  ]
+}

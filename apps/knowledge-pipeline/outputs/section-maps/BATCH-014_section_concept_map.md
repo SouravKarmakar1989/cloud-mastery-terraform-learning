@@ -1,0 +1,1273 @@
+# Section Concept Map: BATCH-014
+
+## Section
+- Course: `certified-kubernetes-administrator-with-practice-tests`
+- Section: `14_Troubleshooting`
+
+## Source Files Used
+- `285_Troubleshooting - Section Introduction.extraction.md`
+- `286_Application Failure.extraction.md`
+- `288_Lab Solution - Application Failure _ (Optional).extraction.md`
+- `289_Control Plane Failure.extraction.md`
+- `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md`
+- `292_Worker Node Failure.extraction.md`
+- `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md`
+
+## Concept Groups
+
+### Troubleshooting - Section Introduction
+
+- **File:** `285_Troubleshooting - Section Introduction.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hello and welcome to this section.
+- **File:** `285_Troubleshooting - Section Introduction.extraction.md` | **Entry:** 2 | **Type:** Troubleshooting
+  - In this section, we look at some of the troubleshooting techniques for Kubernetes.
+- **File:** `285_Troubleshooting - Section Introduction.extraction.md` | **Entry:** 3 | **Type:** Troubleshooting
+  - We start with troubleshooting application failures, then move on to troubleshooting control plane failures, and then to worker node failures, and finally network related issues.
+- **File:** `285_Troubleshooting - Section Introduction.extraction.md` | **Entry:** 4 | **Type:** Troubleshooting
+  - This section is full of hands-on labs where you are given a broken cluster and are asked to troubleshoot and fix issues.
+- **File:** `285_Troubleshooting - Section Introduction.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Good luck.
+
+### Application Failure
+
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 1 | **Type:** Troubleshooting
+  - Throughout this course, we've actually worked on a number of troubleshooting exercises with respect to the topic we were going through at that point in time.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 2 | **Type:** Troubleshooting
+  - So a lot of troubleshooting is already covered.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 3 | **Type:** Troubleshooting
+  - We will go through an overview of troubleshooting techniques and procedures, and work on some more practice tests in this section.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 4 | **Type:** Troubleshooting
+  - We'll start with application failures.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Let's take a look at a two tier application that has a web and a database server.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - The database pod hosts a database application and serves the web servers through a database service.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - The web server is hosted on a web pod and serves users through the web service.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - It's good to write down or draw a map or chart of how your application is configured before you start.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 9 | **Type:** Troubleshooting
+  - Depending on how much you know about the failure.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - You may choose to start from either end of this map.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 11 | **Type:** Troubleshooting
+  - But remember to check every object and link in this map until you find the root cause of the issue.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 12 | **Type:** Troubleshooting
+  - Say in our case, users report some issue with accessing the application.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - First, we start with the application front end.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Use standard ways of testing if your application is accessible.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - If it's a web application, check if the web server is accessible on the IP of the node port using curl.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - Next, check the service as it discovered endpoints for the web pod.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - In this case, it did.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - But if it did not, then you might want to check the service to Pod Discovery.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 19 | **Type:** Comparison
+  - Compare the selectors configured on the service to the ones on the pod.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Make sure that they match.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - Next, check the pod itself and make sure it is in a running state.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - The status of the pod, as well as the number of restarts, can give you an idea of whether the application on the pod is running or is getting restarted.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Check the events related to the pod using the describe command.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Check the logs of the application using the logs command.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 25 | **Type:** Troubleshooting
+  - If the pod is restarting due to a failure, then the logs in the current version of the pod that's running the current version of the container may not reflect why it failed the last time.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So you either have to watch these logs using the dash F option and wait for the application to fail again, or use the previous option to view the logs of a previous pod.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - Next, check the status of the DB service as before.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And finally check the DB pod itself.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 29 | **Type:** Troubleshooting
+  - Check the logs of the DB pod and look for any errors in the database.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 30 | **Type:** Troubleshooting
+  - There are some more tips documented in the Kubernetes documentation page for troubleshooting applications.
+- **File:** `286_Application Failure.extraction.md` | **Entry:** 31 | **Type:** Exam Tip
+  - This will help in upcoming practice tests as well as in the exam.
+
+### Lab Solution - Application Failure _ (Optional)
+
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 1 | **Type:** Troubleshooting
+  - -: Hey, so let's go through this practice test on troubleshooting application failure.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the first question is, a simple two tier application is deployed in the alpha name space.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - It must display a green webpage on success.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So click on the app tab at the top of your terminal to view your application.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So I can click here to open the application, and I see that it is indeed in a failed state.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 6 | **Type:** Troubleshooting
+  - So if I look at the error message here, we can see some of the environment variables, which, which we can use for while troubleshooting, but it says, Can't connect to MySQL server on MySQL service 3306.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Name does not resolve.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 8 | **Type:** Troubleshooting
+  - So basically it looks like this web application is unable to reach the MySQL service because the name, there's some, some issue with the name is not able to resolve it.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 9 | **Type:** Architecture
+  - So let's look at this architecture diagram.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So here, so it's a two-tier application.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - So you have the web service here and you have the database service here, and then you have the user accessing it.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So we know that this is most likely a deployment or a pod.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - The web application is on 8080, and then you have this web service which is on 8080.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - And then this is the node port that the users are accessing, which is 30081.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - And then you have the MySQL service, which is a, which is a service that the web application use tries to connect to.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And this is the MySQL pod.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Now looking at this state.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So we know that the web application loads, it's, it's failed, the application is failed, but at least the interface loads.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So looking at it, this area seems to be okay.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Okay, because this port 30081, this is the port that we are on.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So 3081, so that's good.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So this patch looks okay.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - This web service has loaded the application.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So this also looks okay.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 25 | **Type:** Troubleshooting
+  - So there's some issue in this area.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - The application is unable to reach the MySQL service at this name or at this port.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - So let's first take a look at, at the application.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So it's in the alpha name space.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So we're gonna do a kubectl, we get pods, dash name, space alpha.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And so we're gonna work, we're gonna run a lot of commands in the alpha name space.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 31 | **Type:** Warning/Pitfall
+  - So it's best if we switch our context and, and set the alpha name space as the default name space, because we don't want to be typing in the name space for each command so let's do a kubectl config, and let's check the help find out the command.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So we can use a set context.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - So we're going to do a set text, and then let's check the help.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - And what we want to do is we wanna set the name space, we're gonna use a set context, and then the current context.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So we wanna set the name space of the current context to the name space equals alpha.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Okay?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So that's modified.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So let's try, we've gotta just get pods now and we see that we can see the pods in the current name space.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - So as we suspected, the web application is a deployment.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - So let's do a deploy.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - So the web app is a deployment, and the SQL server is a, is a pod, and we also have services.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And so the SQL server has a, the, MySQL service and the web application has the web service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - Okay So one way to, another way to test the, if the web application is accessible or not, is basically at this level of test is to do a curl and then to gonna do a local host because it's accessible on the node port and the port is 3081.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - And we can see the kind of, you know, this in a, in a text format and we can see that database connection has failed and can't connect to MySQL server on MySQL service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So we're gonna look more into this area, right?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - So let's see, let's look at the deployment.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - We're gonna do a kubectl, we're gonna do a kubectl describe deployment web app about MySQL.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - So that's the deployment name.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And here we see that we have the template, the image is simple web app.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - MySQL port is 8080.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And these are some of the environment variables.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So the database host is MySQL service, the user is root and the password is this password.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So the host is MySQL service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So let's look at the service called MySQL service, Let's do a get service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And we see that the name of the service is not MySQL service It's instead MySQL, right?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So that seems to be the problem here.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 57 | **Type:** Best Practice
+  - So this, and this should match because from within this application is gonna try and reach a service by the name MySQL service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - And this doesn't look like that.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So that seems to be the problem.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 60 | **Type:** Troubleshooting
+  - So what we're going to do is we're gonna fix that.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So let's do, let's try and edit the service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And we can't edit the service name, but let's give it a shot.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - All we want to do is change this to MySQL service, right?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So let's try and save that.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Now, it's not going to allow you to save that, but the changes we made is in this temporary file.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So this is what we need.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So here you have the service and you have the, MySQL service and everything else seems to be as, as what we want.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So the port numbers are there, selector is there, or another approach we could do is to just delete the service and export or expose the service, the MySQL service again.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - But for now, we could just go ahead with this.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So we could do a kubectl delete as we see, and delete the MySQL service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - Then we're going to create SVC.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - Nope, we're gonna create using this file.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Okay, let's check service now.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - And we see that the MySQL service has now been created on port 23306.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Okay?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So let's go ahead and check this.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Okay, when you check this application, it's now Success check our work.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - Okay, so that's successful, let's proceed to the next one.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - Okay, so in this one, the same two tier application is deployed in the beta name space and it must display a green web page on success.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Click on the app.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - So let's click on this app to see the status.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - And as you can see, it's in a failed state.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - And if you look at this, you have the environment variables.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So the database hosts MySQL service, user is root, password, and it says, Can't connect to MySQL server on MySQL service 3306.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - Now it says connection refused.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - So it's this connection refused.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So let's take a look at it.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - So first we're going to switch context to beta.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - We're gonna do a set context config, set context command, and then we're going to, so the current context name space to beta okay?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - Now we're gonna do a get pods.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - Pods, and we see the MySQL pod and you have the, the web app pod.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - So that's fine.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - And then we also have services for the MySQL service and the web app service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - If you look at this again, as before, the, the Port 30081 seems to be correct.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So you can, as we can access that here and this whole application loads.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 96 | **Type:** Best Practice
+  - So this whole thing should be good, right?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 97 | **Type:** Troubleshooting
+  - And again, it looks like it's a connectivity issue with between the web application and the MySQL server.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So this is what we have to verify.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 99 | **Type:** Troubleshooting
+  - Now, last time the issue was with the name, but now looks like the name is correct, it is MySQL service, but we will anyway, also check the deployment on what is set, describe Deploy web app MySQL.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - And we see that the database host given here is MySQL service and this is MySQL service as well.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So that's good.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - Now let's just look at the service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 103 | **Type:** Concept
+  - So this is good.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 104 | **Type:** Concept
+  - Now let's just focus on this.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - So we're gonna do a describe service, MySQL service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 106 | **Type:** Concept
+  - And we see selector is right, the endpoints it has has detected the endpoint.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 107 | **Type:** Concept
+  - So that's 10.42.0.12.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 108 | **Type:** Concept
+  - Let's look at, let's make sure that this endpoint is the pod, which is the MySQL pod.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 109 | **Type:** Concept
+  - So let's do a kubectl get pods -OY to see the IP of the pod.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 110 | **Type:** Concept
+  - And we see that the MySQL pod has an IP address, 10.42.0.12.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 111 | **Type:** Concept
+  - And this is 10.42.0.12.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 112 | **Type:** Concept
+  - So that's right.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 113 | **Type:** Concept
+  - But if you look at this right here, it says port 8080.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - And so the IP is, okay, so then we check the port.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 115 | **Type:** Concept
+  - So it's port 8080, and 8080 is not the port for the database.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 116 | **Type:** Concept
+  - So if you look at it here, the port here is 3306 and not 8080.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 117 | **Type:** Concept
+  - So that seems to be the problem.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 118 | **Type:** Concept
+  - So let's do an edit as we see MySQL service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 119 | **Type:** Concept
+  - And you can see the port here is 3306, which is right, the target port given is 8080, and that is not right.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 120 | **Type:** Best Practice
+  - So that should be 3306 as well.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 121 | **Type:** Concept
+  - So let's edit that.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 122 | **Type:** Concept
+  - Let's make sure the changes took place.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - Okay, so now is 3306, and let's check the endpoints.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 124 | **Type:** Concept
+  - And we see that the endpoint is now 10.42.0.12, 3306.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 125 | **Type:** Concept
+  - Let's now check our application and yep, can see that it's, it's a success.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 126 | **Type:** Concept
+  - Let's check our work.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 127 | **Type:** Concept
+  - Okay, so we're two down.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 128 | **Type:** Implementation Step
+  - Okay, so the next question is the same two tier application is deployed in the Gamma name space.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 129 | **Type:** Concept
+  - It must display green webpage and click on the app tab at the top to view, okay, so it, it looks like it's the same question.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So let's go and open the application.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 131 | **Type:** Concept
+  - Okay?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 132 | **Type:** Concept
+  - So just keeps spinning and meanwhile we'll go here and here our work and switch context to, we'll switch to the gamma namespace, okay?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 133 | **Type:** Concept
+  - And let's check status of pods and let's check services.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 134 | **Type:** Concept
+  - So we have both the pods are running and the services are there, but this doesn't look like it's loading.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 135 | **Type:** Concept
+  - So let's try and find out why.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 136 | **Type:** Troubleshooting
+  - So it looks like the issue is somewhere here.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 137 | **Type:** Concept
+  - The page itself isn't loading, the service itself isn't loading.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 138 | **Type:** Concept
+  - So let's start looking at it right from here.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 139 | **Type:** Implementation Step
+  - So the first thing to look at is this Port 30081, because that is the, the port that we are trying to access 30081, okay?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 140 | **Type:** Concept
+  - And it's now timed out.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 141 | **Type:** Concept
+  - So 30081.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 142 | **Type:** Concept
+  - So if you look at the service called web service, we see that it's set to node port, and the node port is 30081, so that's fine.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 143 | **Type:** Concept
+  - So that looks good.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 144 | **Type:** Implementation Step
+  - Next thing is the service itself.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 145 | **Type:** Concept
+  - So let's check if the service has a endpoints.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 146 | **Type:** Concept
+  - So we're gonna do describe service, web service, and we see the name, web service, name space is gamma, has the right selectors and has the endpoints.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 147 | **Type:** Concept
+  - 10.42.0.14.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 148 | **Type:** Concept
+  - And the ports are 8080 and 8080.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 149 | **Type:** Concept
+  - So that looks right.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 150 | **Type:** Concept
+  - Let's make sure the IP address, the endpoints are picked up correctly.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 151 | **Type:** Concept
+  - So this endpoint is 10.42.0.14, and the web app is on 10.42.0.14 as well.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 152 | **Type:** Concept
+  - So that checks out.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 153 | **Type:** Implementation Step
+  - So the next step is, so the web service is good, Let's check the deployment itself.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 154 | **Type:** Implementation Step
+  - So we do our kubectl get pods, we do describe deployment web app, MySQL, and we see that it has one desired and one available.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 155 | **Type:** Concept
+  - So that's fine.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 156 | **Type:** Concept
+  - The image is, looks correct, the database host is MySQL service, user is root password.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 157 | **Type:** Implementation Step
+  - All of that seems to be okay, but it's still, we're unable to do the deployment.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 158 | **Type:** Concept
+  - So let's check out the logs because it looks like the, the web server isn't responding.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 159 | **Type:** Concept
+  - So let's do a logs on the pod.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 160 | **Type:** Concept
+  - And this seems to be, okay, so this, this application itself, it says it started, it's available on this port.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 161 | **Type:** Concept
+  - And so that seems to be okay.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 162 | **Type:** Concept
+  - So however, we are still not able to access the application.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 163 | **Type:** Concept
+  - So let's anyway, go through and complete our checks because we assume that it's going to be somewhere here.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 164 | **Type:** Concept
+  - But anyway, let's go down and complete our checks.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 165 | **Type:** Concept
+  - So the MySQL service is supposed to be on 3306.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 166 | **Type:** Concept
+  - So let's check that.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 167 | **Type:** Concept
+  - So we have the MySQL service and it's on 3306.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 168 | **Type:** Concept
+  - Let's check the endpoint, describe MySQL service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 169 | **Type:** Concept
+  - And here you have the endpoints, but it looks like there are no endpoints.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 170 | **Type:** Concept
+  - So apparently the service hasn't detected MySQL pod as an endpoint, so let's take a look at why that is.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 171 | **Type:** Concept
+  - So if you look at the selectors right here, it says name equals SQL 00001, and for the pod, so describe POD MySQL.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 172 | **Type:** Concept
+  - And we know that the labels for this is, is name equals MySQL.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 173 | **Type:** Best Practice
+  - So that should be the selector not name equals SQL 0001.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 174 | **Type:** Concept
+  - And that's why it doesn't have any endpoints.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 175 | **Type:** Concept
+  - So let's go ahead and edit that, not the pod.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 176 | **Type:** Implementation Step
+  - We're going to edit the service, MySQL service, and we're going to change the selector to MySQL then save that.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 177 | **Type:** Concept
+  - Okay, now we're going to do a describe pod, no describe Service MySQL.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 178 | **Type:** Concept
+  - And we see that we have, we have the service now protected.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 179 | **Type:** Concept
+  - Let's go and check out our application.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 180 | **Type:** Concept
+  - Okay, so that's connected successfully.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 181 | **Type:** Concept
+  - So apparently, even though we were not ab able to access the web application, that's because the web application is trying to access the MySQL service and that service was not responding, which is why the web application was not responding either.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 182 | **Type:** Troubleshooting
+  - So even though we thought that the issue was somewhere here, we went through and we made sure that everything's fine and we just went through the remaining just to check and just to be sure.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 183 | **Type:** Troubleshooting
+  - And that's how we identified that the issue is somewhere here, so that's, that's another approach or technique that you should use.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 184 | **Type:** Warning/Pitfall
+  - If you're not really sure, I mean, you start with an intuition on, you know, where the issue could be, but if you don't seem, you know, if you can't really figure out, you just keep looking at the, those things just to make sure that they're worki...
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 185 | **Type:** Implementation Step
+  - Okay, so let's check our work and let's wait for the next one.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 186 | **Type:** Implementation Step
+  - Okay, so here the, the same two-tier application is deployed in the Delta name space, and it looks like it's the same setup.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 187 | **Type:** Concept
+  - So here we have, and it's in a fail state.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 188 | **Type:** Implementation Step
+  - So let's first change our context to Delta.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 189 | **Type:** Concept
+  - Okay?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 190 | **Type:** Implementation Step
+  - Then let's check the pods and let's check our services.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 191 | **Type:** Troubleshooting
+  - So let's check the error message.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 192 | **Type:** Concept
+  - So the host is MySQL service user is SQL user.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 193 | **Type:** Concept
+  - Password is password.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 194 | **Type:** Concept
+  - It says can't connect to MySQL server on MySQL service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 195 | **Type:** Concept
+  - 3306 connection refused.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 196 | **Type:** Concept
+  - Okay, I wanna try that out again, just refresh it.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 197 | **Type:** Concept
+  - And it says Access denied for user SQL user at 10.42.0.16 using password.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 198 | **Type:** Concept
+  - So it says Access denied for the user.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 199 | **Type:** Concept
+  - So, and here you can see the user details.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 200 | **Type:** Concept
+  - So the DB host has to be my service, the DB user is route.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 201 | **Type:** Concept
+  - And the password is password.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 202 | **Type:** Concept
+  - So let's check the, the settings for that.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 203 | **Type:** Concept
+  - So the web application must access that.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 204 | **Type:** Concept
+  - MySQL service, and this is where the credentials are stored.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 205 | **Type:** Implementation Step
+  - So let's do a describe on MySQL, describe deployment on MySQL.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 206 | **Type:** Concept
+  - Let's look at the settings.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 207 | **Type:** Concept
+  - So here you have the environment variables and you have the host, which is MySQL service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 208 | **Type:** Concept
+  - The user is, it says SQL user, but it's actually root.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 209 | **Type:** Concept
+  - And the password is password.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 210 | **Type:** Concept
+  - So this is, this seems to be the problem.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 211 | **Type:** Concept
+  - So let's edit that and update the user to root.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 212 | **Type:** Concept
+  - Okay, and let's wait for the bot to be running.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 213 | **Type:** Concept
+  - So it's running already.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 214 | **Type:** Concept
+  - It refers to the page.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 215 | **Type:** Concept
+  - And that's success.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 216 | **Type:** Troubleshooting
+  - So that was the issue here.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 217 | **Type:** Concept
+  - Let's check that out.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 218 | **Type:** Concept
+  - And while the new one loads, let's close this one, let's clear our screen.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 219 | **Type:** Implementation Step
+  - Okay, the next one is the same application is deployed in the Epsilon name set in space.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 220 | **Type:** Concept
+  - It must do display a green web app webpage on success.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 221 | **Type:** Troubleshooting
+  - So let's open the webpage and we have a similar error message.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 222 | **Type:** Concept
+  - So it says the environment variables, DB host, MySQL service database.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 223 | **Type:** Concept
+  - It's not set users, SQL user.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 224 | **Type:** Concept
+  - And the password access denied for user SQL User, okay?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 225 | **Type:** Troubleshooting
+  - So that's kind of the similar error.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 226 | **Type:** Concept
+  - So let's take a look at it.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 227 | **Type:** Implementation Step
+  - But first let's change the context to, Epsilon, okay, and set the parts.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 228 | **Type:** Troubleshooting
+  - And we know that, So it's a similar error message where it says Access denied for SQL user, and that's what we just solve.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 229 | **Type:** Troubleshooting
+  - The user is not SQL user, it's a root user, so let's go ahead and fix that.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 230 | **Type:** Implementation Step
+  - Edit deployment, web app, SQL.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 231 | **Type:** Concept
+  - And so here we see the user is SQL user.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 232 | **Type:** Concept
+  - So let's change that to root.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 233 | **Type:** Concept
+  - Okay, let's check the bot, if it's running.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 234 | **Type:** Concept
+  - Let's refresh the page.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 235 | **Type:** Troubleshooting
+  - Okay, so now the error message has changed and it says access denied for user root.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 236 | **Type:** Concept
+  - Again, so the access is still denied.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 237 | **Type:** Concept
+  - But the user has now been updated to root.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 238 | **Type:** Concept
+  - Right?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 239 | **Type:** Concept
+  - So.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 240 | **Type:** Concept
+  - The user credentials are either set on the application that's trying to connect to the database or the database itself.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 241 | **Type:** Concept
+  - Right?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 242 | **Type:** Troubleshooting
+  - So we've already fixed it on the deployment here, but now the issue could be here.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 243 | **Type:** Concept
+  - So let's check out the pod.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 244 | **Type:** Concept
+  - Because that's the only other place where anything could be set.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 245 | **Type:** Concept
+  - And here we see additional details.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 246 | **Type:** Best Practice
+  - And here we have the environment variable and the MySQL root password is set to something other than password, which should be this.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 247 | **Type:** Concept
+  - So that needs to be changed.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 248 | **Type:** Concept
+  - So let's do a edit pod for MySQL and let's change this password to.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 249 | **Type:** Concept
+  - BASWRD save that, it's not going to allow us 'cause it's a pod.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 250 | **Type:** Concept
+  - So we're going to do a kubectl, replace, replace force and give the file.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 251 | **Type:** Concept
+  - Okay, let's delete it.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 252 | **Type:** Concept
+  - It's up, it's running.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 253 | **Type:** Concept
+  - Let's try to refresh the page.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 254 | **Type:** Concept
+  - Hmm.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 255 | **Type:** Concept
+  - So now it'd says connection refused.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 256 | **Type:** Concept
+  - No, okay.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 257 | **Type:** Concept
+  - That was because we tried too early, the pod was just being initiated.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 258 | **Type:** Concept
+  - So now at success.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 259 | **Type:** Troubleshooting
+  - So that was the issue.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 260 | **Type:** Exam Tip
+  - Now another thing to note here is in this case, I mean, you know, these are, it's very simple, straightforward examples of setting environment variables, but these could also be part of config maps.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 261 | **Type:** Implementation Step
+  - So there could be another config map associated with the MySQL service, which is how it is usually configured.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 262 | **Type:** Best Practice
+  - And so if that is the case, then you should inspect the config maps as well.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 263 | **Type:** Concept
+  - Okay?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 264 | **Type:** Concept
+  - All right, let's get ready for the final one.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 265 | **Type:** Implementation Step
+  - Okay, so the same two tier application is deployed in the Zeta name space.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 266 | **Type:** Implementation Step
+  - So let's first set the context to Zeta and let's check out the application.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 267 | **Type:** Concept
+  - Okay, so it says bad gateway right up front.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 268 | **Type:** Concept
+  - So let's start from here.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 269 | **Type:** Concept
+  - So we're assuming, because it says we're not even able to access the web service, we're gonna start right from the top.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 270 | **Type:** Concept
+  - So the, the node port is 30081 because that's what we are trying to access here.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 271 | **Type:** Concept
+  - And let's see the status of the services.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 272 | **Type:** Concept
+  - And we see that the web service is, has a node board, but here you see it's not on 30081, it's on 30088.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 273 | **Type:** Troubleshooting
+  - So that's what we're gonna fix, edit service, web service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 274 | **Type:** Concept
+  - And the node board has to be 30081.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 275 | **Type:** Concept
+  - We'll save that and let's make sure that it's updated.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 276 | **Type:** Concept
+  - So it's 30081.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 277 | **Type:** Concept
+  - Okay?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 278 | **Type:** Concept
+  - So that's done.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 279 | **Type:** Concept
+  - We're now able to access the application at least now it says access denied for user SQL, user using password.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 280 | **Type:** Concept
+  - So that something we have seen already.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 281 | **Type:** Implementation Step
+  - So let's check out, okay, let's look at the deployment, describe deploy web app MySQL.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 282 | **Type:** Concept
+  - And we see that there are environment variables.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 283 | **Type:** Concept
+  - So MySQL service, SQL server, SQL user and password.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 284 | **Type:** Implementation Step
+  - So let's edit that to change it to root Okay, so the new pod has been deployed.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 285 | **Type:** Concept
+  - Okay?
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 286 | **Type:** Concept
+  - So now the username is updated, so access, but it's still his access denied for user root.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 287 | **Type:** Implementation Step
+  - So we have to go down and check the, the password configured on the MySQL service.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 288 | **Type:** Concept
+  - So let's do a describe pod MySQL.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 289 | **Type:** Troubleshooting
+  - You see that we have the password issue here, the environment variables.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 290 | **Type:** Concept
+  - So let's edit that.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 291 | **Type:** Best Practice
+  - And this should be password, let's save that.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 292 | **Type:** Concept
+  - That's not going to go through.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 293 | **Type:** Concept
+  - So let's do a replace this.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 294 | **Type:** Concept
+  - Okay, let's wait for the pod to run.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 295 | **Type:** Concept
+  - Okay, so yep.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 296 | **Type:** Concept
+  - Now that's successful.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 297 | **Type:** Concept
+  - Check our work.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 298 | **Type:** Concept
+  - Okay, so that's about it.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 299 | **Type:** Implementation Step
+  - I know that there's a little bit of repetition on the type of questions and, and that's really in case you didn't get it the first time for you to just get that practice again and, and get it the next time and build some confidence.
+- **File:** `288_Lab Solution - Application Failure _ (Optional).extraction.md` | **Entry:** 300 | **Type:** Troubleshooting
+  - So, yep, I hope that was a good troubleshooting session and we'll have more coming up in the upcoming labs.
+
+### Control Plane Failure
+
+- **File:** `289_Control Plane Failure.extraction.md` | **Entry:** 1 | **Type:** Troubleshooting
+  - In this lecture we will see different ways of troubleshooting control plane failures.
+- **File:** `289_Control Plane Failure.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - We start by checking the status of the nodes in the cluster, see if they are all healthy, then check the status of the pods running on the cluster.
+- **File:** `289_Control Plane Failure.extraction.md` | **Entry:** 3 | **Type:** Architecture
+  - If we had control plane components deployed as pods in case of a cluster deployed with the kube ADM tool, then we can check to make sure that the pods in the kube system namespace are running, or else if the control plane components are deployed a...
+- **File:** `289_Control Plane Failure.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - Next, check the logs of the control plane components again, in case of kube adm, use the kube control logs command to view the logs of pods hosting the control plane components.
+- **File:** `289_Control Plane Failure.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - In case of services configured natively on the master nodes, view the service logs using the host's logging solution.
+- **File:** `289_Control Plane Failure.extraction.md` | **Entry:** 6 | **Type:** Architecture
+  - In our case, we could use the general control utility to view the kube API servers logs.
+- **File:** `289_Control Plane Failure.extraction.md` | **Entry:** 7 | **Type:** Best Practice
+  - This should be a good start.
+- **File:** `289_Control Plane Failure.extraction.md` | **Entry:** 8 | **Type:** Troubleshooting
+  - For more tips, refer to the Kubernetes documentation page for troubleshooting clusters.
+- **File:** `289_Control Plane Failure.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - This will help in the upcoming practice test as well as in the exam.
+
+### Lab Solution - Control Plane Failure _ (Optional)
+
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 1 | **Type:** Troubleshooting
+  - -: Okay, so in this video we're going to work on troubleshooting control plane failure.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the first question is, the cluster is broken.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 3 | **Type:** Troubleshooting
+  - We tried deploying an application, but it's not working troubleshoot and fix the issue.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 4 | **Type:** Warning/Pitfall
+  - So before we begin, a quick tip if you don't have the alias set already on your prompt so you could do a alias, k equals kubectl.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 5 | **Type:** Warning/Pitfall
+  - And also if you don't have auto completion then one thing you could do is you could go to the Kubernetes documentation pages search for kubectl cheat sheet and then the first thing that comes here is the kubectl completion bash.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So let's copy and let's run that.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And this basically gives you auto completion.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - So you do a kubectl get and then it automatically gives you the options.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 9 | **Type:** Best Practice
+  - The other thing is, so if you're setting an alias you should do this as well to get the alias for the short form for kubectl.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So I'm gonna set this as well, that way I can just do kubectl get and then yeah, order completion for the short form.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Okay, so we're gonna look at the status of the cluster.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So let's do a kubectl, get nodes and we see that the nodes seems to be in a ready state.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So that's good.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - There is, it says there are deployments.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - So let's take a look at the deployments.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And we see that there is a app deployed, but it's not ready.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - So there is one container or one pod in the deployment but that pod is not ready.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So let's take a look at it.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - Let's do a describe, so you describe deployment app and we see that it's one desired, zero available, so there's, that's one unavailable and there isn't anything here that's really helpful.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So here it says scale that replica set to one.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So let's take a look at the replica set, get rs, we have one replica set.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Let's take a look at that.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Describe replica set app.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And we see that the desired is one, but it's still waiting.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - And here you have the events and it says creating pod.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - So let's take a look at the pod and we see that there is a pod created, but it's in a pending state.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Let's take a closer look at that pod.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And we see the events have not started yet but everything else seems okay but it's in a pending state.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So when a pod is in a pending state, it's most likely, that indicates that it has not been assigned a node.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So if you look at the node here, it's set to none.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 31 | **Type:** Architecture
+  - That means the pod has not been assigned to a node and the job of assigning a pod to a node is scheduler's job, right?
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 32 | **Type:** Architecture
+  - So we have to look at the status of the scheduler.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 33 | **Type:** Architecture
+  - So let's do a, and we know that scheduler runs as a pod in the kube system name space.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 34 | **Type:** Architecture
+  - And here you have the scheduler and it has control plane at the end.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So that means it's a static pod and its status is crash loop back off.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 36 | **Type:** Architecture
+  - So let's take a look at the pod in more detail in the kube system name space and we're looking at the kube-scheduler.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Okay, so we see at the bottom here that seems to be restarting quite often.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 38 | **Type:** Troubleshooting
+  - And then it says fail to start container kube-scheduler error response from daemon, OCI runtime create failed, starting container process kube-scheduler, executable file not found.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So it says this executable is not found obviously it looks like it's not, right.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So let's take a look at the options or the command that are used to run this pod.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So here we can see that there is an incorrect command that's wrong and that's the reason.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 42 | **Type:** Architecture
+  - So we know that the kube-scheduler is a static pod.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 43 | **Type:** Architecture
+  - So the file is in TTC Kubernetes manifests and we have the kube-scheduler.yaml file here.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 44 | **Type:** Architecture
+  - So this is the manifest file for kube-scheduler and within that there's a wrong command.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - So let's go and edit that file and then remove the extra characters.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 46 | **Type:** Troubleshooting
+  - And we're gonna save that and we'll see if we have we'll see the status of the pod and its in a creating container config error state.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Yep, it's now in a running state and we'll just watch until, we just watch until it's ready.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So let's give it a few seconds.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Still not ready.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Let's take a look at the logs.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Okay, okay, so it's finally in ready state.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And let's take a look at the pods.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And we have the pod is now in ready stage.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - Let's take a look at the deployment and we have one of one ready.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Okay, okay, so that's, that's good.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - Let's go to the next one.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - Now it says scale the deployment app to two parts.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Let's do a kubectl.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - So let's get the deploy.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - And we have app with one pod, let's scale it up, kubectl scale deployment app and replicas is two, there's two pods.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 61 | **Type:** Troubleshooting
+  - Okay, even though the deployment was scaled to two the number of pods does not seem to increase investigate and fix the issue.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - So let's check the status of pods and we see that it's still just one, but we have the deployment here.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - It says one of two, ready.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So let's take a look at the deployment.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 65 | **Type:** Command
+  - 
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - However, here we see the number of replicas to be two.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Two is the desired state and only one is available.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 68 | **Type:** Architecture
+  - So the job of updating a deployment the job of updating a replica set or scaling up a replica set is the controller managers.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 69 | **Type:** Architecture
+  - So it's the deployment controller and all the controllers that as, as we know the deployment controller, the replica set controller they're all controlled by the controller manager.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 70 | **Type:** Architecture
+  - So let's take a look at the status of the controller manager.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 71 | **Type:** Architecture
+  - So we're gonna do a kube system and we see that the kube controller manager is in a crash loop back of state.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 72 | **Type:** Architecture
+  - So let's take a look at the kube controller manager.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So within the new system we're going to describe this particular pod.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And we see that says back off, restarting fill container.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 75 | **Type:** Warning/Pitfall
+  - We don't see anything useful here in the events.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Let's take a look at it.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 77 | **Type:** Troubleshooting
+  - So here it says crash loop back off terminated error.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - The exit code is one and the command seems to be correct.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - There's isn't anything at there.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So let's take a look at the logs.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - So let's do a kubectl logs this one in the kube system name space.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - Okay, so here it says this particular file there's no such file or directory.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So this file is not found.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - Let's check if that file exists.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - Of course that file does not exist because there seems to be something wrong with it.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 86 | **Type:** Architecture
+  - So let's check, let's check where this file is specified in the kube controller manager.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 87 | **Type:** Architecture
+  - So we know that the cube controller manager is also a static pod.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - So that means it must be in the slash ADC Kubernetes manifests directory.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 89 | **Type:** Architecture
+  - And then we have controller manager there.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So let's see, let's just grab for XXX cause that's what we saw.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - And here we have it specified.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - So the kube config file is configured to this location but let's see where the actual kube config file is, right?
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 93 | **Type:** Architecture
+  - So the actual kube config file for the controller manager is at atckubernetescontrollermanager.com.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 94 | **Type:** Architecture
+  - Let's just verify the contents of that file, let's do controller manager and we see that this is indeed a keep config file.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - Okay so that's the problem.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 96 | **Type:** Troubleshooting
+  - So we're going to edit the controller manager manifest file to fix that issue.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So we're going to remove this XXXX that is not required.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - We're gonna save that and we'll check the pod system.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - It's in pending state.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 100 | **Type:** Architecture
+  - So we're going to watch that and we'll give you some time for the kube controller manager to be ready.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - Okay, so it's now in a running state and it's also ready.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - So let's take a look at the pods.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 103 | **Type:** Concept
+  - And we see that there are now two pods indeed.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - Let's take a look at the deployments and we see that there are two deployments.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - Okay, let's check the status.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 106 | **Type:** Concept
+  - Okay, so we're breaking something now.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 107 | **Type:** Implementation Step
+  - Okay, so something is wrong with scaling again, we just tried scaling the deployment to three replicas, but it's not happening.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 108 | **Type:** Concept
+  - So let's take a look at that.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 109 | **Type:** Concept
+  - Let's do a get pods.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - It's only two, let's do a get deployment.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 111 | **Type:** Concept
+  - And it's two of three, so it looks like it's gone to three.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 112 | **Type:** Implementation Step
+  - So let's check, let's look at the deployment.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 113 | **Type:** Implementation Step
+  - And we see that here we have scale of the replica set to one, then two, which we did earlier but it has not been scaled up to three.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 114 | **Type:** Architecture
+  - So in the previous one we have learned that if the scaling up isn't happening, if the changes that we have applied on the deployment aren't, isn't going into effect then the culprit is usually the controller manager because it's the controller man...
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 115 | **Type:** Architecture
+  - So let's take a look at the controller manager again.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 116 | **Type:** Architecture
+  - Okay, so we're going to look at the logs of this pod controller manager.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 117 | **Type:** Architecture
+  - So we're gonna do a kubectl logs, oh this is the control plane controller manager the kube system name space, and we see that it says unable to load client ca file.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 118 | **Type:** Concept
+  - So the ATC Kubernetes PTICS cert is not available.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 119 | **Type:** Concept
+  - So let's try and find this file locally and we see that we do have this file locally.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 120 | **Type:** Architecture
+  - So yes, this file seems to be here but it says it's not able to load it, there's no such file or directory within the kube controller manager.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 121 | **Type:** Concept
+  - So we know that the way that the cube control manager or any other control plane component is set up is that the certificate files are on the control plane on the host.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 122 | **Type:** Architecture
+  - And then we use volumes to mount these directories within the same directory within the controller manager, right?
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - So that's set up in the manifest file.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 124 | **Type:** Architecture
+  - So let's take a look at the manifest file and we're gonna look at your controller manager.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 125 | **Type:** Implementation Step
+  - And we see that all of these all of these that are configured here so ATC Kubernetes, ATC Kubernetes PKI these are all in fact on the host, but they're mapped as a volume through to these containers.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 126 | **Type:** Concept
+  - And the way that's done is through volume mounts.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 127 | **Type:** Exam Tip
+  - So we look at volume mounts here and we can see there are multiple volume mounts.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 128 | **Type:** Concept
+  - So you have the CSSL certs, the CS certs but what we want is the coordinate PKI volume.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 129 | **Type:** Concept
+  - This is what we are concerned about because this is what it claims that is not available.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So here the mounting looks good but the volume that is mounted is called K eight certs.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 131 | **Type:** Concept
+  - So let's take a look at the K eight certs volume.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 132 | **Type:** Implementation Step
+  - So these are the volumes that are configured here.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 133 | **Type:** Concept
+  - And here we have the K eight certs volume and this is the section for that.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 134 | **Type:** Concept
+  - And within this we have the path which is given at the top.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 135 | **Type:** Concept
+  - And here you can see that there's an incorrect path given.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 136 | **Type:** Concept
+  - So it says wrong PKI directory.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 137 | **Type:** Concept
+  - So we're gonna have to get rid of that and add the right PKI directory which is just PKI and just going to save that.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 138 | **Type:** Concept
+  - Let's take a look at the pod status now.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 139 | **Type:** Concept
+  - Okay, it seems to be in a running state and so let's watch it and wait until it is back up and running.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 140 | **Type:** Concept
+  - Okay, so it's now in a running state.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 141 | **Type:** Concept
+  - Let's take a look at the status of pods.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 142 | **Type:** Concept
+  - And we see that we have three pods indeed.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 143 | **Type:** Implementation Step
+  - And if we take a look at the status of the deployment we see that we have three out of three ready.
+- **File:** `291_Lab Solution - Control Plane Failure _ (Optional).extraction.md` | **Entry:** 144 | **Type:** Concept
+  - Okay, So that's the end of this lab.
+
+### Worker Node Failure
+
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 1 | **Type:** Troubleshooting
+  - In this lecture we will see different ways of troubleshooting worker node failures.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Again, we start by checking the status of the nodes in the cluster.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Are they reported as ready or not ready?
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - If they're reported as not ready, check details about the nodes using the cube control.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Describe node command.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Each node has a set of conditions that can point us in a direction as to why a node might have failed.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Depending on the status, there are either set to true or false or unknown.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - When the node is out of disk space, the out of disk flag is set to true.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - When a node is out of memory, the memory pressure flag is set to true.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - When the disk capacity is low, the disk pressure flag is set to true.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Similarly, when there are too many processes, the pressure flag is set to true.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And finally, if the node as a whole is healthy, the ready flag is set to true.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - When a worker node stops communicating with the master, maybe due to a crash, these statuses are set to unknown.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - This can indicate a possible loss of a node.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Check the last heartbeat time field to find out the time when the node might have crashed.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - In such cases, proceed to checking the status of the node itself.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - If the node is online at all or is crashed.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - If it's crashed, bring it back up.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Check for possible CPU, memory and disk space on the nodes.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 20 | **Type:** Architecture
+  - Check the status of the kubelet.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 21 | **Type:** Troubleshooting
+  - Check the Cubelet logs for possible issues.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 22 | **Type:** Troubleshooting
+  - Check the Kubelet certificates, ensure they're not expired and they are part of the right group, and that the certificates are issued by the right CA.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `292_Worker Node Failure.extraction.md` | **Entry:** 24 | **Type:** Troubleshooting
+  - Head over to the practice test and practice fixing broken clusters.
+
+### Lab Solution - Worker Node Failure _ (Optional)
+
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 1 | **Type:** Troubleshooting
+  - -: Okay, so in this lab we're going to practice troubleshooting worker node failures.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So we'll wait for the lab environment to be ready and we'll get started.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - While we wait, I'm going to set the alias for kubectl.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 4 | **Type:** Troubleshooting
+  - Okay, so the first question is to fix the broken cluster.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So let's run up a get nodes and we see that indeed there is something broken.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So node zero one is in a Not Ready State.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So let's see why that is.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Let's do a describe node, node zero one.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And here we see a set of events.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 10 | **Type:** Architecture
+  - So all of these seem to be normal so they're starting the kubelet.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - All of these are good statuses and the node itself is ready.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - There's something missing.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So let's go to that node.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Let's just say node zero one, and we'll check the status.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 15 | **Type:** Architecture
+  - So the first thing that we wanna check on a worker node is the kubelet, because we know the kubelet is the controller of a node.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 16 | **Type:** Architecture
+  - And the kubelet is what helps in communication between a worker node and the master or the control plane node.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 17 | **Type:** Architecture
+  - So let's do a check the service of the kubelet.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 18 | **Type:** Architecture
+  - So service kubelet status.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 19 | **Type:** Warning/Pitfall
+  - And we see that it's loaded, but it's in an inactive state so we don't know why it's in an inactive state.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So we're going to just try and start it.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 21 | **Type:** Architecture
+  - So let's do a service kubelet start and let's check the status again.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And we see that it's now in an active and running state.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 23 | **Type:** Architecture
+  - Let's go back to the control plane and let's do a quick kubelet get node.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Okay.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - And we see that both are in a ready state.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 26 | **Type:** Troubleshooting
+  - So I think that should fix that question.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - Okay, let's go to the next one.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Okay, so the cluster is broken again.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 29 | **Type:** Troubleshooting
+  - Investigate and fix the issue.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So let's check the status again.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And we see that it's again, in an not ready state.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So let's check the status of the node.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Oh, zero one and go to full screen.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - We see that all of these, all of these events are normal.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So that's, that's okay and there's nothing here either.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 36 | **Type:** Architecture
+  - So let's go to the node and check the status of the kubelet again, service kubelets status.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And we see that it's in an activating state and it looks like there is an exit code and it's exited.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - The status is 255.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So that means it's not.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - There is something wrong in the process.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - It's is not able to start.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 42 | **Type:** Architecture
+  - So even if you do a service kubelet start, it's not actually going to start the service because there seems to be something wrong.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So let's check the status of the service again and it's in an activating state.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 44 | **Type:** Architecture
+  - So to look at the logs of a service, do a journalctl-u and kubelet and let's check the status.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So these are the logs, and let's look for the latest of the most recent logs.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Okay, so we are here.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Let's go up.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 48 | **Type:** Troubleshooting
+  - So all of these seem to be an error from a previous error.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 49 | **Type:** Troubleshooting
+  - All these seem to be an error message.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 50 | **Type:** Troubleshooting
+  - And here you can see that there's an error that says unable to load clientcfile/etckubernetes picking wrong ca file.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - There seems to be a wrong file, so let's try and find that out.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 52 | **Type:** Architecture
+  - So the, the kubelet configuration files are one in the edc kubernetes kubelet.com.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So that's one file.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 54 | **Type:** Architecture
+  - But this is basically the kube config file used by the kubelet.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 55 | **Type:** Architecture
+  - So here you have the certificate, the contacts and everything that the kubelet uses to connect to the kubelet pa server.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 56 | **Type:** Troubleshooting
+  - So this is not the place where there's an issue.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 57 | **Type:** Architecture
+  - It's basically the kubelet service itself, right?
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 58 | **Type:** Architecture
+  - So the kubelets service picks the options from a file located var/lib/kubelet.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So there's something to remember.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - And here you have a file called config.yamo.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 61 | **Type:** Architecture
+  - So var/libkubeletconfig.yamo.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 62 | **Type:** Architecture
+  - And within this file there are some properties that are passed through to the kubelet.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - And here you can see there is this zero one C file right here and that's the client ca file.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 64 | **Type:** Best Practice
+  - So it should be the correct file.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So let's find what the correct file is.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And there's the ca.cert file.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 67 | **Type:** Best Practice
+  - So that's what it should be ca.cert instead of the wrong ca file.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So let's edit that and put the correct ca cert, save that.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 69 | **Type:** Architecture
+  - And now we're going to restart the kubelet service.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - And let's just check the status of the service now.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - And we see that it's in an active running state.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Let's go back, let's go back to the control plane node.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - And let's check the status of the nodes and we see that they're in a ready state.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - Okay, so let's go to the next one.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Okay, so now the cluster is broken again.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So let's check and we see that yes, it is indeed broken and node zero one is not ready.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 77 | **Type:** Architecture
+  - So let's go to node zero one and let's check the status of the kubelet.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - And we see that, we see that it's active and it's in a running state.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 79 | **Type:** Architecture
+  - Okay, so let's check the logs journalctc-ukubelet, and let's go all the way to the end and let's work our way backwards.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Okay?
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And let's see if there's something useful here.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So here you can see unable to register node and you can see the control plane and dial TCP 10 54, 132, 6553 connection refused.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 83 | **Type:** Troubleshooting
+  - So this seems to be the error that's causing the remaining errors.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And if you look at it, it says connection refused to this.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - And this is basically for the control plane that we have.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - And it looks like this port number is incorrect because we know that the control plane port number is 6443 and not 6553.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 87 | **Type:** Troubleshooting
+  - So that that could be the error.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 88 | **Type:** Architecture
+  - So let's take a look at the kube config file used by the kubelet.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 89 | **Type:** Architecture
+  - So we saw that the cube config file used by the kubelet is etc kubernetes and kubet.com.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So let's take a look at the contents of the file.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So here if you look at this, you see that right here the control plane port number is incorrect.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - So let's get that corrected.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 93 | **Type:** Architecture
+  - And we'll set to 6443, and we're going to do a service kubelet restart, and service kubelet status.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - You see that it's not in an active state.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - Let's check the logs as well.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 96 | **Type:** Troubleshooting
+  - And we no longer see those errors and it seems to be good.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - Let's go back and let's check the status of the nodes and we see that it's now ready.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - Let's check our work.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Okay, so that's the end of this lab.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 100 | **Type:** Troubleshooting
+  - So when it comes to troubleshooting worker nodes always first check the status from here, from the control plane.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - And check whatever you can find from here.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 102 | **Type:** Troubleshooting
+  - And then go to each of the worker node that has the issue and start with checking the kubelet service.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 103 | **Type:** Architecture
+  - If the kubelet service is good, check the logs of the kubelet service and continue your way from there.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 104 | **Type:** Concept
+  - Well, that's all for this lab.
+- **File:** `294_Lab Solution - Worker Node Failure _ (Optional).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - Thank you.

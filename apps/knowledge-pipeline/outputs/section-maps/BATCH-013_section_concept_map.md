@@ -1,0 +1,2089 @@
+# Section Concept Map: BATCH-013
+
+## Section
+- Course: `certified-kubernetes-administrator-with-practice-tests`
+- Section: `13_(2025 Updates)Kustomize Basics`
+
+## Source Files Used
+- `263_Kustomize Problem Statement and Ideology.extraction.md`
+- `264_Kustomize vs Helm.extraction.md`
+- `265_Installation_Setup.extraction.md`
+- `266_The kustomization.yaml File.extraction.md`
+- `267_Kustomize Output.extraction.md`
+- `268_Kustomize ApiVersion & Kind.extraction.md`
+- `269_Managing Directories.extraction.md`
+- `270_Managing Directories Demo.extraction.md`
+- `272_Common Transformers.extraction.md`
+- `273_Image Transformers.extraction.md`
+- `274_Transformers Demo.extraction.md`
+- `276_Patches Intro.extraction.md`
+- `277_Different Types of Patches.extraction.md`
+- `278_Patches Dictionary.extraction.md`
+- `279_Patches List.extraction.md`
+- `281_Overlays.extraction.md`
+- `283_Components.extraction.md`
+
+## Concept Groups
+
+### Kustomize Problem Statement and Ideology
+
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - (bright music) Instructor: Before we get started taking a look at what is Kustomize and how to use it, I wanna start off by going over what problems it tries to address and why it was ultimately created.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 2 | **Type:** Exam Tip
+  - So let's take a look at a simple example.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - In this case, we have this nginx deployment .yml file where we're going to deploy one single nginx pod in this case.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - And let's say that we have multiple environments.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - We're gonna have one for development, which is developing on our local machine, one for staging, and then ultimately one for our production environment.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - And let's say that we want to customize our deployments so that it behaves a little bit differently in each one of our environments.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And specifically in this case, let's say we wanna modify the replicas on a per environment basis so that in our development environment we're developing on our local machine, which is not very powerful we just wanna have one replica.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - In our staging we might have two to three and then in our production which is gonna be handling a lot of traffic maybe we want 5 to 10, so how do we actually go about modifying the different configurations on a per environment basis 'cause right n...
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - And so it's going to deploy one replica across all of our environments.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - One of the simplest solutions to this problem is to create three separate directories, one for each environment so we have one for development, one for staging, one for production, and what we want to do is we want to have all of the Kubernetes co...
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - So we're essentially duplicating the configs across all of the three different environments and then just modifying the attributes on a per environment basis so that we can have different replicas for each environment.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - And so what this is gonna look like is in the deployment file in the dev folder, we're going to make sure that the replicas is set to 1.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And in the staging folder the replicas will be set to 2.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - And in the production the replicas is gonna be set to 5.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So you could see it's the exact same config that we're essentially copying in the three different folders, we're just updating the specific parameters that we want updated.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And in this case it's just the replicas.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - And then to actually push these configs or these changes out, we can just do a kubectl apply and just specify the specific environment directory that we're using so if we're gonna do development, we just specify development and you can see the one...
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - And then if we do the same thing for staging, we'll see that it'll create the two nginx pods in this case.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Now this is a perfectly fine solution.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 20 | **Type:** Troubleshooting
+  - It'll work, there's no issues, there's no limitations with the solution.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - However, I will say that it is not the most optimal solution and it's certainly not the most scalable solution.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And the reason I say this is because imagine if we start to expand our Kubernetes environment so we start creating more resources.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - And so let's say we wanna create a new service.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - We created a service.yml file.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 25 | **Type:** Warning/Pitfall
+  - Well now when we create a service.yml file, we have to remember to copy it to all three directories because we don't want it to be missing from one of our environments.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So now you can see that copying all of these files is going to be a little bit more tedious.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And anytime you wanna make any kind of change to one of your files, you have to make sure you do it in all of your environments.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And if you've got five environments, you have to make sure you do it in all three directories.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - And really, it's going to be only a matter of time before either you or one of your teammates forgets to copy or change something in all of the directories.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - And then you're gonna have a mismatch in configs across your different environments.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And so that's why I would ultimately not recommend this solution.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - It may work for very small deployments, but as your, the number of resources that you have continues to grow, it's going to be harder and harder to maintain this.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - And this is one of the main reasons why Kustomize was created.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 34 | **Type:** Troubleshooting
+  - We need a better solution to addressing this issue.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - How do we make it so that we can customize each one of our environments without having to duplicate all of our code?
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - We wanna treat this just like regular application code where we're not repeating everything more than once.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 37 | **Type:** Troubleshooting
+  - So let's take a look at how Kustomize addresses this issue.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - And I do wanna really reiterate what is the underlying problem.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And that is that we want a way to reuse our Kubernetes configs and only modify what needs to be changed on a per environment basis.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 40 | **Type:** Warning/Pitfall
+  - What we don't wanna do is copy all of our configs across each and every environment.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - That is just not a scalable solution.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So the way that Kustomize handles this is that Kustomize has two key terms that you have to understand.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - There's your base or your base config, and then you have your overlays.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So what are these two things?
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Well, base config is kind of exactly what it sounds like.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Your base config represents config that's going to be identical across all of your environments.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So any resources or configs that you know will be the same across all your environments, you put it in your base config.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Your base config also represents default value.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - So you could provide default values across all of your environments and you can then overwrite them later on.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - So here we've got the same nginx deployment file that we had in the previous slides.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And in this case, I've set the replicas to 1.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So this is my base config.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - This is gonna be the default across all of my environments.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 54 | **Type:** Warning/Pitfall
+  - Now we already know we don't want it to be 1 in staging and production, and we only want it to be 1 in development, but we'll worry about that in a second.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - So the next term that I mentioned was overlays.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 56 | **Type:** Operational Insight
+  - So the overlays allow us to customize the behavior on a per environment basis.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - So we can create an overlay for each one of our three environments.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - And here we can specify all of the properties or parameters that we want to overwrite or change from the base config.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So we are only interested in replicas at the moment.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So I have specified in the overlays, I wanna change the replicas to these specific values in each one of the environments.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So in the development environment, I mean there's no need for this overlay because the defaults already set to 1 so there's nothing to be need to change.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - But for staging, we wanna overwrite the default of 1 and change it to 2.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - So we have an overlay for staging and then for production, we are then going to override it to a value of 5.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - And so that is the base and overlay relationship within Kustomize.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - When you're using Kustomize, your folder structure is going to follow a very similar pattern.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - You're going to have a base directory.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - The base directory, once again, is going to contain all of your base configurations.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - So all of your Kubernetes resources, all of your configs that are going to be pretty similar across all of your deployments, you're gonna wanna put them there.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - And then you're gonna have a separate folder for overlays.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - And within the overlays folder, you're gonna have a different folder for each one of your environments.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 71 | **Type:** Best Practice
+  - And each one of these environments are going to have the values that you want to overwrite and change from the base config as well as any new resources that should only be added exclusively for that specific environment.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - And so the workflow is going to look like this.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - You're gonna have your base configs, you're gonna have your overlays.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - Kustomize is going to take both of them, and it's going to create the final Kubernetes manifests that we can then apply to our Kubernetes cluster.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 75 | **Type:** Warning/Pitfall
+  - The great part about Kustomize is it actually comes built in with kubectl, so you don't have to install any other packages.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - However, as we cover in some of the later lectures, you may still want to install Kustomize because the one that comes shipped with kubectl is not always the latest version.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 77 | **Type:** Warning/Pitfall
+  - With Kustomize, we're not actually making use of any sort of templating system like we do in helm, and that's nice because we don't actually have to learn a templating language, all we have to do is just define our base configs and then specify ou...
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - And that keeps things very simple.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - We're using standard YAML files.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - All of it's very readable, whereas some of the more complex helm charts, they become very difficult to read because of that templating system.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And because every artifact that Kustomize uses is plain YAML, it can still be used, validated, and processed as nothing more than just plain YAML.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - There's no special syntax, there's no special templating language.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - It's all just plain YAML.
+- **File:** `263_Kustomize Problem Statement and Ideology.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And I think that's one of the nicest part about Kustomize is that Kustomize is all about simplicity and it tries to keep it as such.
+
+### Kustomize vs Helm
+
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 1 | **Type:** Troubleshooting
+  - (bright tinkling music) Instructor: Before we move on to the next section, I wanted to talk about an alternative tool to Kustomize, and this tool's called Helm, and I wanted to just provide a brief, high level overview of how Helm addresses the sa...
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 2 | **Type:** Troubleshooting
+  - So the way that Helm actually tackles this issue is that it makes use of a Go templating syntax to assign variables to various properties, and to give you an example of that, let's take a look at a template.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So this is a regular deployment configuration, except you'll notice something interesting.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - There's these weird syntax where there's two curly braces and then some random name or text.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - In this case, for the replica's property, you could see that there's two curly braces and then there's a string called replica count in there.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 6 | **Type:** Exam Tip
+  - So this is an example of the Go templating syntax, and what this is, is this is a variable.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So we're not hard coding a value, we're just assigning a variable that we can later on provide some specific value and we can tweak that value on a per environment basis.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So how do we actually provide a value to that variable?
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - So let's take a look at the same exact example.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - You can see we have the replica's property and the variable name is called replicaCount.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - So to provide a value for the replicaCount variable, we would create a values.yaml file that's going to contain all of the values for the variables.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 12 | **Type:** Exam Tip
+  - And so for the replicaCount example, we can see that there is a replicaCount property in our values.yaml file, with the value set to one, so when we deploy our application, it's going to insert a value of one into the replica's property.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And if we take a look at the image, more specifically the image tag, we can see that it's going to look for a variable called image with a property called tag.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So in our values.yaml file, you can see that that is set to be 2.4.4, so that value will get inserted in when we go to deploy this application.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So let's see what a traditional Helm project structure would look like that would allow us to kind of customize that values.yaml file on a per environment basis.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 16 | **Type:** Exam Tip
+  - So I've got a example directory here and it's broken into two sections.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Under the templates directory, this is going to contain all of our Kubernetes manifests where we've inserted all of those variables using that Go templating syntax.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - And then in the environment section, I have a separate values.yaml file for each environment that I have, so I've got values.dev.yaml for my dev environment, and I got the same thing for staging and prod, and so these are going to contain all of t...
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Now just a couple of other things to note about Helm.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 20 | **Type:** Exam Tip
+  - So Helm isn't just about customizing your configurations on a per environment basis, Helm is actually a complete package manager for your application.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So think of like either YUM or APT for a Linux system, it kind of operates the same way for your Kubernetes application.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And Helm is a little bit more complex, but it also comes with a few extra features that Kustomize doesn't have, so things like conditionals, loops, functions, and hooks, so you do get a little bit more functionality with Helm.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - However, with that extra functionality does come some extra complexity.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So, you know, when you're dealing with these Helm templates, technically they're not valid YAML because they are using that Go templating syntax, and so if you take a look at some of the Helm charts out there, you'll see that they are actually rea...
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - What values can I replace?
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Overall, it just becomes a little bit of a challenge to read those charts, and that's one of the perks about Kustomize, is that Kustomize is very simple.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - It's very easy to read, it's just regular YAML.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - The regular base configurations is just regular Kubernetes configs, and then the overlays, where we go to modify it on a per environment basis, that's all valid YAML as well.
+- **File:** `264_Kustomize vs Helm.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So I think one of the big trade offs is, you know, Kustomize is easier and simpler, whereas Helm is a little bit more complex, but it has more features as well, so there are trade offs and you definitely wanna think about what each one brings to t...
+
+### Installation_Setup
+
+- **File:** `265_Installation_Setup.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (bright music) Tutor: In this section, we'll go over how to install and set up Kustomize.
+- **File:** `265_Installation_Setup.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - Before installing Kustomize, you must first have a Kubernetes cluster up and running and QCTL installed on your local machine and configured to connect to your Kubernetes cluster.
+- **File:** `265_Installation_Setup.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Kustomized can be installed on a Linux, Windows, or a Mac machine, and the Kustomized team has made it very easy to install Kustomize by providing a nice script that will automatically detect your operating system and install the appropriate versi...
+- **File:** `265_Installation_Setup.extraction.md` | **Entry:** 4 | **Type:** Warning/Pitfall
+  - So on your terminal, run the following command, which will download the script, and that script will pretty much be responsible for installing Kustomize for you, so you don't have to run any other commands.
+- **File:** `265_Installation_Setup.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - It's all done in that script itself.
+- **File:** `265_Installation_Setup.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - After Kustomize is installed, you can verify that it was installed correctly by running the following command.
+- **File:** `265_Installation_Setup.extraction.md` | **Entry:** 7 | **Type:** Warning/Pitfall
+  - If you don't see an output similar to this, that means most likely there was an issue with an installation or maybe the environment variables weren't updated in the current terminal session.
+- **File:** `265_Installation_Setup.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So, what I recommend that you do is close out your current terminal session and open a new one, and usually that's going to make sure that everything works.
+- **File:** `265_Installation_Setup.extraction.md` | **Entry:** 9 | **Type:** Troubleshooting
+  - If there's still an issue, then rerun the installation script again.
+
+### The kustomization.yaml File
+
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - (jaunty music) Instructor: Now that we have the Kustomize tool installed and configured, we're gonna finally get started playing with the tool itself.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the first thing that we have to do is we have to learn about the kustomization.yaml file.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - And that's going to be the focus of this video.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - We're gonna take a look at what is the kustomization.yaml file, why do we need it, and how do we configure it?
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 5 | **Type:** Exam Tip
+  - In this example, I have a k8s directory that's going to contain all of my Kubernetes configs.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - I have two YAML files.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - One is for the nginx deployment and one is for the nginx service.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And we're gonna point Kustomize to this folder, 'cause this is where all of my Kubernetes configs are.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - But Kustomize won't look at either one of these files.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Instead, Kustomize looks for one specific file called a kustomization.yaml file.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - And so this is a file that you have to create yourself, and it does have to be named kustomization.yaml.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And in this file, there's going to be two things that we need to have in it, and it's gonna be very simple, but it's gonna be broken down into two different sections.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 13 | **Type:** Best Practice
+  - The first is it's going to contain a list of all of the Kubernetes resources that should be managed by Kustomize.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - And so this is going to be just a list of all of the YAML files that you want Kustomize to manage.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - And so in this case, I have my nginx deployment YAML file, and I have my nginx service YAML file.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And those are both listed under the resources section of my kustomization.yaml file.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - The second thing is going to be all of the customizations that we want apply to or transformation.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So what are the things that we need to change?
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 19 | **Type:** Exam Tip
+  - So in this example, I have a very simple one where we're going to add a common label to all of the resources that we create using Kustomize.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And it's going to add a label that has a key of company and a value of KodeKloud.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 21 | **Type:** Exam Tip
+  - Keep in mind, this is just one simple example of a transformation.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - There's a ton of different customizations and transformations that can be applied.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - I just want to keep it simple for now.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And so I really just want to hammer home the idea that it's just two different things in the kustomization YAML file.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - You have all of the resources that you want managed, and then whatever it is that you want to change.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - Once we have our kustomization.yaml file configured and completed, we can now run the kustomize build command.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So we're gonna point the kustomize build command to the k8s directory, 'cause that's where our kustomization.yaml file is.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - It's gonna look for that file.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - In that file, it's going to point to the two resources that we defined.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - It's going to import them, and then it's going to apply all of the transformations that we have defined.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - And then once it's done that, it's going to spit out what the final configs gonna look like.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And so if you take a look at the output at the terminal after you run this command, you'll see that we can see the nginx service that we defined.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - You can see the nginx deployment that we defined.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And most importantly, you can see the transformations, which is we applied an extra label called company: KodeKloud, and it's gonna get applied to both the service and the nginx.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And that's what the common label transformation does.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - It applies a specific label to all of your Kubernetes resources.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Now, I wanna quickly summarize what we've learned so far in this video.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 38 | **Type:** Best Practice
+  - We learned that Kustomize will look for a customization file, which is going to contain the two following things, a list of all of the Kubernetes resources or manifests that Kustomize should manage, as well as all of the customizations that should...
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - Then, when we run the kustomize build command, this is going to take all of the resources, all of the manifests that were defined in the kustomization.yaml file, and it's going to apply all of the transformations.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - But it's important to understand that when we run this command, it does not actually apply or deploy the Kubernetes resources.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Instead, what's happening is it's just spitting out what the final config is going to look like in the terminal.
+- **File:** `266_The kustomization.yaml File.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - If we want to actually apply these configs to a cluster, we actually have to take the output of this command and redirect it to the kubectl apply command, and that's something that we'll cover in the next video.
+
+### Kustomize Output
+
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (bright music) Instructor: In the last lecture, we learned about the kustomize build command.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - And we learned that when we run this command, it's going to take all of our resources, it's going to apply the all...
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - All the necessary transformations, and then it's going to spit out the final configs onto our console.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 4 | **Type:** Warning/Pitfall
+  - And what's important to understand is that we don't actually deploy or apply any of these configs.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - So if you log into your Kubernetes cluster and you run a kubectl get pods, or get deployments, or get services, you'll see that nothing was created.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - So you might be thinking, well, "How exactly do we apply these configs?" We're making use of this awesome utility called kustomize, but we can't actually apply it to our Kubernetes cluster.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Well, the command that you actually have to run, to run kustomize, build all the configs and then apply those configs is this following command right here.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - It's pretty long, but let me explain what it does.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So when you run this command, it's going to make use of the Linux pipe utility.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And this isn't something that's specific to Kubernetes or kustomize.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - This is a feature of Linux, or really any bash or shell.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - And so what this pipe utility does is it takes the output of the first command, which is the kustomize build, k8s or whatever to the is to the left of the pipe utility.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - And it redirects the output of first command into the input of the second command, which is the command to the right of the pipe utility.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So we're basically running the traditional kubectl apply -f, but we're applying a file that comes from the output of the first command, which is the kustomize build k8s command.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - So that's all it's doing is taking the output of one command and applying it as the input of the other command.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And so that allows us to make use of the usual kubectl apply, and that creates our nginx deployment as well as the nginx service.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - And if you want to take a look at how to do this natively with just the kubectl tool, you can do kubectl apply, and then you do a -k instead of a -f, and then you provide the directory where the customization .YAML file exists.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - That's how we apply these resources.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Now let's take a look at how we can delete resources using kustomize.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - When it comes to deleting, it's almost identical to creating, we just swap out the word apply with delete.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So the command that we're gonna run is kustomize build k8.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - We use the same pipe utility and we do kubectl delete instead of apply -f.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - And that's going to delete the two resources that we had created in the previous slide.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - And if you want to see how to do this natively with kubectl, you just do kubectl delete, and then use the -k flag.
+- **File:** `267_Kustomize Output.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So the -k flag basically means kustomize in this case.
+
+### Kustomize ApiVersion & Kind
+
+- **File:** `268_Kustomize ApiVersion & Kind.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (gentle piano music) Narrator: Just like any other Kubernetes resource file, you can set the API version and kind properties on a customization.yaml file.
+- **File:** `268_Kustomize ApiVersion & Kind.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - There are technically optional, customizable pick up default values, but I recommend that you hard code these values just in case there's any kind of breaking changes in the future.
+
+### Managing Directories
+
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (upbeat music) Instructor: Up to this point, we've only taken a look at the absolute basics of a kustomization.yaml file, and we haven't really explored many of the different features and functionalities the tool brings to the table.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - However, even with our current limited knowledge of customize, we can already do some really cool and powerful things with it.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - One example of this is managing Kubernetes manifests that are spread across multiple directories.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - So let's take a look at an example of this.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 5 | **Type:** Exam Tip
+  - In this example we have a k8s directory.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And inside this directory we have four different YAML files.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - We have our API deployment YML file, we've got a service YAML file for our API.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - And then we have the same exact thing for our database.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - We've got a deployment for our database as well as a service object for our database.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - And when it comes to deploying all of our Kubernetes configs that reside in our k8s directory, we would just go into that directory, the k8s directory, and we would just do a kubectl apply.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Pretty straightforward, nothing special, customized doesn't even come into play here.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - This is just standard Kubernetes.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now let's say over time the number of YAML files that we have has grown.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Maybe we have 20, 30, 50 YAML files and it's starting to get a little messy and we want to organize it a little bit more.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - And then we decide to then move things into sub directories.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So now our API related configs, so that API deployment YAML file and API service YAML file gets moved under a API subdirectory and all of the deployment and service configurations for the database get moved under a database subdirectory.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - So how exactly do we apply our configs now?
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Well, we can't just go under our k8s directory and do a kubectl apply, we actually have to go into each one of these sub directories.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - And so, what that would look like is you'd do a kubectl apply -f and then go under k8s/api And that's going to deploy the deployment YAML file for the API as well as the service YAML file for the API.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And we're gonna have to do the same thing for the database directory now.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - So we go onto the database directory, do a kubectl apply, and that's going to deploy the two YAML files under the database subdirectory.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - And this is fine, however, as we grow out the number of directories or sub directories that we have, it's gonna start to become a little bit of a pain having to go into each subdirectory and doing a kubectl apply because then every time we make ch...
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - And we'd also have to configure our CICD pipeline to go inside each one of them and do the same exact thing.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And things start to get messy at that point.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - This is where customized comes into play.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - So we can create a kustomization.yaml file in the root of our k8s directory.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And inside this YAML file or the kustomization.yaml file, we're going to list out all of the resources we want it to import.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - So we're gonna provide the relative path from the kustomization.yaml file, to all of the specific deployment and service yaml files within the API and database directory.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So now customize is made aware of all of the different Kubernetes configs that we wanted to import.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - And so when it comes to actually applying these configurations, it's going to be a lot simpler because it's just going to be one command.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - We just do a customized build k8s, and then pipe it into kubectl apply -f.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And so now we no longer have to actually go into each one of the sub directories.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - We just run this within the root of the k8s directory.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - It's going to pull that kustomization.yaml file and the Kustomization,yaml file has the path to all of the individual YAML files we wanna deploy.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - And if you wanna do this natively with kubectl, you can always do a kubectl apply -k k8s.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 36 | **Type:** Troubleshooting
+  - So customize has helped us address the issue of splitting all of our configs into separate directories.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - We now no longer have to go inside each one of the different sub directories.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - However, with the way we've done it, it's not exactly a perfect solution.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Let's say the number of directories grows, right?
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Instead of just having two directories, we now have four total.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So we've got the API, the database, one for the cache, and one for Kafka as well.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And so now our kustomization,yaml YAML file, the list of resources is going to start to get fairly long.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So it's going to import all the resources from the API directory, all the resources from the database directory, all the resources from the cache directory, as well as all the resources from the Kafka directory.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - And so it's gonna start to get really cluttered, really messy.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - You're gonna have a kustomization,yaml file with basically hundreds of resources getting imported.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - And although that is technically a valid solution, I think we have a better way of handling this using customize.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So what we can actually do is we can add in a separate kustomization.yaml file within each one of the sub directories.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And what we're gonna do inside the subdirectory kustomization.yaml file is, we'll list all of the YAML files within that directory and import that inside that specific kustomization.yaml file.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So within this YAML file in the database directory, it's going to import all of the YAML files that reside in the database directory.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And we're gonna do the same thing for all of the three other sub directories, the API directory, the Cache directory, and the Kafka directory.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - They'll only import the Kubernetes configs for that specific directory.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - And then in the root Kustomization.yaml file, all we'll do is we'll provide a path to all of the different directories that we want included.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So when we do that, when we specify either the API directory or the database directory inside that root kustomization.yaml file, it's going to go into that subdirectory and it's gonna look for a kustomization.yaml file.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And it's gonna take a look at all the resources that it imports, and the root kustomization.yaml file is going to import all of those.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So now we've kind of better structured our configurations by having a separate kustomization.yaml file inside each subdirectory so that we can keep our root kustomization.yaml file as clean and neat as possible.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - And once again, to apply these configs, we just run customized build k8s and then pipe that into kubectl apply -f.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - It's just one command.
+- **File:** `269_Managing Directories.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - It's gonna deploy all of the resources across all of the sub directories, and we can always do a kubectl apply -k k8s.
+
+### Managing Directories Demo
+
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (upbeat jazz piano music) Instructor: Let's take a look at a quick demo we just learned in the last lecture.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So in this case, I have my K8s directory.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - This is going to contain all of my Kubernetes manifests.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And if you take a look inside this directory, I have three other folders in there.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - And so I have all of the Kubernetes configs from my API.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - I have all of my Kubernetes configs from my cache.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - This is gonna be from my Redis database.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - And then this is the database folder, which is going to contain all of my Kubernetes configs for my Mongo database.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And if we just expand these, you can see all of the YAML files associated with each one of these features.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And these are all pretty straightforward.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - If you take a look at the database deployment YAML file, this is just a standard deployment YAML file for a Mongo container.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And if you take a look at the other two folders, it's all pretty straightforward, just a service.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - I have either a cluster IP service or a load balancer service.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - And then I usually have a config map as well.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Now, before we get started adding our kustomization.yaml file, I want to go ahead and actually deploy these using the standard methodology without kustomize.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So, let's open up the terminal.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - In here, what we're gonna have to do is we're gonna have to go inside each directory and do a kubectl apply.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - So, we'll do a kubectl apply, we'll do a -f.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And we can do a k8s.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - And then we'll go into this API directory and apply that.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - And run that.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - And then we'll do the same thing for the other directory, so I can go into cache.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And lastly, we can do db.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And keep in mind you could technically do this all in one line if you just kept adding -f flags.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - So, we could do -f k8s/db or cache, and then once again another -f or k8s/api.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - And you'll see nothing's changed because we've already applied those.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - But that's how you could technically do it in one line.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - But like I said, as your application grows, your Kubernetes configs is gonna grow as well.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - And then you're gonna have to remember to do this across all directories and it's gonna be a little bit cumbersome.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So, let's go ahead and delete these.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So, I'm gonna just run the same command.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - And just change the apply to a delete.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So, let's now incorporate kustomize.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - We're gonna start off with the simple solution where we have just one kustomization.yaml file in the root of our K8s directory.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - So, I'm gonna go onto the K8s directory, and I'm gonna create a new file, we'll call this kustomization.yaml.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - And the first thing that we need to do is to find the apiVersion in kind.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - We'll do apiVersion, and this is gonna be kustomize.config.k8s.io/v1beta1 and then the kind is going to be Kustomization.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Then let's define our resources.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So we'll do resources, and here we're gonna provide a list of all the resources that we want kustomize to pull from.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - And so we're gonna go into each of these three directories and pull each one of these individual YAML files.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So, we're just gonna provide the path or with respect to the kustomization.yaml file.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - So, since this is in the root of the K8s directory, to get to the API deployment YAML file, you go into API and then you grab the file.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So, we just do api/api-depl.yaml, and we can do the same thing for the other file in there as well.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - We do api-service.yaml.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - And then to get the redis-config.yaml, we're gonna go into the cache folder and grab redis-config.yaml.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - And then I'm gonna do this for the other five YAML files.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - And I'm just gonna fast forward through the video because it's fairly trivial stuff of just, you know, providing the path to the specific YAML file we want incorporated.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And so once we've defined all the resources, we're going to pull up the terminal once again.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And this time we're gonna do a kustomize build.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So, I'm gonna do a kustomize build and we're gonna pass in the path to our K8s directory and we're gonna run that.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And so, what you're gonna see here is it's going to print out what the final Kubernetes manifests are gonna look like.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And so it's included everything that's in the API folder, it's included everything in the cache folder and everything in the database folder.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So, you could just scroll down and take a look.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And you can see we've got our NGINX server, we've got our database, and we've got our Redis server as well.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So, it's got everything in there.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - But remember, when you do the kustomize build, it just shows you what it would create, but it doesn't actually apply it to your Kubernetes cluster.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - To actually apply it to your Kubernetes cluster, we're gonna have to pipe it into kubectl apply.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - So, we're gonna run the same command, but we do a pipe kubectl apply -f -.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - So, this is actually going to apply it to our Kubernetes cluster.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So, let's run that.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - And we could see everything was successfully created.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 62 | **Type:** Warning/Pitfall
+  - And just to remind you guys, if you don't wanna use the kustomize CLI, you can actually use the built-in version in kubectl.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - So, you can do kubectl apply, and then -k for kustomize.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - And then we pass in the K8s directory.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So, both would do the same thing.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - And now let's just double-check and verify that it did successfully create all of the resources that we defined.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So, I'll do a kubectl get pods, and we can see that the three containers that I had defined are all in a running state.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So, now that we've done this with one kustomization.yaml file in the root of the K8s directory, I wanna move to the better solution where we have a kustomization.yaml file within each directory that's going to import the YAML files in that specifi...
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - And then in the root run, we're just going to import the kustomization YAML file inside each of the respective directories.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So, let's go back to our root kustomization.yaml file and we're gonna delete all of these resources.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 71 | **Type:** Warning/Pitfall
+  - We don't need these anymore.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 72 | **Type:** Troubleshooting
+  - And we'll come back to fixing up this file.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - But I'm gonna go ahead and create a kustomization.yaml file in all three directories.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And I'm just gonna copy the apiVersion in kind.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - And I'm just gonna copy this file and apply it to all the other directories.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Okay, so now we have a kustomization.yaml file within each of these sub directories.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - And so I'm gonna go into the one in the API folder and I'm going to set up the resources in here.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So, for the kustomization.yaml file in the API folder, we want it to import all of the YAML files that reside within this folder.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So, I'm gonna import api-depl.yaml and api-service.yaml.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So, we'll do api-depl.yaml.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And keep in mind, remember, since we are in this kustomization.yaml file, we need to provide the relative path to get to here.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So, since they are in the same directory, we could just put the name of the file.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So, that one's done, we'll go into the one in cache, and I'll do redis-config.yaml, redis-depl.yaml.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And lastly, we'll do redis-service.yaml.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - And then we'll go into our database directory and do the same exact thing.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - So, now that we've got all of the kustomization.yaml files done in the sub directories, let's go back to the root and we're going to import all of these kustomization.yaml files.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 87 | **Type:** Warning/Pitfall
+  - So in this case, you know, we don't need to provide a path to a specific file, we just provide a path to the directory.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - So, when I provide a path to the API folder, what's going to happen is it's gonna go inside the API folder and it's gonna look for a kustomization.yaml file.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 89 | **Type:** Best Practice
+  - So, you only have to provide the path of the folder, and as long as you have a kustomization.yaml file in there, it should be able to handle the rest.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So, I'm gonna do the same thing for cache, and I'm gonna do the same thing for database.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 91 | **Type:** Exam Tip
+  - All right, so I went ahead and already deleted the resources from the previous example.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - So, if I do a kubectl get pods, we can see that there's nothing there.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - And so, now we can do a kustomize build and I'm gonna do the K8s directory and let's just take a look and make sure that it dumps everything out.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 94 | **Type:** Implementation Step
+  - And so when we take a look at all of the configs, you can see that it's identical to before, and so now we can just do a kubectl apply -k k8s.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 95 | **Type:** Implementation Step
+  - Or you can do the longer command with the kustomize build and then piping it into kubectl apply.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Either one works.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So, let's try this.
+- **File:** `270_Managing Directories Demo.extraction.md` | **Entry:** 98 | **Type:** Implementation Step
+  - And we can see that we successfully created every single resource and if we do a kubectl get pods, we can see that everything was successfully created.
+
+### Common Transformers
+
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (cheerful piano music) Instructor: Now let's take a look at how we can use Kustomize to modify or transform our Kubernetes configs.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - And the way we do this is through something called Kustomize Transformers.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - And Kustomize has several different transformers built in.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - You can even create your own custom transformers.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - But in this lecture, we're gonna focus on a specific subgroup of transformers called Common Transformations.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 6 | **Type:** Troubleshooting
+  - And before we even go over what that is and what they do, let's take a look at the issue they're trying to address first.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 7 | **Type:** Exam Tip
+  - In this example, we have our deployment.yaml file and a service.yaml file.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So pretty straightforward.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - And let's say that we want to apply some common configuration across all of our yaml files.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So we want all of our Kubernetes resources to have some common configuration.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 11 | **Type:** Troubleshooting
+  - Well, let's say that we want to specifically add a label in this case, so something like org KodeKloud, or maybe we wanna go into all of our Kubernetes objects and add a specific prefix or suffix to the name.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So maybe we wanna append the word -dev to the end of our name, and we'll do the same thing across all of our Kubernetes configs.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now, we can go into each one of our yaml files and add these in.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - But keep in mind, in a production environment, you're going to have significantly more than just two yaml files.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 15 | **Type:** Troubleshooting
+  - And so doing this by hand is not a scalable solution, and it's gonna be very time-consuming and it's going to lead to a lot of errors.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And so this is why we have these common transformations in Kustomize.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - What they do is they allow us to make these common configuration changes across all of our Kubernetes resources.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - So let's go over some of the common transformations that we can apply.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So we have the commonLabel transformation, and we just kind of saw what that does.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - That basically just adds a common label to all of your Kubernetes resources.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 21 | **Type:** Troubleshooting
+  - We also have the namePrefix and Suffix transformation.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 22 | **Type:** Troubleshooting
+  - This is going to allow you to add a prefix or suffix to the names of all of your Kubernetes resources.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - We've also got one for Namespace, so you can put all of your Kubernetes resources under a specific namespace.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And we also have commonAnnotations.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - So if you wanna add some sort of metadata, some annotation to all of your Kubernetes resources, you can use the commonAnnotation transformation to apply it across the board.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So let's take a look at these transformers in action.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - We'll start off with the commonLabel one, it's the simplest one.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So let's say we wanna add a label to all of our Kubernetes resources.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - Well, we would go into our Kustomization.yaml file, and just add the commonLabel property and then specify the labels that you wanna add, and that's gonna go ahead and add this to all of your Kubernetes resources.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Or more specifically, it's going to add it to all of the resources that are being imported by this specific Kustomization.yaml file.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Now let's take a look at the Namespace Transformer.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So the Namespace Transformer is just going to put all of your Kubernetes resources under a specific namespace.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - To do that, it's very simple.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - You just do namespace, then the name of the namespace, and then that's going to get applied to all of your Kubernetes resources.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 35 | **Type:** Troubleshooting
+  - For the Prefix/Suffix Transformer, we can add in a specific prefix or suffix by providing the name prefix or the name suffix properties.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 36 | **Type:** Troubleshooting
+  - And that's gonna map to the prefix of the name as well as the suffix of the name as well.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And for the last common transformation, we have the annotation transformation.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - So if you wanna add a specific annotation to all of your Kubernetes resources, you could just specify commonAnnotations in the Kustomization.yaml file, and then specify your desired annotation.
+- **File:** `272_Common Transformers.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And that's going to get added to all of your Kubernetes objects.
+
+### Image Transformers
+
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (lounge music) Narrator: Let's move on to the image transformer.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - The image transformer is what's going to allow us to modify an image that a specific deployment or container is going to use through customize.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - So in this example, I have a deployment.yaml file where we're going to deploy a nginx server.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And the image right now is set to nginx, but we can transform that using customize.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So let's define our customization.yaml file and we're gonna have to specify two properties.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - There's a name and then a newName.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So the name is going to reference the name of the specific image that we want to replace.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So this is going to look through all of our Kubernetes configs and it's going to find all the containers that use an image called nginx.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - And then we're going to replace it with the newName, which is haproxy, so it's going to replace that image of nginx with haproxy.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - Now just to kind of clear up some potential confusions, you may notice that under the customization.yaml file, we have a name, and then under the containers under the deployment.yaml file, we have a name as well.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - These two things are not related.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So the name under the customization.yaml file specifies the name of the image, not necessarily the name of the container.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 13 | **Type:** Warning/Pitfall
+  - So ignore the name of the container that's set to web, we don't care about that.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The name property under customization.yaml file looks specifically for an image called nginx.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 15 | **Type:** Troubleshooting
+  - Something to keep in mind, it confused me at first, so I figured you guys would probably run into the same issue.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And so after we apply this, we can take a look at the new images now set to haproxy.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So now we know how to change the image using customize.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 18 | **Type:** Warning/Pitfall
+  - However, let's say that we don't actually wanna change the image, so we've got our nginx image here as well, but let's say we just wanna change the tag.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Well, we can use the image transformer to perform that action as well.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So instead of using the new image property, we can assign the new tag property.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So this is going to give the new tag that we wanna assign to that image.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - So it's going to look for all of the containers using an nginx image, and then it's going to add a tag of 2.4.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So if we take a look at the final result, we can now see it's nginx:2.4.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Now if we want to, we can actually combine the new image and new tag properties together so that we can modify not only the image, but the tag.
+- **File:** `273_Image Transformers.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So if we wanna change our nginx image to be haproxy and assign a tag of 2.4, we can do that all within an image transformer and the final result is going to be haproxy:2.4.
+
+### Transformers Demo
+
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (gentle music) Instructor: So let's take a look at making use of some of these common transformations, as well as the image transformer in a quick demo.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So in this demo, I've got my k8s directory.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - And within here, I've got a api folder and a db folder.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - And within the api, I've got the api-depl.yaml file, and then an api-service.yaml file, as well as a kustomization.yaml file within here.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - And then in the db folder, same thing, I've got a depl, a service, and a config.yaml, as well as a kustomization.yaml file within there.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So if we take a look at the kustomization.yaml files in there, they've been set up to import all of the resources within the specific directory.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So in the kustomization.yaml file within the api directory, I'm importing both of those files.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - And then if I go inside the db folder one, you can see I'm importing all of the database Kubernetes configs.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - And then in the parent, or the root kustomization.yaml file, I'm importing api and db.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So I wanna start off by adding a commonLabel to all of the resources here.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - And so to apply a commonLabel, we would have to go to the root kustomization.yaml file.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So this is the main one.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - So this is going to apply it to everything in our Kubernetes environment.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So if we go here, we're gonna then do a commonLabel.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And let's say I want to add the label department, and we'll say engineering.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Well, let's save this and I'm gonna open up the terminal, and let's build out the configs and let's see what happens.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So I'll do a kustomize build k8s, and that's going to look for the root kustomization.yaml file.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And when it spits it out, let's take a look, just a quick spot check of all of the resources.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - And let's make sure that the commonLabel that we created, department: engineering, got applied to everything.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So in this case, I've got my ConfigMap here.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So we can see that the department was set to engineering.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - I've got my API service that's got the department set, I have my db-service, I have my api-dpl.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And just quickly scrolling through, we can see the db-depl as well.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So everything in our k8s directory got that label applied to it.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - That includes things in the api folder and then things in the db folder.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Now I want you to guess what would happen if we had applied an annotation, like we have here, but instead of the root kustomization.yaml file, we put it inside one of these kustomization.yaml files within the subdirectory.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - What do you think is gonna happen?
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Well, let's take a look.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So here, I'm gonna add a commonLabel.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And for here, I'll just say feature.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - And since we're in the api directory, I'm gonna say the feature and then call it api.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So let's take a look.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - I'm gonna go back to the terminal and we're gonna run the same command.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And let's take a look at what it spits out.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So for the ConfigMap, right, the ConfigMap exists inside the db folder, not inside the api folder.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - The ConfigMap does not have the new label that we assigned.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - It's got the department: engineering, but it doesn't have the feature: web.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - And if we take a look at the api-service, which is in the api directory, we can see that we do now have a label of feature: api.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - So it looks like that when you apply it to a kustomization.yaml file within a subdirectory, it's going to only apply it to the resources within this kustomization.yaml file.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So these two resources.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So this label gets applied to whatever's in this list right here.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - When we apply it to the root one, this is going to get applied to these resources.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And since these resources include all of our Kubernetes configs, it's going to get applied globally.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 44 | **Type:** Comparison
+  - So that's the difference between applying it inside the root one as well as within the subdirectory one.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - And just to get this to match on the database site, let's create a commonLabel for all of the database configs and we'll call it feature: db.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 46 | **Type:** Exam Tip
+  - So if we build this now, if we take a look at db-depl as an example, we can see now, we have a feature: db.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Okay, so let's play around with some of the other transformers that we had covered in the previous lecture and let's add all of these resources into a specific namespace.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - So I'm gonna go to the root kustomization.yaml file. 'Cause when I apply it here, it's going to apply to everyone.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And I'll just add namespace, and just give it some arbitrary namespace.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 50 | **Type:** Troubleshooting
+  - So maybe, we'll, this will be our debugging environment.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 51 | **Type:** Best Practice
+  - And when the namespace is applied, if we do a build, we should see under everything, so all five of these YAML files, we should see it get applied there.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 52 | **Type:** Troubleshooting
+  - So for the db side of things, we can see that the namespace was set to debugging.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 53 | **Type:** Troubleshooting
+  - For api, we should see that the namespace was set to debugging, so it looks like it was successfully applied to everything.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 54 | **Type:** Troubleshooting
+  - So now let's give everything a namePrefix and a nameSuffix.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And I wanna do something specific in this case.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 56 | **Type:** Troubleshooting
+  - I want every single object to have a name prefixed with the word KodeKloud, and I want all of the resources to have a suffix that's specific to what folder they're in.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So for everything in the api folder, I want it to end in web.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 58 | **Type:** Troubleshooting
+  - So right now, if we actually take a look at the configs here, it's gonna be api-deployment, I wanted api-deployment-web, and it should be prefixed with KodeKloud.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - So it'd be KodeKloud-api-deployment.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - And then for db, it's gonna be the same thing, but a little bit different.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 61 | **Type:** Troubleshooting
+  - We're gonna change it to, it's gonna be prefixed with KodeKloud as well, but it's gonna end in -storage.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So let's think about how are we gonna accomplish this.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 63 | **Type:** Troubleshooting
+  - So for the prefix of KodeKloud, we want this applied to every single resource regardless of what folder they're in.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So in this case, remember, you wanna apply configs to every single resource, you go to the root kustomization.yaml file.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 65 | **Type:** Troubleshooting
+  - So we'll go in here and we'll add a prefix.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 66 | **Type:** Troubleshooting
+  - So this will be namePrefix and it's gonna be KodeKloud.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - And we can just test this right now.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - And we can see that the name, it looks like I missed.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 69 | **Type:** Warning/Pitfall
+  - Oh, okay, I've realized I wanna put a dash actually so that the words don't get jammed together.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So if I do KodeKloud-, it's gonna look a little bit nicer.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So we'll rebuild that.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - But now we can see it's KodeKloud-db-credentials.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - And then let's find one in the api folder just to make sure it got applied there.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - And name, it says KodeKloud-api-deployment.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Perfect.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 76 | **Type:** Troubleshooting
+  - Now we wanna set up the suffix.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 77 | **Type:** Troubleshooting
+  - And like I said, the suffix is going to change depending on which folder that we're in.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So if you wanna do something specific to one folder, you want to go into the kustomization.yaml file within that folder.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 79 | **Type:** Troubleshooting
+  - So for this one, we're gonna go here, and I'm gonna do a nameSuffix.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - And I'm gonna do a -web.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And for the db, I'm gonna do -storage.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 82 | **Type:** Troubleshooting
+  - So we'll do nameSuffix: -storage.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - We'll save all of that, go back to the terminal, and we'll do a build.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So let's take a look at what the final names are.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So for this case, we have our db-depl file, and we can see that the name is KodeKloud.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 86 | **Type:** Troubleshooting
+  - So the prefix is still there, and the suffix is set to storage.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - Perfect.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 88 | **Type:** Troubleshooting
+  - And if we take a look at one of the APIs, we've got KodeKloud, and then the suffix is web.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - And for the sake of completing this, let's add a annotation transformation.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - And so I'm just going to apply a simple annotation that's going to apply to every single resource.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So we'll go to our root kustomization.yaml file, and I'll add in a common annotation.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - And here, you know, pick anything that you want.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 93 | **Type:** Troubleshooting
+  - I'm just gonna say logging, it's gonna be set to debugging, or let's just say verbose.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 94 | **Type:** Best Practice
+  - And now, if we take a look at all of our resources, we should see a annotation of logging: verbose.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - Awesome.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - So I think the last transformation that we need to cover is the image transformation.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So let's set up a transformer to change specifically the image in our database.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So our image is currently using a Mongo database.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - So let's change this to be a Postgres database.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 100 | **Type:** Implementation Step
+  - So where do we apply this transformation?
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - Do we do it at the root of kustomization.yaml file, or one of these sub directories?
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - Specifically the db one?
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - Well, it depends.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - So remember, when we apply this in, this transformation in a kustomization.yaml file, it's gonna take all the resources.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - And if it finds any resource using that specific image that we specify, it's gonna change all of them.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 106 | **Type:** Implementation Step
+  - So you gotta figure out where you want these changes to apply.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 107 | **Type:** Warning/Pitfall
+  - So in this case, maybe you don't wanna apply it globally because maybe there's some other features that also use a Mongo database, and we don't wanna actually change those.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - Maybe we only want to change the specific database feature.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 109 | **Type:** Implementation Step
+  - So in this case, we're gonna apply it to our kustomization.yaml file.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - But obviously, this is going to vary depending on what you're trying to accomplish with your transformation.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - So here, I'm going to do images, and we'll specify name.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 112 | **Type:** Implementation Step
+  - And this is going to be set to mongo, because if we take a look at the deployment file for our database, the image is set to mongo.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 113 | **Type:** Warning/Pitfall
+  - Remember, don't look at the name.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - The name of the container doesn't matter.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - We wanna specify the image name.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - So we'll say mongo.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 117 | **Type:** Implementation Step
+  - Then we wanna specify the newName property, and this is going to be postgres.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 118 | **Type:** Implementation Step
+  - And then if we want to, we can also specify a new tag.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - So I'm just gonna give it some arbitrary tag, maybe like 4.2.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - And now let's test this out.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 121 | **Type:** Troubleshooting
+  - And if you guys noticed, I got an error.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 122 | **Type:** Troubleshooting
+  - And it's important to take a look at these errors and just read it because it's gonna give us some information as to what exactly happened.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 123 | **Type:** Concept
+  - But it says it cannot unmarshal number into Go struct field image of type string.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - So it looks like it's expecting a string, but for some reason, we gave it a number.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 125 | **Type:** Troubleshooting
+  - So I'm suspecting the issue is with the tag right here.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 126 | **Type:** Troubleshooting
+  - If I actually comment this out, I assume we're probably not going to get an error.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 127 | **Type:** Concept
+  - And it seems to work.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 128 | **Type:** Troubleshooting
+  - So there seems to be an issue with this.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - So I found out that we just gotta cover this in quotes and give it a string.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So it expects a string for the tag.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 131 | **Type:** Best Practice
+  - And so now if I do a build, we should see it goes through.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - And let's take a look at the final result.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 133 | **Type:** Implementation Step
+  - So if we go under our db-depl, so let's see, this is going to be our database deployment.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - And if we go down to the specific image, we can see that it is now set to postgres:4.2.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - Notice the name still remains mongo.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 136 | **Type:** Concept
+  - It doesn't change the name of the container, it just changes the images that we're using.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 137 | **Type:** Best Practice
+  - And if we scroll through everything else, you should see that we didn't change any other image.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 138 | **Type:** Best Practice
+  - It should have left everything else untouched.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 139 | **Type:** Concept
+  - That's gonna wrap up this section.
+- **File:** `274_Transformers Demo.extraction.md` | **Entry:** 140 | **Type:** Implementation Step
+  - In the next section, you're gonna have a lab that's gonna let you get some hands-on experience with working with transformers so that you can modify your Kubernetes configs.
+
+### Patches Intro
+
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (gentle music) Instructor: In this section, we're gonna take a look at patches.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - And so kustomize patches provide another method to modifying Kubernetes configs.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - However, unlike common transformers, patches provide a more surgical approach to targeting one or more specific sections in a Kubernetes resource.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - So basically, if you want to apply a configuration across the board, like adding a label or assigning a namespace to all of your Kubernetes objects, you're gonna use a common transformer.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - However, if you wanna apply or change something on one specific object or just a couple of objects, you would use a kustomize patch.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - So things like updating the number of replicas in a deployment, you would use a kustomize patch to match a specific object and then change that value.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Now to create a patch, we have to provide three different parameters.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - The first one is Operation Type.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So what exactly do we want to do?
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And so I've listed out the three most common operations.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Keep in mind, there are a couple more, but they're not as frequently used.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So we have add, remove, and replace.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So add, you'd perform an operation, an add operation.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - If we have a list of containers in a deployment, and let's say you wanted to add another container to that list, that would be an add operation.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Remove would be the opposite.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Let's say you wanted to remove a container from the list, or even remove a label.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - It could be removing anything.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - And then finally, we have replace.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - So replace is taking a value that's provided and then swapping it out with another value.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So if the base configs have a replica count of 5, and you say, "Oh, I actually want 10," you could do a replace and replace the replica to a value of 10.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - Then after we specify the operation, we have to provide a Target.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - So this is basically specifying the match criteria on exactly what resource do we want to apply the patch on.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And so we can match on a couple of different properties like kind or the version or the name of the object or the namespace, labelSelector, or AnnotationSelector.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So you can mix and match as many of these as you want to specify the exact Kubernetes object or objects that you wanna match on and keep.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 25 | **Type:** Warning/Pitfall
+  - So it's not just one, you don't have to just use one.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - You can use more than one to match on exactly what you want.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - And then after you match your specific object, you have to then provide a Value.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So for the Value property, this is going to be the value that we will either be replaced or added with.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So if we are doing an ad operation, we have to provide what exactly do we want to add?
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - If we want to do a replace, what do we want to replace the preexisting config with?
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And keep in mind, this is not going to be applicable for a remove operation just because if you're removing something, there's no value to be provided.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - You just specify the Target and then you remove it.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Now let's take a look at a kustomize patch in action.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 34 | **Type:** Exam Tip
+  - So I have an example depl.yaml file here.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And let's say that I want to set up a patch so that I can update the name property.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - Right now it's set up to be api-deployment, and let's say I wanna change it to web-deployment.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So let's take a look at what our kustomization.yaml file is ultimately gonna look like for the patch.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So in this case, I've got my kustomization.yaml file, and all of the patch configuration is going to fall under a property called patches.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And we're gonna have to provide a couple things.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And the first thing is going to be what is the target?
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So what Kubernetes object are we going to match on?
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And we could specify a couple of different properties.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - In this case, I'm matching on a kind of deployment.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - So it's going to look through all of my Kubernetes configs and it's going to match on only things that are of type deployment.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - And then I'm going to match on a deployment with a specific name of api-deployment.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - And that's going to match this exact Kubernetes object.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Then we have to specify patch, and then we do this | and then a -.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So you have to add that, and this is for what is referred to as an inline patch.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - And I'll go over what a inline patch is in the next slide or two.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - But for now, just understand that you're gonna have to add that | and -.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - And then we have to specify our different properties.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So in this case, we are going to specify a operation of replace.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - So you do op:, and then the name of the, or the type of the operation.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Because we wanna swap this out with a new value, so that's going to be a type replace.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - We're not trying to delete it, we're not trying to add a new name.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - Then we have this property called path.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So what exactly is a path?
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Well, we have to tell kustomize what is the specific property we want to replace or update, and how do we get to it in the YAML tree.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So we have to provide a path to that property.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So how do we get to the name property?
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Well, we have to go under metadata.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - So for the path, we say /metadata, and then we get to the name property.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - And so then we do /metadata/name.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - And if your property is nested further down the YAML tree, you would just keep going down the path and just updating each level accordingly.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 65 | **Type:** Exam Tip
+  - And we'll take a look at a couple more examples just to make sure you guys really understand this idea.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - And then finally, we're gonna specify the value that we want to update the name.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - So we're gonna set this to be web-deployment.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - And so if we take a look at the final depl.yaml config, it's going to be updated with the new name of web-deployment.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 69 | **Type:** Exam Tip
+  - Now let's take a look at one more example just so that we can reinforce everything that we just learned.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - And so I've got the same exact deployment here, and this time, we're going to update or replace the value of replica.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So it's set to 1, and I wanna change to some other value.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So if we take a look at our kustomization.yaml file, we can see that we have the same exact target.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - So we're gonna match on a Kubernetes deployment with the name of API deployment.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And for the patch, we're gonna once again do a replace operation.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - And for the path, this is where things are gonna be a little bit different.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So we have to figure out, how do we get to the replicas property?
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Well, we have to go under spec, so it's going to be a /spec.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - And then we have to get to replica, so /spec/replicas.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - And then we set the value to be 5.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - And if we take a look at the final depl.yaml file, we can see that the replicas has been updated to a value of 5.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - In kustomize, there's actually two different ways to define a patch.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So till now, we've only been working with what's referred to as a JSON 6902 patch.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - And so a JSON 6902 patch has two things that you have to provide, the Target, which is going to tell kustomize what Kubernetes object do we want to patch, and then we have to provide the patch details.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - So what is the operation, what's the specific property we wanna update, and then what's the new value.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So that's a JSON 6902 patch.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - I've provided a link to the RFC.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So if you wanna see or read more details about how this works, definitely take a look at that link.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - It's gonna walk you step by step through all the different features and functionalities it has.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - But I wanted to go over the second way to define a patch, and that's called a strategic merge patch.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - And so this is what a strategic merge patch looks like.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - And you'll notice one thing, if you take a look at all the text, it looks pretty similar to a standard Kubernetes config.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - It actually looks like the beginning of a regular Kubernetes deployment.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - And that's exactly what it is.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 94 | **Type:** Warning/Pitfall
+  - I basically just copied the original API deployment file and I just pasted it in there, and then I deleted all the stuff I don't wanna change.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - And so this is one of the perks of using a strategic merge patches that it's just using regular Kubernetes configs.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 96 | **Type:** Implementation Step
+  - And then what it's going to do is it's going to take this new config and it's going to merge it with the old config, and it's going to figure out exactly what's changed and it's going to update those properties.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So when you do this method, you have to make sure that you provide basically two things.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - Once again, we need a way to tell kustomize what Kubernetes object do we wanna update.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - So in this case, I've provided metadata and then the name of the deployment.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 100 | **Type:** Implementation Step
+  - So this is just like defining a deployment where you specify the name, this is what's going to let kustomize know what we're trying to change.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 101 | **Type:** Implementation Step
+  - And then you have to specify the specific properties that you wanna change.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 102 | **Type:** Implementation Step
+  - So just like you would define it in a regular depl.yaml file, you go under spec and then replicas, because that's the property I wanna change, and then you just provide the new value.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - So it's going to take that new value of 5 and it's going to merge with the original config.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - And I think the original one was a value of 1, and it's gonna say, "Hey, we wanna update 1 to a 5," and then it's going to merge that together and give us the final result.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - And so that's how we strategic merge patch works.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - Both of these methods work fine.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 107 | **Type:** Troubleshooting
+  - There's no issues with using either one, it's just a matter of personal preference.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - You can even mix and match, if you'd like.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - I happen to prefer the strategic merge patch just because I get to use regular Kubernetes configs, and I think it makes it a little bit more readable.
+- **File:** `276_Patches Intro.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - But if you guys prefer JSON 6902 patch, definitely go ahead and use that.
+
+### Different Types of Patches
+
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (pleasant music) Instructor: Now, this is gonna complicate things a little bit more, but for both the JSON 6902 patch, as well as the strategic merge patch, there's two different ways you can define a patch.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - The first one is inline, and that's the one we've kind of been working with till now.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - And that's where you define the patch within the kustomization.yaml file.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - The other method is by using a separate file.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So what we can do instead is in the kustomization.yaml file, we can provide the target like we normally do.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 6 | **Type:** Warning/Pitfall
+  - And then we can provide a path to a YAML file that's going to contain all of our patches, so that we don't have to clutter up our kustomization.yaml file.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And so, what that's going to look like is, in the replica-patch.yaml file, that's going to contain a list of all of our patches.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So in this case, I've just got one.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So either one of these methods works.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Once again, if you want to just put it in line in your kustomization.yaml file, feel free to do so.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - If you have a lot of patches, it may start to clutter things up, and then you can move it to a separate file and then use the separate file method.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And we can do the same thing for a strategic merge patch.
+- **File:** `277_Different Types of Patches.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - We can define everything in line or, if we want to, we can specify a path to a YAML file that's going to contain all of our patches.
+
+### Patches Dictionary
+
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 1 | **Type:** Exam Tip
+  - (pleasant music) Instructor: Let's take a look at another example on how to update a key in a dictionary in our Kubernetes config using a JSON 6902 patch.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So I've got my deployment configuration here.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - And I've got one label called component API, and I wanna update that to be component web.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So how do we do that?
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Let's take a look at the kustomization.yaml file.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So we're gonna have our target, which is going to specify what Kubernetes object we wanna match on.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So it's gonna look for a deployment configuration with the name of API deployment.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Under patch, you can see that the operation is set to replace 'cause we wanna replace component with a new value.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 9 | **Type:** Warning/Pitfall
+  - We don't want to add or delete a label, we want to replace this one.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - And then we have to provide the path.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So the path is, how do we actually get to the labels property in our config?
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Well, we have to go under spec, so we do /spec.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - Then we go under template, so /template.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - Then we go under metadata, metadata and then labels, labels.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And that's going to get us to that dictionary.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And then we wanna update the component property.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So how do we update component?
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Well, under the path you finally just provide the name of the specific key we wanna update.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So that's gonna be component.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - And then we provide the new value, so that's going to change it to web.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - And so the final result is going to be, the label's going to be change to component web.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Now, let's take a look at how we can do the same exact thing of changing a key and a dictionary using a strategic merge patch.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - And so, I've got my usual API deployment configuration.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And I wanna change that one label, component API, to be component web.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So how do I do that?
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Well, let's take a look at our kustomization.yaml file.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - First thing to note is that instead of doing this inline, I've decided I'm gonna use a separate file.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - You can do this inline as well, I just think it kind of makes it a little cluttered.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So I've decided to move it to a separate file.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And so, I have the patches section, which is going to list out all of the YAML files that are gonna contain all of my patches.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And I've got one file called label-patch.yaml.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - And if we take a look at label-patch.yaml, you can see that this is basically a copy and paste of our original API deployment configuration.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So that's what I did, I copy pasted it into this file.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - And then what I did is I went in and I deleted all the properties that weren't changing.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So like the containers, that's still gonna be an Nginx container.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So I just deleted that, and I just keep all the things that it absolutely needs.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So the first thing it needs is going to be the metadata and the name.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - So it has to be able to know what specific Kubernetes object do we want to update, and then the exact property that I wanna change.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So I've set the component to be web this time.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And so, customize is then gonna take this config, merge it with the original API deployment config.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - And it's going to see that the only thing that's changing between the two is the component label is getting changed to web.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - And so, it's going to then change that label and then give us the outputted result.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So we saw how we can replace or modify a key and a dictionary using a JSON 6902 patch.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Let's now take a look at how we can add a new key.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - So I've got my deployment configuration.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - I've got one label called component API, and I want to add in a second label.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So I want to add in a label that says, that's gonna be org kodekloud.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So what is that gonna look like in our kustomization.yaml file?
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - Well, the first thing that we need to focus on is the operations.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So if you take a look under the patch section, the operation gets changed to an add.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So this is going to add a new key to that dictionary.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - And then we have to provide a path to the specific dictionary that we want updating.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - So we go under spec, then template, then metadata, and then we get down to labels.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - And then finally, we have to provide the new key.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - So you provide the key in the path, and then you provide the value.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - So then this is gonna give us org kodekloud.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - And the final result is going to be, we have two labels now with the original component API.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - And then we have the org kodekloud 'cause this is a add operation.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Now, let's see how we can add a key to a dictionary using a strategic merge patch.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - So I've got the same exact deployment configuration with one label, component API.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - And then in my kustomization.yaml file, I'm gonna use the separate file method just because I didn't wanna do this inline.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - And if we take a look at what that label-patch.yaml configuration looks like, you can see, once again, I've just copied the original deployment configuration.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - And then I've just deleted all the things that won't change.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - And so, under spec/template/metadata/labels, I've added the new label that I want added.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - And what this is gonna do is it's gonna take that label-patch.yaml file, and it's going to merge it with the API-deployment.yaml file.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - And it's gonna see that the original API deployment YAML file had a component API label.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - And then the label-patch.yaml has a label, org kodekloud.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - It's gonna see both of them are different, and it's gonna merge it together.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - And the final result is we get both of those labels added.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - We saw how we can add and replace a key in a dictionary.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So now we're gonna take a look at how we can remove a key from a dictionary using a JSON 6902 patch.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - So this is my deployment configuration.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 73 | **Type:** Comparison
+  - The only difference now is that you can see I have two labels.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - If we take our kustomization.yaml file, the most important thing to notice is that we've changed the operation to be a remove.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - And then for the path, we have to provide the path to get to the specific labels dictionary.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - So we have to go into spec/template/metadata/labels, and then we provide the specific key of the label that we wanna remove.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - So in this case, I wanna remove org kodekloud.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - So then I just provide org, and that's going to delete that label.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - And so, the final result is that I end up with just one label and that's the component API.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So now, let's take a look at how we can remove a key from a dictionary using a strategic merge patch.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And so, I've got the same two labels here, and the label that I wanna delete is the org kodekloud.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So I've got my kustomization.yaml file.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - This is going to point to a separate file called label-patch.yaml.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And in here, the way we're going to actually delete a key is we're gonna set it to null.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - So I just go under spec/template/metadata/labels, and then I specify org and give it a value of null.
+- **File:** `278_Patches Dictionary.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - And that's going to delete the key effectively.
+
+### Patches List
+
+- **File:** `279_Patches List.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (upbeat music) Instructor: So we saw how we can remove, replace, and add keys to a dictionary.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Let's now take a look at how we can perform those operations on a list.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So, I've got a deployment configuration here, and at the bottom of the deployment configuration, I've got one container with the name of nginx and an image of nginx.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And it's important to understand that the container section expects a list.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So that's why you see that dash before the name.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So you can have more than one container.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - I only have one in this case, but you can have as many as you'd like.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So let's see how we can change the name in the image of this specific container here.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So if we take a look at our kustomization.yaml file, we're gonna have the target, as usual, that's gonna target this specific Kubernetes object by providing the kind and the name.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - The patch section, under operation, we're gonna have a replace operation 'cause we're gonna replace the name and the image.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Now this is where it gets interesting, the path, right?
+- **File:** `279_Patches List.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - To get to containers, you have to go under spec, then template, then spec, then containers, and then something interesting happens.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - We have a zero.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So what does this zero mean?
+- **File:** `279_Patches List.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Well, the number at the end of the path represents the index of the container you wanna change.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So remember, this is a list, so you can have more than one container, and the index is going to represent which item in that list you wanna update.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - And so if you've ever worked with a programming language, you know that when it comes to a list or an array, the first item in that list is always going to have an index of zero.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So it starts counting from zero.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - The second one is going to be a one, the third one is going to be a two, and the fourth one is gonna be a three, and so on.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - So we only have one container, but that's going to be both the first and the last container.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - And since this is the first container, it's going to have an index of zero.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - So this is going to tell Kustomize, I want to change the first container, which is gonna be that nginx container.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - And then I specify the new name and the new image under the value section.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And if you take a look at the final result, we can see that is now changed to haproxy for both the image and the name.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So, let's now take a look at how we can replace a container or replace an item in a list using a strategic merge patch.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - And so I've got the same deployment configuration with the same nginx container.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And so I want to update the image of this container.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So, I've got my kustomization.yaml file that's going to point to the label-patch.yaml file.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - And if you take a look at the label-patch.yaml file, you'll see that under the container section, I specify the name of the container that I wanna change, which is going to be nginx.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - And then I provided the new image of haproxy.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And that's going to update the image.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Let's now take a look at how we can add an item to a list using a Json6902 patch.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - So once again, I have my deployment configuration with one container and that's gonna be my nginx container.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And I want to add a second container to this list.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So how do I do that?
+- **File:** `279_Patches List.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - Well, in my kustomization.yaml file, the first thing that I'm gonna need to change is the operation.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So it's going to be set to add because I want to add a container.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - And then the next thing that you probably have noticed that's probably sticking out a little bit is that at the end of my path I have this dash.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So what does that mean?
+- **File:** `279_Patches List.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - All right.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - It looks like a typo, but, in fact, I want that there.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - So what the dash means is, well, first of all, at the end of the path, you have to specify where do you wanna add the container in the list.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So where in the order.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - The dash just means I want to add it at the end of the list.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So it's going to put it in after the nginx container, but I could also specify a specific index for where I want to add it to.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So if I want to add it to the front of the list, I would provide an index of zero, 'cause remember, arrays and lists start with an index of zero.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - If I wanna make it the second item, I would give it a value of one, an index of one.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - But since the order doesn't really matter in this case, I'm just gonna add it at the end.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - That's why I have the dash.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - Then we provide the values as usual.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So I'm gonna set the name to haproxy and the image to haproxy.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - And then finally, when we take a look at the final configuration, you can see that we now have two containers, one called nginx and one called haproxy.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Adding an item to a list using a strategic merge patch is going to be just as simple.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So, once again, we've got one specific container here with the name of web and an image of nginx.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And I'm going to use a separate file to list out my patches.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So I've got my label-patch.yaml.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - And all we have to do is just specify the new container we want to add.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So, here I'm adding a new container with the name of haproxy and an image of haproxy.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - So when we merge the two configs together, it's going to see that there's a container from the original configuration called web, and then there's a container from the patch called haproxy.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - These are two containers, so it's gonna merge it together, and we're gonna end up having two containers in our array.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So, now let's move on to deleting items from the list using a Json6902 patch.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And so I'm gonna start off with two containers and I want to delete the container with the name of database.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So in my kustomization.yaml file, I'm gonna change the operation to be a remove.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - And then I'm going to provide the index of the container I wanna remove.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So we have two containers and I wanna grab the second one.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So that's going to be an index of one.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Remember, we always start counting at zero.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So the web container is going to be an index of zero.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - The second container, the database one is going to be an index of one.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 70 | **Type:** Warning/Pitfall
+  - And then we don't need to provide a value because this is a remove operation.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - And if we take a look at the final result, we can see that we just have one container.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Okay, so now let's see how we can delete an item from a list using a strategic merge patch.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So, once again, we've got two containers and we want to delete the container called database.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And so if we take a look at our label-patch.yaml, you're gonna notice something a little bit different.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - If you take a look at the containers section, you're gonna see this interesting symbol, you're gonna see the dollar sign, patch, and then delete.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So when you're dealing with the strategic merge patch, right, we're listing out all of the Kubernetes configs that we wanna change.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Well, how do we list out that we want to delete something?
+- **File:** `279_Patches List.extraction.md` | **Entry:** 78 | **Type:** Warning/Pitfall
+  - If I don't include, then Kustomize just thinks that I don't wanna do anything.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So how do I tell it I want to delete something?
+- **File:** `279_Patches List.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Well, I have to use the delete directive, and that's what that dollar sign patch is.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 81 | **Type:** Implementation Step
+  - So I use dollar sign patch, and then I say delete.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - And then under it, I give it exactly what I want to delete.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So I want to delete the container with the name of database, and that's going to delete that container.
+- **File:** `279_Patches List.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And we're gonna end up with just one container at that point.
+
+### Overlays
+
+- **File:** `281_Overlays.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (bright music) Instructor: Now that we've learned how to work with kustomization.yaml files and the different functionalities that come with it, we can finally put everything together and address the main use case of Kustomize.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - As mentioned before in one of the first lectures of this course, Kustomize was created to allow us to take a base Kubernetes config and customize it on a per-environment basis.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - And so if we have a development environment and a staging environment and a production environment, we may wanna tweak certain properties on a per-environment basis, and that's where Kustomize really does come into play.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So how exactly do we accomplish this?
+- **File:** `281_Overlays.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Well, it's with something called overlays.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And if you take a look at a usual folder structure of a customized project, it's gonna be broken down into two different sections.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So you're gonna first have the base section.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So this is going to be where all of your shared configuration, so all of your Kubernetes configs that are gonna be shared across all of your environments or all of your default configs are going to reside.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So your base config is going to have all of these shared and default configurations.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - And then what we're gonna do is on a per-environment basis, we're gonna define a overlay folder for each environment.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - And here we get to specify all of the environment specific configs so that we can take the base configs and then modify it to our liking for that specific environment.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And so that's why we have a folder for dev, and a folder for staging, and a folder for production.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And if you haven't guessed, right, we're gonna accomplish this by providing patches.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 14 | **Type:** Best Practice
+  - That's it, so your dev folder is going to have a certain number of patches that will change things to match what the dev should have.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Staging folder is gonna do the same thing.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - They're gonna have a bunch of patches for the staging environment, and the same thing goes for production.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So let's take a look at this in action.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So I've got the same directory structure, and in my base folder I have my nginx-depl.yaml file.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And here I've set the replicas to 1.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And let's say on a per-environment basis, I wanna change this value.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - So, to get this set up, the first thing that we need to do is we need to define our kustomization.yaml file in our base folder.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And this is just a regular kustomization.yaml file, and you can see we're just importing the resources like we normally do.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Nothing special up to this point.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Now where things get interesting is in the overlays.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So if we take a look at the kustomization.yaml file in the dev folder, you're gonna see something new that we haven't seen.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - We've got this bases property.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So what is that?
+- **File:** `281_Overlays.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Well, we're basically telling this kustomization.yaml file, how do I get to the base directory with all of the base configs?
+- **File:** `281_Overlays.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So we just have to provide the relative path to that folder.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So, relative path means how do I get there from this kustomization.yaml file.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Since this file is in the dev folder, we have to go up two directories and then into the base directory.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So if you guys aren't familiar with this syntax, if you see two dots and a slash, that means go up a directory.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - So we see two dots and a slash, so that means we go from the dev folder to the overlays folder, and then we have another two dots and a slash, so that means we go from the overlays folder to the k8s folder, and then we go into the base directory.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 34 | **Type:** Best Practice
+  - Once that's defined, Kustomize will look for the kustomization.yaml file in the base directory to know all the resources it should be importing.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - And then we're gonna provide a patch.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So let's say we wanna update the replicas to a value of 2, and that's all you have to do.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - That is the entire concept of overlays.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - You see, we're not really learning anything new.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - We've already learned everything that we need to learn.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - It's just a matter of providing patches on a per-environment basis.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - And the same thing goes for production.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - We're gonna provide the path to the base folder, and then we're gonna update and provide a patch to update the value to be of 3 for the replicas count.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Now overlays is a simple concept, and we've kind of already covered everything that we need to do, right?
+- **File:** `281_Overlays.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - That's really all we need to know about overlays.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - It's just a matter of importing the base configs and then providing patches.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 46 | **Type:** Warning/Pitfall
+  - But I wanna make sure that you guys don't think that, you know, overlays can only have patches.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - We can actually do a little bit more.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So in your overlay folder, what can happen is, you're gonna have your kustomization.yaml file, and that's going to have all of your patches.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - But in one of these environment folders, in your overlay folders, you can have new configs that weren't defined in your base folder.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 50 | **Type:** Exam Tip
+  - So in this example, I have a grafana-depl.yaml, and you'll notice that doesn't exist in the base folder.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - So this means that in my production environment, I'm going to add a Grafana deployment that isn't available in any of my other environments.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And so I just wanted to highlight the fact that in these environment-specific folders, you can add as many brand new resources as you want.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 53 | **Type:** Warning/Pitfall
+  - You don't have to just modify preexisting ones, you can use new ones.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And so the way that this would look like in your kustomization.yaml file is, under the resources section, we just import it like a regular file.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - So we have our bases, we have our patches, and then we import our resources that are in our current folder.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So, just something to keep in mind, you can add new resources inside your overlay folder.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 57 | **Type:** Warning/Pitfall
+  - So one final note, I wanna make sure that you guys don't think that we're kind of forced into a certain directory structure.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - In fact, kustomize gives you a lot of flexibility in how you wanna structure your Kubernetes configs.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So you can break it out into subfolders.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So your base folder can be broken out into, you know, extra subdirectories based off of features like we've done before, and you could break it out however you want to.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 61 | **Type:** Warning/Pitfall
+  - Don't think that you just have to jam everything under the base directory.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And the same thing goes for your overlays.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - If you wanna break it out into features as well, you can do that as well.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 64 | **Type:** Warning/Pitfall
+  - And remember, these subdirectories don't have to match up with what the base directory is.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - They can be completely separate.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - They can follow their own patterns.
+- **File:** `281_Overlays.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - It's completely up to you, just make sure that you have the resources being imported properly into the proper kustomization.yaml files.
+
+### Components
+
+- **File:** `283_Components.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (upbeat tone) -: In this lecture, we're gonna take a look at a customized feature called, Components.
+- **File:** `283_Components.extraction.md` | **Entry:** 2 | **Type:** Exam Tip
+  - And so, a component provides the ability to define a reusable piece of configuration logic that can be included in multiple overlays.
+- **File:** `283_Components.extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - And so, these are gonna be really useful in situations where you have an application that supports multiple optional features that need to be enabled only in a subset of the overlays.
+- **File:** `283_Components.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And that's important to understand, a subset of the overlays.
+- **File:** `283_Components.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Let's say we have a certain set of configurations that we need to enable a certain feature.
+- **File:** `283_Components.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - If we wanted it enabled across all of the overlays, we would just put it in our base configs.
+- **File:** `283_Components.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - But let's say we didn't want it enabled in all of our overlays, only in a subset of them.
+- **File:** `283_Components.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Well, we could do that pretty easily just by defining them in each one of the overlays.
+- **File:** `283_Components.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - But then, now we're copying and pasting all of the configs.
+- **File:** `283_Components.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And so, that's not a scalable solution.
+- **File:** `283_Components.extraction.md` | **Entry:** 11 | **Type:** Best Practice
+  - We usually try to avoid copying and pasting things like that. 'Cause a lot of times it leads to some config drift.
+- **File:** `283_Components.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - If you make changes in one, you forget to make changes in the other.
+- **File:** `283_Components.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So components are just reusable blocks of Kubernetes configs, that's all it is.
+- **File:** `283_Components.extraction.md` | **Entry:** 14 | **Type:** Warning/Pitfall
+  - Don't complicate it, it's just all of the resources for a specific feature, all of the patches, all of the config maps, secrets, and any other Kubernetes related configs associated with the feature.
+- **File:** `283_Components.extraction.md` | **Entry:** 15 | **Type:** Exam Tip
+  - They go into a component and then you can enable it in multiple overlays, that's it.
+- **File:** `283_Components.extraction.md` | **Entry:** 16 | **Type:** Exam Tip
+  - So let's take a look at a visual example because I think once you visually see how all of this fits together, you'll have a much better understanding of how components work.
+- **File:** `283_Components.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - Now, let's say our application can be deployed in three different variations.
+- **File:** `283_Components.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - We've got the development variation, the premium one for premium customers, and then a self-hosted version for any one of our customers that wants to self-host our application.
+- **File:** `283_Components.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So we've got those three folders and those would represent the three different overlays in a customized application.
+- **File:** `283_Components.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - And then we obviously have our folder for the base configuration that's gonna be shared across all three overlays.
+- **File:** `283_Components.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Now, let's say our application has a couple of optional features, and one of those is caching.
+- **File:** `283_Components.extraction.md` | **Entry:** 22 | **Type:** Best Practice
+  - And let's say that only the premium and the self-hosted version of our application should have caching enabled.
+- **File:** `283_Components.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And for caching, in this case, let's say we would need to enable a Redis database as well as you know, all the configurations associated with Redis so that we can implement caching in our application.
+- **File:** `283_Components.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So only these two versions are gonna have caching enabled.
+- **File:** `283_Components.extraction.md` | **Entry:** 25 | **Type:** Best Practice
+  - And then let's say we also want a external database service like a Postgres database, and that should only be available for development and the premium versions of our application, so these two guys.
+- **File:** `283_Components.extraction.md` | **Entry:** 26 | **Type:** Troubleshooting
+  - So this is going to create a little bit of an issue 'cause we have these individual features that only apply to a certain subset of our overlays.
+- **File:** `283_Components.extraction.md` | **Entry:** 27 | **Type:** Exam Tip
+  - So let's take a look at caching as an example.
+- **File:** `283_Components.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So we're writing out all of our Kubernetes configs for our caching functionality, and we're trying to figure out where exactly do we put it in our folder structure.
+- **File:** `283_Components.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - The first thing you're thinking is, we put it in our base configuration directory.
+- **File:** `283_Components.extraction.md` | **Entry:** 30 | **Type:** Warning/Pitfall
+  - And the problem with doing that is, all three overlays will get the configuration, but remember, only self-hosted and premium should get the caching configuration, we don't want development to get it.
+- **File:** `283_Components.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So putting it in the base folder is not an option.
+- **File:** `283_Components.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So what else can we do?
+- **File:** `283_Components.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Well, we can copy the caching configuration in both of the premium and self-hosted overlays, and that would work just fine.
+- **File:** `283_Components.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - However, if you make changes in one of the folders, you'd have to remember to make changes in the other one.
+- **File:** `283_Components.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - And let's say we over time decide to add a few more variations to how we can deploy our application.
+- **File:** `283_Components.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - We would have to remember to copy it into all of those.
+- **File:** `283_Components.extraction.md` | **Entry:** 37 | **Type:** Best Practice
+  - So like most other things like developing any applications, you wanna avoid copying and pasting whenever you can.
+- **File:** `283_Components.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - And so, that's why components were created.
+- **File:** `283_Components.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - They were kind of created so that we could have a reusable block of code that we can apply in several different overlays.
+- **File:** `283_Components.extraction.md` | **Entry:** 40 | **Type:** Best Practice
+  - So we could take our caching configuration, all the Kubernetes config for that, and create a component, a customized component, and then we can just import that component into all of the different overlays that should be using it.
+- **File:** `283_Components.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So let's take a look at how that would work.
+- **File:** `283_Components.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - So we've got the exact same folder structure with our three overlays and our base configuration, but now we're gonna create an extra folder and we're gonna store all of our components here.
+- **File:** `283_Components.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And there's going to be two different components, caching and database.
+- **File:** `283_Components.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So inside the caching folder, we're gonna have all of the Kubernetes configs that are associated with the caching feature.
+- **File:** `283_Components.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - So like I said, that's going to be probably like a Redis instance with all of the configurations and secrets for the authentication side of our Redis database, as well as anything else that we need for our Redis database.
+- **File:** `283_Components.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - As well as, we're gonna have a folder for our external database feature.
+- **File:** `283_Components.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - And that's going to contain all of the configs that we need to implement that specific feature.
+- **File:** `283_Components.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So they're all isolated into their own folder.
+- **File:** `283_Components.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - Then what we can do is, all of the overlays that need the caching functionality, they can just import that component.
+- **File:** `283_Components.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - So they just have one line in their configs that say, "Hey, I want to import caching." And then for all of the overlays that need the database, they can just import the database component.
+- **File:** `283_Components.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So all of the logic for the caching functionality sits in one spot, in that caching folder.
+- **File:** `283_Components.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And all of the logic for the external database functionality sits in the database folder inside the components directory.
+- **File:** `283_Components.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - And that way we get to write it only once and then we could import it into as many overlays as we want.
+- **File:** `283_Components.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So let's see how we can implement a component.
+- **File:** `283_Components.extraction.md` | **Entry:** 55 | **Type:** Exam Tip
+  - Now if we take a look at our example project structure, we've got a couple of things that we've already seen before.
+- **File:** `283_Components.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - We've got the base directory that's going to contain all of the base configurations for all of our overlays.
+- **File:** `283_Components.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - And we've got our kustomization.yaml file as well as one deployment configuration in there as well for our API.
+- **File:** `283_Components.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - In the bottom, we've got our overlays.
+- **File:** `283_Components.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So there's the same three overlays that we have, the dev, the premium, and the standalone.
+- **File:** `283_Components.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - And these are just simple overlays.
+- **File:** `283_Components.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - They just got their kustomization.yaml files, no other extra resources.
+- **File:** `283_Components.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - And then finally, in the middle, we've got our new components folder.
+- **File:** `283_Components.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So this is going to be the folder that contains all of our individual components.
+- **File:** `283_Components.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - And you can see that we've got two different components.
+- **File:** `283_Components.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - We've got the caching component and the database component.
+- **File:** `283_Components.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So if we take a look at one of these, we'll focus on the database, but the caching is identical almost.
+- **File:** `283_Components.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - You'll see that there's a couple of different files in there.
+- **File:** `283_Components.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - So first of all, we've got our kustomization.yaml file, that's a given, but then we've got two other files.
+- **File:** `283_Components.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - So I've got a deployment-patch.yaml, and a Postgres-depel.yaml.
+- **File:** `283_Components.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So what are these files?
+- **File:** `283_Components.extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - Well, the Postgres-depel.yaml is a deployment for a Postgres database.
+- **File:** `283_Components.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So within the database folder or any component folder, we're going to have a list of all of the resources that this feature needs.
+- **File:** `283_Components.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - So I took a look at the feature and I realized the only thing I need to create from a Kubernetes perspective is, I need to have a Postgres database.
+- **File:** `283_Components.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - So I have a Postgres deployment inside the Postgres-depl.yaml.
+- **File:** `283_Components.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So I'm just creating all of the resources I need to get the external database functionality to work.
+- **File:** `283_Components.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - Now, if we take a look at the kustomization.yaml file, the first thing that you'll notice is the apiVersion and the kind are different.
+- **File:** `283_Components.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Because this is a component, we have to change the version to the one listed there, and the kind to be component, just something to keep in mind.
+- **File:** `283_Components.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - The next thing that we have to do is, we have to import the resources that we created for this component.
+- **File:** `283_Components.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - So in this case, it's just the Postgres deployment.
+- **File:** `283_Components.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - I also figured that since we have a database, we probably need to store a secret for the database so that we know what the password is.
+- **File:** `283_Components.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - So I've defined a secret for the password.
+- **File:** `283_Components.extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - And then finally, we have all of our patches.
+- **File:** `283_Components.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So when you have a feature, you may need to go in and change some things that are in the base configuration folder.
+- **File:** `283_Components.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So obviously we have our API-depl.yaml in our base directory, and we need to go in and add an environment variable in there so that it knows what's the password to connect to the new database for our external database feature.
+- **File:** `283_Components.extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - So if we take a look at the deployment-patch.yaml file, you can see this is a strategic merge patch.
+- **File:** `283_Components.extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - And we're going to update the API-deployment in our base configuration, and we're gonna add a brand new environment variable, and that's going to be the database password.
+- **File:** `283_Components.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - The final thing that we have to cover is the kustomization.yaml file in the overlays.
+- **File:** `283_Components.extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - So we have to import the components that we created.
+- **File:** `283_Components.extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - So if we take a look at the kustomization.yaml file in the dev folder, we're going to import the database component because as I mentioned, this specific deployment model or this variation for dev makes use of the external database feature.
+- **File:** `283_Components.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So how do we actually import a component?
+- **File:** `283_Components.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - It's very simple.
+- **File:** `283_Components.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - So if we take a look at the top, we've got the importing of our base, that's just usual customization configuration.
+- **File:** `283_Components.extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - But then below that, you can see the component section.
+- **File:** `283_Components.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So that's going to provide the path to the component that we want to make use of in this overlay.
+- **File:** `283_Components.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So we provide the path to the database component.

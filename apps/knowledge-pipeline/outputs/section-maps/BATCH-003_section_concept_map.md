@@ -1,0 +1,3519 @@
+# Section Concept Map: BATCH-003
+
+## Section
+- Course: `certified-kubernetes-administrator-with-practice-tests`
+- Section: `03_Scheduling`
+
+## Source Files Used
+- `050_Scheduling - Section Introduction.extraction.md`
+- `051_Manual Scheduling.extraction.md`
+- `053_Lab Solution - Manual Scheduling (optional).extraction.md`
+- `054_Labels and Selectors.extraction.md`
+- `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md`
+- `057_Taints and Tolerations.extraction.md`
+- `059_Lab Solution - Taints and Tolerations (Optional).extraction.md`
+- `060_Node Selectors.extraction.md`
+- `061_Node Affinity.extraction.md`
+- `063_Lab Solution - Node Affinity (Optional).extraction.md`
+- `064_Taints and Tolerations vs Node Affinity.extraction.md`
+- `065_Resource Requirements.extraction.md`
+- `068_Lab Solution - Resource Limits.extraction.md`
+- `069_DaemonSets.extraction.md`
+- `071_Lab Solution - DaemonSets (optional).extraction.md`
+- `072_Static Pods.extraction.md`
+- `074_Lab Solution - Static Pods (Optional).extraction.md`
+- `075_Priority Classes.extraction.md`
+- `077_Multiple Schedulers.extraction.md`
+- `079_Lab Solution - Multiple Scheduler.extraction.md`
+- `080_Configuring Scheduler Profiles.extraction.md`
+- `082_(2025 Updates)Admission Controllers.extraction.md`
+- `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md`
+- `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md`
+- `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md`
+
+## Concept Groups
+
+### Scheduling - Section Introduction
+
+- **File:** `050_Scheduling - Section Introduction.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hello, my name is (indistinct) and we are going through the certified Kubernetes Administrator's course.
+- **File:** `050_Scheduling - Section Introduction.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In this section, we look at various concepts related to scheduling in Kubernetes.
+- **File:** `050_Scheduling - Section Introduction.extraction.md` | **Entry:** 3 | **Type:** Architecture
+  - We saw how to install and configure a scheduler briefly in the previous section.
+- **File:** `050_Scheduling - Section Introduction.extraction.md` | **Entry:** 4 | **Type:** Architecture
+  - Here we take a closer look at the various options available for customizing and configuring the way the scheduler behaves through a set of fun and challenging practice exercises.
+- **File:** `050_Scheduling - Section Introduction.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Now I'm going to reran some topics a little bit to improve the flow.
+- **File:** `050_Scheduling - Section Introduction.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - We will start with manual scheduling and see how you can schedule a pod manually we then look at demon sets, labels and selectors, and how resource requests and limits play a role in scheduling.
+- **File:** `050_Scheduling - Section Introduction.extraction.md` | **Entry:** 7 | **Type:** Exam Tip
+  - We also see how to configure multiple schedulers and how to view the scheduler events.
+- **File:** `050_Scheduling - Section Introduction.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Well, let's get started and I hope you enjoy the lectures and practice tests.
+
+### Manual Scheduling
+
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture, we look at the different ways of manually scheduling a pod on a node.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 2 | **Type:** Warning/Pitfall
+  - What do you do when you do not have a scheduler in your cluster?
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 3 | **Type:** Warning/Pitfall
+  - You probably do not want to rely on the built in scheduler and instead want to schedule the pods yourself.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 4 | **Type:** Architecture
+  - So how exactly does a scheduler work in the backend?
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Let's start with a simple pod definition file.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Every pod has a field called node name that by default is not set.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 7 | **Type:** Warning/Pitfall
+  - You don't typically specify this field when you create the pod manifest file.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Kubernetes adds it automatically.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 9 | **Type:** Warning/Pitfall
+  - The scheduler goes through all the pods and looks for those that do not have this property set.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Those are the candidates for scheduling.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - It then identifies the right node for the pod by running the scheduling algorithm.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Once identified, it schedules the pod on the node by setting the node name property to the name of the node by creating a binding object.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 13 | **Type:** Architecture
+  - So if there is no scheduler to monitor and schedule pods onto nodes, what happens?
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The pods continue to be in a pending state.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So what can you do about it?
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - You can manually assign pods to nodes yourself.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 17 | **Type:** Architecture
+  - Well, without a scheduler, the easiest way to schedule a pod is to simply set the node name field to the name of the node in your pod specification file while creating the pod.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - The pod then gets assigned to the specified node.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - You can only specify the node name at creation time.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - What if the pod is already created and you want to assign the pod to a node?
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Kubernetes won't allow you to modify the node name property of a pod.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 22 | **Type:** Architecture
+  - So another way to assign a node to an existing pod is to create a binding object and send a Post request to the pods binding API, thus mimicking what the actual scheduler does in the binding object.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - You specify a target node with the name of the node, then send a Post request to the pods binding API with the data set to the binding object in a JSON format.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So you must convert the YAML file into its equivalent JSON form.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `051_Manual Scheduling.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Head over to the practice test and practice manually scheduling pods on nodes.
+
+### Lab Solution - Manual Scheduling (optional)
+
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay in this video, we're gonna walk over the practice test on manual scheduling.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the question is a pod definition file engine x.yaml is given and you have to create a pod.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So let's go over this, but before that let's just quickly explore the environment.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So if you're on the get nodes command we see that it's a two node cluster.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So that's what we're working with now.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And there is a file called engine x.yaml.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And by the looks of it it's just a normal pod definition file with the name set to engine X and the image set to engine X as well.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - So let's go ahead and create this.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Okay. and let's click on check.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 10 | **Type:** Warning/Pitfall
+  - And so the goal of this exercise is just to create the pod you don't have to check the status for now let's go to the next question.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - So what is the status of the created pod?
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So we see that it's in a pending state.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So that's the answer, it's an a pending state.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Okay so why is the pod in a pending state?
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So inspect the environment for various Kubernetes control plane components.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 16 | **Type:** Architecture
+  - So one thing that we have learned is that's the scheduler that schedules the pod.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So if the pod's status is in pending, let's take a closer look at the pod.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 18 | **Type:** Warning/Pitfall
+  - And we don't see any additional details other than the fact that it's in a pending state.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 19 | **Type:** Architecture
+  - So that basically means the scheduler has not done its job of scheduling the pod on a node.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - You see if you look at it here the node field is set to none.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 21 | **Type:** Architecture
+  - So let's look at the scheduler.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 22 | **Type:** Architecture
+  - So the scheduler runs as a pod in the cube system name space.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 23 | **Type:** Architecture
+  - And we see that you have the API server, the controller manager, the proxy, the ETCD control plane, but there is no scheduler running.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So that could be the reason why this pod is not running and it's in a pending state.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 25 | **Type:** Architecture
+  - So we're gonna say that there's no scheduler present.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Okay, so now we have to manually schedule the pod on node zero one.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - Now we've already created the pod, but it's not assigned to any node.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And one thing that we've learned in the previous lecture is that we can manually schedule the pod.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So we're gonna edit the engine X study on the file.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And I'm going to add a node name property here and we'll set that to node zero one.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Okay. and then we, now we've got to recreate the pod.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - So we have to delete it and recreate it.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - One way to do that is just to, you know, delete the pod and recreate it.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - But we can also just use the replace command if we need to do that just in a single command.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - So we're gonna do a replace force so that's going to delete the pod and then recreate it.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - And then we're gonna specify the file.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So that first, yeah the pod is deleted and then it's just replaced.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So let's look at the status of the pod now.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - You see that it's in a container creating state.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 40 | **Type:** Warning/Pitfall
+  - Now if you don't want to run the same command multiple times to check the status you could just add the watch option.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - And what it's gonna do is it's going to continue to monitor that pod and it's gonna update the status if something changes.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So it's already in the running state, so we're good.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - Okay, next.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Okay, now schedule the same pod on the control plane node.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Right, so again, that's pretty simple.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - If we go in and make the same change so this is just for additional practice control plane and then we are going to have to do the same thing.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Now remember that we cannot move a running pod from one node to another, right?
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So ultimately a pod is actually a container which is basically another process running on a system.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So you cannot move a running process as is from one system to another.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So there is no way to basically move pods from systems to systems.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - You can only delete pods from one system or one node and then recreate it on another.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So that was a question that I got from a student.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So let's do the replace again and remember to use a force.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - Be sure you wanna delete and recreate it and wait for it to terminate.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Now again, if you look at this, it's taking a while to delete.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So that's not a problem with Kubernetes or with our lab environment.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - It's normal for that to happen.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - When you terminate or when you delete a pod what happens is in the back end it has to go in and terminate the process that's running.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - In this case, the is the engine X process.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So it basically sends a kill signal to the process.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - And the process, depending on what process is running and the way that it handles kill signals it might take some time for it to process that request and actually kill, or you know gracefully shut down, right?
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So that's really the the reason why it takes a few seconds when you delete certain pods.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - And that's why, that's what happened this time.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 64 | **Type:** Troubleshooting
+  - So it's not because there's an issue with either Kubernetes or the node or the lab environment.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - That's just how it works.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Okay, so let's now check the pod, we can check.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - See it's running, if you do a wide option then we'll get to see on which node it is scheduled so we can see that it's on the control plane node.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Okay.
+- **File:** `053_Lab Solution - Manual Scheduling (optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - All right, and that's the end of this lab.
+
+### Labels and Selectors
+
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - What do we know about labels and selectors already?
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Labels and selectors are a standard method to group things together.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Say you have a set of different species.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - A user wants to be able to filter them based on different criteria, such as based on their class or kind, if they are domestic or wild, or say by their color and not just group, you want to be able to filter them based on a criteria such as all gr...
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Whatever that classification may be, you need the ability to group things together and filter them based on your needs.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And the best way to do that is with labels.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Labels are properties attached to each item, so you add properties to each item for their class.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Kind and color selectors help you filter these items.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - For example, when you say class equals mammal, we get a list of mammals.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And when you say color equals green, we get the green mammals.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - We see labels and selectors used everywhere, such as the keywords you tag to YouTube videos or blogs that help users filter and find the right content.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - We see labels added to items in an online store that help you add different kinds of filters to view your products.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So how are labels and selectors used in Kubernetes?
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - We have created a lot of different types of objects in Kubernetes pods, services, replica sets, deployments, etc. for Kubernetes.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - All of these are different objects.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Over time, you may end up having hundreds or thousands of these objects in your cluster.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - Then you will need a way to filter and view different objects by different categories, such as to group objects by their type or view objects by application or by their functionality, whatever it may be.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - You can group and select objects using labels and selectors for each object.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Attach labels as per your needs like app, function, etc..
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - Then, while selecting specify a condition to filter specific objects.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 21 | **Type:** Exam Tip
+  - For example, app equals app one.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So how exactly do you specify labels in Kubernetes?
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - In a Pod definition file under metadata, create a section called labels.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Under that, add the labels in a key value format like this.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - You can add as many labels as you like.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - Once the pod is created to select the pod with labels, use the Kube control get pods command along with the selector option and specify the condition like app equals app one.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Now this is one use case of labels and selectors.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 28 | **Type:** Operational Insight
+  - Kubernetes objects use labels and selectors internally to connect different objects together.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 29 | **Type:** Exam Tip
+  - For example, to create a replica set consisting of three different parts, we first label the part definition and use selector in a replica set to group the parts in a replica set definition file.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - You will see labels defined in two places.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Note that this is an area where beginners tend to make a mistake.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - The labels defined under the templates section are the labels configured on the pods.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - The labels you see at the top are the labels of the replica set itself.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - We're not really concerned about the labels of the replica set for now, because we are trying to get the replica set to discover the pods.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - The labels on the replica set will be used.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - If you were to configure some other object to discover the replica set.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - In order to connect the replica set to the pods, we configure the selector field under the Replica set specification to match the labels defined on the pod.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - A single label will do if it matches correctly.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - However, if you feel there could be other pods parts with the same label, but with a different function.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - Then you could specify both the labels to ensure that the right parts are discovered by the replica set on creation.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - If the labels match, the replica set is created successfully.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - It works the same for other objects like a service.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - When a service is created, it uses the selector defined in the service definition file to match the labels set on the pods in the replica set definition file.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Finally, let's look at annotations.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - While labels and selectors are used to group and select objects, annotations are used to record other details for informatory purpose.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 46 | **Type:** Exam Tip
+  - For example, tool details like name version, build information, etc. or contact details, phone numbers, email IDs, etc. that may be used for some kind of integration purpose.
+- **File:** `054_Labels and Selectors.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Well, that's it for this lecture on labels and selectors and annotations, head over to the Coding Exercises section and practice working with labels and selectors.
+
+### Lab Solution _ Labels and Selectors _ (Optional)
+
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hey, in this video, we're gonna walk through the practice test for labels and selectors.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So, the question is, we have deployed a number of pods, they are labeled with a tier, ENV and BU And how many pods exist in the dev environment?
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So we have to use selectors.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - So first let's do a get pods.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - And we see that there are a number of pods.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Now we've got to filter it and identify the pods that are in the dev environment.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So I'm assuming ENV is for environment.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So that's the label.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And the, so this is the key and this is the value.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So if we have to find pods using the selector and then we'll say ENV equals dev.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - And we see that these are the pods in the dev environment.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So that's 1, 2, 3, 4, 5, 6, 7, 7 of them.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - If you want to find, so now let's say since there are just seven, it's easy to for us to just count.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - But let's say there are a lot of them there that now where it becomes difficult to count manually one thing you could do is just do a word count, right?
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So you could do a word count dash L.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Now the problem with this is this also counts this top line which is the header.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So there's a way to print this without the headers and that's using the no header's option.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And when you run that you just get the output without the header.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - And then we can do a word count on that.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And that's seven, so seven is the answer here.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - Okay, so the next question is how many pods are in the finance business unit?
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So, we saw that the that label key is the, UA so, for business unit.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And the business unit we are looking at IT finance.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And we'll just use same command for this.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - And this time is six.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Okay, and how many objects are in the prod environment including pause, replica sets, and any other objects?
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So let's use the same command and change the labels.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So the environment is broad and now we are only listing the pods.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So to list all objects what you could do is give all instead of pods.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So all lists, all the objects in that name space.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So here we have pods, we have surveys and we have replica sets, right?
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So if you count this, that's, let's do a word count.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - And so that's number seven.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So there are seven objects.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - And then the next question is to identify the pod which is part of the prod environment, the finance BU and the the front end tier.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So one that has all of it.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So the environment is prod.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Then we can just add additional labels separated by a coma will BU equals finance and tier is front end.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Okay, so that happens to be this particular pod, which is which starts with ZZXDF is this one right here.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Okay, the final question is about, again labels.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 41 | **Type:** Troubleshooting
+  - So there's a file called replica set definition file and the request is to create the replica set and but there's an issue with it, so we've got to fix it.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So let's try creating it.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Okay, and it says the replica set is invalid.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Invalid value selector does not match template labels.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So selector is this and template labels.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So this template and template labels is this.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 47 | **Type:** Troubleshooting
+  - So the error message is that this does not match this.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Now we know that for replica set to manage the pod so this is basically the pod definition.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - The replica set needs to have these two match otherwise it won't be able to manage the pod.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 50 | **Type:** Troubleshooting
+  - So that's the validation error here.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 51 | **Type:** Troubleshooting
+  - So we're gonna fix this by changing this to the value below.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - Save that and let's create pod, sorry, the replica set.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - And it's created, let's verify creation.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Yep, that's working.
+- **File:** `056_Lab Solution _ Labels and Selectors _ (Optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Okay, so that's the end of this lab.
+
+### Taints and Tolerations
+
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture, we will discuss about the pod to node relationship and how you can restrict what pods are placed on what nodes.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - The concept of taints and tolerations can be a bit confusing for beginners, so we will try to understand what they are using an analogy of a bug approaching a person.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Now my apologies in advance, but this is the best I could come up with to prevent the bug from landing on the person.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - We spray the person with repellent spray or a taint as we will call it in this lecture.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - The bug is intolerant to the smell, so on approaching the person, the taint applied on the person throws the bug off.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - However, there could be other bugs that are tolerant to this smell, and so the taint doesn't really affect them and so they end up landing on the person.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So there are two things that decide if a bug can land on a person. first, the taint on the person, and second the bugs toleration level to that particular taint.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Getting back to Kubernetes, the person is a node and the bugs are pods.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Now taints and tolerations have nothing to do with security or intrusion on the cluster.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Taints and tolerations are used to set restrictions on what pods can be scheduled on a node.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Let us start with a simple cluster with three worker nodes.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The nodes are named one, two, and three.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - We also have a set of pods that are to be deployed on these nodes.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Let's call them A, B, C, and D.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 15 | **Type:** Architecture
+  - When the pods are created, Kubernetes Scheduler tries to place these pods on the worker nodes.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 16 | **Type:** Architecture
+  - As of now, there are no restrictions or limitations, and as such, the scheduler places the pods across all the nodes to balance them out equally.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Now let us assume that we have dedicated resources on node one for a particular use case or application.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So we would like only those parts that belong to this application to be placed on node one.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - First, we prevent all pods from being placed on the node by placing a taint on the node.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Let's call it blue.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - By default, pods have no tolerations, which means unless specified otherwise, none of the pods can tolerate any taint.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So in this case, none of the pods can be placed on node one, as none of them can tolerate the taint blue.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - This solves half of our requirement.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - No unwanted pods are going to be placed on this node.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - The other half is to enable certain parts to be placed on this node.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - For this we must specify which pods are tolerant to this particular taint.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - In our case, we would like to allow only pod D to be placed on this node.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So we add a toleration to pod D.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Pod D is now tolerant to blue.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 30 | **Type:** Architecture
+  - So when the scheduler tries to place this pod on node one, it goes through node one can now only accept pods that can tolerate the taint blue.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So with all the chains and tolerations in place, this is how the pods would be scheduled.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 32 | **Type:** Architecture
+  - The scheduler tries to place pod A on node one, but due to the time it is thrown off and it goes to node two, the scheduler then tries to place pod B on node one, but again due to the taint, it is thrown off and is placed on node three, which happ...
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 33 | **Type:** Architecture
+  - The scheduler then tries to place pod C to the node one.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - It is thrown off again and ends up on node two.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 35 | **Type:** Architecture
+  - And finally the scheduler tries to place pod D on node one.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Since the pod is tolerant to node one, it goes through.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So remember things are set on nodes and tolerations are set on pods.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So how do you do this?
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Use the kube control taint nodes command to taint a node.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Specify the name of the node to taint followed by the taint itself, which is a key value pair.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 41 | **Type:** Exam Tip
+  - For example, if you would like to dedicate the node to pods in application blue, then the key value pair would be app blue.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 42 | **Type:** Warning/Pitfall
+  - The taint effect defines what would happen to the pods if they do not tolerate the taint.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - There are three taint effects no schedule, which means the pods will not be scheduled on the node, which is what we have been discussing.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 44 | **Type:** Best Practice
+  - Prefer no schedule, which means the system will try to avoid placing a pod on the node, but that is not guaranteed.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 45 | **Type:** Warning/Pitfall
+  - And third is no execute, which means that new pods will not be scheduled on the node and existing pods on the node, if any will be evicted if they do not tolerate the taint.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - These parts may have been scheduled on the node before the taint was applied to the node.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 47 | **Type:** Exam Tip
+  - An example command would be to taint node node one with the key value pair app equals blue and an effect of no schedule tolerations are added to pods to add a toleration to a pod.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - First, pull up the pod definition file in the spec section of the pod definition file.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Add a section called Tolerations.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Move the same values used while creating the taint under this section.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - The key is app operator is equal, value is blue and the effect is no schedule.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And remember all of these values need to be encoded in double quotes.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - When the pods are now created or updated with the new tolerations, they are either not scheduled on nodes or evicted from the existing nodes depending on the effect set.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Let us try to understand the no execute change effect in a bit more depth.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 55 | **Type:** Exam Tip
+  - In this example we have three nodes running some workload.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 56 | **Type:** Warning/Pitfall
+  - We do not have any chains or tolerations at this point, so they are scheduled this way.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - We then decided to dedicate node one for a special application, and as such, we taint the node with the application name and add a toleration to the pod that belongs to the application, which happens to be pod D in this case.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - While tending the node, we set the taint effect to no execute, and as such, once the taint on the node takes effect, it evicts pod C from the node, which simply means that the pod is killed.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - The pod D continues to run on the node as it has a toleration to the tank blew.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - Now, going back to our original scenario where we have taints and tolerations configured, remember taints and tolerations are only meant to restrict nodes from accepting certain paths.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - In this case, node one can only accept pod D, but it does not guarantee that pod D will always be placed on node one, since there are no chains or restrictions applied on the other two nodes.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - Pod D may very well be placed on any of the other two nodes, so remember taints and Tolerations does not tell the pod to go to a particular node.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Instead, it tells the node to only accept pods with certain tolerations.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - If your requirement is to restrict a pod to certain nodes, it is achieved through another concept called as node affinity, which we will discuss in the next lecture.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Finally, while we are on this topic, let us also take a look at an interesting fact.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So far we have only been referring to the worker nodes, but we also have master nodes in the cluster, which is technically just another node that has all the capabilities of hosting a pod.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Plus it runs all the management software.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 68 | **Type:** Architecture
+  - Now, I'm not sure if you noticed the scheduler does not schedule any pods on the master node.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Why is that?
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - When the Kubernetes cluster is first set up, a tent is set on the master node automatically.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - That prevents any pods from being scheduled on this node.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 72 | **Type:** Operational Insight
+  - You can see this as well as modify this behavior if required.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 73 | **Type:** Best Practice
+  - However, a best practice is to not deploy application workloads on a master server.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - To see this taint, run a cube control, describe node command with cube master as the node name and look for the taint section.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - You will see a taint set to not schedule any pods on the master node.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `057_Taints and Tolerations.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Head over to the Coding Exercises section and practice working with Taints and Tolerations.
+
+### Lab Solution - Taints and Tolerations (Optional)
+
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Okay, so let's go over the lab for practicing taints and tolerations.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So let's start with the first question.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - How many nodes exist on the system?
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Including the control plane?
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So let's look at the number of nodes and we see that there are two nodes, control plane and node zero one.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So the answer is two.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Okay, so the next question is, do any taints exist on node zero one node?
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So for that we're gonna have to take a closer look at node zero one.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So we do a kubectl, describe node, node zero one and we see taints right here.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And we see that there are none.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So there are no taints on this particular node.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So I'm gonna select, no.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - It's going to clear my screen.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - Okay, so the next question is to create a taint on node zero one with key of spray value of martin and effect of NoSchedule.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 15 | **Type:** Exam Tip
+  - So we're gonna continue with the, the silly example that we used in the lecture of the spray and martin, and mosquito and B.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So here the task is to create a taint.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So we're gonna do kubectl taint and let's quickly look at the help.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - So the command is kubectl taint, and then nodes then the name of the node, and then followed by these values, which are the key has to be spray, and then the value is martin.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - And then the effect is NoSchedule.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So let's do that.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - So it's kubectl paint, node, and it's node zero one, and then the key is spray and the value is obtain, and the effect is NoSchedule.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Okay?
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Okay, let's confirm that.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So we have the spray equals martin and the NoSchedule effect, right?
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So that's, that's done.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So we now have attained on node zero one.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - Now the goal is to create a new pod with the engine X image, and the pod name as mosquito, right?
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - So we're gonna do a kubectl run, and then, that's the pod name.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Image equals engine X.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Let's do...
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Get pods.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - And we see that, it's created.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Ignore the, the, the status for now.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Okay, so what is the state of the pod?
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So it seems to be in a pending state.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So select pending.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Now why do you think the pod is in a pending state?
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Is it because image is not available?
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 39 | **Type:** Troubleshooting
+  - Is there an error?
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So let's see, let's do describe pod in the pod name.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - And here you'll see the, the reason why it's in a pending state.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - It says that the pod didn't tolerate one node that had taint and spraying martin that the pod didn't tolerate.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So basically the pod mosquito cannot tolerate the taint. martin, that's, that's the problem here.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So we're gonna select that.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - Okay, so now we have to create another pod named B with the engine X image.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Which has a toleration set to the taint martin.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - So we're gonna do a kubectl, run command, to create a pod.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - The name is going to be B, and the image is going to be engine X.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And basically, now we have to add toleration to it, but you cannot specify toleration in the command lane.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So what we're gonna do is we're gonna do a, a dry run, equals client, to generate AMO file for this pod.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So that's the AMO file and we're gonna redirect that to B.AMO.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So we have this in, in B.AMO, we're going to edit B.AMO file, and we're going to add in tolerations.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So add a section called tolerations.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Now if you're not sure of the, the format check out the Kubernetes documentation pages, and search for chains tolerations.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - And that's the first result.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - And these are, this is the command for taint, and this is, this is the format for tolerations.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So dash key operator value and effect.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So that's key.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So key is going to be spray, operator, value, and effect.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So the value is going to be seen, effect is going to be audio, finally we have operator just to be equal, operator set to equal.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - You save that...
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - And let's create image.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Okay, so it's now in a container creating state.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Let's watch the creation process and we can see that it's now in a running state.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So this part is now running.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Okay, so that's, that's correct.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Now noticed the B pod was scheduled on node zero one.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So let's see where it was scheduled.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - And we see the B pod is on node zero one.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So basically, now this B was able to tolerate the taint set on node zero one.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Now do you see any taints on control plane node?
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So let's look at the control plane node and let's look at taints.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - And we see that yes, there is a taint set on the control plane node and it's set to NoSchedule.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - That's the effect.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So yes, it's set, it's set to NoSchedule.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Okay, now remove the taint on control plane, which currently has the taint effect of NoSchedule.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - So we've got to remove that.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - So first let's get that.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So this is the taint, so let's copy that.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - And the command to remove it is the same kubecolor taint.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And you just specify the node, that's control point node.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - Specify the 10 that we wanna remove and at the end you've got to put a dash or a minus for it to remove that 10.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So it says it's untainted.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So let's confirm that.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - Go back to taints and see it's, nothing is set.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - Just click on check.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - Okay, so that's, that's done, and now we've got to check the status of the pods again.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - And we see that the, the pod mosquito, which earlier was in a pending state, is now in a running state.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So that's the state of, of the pod mosquito.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - And then we have to...
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - Let's check at what, on what node is it placed.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - So as you can see it's now placed on the control plane node.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - So earlier at, in the beginning, the control plane node has a taint set, set on it, and then we set a taint on node zero one, and then we created the mosquito pod.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 94 | **Type:** Implementation Step
+  - And so it was not placed on any of the nodes because both of them had a taint then.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 95 | **Type:** Implementation Step
+  - Then we created the B pod with the toleration on node zero one.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 96 | **Type:** Implementation Step
+  - So the B pod was able to be placed on node zero one and then we removed the taint on control plane.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - And without doing anything the not, the, the pod mosquito was automatically placed on control plane because it no longer has any kind of taint on it.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So it's, the answer to this is control plane.
+- **File:** `059_Lab Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Okay, So that's the end of this lab.
+
+### Node Selectors
+
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will talk about node selectors in Kubernetes.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 2 | **Type:** Exam Tip
+  - Let us start with a simple example.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - You have a three node cluster of which two are smaller nodes with lower hardware resources, and one of them is a larger node configured with higher resources.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - You have different kinds of workloads running in your cluster.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - You would like to dedicate the data processing workloads that require higher horsepower to the larger node, as that is the only node that will not run out of resources in case the job demands extra resources.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - However, in the current default setup, any pods can go to any nodes.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So pod see in this case may very well end up on nodes 2 or 3, which is not desired.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - To solve this, we can set a limitation on the pods so that they only run on particular nodes.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - There are two ways to do this.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - The first is using node selectors, which is the simple and easier method for this.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - We look at the pod definition file we created earlier.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - This file has a simple definition to create a pod with a data processing image.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - To limit this pod to run on the larger node, we add a new property called node selector to the spec section and specify the size as large.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - But wait a minute, where did the size large come from?
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And how does Kubernetes know which is the large node?
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - The key value pair of size and large are in fact labels assigned to the nodes.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 17 | **Type:** Architecture
+  - The scheduler uses these labels to match and identify the right node to place the pods on.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Labels and selectors are a topic we have seen many times throughout this Kubernetes course, such as with services, replica sets, and deployments.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - To use labels in a node selector like this, you must have first labeled your nodes prior to creating this pod.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So let us go back and see how we can label the nodes.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - To label a node, use the command Kube cube control label nodes, followed by the name of the node and the label in a key value pair format.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - In this case it would be cube control label nodes node one, followed by the label in a key value format such as size equals large.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Now that we have labeled the node, we can get back to creating the pod, this time with the node selector set to a size of large.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - When the pod is now created, it is placed on node one as desired.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Node selector served our purpose, but it has limitations.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - We used a single label and selector to achieve our goal here.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - But what if our requirement is much more complex?
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 28 | **Type:** Exam Tip
+  - For example, we would like to say something like place the pod on a large or medium node or something like place the pod on any nodes that are not small.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - You cannot achieve this using node selectors.
+- **File:** `060_Node Selectors.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - For this node affinity and anti-affinity features were introduced and we will look at that next.
+
+### Node Affinity
+
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will talk about node affinity feature in Kubernetes.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - The primary purpose of node affinity feature is to ensure that pods are hosted on particular nodes.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - In this case, to ensure the large data processing pod ends up on node one.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - In the previous lecture, we did this easily using node selectors.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - We discussed that you cannot provide advanced expressions like or or not with node selectors.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - The node affinity feature provides us with advanced capabilities to limit pod placement on specific nodes.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - With great power comes great complexity.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So the simple node selector specification will now look like this with node affinity.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Although both does exactly the same thing, place the pod on the large node.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Let us look at it a bit closer.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Under spec you have affinity and then node affinity under that.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - And then you have a property that looks like a sentence called required during scheduling.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Ignored during execution.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - No description needed for that.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - And then you have the node selector terms.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - That is an array.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And that is where you will specify the key and value pairs.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - The key value pairs are in the form, key operator, and value where the operator is in the in operator ensures that the pod will be placed on a node whose label size has any value in the list of values specified here.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - In this case, it is just one called large.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - If you think your pod could be placed on a large or a medium node, you could simply add the value to the list of values like this.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - You could use the not in operator to say something like size, not n small, where node affinity will match the nodes with a size not set to small.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - We know that we have only set the label size to large and medium nodes, Notes.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 23 | **Type:** Warning/Pitfall
+  - The smaller notes don't even have the label set, so we don't really have to even check the value of the label, as long as we are sure we don't set a label size to the smaller notes.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Using the exists operator will give us the same result.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 25 | **Type:** Warning/Pitfall
+  - The operator will simply check if the label size exists on the notes, and you don't need the values section for that, as it does not compare the values.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - There are a number of other operators as well.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Check the documentation for specific details.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Now we understand all of this and we're comfortable with creating a pod with specific affinity rules.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - When the pods are created, these rules are considered and the pods are placed onto the right nodes.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - But what if node affinity could not match a node with a given expression?
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - In this case, what if there are no nodes with the label called size?
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Say we had the labels and the pods are scheduled.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - What if someone changes the label on the node at a future point in time.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Will the pod continue to stay on the node?
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - All of this is answered by the long sentence like property under node affinity, which happens to be the type of node affinity.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 36 | **Type:** Architecture
+  - The type of node affinity defines the behavior of the scheduler with respect to node affinity, and the stages in the lifecycle of the pod.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - There are currently two types of node affinity available required during scheduling, ignored during execution, and preferred during scheduling.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Ignored during execution, and there are additional types of node affinity planned as of this recording.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Required during scheduling.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Required during execution.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - We will now break this down to understand further.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - We will start by looking at the two available affinity types.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - There are two states in the lifecycle of a pod when considering node affinity during scheduling and during execution.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - During scheduling is the state where a pod does not exist and is created for the first time.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - We have no doubt that when a pod is first created, the affinity rules specified are considered to place the pods on the right nodes.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Now, what if the nodes with matching labels are not available?
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 47 | **Type:** Exam Tip
+  - For example, we forgot to label the node as large.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - That is where the type of node affinity used comes into play.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 49 | **Type:** Architecture
+  - If you select the required type, which is the first one, the scheduler will mandate that the pod be placed on a node with the given affinity rules.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - If it cannot find one, the pod will not be scheduled.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - This type will be used in cases where the placement of the pod is crucial.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - If a matching node does not exist, the pod will not be scheduled.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - But let's say the pod placement is less important than running the workload itself.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - In that case, you could set it to preferred.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 55 | **Type:** Architecture
+  - And in cases where a matching node is not found, the scheduler will simply ignore node affinity rules and place the pod on any available node.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 56 | **Type:** Architecture
+  - This is a way of telling the scheduler, hey, try your best to place the pod on matching node, but if you really cannot find one, just place it anywhere.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - The second part of the property or the other state is during execution.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - During execution is the state where a pod has been running, and a change is made in the environment that affects node affinity, such as a change in the label of a node.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 59 | **Type:** Exam Tip
+  - For example, say an administrator removed the label we set earlier called size equals large from the node.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Now, what would happen to the pods that are running on the node?
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - As you can see, the two types of node affinity available today has this value set to ignored, which means pods will continue to run and any changes in node affinity will not impact them once they are scheduled.
+- **File:** `061_Node Affinity.extraction.md` | **Entry:** 62 | **Type:** Comparison
+  - In the next lecture, we will compare taints and Tolerations and node affinity.
+
+### Lab Solution - Node Affinity (Optional)
+
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay in this video, we will go over the practice test for node affinity.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the first question is to identify the labels on node, node 01, so to count the number of labels on node 01.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So let's do kubectl, describe node, node 01 and let's look at the labels.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So we have 1, 2, 3, 4, 5, 5 labels.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So we're gonna select five.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - And then the next question is, what is the value set to the label at beta.kubernetes.io/arc?
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So on node 01, so we are already on node 01 and it is AMD 64.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - That's this one.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Okay.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So the next question is to apply a label called color equals blue to node 01.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So for that we're going to use the kubectl label command.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So let's take a look at the help.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 13 | **Type:** Exam Tip
+  - And here we have some examples.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So you have kubectl label, the pods or node, whatever.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - What is the object that we wanna apply the label to?
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And then the node name, and then just the label.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So it's pretty straightforward.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - So we're gonna do kubectl, label, node, node 01 and then color equals blue.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Let's verify that it's set correctly.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - We're gonna go back, cause the labels and we see the color equals blue.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Okay.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - Now the next one is to create a new deployment named blue with the nginx image and three replicas.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - So lets create a deployment.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - The name is blue, image is nginx, and replicas is three.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - Okay, so the next one is, which nodes can the pods for the blue deployment be placed on?
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So we, we've gotta check the tense on, on both the nodes.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So let's do that.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Let's check the tense on each one.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So we're gonna do a, we've gotta describe node Let's check node 01.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And let's check for tense.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So there are no tense set on, node 01 and the other node which I believe is the control plane node.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Let's check that too.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So...
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So the node plane.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So there are no, no tense on either of these nodes but for now the pods can be scheduled on either of the nodes because there are no tense on any of these nodes.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - Okay, so in this question, the task is to set node affinity to the deployment to place the part on node 01 only.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So we're going to edit the deployment.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - So that's kubectl edit deployment blue.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So we're here and what we need to do is on the pod specification now we've got to set the node affinity for these, right?
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - So we, we have to use the required during scheduling, ignore during execution then use the color and the values to close.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So for this, let's go to the Kubernetes documentation page and search for affinity.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And let's get this.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And here, let's look for the affinity spec.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So we going to copy this and paste it here.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 45 | **Type:** Exam Tip
+  - So here, basically this one is an example for a pod.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - And so all of these are kind of aligned bit more to the left.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - But here, this is under the pod which is under the template section of deployment.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So we have to move it all a little bit to the right.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - So for this, what I'm gonna do here is the first one is, okay, first line is okay but all these remaining lines we need to move it one step inside.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - So press capital V and then select all the lines.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - Then I'm gonna do a greater than symbol.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So that's shift dot on the keyboard that I'm using.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - It moves everything to the, to the right.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So it's not, not very pretty but I think that will do the job for now.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And I'm just going to set the key to color and the value to low.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 56 | **Type:** Exam Tip
+  - So there, there are ways that we can set the VIM settings so that this always, it gets intended with spaces as opposed to multiple spaces at a time that you can see here.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So, we're gonna save that and let's give this a shot.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Now the question is to find out which nodes the ports are placed on.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So let's run a kubectl get pods -o wide that kind of shows us that all the pods are all node 01.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So they're all on node 01.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - So the next task is to create a new deployment named red with nginx image and two replicas and ensure it gets placed on the control plane node only.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - And the recommendation is to use the label node kubernetes .io/master which is already set on the control plane node.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So if you look at the control plane node we see that there is this label, right?
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - It doesn't have a value set, right?
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 66 | **Type:** Best Practice
+  - So all we need to do is to set a node affinity rule that says the pods that are part of the deployment red should be placed on a node that has this label set.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - And the label does not have a value.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 68 | **Type:** Best Practice
+  - But if this label exists then that's where it should be placed on.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So let's try and do that.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - So we'll use the kubectl create deployment command and then the name is Redis.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Sorry, red.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Image is nginx and replicas =2.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Okay?
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - But we're not gonna create it.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So we're gonna do a dry run because we need to get the yaml file to input the node affinity rules.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - So we're gonna do a dry run=client and then -o yaml that's gonna give us the yaml output.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - Then we're going to put it to a file named red.yaml.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Now we're going to edit that file.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - And within the spec section we're gonna do the same as we did before.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So we're gonna copy this node affinity rule and paste it.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Now we've got to select all of these lines.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - I'm gonna do a shift dot shift dot on my keyboard which is gonna, and that's basically the, the greater than symbol and it's gonna move to the right.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - Now we're gonna change this to the key is the label which is this.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - I'm gonna copy and paste.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - And as we realize that this label does not have value so there's no point in checking the value here.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - So we're gonna get rid of this and all, all we are gonna do is say if the label exists so the operator would be Exists with the capital E, lets save that.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 87 | **Type:** Implementation Step
+  - And now we're going to create a deployment.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 88 | **Type:** Troubleshooting
+  - There seems to be some error.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 89 | **Type:** Troubleshooting
+  - So let's go back, see what the error is.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 90 | **Type:** Warning/Pitfall
+  - It's on line 26 Do not find expected key.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So line is this.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Okay, actually it's this line here.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - So this is not currently intended, that's the problem.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - We're going to move it two characters before.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - Okay, So we're going to save that.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Let's try that again.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - Okay.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 98 | **Type:** Troubleshooting
+  - So even though here it's said line 26 the issue was a few lines above okay so let's check our solution.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - All right, So that works.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - And if we look at pods now, we'll see that those the new pods are on node control plane.
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - Okay?
+- **File:** `063_Lab Solution - Node Affinity (Optional).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - Okay, that's the end of this lab.
+
+### Taints and Tolerations vs Node Affinity
+
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Now that we have learned about taints and tolerations and node affinity, let us tie together the two concepts through a fun exercise.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - We have three nodes and three pods, each in three colors blue, red, and green.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - The ultimate aim is to place the blue pod in the blue node, the red pod in the red node, and likewise for green.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - We are sharing the same Kubernetes cluster with other teams, so there are other pods in the cluster as well as other nodes.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 5 | **Type:** Warning/Pitfall
+  - We do not want any other pod to be placed on our node.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Neither do we want our pods to be placed on their nodes.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Let us first try to solve this problem using taints and tolerations.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - We apply a taint to the nodes, marking them with their colors blue, red and green, and we then set a toleration on the pods to tolerate the respective colors.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - When the pods are now created, the nodes ensure they only accept the pods with the right toleration.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So the green pod ends up on the green node and the blue pod ends up on the blue node.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 11 | **Type:** Warning/Pitfall
+  - However, taints and tolerations does not guarantee that the pods will only prefer these nodes, so the red pods ends up on one of the other nodes that do not have a taint or toleration set.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - This is not desired.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Let us try to solve the same problem with node affinity.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - With node affinity, we first label the nodes with their respective colors blue, red, and green.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - We then set node selectors on the pods to tie the pods to the nodes.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - As such, the pods end up on the right nodes.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - However, that does not guarantee that other pods are not placed on these nodes.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - In this case, there is a chance that one of the other pods may end up on our nodes.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - This is not something we desire.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - As such, a combination of taints and tolerations and node affinity rules can be used together to completely dedicate nodes for specific pods.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - We first use taints and tolerations to prevent other pods from being placed on our nodes, and then we use node affinity to prevent our pods from being placed on their nodes.
+- **File:** `064_Taints and Tolerations vs Node Affinity.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Well, that's it for this lecture.
+
+### Resource Requirements
+
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Let's look at resource requirements.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Let us start by looking at a three node Kubernetes cluster.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Each node has a set of CPU and memory resources available.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Now every pod requires a set of resources to run.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 5 | **Type:** Exam Tip
+  - In this case, for example, this pod requires two CPUs and one memory unit.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Now, whenever a pod is placed on a node, it consumes the resources available on that node.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 7 | **Type:** Architecture
+  - Now, as we have discussed before, it is the Kubernetes Scheduler that decides which node a pod goes to.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 8 | **Type:** Architecture
+  - The scheduler takes into consideration the amount of resources required by a pod and those available on the nodes, and identifies the best node to place a pod on.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 9 | **Type:** Architecture
+  - In this case, the scheduler schedules a new pod on node two because there are sufficient resources available on that node.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - If nodes have no sufficient resources available.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 11 | **Type:** Best Practice
+  - The scheduler avoids placing the pod on those nodes, and instead places the pod on one where sufficient resources are available, and if there is no sufficient resources available on any of the nodes, then the scheduler holds back, scheduling the p...
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And if you look at the events using the cube control describe pod command, you will see there is an insufficient CPU.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now let us now focus on the resource requirements for each pod.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So what are these blocks and what are their values.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Now you can specify the amount of CPU and memory required for Pod when creating one.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 16 | **Type:** Exam Tip
+  - For example, it could be one CPU and one GB of memory and this is known as the resource request for a container.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So the minimum amount of CPU or memory requested by the container.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 18 | **Type:** Architecture
+  - So when the scheduler tries to place the pod on a node, it uses these numbers to identify a node which has sufficient amount of resources available.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So to do this in the the sample pod definition file, all you need to do is add a section called resources under which add requests and specify the new values for memory and CPU usage.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - In this case, I set it to four gigabyte of memory and two counts of CPU.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 21 | **Type:** Architecture
+  - So when the scheduler gets a request to place this pod, it looks for a node that has this amount of resources available.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And when the pod gets placed on a node, the pod gets a guaranteed amount of resources available for it.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So what does one count of CPU really mean?
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Now you can specify any value as low as 0.1.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So 0.1 CPU can also be expressed as 100 M, where M stands for milli, and you can go as low as one M, but not lower than that.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Uh, now one count of CPU is equivalent to one Vcpu so that's one vcpu in AWS.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So if you're looking at the AWS cloud, or it could be referred to as one core in GCP or Azure or one Hyperthread, um, on other other systems, and you could request a higher number of CPUs for the container provided your nodes are sufficiently funded.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 28 | **Type:** Exam Tip
+  - In this example, I have set it to five.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 29 | **Type:** Troubleshooting
+  - Now, similarly with memory, you could specify 256 mebibyte using the mi suffix, or specify the same value in memory like this.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - That's the um, the full number, the whole number, and or specify the same value in memory like this as m.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 31 | **Type:** Troubleshooting
+  - So um or use the suffix g for uh gigabyte.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 32 | **Type:** Comparison
+  - So note the difference between g and g.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So g is gigabyte and it refers to 1000MB, whereas g refers to GB byte.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And that that would be equivalent to 1024MB.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So the same applies to megabyte and maybe byte in kilobyte and kibibyte.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Now let's look at a container running on a node, and by default, a container has no limit to the resources it can consume on a node.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So say a container that's part of a pod starts with one CPU on a node.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - It can go up and consume as much resources as it requires.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And and that suffocates the native processes on the node or other containers of resources.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Um, however, you can set a limit for the resource usage on these pods.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 41 | **Type:** Exam Tip
+  - For example, if you set a limit of one vcpu to um, the containers, a container will be limited to consume only one vcpu uh, from that node.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So the same goes with memory.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 43 | **Type:** Exam Tip
+  - For example, you can set a limit of 512 megabyte on containers.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Um, like this.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Now you can specify the limits under the limits section.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Under the resources section in your Pod definition file.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So here specify the new limits for memory and CPU.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Like this.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - Now when the pod is created, Kubernetes sets new limits for the container.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And remember that the limits and requests are set for each container within a pod.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 51 | **Type:** Exam Tip
+  - So if there are multiple containers, then each container can have a request or limit set for its own.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So what happens when a pod tries to exceed resources beyond its specified limit?
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - In case of the CPU, the system throttles the CPU so that it does not go beyond the specified limit.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - A container cannot use more CPU resources than its limit.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - However, this is not the case with memory.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - A container can use more memory resources than its limit, so if a pod tries to consume more memory than its limit constantly.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 57 | **Type:** Troubleshooting
+  - The pod will be terminated and you will see that the pod terminated with an error in the logs or in the output of the describe command.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - When you run it.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So that's what is Om refers to out of memory kill.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So now that we have learned what resource requests are and what limits are and how they function, and what happens when a particular container or pod hits the limits of that were defined, let's see what the default configuration is, right?
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So by default Kubernetes does not have a CPU or memory request or limit set.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So this means that any pod can consume as much resources as required on any node, and suffocate other pods or processes that are running on the node of resources.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So this is very, very important to note.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So let's just look at how CPU requests and limits work.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Let's say there are two pods competing for CPU resources on the cluster.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And when I say pod, I mean a container within a pod.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Right.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So just keep that in mind.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So without a resource or a limit set, one pod can consume all the CPU resources on the node and prevent the second part of required resources.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So of course this is not ideal.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Now let's look at another case where we have no request specified.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - But we do have limits specified.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - In this case, Kubernetes automatically sets requests to the same as limits.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 74 | **Type:** Exam Tip
+  - For example, requests and limits are assumed to be three in this case, and each pod is guaranteed three vCPUs and no more than that, as limits are also set to the same.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - The next one is where requests and limits are set.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - In this case, each pod gets a guaranteed number of CPU requests, which is one vcpu and can go up to the limits that is defined, which is three vcpu, but not more.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - So this might look to be the most ideal scenario.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 78 | **Type:** Warning/Pitfall
+  - However, the issue is that if Pod one needs more CPU cycles for some reason and pod two isn't really consuming that many CPU cycles, then we don't want to limit pod one of CPU, right?
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So we'd like to allow pod one to use the available CPU cycles, as long as pod two doesn't really need it.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - So if there are sufficient CPU cycles available on the system, then why not let the pods use them?
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Right?
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 82 | **Type:** Warning/Pitfall
+  - So we don't want to unnecessarily limit resources of CPU cycles.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So, uh, that's uh, that is not really the ideal scenario.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And that's where the last, um, scenario comes in.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So setting requests but no limits in this case because requests are set each pod is guaranteed one vcpu.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - However, because limits are not set when available, any pod can consume as many CPU cycles as available.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - But at any point in time, If pod two is, uh, requires additional, uh, CPU cycles or whatever it is.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - It has requested, then it will be guaranteed its requested CPU cycle.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So this is the most ideal setup.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - Of course, there are cases where you absolutely may want to limit a pod of resources, and in that case you may set limits.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 91 | **Type:** Exam Tip
+  - For example, a good use case for setting limits is our labs themselves, where, um, all the labs that you've been, you guys have been going through and accessing, um, as part of this course, they are hosted as containers, um, on a cluster.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Right.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - And since it's made accessible to public and um, users, uh, can run any kind of workload that they want, we set limits to prevent the user from misusing the infrastructure to, let's say, perform Bitcoin mining or, um, other resource consuming acti...
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So that works for us in that case.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 95 | **Type:** Warning/Pitfall
+  - But in your case, if you don't want to restrict your application to consume additional CPU, uh, if needed, then you could consider not setting limits.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - But remember, if you were to do that, you need to make sure that all the pods have some request set, because that's the only way a pod will have resources guaranteed when there are no limits set for other pods.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - Right.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 98 | **Type:** Implementation Step
+  - So if there is any pod that has no request set and and there are no limits set for all the all the other pods, then it's possible that any pod could consume all the memory, all the CPU that's available on the node, and starve the pod that has no r...
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - So just make sure that you have set requests for all the nodes.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - So a couple of things to note.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 101 | **Type:** Exam Tip
+  - The requests and limits may be different for each pod, but for the sake of simplicity we are assuming that it's the same for both pods in these examples that I'm sharing here.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - Right?
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - But you can have absolutely different requests or limit set for containers for each containers within each pods.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - So also note that these recommendations are just for CPU.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 105 | **Type:** Implementation Step
+  - So let's look at how it works for memory next.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - So it's kind of similar.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - So if you look at the memory let's say there are two.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 108 | **Type:** Implementation Step
+  - In the first case there are two pods competing for memory resources on the cluster.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - And without a resource or limit set, one pod can consume all the memory resources on the node and prevent the second pod of required resources.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - So this is not ideal.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - Now let's look at the case where we have no requests specified.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - But we do have limits specified.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - And in this case Kubernetes automatically sets requests to the same as limits.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 114 | **Type:** Exam Tip
+  - So for example requests and limits are assumed to be three gigabytes in this case.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - And each pod is guaranteed three gigabytes and no more as limits is also the same.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 116 | **Type:** Implementation Step
+  - The next one is where requests and limits are set.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - In this case, each pod gets a guaranteed amount of memory, which is one gigabyte and can go up to the limits defined, which is three gigabytes but not more.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - And the last one is setting requests, but no limits.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - In this case, because requests are set, each pod is guaranteed one gigabyte.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - However, because limits are not set when available, any pod can consume as much memory as available, and if pod two requests more memory to free up pod one, the only option available is to kill it now, because unlike CPU, we cannot throttle memory...
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 121 | **Type:** Concept
+  - The only way to kind of retrieve it is to kill the pod and free up all the memory that are used by it.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - Okay.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 123 | **Type:** Implementation Step
+  - So now, as we discussed before, by default, Kubernetes does not have resource requests or limits configured for pods.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 124 | **Type:** Implementation Step
+  - But then how do we ensure that every pod created has some defaults?
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - Um, set.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - Now this is possible with limit ranges.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 127 | **Type:** Implementation Step
+  - So limit ranges can help you define default values to be set for containers in pods that are created without a request or limit specified in the Pod definition files.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - This is applicable at the namespace level.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - So remember that and this is an object.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 130 | **Type:** Implementation Step
+  - So you create a definition file with the API version set to v1 kind set to limit range.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - And we'll give it a name CPU resource constraint.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 132 | **Type:** Implementation Step
+  - We then set the default limit to 500 M.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 133 | **Type:** Concept
+  - Default request to the same as well.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - Um.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - We will also specify a max CPU as one and a minimum as 100 M, so the max refers to the maximum limit that can be set on a container in a pod, and minimum refers to the minimum request a container in a pod can make.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 136 | **Type:** Exam Tip
+  - So these are of course some example values, not a recommendation or anything.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 137 | **Type:** Concept
+  - So you must set whatever is best for your applications.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 138 | **Type:** Concept
+  - Um so the same goes for memory.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 139 | **Type:** Concept
+  - Uh, use memory instead of CPU and specify the defaults and max and min values in this in this form.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 140 | **Type:** Implementation Step
+  - And note that these limits are enforced when a pod is created.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 141 | **Type:** Implementation Step
+  - So if you create or change a limit range it does not affect existing pods.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 142 | **Type:** Implementation Step
+  - It will only affect newer pods that are created after the limit range is created or updated.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 143 | **Type:** Implementation Step
+  - And finally, is there any way to restrict the total amount of resources that can be consumed by applications deployed in a Kubernetes cluster.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 144 | **Type:** Best Practice
+  - For example, if we had to say that all the pods together shouldn't consume more than this much of CPU or memory.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 145 | **Type:** Implementation Step
+  - What we could do is create quotas at a namespace level.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 146 | **Type:** Implementation Step
+  - So a resource quota is a namespace level object that can be created to set hard limits for requests and limits.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 147 | **Type:** Exam Tip
+  - In this example, this resource limits the total requested CPU and the current namespace to four and memory to four GB, and it defines a maximum limit of CPU consumed by all the parts together to be ten, and memory to be up ten gigabyte as well.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 148 | **Type:** Concept
+  - Right.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 149 | **Type:** Concept
+  - So that's um, that's another option, uh, that can be explored.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 150 | **Type:** Concept
+  - Well, uh, that's all for now.
+- **File:** `065_Resource Requirements.extraction.md` | **Entry:** 151 | **Type:** Implementation Step
+  - Uh, refer to these pages on the Kubernetes documentation site for more information, and head over to the labs, and I'll see you in the next one.
+
+### Lab Solution - Resource Limits
+
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Okay.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So, let's go over the labs on resource limits, resource requests and limits.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So, the first question is, a pod called rabbit is deployed.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Identify the CPU request requirements set on the pod.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So, let's do kubectl get pod, and see if there is a rabbit pod.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So, let's do a kubectl describe pod rabbit.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And, if you look at this section right here, we have limits, CPU limits and CPU requests.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So, the CPU requests as requested here is one.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So, let's select one.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - Okay, the next task is to delete the rabbit pod.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So, kubectl delete pod rabbit.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Okay.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - Okay, now another pod called elephant has been created.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So, let's check that.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 15 | **Type:** Troubleshooting
+  - Yep, so we have a pod called elephant and it fails to get to a running state.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So, inspect this pod and identify the reason why it's not running.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So, let's do a kubectl describe pod elephant.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And, if you look at this section here, called Last State, it says, the reason is OOMKilled, right?
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 19 | **Type:** Troubleshooting
+  - So, that's, basically, that indicates that it's a memory issue.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So, the reason is OOMKilled.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So, let's select that.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So, the status OOMKilled indicates that it is failing because the pod ran out of memory.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Identify the memory limit set on the pod.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So, the memory limit is, as you can see here, it's 10mi.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Right?
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So, that's the memory limit set on this pod.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So, the elephant pod runs a process that consumes 15 amount of memory.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - So, increase the limit of the elephant pod to 20, and delete and recreate the pod if required.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So, one thing we have to do is to change it.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - So, as you can see here, the command used to create this pod is, is the stress command, and it is stresses.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So, it basically gets the pod to use 15 megabytes of memory, but the limit is 10.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So, that's the reason why it's getting killed.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So, we've got to change this to 20.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So, one of the ways to do that is to do a kubectl edit pod elephant.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - But the problem is, we might not be able to change the limit with an edit.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So, we're going to, let's give it a shot anyway.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So, let's give it 20 and save.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - And what this says is, that you cannot, basically, edit the limits set to a running pod.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So, So, anyway, let's come out of it.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - But, our changes are saved in this file.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So, that's a temporary file, right?
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So, let's check that.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And, if you look at the resource limits that we have set, so it's actually saved here.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Our change is saved here.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - So, what we could do is, we could just use this file to recreate the pod, right?
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - So, we can either delete the pod and then recreate it.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Or, an easier way is to just use the kubectl replace command, and then use the force so it actually deletes the existing pod and recreates it, and give that file.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - Just change it here, kubectl replace force dash F, and then the file name.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - So it, basically, deletes the elephant pod and then it replaces it, recreates it.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So, let's see the status now.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And we see that it's in a running state.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Let's also verify... that, yep, the limit that we set is now reflecting.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Okay?
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Yep.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - We've just checked and made sure that it's in a running state.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - And, the next task is to delete pod.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - And, we'll just give it a few seconds for the process to terminate.
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Okay?
+- **File:** `068_Lab Solution - Resource Limits.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - That's the end of this lab.
+
+### DaemonSets
+
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we look at Daemonsets in Kubernetes.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So far we have deployed various pods on different nodes in our cluster with the help of replica sets and deployments.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - We made sure multiple copies of our applications are made available across various different worker nodes.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - Daemonsets are like replica sets, as in, it helps you deploy multiple instances of pods, but it runs one copy of your pod on each node in your cluster.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Whenever a new node is added to the cluster, a replica of the pod is automatically added to that node, and when a node is removed, the pod is automatically removed.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - The daemonset ensures that one copy of the pod is always present in all nodes in the cluster.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So what are some use cases of Daemonsets?
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Say you would like to deploy a monitoring agent or log collector on each of your nodes in the cluster so you can monitor your cluster better.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - A daemonset is perfect for that, as it can deploy your monitoring agent in the form of a pod in all the nodes in your cluster.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 10 | **Type:** Warning/Pitfall
+  - Then you don't have to worry about adding or removing monitoring agents from these nodes when there are changes in your cluster, as the Daemonset will take care of that for you.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 11 | **Type:** Architecture
+  - Earlier, while discussing the Kubernetes architecture, we learned that one of the worker node components that is required on every node in the cluster is a kube proxy.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - That is one good use case of Daemonsets.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - The kube proxy component can be deployed as a daemonset in the cluster.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Another use case is for networking.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Networking solutions like calico requires an agent to be deployed on each node in the cluster.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - We will discuss about networking concepts in much more detail later during this course, but I just wanted to point it out here for now.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Creating a demon set is similar to the replica set creation process.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - It has nested pod specification under the templates section and selectors to link the demon set to the pods.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - A daemon set definition file has a similar structure.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - We start with the API version kind metadata and spec.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - The API version is apps v1.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Kind is daemon set instead of replica set.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - We will set the name to Monitoring daemon.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Under spec you have a selector and a pod specification template.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - It's almost exactly like the replica set definition, except that the kind is a daemon set.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Ensure the labels in the selector matches the ones in the pod template.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - Once ready, create the daemon set using the kube control.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - Create daemon.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - Set command to view the created daemon set.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Run the kube control, get daemon, set command and of course to view more details on the kube control, describe daemon sets command.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So how does a demon set work?
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - How does it schedule pods on each node?
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - And how does it ensure that every node has a pod?
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - If you were asked to schedule a pod on each node in the cluster, how would you do it?
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 35 | **Type:** Architecture
+  - In one of the previous lectures in this section, we discussed that we could set the node name property on the pod to bypass the scheduler and get the pod placed on a node directly.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So that's one approach.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - On each pod, set the node name property in its specification before it is created, and when they are created, they automatically land on the respective nodes.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So that's how it used to be until Kubernetes version 1.12.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 39 | **Type:** Architecture
+  - From version 1.1 onwards, the daemon set uses the default scheduler and node affinity rules that we learned in one of the previous lectures to schedule pods on nodes.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `069_DaemonSets.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Head over to the Practice test and practice working with Daemon Sets.
+
+### Lab Solution - DaemonSets (optional)
+
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, so let's go through the lab on demo sets.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the first question is, how many demo sets are created in the cluster in all name spaces?
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So let's do a cube cuttle, hit daemon sets.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - If you look at the default name space, there are none.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - But if you wanna look at all name spaces you do a dash A and we see that there are two demo sets in all name spaces as the cube flannel DS and cube proxy.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So that's two.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So the next question is which name space are the demo sets created in?
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So if you look at the name space column here we see that they are in the cube system name space.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So, select cube system and which of the below is a demo set.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So if you look here, we have the cube final DS and cube proxy, these are the demo sets.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 11 | **Type:** Best Practice
+  - Should you core DNS, city master.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - These are not, it's the cube final DS.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - That's the demo set.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 14 | **Type:** Best Practice
+  - On how many nodes are the pods should you'll buy the demo set cube proxy.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So if you look at cube proxy here, we see the the design and current ready numbers are one.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So it's just, it, it's one.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - But let's also look at it in detail, so we go describe demo sets cube proxy.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Okay, the name space is you system.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And that's that, okay?
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So here you can see the design number of nodes scheduled is one current number of nodes scheduled is one.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So it's just, it's one, right?
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And that's also because if you looked at this cluster, there's only one node and that's the reason it's just one, okay?
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - And what is the image used by the pod, deployed by the cube final DS team set.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So let's look at the, let's look at the cube final DS in a bit more detail.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - So describe demo set cube flannel DS, and then the next space is cube system.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - And we see that the image is the one under core RS flannel, so that's this one.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - Now the next one is to deploy a demo set for fluent D login using the given specifications.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So one way to get the specification for daemon set is to go to the coordinates documentation pages and get these, right?
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - But since the, the structure is very similar to a deployment, an easier way to just do it from here from the command line is to use the dry run option for a deployment and create a file and then change it and just make the necessary changes, right?
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - So let's assume that we're gonna create a a deployment because there is no create demo set command as of this recording, right?
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - So we're gonna have to do a, create deployment.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And the name is what's given here.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So it's elastic search, name space is cube system image is this.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - And then we're gonna do a dry run.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - You're gonna do dry equals one.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - And then we're gonna do an output to ammo, right?
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So we'll write that to just call it find the ammo.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Then we're gonna edit this file.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So the kind is going to be demo set.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 40 | **Type:** Warning/Pitfall
+  - And we don't need replicas, because demo sets don't have replicas, so you can actually look at it and compare it here.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - So there are no replicas, so we're gonna remove that and then we'll get rid of the strategy and this one right here.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And the rest of everything looks okay.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - Let's save that file and just create it.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - And the name space is Cube System, and we have that demo set created.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 45 | **Type:** Best Practice
+  - It's not ready yet, but yeah, that should be okay.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 46 | **Type:** Exam Tip
+  - So this is, of course a very, a simple example.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - If you've not provided any kind of options or parameters for this demo set so we're just gonna give it super simple.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - But yeah, as far as this task is concerned, that's all that's asked.
+- **File:** `071_Lab Solution - DaemonSets (optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Okay, so that's the end of this lab.
+
+### Static Pods
+
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we discuss about static pods in Kubernetes.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 2 | **Type:** Architecture
+  - Earlier in this course, we talked about the architecture and how the Kubelet functions as one of the many control plane components in Kubernetes.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 3 | **Type:** Architecture
+  - The Kubelet relies on the kube API server for instructions on what pods to load on its node, which was based on a decision made by the kube scheduler which was stored in the etcd data store.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 4 | **Type:** Architecture
+  - What if there was no kube API server and kube scheduler, and no controllers and no etcd cluster?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - What if there was no master at all?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - What if there were no other nodes?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - What if you're all alone in the sea by yourself?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Not part of any cluster.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 9 | **Type:** Architecture
+  - Is there anything that the Kubelet can do as the captain of the ship?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Can it operate as an independent node?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - If so, who would provide the instructions required to create those pods?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 12 | **Type:** Architecture
+  - Well, the Kubelet can manage a node independently on the ship host.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - We have the cubelet installed and of course we have container D as well to run containers.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 14 | **Type:** Architecture
+  - There is no Kubernetes cluster, so there are no kube API server or anything like that.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 15 | **Type:** Warning/Pitfall
+  - The one thing that the Cubelet knows to do is create pods, but we don't have an API server here to provide pod details.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - By now we know that to create a pod, you need the details of the pod in a pod definition file.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 17 | **Type:** Architecture
+  - But how do you provide the pod definition file to the kubelet without a kube API server?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - You can configure the Cubelet to read the Pod definition files from a directory on the server, designated to store information about pods.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Place the pod definition files in this directory.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - The Cubelet periodically checks this directory for files, reads these files, and creates pods on the host.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 21 | **Type:** Architecture
+  - Not only does it create the pod, it can ensure that the pod stays alive if the application crashes, the kubelet attempts to restart it.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 22 | **Type:** Architecture
+  - If you make a change to any of the file within this directory, the Kubelet recreates the pod for those changes to take effect.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - If you remove a file from this directory, the pod is deleted automatically.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 24 | **Type:** Architecture
+  - So these pods that are created by Kubelet on its own, without the intervention from the API server or the rest of the Kubernetes cluster components are known as static pods.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - Remember, you can only create pods this way.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - You cannot create replica sets or deployments or services by placing a definition file in the designated directory.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 27 | **Type:** Architecture
+  - They're all concepts, part of the whole Kubernetes architecture that requires other cluster plane components like the replication and deployment controllers, etc. the Kubelet works at a pod level and can only understand pods, which is why it is ab...
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - So what is that designated folder and how do you configure it?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 29 | **Type:** Architecture
+  - It could be any directory on the host, and the location of that directory is passed in to the kubelet as an option while running the service.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - The option is named Pod Manifest Path and here it is set to Etsy Kubernetes Manifest folder.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - There is also another way to configure this.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 32 | **Type:** Architecture
+  - Instead of specifying the option directly in the Kubelet service file, you could provide a path to another config file using the config option and define the directory path as static pod path in that file.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Clusters set up by the Kube admin tool uses this approach.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 34 | **Type:** Best Practice
+  - If you're inspecting an existing cluster, you should inspect this option of the Kubelet to identify the path to the directory.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - You will then know where to place the definition file for your static pods, so keep this in mind when you go through the labs.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 36 | **Type:** Best Practice
+  - You should know to view and configure this option, irrespective of the method used to set up the cluster.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 37 | **Type:** Architecture
+  - First check the option pod manifest path in the Kubelet service file.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - If it's not there, then look for the config option and identify the file used as the config file and then within the config file, look for the static pod path option.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 39 | **Type:** Best Practice
+  - Either of this should give you the right path.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - Once the static pods are created, you can view them by running the docker PS command.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So why not the kube control command as we have been doing so far?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 42 | **Type:** Warning/Pitfall
+  - Remember, we don't have the rest of the Kubernetes cluster yet, so the kube control utility works with the kube API server since we don't have an API server now.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - No kube control utility, which is why we're using the docker command.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - So then how does it work when the node is part of a cluster?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 45 | **Type:** Architecture
+  - When there is an API server requesting the Kubelet to create pods, can the Kubelet create both kinds of pods at the same time?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 46 | **Type:** Architecture
+  - Well, the way the Kubelet works is it can take in requests for creating pods from different inputs.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - The first is through the Pod definition files from the static parts folder as we just saw.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 48 | **Type:** Architecture
+  - The second is through an http API endpoint, and that is how the kube API server provides input to Kubelet.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 49 | **Type:** Architecture
+  - The Kubelet can create both kinds of pods, the static pods, and the ones from the API server at the same time.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 50 | **Type:** Architecture
+  - Well, in that case, is the API server aware of the static pods created by the Kubelet?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Yes it is.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - If you run the kube control get pods command on the master node, the static pods will be listed as any other pod.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Well, how is that happening?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 54 | **Type:** Architecture
+  - When the Kubelet creates a static pod, if it is a part of a cluster, it also creates a mirror object in the kube API server.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 55 | **Type:** Architecture
+  - What you see from the kube API server is just a read only mirror of the pod.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - You can view details about the pod, but you cannot edit or delete it like the usual pods.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - You can only delete them by modifying the files from the node's manifest folder.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Note that the name of the pod is automatically Appended with the node name, in this case node zero one.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - So then why would you want to use static paths?
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - Since static pods are not dependent on the Kubernetes control plane, you can use static pods to deploy the control plane components itself as pods on a node.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 61 | **Type:** Architecture
+  - Well, start by installing Kubelet on all the master nodes, then create pod definition files that uses Docker images of the various control plane components such as the API, server, controller, etcd, etc..
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 62 | **Type:** Architecture
+  - Place the definition files in the designated manifest folder, and the Kubelet takes care of deploying the control plane components themselves as pods on the cluster.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 63 | **Type:** Warning/Pitfall
+  - This way you don't have to download the binaries, configure services, or worry about the services crashing if any of these services were to crash.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 64 | **Type:** Architecture
+  - Since it's a static pod, it will automatically be restarted by the kubelet.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Neat and simple.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - That's how the Kube admin tool sets up a Kubernetes cluster, which is why when you list the pods in the kube system namespace, you see the control plane components as pods in a cluster setup by the Kube admin tool.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - We will explore that setup in the upcoming practice test.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 68 | **Type:** Comparison
+  - Before I let you go, one question that I get often is about the difference between static pods and daemon sets.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Daemon sets, as we saw earlier, are used to ensure one instance of an application is available on all nodes in the cluster.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 70 | **Type:** Architecture
+  - It is handled by a daemon set controller through the kube API server, whereas static pods, as we saw in this lecture, are created directly by the Kubelet without any interference from the kube API server or rest of the Kubernetes control plane.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Components.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - Static pods can be used to deploy the Kubernetes control plane components itself.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 73 | **Type:** Architecture
+  - Both static pods and pods created by daemon sets are ignored by the kube scheduler.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 74 | **Type:** Architecture
+  - The kube scheduler has no effect on these pods.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `072_Static Pods.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Head over to the practice test and practice working with static pods.
+
+### Lab Solution - Static Pods (Optional)
+
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, so in this video we're going to go over this lab on static pods.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the first question is, how many static pods exist in the cluster in all of the named spaces?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So let's go, let's do get pods dash a to list the pods in all named spaces.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Now one way to figure out, or you know differentiate a static pod from the other pods is to look at its name and at the end you'll have the node name appended to it.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - So this one, this one, this this is a static pod created on control plane.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - All of all of these three are, and as well as this.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So there are four static pods and then there are no others with a visible node name to the end of it.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So that's one way to look at it.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Another way to be sure is to look at one of the pod in a bit more detail.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 10 | **Type:** Exam Tip
+  - So let's say for example, this one let's do you could get pod and then we do we provide the name space, which is the system.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - And, but this is just going to list the pod.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - It's not gonna give us the information that we need.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - We need to look at the YAML format of the, of the pod So we're gonna do a dash O and YAML So this is gonna give us a lot of information but from this, what we need to do is we need to look at the owner reference section.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So if you scroll down there's this section called owner references.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And under this you'll see the owner of this pod is the node the kind is node, and the name is control plane.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So that's one way to be sure if a a pod is a static pod or not.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And if you look at the screen, and if you look at the same for another pod that is not a static pod cube system to YAML output.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And if we look at the owner reference for this right here we see that the owner of this is a replica set right?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So, so this is not a static pod.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So that's one way to figure that out.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - There are ways that you can do this for all of the pods like using filters and selectors.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 22 | **Type:** Best Practice
+  - We should be able to kind of go through this, traverse this this file and then look at the owner reference.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - But we haven't learned about filters and you know, advanced kubectl commands yet So we'll skip that for now.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - But this is an easy way There are two ways to find out if a pod is static or not and one of that is to look for no names at the end of it.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - And to be sure you can use the the command that I just shared.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So we know that there are four static pods and they're all on control plane now, as of now.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So let's run the command again.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - The question is, which of the below components is not deployed as a static pod?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 29 | **Type:** Architecture
+  - So if you look at this, we have the ETCD it's a control plane, ETCD is a static pod, cube PPA server is a static pod cube control manager is a static pod and cube scheduler is a static pod So not Core DNS Core DNS does not seem to be a static pod.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So let's select that.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Okay, which of the below components is not deployed?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - It's a static pod.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Again, we know that all of these are except for the queue proxy.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So the queue proxy is not a static pod.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - On which notes are the static pods created currently.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So all of these, as we just saw, are on control planes.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So control plane is answered to this question.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Now what is the path of the directory holding the static pod and the definition files?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So one way to figure that out is to look at the the cubelet conf.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - So, so our lib cubelet and then we have the config dot yaml And if you look into this file, so this is the cubelet configuration and we have learned that it is the cubelet that creates the pods.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - And there is this specification here that says static pod path.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And it is currently said to the ETC Kubernetes Manifest directory.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - So let's look at that directory and we see that this is there are the files that are used to create the static pods.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So that is slash etc slash kubernetes slash manifests That's the correct answer to this question.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And also remember that this is the path to check the static pod configuration, the static pod path configuration on any given node.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Okay, so how many pod definition files are present in the manifest folder?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So that's 1, 2, 3, 4 4.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And that is equal to the number of static pods that we have here.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - And what is the Docker image used to deploy the cube APA server as a static pod as a static pod.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So if you look at cube APA server Here, so this followed by this and if we look into the image we see that it's kh dot gcr dot io slash cube APA server version 1 point 2 0 0.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 51 | **Type:** Best Practice
+  - So as of this recording this is the version you should make sure that whatever the version needs that you are working on make sure you choose that as the answer.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Okay?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - So the next question is to create a static pod named static pod static busy box that uses the busy box image and the command sleep.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - So we know that the command to create a pod is run and the name is static busy box, the image is busy box, okay And the command is sleep 1000.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 55 | **Type:** Warning/Pitfall
+  - Now what we need to do is we don't want to create this I said we just wanna get the pod definition file and place it in the static pod path for this node, right?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So we're going to do a dry run for this.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So dry run here.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Now when you, when you use the command option always remember not to place any option that is for the kubectl command after this, right?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So anything that you put after this especially after the two dashes here is going to be considered as an option for this command.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 60 | **Type:** Warning/Pitfall
+  - So do not place anything.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 61 | **Type:** Best Practice
+  - So the, the command should always be at the end.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So in this case I'm gonna put the dry run before the command option.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 63 | **Type:** Best Practice
+  - So any, any option for the kubectl utility should be before the command option.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So dry run equals find and then dash O yaml So I get this and okay so I'm going to redirect that to a file.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - So for now I'm going to put it to static busy box dot yaml Then I'm going to move this to a C Kubernetes manifest folder.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - And let's see if pod is created Okay, so the pod is now created static busy box control plane and it's in a running state.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - Okay, so let's go next.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Now edit the image on the static pod to use the busy box 1 point 2 8 point 4 image So to make any changes to a static pod you could simply edit the file and save it.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - So let's just go to edit the file in EDC Kubernetes manifest add pod and then just change this right here busy boxy 1.284 and just save that And if we look at the pod now it's pending.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Let's watch the status.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 71 | **Type:** Troubleshooting
+  - Okay, there's a issue.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Okay, got it wrong.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Sorry about that.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - Change that now.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 75 | **Type:** Best Practice
+  - So that's why you should always verify after you do anything, especially in the exam it's possible that we might make typos different places.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So you always verify your work after you're done.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - Let's wait for the next question.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - Okay, so we just created a new static pod named Static Green Box, find it and delete it.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So let's see to get pods.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And we see that there is indeed a static green box and we've, we have got to delete it.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - Now if we just try to delete the pod like this, okay it says it's deleted, but if you look at it it's gonna be recreated because we know that it's a pod that the cubelet manages so there's it's not possible to delete a static pod just using the de...
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - It would delete it, but it would be created again, right?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So we need to find the manifest file for that static pod and delete it.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So if you look at, if you look at the the EDC Kubernetes manifest directory, we'll see that there's none for the green box.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - And that's basically because if you look at the name of, of the static pod you see that it's created on node zero one.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So we've got to go, go to the node on node zero one and delete it from there.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - So let's find out how to go to node zero one.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So let's look, got a node node command and we see that we have a indeed a control plane and a node zero one node.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - If we do a dashboard wide we'll see that it has an IP address.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So the control plane is at 10, dot 38 dot 1 oh 2 dot 6 And node zero one is at 10 dot 38, 1 oh 2 dot 8 So let's the stage to node zero one.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Okay?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - And, and sometimes if you just depending on how the DS is configured, if you just do SSS to just node zero one, that might work too.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 94 | **Type:** Best Practice
+  - But if that isn't working, then you should always look up at the internal IP address following this command and sss do that node.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So now we are on node zero one and all we need to do is find the the static file manifest path.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - So let's go to, let's see, EDC Kubernetes manifest directory And as you see it, it doesn't exist, right?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So there is no static green box path here.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So we'll need to see why that is.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - So let's see, let's go back and see the the cubelet configuration and find out what's wrong with the path to the static pod So the, the file is at slash war lib cubelet and then you have config dot yaml And if you look at this file you have the st...
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - It is at EDC just to mess with you.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - Right?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - So that's a change we made just to get you to think a little bit.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 103 | **Type:** Concept
+  - So, yep.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 104 | **Type:** Concept
+  - And there indeed, we have the green box dot yaml So all they need to do is just remove this file from here okay?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - And make sure it's removed.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 106 | **Type:** Concept
+  - And let's exit and go back to the control plane and list, list the notes and let's watch and wait for it to be terminated.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 107 | **Type:** Concept
+  - Okay?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 108 | **Type:** Concept
+  - So the the pod is now being terminated and that's gone.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 109 | **Type:** Concept
+  - Okay?
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 110 | **Type:** Concept
+  - So that's, that's that.
+- **File:** `074_Lab Solution - Static Pods (Optional).extraction.md` | **Entry:** 111 | **Type:** Concept
+  - And that's the end of this lab.
+
+### Priority Classes
+
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Let us now look at priority classes in Kubernetes.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - We know that Kubernetes runs different applications as pods with different priorities.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - For example, the Kubernetes control plane components itself run as pods within the cluster.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And we know that no matter what, those workloads need to always run.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Similarly, we may have priority databases, critical applications running on the cluster as well as lower priority workloads like background jobs.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Now, we need a way to make sure that higher priority workloads always get scheduled without being interrupted by lower priority workloads.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - This is where priority classes come in.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Priority classes help us define priorities for different workloads, so that higher priority workloads always get priority over lower priority ones.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 9 | **Type:** Architecture
+  - If a higher priority pod cannot be scheduled, the scheduler will try to terminate a lower priority workload to make that happen.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So priority classes are non namespaced objects, meaning they are not created within a specific namespace.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - They are not attached to a specific namespace.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So once they're created, they're available to be configured on any port in any namespace.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So how do you define priorities?
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - We define priorities using a range of numbers.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So a priority can be defined as high as 1 billion and as low as -2 billion or around that number.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - A larger number indicates higher priority.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - Now this range that I've just mentioned is for the applications and workloads that are deployed on the cluster.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - So the positive 1 billion to -2 billion number is for the applications or workloads that are deployed as apps on the cluster.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - But there is a separate range that's dedicated for internal system critical parts such as the Kubernetes control plane components itself.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So they always get the highest priority. and they have priorities up to 2 billion.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So to list existing priority classes run the kubectl get priority class command.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And as you can see it currently lists the system cluster critical and system node critical classes.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And as you can rightly see the value of these are close to 2 billion or around that range.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Let us now see how we can create a new priority class.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - So to create a new priority class, we create an object with the API version set to scheduling v1 kind set to priority class metadata with a name.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - And then we define the value.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So this is the number that we just spoke about.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And finally we have the description.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - The description is an optional field.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - Once this is created we associate this priority class to a pod by using the priority class name property inside the pod definition.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Like this.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - When that pod is created, it is assumed to have this priority that is assigned to the priority class.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 33 | **Type:** Warning/Pitfall
+  - Now, what if I don't specify a priority class name for a pod?
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - By default it is assumed to have a priority value of zero.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - However, if you'd like to modify that, you must create a new priority class and assign the global default property to true.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So this is an optional field, but it can be used to define the default priority of all the pods.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - If there are no priority class name explicitly defined in that pod's configuration file.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So as such.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 39 | **Type:** Exam Tip
+  - Also note that it can only be defined in a single priority class, so the global default property can only be defined in a single priority class because you cannot have multiple default values, right?
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So you cannot have more than one priority class with the global default property set to true.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Now let us look at the effect of pod priority.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So say there are two workloads with two priorities coming in to be scheduled a critical app with a higher priority of seven, and a jobs app with a lower priority of five.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - Now, since the critical app is of higher priority, it gets, uh, placed first.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - And if there is still resources available.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So what you see here are the available resources on the cluster or the consumption of the resources on the cluster.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So there is still some more resources left.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So the workload with the lower priority also gets placed.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - Uh next uh after the higher priority pod gets placed.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Now let's say we have a higher priority job that comes in with a priority of six.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And there are no more resources available on the cluster.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - What happens?
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Do we evict existing workload or does it wait?
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - What does it do?
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 54 | **Type:** Operational Insight
+  - Now that behavior is defined by the preemption policy defined in the priority class assigned to the new workload.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - If the preemption policy is not set, its default value is set to preempt a lower priority.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - This means that it would kill the existing lower priority job and take its place.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 57 | **Type:** Warning/Pitfall
+  - But if you do not want it to kill or evict the existing workload, and instead wait for the cluster resources to free up, then you must set this preemption policy to never.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So a preemption policy set to never makes the pods in that priority class non preempting, meaning that they cannot preempt other pods and it will wait to be scheduled in the scheduling queue.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - However, they will get a higher priority in scheduling over other lower priority pods that are also waiting to be scheduled.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So there's the priority still applies only when it is going to be scheduled.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - But will it kill the existing preempt, or will it evict the existing workload or not?
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - That is defined by the preemption policy.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `075_Priority Classes.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Head over to the labs and practice what we just learned.
+
+### Multiple Schedulers
+
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 1 | **Type:** Exam Tip
+  - In this lecture, we look at deploying multiple schedulers in a Kubernetes cluster.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 2 | **Type:** Architecture
+  - Now we have seen how the default scheduler works in Kubernetes in the previous lectures.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - It has an algorithm that distributes pods across nodes evenly, as well as takes into consideration various conditions.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - We specify through taints and tolerations and node affinity, etc..
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - But what if none of these satisfies your needs?
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Say you have a specific application that requires its components to be placed on nodes after performing some additional checks, so you decide to have your own scheduling algorithm to place pods on nodes so that you can add your own custom conditio...
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Kubernetes is highly extensible.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 8 | **Type:** Exam Tip
+  - You can write your own Kubernetes Scheduler program, package it, and deploy it as the default scheduler, or as an additional scheduler in Kubernetes cluster.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 9 | **Type:** Architecture
+  - That way, all of the other applications can go through the default scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 10 | **Type:** Exam Tip
+  - However, some specific applications that you may choose can use your own custom scheduler, so your Kubernetes cluster can have multiple schedulers at a time.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 11 | **Type:** Architecture
+  - When creating a pod or a deployment, you can instruct Kubernetes to have the pod scheduled by a specific scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So let's see how that's done.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 13 | **Type:** Exam Tip
+  - Now, when there are multiple schedulers, they must have different names so that we can identify them as separate schedulers.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 14 | **Type:** Architecture
+  - So the default scheduler is named default scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 15 | **Type:** Architecture
+  - And this name is configured in a kube scheduler configuration file that looks like this.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 16 | **Type:** Warning/Pitfall
+  - Now the default scheduler doesn't really need one because if you don't specify a name it sets the name to default scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - But this is how it would look if you were to create one.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 18 | **Type:** Architecture
+  - And for the other schedulers, we could create a separate configuration file and set the scheduler name like this.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 19 | **Type:** Architecture
+  - So let's start with the most simplest way of deploying an additional scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 20 | **Type:** Architecture
+  - Now earlier we saw how to deploy the Kubernetes Kube scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 21 | **Type:** Architecture
+  - We download the kube scheduler binary and run it as a service with a set of options.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 22 | **Type:** Architecture
+  - Now, to deploy an additional scheduler, you may use the same kube scheduler binary or use one that you might have built for yourself, which is what you would do if you needed the scheduler to work differently.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 23 | **Type:** Architecture
+  - In this case, we're going to use the same binary to deploy the scheduler, and this time we point the configuration to the custom configuration file that we created.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 24 | **Type:** Architecture
+  - So each scheduler uses a separate configuration file, and with each file having its own scheduler name.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - Note that there are other options to be passed in, such as the kubeconfig file to authenticate into the Kubernetes API, but I'm just skipping that for now just to keep it super simple.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 26 | **Type:** Architecture
+  - This is not how you would deploy a custom scheduler 99% of the time today, because with kube ADM deployment, all the control plane components run as a pod or a deployment within the Kubernetes cluster.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So let's look at another way.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 28 | **Type:** Architecture
+  - So let's look at how it works if you were to deploy the scheduler as a pod.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 29 | **Type:** Architecture
+  - So we create a pod definition file and specify the Kubeconfig property, which is the path to the scheduler conf file that has the authentication information to connect to the Kubernetes API server.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 30 | **Type:** Architecture
+  - We then pass in our custom kube scheduler configuration file as a config option to the scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 31 | **Type:** Architecture
+  - Note that we have the scheduler name specified in the file, so that's how the name gets picked up by the scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Now another important option to look here is the leader elect option.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 33 | **Type:** Architecture
+  - And this goes into the scheduler configuration.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 34 | **Type:** Exam Tip
+  - The leader elect option is used when you have multiple copies of the scheduler running on different master nodes, as in a high availability setup where you have multiple master nodes with the scheduler process running on both of them.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 35 | **Type:** Exam Tip
+  - If multiple copies of the same scheduler are running on different nodes, only one can be active at a time, and that's where the leader elect option helps in choosing a leader who will lead the scheduling activities.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So we will discuss more about his setup in another section.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 37 | **Type:** Exam Tip
+  - In case you do have multiple masters, just remember that you can pass in this additional parameter to set a log object name.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 38 | **Type:** Architecture
+  - And this is to differentiate that the new custom scheduler from the default selection process.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 39 | **Type:** Architecture
+  - Now let's take a look at how to deploy the scheduler as a deployment.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - And for this I'm going to go into the Kubernetes documentation pages.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 41 | **Type:** Exam Tip
+  - And for the one for configuring multiple schedulers.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 42 | **Type:** Exam Tip
+  - And if you look here first of all it shows you how to if you were to build your own scheduler, how you could clone the Kubernetes repo and then make changes to the scheduler and build it and package it into a Docker image.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 43 | **Type:** Architecture
+  - And then here you can see the config file to create a scheduler as a deployment.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - You can ignore all of this to begin with.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So this is what it is really.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - So here you have the deployment.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - And this deployment is similar to the pod but it's just that it's a deployment.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - The pot that we just looked at.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - But it's just that it's a deployment.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 50 | **Type:** Architecture
+  - So here you have the image which is the custom cube scheduler image.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 51 | **Type:** Architecture
+  - And this is the config file that we just talked about which has your custom scheduler config file.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Right.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 53 | **Type:** Architecture
+  - And the binary is the cube scheduler binary.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Now for this to work there are some additional kind of prerequisites.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So some of these are like the service account and the cluster role bindings.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - And these are basically for authentication right.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - And we discussed about cluster role bindings and cluster roles and service accounts in uh the auth section.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So if you haven't gone through that yet just hold off on this.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - You can basically ignore this for now.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - And the only other thing is how this file is passed into the deployment.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Right.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - So you can either create this file locally and then pass it in as a volume mount as it's done for the other pods usually.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Or another thing you could do that's done here.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - The approach that's used here is basically creating a config map.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 65 | **Type:** Architecture
+  - So this is the kube cube scheduler configuration that we just talked about.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Um, with the leader option set to false because I think the replicas is just one.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 67 | **Type:** Architecture
+  - And then you have the, uh, the scheduler name here.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So this is the, uh, the config file.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - And then this config file is passed in as a volume here as a config file.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - So basically whatever is the contents in the uh, in that particular config map is then mapped to a volume mount to a volume here the specific location.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - And then from this location you have this YAML file which has which basically has this content.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Right.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So this is how that maps.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - But again if you haven't gone through the volume and volume mount sections of this course, then just hold off on this for now and you'll understand that when we talk about these and then again liveness probes, readiness probes, resources and secur...
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So again you can ignore these for now.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 76 | **Type:** Architecture
+  - But what we need to understand here is just that this section on how this file is passed to this custom scheduler Are just proceeding with our lecture.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 77 | **Type:** Architecture
+  - So when you run the the get pods command in the kube system namespace, you can then see the new custom scheduler running.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So this is if you run it as a pod.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - And if you run it as a deployment then you'll probably see a slightly different naming convention.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - But you'll be able to see the pod there.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Just make sure you're checking the right namespace.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 82 | **Type:** Architecture
+  - Now, once we have deployed that custom scheduler, the next step is to configure a pod or a deployment to use this scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 83 | **Type:** Architecture
+  - So how do you use our custom scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So here we have a pod definition file.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 85 | **Type:** Architecture
+  - And what we need to do is add a new field called scheduler name and specify the name of the scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - And that's basically it.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 87 | **Type:** Architecture
+  - This way when the pod is created, the right scheduler gets picked up and the scheduling process works.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - Now create the pod using the kubectl create command.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 89 | **Type:** Architecture
+  - If the scheduler was not configured correctly, then the pod will continue to remain in a pending state.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - And if everything is good, then the pod will be in a running state.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - So if the pod is in a the pending state, then you can look at the logs under the pod describe command.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 92 | **Type:** Architecture
+  - If you've got a describe command and you'll mostly notice that the scheduler isn't configured correctly.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 93 | **Type:** Architecture
+  - Now how do you know which scheduler picked it up.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 94 | **Type:** Exam Tip
+  - So we have multiple schedulers.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 95 | **Type:** Architecture
+  - How do you know which scheduler picked up scheduling a particular pod.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Now we can view this in the events using the kubectl get events command with the dash o wire option.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - And this will list all the events in the current namespace and look for the scheduled events.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 98 | **Type:** Architecture
+  - And as you can see, the source of the event is the custom scheduler that we created.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 99 | **Type:** Architecture
+  - That's the name that we gave to the custom scheduler.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - And the message says that successfully assigned the image.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So that indicates that it's working.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 102 | **Type:** Troubleshooting
+  - You could also view the logs of the scheduler in case you run into issues.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 103 | **Type:** Architecture
+  - So for that we have logs using the kubectl logs command and provide the scheduler pod name or the deployment name.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - And then the right namespace.
+- **File:** `077_Multiple Schedulers.extraction.md` | **Entry:** 105 | **Type:** Implementation Step
+  - Well that's it for this lecture and I'll see you in the next one.
+
+### Lab Solution - Multiple Scheduler
+
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 1 | **Type:** Exam Tip
+  - -: Okay, so let's go over the practice test for multiple schedulers.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 2 | **Type:** Architecture
+  - For what is the name of the pod that deploys the default Kubernetes scheduler in this environment?
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Okay, so let's do a kubectl get pods command in the kube-system namespace.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So we're gonna look here.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 5 | **Type:** Architecture
+  - And we see the pod is kube scheduler-control plane.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So let's select that.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 7 | **Type:** Architecture
+  - Now, what is the image used to deploy the Kubernetes scheduler?
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 8 | **Type:** Architecture
+  - Inspect the kube scheduler, pod and identify the image.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 9 | **Type:** Architecture
+  - Let's do a kubectl describe pod scheduler.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - And then specify the namespace as kube-system.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 11 | **Type:** Architecture
+  - Okay, so here we have the image and that is case.gcr.io/kube-scheduler version 1.23.0 as of this recording.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So I'm gonna select that.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 13 | **Type:** Architecture
+  - Okay, now we've already created the service account and cluster role binding that our custom scheduler will make use of.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So all of these are already created.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 15 | **Type:** Architecture
+  - If we'd like to take a look, we can do a get service account my scheduler.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Okay.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 17 | **Type:** Architecture
+  - So we see the my scheduler service account and the kube-system namespace and similarly, there are cluster role bindings as well.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So that's already done for us.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 19 | **Type:** Warning/Pitfall
+  - So we don't have to worry about that.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Let's go forward.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 21 | **Type:** Architecture
+  - And let's create a ConfigMap that the new scheduler will employ using the concept of ConfigMap as a volume.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - So we have to create a ConfigMap with a name using the contents of the file, so there's already a file here.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And this is the configuration.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 24 | **Type:** Architecture
+  - It will be passed through to the new scheduler that we're gonna create.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So the file is there.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - We just have to create a ConfigMap for it.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - So we'll do a kubectl create ConfigMap.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And the name will be, let's copy and paste.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - And it has to be created from file.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - We use the form file as data path to the file.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And also specify the name system.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - This will be kube-system.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - There's no name.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Okay.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - Let's verify that it's created.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - It's in the kube-system namespace.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - Okay, so that's created.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Go next.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 39 | **Type:** Architecture
+  - Deploy an additional scheduler to the cluster following the given specification.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 40 | **Type:** Architecture
+  - Use the manifest file provided at root my scheduler.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So there's already a file given for us.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Let's add root.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 43 | **Type:** Architecture
+  - My scheduler.yaml or just since we are already in that directory, you could just give the file name.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - And we see that most of the work is already done.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 45 | **Type:** Warning/Pitfall
+  - The liveness probe, the readiness probe are all set so we don't really have to worry about that.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 46 | **Type:** Architecture
+  - And all we need to do is add this image that's given here and we have to use the same image that's used by the current scheduler.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - So let's find that out first.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Let's do a kubectl pods -a.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 49 | **Type:** Architecture
+  - And this is current scheduler.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So do a describe.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And kube-system.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And let's do it for the image.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And let's get this image ID.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And we're going to put that in in the file instead of this placeholder here.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Okay?
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - And if you look at the rest of the file, it already has the ConfigMap that we created.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - If you scroll down, you'll see there is the ConfigMap that we created.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - So that's already configured.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - And that basically passes through as a volume mount here.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - We'll talk about ConfigMaps in the upcoming lectures, if you haven't already gone through that yet.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - And we're going to create this.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - Let's verify that it's created.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 63 | **Type:** Architecture
+  - In the kube-system namespace, we have my scheduler here.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Let's check.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - And the final step is to create a pod.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 67 | **Type:** Architecture
+  - So there's already a pod definition file given and use it to create a pod with a new custom scheduler.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So here we have the NGINX pod definition file and this is pretty straightforward.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Just a NGINX pod with the NGINX image.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 70 | **Type:** Architecture
+  - And what we need to do is specify the custom scheduler, which is basically my scheduler given here.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 71 | **Type:** Architecture
+  - So as we learned in the lecture, you have to add a new field here called scheduler name.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 72 | **Type:** Architecture
+  - And then we specify the name of the scheduler we just created.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Save that.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - And then we create a pod.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - And we make sure pod is running.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Okay, so that's it.
+- **File:** `079_Lab Solution - Multiple Scheduler.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - And that's the end of this lab.
+
+### Configuring Scheduler Profiles
+
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 1 | **Type:** Architecture
+  - Let us now look at what scheduler profiles are.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 2 | **Type:** Architecture
+  - So let's first recap how the Kubernetes Scheduler works.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - Using this simple example of scheduling a pod to one of these four nodes that you can see here that are part of the Kubernetes cluster.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So here we have our pod definition file.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - And there's our pod.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - It is waiting to be scheduled on one of these four nodes.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Now it has a resource requirement of ten CPU.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So it's only going to be scheduled on a node that has ten CPU remaining.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And you can see the available CPU on all of these nodes that are listed here.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Now it is not alone.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - There are some other pods that are waiting to be scheduled as well.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So the first thing that happens is that when these pods are created, the pods end up in a scheduling queue.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So this is where the pods wait to be scheduled.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So at this stage, pods are sorted based on the priority defined on the pods.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So in this case our pod has a high priority set.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So to set a priority you must first create a priority class that looks like this.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 17 | **Type:** Best Practice
+  - And you should set it a name and set it a priority value.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - In this case it's set to 1 million.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So that's really high priority.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - So this is how pods with higher priority gets to the beginning of the queue to be scheduled first.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - And so that sorting happens in this scheduling phase.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - Then our pod enters the filter phase.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - This is where nodes that cannot run the pod are filtered out.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 24 | **Type:** Warning/Pitfall
+  - So in our case the first two nodes do not have sufficient resources.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 25 | **Type:** Warning/Pitfall
+  - So do not have ten CPU remaining.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So they are filtered out.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - The next phase is the scoring phase.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So this is where nodes are scored with different weights from the two remaining nodes.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 29 | **Type:** Architecture
+  - The scheduler associates a score to each node based on the free space it will have after reserving the CPU required for that part.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - So in this case the first one has two left and the second will have six left.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So the second node gets a higher score.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And so that's the node that gets picked up.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - And finally in the binding phase this is where the pod is finally bound to a node with the highest score.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Now all of these operations are achieved with certain plugins.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 35 | **Type:** Exam Tip
+  - For example while in the scheduling queue it's the priority sort plugin that sorts the pods in an order based on the priority configured on the pods.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - This is how pods with priority class gets higher priority over the other pods.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - When scheduling in the filtering stage, it's the Node Resources Fit plugin that identifies the nodes that has sufficient resources required by the pods, and filters out the nodes.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - That doesn't.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 39 | **Type:** Exam Tip
+  - Now, some other plugin examples that come into this particular stage are the node name plugin that checks if a pod has a node name mentioned in the pod spec, and filters out all the nodes that does not match this name.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 40 | **Type:** Exam Tip
+  - Another example is the node unschedulable plugin, and that filters out nodes that has the Unschedulable flag set to true.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So this is when you run the command on a node, which we will discuss later.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - But all the nodes that has unschedulable flags set to true.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - It's this particular plugin that makes sure that no pods are set on those nodes.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Now in the scoring phase again, the Node Resources Fit plugin associates a score to each node based on the resource available on it, and after the pod is allocated to it.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 45 | **Type:** Exam Tip
+  - So as you can see, a single plugin can be associated in multiple different phases.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 46 | **Type:** Exam Tip
+  - Another example of a plugin in this stage would be the image locality plugin, that associates a high score to the nodes that already has the container image used by the pods among the different nodes.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 47 | **Type:** Warning/Pitfall
+  - Now note that at this phase, the plugins do not really reject the pod placement on a particular node.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 48 | **Type:** Exam Tip
+  - For example, in case of the image locality node, it ensures that pods are placed on a node that already has the image.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - But if there are no nodes available, it will anyway place the pod on a node that does not even have the image.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So it's just a scoring that happens at this stage.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And finally, in the binding phase, you have the default binder plugin that provides the binding mechanism.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Now, the highly extensible nature of Kubernetes makes it possible for us to customize what plugins go where, and for us to write our own plugin and plug them in here.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And that is achieved with the help of what is called as extension points.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So at each stage, there is an extension point to which a plugin can be plugged to.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - In the scheduling queue, we have a short extension to which the Priority Sort plugin is plugged to, and then we have the filter extension, the the score and the bind extension to which each of these plugins that we just talked about are plugged two.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - As a matter of fact, there's more.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So there are extensions before entering the filter phase called the Prefilter extension, and the and after the filter phase called post filter.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - And then there are Pre-score before the score extension point and reserve after the extension point, the score extension point.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - And then there is permit and pre bind before the bind and post bind after the binding phase.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So there are so many options available.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Basically you can get a custom code of your own to run anywhere in these points by just creating a plugin and plugging it into the respective kind of point that you want to plug into.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And here is a little bit more details on some additional plugins that come by default that are associated with the different extension points.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 63 | **Type:** Exam Tip
+  - As you can see, some of the plugins span across multiple extension points, and some of them are just within a specific extension point.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So that's what scheduling plugins and extension points are.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So the highly extensible nature of Kubernetes allows us to customize the way that these plugins are called and, and write our own scheduling plugin if needed.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 66 | **Type:** Operational Insight
+  - So having learned that, let's look at how we can change the default behavior of how these plugins are called and and and how we can get our own plugins in there if it's really needed.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 67 | **Type:** Architecture
+  - So taking a step back earlier, we talked about deploying three separate schedulers, each with a separate scheduler binary.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 68 | **Type:** Architecture
+  - So we have the the default scheduler and then the my scheduler and then the my scheduler to.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 69 | **Type:** Architecture
+  - Now all of these are three separate scheduler binaries that are run with a separate scheduler config file associated with each of them.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 70 | **Type:** Exam Tip
+  - Now that's one way to deploy multiple schedulers.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Now the problem here is that since these are separate processes, there is an additional effort required to maintain these separate processes.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - And also more importantly, since they are separate processes, they may run into race conditions while making scheduling decisions.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 73 | **Type:** Exam Tip
+  - For example, one scheduler may schedule a workload on a node without knowing that there's another scheduler scheduling a workload on that same node at the same time.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 74 | **Type:** Exam Tip
+  - So with the 1.18 release of Kubernetes, a feature to support multiple profiles in a single scheduler was introduced.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 75 | **Type:** Exam Tip
+  - So now you can configure multiple profiles within a single scheduler in the scheduler configuration file by adding more entries to the list of profiles, and for each profile, specify a separate scheduler name.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 76 | **Type:** Exam Tip
+  - So this creates a separate profile for each scheduler, which acts as a separate scheduler itself, except that now multiple schedulers are run in the same binary as opposed to creating separate binaries for each scheduler.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 77 | **Type:** Architecture
+  - Now, how do you configure these different scheduler profiles to work differently?
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Because right now all of them just simply have different names.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 79 | **Type:** Architecture
+  - So they're going to work just like the default scheduler.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - How do you configure them to work differently?
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 81 | **Type:** Architecture
+  - Under each scheduler profile, we can configure the plugins the way we want to.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 82 | **Type:** Exam Tip
+  - For example, for the scheduler two profile, I'm going to disable certain plugins like the Taint and Toleration plugin and enable my own custom plugins for the scheduler three profile.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - I'm going to disable all the Pre-score and score plugins, so this is how that's going to look.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - Under the plugins section, specify the extension point and enable or disable the plugins by name or pattern as shown in this case.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So yeah, so that's about it.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 86 | **Type:** Exam Tip
+  - I hope that gives you an overview of how schedulers and scheduler profiles work, and how you can configure multiple scheduler profiles in Kubernetes.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - To read more about this, check out the Kubernetes enhancement proposal that introduced Multi Scheduling Profiles.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - It's the cap 1451 um that introduced the multi scheduling profiles and the article uh on scheduling framework.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - Well that's all for now.
+- **File:** `080_Configuring Scheduler Profiles.extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - I will see you in the next one.
+
+### (2025 Updates)Admission Controllers
+
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will learn about admission controllers.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So we've been running commands from our command line using the kubectl utility to perform various kinds of operations on our Kubernetes cluster.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 3 | **Type:** Architecture
+  - And we know every time we send a request say to create a pod, the request goes to the API server.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 4 | **Type:** Architecture
+  - And then the pod is created and the information is finally persisted in the etcd database.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 5 | **Type:** Architecture
+  - When the request hits the API server, we've learned that it goes through an authentication process, and this is usually done through certificates.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - If the request was sent through kubectl, we know the kube config file has the certificates configured, and the authentication process is responsible for identifying the user who sent the request and making sure the user is valid.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - And then the request goes through an authorization process.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And this is when we check if the user has permission to perform that operation.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And we have learned that this is achieved through role based access controls.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So in this case, if the user was assigned this particular role of a developer, the user is allowed to list, get, create, update or delete pods.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - And so if the request that came in matched any of these conditions, in this case it does.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - As the request is to create a pod it is allowed to go through.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Otherwise it's rejected.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So that's authorization with role based access control.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Now with role based access control, you could place in different kinds of restrictions, such as to allow or deny those with a particular role to say, create, list or delete different kinds of objects like pods, deployments or services.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - We could even restrict access to specific resource names such as, say, a developer can only work on pods named blue or orange, or restrict access within a namespace alone.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - Now, as you can see, most of these rules that you can create with role based access control is at the Kubernetes API level.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And what user is allowed access to what kind of API operations.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And it does not go beyond that.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - But what if you want to do more than just define what kind of access a user has to an object?
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 21 | **Type:** Warning/Pitfall
+  - For example, when a pod creation request comes in, you'd like to review the configuration file and look at the image name and say that you do not want to allow images from a public Docker Hub registry.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Only allow images from a specific internal registry, or to enforce that, we must never use the latest tag for any images.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 23 | **Type:** Exam Tip
+  - Or say for example, you'd like to say if the container is running as the root user.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 24 | **Type:** Warning/Pitfall
+  - Then you do not want to allow that request or allow certain capabilities only, or to enforce that the metadata always contains labels.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So these are some of the things that you can't achieve with the existing role based access controls.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - And that is where admission controllers comes in.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Admission controllers help us implement better security measures to enforce how a cluster is used.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - Apart from simply validating configuration, admission controllers can do a lot more, such as change the request itself or perform additional operations before the pod gets created.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 29 | **Type:** Exam Tip
+  - We will go over some examples in the upcoming slides.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - There are a number of admission controllers that come pre-built with Kubernetes, such as always pull images that ensures that every time a pod is created, the images are always pulled.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 31 | **Type:** Architecture
+  - The default storage class admission controller that observes the creation of PVCs and automatically adds the default storage class to them if one is not specified, the event rate limit admission controller can help set a limit on the requests with...
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 32 | **Type:** Architecture
+  - To prevent the API server from flooding with requests, the namespace exists.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 33 | **Type:** Warning/Pitfall
+  - Admission controller rejects requests to namespaces that do not exist, and there are many more admission controllers available.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 34 | **Type:** Exam Tip
+  - So let's take that as an example and look at it in a bit more detail.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - The namespace exists.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Admission controller.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - Say we want to create a pod in a namespace called blue that doesn't exist.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 38 | **Type:** Troubleshooting
+  - If I run this command, it would throw an error that says the namespace blue is not found.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - What's happening here is that my request gets authenticated, then authorized, and it then goes through the admission controllers, The namespace exists.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - That mission controller handles the request and checks if the namespace is available.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - If it is not, the request is rejected.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - The namespace exists.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Is a built in admission controller that is enabled by default.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - There is another admission controller that is not enabled by default, and that is called as the namespace auto provision admission controller.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - This will automatically create the namespace if it does not exist.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - We will see how it can be enabled in a minute.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 47 | **Type:** Architecture
+  - First, to see a list of admission controllers enabled by default, run the kube API server command and grep for enable admission plugins.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Now here you will see a list of admission controllers that are enabled by default.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - The ones that are highlighted in green.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - Note that if you're running this in a cube ADM based setup, then you must run this command within the cube API.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - Server control plane pod using the kubectl exec command first.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Like this.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 53 | **Type:** Architecture
+  - To add an admission controller, update the enable admission plugins flag on the kube API server service to add the new admission controller.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 54 | **Type:** Architecture
+  - So if you're in a kube EDM based setup, then update the flag within the kube API server manifest file as shown here on the right.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 55 | **Type:** Architecture
+  - So the one on the left is if you're updating the kube API server service, and the one on the right is if the API server is running as a pod in a cube based setup.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Similarly, to disable admission controller plugins, you could use the disable admission plugins flag.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - Once updated, the next time we run the command to provision a pod in a namespace that does not exist yet, the request goes through authentication, then authorization, and then the namespace auto provision controller, at which point it realizes tha...
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - If you list the namespaces now, you'll see that the namespace is automatically created.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 59 | **Type:** Exam Tip
+  - So that's one example of how an admission controller works.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - It can not only validate and reject requests from users, it can also perform operations in the backend or change the request itself.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Note that the namespace, auto provision, and namespace exists.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 62 | **Type:** Warning/Pitfall
+  - Admission controllers are deprecated and is now replaced by the namespace lifecycle admission controller.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - The namespace lifecycle admission controller will make sure that requests to a non-existent namespace is rejected, and that the default namespaces such as default kube system and kube public cannot be deleted.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Well, that's it for now.
+- **File:** `082_(2025 Updates)Admission Controllers.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - Head over to the labs and practice our working with admission controllers, and I will see you in the next lecture.
+
+### (2025 Updates)Lab Solution_ Admission Controllers
+
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: In this video, I'm gonna walk you through these solutions for the admission controllers lab.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - And for the first question, it's asking what is not a function of admission controllers?
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - And the correct answer is authenticate users.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - The admission controllers doesn't handle any of the authentication side of things.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - That actually takes place after the authentication.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - The next question is asking which admission controller is not enabled by default.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And so the way we can get this information is by checking the enable-admission-plugins in the Kube-apiserver help options.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So I do a kubectl get pods -: n kube-system.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - You'll see that we have the kube-apiserver-controlplane.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So I'm gonna do a kubectl exec -it, and I'm gonna grep this pod -: n kube-system.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Then I'm gonna run a specific command.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - I'm gonna run the kube-apiserver, and I'm gonna pass in the -h flag.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And what I want to do is I want to grep for enable-admission-plugins.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - And the output we're looking for is right here.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 15 | **Type:** Best Practice
+  - So it says admission plugins, that should be enabled, in addition to the default enabled ones.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So this list right here is going to be the list of all of the default enabled plugins.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And so we could see NamespaceLifecycle is enabled by default, so that's not the answer.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - We'll take a look at MutatingAdmissionWebhooks.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - If it shows up on this list, that means it's enabled by default.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 20 | **Type:** Warning/Pitfall
+  - So here's MutatingAdmissionWebhook, then we have ValidatingAdmissionWebhook, however, we don't see NamespaceAutoProvision in this list, so NamespaceAutoProvision is not enabled by default.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - The next question is asking which admission controller is enabled in this cluster which is normally disabled?
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And so we have to go to the kube-apiserver.yaml.config, so this is going to be in /etc/kubernetes/manifests /kube-apiserver.yaml.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - And what we want to do is we can search for something by doing a forward slash, and then searching for enable-admission-plugin.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And so you could see what is enabled that wasn't enabled by default, and that's gonna be NodeRestriction, so this is the plugin that was enabled, which isn't enabled by default.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 25 | **Type:** Warning/Pitfall
+  - And if you don't want to go into vi, we can always just grep for this, so I can say grep enable-admission-plugins, and then passing the path to that specific file.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - And so this is gonna show us all the plugins that are enabled.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So NodeRestriction is the correct answer.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - The next question is telling us to create an nginx pod in the blue namespace, and it points out that the blue namespace has not been created yet, and it explicitly tells us to not create the namespace beforehand.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 29 | **Type:** Troubleshooting
+  - So let's copy this command, which is going to create that pod, and we can see that it throws an error, because the namespace blue was not found.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 30 | **Type:** Warning/Pitfall
+  - Now the reason this ultimately failed and it threw that error was because Kubernetes has a NamespaceExists admission controller enabled, which rejects requests to namespaces that do not exist.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - So if you wanted it to automatically create a namespace for you, you could enable the NamespaceAutoProvision admission controller.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And for this question, that's going to be the task at hand.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - We have to enable that specific admission controller.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And so to do that, we want to go back into that same file, the /etc/kubernetes/manifests/kube-apiserver.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And we want to go down to the same line we looked at, at one of the previous questions, which is the enable-admission-plugins, and we can see we just have NodeRestriction, so we're just gonna add the new one after this.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - So we'll just add a comma, and then put in the name of the new admission controller that you want enabled, so that's gonna be NamespaceAutoProvision.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - Then we'll save that.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 38 | **Type:** Architecture
+  - And after we save that, the API server is going to restart.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And we'll give this a couple minutes before we run the validation, 'cause it takes a little while for it to restart.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - All right, let's run the validation.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Okay, so now it's telling us to run that nginx pod in the blue namespace again and check to see if it succeeds.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So I'm just gonna hit the Up arrow a couple times, we're gonna run the same command, and once again, keep in mind, right now the namespace blue does not exist.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 43 | **Type:** Best Practice
+  - So when we run this, what should happen is it should now create a namespace called blue.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - So if I do a kubectl get namespace, we can now see that the blue namespace was created seven seconds ago, and so that's because of that admission controller.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 45 | **Type:** Warning/Pitfall
+  - And this next question is just pointing out that the NamespaceExists and the NamespaceAutoProvision admission controllers are deprecated and are now replaced by the NamespaceLifecycle admission controller.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - The next question is asking us to disable the DefaultStorageClass admission controller.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So once again, we're gonna go into the kube-apiserver.yaml manifests, so I'm gonna do: vi /etc/kubernetes/manifests/ kube-apiserver.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And just like we had the enable-admission-plugin, we're going to add a disable-admission-plugin.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - So I'm gonna go right below this line, and I'm gonna say disable-admission-plugins= and then we're gonna add DefaultStorageClass.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 50 | **Type:** Architecture
+  - And, once again, after you make these changes, the API server is gonna have to restart, so give it a couple minutes, and then we'll run the validation.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And for the final question, it says that the kube-apiserver is running as a pod.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So you could check the process to see enabled and disabled plugins.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So if we just copy this command, this is going to list out all of the enabled and disabled plugins with this command.
+- **File:** `084_(2025 Updates)Lab Solution_ Admission Controllers.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And that's going to wrap up the admission controller's lab.
+
+### (2025 Updates)Validating and Mutating Admission Controllers
+
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - In this lecture, we will take a closer look at the different types of admission controllers and how we can configure our own admission controller.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - We looked at the namespace exists or namespace lifecycle admission controller.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - It can help validate if a namespace already exists and reject the request if it doesn't exist.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - This is known as a validating admission controller.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Let's look at another type of admission controller plugin named as the default storage class plugin.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - This is a plugin that is enabled by default.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 7 | **Type:** Exam Tip
+  - Say for example, you're submitting a request to create a PVC.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - The request goes through authentication, authorization, and finally the admission controller.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - The default storage class admission controller will watch for requests to create a PVC and check if it has a storage class mentioned in it.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - If not, which is true in our case, it will modify your request to add the default storage class to your request.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - This could be whatever storage class is configured as the default storage class in your cluster.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So when the PVC is created and you inspect it, you will see that a storage class default is added to it even though you hadn't specified it during the creation.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So this type of admission controller is known as a mutating admission controller.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - It can change or mutate the object itself before it is created.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So those are two types of admission controllers.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Mutating admission controllers are those that can change the request, and validating admission controllers are those that can validate the request and allow or deny it.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And there may be admission controllers that can do both that can mutate a request as well as validate a request.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Now, generally mutating admission controllers are invoked first, followed by validating admission controllers.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - This is so that any change made by the mutating admission controller can be considered during the validation process.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 20 | **Type:** Exam Tip
+  - In this example, the namespace auto provisioning admission controller, which is a mutating admission controller, is run first, followed by the validating controller namespace exists.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - If it was run the other way, then the namespace exists.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - Admission controller would always reject the request for namespace that does not exist, and the namespace auto provisioning controller would never be invoked to create the namespace.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 23 | **Type:** Troubleshooting
+  - And when a request goes through these admission controllers, if any admission controller rejects the request, the request is rejected and an error message is shown to the user.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Now, these are all built in admission controllers that are part of the Kubernetes source code and are compiled and shipped with Kubernetes.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Now, what if we want our own admission controller with our own mutations and validations?
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - That has our own logic You support external admission controllers.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - There are two special admission controllers available mutating Admission Webhook and then Validating admission Webhook.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - And this is what we will look at next.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - We can configure these webhooks to point to a server that's hosted either within the Kubernetes cluster or outside it.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And our server will have our own admission webhook service running with our own code and logic.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - After a request goes through all the built in admission controllers, it hits the webhook that's configured.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - We will see how to configure that in a bit.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - And then and then once it hits the webhook, it makes a call to the admission webhook server by passing in an admission review object in a JSON format.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - This object has all the details about the request, such as the user that made the request and the type of operation the user is trying to perform, and on what objects and the and details about the object itself.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - On receiving the request, the admission webhook server responds with an admission review object with a result of whether the request is allowed or not.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - If the allowed field in the response is set to true, then the request is allowed and if it's set to false, it is rejected.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So how do we set this up?
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - First, we must deploy our admission webhook server, which will have our own logic, and then we configure the webhook on Kubernetes by creating a webhook configuration object.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - So let's take a look at each of these steps next.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - So the first step is to deploy our own webhook server.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 41 | **Type:** Architecture
+  - Now this could be an API server that could be built on any platform.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 42 | **Type:** Exam Tip
+  - An example code of a webhook server written in go can be found here in the Kubernetes documentation pages.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - It's written in the go programming language.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - You could develop your own server in other languages as well if required.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - The only requirement is that it must accept the mutate and validate APIs and respond with a JSON object that the web server expects.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So here's a pseudo code of a simple webhook server written in Python.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - There are two calls a validate call and a mutate call.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 48 | **Type:** Exam Tip
+  - The validate call receives the validation webhook request, and in this example compares the name of the object and the name of the user who sent the request and rejects the request if it's the same name.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Well, just a simple sample use case to show what we can do with the requests that come in.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And if you look down, we'll see the mutating webhook which gets the username and responds with a JSON patch operation of adding the username as a label to any request that was raised by anyone.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So if you take a closer look at this particular piece of code, a patch object is a list of patch operations, with each operation being add, remove, replace, move, copy, or test.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - And we then specify the path within the JSON object that needs to be targeted for change.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - In this case, it is slash metadata slash label slash users.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - And then the value that needs to be added if it is an add operation.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So we get the username from the request.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So that's going to be the value of that particular label.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - This is then sent as a base64 encoded object as part of the response.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 58 | **Type:** Exam Tip
+  - On a side note, from an exam point of view, you will not be asked to develop any code like this.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 59 | **Type:** Warning/Pitfall
+  - So don't worry if you don't fully understand this piece of code.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - All you need to take away from this is that the admission Webhook server is a server that you deploy that contains the logic or the code to permit or reject a request, and it must be able to receive and respond with the appropriate responses that ...
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 61 | **Type:** Exam Tip
+  - So this is just a simple example to show what kind of things that you can do or what, what, what kind of things that you can code and implement in the webhook server that you deploy.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - Okay, so moving on.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - Once we have developed our own webhook server, the next step is to host it.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So we either run it as a server somewhere or containerize it and deploy it within Kubernetes cluster itself as a deployment.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - If deployed as a deployment in a Kubernetes cluster, then it needs a service for it to be accessed.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So we have a service named Webhook Service as well.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - The next step is to configure our cluster to reach out to the service and validate or mutate the requests.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - For this, we create a validating webhook configuration object.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So we start with the API version kind metadata and webhooks section.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - API version is admission registration.io v1.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Kind is validating webhook configuration.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - If we are configuring a mutating webhook this would be a mutating webhook configuration.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - We then give it a name.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - Now under webhooks we configure the different webhooks.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So a webhook has a name, a client config and a set of rules.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 76 | **Type:** Exam Tip
+  - So the name we set it to example.com.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - The client config is where we configure the location of our admission webhook server.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - If we deploy this server externally on our own, and that is not a part of a deployment in Kubernetes cluster, then we can simply provide a URL path to that server like this.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - Now instead, if we deployed the server as another service on our own cluster, as we see here as it is on the left, then we can use the service configuration and provide the namespace and name of the service, which in our case is webhook dash service.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 80 | **Type:** Architecture
+  - Now of course, the communication between the API server and the webhook server has to be over TLS.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 81 | **Type:** Best Practice
+  - So a certificate bundle should be configured.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - So the server has to be configured with a pair of certificates.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - Then a Certificate.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - ACA bundle is to be created and passed into this client config SCA bundle.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 85 | **Type:** Architecture
+  - Next we must specify when to call our API server.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - We can specify rules to configure exactly when we want our webhook server to be called for validation.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - Now we might not want to do that for all of the calls.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 88 | **Type:** Exam Tip
+  - For example, we may only want it to be called while creating pods, or deleting pods, or creating deployments, etc. whatever that may be.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - It can be added as a rule under the rules section using API groups, API versions, operation types and resources.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 90 | **Type:** Best Practice
+  - In this example, we're only going to call this webhook configuration when calls are made to create pods, and that should be it.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - Once this object is created, every time we create a pod, a call would be made to the webhook service and depending on the response, it would be allowed or rejected.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `085_(2025 Updates)Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - Head over to the labs and practice working with webhooks and I will see you in the next lecture.
+
+### (2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers
+
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: In this video, I'm gonna walk you through the validating and mutating admission controllers lab.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - The first question is asking, which one of the below combinations is correct for mutating and validating admissions controllers?
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So for the first one, it says that a namespace auto provision admission controller is mutating.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And when you think about it, since it's automatically, you know, creating a namespace and changing something (indistinct), right?
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - That would be correct, and then the namespace exists.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Well that's gonna be validation 'cause it's validating to see if a namespace exists.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So the first one actually ends up being the correct answer.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - If you take a look at the other ones, namespace, auto provision, validating, the auto provision is not validating, it's actually just making a change for you.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Namespace exists is the validation.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So it's gonna be the first one.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - What is the flow of invocation of the admission controllers?
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Well, the way it goes is first it mutates, and then it validates.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - So it's going to be the first answer here.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - Next question is asking us to create a namespace called webhook dash demo.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - So that's just gonna be kubectl create webhook, create NS, webhook dash demo.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And if I do a kubectl get NS, we can see our newly created namespace.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - The next question is asking us to create a TLS secret called webhook dash server dash TLS for a secure webhook communication in the webhook dash demo namespace.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - And it's already created a certificate and a key, and these are gonna be the respective paths for both of those.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - And so to create a TLS secret, we can do kubectl, and we'll do dash N to provide the namespace, that's gonna be the new webhook dash demo.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - And then we're gonna create a secret TLS, and then this'll be webhook dash server dash TLS.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - And then I'm gonna go down to the next line to keep everything pretty, dash dash cert.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - And then now we provide the path to the cert.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So this is gonna be this path right here.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - And then we're gonna provide the path to the key, which is gonna be this path here.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - And then we can hit Enter, and then it was successfully created.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - I'll then run the validation.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - For the next question, it's asking us to create a webhook deployment, and they've already provided us a sample deployment definition.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - And so if you wanna take a look at that, we can just do cat webhook, deployment dot yaml.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - So we're gonna just deploy this, and so all we have to do is do a kubectl apply, dash F, and then we'll just call webhook deployment.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - So that's been deployed.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - And then for the webhook, we also need to create a service so that it can communicate, and we've already been provided a service configuration that's gonna be in webhook dash service.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - You can take a look at that if you want.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - I'm gonna do a kubectl apply dash F, webhook dash service.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And a mutating webhook configuration has been supplied to us under webhook dash configuration dot yaml.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - And it's asking us if we apply this configuration, which resource actions will it affect?
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So let's actually take a look at this.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So we'll do webhook dash configuration, and if you wanna figure out what it's doing, go under the rule section, and we can see that it works for operations of creating on resources of pods.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - So pod with the create operations.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - Now we have to deploy the webhook configuration.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - So once again, we'll just do a kubectl apply, dash F webhook dash configuration.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - So in the previous step, we deployed a demo webhook, which does the following.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - It denies all requests for a pod to run as root in container if no security context is provided.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So if no value is set for run as non root, a default of true is applied, and the user ID defaults to 1234.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - In addition to, it allows a container to run as root if the run as non root is explicitly set to false in the security context.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - So what we're gonna do is, we're first going to test this out by deploying a pod with no security context.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So there's been a configuration provided under pod with defaults.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So you can see there's nothing provided from a security context perspective.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - So it's just gonna use the default, so I'm gonna do a kubectl apply dash F, and then we'll do pod dash with defaults.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - And so it's, the next question's asking us, what are the run as non root, and run as user values for the previously created pod security context?
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Because remember, we didn't explicitly provide this.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - I'm gonna do a kubectl get pod, and it's gonna be pod dash with defaults.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - And then I'm gonna do a dash O yaml.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - I wanna see the configuration.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And hold on, what is this called?
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Get pod.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - And I realize I forgot the S.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 57 | **Type:** Best Practice
+  - And so if we look for a security context, we should see what it provided.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So we could see, when you provide nothing, it's going to default to run as non root as true, and the user's gonna be 1234.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So we wanna find run as non root true, run as user 1234.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - The next question is asking us to deploy a pod with a security context, explicitly allowing to run as root.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - And this definition file for this has already been provided.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So if we take a look at pod with override, we can see that the security context is set to run as non root set to false.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - So if you do a kubectl apply, so we can deploy this.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - We can check this now, and go to the next question.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - The next question is asking us to deploy a pod with a conflicting security context.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So a pod with conflict dot yaml is gonna provide the definition for that.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So if we take a look at that, and we can see under security context, it said for run, run is non root set to true.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - And it's gonna say run as user of zero.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 69 | **Type:** Best Practice
+  - So we'll do a kubectl apply dash F, and we should see that it's going to reject this because we are asking to run as non root with it set to true, but then run as user set to zero, which is the root user.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - So you can't have run as non root set to be true, and then ask to be run as a root user.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So we would have to set it as false.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - And so the validation was successful, and it rejected the application, or the creation of this pod.
+- **File:** `087_(2025 Updates)Lab Solution_ Validating and Mutating Admission Controllers.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - And that's going to wrap up this lab session.

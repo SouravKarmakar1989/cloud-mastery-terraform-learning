@@ -1,0 +1,255 @@
+# Section Concept Map: BATCH-017
+
+## Section
+- Course: `certified-kubernetes-administrator-with-practice-tests`
+- Section: `18_Bonus Section`
+
+## Source Files Used
+- `312_Conclusion.extraction.md`
+- `313_What's Next_.extraction.md`
+
+## Concept Groups
+
+### Conclusion
+
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: And there you have it.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - We have come to the end of this incredible learning journey together.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We sincerely hope that you've had a fantastic experience with us and that you have gained valuable knowledge and skills throughout this course.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - As you prepare for your exams, I wanna wish you all the best.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - I have complete faith in your abilities, and I know that you're going to excel.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And remember, hard work and dedication are the keys to success.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - I believe that you have what it takes to achieve your goals.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - When you do achieve those victories, we would be thrilled if you could share your success stories with us on social media.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 9 | **Type:** Warning/Pitfall
+  - Don't forget to tag us in your posts so we can celebrate your accomplishments with you and the rest of our community.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 10 | **Type:** Exam Tip
+  - If you're looking to gain more practice before attending the CKA exam, check out the ultimate CKA mock exam series that we have recently released on KodeKloud.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 11 | **Type:** Exam Tip
+  - This is a special course to gain hands-on experience in a real exam-like environment.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 12 | **Type:** Exam Tip
+  - This is a perfect addition to the mock exams that you already have in this course.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 13 | **Type:** Exam Tip
+  - This series replicates the exam environment closely with multiple clusters and patterns of questions.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - And as this requires a larger lab infrastructure to host, this is only available on KodeKloud and requires a KodeKloud paid subscription.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 15 | **Type:** Exam Tip
+  - If you're planning for the CKS Kubernetes Security Specialist certification exam, then check out the CKS course on KodeKloud.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 16 | **Type:** Exam Tip
+  - We cover all the topics needed to help you clear your CKS certification exam, and of course, along with hands-on labs and mock exams.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 17 | **Type:** Exam Tip
+  - And we also have the KCNA, the Kubernetes and Cloud-Native Associate entry Level certification exam prep course.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - All of these are exclusively available on KodeKloud, so it requires a KodeKloud subscription.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 19 | **Type:** Warning/Pitfall
+  - But don't worry, use the coupon code UDEMY10 to get a special extra discount where you purchase your subscription.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Apart from the courses that are available here on Udemy, we have 40 plus other courses that are only available on KodeKloud, plus another 50 plus courses that are planned for the rest of the year on Linux, DevOps, and cloud technologies.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Our Linux learning path helps you go from an absolute beginner to a certified expert on Linux.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - You will learn Linux by doing in a completely new way with a hands-on approach.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 23 | **Type:** Exam Tip
+  - And our cloud learning paths help you learn the basics of popular cloud platforms and prepare you for certifications, and then deep dive into each of the services offered on the cloud platforms with a hands-on approach.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Additionally, with the KodeKloud Pro Plan, you also gain access to the cloud playgrounds for all three cloud platforms.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - You get instant access to a cloud sandbox environment, as well as 50 plus DevOps playgrounds.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - No more worrying about forgetting to clean up your environments and incurring cloud costs.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - We will take care of all of that for you.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So once again, use that coupon code UDEMY10 to get a special extra discount when you purchase your KodeKloud subscription.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 29 | **Type:** Exam Tip
+  - Well, all the best for your exams.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Thank you for choosing our course, and we hope that it has been a truly enriching experience.
+- **File:** `312_Conclusion.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Until next time, goodbye.
+
+### What's Next_
+
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hello everyone.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 2 | **Type:** Exam Tip
+  - This is Vijin Palazhi from KodeKloud and welcome to the ultimate CKA mock exam series. (air whooshing) (gentle music) (air whooshing) Now before we begin, I wanted to talk to you about some of the prerequisites to consider before attempting this c...
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - Now since you're watching this video, I'm assuming that your CKA exam is right around the corner and that you have already completed, the CKA preparation course with the included mock exams and the Lightning Labs.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - Now if this assumption is incorrect, I would highly recommend that you complete the CKA preparation course first and then come back to this series of Labs.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 5 | **Type:** Exam Tip
+  - Now this course consists of a series of comprehensive and challenging mock exams intended to give you more hands-on practice before you attend the actual exam. (upbeat music) And each test is quite unique as compared to the regular mock exams and ...
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 6 | **Type:** Architecture
+  - The architecture, installation and maintenance section consists of 25% of the questions.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Now workload and scheduling is another 15%.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 8 | **Type:** Troubleshooting
+  - Service networking is 20%, storage is another 10% and finally, the biggest section of them all is troubleshooting, which accounts for 30% of the questions.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - Now each of the tests in this series respects the weightage of these individual knowledge areas to give you the experience of taking an actual exam. (upbeat music) And to take it up another notch, the questions that you get for this mock exam, inc...
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 10 | **Type:** Exam Tip
+  - There are four clusters in total, some of which are dedicated to specific knowledge areas. (upbeat music) By default, the exam taker which is you, will be locked into what is known as the student-node.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - And from here, you'll be able to access all the other Kubernetes clusters and also be able to ssh your individual nodes of these clusters. (upbeat music) In total, there are 20 random questions generated for the entire Lab.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 12 | **Type:** Exam Tip
+  - And as I mentioned earlier, these are randomized across the knowledge areas or sections and you'll have in total, two hours to complete this exam. (air whooshing) At the end of the exam, the results will be auto-validated and you'll be presented w...
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 13 | **Type:** Exam Tip
+  - Let's now jump right in and go over one of these tests ourselves. (air whooshing) All right, so let's now start and take one of the mock exam test that's included in this course.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - I'm going to click on start course.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 15 | **Type:** Exam Tip
+  - And here, you can see that we have in total 10 mock exams.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - All of them are randomized.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 17 | **Type:** Exam Tip
+  - And for this demonstration, let's make use of CKA Mock Exam 1.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 18 | **Type:** Best Practice
+  - So once you click on this Lab, the Lab should load up within 30 seconds, an average of one to two minutes is to be expected.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 19 | **Type:** Best Practice
+  - But more often than not, it should load within 30 seconds.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - There you have it, the first Lab has been loaded.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - And here, you can see that we have in total 20 questions.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 22 | **Type:** Architecture
+  - And the very first question, is from the section architecture, install and maintenance.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And if you remember, it accounts for 25% of the questions.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - So for the first question, we have to set the context to cluster3.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - So before we begin, let me show you all the clusters that are currently configured.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - As you can see, we are currently on the student-node.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - And to check all the clusters that are configured, you can use the command kubectl config get-clusters.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So as you can see here, we have four clusters in total.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 29 | **Type:** Warning/Pitfall
+  - And by default, if you do not set any context, you should be accessing the cluster1.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So as you can see, cluster1 which has got two worker nodes, which is cluster1-node01 and node02.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So in this case, we have to make use of cluster3.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So I'm going to copy this text here and paste it in the student-node.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So remember, student-node itself is just a client where you'll find that you log in, if you open a new terminal, you'll also log into student-node.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - But if you want to access any of these control planes specifically, you'll have to make use of the ssh command.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So now I have set the context to cluster3.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - And if I run the same command as before, you'll see that this is a single-node cluster with just one control plane.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So it's cluster3-controlplane and the version is 1.24 as of this recording.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - And similarly, you can set context for each of the question and that's something that I highly recommend that you do.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Each question will make sure that you try to access the correct cluster by setting the context.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So in this case, let's read the question.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 41 | **Type:** Exam Tip
+  - We have to decode the existing secret, which is called beta-sec-cka14-arch created in a separate namespace.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - So let's attempt this question first.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So I'm just going to check if this namespace exists.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So as you can see, we do have that namespace.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So I'm going to type kubectl get secrets -n.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - And here, you can see that that secret does indeed exist.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So let me get it in a YAML format, so that we can see the data.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And here, you can see that the secret is stored here under the data section.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And what I'm going to do, is I'm just going to base64 decode it and put it in that file.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So I'm going to echo this particular string here and base64 -d.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So all that it says is this is the secret.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Now what we can do is we can redirect that directly onto that file.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And remember, this says that it has to be stored on the student-node.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So I'm already on the student-node, so I'm just going to redirect the decoded secret to this file.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 55 | **Type:** Best Practice
+  - And that should be it.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Now I'll just scroll through the rest of the questions and show you the different sections that they belong to.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 57 | **Type:** Architecture
+  - So as you can see, the first question was of weightage eight and belonged to the section architecture, install and maintenance.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - The second question is of weightage two, also belonging to the same section.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 59 | **Type:** Exam Tip
+  - Let's just scroll on, just like any of our current mock exams, you can scroll back and forth between questions.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - But only thing to note is that you have to complete the test within the allotted time.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 61 | **Type:** Exam Tip
+  - If you run over, it'll automatically end the exam and validate it for you.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 62 | **Type:** Exam Tip
+  - But at any given point in time, you can choose to click on the end exam button and see the score for yourself.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - The third question is also from the same section.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So is the fourth and the fifth one as well.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 65 | **Type:** Troubleshooting
+  - Now the sixth question as you can see, is from the troubleshooting section.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 66 | **Type:** Exam Tip
+  - If you remember, this section is one of the largest for CKA and accounts for 30% of the questions.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 67 | **Type:** Best Practice
+  - And moving along, you should find that the next question is from a different section.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - In this case, as you can see, this is from the scheduling section.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Similarly, you'll find other questions belonging to other sections, such as storage and networking in the test.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 70 | **Type:** Best Practice
+  - So once you're happy with your attempt, you can click on the end exam button and this should automatically trigger the validation.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So in this case, I've attempted only the question one, so everything else will be marked as incorrect.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 72 | **Type:** Exam Tip
+  - But I just wanted to show you how to navigate the mock exam series.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - And once this is done, I want to reload this Lab again and show you that the next attempt can be completely different.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 74 | **Type:** Exam Tip
+  - So here, I am trying to launch the Mock Exam 1 again.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So let's do that.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 76 | **Type:** Exam Tip
+  - All right, so the CKA Mock Exam 1 is loaded again.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - Now if you remember, in our first attempt, the first question was to decode the secret.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Now it's completely changed.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So this is completely expected.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - All of the questions are randomized.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - So you can expect different questions, each time you attend the same Lab.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 82 | **Type:** Exam Tip
+  - Now if you're not sure what the solution is, the solution will be provided for you at the end of the exam during the grading process.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 83 | **Type:** Exam Tip
+  - So for example, I did not attempt the first question, this is wrong.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So you will be provided with this solution immediately.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - So in case you are stuck, make sure that you go over the solution that is provided and then you can try to take the test again.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 86 | **Type:** Exam Tip
+  - So that was a quick demonstration of the ultimate CKA mock exam series.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - I hope that you find this really useful and best of luck with your preparation.
+- **File:** `313_What's Next_.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Thank you. (air whooshing) (gentle music)

@@ -1,0 +1,3311 @@
+# Section Concept Map: BATCH-019
+
+## Section
+- Course: `certified-kubernetes-application-developer`
+- Section: `02_Core Concepts`
+
+## Source Files Used
+- `007_Recap - Kubernetes Architecture.extraction.md`
+- `008_Docker-vs-ContainerD.extraction.md`
+- `009_A note on Docker deprecation.extraction.md`
+- `010_Recap - Pods.extraction.md`
+- `012_Recap - Pods with YAML.extraction.md`
+- `013_Recap - Demo - Creating Pods with YAML.extraction.md`
+- `015_Introduction to Kubernetes Practice Test.extraction.md`
+- `016_Demo_ Accessing Labs.extraction.md`
+- `019_Solution - Pods (optional).extraction.md`
+- `021_Recap - ReplicaSets.extraction.md`
+- `023_Solution - ReplicaSets (optional).extraction.md`
+- `024_Recap - Deployments.extraction.md`
+- `026_Solution - Deployments (optional).extraction.md`
+- `027_Recap - Namespaces.extraction.md`
+- `029_Solution - Namespaces (optional).extraction.md`
+- `030_Services.extraction.md`
+- `031_Services - Cluster IP.extraction.md`
+- `033_Solution - Services (optional).extraction.md`
+- `036_Kubectl Explain Command.extraction.md`
+- `038_Solution - Imperative Commands (optional).extraction.md`
+- `040_A Quick Reminder.extraction.md`
+
+## Concept Groups
+
+### Recap - Kubernetes Architecture
+
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Before we head into setting up a Kubernetes cluster, it is important to understand some of the basic concepts.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - This is to make sense of the terms that we will come across while setting up a Kubernetes cluster.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Let us start with nodes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - A node is a machine, physical or virtual, on which Kubernetes is installed.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - A node is a worker machine and that is where containers will be launched by Kubernetes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - It was also known as minions in the past.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So you might hear these terms used interchangeably.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 8 | **Type:** Troubleshooting
+  - But what if the node on which your application is running fails?
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Well, obviously our application goes down, so you need to have more than one nodes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - A cluster is a set of nodes grouped together.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 11 | **Type:** Troubleshooting
+  - This way, even if one node fails, you have your application still accessible from the other nodes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 12 | **Type:** Exam Tip
+  - Moreover, having multiple nodes helps in sharing load as well.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now we have a cluster.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - But who is responsible for managing the cluster?
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Where is the information about the members of the cluster stored?
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - How are the nodes monitored?
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 17 | **Type:** Troubleshooting
+  - When a node fails, how do you move the workload of the failed node to another worker node?
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - That's where the master comes in.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - The master is another node with Kubernetes installed in it and is configured as a master.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - The master watches over the nodes in the cluster and is responsible for the actual orchestration of containers on the worker nodes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - When you install Kubernetes on a system, you're actually installing the following components.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 22 | **Type:** Architecture
+  - An API server and etcd service a kubelet service a container.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 23 | **Type:** Architecture
+  - Runtime controllers and schedulers.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 24 | **Type:** Architecture
+  - The API server acts as the frontend for Kubernetes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 25 | **Type:** Architecture
+  - The users management devices, command line interfaces all talk to the API server to interact with the Kubernetes cluster.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 26 | **Type:** Architecture
+  - Next is the etcd keystore.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 27 | **Type:** Architecture
+  - Etcd is a distributed, reliable key value store used by Kubernetes to store all data used to manage the cluster.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 28 | **Type:** Exam Tip
+  - Think of it this way when you have multiple nodes and multiple masters in your cluster, etcd stores all that information on all the nodes in the cluster in a distributed manner.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 29 | **Type:** Exam Tip
+  - Etcd is responsible for implementing locks within the cluster to ensure that there are no conflicts between the masters, the scheduler is responsible for distributing work or containers across multiple nodes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - It looks for newly created containers and assigns them to nodes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - The controllers are the brain behind orchestration.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - They are responsible for noticing and responding when nodes, containers, or endpoints goes down, the controllers make decisions to bring up new containers.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 33 | **Type:** Operational Insight
+  - In such cases, the container runtime is the underlying software that is used to run containers.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - In our case, it happens to be Docker, but there are other options as well.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 35 | **Type:** Architecture
+  - And finally, Kubelet is the agent that runs on each node in the cluster.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - The agent is responsible for making sure that the containers are running on the nodes as expected.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So far we saw two types of servers master and worker, and a set of components that make up Kubernetes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - But how are these components distributed across different types of servers?
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - In other words, how does one server become a master and the other the slave?
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - The worker node, or minion as it is also known, is where the containers are hosted.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 41 | **Type:** Exam Tip
+  - For example, Docker containers.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 42 | **Type:** Operational Insight
+  - And to run Docker containers on a system, we need container runtime installed.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 43 | **Type:** Operational Insight
+  - And that's where the container runtime falls.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - In this case it happens to be Docker.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - This doesn't have to be Docker.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 46 | **Type:** Operational Insight
+  - There are other container runtime alternatives available, such as rocket or Cri-o.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 47 | **Type:** Operational Insight
+  - But throughout this course we are going to use Docker as our container runtime engine.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 48 | **Type:** Architecture
+  - The master server has the kube API server and that is what makes it a master.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 49 | **Type:** Architecture
+  - Similarly, the worker nodes have the Kubelet agent that is responsible for interacting with the master to provide health information of the worker node and carry out actions requested by the master on the worker nodes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - All the information gathered are stored in a key value store on the master.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 51 | **Type:** Architecture
+  - The key value store is based on the popular etcd framework.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - As we just discussed.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 53 | **Type:** Architecture
+  - The master also has the control manager and the scheduler.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - There are other components as well, but we will stop there for now.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - The reason we went through this is to understand what components constitute the master and worker nodes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - This will help us install and configure the right components on different systems when we set up our infrastructure.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - And finally, we also need to learn a little bit about one of the command line utilities known as the Kube command line tool or kubectl or kube control, as it is also called.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - The kube control tool, is used to deploy and manage applications on a Kubernetes cluster, to get cluster information, to get the status of other nodes in the cluster, and to manage many other things.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - The kubectl run command is used to deploy an application on the cluster.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - The kubectl cluster info command is used to view information about the cluster and the kubectl get nodes.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Command is used to list all the nodes part of the cluster.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - That's all we need to know for now, and we will keep learning more commands.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Throughout this course we will explore more commands with kubectl when we learn the associated concepts.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - For now, just remember the run cluster info and get nodes commands and that will help us get through the first few labs.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - That's it for this lecture.
+- **File:** `007_Recap - Kubernetes Architecture.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - I will see you in the next lecture.
+
+### Docker-vs-ContainerD
+
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - So you're going to come across Docker and container D many times going forward.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So when you read older blogs or documentation pages, you'll see Docker mentioned along with Kubernetes.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 3 | **Type:** Comparison
+  - And when you read newer blogs you will see container D, and you'll wonder what the difference is between the two.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And there are a few CLI tools like Ktor, cry control or Node Control.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 5 | **Type:** Best Practice
+  - And you'll wonder what are these CLI tools and which one should you be using?
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So that's what I'm going to explain in this video.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So let's go back in time to the beginning of the container era.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And in the beginning there was just Docker and there were other tools like rocket.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - But Dockers user experience made working with containers super simple.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And hence Docker became the most dominant container tool.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - And then came Kubernetes to orchestrate Docker.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So Kubernetes was built to orchestrate Docker specifically in the beginning.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - So Docker and Kubernetes were tightly coupled and back then Kubernetes only worked with Docker and didn't support any other container solutions.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - And then Kubernetes grew in popularity as a container orchestrator.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 15 | **Type:** Operational Insight
+  - And now other container runtimes like rocket wanted in Kubernetes.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 16 | **Type:** Operational Insight
+  - Users needed it to work with container runtimes that are other than just Docker.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 17 | **Type:** Operational Insight
+  - And so Kubernetes introduced an interface called Container Runtime Interface or Cry.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 18 | **Type:** Operational Insight
+  - So cry allowed any vendor to work as a container runtime for Kubernetes, as long as they adhere to the OCI standards.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 19 | **Type:** Operational Insight
+  - So OCI stands for Open Container Initiative, and it consists of an image spec and a runtime spec.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 20 | **Type:** Best Practice
+  - Image spec means the specifications on how an image should be built.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So that's what it defined.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 22 | **Type:** Best Practice
+  - An image spec defined the specifications on how an image should be built, and the runtime spec defined the standards on how any container runtime should be developed.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 23 | **Type:** Operational Insight
+  - So keeping these standards in mind, Anyone can build a container runtime that can be used by anybody to work with Kubernetes.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So that was the idea.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 25 | **Type:** Operational Insight
+  - So rocket and other container runtimes that adhere to the OCI standards were now supported as container runtimes for Kubernetes via the CRI.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - However, Docker wasn't built to support the CRI standards because remember, Docker was built way before CRI was introduced and Docker still was the dominant container tool used by most.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So Kubernetes had to continue to support Docker as well.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 28 | **Type:** Operational Insight
+  - And so Kubernetes introduced what is known as Docker shim, which was a hacky but temporary way to continue to support Docker outside of the container runtime interface.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 29 | **Type:** Operational Insight
+  - While most other container runtimes worked through the CRI, Docker continued to work without it.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 30 | **Type:** Operational Insight
+  - Now you see Docker isn't just a container runtime alone.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 31 | **Type:** Command
+  - 
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - There was support for volumes or security.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 33 | **Type:** Operational Insight
+  - And finally also the container runtime called run.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - See the daemon that managed run C.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And that's that was called as container D.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 36 | **Type:** Operational Insight
+  - So container D is CRE compatible and can work directly with Kubernetes as all other runtimes.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 37 | **Type:** Operational Insight
+  - So container D can be used as a runtime on its own separate from Docker.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 38 | **Type:** Operational Insight
+  - So now you have container D as a separate runtime and Docker separately.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So Kubernetes continued to maintain support for Docker Engine directly.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - However, having to maintain the Docker shim was an unnecessary effort and added complications, so it was decided in version 1.2 for release of Kubernetes to remove Dockershim completely, and so support for Docker was removed.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - But you see all the images that were built before Docker was removed.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So all the Docker images continue to work because Docker followed the image spec from the OCI standard.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So all the images built by Docker follow the standard.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So they continue to work with Containerd.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 45 | **Type:** Operational Insight
+  - But Docker itself was removed as a supported runtime from Kubernetes.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So that's the whole story.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - And now let's look into container D more specifically.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So container D although is part of Docker, is a separate project on its own now and is a member of CNCF with the graduated status.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So you can now install container D on its own without having to install Docker itself.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 50 | **Type:** Warning/Pitfall
+  - So if you don't really need Dockers other features, you could ideally just install container D alone.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So typically we ran containers using the docker run command when we had Docker.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - And if Docker isn't installed then how do you run containers with just To container D.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Now once you install container D it comes with a command line tool called Ctor.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 54 | **Type:** Troubleshooting
+  - And this tool is solely made for debugging container D and is not very user friendly as it only supports a limited set of features.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And this is what you can see in the documentation pages for this particular tool.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So for the other than the limited set of features that it provides, anything any other way that you want to interact with container D, you'll have to rely on making API calls directly, which is not the the most user friendly way for us to operate.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So just to give you an idea, this can be the Ctor command can be used to perform basic container related activities such as pull images.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 58 | **Type:** Exam Tip
+  - For example, to pull uh, redis image, you would run the ctor images pull command followed by the address of the image.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - And to run a container we use the CTL run command and specify the image address.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 60 | **Type:** Troubleshooting
+  - But as I mentioned, this tool is solely made for debugging container ID and is not very user friendly and not to be used for running or managing containers on a production environment, so a better alternative recommended is the nerd control tool o...
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So the nerd control tool is a command line tool that's very similar to Docker.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So it's like Docker like CLI for container D.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - It supports all or most of the options that Docker supports.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - And apart from that it has the added benefit that it can give us access to the newest features implemented into container D.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 65 | **Type:** Exam Tip
+  - For example, we can work with the encrypted container images or other new feature that will eventually be implemented into the Docker commands in the future.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - It also supports lazy pulling of images, P2P image distribution, image signing and verifying and namespaces in Kubernetes, which is not available in Docker.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So the nerd control tool works very similar to Docker CLI.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So instead of Docker, you would ideally simply have to replace it with nerd control.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So you can run almost all Docker commands that interact with containers like this.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 70 | **Type:** Exam Tip
+  - So some examples are instead of running the docker run command to create a container to run a container, you could just use the inet control run command.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - And similarly, let's say you want to use some options for port mappings or exposing ports with the Dash P option for the docker run command, you could do the same with node control.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Simply replace Docker with node control.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So that's pretty easy and straightforward.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So now that we have talked about Ktor and the node control tool, it's important to talk about another command line utility known as CRI, CTL or CRI control.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 75 | **Type:** Operational Insight
+  - So earlier we talked about the container Runtime interface or CRI which is a single interface used to connect CRI compatible container runtimes, the container D rocket and others.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 76 | **Type:** Operational Insight
+  - The CRI control is a command line utility that is used to interact with the CRI compatible container runtime.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - So this is kind of an interaction from the Kubernetes perspective.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So this tool is maintained by developed and maintained by the Kubernetes community.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 79 | **Type:** Operational Insight
+  - And this is this tool works across all the different container runtimes as opposed to earlier.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - You had the CTR and the node control tool that were built by the container community specifically for container D.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 81 | **Type:** Operational Insight
+  - This particular tool is from the Kubernetes perspective that works across different container runtimes.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So it must be installed separately.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 83 | **Type:** Troubleshooting
+  - And it is used to inspect and debug container runtime.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - So this again is not ideally used to create containers unlike Docker or the node control utility.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 85 | **Type:** Troubleshooting
+  - This is again a debugging tool.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - You can technically create containers with the CRI control utility, but it's not easy.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 87 | **Type:** Troubleshooting
+  - It's only to be used for some special debugging purposes.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 88 | **Type:** Architecture
+  - And the remember that it works along with the Kubelet.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 89 | **Type:** Architecture
+  - So we know that the Kubelet is responsible for ensuring that the specific number of containers or pods are available on on node at a time.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 90 | **Type:** Architecture
+  - So if you go through the CRI control utility and try and create containers with it, then eventually Kubelet is going to delete them because the Kubelet is unaware of some of those containers are pods that are created outside of its knowledge, so a...
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 91 | **Type:** Troubleshooting
+  - So because of those things, remember that the cry control utility is only used for debugging purposes and getting into containers and all of that.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 92 | **Type:** Exam Tip
+  - So let's look at some of the command line examples.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - So you simply run the write controls Uri CTL command for this.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - And this can be used to perform basic container related activities such as pull images or list existing images.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - List containers very similar to the docker command where you use the PS command in Docker.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - You would run the PS command.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - Here you would run the cry control PS command and to run a command inside a container in Docker.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - Remember we use the exact command and it's the same here along with the same options such as the dash I and dash t.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - And then you specify the container id and then the command that needs to be run to view the logs.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - Again use the cry control log command very similar to docker command.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 101 | **Type:** Comparison
+  - And one major difference is that the cry.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - Control command is also aware of pods, so you can list pods by running the cry control pods command.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - So this wasn't something that Docker was aware of.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 104 | **Type:** Troubleshooting
+  - So while working with Kubernetes in the past, we used Docker commands a lot to troubleshoot containers and view logs, especially on the worker nodes.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - Now you're going to use the cry control command to do so.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - The syntax is a lot similar.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 107 | **Type:** Best Practice
+  - So it shouldn't be shouldn't be really hard.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 108 | **Type:** Comparison
+  - So here's a chart that lists the comparison between Docker and the cry control command line tool.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 109 | **Type:** Implementation Step
+  - So as you can see, a lot of commands such as attach exec images, info, inspect logs, PS stats, version, etc. work exactly the same way and some of the commands to create, remove and start and stop images works similarly too.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 110 | **Type:** Comparison
+  - So a full list of differences can be found in the link given below.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 111 | **Type:** Operational Insight
+  - Since, as I mentioned, cry control can be used to connect to any cry compatible runtime.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 112 | **Type:** Exam Tip
+  - Remember to set the right endpoint if you have multiple container runtimes configured, or if you want cry control to interact with the specific runtime.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 113 | **Type:** Exam Tip
+  - For example, if you haven't configured anything by default is going to connect to these sockets in this particular order.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - So it's going to try and connect to Docker shim first, and then Containerd and then cri-o.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 115 | **Type:** Implementation Step
+  - And then you have the docker d that's the order that it follows.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 116 | **Type:** Operational Insight
+  - But if you want to override that and set a specific endpoint, you use the runtime endpoint option with the right control command line.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 117 | **Type:** Operational Insight
+  - Or you could use the container runtime endpoint environment variable.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - Set the environment variable to the right endpoint.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 119 | **Type:** Troubleshooting
+  - So to summarize, we have the Ctor command line utility that comes with container D and works with container D, which is used for debugging purposes only and has a very limited set of features.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - So ideally you wouldn't be using this at all.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 121 | **Type:** Concept
+  - So you can ignore this.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 122 | **Type:** Implementation Step
+  - Then we have the nerd control CLI which is again from the container D community.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 123 | **Type:** Implementation Step
+  - But this is a docker like CLI for container D, used for general purpose to create containers and supports the same or more features than docker CLI.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - So this is something that I think we'll be using a lot more going forward.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 125 | **Type:** Implementation Step
+  - And then we have the cry control utility which is from the Kubernetes community.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 126 | **Type:** Operational Insight
+  - The mainly used to interact with Cry compatible runtime.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 127 | **Type:** Concept
+  - So it's not just for container D.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 128 | **Type:** Operational Insight
+  - This can be used for all Cry supported runtimes.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 129 | **Type:** Troubleshooting
+  - Again this is mainly for to be used for debugging purposes.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 130 | **Type:** Troubleshooting
+  - So if you look at the comparisons here you can see that Ktor and cry control are used mainly for debugging purposes, whereas the nerve control is used for general purpose.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 131 | **Type:** Operational Insight
+  - The ktor and nerve control are from the container community and works with container D, whereas cry control is from the Kubernetes community and works across all Cry compatible runtimes.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 132 | **Type:** Troubleshooting
+  - So our labs originally had Docker installed on all the nodes, so we used the Docker commands to troubleshoot.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 133 | **Type:** Concept
+  - But now it's all container D.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 134 | **Type:** Troubleshooting
+  - So remember to use the the cry control command instead to troubleshoot.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - That's all for now.
+- **File:** `008_Docker-vs-ContainerD.extraction.md` | **Entry:** 136 | **Type:** Concept
+  - Thank you for listening.
+
+### A note on Docker deprecation
+
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 1 | **Type:** Warning/Pitfall
+  - Every time we mention about Docker in this course, one of the common questions we get is why are we still talking about Docker if it's deprecated?
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - And I realized that there's some confusion about the Docker deprecation among students, and I just wanted to take a minute to try and help clear that confusion.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 3 | **Type:** Operational Insight
+  - So as we discussed before, Docker was the original and only supported container runtime for Kubernetes, and to make Kubernetes open to other runtimes, we had the container runtime interface introduced.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - So Docker consisted of multiple tools put together like Docker CLI, the API, the build tools that help build images.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 5 | **Type:** Operational Insight
+  - There was support for volumes, auth, security and finally also the container runtime called Runc and the daemon that managed the runtime called the container.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So container D is the CRI compatible and can.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And that's the component that can work directly with Kubernetes.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 8 | **Type:** Operational Insight
+  - And as all of the other runtimes.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 9 | **Type:** Operational Insight
+  - So container D can be used as runtime on its own separate from Docker.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So once this change was made, Kubernetes no longer needed.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - The other tools that Docker supported like Docker CLI or the API, or build volumes or etc. as they were all taken care of by Kubernetes itself.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And so Kubernetes was able to deprecate the support for Docker.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now that doesn't mean that Docker is entirely gone.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So Docker is still the most popular container solution out there and used by many in their day to day development and build processes.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 15 | **Type:** Operational Insight
+  - It's just that Kubernetes no longer require Docker as the runtime.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Now.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 17 | **Type:** Exam Tip
+  - So going forward in this course, every time we talk about containers, we use Docker as an example.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - And that's absolutely fine because sometimes we learn how things work in containers first before looking at how it is done in container orchestration world of Kubernetes.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 19 | **Type:** Exam Tip
+  - So and in those cases it is okay to use Docker as an example.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 20 | **Type:** Warning/Pitfall
+  - And if you don't happen to have Docker on your machine or are only using container D, then you can still work with the same examples by replacing the docker command with the node control command.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Most of the time.
+- **File:** `009_A note on Docker deprecation.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So I just wanted to throw that out there before we proceed.
+
+### Recap - Pods
+
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Before we head into understanding pods, we would like to assume that the following have been set up already.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - At this point, we assume that the application is already developed and built into Docker images, and it is available on Docker repository like Docker Hub, so Kubernetes can pull it down.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We also assume that the Kubernetes cluster has already been set up and is working.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - This could be a single node setup or a multi-node setup.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Doesn't matter.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - All the services need to be in a running state.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - As we discussed before with Kubernetes, our ultimate aim is to deploy our application in the form of containers on a set of machines that are configured as worker nodes in a cluster.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - However, Kubernetes does not deploy containers directly on the worker nodes.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - The containers are encapsulated into a Kubernetes object known as pods.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - A pod is a single instance of an application.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - A pod is the smallest object that you can create in Kubernetes.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Here we see the simplest of simplest cases, where you have a single node Kubernetes cluster with a single instance of your application running in a single Docker container encapsulated in a pod.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - What if the number of users accessing your application increase and you need to scale your application?
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - You need to add additional instances of your web application to share the load.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Now where would you spin up additional instances?
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Do we bring up new container instance within the same pod?
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - No.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - We create new pod altogether with a new instance of the same application.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - As you can see, we now have two instances of our web application running on two separate pods on the same Kubernetes system or node.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - What is the user base further increases and your current node has no sufficient capacity.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - Well, then you can always deploy additional pods on a new node in the cluster.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - You will have a new node added to the cluster to expand the cluster's physical capacity.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So what I'm trying to illustrate in this slide is that pods usually have a 1 to 1 relationship, with containers running your application.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - To scale up, you create new pods, and to scale down you delete existing pods.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 25 | **Type:** Warning/Pitfall
+  - You do not add additional containers to an existing pod to scale your application.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Also, if you're wondering how we implement all of this and how we achieve load balancing between the containers, etc., we will get into all of that in a later lecture.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - For now, we are only trying to understand the basic concepts.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - We just said that pods usually have a 1 to 1 relationship with the containers.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - But are we restricted to having a single container in a single pod?
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - No.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 31 | **Type:** Exam Tip
+  - A single pod can have multiple containers, except for the fact that they're usually not multiple containers of the same kind.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - As we discussed in the previous slide, if our intention was to scale our application, then we would need to create additional pods.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - But sometimes you might have a scenario where you have a helper container that might be doing some kind of supporting task for our web application, such as processing a user entered data, processing a file uploaded by the user, etc. and you want t...
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - In that case, you can have both of these containers part of the same pod, so that when a new application container is created.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - The helper is also created and when it dies, the helper also dies.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Since they are part of the same pod, the two containers can also communicate with each other directly by referring to each other as localhost, since they share the same network space.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Plus, they can easily share the same storage space as well.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - If you still have doubts in this topic, I would understand if you did, because I did.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - The first time I learned these concepts, we could take another shot at understanding pods from a different angle.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Let's for a moment keep Kubernetes out of our discussion and talk about simple Docker containers.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Let's assume we were developing a process or a script to deploy our application on a Docker host.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - Then we would first simply deploy our application using a simple Docker run Python app command.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And the application runs fine and our users are able to access it.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - When the load increases, we deploy more instances of our application by running the Docker run commands many more times.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - This works fine and we're all happy.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Now, sometime in the future, our application is further developed, undergoes architectural changes, and grows and gets complex.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - We now have a new helper container that helps our web application by processing or fetching data from elsewhere.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - These helper containers maintain a 1 to 1 relationship with our application container, and thus needs to communicate with the application containers directly and access data from those containers.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - For this, we need to maintain a map of what app and helper containers are connected to each other.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - We would need to establish network connectivity between these containers ourselves using links and custom networks.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - We would need to create shareable volumes and share it among the containers.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - We would need to maintain a map of that as well.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And most importantly, we would need to monitor the state of the application container.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And when it dies, manually kill the container as well as it's no longer required.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - When a new container is deployed, we would need to deploy the new container as well.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - With pods.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Kubernetes does all of this for us automatically.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - We just need to define what containers a pod consists of.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - And the containers in a pod by default will have access to the same storage, the same network namespace, and same fate as in they will be created together and destroyed together.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - Even if our application didn't happen to be so complex and we could live with a single container, Kubernetes still requires you to create pods.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - But this is good in the long run as your application is now equipped for architectural changes and scale in the future.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - However, also note that multi-part containers are a rare use case, and we're going to stick to single containers per pod in this course.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - Let us now look at how to deploy pods.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Earlier we learned about the Kube control run command.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - What this command really does is it deploys a Docker container by creating a pod.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - So it first creates a pod automatically and deploys an instance of the nginx docker image.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - But where does it get the application image from?
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - For that you need to specify the image name using the image parameter.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - The application image.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - In this case the nginx image is downloaded from the Docker Hub repository.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 71 | **Type:** Command
+  - 
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - You could configure Kubernetes to pull the image from the public Docker hub or a private repository within the organization.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - Now that we have a pod created, how do we see the list of pods available?
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - The Kube control get pods command helps us see the list of pods in our cluster.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - In this case, we see the pod is in a container creating state and soon changes to a running state when it is actually running.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Also, remember that we haven't really talked about the concepts on how a user can access the nginx web server, and so in the current state, we haven't made the web server accessible to external users.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 77 | **Type:** Operational Insight
+  - You can access it internally from the node.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - But for now we will just see how to deploy a pod.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - And later in a later lecture, once we learn about networking and services, we will get to know how to make the service accessible to end users.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `010_Recap - Pods.extraction.md` | **Entry:** 81 | **Type:** Implementation Step
+  - Head over to a demo and I will see you in the next one.
+
+### Recap - Pods with YAML
+
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will talk about creating a pod using a YAML based configuration file.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In the previous lecture we learned about YAML files in general.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Now we will learn how to develop YAML files specifically for Kubernetes.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - Kubernetes uses YAML files as inputs for the creation of objects such as pods, replicas, deployments, services, etc. all of these follow a similar structure.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - A Kubernetes definition file always contains four top level fields the API version, kind, metadata, and spec.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - These are the top level or root level properties.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - These are also required fields, so you must have them in your configuration file.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Let us look at each one of them.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - The first one is the API version.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - This is the version of the Kubernetes API we are using to create the object.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Depending on what we are trying to create, we must use the right API version for now.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Since we are working on pods, we will set the API version as v1.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Few other possible values for this field are.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Apps v1, beta.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Extensions v1, beta, etc..
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - We will see what these are for later in this course.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - Next is the kind.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - The kind refers to the type of object we are trying to create, which in this case happens to be a pod.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So we will set it as pod.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - Some other possible values here could be replica set or deployment or service, which is what you see in the kind field in the table on the right.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - The next is metadata.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - The metadata is data about the object like its name, labels, etc. as you can see, unlike the first two where you have specified a string value.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - This is in the form of a dictionary, so everything under metadata is intended to the right a little bit.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And so names and labels are children of metadata.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 25 | **Type:** Best Practice
+  - The number of spaces before the two properties name and labels doesn't matter, but they should be the same as they are siblings.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - In this case, labels has more spaces on the left than name, and so it is now a child of the name property instead of a sibling, which is incorrect.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Also, the two properties must have more spaces than its parent, which is metadata, so that it's intended to the right a little bit.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - In this case, all three of them have the same number of spaces before them, and so they are all siblings, which is not correct under metadata.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - The name is a string value, so you can name your pod Myapp pod and the labels is a dictionary.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So labels is a dictionary within the metadata dictionary.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And it can have any key and value pairs as you wish.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - For now I have added a label app with the value myapp.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Similarly, you could add other labels as you see fit, which will help you identify these objects at a later point in time.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 34 | **Type:** Exam Tip
+  - Say for example, there are hundreds of pods running a front end application and hundreds of pods running a backend application or a database.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - It will be difficult for you to group these pods once they are deployed.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - If you label them now as front end, back end, or database, you will be able to filter the pods based on this label at a later point in time.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - It's important to note that under metadata, you can only specify name or labels or anything else that Kubernetes expects to be under metadata.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - You cannot add any other property as you wish under this.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - However, under labels you can have any kind of key or value pairs as you see fit.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So it's important to understand what each of these parameters expect.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - So far, we have only mentioned the type and name of the object we need to create, which happens to be a pod with the name Myapp pod.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - But we haven't really specified the container or image we need in the pod.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - The last section in the configuration file is the specification section, which is written as spec.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - Depending on the object we are going to create.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - This is where we would provide additional information to Kubernetes pertaining to that object.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - This is going to be different for different objects.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So it's important to understand or refer to the documentation section to get the right format for each.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Since we are only creating a pod with a single container in it, it is easy.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Spec is a dictionary, so add a property under it called containers.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Containers is a list or an array.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 51 | **Type:** Exam Tip
+  - The reason this property is a list is because the pods can have multiple containers within them, as we learned in the lecture earlier.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - In this case though, we will only add a single item in the list since we plan to have only a single container in the pod.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - The dash right before the name indicates that this is the first item in the list.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - The item in the list is a dictionary, so add a name and image property.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - The value for image is nginx, which is the name of the Docker image in the Docker repository.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - Once the file is created, run the command kubectl create dash f followed by the file name, which is pod definition dot YAML and Kubernetes creates the pod.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So to summarize, remember the four top level properties API version kind, metadata and spec.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - Then start by adding values to those depending on the object you are going to create.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - Once we create the pod, how do you see it?
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Use the kubectl get pods command to see a list of pods available.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - In this case, it's just one.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - To see detailed information about the pod, run the kubectl describe pod command.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - This will tell you information about the pod when it was created, what labels are assigned to it, what Docker containers are part of it, and the events associated with that pod.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - That's it for this lecture.
+- **File:** `012_Recap - Pods with YAML.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - We will now head over to a demo and I will see you in the next lecture.
+
+### Recap - Demo - Creating Pods with YAML
+
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (gentle music) -: Hello.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - And welcome to this demo.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - In this demo, we're going to see how to create a pod using a YAML definition file.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - So in order to create YAML files, you can actually use any editor of your choice.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 5 | **Type:** Exam Tip
+  - You could even use just a Notepad, or Notepad Plus Plus, or Atom, or, there are multiple options available.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - In my case, I tend to use PyCharm or a tool from the JetBrains family.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So I personally use PyCharm, which is actually a Python editor.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And it has good support for YAML files.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So I use JetBrain's PyCharm as my editor.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - If you'd like to use PyCharm, you can actually go to jetbrains.com and select PyCharm; jetbrains.com/pycharm.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - And when you click on Download, you can actually see there are two options.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - One is a professional version and another is a community version, which is free.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So you can actually download this lightweight IDE, which is free to develop definition files.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 14 | **Type:** Exam Tip
+  - And later on, I will also show some tips and tricks around using this IDE, which will make your life developing Kubernetes definition files in YAML very easy.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So there are ways that you can, there are plugins that will help you validate your file available with PyCharm.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So we'll look at those as well.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - So to start with, I'm gonna create a new project.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - I'm going to call it as Pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - And I'm just going to create the project.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So that's my folder named Pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - And under Pod, I'm going to start by creating a pod definition file.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - I'm going to name that pod-definition.yaml.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And so now, I have one file.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And as we saw in the lecture, every Kubernetes definition file has the four root-level properties, which are API version.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So I'm going to specify each of those.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So we have API version, kind, metadata, and spec.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So as we discussed, API version is going to be V one for Pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - The kind as we know is pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So I'm going to set that as pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - The metadata is an object or a dictionary.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - So I'm going to hit Enter, and then I'm gonna hit Tab, or you can actually use spaces as well.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - I'm going to provide the properties under metadata, which are name.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - And I'm gonna set a name for my pod, which is gonna be myapp-pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - And when I hit Enter, as you see, it goes to the next line, but it's indented, it has equal number of spaces than the previous line.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And I'm gonna have labels.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - And under labels, so since labels is a dictionary, again, I'm going to indent the next few lines to the right as well.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Under labels, I have app.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - And the name of the app is going to be MyApp.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Now, if you look at this whole file and if you look at the bottom, PyCharm has support for understanding YAML files.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So if you look at the bottom, you can actually see the various elements in a tree structure.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So as you can see, document one of one indicates this in the entire file.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And under this file, it actually shows you in three structure the various properties.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So you have API version, which is directly under the file.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Kind, metadata, and spec are all directly under the file or root properties of the file, which is what we wanted.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And if you look at V one, V one is actually under API version.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So now, as you can see, under the document I have API version.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - And under that I have V one.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So that matches what we are trying to do.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Similarly, if I select pod, you can see that it's under kind.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And if you select name, which is under metadata, you can see that it's under metadata.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Similarly, when you select labels, you will also see that it is under metadata.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So that means name and labels are children of metadata.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And so they are siblings.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And they must be indented.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - They must have the same indentation.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So under name, you have myapp-pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So you can see the hierarchy there.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Similarly, app is under labels.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - And MyApp is under app, which is under labels.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Now, if you look at it, name and labels need to be on the same vertical line.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - For now, if I simply move labels to the right, you now see that labels is under names.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And labels is now a child of name, which is not right.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - It's suppose to be a sibling.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So I'm gonna remove those extra spaces.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - I'm gonna hit backspace.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And it's, I'm going to level it.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So this is right.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - And under labels, you can actually have as many labels as you want.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - So you can create any key value pair here.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - You can say cost center is Amer; location, North America or something like the type of this particular pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Maybe a frontend or something like that.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So anything that will help you group this particular pod in the future.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - For now, I'm just going to remove all of that.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And I'll now move on to the spec section.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Under the spec section, remember, the spec section is unique to each object that you're creating.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So for pod, under the spec section, you actually have containers.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - And under containers you have, the containers is in fact an array or a list.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So you have a list of items.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So you need, each item in the list is identified by a dash.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - So notice you have to put a dash, followed by a space, and then name, which is the name of my pod, sorry, the name of my container inside the pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And that's going to be NGINX control container.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - And then I have image, which is the name of the image itself, which is NGINX.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So if you look at it, under respect, I have containers, which is a list.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - And then I have an item in the list, which has name and image.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - Now, if you try and look at the hierarchy of what we just created, say, if I select name, I see that it's under spec and it's our containers, but there's something in between, which says item one of one.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 86 | **Type:** Exam Tip
+  - What that actually means is that's what indicates that the container is a list and it has multiple items.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 87 | **Type:** Implementation Step
+  - And this is the first item of just one item.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - So these two lines is one item in the containers.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - Similarly, you can have, we know that we discussed that you can have additional containers in a pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - So if you had additional containers, then this is how you would define it.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - In the new line, you would add a new dash, followed by information about the new pod, which could be a backend container.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - And the image is, could be something like Redis or something.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - So in this case, now, when it's name, you can actually see that says item two of two and then one of two.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So now, it actually identifies each item in the array or the list.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So that indicates that our format is correct and that is what we were trying to do.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - I'm just gonna get rid of the second container.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - I'm gonna leave it as one container per pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So this is good.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - I'm now going to copy the contents of this and create an actual pod using the content that we just created.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - So I'm gonna go to the cube master.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 101 | **Type:** Implementation Step
+  - I'm gonna create a folder structure for my demos.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - So I'm gonna call it Demos.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - And under Demos, I'm gonna create a folder called Pod.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - And under Pod, I'm gonna create a file named pod-definition.yaml.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 105 | **Type:** Implementation Step
+  - And I will paste the contents that I just created.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - So what I now, I'm gonna verify the contents of the file.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - I can now run the cube-control get pods command.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 108 | **Type:** Implementation Step
+  - Before I create the pod, I just wanna make sure there's nothing running.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 109 | **Type:** Implementation Step
+  - So if you're following me from the previous lab where I deploy the pod using the cube-control run command.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - That's the part that's still running.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 111 | **Type:** Implementation Step
+  - So I'm gonna get rid of that using the cube-control delete deployment command.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - So that's gone.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - When I now run the cube-control get pods command, I see that there are no resources found.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - I can now create a new pod using the cube-control create pod definition.yaml command.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 115 | **Type:** Implementation Step
+  - And I see that a new pod, myapp-pod, is created.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - When I run the cube-control get pods command, I see that it's in the process of creating the container.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - And I will now monitor it.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - And when I run it again, I see that it's in a running state.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 120 | **Type:** Exam Tip
+  - In the next demo, we're going to look at some tips and tricks around working with YAML files in PyCharm.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 121 | **Type:** Concept
+  - Thank you for your time.
+- **File:** `013_Recap - Demo - Creating Pods with YAML.extraction.md` | **Entry:** 122 | **Type:** Implementation Step
+  - And I will see you in the next demo. (gentle music)
+
+### Introduction to Kubernetes Practice Test
+
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Before you head into a practice test which follows this video, I wanted to spend a few minutes on walking you through the practice test portal.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Following this lecture, you'll be taken to the labs.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Click the start button to load the lab.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - You must be accessing the practice test on a laptop or a desktop system, as you will require a keyboard to work hands on.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Allow some time for the labs to load.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - It usually loads in less than 30s and in rare scenarios it might take a few minutes.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So I request you to be patient when it takes a long time.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Now, once the lab is loaded, you will find the quiz portal on the left and a terminal on the right.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - The terminal on the right is a live terminal for you to work on.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - This could be a Linux terminal if you are learning Linux shell scripting or git, and this could be a Docker host if you are learning Docker or Kubernetes control plane.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - If you're learning Kubernetes, you can run commands here and interact with the system and perform your tasks.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - There are two parts to the labs.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - One is this terminal on the right where you'll be working, and you'll run commands to view and configure the Kubernetes cluster.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The second is the quiz portal on the left.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Each topic covered in the lecture has a practice test associated with it that consists anywhere from 5 to 15 questions.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - You can see the total number of questions at the top and as and when you progress through them, it will be marked accordingly.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - The questions are of different kind.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Sometimes you're asked to look for information in the environment and select the right answer.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - At other times, you will perform changes to the environment, such as deploy a set of pods or services and ask you to look for information within them.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Or, you may be asked to perform a configuration task using a given spec.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - We then test your work to ensure that you've completed it successfully.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - Sometimes you're given a set of Kubernetes definition files and asked to use them to create configurations.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Use the VI editor to edit these files.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 24 | **Type:** Exam Tip
+  - Remember, in the certification test, you must use one of the editors that come within the provided exam environment, so you must practice working with VI editors.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 25 | **Type:** Exam Tip
+  - We also have some scenario based multiple choice questions, so you won't have these in the actual certification exam.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - We added these to test your knowledge and ensure that you're learning.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - When you're given a spec, remember to create a configuration that matches it exactly.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - You can skip any question by clicking on this button at the top, but remember you cannot come back as a questions follow a particular flow.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - At times, you can access the application that you deploy by clicking on the web portal link given above your terminal, but this is subject to your application.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Having a web portal.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - If for some reason you need to open a new terminal and click on this button at the top.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 32 | **Type:** Exam Tip
+  - Now remember that this is not a replica of the actual Kubernetes certification exam, so the interface and your experience in the actual exam is going to be slightly different than this.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 33 | **Type:** Exam Tip
+  - This is a custom solution we built to help you practice for it, and to test your skills and to guide you and to prepare you for the actual exam.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 34 | **Type:** Warning/Pitfall
+  - Now, don't be too worried about the exam interface itself.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - After all, it's going to be the tasks that you must perform and the terminal side by side.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 36 | **Type:** Best Practice
+  - So almost like our lab environment, so it should be easy to follow.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 37 | **Type:** Warning/Pitfall
+  - Don't stress too much about it.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - You can take these tests over and over as many times as you like until you feel confident.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 39 | **Type:** Exam Tip
+  - And remember, this is a temporary environment and is only available for one hour depending on the mock exam or your particular lab environment, after which it is deleted so your work will not be saved.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 40 | **Type:** Best Practice
+  - You may refresh the lab window anytime and it should take you back to the same lab environment.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 41 | **Type:** Best Practice
+  - So for example, if you temporarily lose internet connectivity, uh, and if you restart your, uh, your lab environment or you refresh your web page, it should take you back to the same lab environment.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - However, if you close the browser for a long time or your lab session is idle for a long time, then it will be automatically terminated.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - But you can always refresh the page and reload a new lab environment and start from the first question.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Also note that you must not use or store any personal credentials or persistent work in this environment.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And finally, remember that the practice tests are not just to test your skills, and the concepts you learned in the lecture are designed for you to learn the concept and gain hands on experience.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So there may be topics that are not discussed in the lecture.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - There might be times where you're stuck, and if you're stuck, of course you can reach out to us and you can even try it again.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 48 | **Type:** Warning/Pitfall
+  - If you if you don't know anything you have, you must go through the documentation pages and try to find the answers.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So to to push you to read the documentation pages and find information and implement them is the idea behind these practice tests.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - So as always, if you need additional explanation on any topic, then please do reach out to us and let us know.
+- **File:** `015_Introduction to Kubernetes Practice Test.extraction.md` | **Entry:** 51 | **Type:** Best Practice
+  - But every question or every task that you're assigned to in the labs, you will have hints or solutions in the Hints and Solutions tab that that should be visible along with your question.
+
+### Demo_ Accessing Labs
+
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Hello, in this video I will explain how to access labs part of this course.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - This course comes with real hands-on labs that you can access right in your browser.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Unfortunately, Udemy does not have native support for embedding real hands-on labs in the course, and that's why these labs are hosted on KodeKloud.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 4 | **Type:** Warning/Pitfall
+  - Students who purchased this course on Udemy can get access to the labs for free on KodeKloud, you don't have to make any extra payments.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - To access the labs, there's a lecture named Access labs in your course right before the first lab starts.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Use the link to go to the checkout page on KodeKloud.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - If you haven't signed up on the KodeKloud website before, you will need to provide your email address.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - KodeKloud and Udemy are different platforms, and unfortunately, there is no option available yet to share the same user accounts between the two.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - So you must create an account, and sign up on KodeKloud to access the labs.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Remember, your Udemy credentials won't work on KodeKloud.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - If you're accessing through Udemy for Business, then your company credentials won't work either.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - You must create a new account on KodeKloud.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Once logged in, you can find your course under the Courses page, Lab Courses, start with the term labs in their name.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Once the labs are open, use the maximize button to hide the course curriculum, to get more space for your labs.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And if you want to see the course curriculum again, click on the same button.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Once you're done working on a lab, mark it complete using the Mark Complete button.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 17 | **Type:** Exam Tip
+  - As you can see, there are multiple lab scenarios for each course.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And when to access which lab?
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - The detail of that will be given within the course.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - As in when you progress through the course on Udemy, you will know when to access what lab.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Well, that's it for now, I wish you all the best.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 22 | **Type:** Troubleshooting
+  - And if you run into issues with accessing labs, please write to support at support@CKodekloud.com.
+- **File:** `016_Demo_ Accessing Labs.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - I hope you have a great learning experience from us.
+
+### Solution - Pods (optional)
+
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, so let's go over the solution for the labs on pods.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So in this lab we're gonna get familiar with pods.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So the first question is how many pods exist on the system?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Now we know that we can get the information about pods using the Kubectl Get Pods command.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - That's what we learned.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So we're gonna run the Kubectl Get Pods Command.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And you can ignore this line here that says in the current default name space.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So we're gonna talk about name spaces in one of the upcoming lectures.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 9 | **Type:** Warning/Pitfall
+  - So you don't have to worry about that for now.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - This is for those who already know what a name space is.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - If you know, then just make sure you're checking the number of pods in the current default name space.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Okay, so when we're on Kubectl Get Pods command we see the result is zero.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - There are no resources found.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So we're gonna select zero here.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Okay, so the next is a task.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So we've got to create a new pod with the Engine X image.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - So to create a pod the easiest way is to run the Kubectl Run command and we specify the image.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So we have to specify a name and an image.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So if you're not sure about the syntax run the Help command.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And we see it's the name of the pod followed by the image this format.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So we're gonna run that.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 22 | **Type:** Command
+  - 
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - So we could basically name it anything but the image name has to be the next.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Okay, so the pod is created.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - Okay, now how many pods are created?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - Now we've created a few more pods, so please check again.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So let's run the Kubectl Get Pods command.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - Okay, so in addition to the Engine X pod that we created there are a few other parts that were created by us basically.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So there are in a total 1, 2, 3, 4 parts at the moment.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So let's select four.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - What is the image used to create the new pods?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And you must look at one of the new pods in detail to figure this out.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So let's pick one of the pods, this one.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And we know that to look at it in detail, we've got to run the Kubectl describe that.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Okay, so now we have additional details about the pod.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So this is the name of the pod and you have the start time and a number of other details.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So the question is, what is the image used to create the new pods?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So we know that this tells us the containers.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And here you have the image.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - And the image is Busy Box.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So I select Busy Box.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Okay, now which nodes are these pods placed on?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - You must look at all the pods in detail to figure this out.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So one way to do this is we've already run the Kubectl Describe Pod command, and we can see that this is on node Control Plane and we could actually run the the Describe command against each pod.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So that's one way to figure that out.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Another way and an easier way to just run Kubectl Get Pods command with the right option.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - And here you get to see the node and it says Control Plane.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - So all of the new pods are created on the Control Plane node, select Control Plane.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Okay, and how many containers are part of the pod web app?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - So there's a new pod created.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - The next one, Get Pods command to see web app.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Okay, so if you look at this column right here it shows us the total number of containers part of the pod.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So this number right here is a total number of containers.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So that's one way to figure that out or will always run the Describe command to see that in detail.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - So here you see containers and then you have one container here it's Engine X and the other one right here.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So those are the two containers, so select two.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - Then you have what images are used in the new web app pod.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - You must look at all the pod in detail to figure this out.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 59 | **Type:** Best Practice
+  - Actually it should be you must look at all the containers in detail.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So here you have two containers and, if you look at, if you look here you see that the image for Engine X is Engine X and the one for Agent X is called Agent X.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So there's Engine X and Agent X.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - Those are the images used for those containers.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So this one, okay, now what is the state of the container?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Agent X, the pod web app.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So if you look at the container here and you see there are there is a state and it is in a waiting state at the moment.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 66 | **Type:** Troubleshooting
+  - So out of these it's not running ready your success is actually error or waiting.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So this is the state.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 68 | **Type:** Troubleshooting
+  - Okay, now why do you think the container Agent X in pod web app is in an error or waiting state?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So try to figure it out from the event section of the pod.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 70 | **Type:** Troubleshooting
+  - So if you look at one of the section here, under State you have the reason called as error image pull.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 71 | **Type:** Troubleshooting
+  - Or if you just look at it below here in the event section, you can see the error.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Just basically this one, it says fail to pull image Agent X and at doppler.io/libraries/agentX.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So this image by the name Agent X does not exist.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And that's basically the reason that its failing.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So the correct answer is a Doppler image with this name doesn't exist on Doppler hub.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Okay, now what does the ready column in the output of the Kubectl Get Pods command indicate?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - So if you go up here you have the output of the Get Pods command and here you see you have 1/1 here and then you have 1/2.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So what does this mean?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - Now we know that this is the total containers within the pod and this is basically of course, the ones that are ready.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So at the moment there's only one ready out of the two.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And we know that because this image does not exist.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - And of course that's why that container isn't ready yet.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So it's basically the total containers that are ready slash just the total containers within the pod.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So that's total containers in the pod or running containers in the pod slash total containers in the pod.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So that's the correct answer.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - Okay, so the next task is to delete the web app.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So let's run the Kubectl Delete command and delete the web app pod.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Okay, that's deleted.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - Let's go to the next one.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - Create a new pod with the name Redis and with the image Redis 1, 2, 3.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - And the recommendation is to use a pod definition YAML file, and the image name is wrong.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Yeah, so the image name is wrong.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - So we could do this in two ways.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So as we know, we could run the Kubectl Run command and the name of the pod is Redis and the name of the image is Redis 1 2 3.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 95 | **Type:** Implementation Step
+  - You can basically just create it like this.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - But we just wanna get familiar with generating the YAML file and creating it with the pod definition file.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So let's use the dry run option and output the the command in a YAML format.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 98 | **Type:** Warning/Pitfall
+  - Okay, so, this is basically command, and it says the Dry Run command is deprecated and is replaced with the Dry Run = Client.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - So let's run that.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - Okay, so this is the YAML file.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So let's direct it to a file.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - We'll call it Redis.YAML So we have the YAML definition for that pod in this file.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - So we're now going to create the pod using the Kubectl Create or Apply command.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - So let's go with the Create command.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - Okay?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 106 | **Type:** Implementation Step
+  - So it's created, let's verify that it's created.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 107 | **Type:** Troubleshooting
+  - Okay, so it's created and it's in an error image pool state because we have the wrong image name.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 108 | **Type:** Concept
+  - So that's fine.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 109 | **Type:** Concept
+  - Let's click on check.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 110 | **Type:** Concept
+  - Okay, successful.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 111 | **Type:** Troubleshooting
+  - And the last question for this lab is to change the image on this pod to Redis, to fix that error that we, you know, purposefully created.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 112 | **Type:** Concept
+  - And to get the pod in a running state.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 113 | **Type:** Concept
+  - So again, there are two ways to do that.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 114 | **Type:** Concept
+  - You could run the Kubectl Edit command to edit the pod.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 115 | **Type:** Concept
+  - Or since we already have the Redis file we could just go in and changed the file and update it.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 116 | **Type:** Concept
+  - So let's go and do that.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 117 | **Type:** Concept
+  - Okay, I've changed the image name.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 118 | **Type:** Implementation Step
+  - I'm just going to apply the changes.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 119 | **Type:** Troubleshooting
+  - Okay, let's check status Now we'll talk about this error message later when we talk about imperative commands and the declarative way that we apply.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 120 | **Type:** Concept
+  - But for now, let's stick to the basics and let's just make sure the change was successful, right?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 121 | **Type:** Concept
+  - So when you run Kubectl Get Pods command we see that the pod is in a running state.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 122 | **Type:** Concept
+  - So, check?
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - All right.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 124 | **Type:** Concept
+  - Okay, so that's the end of the lab.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 125 | **Type:** Concept
+  - Lets hit the End Lab button.
+- **File:** `019_Solution - Pods (optional).extraction.md` | **Entry:** 126 | **Type:** Implementation Step
+  - And I'll see you in the next one.
+
+### Recap - ReplicaSets
+
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Controllers are the brain behind Kubernetes.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - They are the processes that monitor Kubernetes objects and respond accordingly.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - In this lecture, we will discuss about one controller in particular and that is the replication controller.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So what is a replica and why do we need a replication controller?
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Let's go back to our first scenario where we had a single pod running our application.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 6 | **Type:** Troubleshooting
+  - What if for some reason our application crashes and the pod fails, users will no longer be able to access our application?
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - To prevent users from losing access to our application, we would like to have more than one instance or pod running at the same time.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 8 | **Type:** Troubleshooting
+  - That way, if one fails, we still have our application running on the other one.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - The replication controller helps us run multiple instances of a single pod in the Kubernetes cluster, After, thus providing high availability.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So does that mean you can't use a replication controller if you plan to have a single pod?
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - No.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 12 | **Type:** Troubleshooting
+  - Even if you have a single pod, the replication controller can help by automatically bringing up a new pod when the existing one fails.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Thus, the replication controller ensures that the specified number of pods are running at all times, even if it's just 1 or 100.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 14 | **Type:** Exam Tip
+  - Another reason we need replication controller is to create multiple pods to share the load across them.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 15 | **Type:** Exam Tip
+  - For example, in this simple scenario, we have a single pod serving a set of users.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - When the number of users increased, we deploy additional pod to balance the load across the two pods.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - If the demand further increases, and if we were to run out of resources on the first node, Snowed, we could deploy additional pods across the other nodes in the cluster.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 18 | **Type:** Exam Tip
+  - As you can see, the replication controller spans across multiple nodes in the cluster.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 19 | **Type:** Exam Tip
+  - It helps us balance the load across multiple pods on different nodes, as well as scale our application when the demand increases.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - It's important to note that there are two similar terms replication controller and replica set.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Both have the same purpose, but they are not the same.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Replication controller is the older technology that is being replaced by replica set.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 23 | **Type:** Best Practice
+  - Replica set is the new recommended way to set up replication.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - However, whatever we discussed in the previous few slides remain applicable to both these technologies.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 25 | **Type:** Comparison
+  - There are minor differences in the way each works, and we will look at that in a bit.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - As such, we will try to stick to replica sets in all of our demos and implementations going forward.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - Let us now look at how we create a replication controller.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - As with the previous lecture, we start by creating a replication controller definition file.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - We will name it rc dash definition dot YAML.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - As with any Kubernetes definition file, we have four sections the API, version, kind, metadata, and spec.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - The API version is specific to what we are creating.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - In this case, replication controller is supported in Kubernetes API version v1.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So we will set it as v1.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - The kind as we know is replication controller.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Under metadata we will add a name and we will call it Myapp dash RC.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - And we will also add a few labels app and type and assign values to them.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So far, it has been very similar to how we created a pod in the previous section.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - The next is the most crucial part of the definition file, and that is the specification written as spec for any Kubernetes definition file.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - The spec section defines what's inside the object we are creating.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 40 | **Type:** Exam Tip
+  - In this case, we know that the replication controller creates multiple instances of a pod, but what pod?
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - We create a template section under spec to provide a pod template to be used by the replication controller to create replicas.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Now how do we define the pod template?
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - It's not that hard because we have already done that in the previous exercise.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - Remember we created a Pod definition file in the previous exercise, we could reuse the contents of the file to populate the templates section.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - Move all the contents of the Pod definition file into the template section of the replication controller, except for the first few lines which are API, version and kind.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 46 | **Type:** Best Practice
+  - Remember, whatever we move must be under the templates section, meaning this should be intended to the right and have more spaces before them than the template line itself.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 47 | **Type:** Best Practice
+  - There should be children of the template section.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Looking at our file now, we now have two metadata sections.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - One is for the replication controller and another for the pod.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And we have two aspect sections, one for each.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - We have nested two definition files together, the replication controller being the parent and the pod definition being the child.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Now there is something still missing.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - We haven't mentioned how many replicas we need in the replication controller for that.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Add another property to the spec called replicas and input the number of replicas you need under it.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Remember that the template and replicas are direct children of spec sections, so there are siblings and must be on the same vertical line, which means having equal number of spaces before them.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - Once the file is ready, run the kubectl create command and input the file using the f parameter.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - The replication controller is created when the replication controller is created.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - It first creates the pods using the pod definition template as many as required, which is three in this case.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - To view the list of created replication controllers, run the kubectl get replication controller command and you will see the replication Controller listed.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - We can also see the desired number of replicas or pods, the current number of replicas, and how many of them are ready in the output.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - If you would like to see the pods that were created by the replication controller, run the kubectl get pods command and you will see three pods running.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - Note that all of them are starting with the name of the replication controller, which is my app RC, indicating that they are all created automatically by the replication controller.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - What we just saw was the replication controller.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Let us now look at replica set.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - It is very similar to replication controller as usual.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - First we have API version kind metadata and spec.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - The API version though is a bit different.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - It is apps v1, which is different from what we had before.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - For replication controller which was just v1.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 70 | **Type:** Troubleshooting
+  - If you get this wrong, you are likely to get an error that looks like this.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - It would say no match for kind replica set, because the specified Kubernetes API version has no support for replica set.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - The kind would be replica set and we add name and labels in the metadata.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - The specification section looks very similar to Replication Controller.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - It has a template section where we provide pod definition as before.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So I'm going to copy contents over from pod definition file.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - And we have number of replicas which is set to three.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 77 | **Type:** Comparison
+  - However, there is one major difference between replication controller and replica set.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Replica set requires a selector definition.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - The selector section helps the replica set identify what pods fall under it, but why would you have to specify what pods fall under it if we have provided the contents of the pod definition file itself in the template.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - It's because replica set can also manage pods that were not created as part of the replica set creation.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 81 | **Type:** Exam Tip
+  - Say for example, the reports created before the creation of the replica set that match labels specified in the selector.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - The replica set will also take those pods into consideration when creating the replicas.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 83 | **Type:** Comparison
+  - I will elaborate this in the next slide, but before we get into that, I would like to mention that the selector is one of the major differences between replication controller and replica set.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - The selector is not a required field in case of a replication controller, but it is still available when you skip it, as we did in the previous slide, it assumes it to be the same as the labels provided in the Pod definition file.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - In case of replica set, a user input is required for this property, and it has to be written in the form of match labels as shown here.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - The match labels selector simply matches the labels specified under it to the labels on the pods.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 87 | **Type:** Implementation Step
+  - The replica set selector also provides many other options for matching labels that were not available in a replication controller, and as always, to create a replica set, run the kubectl create command, providing the definition file as input, and ...
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - To get list of pods, simply run the kube control get pods command.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So what is the deal with labels and selectors?
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - Why do we label our pods and objects in Kubernetes?
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - Let us look at a simple scenario.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - Say we deployed three instances of our front end web application has three parts.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - We would like to create a replication controller or replica set to ensure that we have three active parts at any time.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - And yes, that is one of the use case of replica sets.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 95 | **Type:** Exam Tip
+  - You can use it to monitor existing pods if you have them already created as it is in this example.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 96 | **Type:** Implementation Step
+  - In case they were not created, the replica set will create them for you.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 97 | **Type:** Implementation Step
+  - The role of the replica set is to monitor the pods and if any of them were to fail, deploy new ones.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - The replica set is in fact a process that monitors the pods.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Now, how does the replica set know what pods to monitor?
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - There could be hundreds of other pods in the cluster running different applications.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - This is where labeling our pods during creation comes in handy.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - We could now provide these labels as a filter for replica set under the selector section, we use the Match labels filter and provide the same label that we used while creating the pods.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - This way, the replica set knows which pods to monitor.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - The same concept of labels and selectors is used in many other places throughout Kubernetes.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - Now let me ask you a question.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - Along the same lines, in the replica set specification section, we learned that there are three sections template, replicas, and selector.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - We need three replicas and we have updated our selector based on our discussion in the previous slide.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 108 | **Type:** Implementation Step
+  - Say for instance, we have the same scenario as in the previous slide where we have three existing parts that were created already, and we need to create a replica set to monitor the pods to ensure there are a minimum of three running at all times.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 109 | **Type:** Implementation Step
+  - When the replication controller is created, it is not going to deploy a new instance of Pod, as three of them with matching labels are already created in that case.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - Do we really need to provide a template session in the replica set specification?
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 111 | **Type:** Implementation Step
+  - Since we are not expecting the Replicaset to create a new pod on deployment?
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 112 | **Type:** Implementation Step
+  - Yes, we do, because in case one of the pods were to fail in the future, the replica set needs to create a new one to maintain the desired number of pods, and for the replica set to create a new pod, the template definition section is required.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - Let's now look at how we scale the replica set.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - Say we started with three replicas and the future.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - We decided to scale to six.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - How do we update our replica set to scale to six replicas?
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 117 | **Type:** Exam Tip
+  - Well, there are multiple ways to do it.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 118 | **Type:** Implementation Step
+  - The first is to update the number of replicas in the definition file to six, then run the kubectl apply command to specify the same file using the f parameter, and that will update the replica set to have six replicas.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - The second way to do it is to run the kube control scale command.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - Use the replicas parameter to provide the new number of replicas and specify the same file as input.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 121 | **Type:** Concept
+  - You may either input the definition file or provide the replica set name in the type name format.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - However, remember that using the file name as input will not result in the number of replicas being updated automatically in the file.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 123 | **Type:** Concept
+  - In other words, the number of replicas in the replica set definition file will still be three, even though you scaled your replica set to have six replicas using the Kube control scale command and the file as input.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - There are also options available for automatically scaling the replica set based on load, but that is an advanced topic and we will discuss it at a later time.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - Let us now review the commands real quick.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 126 | **Type:** Implementation Step
+  - The cube control create command as we know, is used to create a replica, set or basically any object in Kubernetes.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 127 | **Type:** Concept
+  - Depending on the file we are providing as input, you must provide the input file using the dash f parameter.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - Use the cube control.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 129 | **Type:** Implementation Step
+  - Get command to see list of replica sets created.
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 130 | **Type:** Implementation Step
+  - Use the cube control delete replica set command followed by the name of the replica set to delete the replica set, and then we have the cube control replace command to replace or update the replica set, and also the cube control scale command to s...
+- **File:** `021_Recap - ReplicaSets.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - That's it for this lecture.
+
+### Solution - ReplicaSets (optional)
+
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Okay, so in this video we're gonna go over the solution for the lab on ReplicaSets.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So let's start with the first question.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So the first question is, how many pods exist on the system?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So just like before we run the kubectl get pods command and there are no pods at the moment, so select zero.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - The next question is how many ReplicaSets exist on the system?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So we run the kubectl get replica set command and it's zero.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Okay, so some changes were made and let's check the ReplicaSet now and we see that there's one created.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So let's just select one.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Okay, now the question is how many pods are desired in the new ReplicaSet?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So we know that from the output, the desired number of pods in the ReplicaSet is number four.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So let's select four.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - And what is the image use to create the pods in the new ReplicaSet?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So we can find that out by looking at the ReplicaSet in a bit more detail.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - And for that we know we have to run the kubectl describe command.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - And we're gonna run describe ReplicaSet and then new ReplicaSet.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And hit the tab key to auto complete the names of what you're looking for.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Okay, so in this output we see the pod template and the image that's used.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - It's BusyBox 777.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So that's the question.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And here is the answer.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So BusyBox 777.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Now how many pods are ready in the new ReplicaSet?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So if you look at the output here, it says the number of pods that are ready are zero.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - You can also see the same kind of here, the pod status zero running.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So it is zero.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Now why do you think the pods are not ready?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So if you look at this, you have...
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So we'll need to look at one of these pods in a bit more detail.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 29 | **Type:** Troubleshooting
+  - Of course it's obvious, but I just wanna show you if you're not sure what the error is then you've got to look at one of these pods in a bit more detail.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So let's run the kubectl describe command and look at any one of the pods in a bit more detail.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And you see it's basically because it's failed to pull the image BusyBox 777, right?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So the repository does not exist.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So there's no image by the name BusyBox 777.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - That's the reason so let's check that.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Now the question is to delete any one of the pod, sorry let's clear from the get pods command and we've got to delete any one of these pods.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So how many pods exist now?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Let's run the get pods command again.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And we see that there's still four pods running, right?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So even though we deleted one, the one that we deleted is not here, the one that starts with the wk, but there are still four pods.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - So that exercise was just to show that even if you delete a pod part of ReplicaSet it's automatically going to recreate a new one.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - And if you look at the age here you can see that the new one that was created was just 17 seconds ago as opposed to the other ones that have been running for three minutes or more.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Okay, so why are there still four pods even after you deleted it?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - It's not because I didn't delete it properly.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - It's not because you cannot delete a pod from a ReplicaSet.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - It's because ReplicaSet ensures that the desired number of pods always run.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Okay, so the next one is to create a ReplicaSet set using the ReplicaSet definition file located at root.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So let's look at where that is.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 49 | **Type:** Troubleshooting
+  - So there's one here and there's an issue with the file so we have to try and fix it.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - So let's first try to create it.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - So kubectle create and here's F/root.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - ReplicaSet definition.yaml.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 53 | **Type:** Troubleshooting
+  - Okay, so the error is that it's unable to recognize this file.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - No matches for kind ReplicaSet in version v1.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So there's something wrong here.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Either the kind ReplicaSet is incorrect or the version v1 is incorrect.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So let's look at the file and we see that the API version is v1 and kind is ReplicaSet.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - And as we learned from the previous video the API version is incorrect.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - But if you're not sure what it is, one way to find that out is using the kubectl explain command.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So run the kubectl explain ReplicaSet command.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Sorry.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And here you can see the version.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So the version is supposed to be apps/v1, right?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So that's the problem.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 65 | **Type:** Troubleshooting
+  - So let's go ahead and fix that. apps/v1.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And let's try and delete that again.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - Okay, so it has now being created.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - Okay, so let's go to the next one.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 69 | **Type:** Troubleshooting
+  - So next task is to fix the issue in the second file and create the ReplicaSet.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So let's try that.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - Let's just first try to create it.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Okay, so it says there's an invalid value selector does not match template labels.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So let's take a look at the file here.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And we see the API version is app/v1 which is correct.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - The kind is ReplicaSet.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - That also seems to be correct.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - The metadata is the name.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - And then you have the spec section.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So you have replicas, you have selector.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So there is something wrong here, which is why it didn't work.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Let's find that out.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So here it says invalid value selector does not match the template labels.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 83 | **Type:** Troubleshooting
+  - So basically the issue here is that you have the labels specified here called tier front end, and then the label for the pod that the ReplicaSet will create is nginx.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 84 | **Type:** Best Practice
+  - So these two should match otherwise the ReplicaSet cannot basically manage the pods that it creates.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So you've got to either change this to front end or change this to nginx.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 86 | **Type:** Best Practice
+  - But at the end both of them should match.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So let's change this to nginx.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Save this file and run it again.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - And that's now created.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - Okay, let's go to the next one.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - Now we've got to delete the new two newly created ReplicaSets.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - So let's first look at the status right now.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - You can also run just RS instead of ReplicaSet which is the short form.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - And now we've got to delete both of these ReplicaSets.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So kubectl delete RS ReplicaSet 1 and 2.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 96 | **Type:** Exam Tip
+  - You can also give multiple in the same command.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 98 | **Type:** Troubleshooting
+  - Now fix the original ReplicaSet to use the correct BusyBox image.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - So we know that the first one, which is we now only have one.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - And we know that there are none of the pods are in a ready state.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - And we also know that because the image name is incorrect.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 102 | **Type:** Troubleshooting
+  - So we've got to now fix that.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 103 | **Type:** Concept
+  - So for this, let's run the kubectl edit command and edit the new ReplicaSet.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 104 | **Type:** Concept
+  - And let's go into the container section and change the image name to just BusyBox and save that file.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - And let's check status of pods now in the ReplicaSet.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 106 | **Type:** Concept
+  - So it's still zero.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 107 | **Type:** Implementation Step
+  - Let's just give it some time for it to delete the old pods and create new ones with the new image.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 108 | **Type:** Concept
+  - Right, RS.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 109 | **Type:** Implementation Step
+  - Okay, so when you update a ReplicaSet even though the image name is updated the pods are not automatically recreated, right?
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - So you have to either delete and recreate the entire ReplicaSet or you have to delete all the pods so that the ReplicaSet creates new pods with the new image name.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 111 | **Type:** Concept
+  - So let's go back and let's look at pods.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 112 | **Type:** Troubleshooting
+  - And you see there's all still in the error state.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 113 | **Type:** Concept
+  - So we're just going to go through and delete them.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 114 | **Type:** Concept
+  - We're gonna give the name for each one.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 115 | **Type:** Concept
+  - And we'll just wait all of them to be terminated.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 116 | **Type:** Concept
+  - Let's run get pods again.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 117 | **Type:** Concept
+  - Okay, it's in a creating state and it's in a running state.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 118 | **Type:** Concept
+  - Let's check the status of the ReplicaSet now.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 119 | **Type:** Concept
+  - And you can see that they're all in a ready state.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 120 | **Type:** Implementation Step
+  - Okay, let's go to the next one.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 121 | **Type:** Concept
+  - Now we've got to scale the ReplicaSet to five pods.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 122 | **Type:** Concept
+  - So let's run the kubectl scale command and specify the number of replicas to five.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - Let's check the status and we can see that a new pod has been added.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 124 | **Type:** Concept
+  - We can also do that using the edit command.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 125 | **Type:** Implementation Step
+  - So we could do a kubectl edit RS and specify the name of the ReplicaSet and then go here and just change this number to the desired number and then save the file.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 126 | **Type:** Concept
+  - But we're not gonna do that right now.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 127 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 128 | **Type:** Concept
+  - And now the task is to scale the ReplicaSet down to two pods.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 129 | **Type:** Concept
+  - So this time, let's use the other approach.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So let's edit the ReplicaSet.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 131 | **Type:** Concept
+  - Go to the number here, set it to two.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 132 | **Type:** Concept
+  - Okay, let's check.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 133 | **Type:** Concept
+  - Okay, so that's it for this lab.
+- **File:** `023_Solution - ReplicaSets (optional).extraction.md` | **Entry:** 134 | **Type:** Implementation Step
+  - And next we'll look at deployments.
+
+### Recap - Deployments
+
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - In this lecture we will discuss about Kubernetes deployments.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - For a minute.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - Let us forget about pods and replica sets and other Kubernetes concepts, and talk about how you might want to deploy your application in a production environment.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - Say, for example, you have a web server that needs to be deployed in a production environment.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - You need not one, but many such instances of the web server running for obvious reasons.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Secondly, whenever newer versions of application builds become available on the Docker registry, you would like to upgrade your Docker instances seamlessly.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 7 | **Type:** Warning/Pitfall
+  - However, when you upgrade your instances, you do not want to upgrade all of them at once, as we just did.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - This may impact users accessing our applications, so you might want to upgrade them one after the other.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And that kind of upgrade is known as rolling updates.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 10 | **Type:** Troubleshooting
+  - Suppose one of the upgrades you performed resulted in an unexpected error, and you're asked to undo the recent change You would like to be able to roll back the changes that were recently carried out.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 11 | **Type:** Warning/Pitfall
+  - Finally, say, for example, you would like to make multiple changes to your environment, such as upgrading the underlying web server versions, as well as scaling your environment and also modifying the resource allocations, etc. you do not want to ...
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Instead, you would like to apply a path to your environment, make the changes and then resume so that all the changes are rolled out together.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - All of these capabilities are available with the Kubernetes deployments.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So far in this course, we discussed about pods, which deploy single instances of our application, such as the web application.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - In this case, each container is encapsulated in pods.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 16 | **Type:** Exam Tip
+  - Multiple such pods are deployed using replication controllers or replica sets.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - And then comes deployment, which is a Kubernetes object that comes higher in the hierarchy.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - The deployment provides us with the capability to upgrade the underlying instances seamlessly using rolling updates, undo changes, and pause and resume changes as required.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - So how do we create a deployment?
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - As with the previous components, we first create a deployment definition file.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - The contents of the deployment definition file are exactly similar to the replica set definition file, except for the kind which is now going to be deployment.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - If we walk through the contents of the file, it has an API version which is apps forward slash v1 metadata, which has name and labels, and a spec that has template replicas and selector.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - The template has a pod definition inside it.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Once the file is ready, run the kube control create command and specify the deployment definition file.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - Then run the kube control.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - Get deployments command to see the newly created deployment.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - The deployment automatically creates a replica set.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - So if you run the kube control get replica set command, you will be able to see a new replica set in the name of the deployment.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - The replica sets ultimately create paths, so if you run the cube Control get Pods command, you will be able to see the pods with the name of the deployment and the replica set.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 30 | **Type:** Comparison
+  - So far, there hasn't been much of a difference between replica set and deployments, except for the fact that deployments created a new Kubernetes object called deployments.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - We will see how to take advantage of the deployment using the use cases we discussed in the previous slide in the upcoming lectures.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - And one more note before we end this lecture to see all the created objects at once, run the cube control get all command.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - And in this case we can see that the deployment was created.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - And then we have the replica set followed by three pods that we created as part of the deployment.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - That's it for this lecture.
+- **File:** `024_Recap - Deployments.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - We will now head over to a demo and I will see you in the next lecture.
+
+### Solution - Deployments (optional)
+
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - -: Okay, so in this lab we'll get introduced to deployments.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So let us begin.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - The first question is, how many pods exist on the system?
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So let's run kubectl get pods command, and we see there are no pods.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - And the next one is to identify the number of replica sets, and there are none.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So the answer is zero.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Okay, and now it's a number of deployments, so get deployments, and that's zero as well.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So it's a clean environment.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - There are no pods, no replica sets, or deployments at the moment but some changes have been made.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So we'll now check the deployments again.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Okay, so there is one deployment.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Okay, so the answer is one.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now how many replica sets exist on the system?
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - Now we know that there's one deployment.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 15 | **Type:** Warning/Pitfall
+  - We do not know how many replica sets.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So let's just run the get rs command again to check the number of replica sets.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So that's one replica set.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - So basically the deployment called front end deployment has now created a replica set named front end deployment, dash, some numbers.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - So that's the name of the replica set that the deployment has created.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - And then let's also check the number of pods now.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - And there are four pods.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So basically that's what we're trying to understand here.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - There was nothing before, but when we created a deployment, it's created a replica set, and then it's also created four pods.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Now, out of all the existing pods, how many are ready?
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So if you look at the status here.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Out of four pods, zero are ready.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So let's select zero.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - And what is the image used to create the pods in the new deployment?
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So let's take a look at one of the pods in a bit more detail.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - Describe pod front end deployment.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And maybe we'll just pick one of the pod.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And we see the image used is busy box 888.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So let's select that.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Now I know that there's a little bit of repetition but we're in different exercises here, but this is mainly to get you familiar with some of these commands, right?
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - The get commands and the describe commands.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - And I promise that we have more fun stuff coming up in the upcoming labs.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So we're just getting started.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Okay, so why do you think the deployment is not ready.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And as before, we know that it's because the image busy box 888 does not exist.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So let's select that.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Okay, so the next task is to create a new deployment using the deployment definition one file in root.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So we're already in root, so let's check this file.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - So let's try to create the deployment using the file.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Okay, and it didn't go.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - It didn't go through.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 46 | **Type:** Troubleshooting
+  - So there is some kind of error.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - So it says no kind deployment is registered for version apps slash v1.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 48 | **Type:** Troubleshooting
+  - So if we look at the file, we see that the API version is app slash v1 which seems to be correct, but the kind is deployment, which is also right, but the issue is that it's case sensitive, right?
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - So the first character has to be a capital letter.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So that's kind of the standard for kind.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 51 | **Type:** Troubleshooting
+  - So the reason we have these kind of exercises is just to help you understand and learn how to, you know, know what the issue is when you come up across these errors.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 52 | **Type:** Troubleshooting
+  - So oftentimes you'll face these kind of errors because of these kind of typos or, you know, a word's not being spelled correctly or not in the right case.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 53 | **Type:** Troubleshooting
+  - And you should know what those mean when you see these kind of errors.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So there are possibilities that you may mix up the API version or kind.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 55 | **Type:** Warning/Pitfall
+  - And we don't want to spend a lot of time during the exam just not knowing what those are.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So that's the reason for these kind of exercises.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 57 | **Type:** Troubleshooting
+  - So I've just fixed that and let's proceed with the creation.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Okay, so that went through.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - And the final task is to create a new deployment with the below attributes.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So you have the name, you have the replicas, and you have the image.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - So to create an object, we know we can run the kubectl create command.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - And this time we wanna create a deployment.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - And let's take a look at the help for that.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - And we see there are different options.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - So you can create a deployment, specify a name with an image.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So we have a name and we have an image where we also wanna specify the number of replicas.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So there is a command just for that.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So you have the name, the image, and the replicas.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So that's what we're going to follow.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - So run the kubectl create deployment command and specify the name, which is httpd front end.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 71 | **Type:** Exam Tip
+  - And the image is, and it's good to create a practice of just copying and pasting from the question as that will also help you in the exam if you are learning this for the purpose of giving the exam.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - And the replicas is number three.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Okay?
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And also make it a practice, always verify if what you did is right.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - So kubectl get deploy.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - We have the httpd front end deployment and we also wanna make sure that it goes to a ready state.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Yep.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So three out of three are ready.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - Check our work.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Okay.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - So that's done.
+- **File:** `026_Solution - Deployments (optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - And that's the end of this lab.
+
+### Recap - Namespaces
+
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Hello and welcome to this lecture.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In this lecture we will discuss about namespaces in Kubernetes.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Let us begin with an analogy.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - There are two boys named Mark to differentiate them from each other.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - We call them by their last names, Smith and Williams.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - They come from different houses, of course, the Smiths and the Williams.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - There are other members in the house.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - The individuals within the house address each other simply by their first names.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - For example, the father addresses Mark simply as Mark.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - However, if the father wishes to address the mark in the other house, he would use the full name.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Someone outside of these houses would also use the full name to refer to the boys or anyone within these houses.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Each of these houses have their own set of rules that defines who does what.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Each of these houses have their own set of resources that they can consume.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Now let's get back to Kubernetes.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - These houses correspond to namespaces in Kubernetes.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So far in this course, we've created objects such as pods, deployments, and services in our cluster.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Whatever we have been doing, we have been doing within a namespace.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - We were inside a house all this while.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - This namespace is known as the default namespace, and it is created automatically by Kubernetes.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - When the cluster is first set up, Kubernetes creates a set of pods and services for its internal purpose, such as those required by the networking solution, the DNS service, etc. to isolate these from the user and to prevent you from accidentally ...
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - A third namespace created by Kubernetes automatically is called kube public.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 22 | **Type:** Best Practice
+  - This is where resources that should be made available to all users are created.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 23 | **Type:** Best Practice
+  - If your environment is small or you're learning and playing around with a small cluster, you shouldn't really have to worry about namespaces.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - You could continue to work in the default namespace.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - However, as of when you grow and use a Kubernetes cluster for enterprise or production purposes, you may want to consider the use of namespaces.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - You can create your own namespaces as well.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 27 | **Type:** Exam Tip
+  - For example, if you wanted to use the same cluster for both dev and production environment, but at the same time isolate the resources between them, you can create a different namespace for each of them.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 28 | **Type:** Warning/Pitfall
+  - That way, while working in the dev environment, you don't accidentally modify resources in production.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Each of these namespaces can have its own set of policies that define who can do what.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - You can also assign quota of resources to each of these namespaces.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - That way, each namespace is guaranteed a certain amount and does not use more than its allowed limit.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - Going back to the default namespace that we have been working on, just like how the members within a house refer to each other by their first names, the resources within a namespace can refer to each other simply by their names.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - In this case, the webapp pod can reach the DB service simply using the hostname db service.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - If required, the webapp pod can reach a service in another namespace as well.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - For this, you must append the name of the namespace to the name of the service.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 36 | **Type:** Exam Tip
+  - For example, for the web pod in the default namespace to connect to the database in the dev environment or namespace, use the service name namespace cluster dot format That would be DB service, dot dev, dot svc cluster local.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - You're able to do this because when the service is created, a DNS entry is added automatically in this format.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Looking closely at the DNS name of the service, the last part, cluster dot local, is the default domain name of the Kubernetes cluster.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - SVC is the subdomain for service followed by the namespace and then the name of the service itself.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 40 | **Type:** Operational Insight
+  - Let us now look at some of the operational aspects of namespaces.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Let us start with a kube control commands.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 42 | **Type:** Exam Tip
+  - For example, this command is used to list all the pods, but it only lists the pods in the default namespace.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - To list pods in another namespace, use the namespace option in the command along with the name of the namespace, in this case kube system.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - Here I have a Pod definition file when you create a pod using this file, the pod is created in the default namespace.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - To create the pod in another namespace, use the namespace option.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 46 | **Type:** Warning/Pitfall
+  - If you want to make sure that this pod gets created in the dev environment all the time, even if you don't specify the namespace in the command line, you can move the namespace definition into the pod definition file like this.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Under the metadata section, this is a good way to ensure your resources are always created in the same namespace.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - So how do you create a new namespace?
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Like any other object, use a namespace definition file.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - The API version is v1, kind is namespace, and under metadata specify the name in this case dev.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Run the kube control.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - Create command to create the namespace.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - Another way to create a namespace is by simply running the command Kube control create namespace followed by the name of the namespace.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Now say we are working in three namespaces.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - As we discussed before, by default we are in the default namespace, which is why we can see the resources inside the default namespace using the kube control get pods command.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - And to view those in the dev namespace, we have to use the namespace option.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 57 | **Type:** Warning/Pitfall
+  - But what if we want to switch to the dev namespace permanently so that we don't have to specify the namespace option anymore?
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Well, in that case, use the kube control config command to set the namespace in the current context to dev.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - You can then simply run the kube control get pods command without the namespace option to list pods in the dev environment, but you will need to specify the option for other environments such as default or prod.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Similarly, you can switch to the prod namespace the same way.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Finally, to view pods in all namespaces, use the all namespaces option in the command.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - This will list all the pods in all of the namespaces.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Taking a closer look at the command.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - This command first identifies the current context and then sets the namespace to the desired one for that current context.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 65 | **Type:** Exam Tip
+  - Well, contexts are used to manage multiple clusters and multiple environments from the same management system.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - It is a totally separate topic to discuss and requires its own lecture, so we will discuss context in another lecture.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - To limit resources in a namespace, create a resource quota to create one.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Start with a definition file for resource quota.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - Specify the namespace for which you want to create the quota and then under spec provide your limits such as ten pods, ten CPU units, ten GB bytes of memory, etc..
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `027_Recap - Namespaces.extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - Head over to the Coding exercises section and practice working with namespaces and I will see you in the next lecture.
+
+### Solution - Namespaces (optional)
+
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Okay, in this video, we will go over the solution for the lab on namespaces.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - Okay, so the first question is, how many namespaces exist on the system?
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - For this, we run the kubectl get namespaces command.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - You could also run the kubectl get ns command.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - That's the short form for namespaces.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Okay, so the question is, to identify the number of namespaces.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So you have one, two, three, four, five, six, seven, eight, nine, ten.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So, there are ten namespaces.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - Okay, the next question is, how many pods exist in the research namespace?
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So, to look at the pods, we know that, we run the kubectl get pods command.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - But, to look into a particular namespace, we specify the namespace option, and the namespace we got to look to is research, so that's the research namespace.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So, there are two pods.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 13 | **Type:** Warning/Pitfall
+  - Another way to do this, if you don't wanna type the full option, is to just use the dash N, and that's two.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - Okay, so the next question is, create a pod in the finance namespace using the spec command below.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - So, we know that, to create a pod, we run the kubectl run command, then we pull the name, which happens to be Redis, and the image is Redis as well.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 16 | **Type:** Warning/Pitfall
+  - But, we don't wanna create it in the default namespace, so if I run this command, it's going to create the pod in that default namespace, but we wanna create it in the finance namespace.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - So, you've got to use the namespace option, and then specify finance.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Okay, and then we run the get pod command, again, in the finance namespace, to make sure that the pod is created.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Yep.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - Okay, so the next question is, which namespace has the blue pod in it?
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So, we know that running the get ns command lists all the name spaces, and one thing we could do is just go through each name space as we did here, and identify and look for that pod.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Or, another option is, we do have a command called kubectl get pods dash dash all name spaces, and this lists the pods in all namespace.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So, you have the namespace here, and you have the pods here.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And, from here, we can identify the blue pod, and it's in the marketing namespace.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Another option is, instead of typing in all namespaces we just do a dash capital A, and that also gives you the same output.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So, blue is in the marketing namespace.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Okay, so the blue application is available for us to access, and it can be accessed using the link by your terminal, so let's click on that.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So, this is the blue application, and it's a simple web application that can be used for connectivity tests.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 29 | **Type:** Best Practice
+  - So, let's click on okay, and the question is, what DNS name should the blue application use to access the database DB service in its own namespace?
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So, if we run the kubectl get cloud command in the marketing namespace, we see that it has the blue application, there's a Redis DB, but I believe there's also, there's a service, called DB service, within the same namespace.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So, how does the blue application access the DB service?
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So, we've learned that if it's within the same namespace, an application can access another service just by using its name.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So, we can test it in this interface, so it's DB service and the port number is 6379, so that's where it is.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Let's click on test, and that's success, so we could just refer to it as DB service, if it's within your own namespace.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 35 | **Type:** Best Practice
+  - The next question is, what DNS name should the blue application use to access the database DB service in the dev namespace?
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So, there's another name space called dev, and there's a service there too, so there are two services by the name DB service.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - One is in the marketing, and the other is in the dev namespace.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So, an application blue in the marketing namespace can access the application or service in the dev namespace, but for that you've got to use the full address of that service.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - That includes the namespace service.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - So, that's DB service.dev, that's the namespace, and then you have svc.cluster.local, and we can try that here.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So, that is the namespace.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - As we see the cluster.local, click on test.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - That's correct, so let's select that.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Yep, and that's the correct answer.
+- **File:** `029_Solution - Namespaces (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Right, that's the end of the lab.
+
+### Services
+
+- **File:** `030_Services.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will discuss about Kubernetes services.
+- **File:** `030_Services.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Kubernetes services enable communication between various components within and outside of the application.
+- **File:** `030_Services.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Kubernetes services helps us connect applications together with other applications or users.
+- **File:** `030_Services.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - For example, our application has groups of pods running various sections, such as a group for serving a front end load to users, another group for running back end processes, and a third group connecting to an external data source.
+- **File:** `030_Services.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - It is services that enable connectivity between these groups of pods.
+- **File:** `030_Services.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Services enable the front end application to be made available to end users.
+- **File:** `030_Services.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - It helps communication between backend and front end pods and helps in establishing connectivity to an external data source.
+- **File:** `030_Services.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Thus, services enable loose coupling between microservices in our application.
+- **File:** `030_Services.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Let's take a look at one use case of services.
+- **File:** `030_Services.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So far we talked about how pods communicate with each other through internal networking.
+- **File:** `030_Services.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Let's look at some other aspects of networking in this lecture.
+- **File:** `030_Services.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Let's start with external communication.
+- **File:** `030_Services.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - So we deployed our pod having a web application running on it.
+- **File:** `030_Services.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - How do we as an external user access the web page?
+- **File:** `030_Services.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - First of all let's look at the existing setup.
+- **File:** `030_Services.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - The Kubernetes node has an IP address and that is 192.168.1.2.
+- **File:** `030_Services.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - My laptop is on the same network as well, so it has an IP address 192.168.1.1.
+- **File:** `030_Services.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - The internal Pod network is in the range 10.244.0.0, and the pod has an IP 10.244.0.2.
+- **File:** `030_Services.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Clearly I cannot ping or access the pod at address 244.0.2 as it's in a separate network.
+- **File:** `030_Services.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So what are the options to see the web page?
+- **File:** `030_Services.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - First, if we were to SSH into the Kubernetes node at 192.168.1.2, from the node, we would be able to access the pods web page by doing a curl, or if the node has a GUI, we would fire up a browser and see the web page in a browser following the add...
+- **File:** `030_Services.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - HTTP 10.244.0.2.
+- **File:** `030_Services.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - But this is from inside the Kubernetes node and that's not what I really want.
+- **File:** `030_Services.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - I want to be able to access the web server from my own laptop, without having to SSH into the node, and simply by accessing the IP of the Kubernetes node.
+- **File:** `030_Services.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So we need something in the middle to help us map requests to the node from our laptop, through the node to the pod running the web container.
+- **File:** `030_Services.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - This is where the Kubernetes service comes into play.
+- **File:** `030_Services.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - The Kubernetes service is an object just like pods, replica sets, or deployments that we worked with before.
+- **File:** `030_Services.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - One of its use case is to listen to a port on the node, and forward requests on that port to a port on the pod running the web application.
+- **File:** `030_Services.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - This type of service is known as a node port service, because the service listens to a port on the node and forward requests to the pods.
+- **File:** `030_Services.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - There are other kinds of services available which we will now discuss.
+- **File:** `030_Services.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - The first one is what we discussed already.
+- **File:** `030_Services.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Node port where the service makes an internal port accessible on a port on the node.
+- **File:** `030_Services.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - The second is cluster IP and in this case the service creates a virtual IP inside the cluster to enable communication between different services, such as a set of front end servers to a set of back end backend servers.
+- **File:** `030_Services.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - The third type is a load balancer, where it provisions a load balancer for our application in supported cloud providers.
+- **File:** `030_Services.extraction.md` | **Entry:** 35 | **Type:** Exam Tip
+  - A good example of that would be to distribute load across the different web servers in your front end tier.
+- **File:** `030_Services.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - We will now look at each of these in a bit more detail along with some demos.
+- **File:** `030_Services.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - In this lecture we will discuss about the Nodeport Kubernetes service.
+- **File:** `030_Services.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Getting back to Nodeport a few slides back, we discussed about external access to the application.
+- **File:** `030_Services.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - We said that a service can help us by mapping a port on the node to a port on the pod.
+- **File:** `030_Services.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Let's take a closer look at the service.
+- **File:** `030_Services.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - If you look at it, there are three ports involved.
+- **File:** `030_Services.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - The port on the pod where the actual web server is running is 80, and it is referred to as the target port because that is where the service forwards the request to the second port is the port on the service itself.
+- **File:** `030_Services.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - It is simply referred to as the port.
+- **File:** `030_Services.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Remember these terms are from the viewpoint of the service.
+- **File:** `030_Services.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - The service is in fact like a virtual server inside the node.
+- **File:** `030_Services.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Inside the cluster.
+- **File:** `030_Services.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - It has its own IP address, and that IP address is called the cluster IP of the service.
+- **File:** `030_Services.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And finally we have the port on the node itself which we use to access the web server externally.
+- **File:** `030_Services.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And that is known as the node port.
+- **File:** `030_Services.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - As you can see it is set to 30,008.
+- **File:** `030_Services.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - That is because node ports can only be in a valid range, which by default is from 30,000 to 32,767.
+- **File:** `030_Services.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - Let's now look at how to create the service.
+- **File:** `030_Services.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - Just like how we created a deployment replica set or pod in the past.
+- **File:** `030_Services.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - We will use a definition file to create a service.
+- **File:** `030_Services.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - The high level structure of the file remains the same as before.
+- **File:** `030_Services.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - We have the API version kind, metadata and spec sections.
+- **File:** `030_Services.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - The API version is going to be v1.
+- **File:** `030_Services.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - The kind is of course service.
+- **File:** `030_Services.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - The metadata will have a name and that will be the name of the service.
+- **File:** `030_Services.extraction.md` | **Entry:** 60 | **Type:** Warning/Pitfall
+  - It can have labels, but we don't need that for now.
+- **File:** `030_Services.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - Next we have spec and as always, this is the most crucial part of the file as this is where we will be defining the actual services.
+- **File:** `030_Services.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And this is the part of a definition file that differs between different objects.
+- **File:** `030_Services.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - In the spec section of a service we have type and ports.
+- **File:** `030_Services.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - The type refers to the type of service we are creating.
+- **File:** `030_Services.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - As discussed before, it could be clusterip node port or load balancer.
+- **File:** `030_Services.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - In this case, since we are creating a node port, we will set it as node port.
+- **File:** `030_Services.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - The next part of a spec is ports.
+- **File:** `030_Services.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - This is where we input information regarding what we discussed on the left side of the screen.
+- **File:** `030_Services.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - The first type of port is the target port, which we will set to 80.
+- **File:** `030_Services.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - The next one is simply port, which is the port on the service object.
+- **File:** `030_Services.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - And we will set that to 80 as well.
+- **File:** `030_Services.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - The third is node port, which we will set to 30,008 or any number in the valid range.
+- **File:** `030_Services.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Remember that out of these the only mandatory field is port.
+- **File:** `030_Services.extraction.md` | **Entry:** 74 | **Type:** Warning/Pitfall
+  - If you don't provide a target port, it is assumed to be the same as port.
+- **File:** `030_Services.extraction.md` | **Entry:** 75 | **Type:** Warning/Pitfall
+  - And if you don't provide a node port, a free port in the valid range between 30,000 and 32,767 is automatically allocated.
+- **File:** `030_Services.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - Also note that ports is an array, so note the dash under the port section that indicate the first element in the array.
+- **File:** `030_Services.extraction.md` | **Entry:** 77 | **Type:** Exam Tip
+  - You can have multiple such port mappings within a single service.
+- **File:** `030_Services.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So we have all the information in.
+- **File:** `030_Services.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - But something is really missing.
+- **File:** `030_Services.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - There is nothing here in the definition file that connects the service to the pod.
+- **File:** `030_Services.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - We have simply specified the target port, but we didn't mention the target port on which pod.
+- **File:** `030_Services.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - There could be hundreds of other pods with web services running on port 80.
+- **File:** `030_Services.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So how do we do that?
+- **File:** `030_Services.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - As we did with the replica sets previously, and a technique that you will see very often in Kubernetes.
+- **File:** `030_Services.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - We will use labels and selectors to link these together.
+- **File:** `030_Services.extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - We know that the pod was created with a label.
+- **File:** `030_Services.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - We need to bring that label into this service definition file.
+- **File:** `030_Services.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - So we have a new property in the specs section and that is called selector.
+- **File:** `030_Services.extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - Just like in a replica set and deployment definition files.
+- **File:** `030_Services.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - Under the selector provide a list of labels to identify the pod.
+- **File:** `030_Services.extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - For this, refer to the pod definition file used to create the pod.
+- **File:** `030_Services.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Pull the labels from the pod definition file and place it under the selector section.
+- **File:** `030_Services.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - This links the service to the pod.
+- **File:** `030_Services.extraction.md` | **Entry:** 94 | **Type:** Implementation Step
+  - Once done, create the service using the kube control.
+- **File:** `030_Services.extraction.md` | **Entry:** 95 | **Type:** Implementation Step
+  - Create command and input the service definition file and there you have the service created.
+- **File:** `030_Services.extraction.md` | **Entry:** 96 | **Type:** Implementation Step
+  - To see the created service, run the Kube control.
+- **File:** `030_Services.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - Get services command that lists the service, the cluster IP and the mapped ports.
+- **File:** `030_Services.extraction.md` | **Entry:** 98 | **Type:** Implementation Step
+  - The type is node port as we created and the port on the node is set to 30,008, because that's the port that we specified in the definition file.
+- **File:** `030_Services.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - We can now use this port to access the web service using Curl or a web browser.
+- **File:** `030_Services.extraction.md` | **Entry:** 100 | **Type:** Implementation Step
+  - So curl to 21921681.2, which is the IP of the node, and then I use the port 30,008 to access the web server.
+- **File:** `030_Services.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So far we talked about a service mapped to a single pod, but that's not the case all the time.
+- **File:** `030_Services.extraction.md` | **Entry:** 102 | **Type:** Exam Tip
+  - What do you do when you have multiple pods in a production environment?
+- **File:** `030_Services.extraction.md` | **Entry:** 103 | **Type:** Exam Tip
+  - You have multiple instances of your web application running for high availability and load balancing purposes.
+- **File:** `030_Services.extraction.md` | **Entry:** 104 | **Type:** Exam Tip
+  - In this case, we have multiple similar pods running our web application.
+- **File:** `030_Services.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - They all have the same labels with a key app and set to a value of my app.
+- **File:** `030_Services.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - The same label is used as a selector during the creation of the service.
+- **File:** `030_Services.extraction.md` | **Entry:** 107 | **Type:** Implementation Step
+  - So when the service is created, it looks for a matching pod with the label and finds three of them.
+- **File:** `030_Services.extraction.md` | **Entry:** 108 | **Type:** Implementation Step
+  - The service then automatically selects all the three pods as endpoints to forward the external requests coming from the user.
+- **File:** `030_Services.extraction.md` | **Entry:** 109 | **Type:** Warning/Pitfall
+  - You don't have to do any additional configuration to make this happen.
+- **File:** `030_Services.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - And if you're wondering what algorithm it uses to balance the load across the three different pods, it uses a random algorithm.
+- **File:** `030_Services.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - Thus, the service acts as a built in load balancer to distribute load across different pods.
+- **File:** `030_Services.extraction.md` | **Entry:** 112 | **Type:** Exam Tip
+  - And finally, let's look at what happens when the pods are distributed across multiple nodes.
+- **File:** `030_Services.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - In this case, we have the web application on pods on separate nodes in the cluster.
+- **File:** `030_Services.extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - When we create a service without us having to do any additional configuration, Kubernetes automatically creates a service that spans across all the nodes in the cluster and maps the target port to the same node port on all the nodes in the cluster.
+- **File:** `030_Services.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - This way, you can access your application using the IP of any node in the cluster and using the same port number, which in this case is 30,008.
+- **File:** `030_Services.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - As you can see, using the IP of any of these nodes, and I'm trying to curl to the same port and the same port is made available on all the nodes part of the cluster.
+- **File:** `030_Services.extraction.md` | **Entry:** 117 | **Type:** Exam Tip
+  - To summarize, in any case, whether it be a single pod on a single node, multiple pods on a single node, or multiple pods on multiple nodes, the service is created exactly the same without you having to do any additional steps during the service cr...
+- **File:** `030_Services.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - When pods are removed or added, the service is automatically updated, making it highly flexible and adaptive.
+- **File:** `030_Services.extraction.md` | **Entry:** 119 | **Type:** Implementation Step
+  - Once created, you won't typically have to make any additional configuration changes.
+- **File:** `030_Services.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - That's it for this lecture.
+- **File:** `030_Services.extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - Head over to the demo and I will see you in the next lecture.
+
+### Services - Cluster IP
+
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will discuss about the Kubernetes Service cluster IP.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - A full stack web application typically has different kinds of pods hosting different parts of an application.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - You may have a number of pods running a front end web server, another set of pods running a backend server, a set of pods running a key value store like Reddis, and another set of pods.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Maybe running a persistent database like MySQL.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - The web front end server needs to communicate to the backend servers, and the backend servers need to communicate to the database as well as the services, etc..
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So what is the right way to establish connectivity between these services or tiers of my application?
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - The pods all have an IP address assigned to them, as we can see on the screen, but these IPS as we know, are not static.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - These pods can go down any time, and new pods are created all the time.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And so you cannot rely on these IP addresses for internal communication between the application.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - Also, what if the first front end pod at ten 244 .0.3 need to connect to a back end backend service.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Which of the three will it go to and who makes that decision?
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - A Kubernetes service can help us group the pods together, and provide a single interface to access the pods in a group.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 13 | **Type:** Exam Tip
+  - For example, a service created for the backend pods will help group all the backend pods together and provide a single interface for other pods to access this service.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The requests are forwarded to one of the pods under the service randomly.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Similarly, create additional services for readings and allow the backend pods to access the readings systems through the service.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - This enables us to easily and effectively deploy a microservices based application on Kubernetes cluster.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Each layer can now scale or move as required without impacting communication between the various services.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 18 | **Type:** Best Practice
+  - Each service gets an IP and name assigned to it inside the cluster, and that is the name that should be used by other paths to access the service.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - This type of service is known as cluster IP.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - To create such a service, as always, use a definition file in the service definition file.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - First use the default template which has API version kind metadata and spec.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - The API version is v1, kind is service and we will give a name to our service.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - We will call it backend.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Under specification we have type and ports.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - The type is cluster IP.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - In fact cluster IP is the default type.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So even if you didn't specify it, it will automatically assume the type to be cluster IP.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Under ports we have a target port and port.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - The target port is the port where the backend is exposed, which in this case is 80, and the port is where the service is exposed, which is 80 as well.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - To link the service to a set of ports, we use selector.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 31 | **Type:** Best Practice
+  - We will refer to the pod definition file and copy the labels from it and move it under selector, and that should be it.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - We can now create the service using the kube control create command and then check its status using the Kube control Get Services command.
+- **File:** `031_Services - Cluster IP.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - The service can be accessed by other pods using the cluster IP or the service name.
+
+### Solution - Services (optional)
+
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Presenter: Okay, in this video, we're going to walk over the solution for the lab on services.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So, the first question is, how many services exist on the system?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So, we're gonna run the "kubectl get service" command, or you could also run the "kubectl get svc" command.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - It's short for service.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - And, we can see that there's just one service.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So, select that.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So, this is a default service created by Kubernetes.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Okay, so what is the type of the default Kubernetes service?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - If you look at the type here, we see that it's ClusterIP.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So, let's select ClusterIP.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 11 | **Type:** Architecture
+  - And, we'll look at what this service is, in particular later, when we talk about the Kubernetes architecture, the API server in more detail.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - But for now, let's just consider it as any other service.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - So, what is the target port configured on the Kubernetes service?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So, for this, you've got to look at the service in more detail.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So, we're gonna do "kubectl describe" command, and we're gonna describe the service named Kubernetes.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So, here we see the port details.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So, the port is 443, the target port is 6443.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So, the question is, what is the target port?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So, we'll select 6443.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - Okay, how many labels are configured on the Kubernetes service?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So, if you look at this right here, so there are two labels.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 22 | **Type:** Architecture
+  - Component is API server, and the provider is Kubernetes.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 23 | **Type:** Architecture
+  - So, this service is, basically, the Kubernetes API server.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 24 | **Type:** Architecture
+  - We'll discuss more about the API server, and this service specifically, when we learn about the API server in detail.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - And then, the CK of course, when we get to that.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So for now, the answer is two.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - Okay, the next question is, how many endpoints are attached on the Kubernetes service?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - So for now, we have no idea what the service is, since the service was already created.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 29 | **Type:** Warning/Pitfall
+  - We don't really know what it is, so we are kind of exploring and finding out more about it.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - But, one thing if we want to look at right here, and understand is, how many pods is the service directing traffic to?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So, that's what you can see here, in the endpoints section here.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So, endpoints, it says there's just one IP and port.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So, that's one endpoint.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 34 | **Type:** Exam Tip
+  - If there are multiple pods that the service is directing traffic to, then there would be multiple ports here.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Let me quickly explain what endpoints are, because we have not really discussed about endpoints.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Okay, so here we have a service, and three pods.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - And, what we do usually is, when we create a pod we know that it has a label to it.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 38 | **Type:** Exam Tip
+  - So, let's say for example, it's set to app and FE, for front end or something.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - And, the way that we create a service, in order to direct traffic to these pods, is we provide the same labels as selectors to the service.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And then, what the service does, is it identifies all the pods with the same label, and then directs traffic to those pods.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So, once it identifies the pod with the labels, that's when the service has these endpoints.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So, from the perspective of a service, endpoints are basically these, the pods.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - The pods that the service has identified, that it's going to direct traffic to, based on the selectors specified on the service and the labels on the pods.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - Now, when we create a service for a set of pods, and we might think that depending on the label and the selector we specified, the service is going to direct traffic to those pods, but it might be possible that we have another pod, which we accide...
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - So, the service is then going to direct traffic to that pod as well.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - So, and that's when, when we look at the the output of the "kubectl describe" command, that we can identify the additional endpoints, apart from what we thought we had configured.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Right, so we're gonna see, when you look at the "kubectl describe" command for the service, we're gonna see that there are four endpoints.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - But, in fact, our application was, had a replica set, perhaps, that just had three endpoints, or three pods.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So, that's where this, the endpoint can help.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And, just to give you a bit more context.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - So, let's say we create, we have a single pod and we create a service.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - We set a label to FE, but we accidentally set the selector to, say, FR, something that's different.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - And then, when we try to access the service, we're not able to get through to the application.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And, that's when you look at the description of the service and you realize that the endpoints are zero.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So, that means the service has not identified any pods.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Right?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - So, and then that's when we can look at the labels and selectors in more detail to identify the root cause.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So, that's what endpoints are.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - It's nothing but, it's a specification of all the pods that that particular service has identified, based on the selectors and the label set on those pods.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Okay, so in this case, this particular Kubernetes service has just one endpoint.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So, we're gonna select one here.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - Okay, the next question is, how many deployments exist on the system now, in the current default namespace?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - So, let's identify, deploy.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - There's just one deployment, so we're gonna select one.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - Okay, so the next question is, what is the image used to create the pods in the deployment?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - So, we're gonna look at the deployment in a bit more detail, and we see the image is codecloud/simple-web-app-red.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So, that's this one.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Okay, are you able to access the web app UI?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Try accessing the web application UI using the tab at the top.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 70 | **Type:** Troubleshooting
+  - So, there's the link here, and clicking on it, we see that it gives us a bad gateway error.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So, the answer is no, we're not able to access the web app UI.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So, and that's really because there's no service, right?
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - So, we have to create a new service to access the web application using the service-definition.yaml file.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So, there is a service-definition.yaml file here, and we look at it.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - So, this is, basically, a kind of a file with the basic framework to create a service.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So, we will use that, and update the details that are given here.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Right, so we're gonna set it, give it a name, so the node port and all the different ports.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Also, specify the selector.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - Now, if you're not sure about, you know, getting this framework, you could go to the Kubernetes documentation pages.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Search for service, and select service.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 81 | **Type:** Implementation Step
+  - And here, you, kind of, get a sample that you can then copy and use.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - So, we will talk about imperative ways, or commands, to create service in the upcoming lectures.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - For now, let's just go with this.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So, the name is web app service.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - Type is node port.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - Target port is 8080.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - Port is 8080.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Node port is 30080.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - And, the selector name is simple web app.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - Okay, let's create that service.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - Okay, that's done.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Let's check.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - Yeah, let's try to access this now.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - Okay, so that's working.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 95 | **Type:** Implementation Step
+  - So, as I said, in the upcoming lectures, there is a section where we talk about imperative commands, and we'll discuss how we can create a service.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - So, there are different ways of creating a service, and we'll discuss about that when we get there.
+- **File:** `033_Solution - Services (optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - For now, that's the end of this lab.
+
+### Kubectl Explain Command
+
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Let us now look at kubectl explain command.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So there is a lot you can learn about resources and fields without ever leaving the terminal.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - To list all resources you can simply run kubectl api resources command.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - This is especially useful when you can't find a resource on the documentation pages.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So if you ever forget a resource name or its short name, or you're not sure of the underlying version of the API such as V1 or is it v1?
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Or if you are not sure the exact case of the resource name to be used while creating a definition file, you can use the kubectl API resource command.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Once you identify the resource name from the list and you need more information about the resource fields and types under it, you can then run the kubectl explain command.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Provide the resource name that you'd like to be explained in this case, using pods.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Lists all top level fields in pods being the API version kind, metadata, spec and status, and you can see the type of each field.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So the API version is string and also the description of what it does.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - But as you can see, this is not a comprehensive list of all fields and subfields.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - It only lists the top level items.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - To go deeper, run the same command but with a field to the command.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - And like this.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So you would add dot spec to the end of the command and this would list the subfields within it.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - But this again lists the subproperties of parent property that you've mentioned.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - It's still not comprehensive.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So to list all fields in the way that you would put them in a YAML file, use the recursive flag like this.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - It now outputs the entire comprehensive list of fields that's available on that resource.
+- **File:** `036_Kubectl Explain Command.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - And it's very easy now to create YAML files out of this.
+
+### Solution - Imperative Commands (optional)
+
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, in this video we will go over the practice test for imperative commands.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - And so in this lab, we'll get hands on practice with creating Kubernetes optics imperatively.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - And this is more for, more to help with your exams.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - So you must be very familiar with imperative commands while you're preparing for the exam.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Okay, so let's, let's proceed.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - So the first task is to deploy a pod named NGINX pod using the NGINX Alpine image.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So that, we've done before, it's easy.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - So it is kubectl run to create a pod, and the name is NGINX pod, and the image is NGINX Alpine.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So check it.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Okay, That's correct.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - The next one, deploy a Redis pod using the Redis Alpine image with the labels set to tier DB.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So that's, that's similar task but with an additional field.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So if you look at the kubectl run command, let's see if there's an option to specify the labels.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 14 | **Type:** Exam Tip
+  - So if you look at this, there are some examples here.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - This is what we just did.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And here, you have an option to specify the labels.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - So dash, dash, labels, equals, and then here's the key value pairs.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 18 | **Type:** Exam Tip
+  - And you can have multiple labels.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 19 | **Type:** Exam Tip
+  - You can specify multiple labels separated by a comma.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So we're gonna use that approach.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So let's run the kubectl run command.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - The name, the pod is Redis.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Image is, Redis Alpine, and we're gonna add some labels.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - And then the label is tier equals DB.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Okay, so that's good.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - So the next one is to create a service called Redis service to expose the Redis application within the cluster on board 6379.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So the service name has to be Redis service, the type is cluster IP, and the port is 6379.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - So for this, we could run the kubectl, create service command.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Let's look at the help.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - So if it is within the cluster, then it's cluster IP.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So we could run the cluster IP.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - That will create service, cluster IP, Let's click on help.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - And then you specify the name of the service and the port here, which happens to be 6379.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So one of the thing here, is that, we want to expose the Redis application, right?
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So with this command, there's no way to specify a selector.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - There's something that we, we discussed in this lecture, right?
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So if you look at this, there are three ways to create a service.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - So this is to create a service named Redis service of cluster IP, and we could do a kubectl create service command, but then you cannot really specify the selectors, right?
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Or you could do a kubectl expose command.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So ideally for most, for most use cases you could use the kubectl expose command.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - And because it will automatically detect the, uh, labels and then use that as selectors for the service, right?
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So that's, that's the most ideal.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 43 | **Type:** Best Practice
+  - The only time you could, you should use kubectl create service is when you need to specify a particular node port, right?
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 44 | **Type:** Exam Tip
+  - So, uh, here you have an example of creating a node port service.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - There are two ways to do it, with the expose command, and the create service command.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - But as of this recording, there is no way to specify a node port in the command.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So you have to export that to an IML file and edit it for creating it.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - Or if you go the other approach, then there's, you cannot specify the selector.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So that's, that's a challenge here.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So here, what we're going to do is, we're going to use the exposed command.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 51 | **Type:** Exam Tip
+  - If you look at the help, these are some examples.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So we're gonna specify expose, and the application is Redis.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 53 | **Type:** Warning/Pitfall
+  - So we don't know if it's a pod or deployment, so let's find that out first.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So it's, it's a pod, so it's Redis pod.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So we're gonna do kubectl, expose.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Instead of RC we're gonna do a pod or a PO.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - And then the name, this, I remember that this is the name of the pod and not the service that we wanna create.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So the pod has to be Redis.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 59 | **Type:** Best Practice
+  - And this should be a way to specify the name of the service, which is using name.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So we're gonna use name, and specify it as Redis service.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - And then, of course, we also have to specify the port.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And the port is this one, which is 6379.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Okay?
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So that's, that's what we are going to do.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 65 | **Type:** Command
+  - 
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - You also need to specify a name.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - That will be Redis service.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Okay, I missed specifying pod.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So let that in, now let's check it out.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Hit service, Redis.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So hit Redis service.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So that's the Redis service.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Let's see if it's got the right labels and selectors, and also the endpoint.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - The labels is tier equals DB.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So it's automatically picked that up, and the endpoints indicates that it's automatically discovered the pod.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So let's check.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Okay, that's good.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - Okay, the next one is to create a deployment named Web App using the image with three replicas.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - So we're going to do kubectl, create deployment command.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - And the name of the deployment is Web App.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Image is, just gonna copy and paste.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - And then replicas is, is three.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - Oops.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And I forgot to specify the dashes.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - Yep.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - We're going to check.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - Okay, so there are, there's zero of three ready.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Okay, three of three ready.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - Okay.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - So the next one is to create a new pod called custom NGINX, using the NGINX image and expose it on container port 80 80.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - So we know that to create a pod, we have kubectl, run command, and the name of the pod is custom NGINX.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - And then the image is NGINX and we have to expose it on container port 80 80.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - So we're talking about specifying the port on the container.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So we just use port and specify the port number.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - We're not really talking about exposing the port by creating a service.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - This is just specifying what port the container runs the service on.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - And you can do that with the port option.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - Okay, let's check our work.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - That's correct.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 100 | **Type:** Implementation Step
+  - Okay, the next one is to create a new name space called DEV NS.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So that's pretty easy and straightforward.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 102 | **Type:** Command
+  - 
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - Okay, the next one is to create a new deployment called Redis Deploy in the DEV NS namespace.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - So we're gonna do kubectl, create deployment, and it's, the name is Redis Deploy.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - The image is Redis.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 106 | **Type:** Concept
+  - Replicas is two.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 107 | **Type:** Concept
+  - So you could do equals two or space two, either of that work.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 108 | **Type:** Implementation Step
+  - And then, the namespace is DEV NS Let's make sure that worked as expected.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 109 | **Type:** Implementation Step
+  - So we have the Redis deploy within the DEV NS namespace, and it has two replicas.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 110 | **Type:** Concept
+  - Let's check our work.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 111 | **Type:** Concept
+  - Okay.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 112 | **Type:** Concept
+  - That's correct.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 113 | **Type:** Concept
+  - Okay.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - So the final question is, to create a pod called ACTPD using the image ACTPD Alpine in the default namespace, and then create a service of type cluster IP by the same name.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 115 | **Type:** Best Practice
+  - The target port for the service should be 80.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 116 | **Type:** Implementation Step
+  - So try to do this with as few steps as possible.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 117 | **Type:** Concept
+  - So there are two ways of doing this.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 118 | **Type:** Implementation Step
+  - One is, you could first do a kubectl, run command, and create the, the pod.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 119 | **Type:** Implementation Step
+  - And then we know that we could use the kubectl expose command to create a service, but we can actually combine them both in the run command itself.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 120 | **Type:** Implementation Step
+  - So that's done using, so let's first create a, a pod.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 121 | **Type:** Concept
+  - So we do a kubectl run ACTPD, that's the name of the pod.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 122 | **Type:** Concept
+  - And the image is supposed to be ACTPD Alpine.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 123 | **Type:** Warning/Pitfall
+  - And then we have, it's the default namespace, so we don't have to specify the namespace.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 124 | **Type:** Concept
+  - And the target port is 80.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 125 | **Type:** Implementation Step
+  - And what we're asked to do is also create a service.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 126 | **Type:** Concept
+  - One of the options for the wrong command, you're looking to help is the exposed option.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 127 | **Type:** Concept
+  - So if you look at, if you look right here it has the expose option, and it's by default, set default.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 128 | **Type:** Implementation Step
+  - So if it's set to true, a, a create a cluster IP service associated with the pod, it requires the port field.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 129 | **Type:** Implementation Step
+  - So it's automatically going to create a service with the cluster IP type, and it's going to expose the pod internally.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So yeah, so that's, so that's what we have to do.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 131 | **Type:** Concept
+  - So we're going to, it's the same command, but we're going to add the expose those two options to the end of it.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 132 | **Type:** Concept
+  - Okay.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 133 | **Type:** Implementation Step
+  - So it's, it's created to pod and a service.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 134 | **Type:** Concept
+  - Let's just verify that.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 135 | **Type:** Implementation Step
+  - So, we have the ACTPD pod, we have the ACTPD service, and if we look at this service in more detail, we see that it has got the selector, run equals ACTPD and then it also has the endpoint discovered.
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 136 | **Type:** Concept
+  - Okay, So that's, that's corrected, right?
+- **File:** `038_Solution - Imperative Commands (optional).extraction.md` | **Entry:** 137 | **Type:** Concept
+  - So that's the, the end of this lab.
+
+### A Quick Reminder
+
+- **File:** `040_A Quick Reminder.extraction.md` | **Entry:** 1 | **Type:** Warning/Pitfall
+  - (gentle music) -: Hey, so here is a quick reminder and I hope you don't mind me jumping in like this.
+- **File:** `040_A Quick Reminder.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - I wanted to take a moment to remind you about the importance of staying focused on the labs and videos that are provided in this course.
+- **File:** `040_A Quick Reminder.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - Now, I understand that you may be eager to create your own local setup to practice but I recommend that you resist that urge until you have completed the course.
+- **File:** `040_A Quick Reminder.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Our labs and videos are designed to give you a seamless learning experience that will help you gain the most out of the course in the time that you have available.
+- **File:** `040_A Quick Reminder.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - By sticking to the labs and videos provided in the course, you can minimize distractions and interruptions and ensure that you have a clear path from start to finish.
+- **File:** `040_A Quick Reminder.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And this will help you stay focused on your learning goals and make the most of your time with us.
+- **File:** `040_A Quick Reminder.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Rest assured, we will provide you with resources to create your own local setup at the appropriate time in the course.
+- **File:** `040_A Quick Reminder.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - For now, let's focus on the labs so you can gain the knowledge and skills you need to succeed.
+- **File:** `040_A Quick Reminder.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Thank you for choosing our course.
+- **File:** `040_A Quick Reminder.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Thank you for choosing KodelKloud, and we look forward to helping you achieve your learning goals. (gentle music)

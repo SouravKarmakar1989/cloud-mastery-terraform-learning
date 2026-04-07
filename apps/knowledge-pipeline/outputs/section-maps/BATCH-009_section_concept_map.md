@@ -1,0 +1,4237 @@
+# Section Concept Map: BATCH-009
+
+## Section
+- Course: `certified-kubernetes-administrator-with-practice-tests`
+- Section: `09_Networking`
+
+## Source Files Used
+- `204_Networking - Introduction.extraction.md`
+- `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md`
+- `206_Prerequisite DNS.extraction.md`
+- `208_Prerequisite Network Namespaces.extraction.md`
+- `210_Prerequisite Docker Networking.extraction.md`
+- `211_Prerequisite CNI.extraction.md`
+- `212_Cluster Networking.extraction.md`
+- `215_Lab Solution - Explore Environment (optional).extraction.md`
+- `216_Pod Networking.extraction.md`
+- `217_CNI in kubernetes.extraction.md`
+- `219_CNI weave.extraction.md`
+- `221_Lab Solution - Explore CNI (optional).extraction.md`
+- `222_ipam weave.extraction.md`
+- `224_Service Networking.extraction.md`
+- `226_Lab Solution - Service Networking (optional).extraction.md`
+- `227_DNS in kubernetes.extraction.md`
+- `228_CoreDNS in Kubernetes.extraction.md`
+- `230_Lab Solution - Explore DNS (optional).extraction.md`
+- `231_Ingress.extraction.md`
+- `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md`
+- `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md`
+- `238_Introduction to Gateway API (2025 updates).extraction.md`
+
+## Concept Groups
+
+### Networking - Introduction
+
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hello and welcome to this section on networking in Kubernetes.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - My name is Munjab Manamet, and we are going through the certified Kubernetes Administrators course.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - In this section, we focus on the networking concepts.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Some networking basics are required to get through the section, such as the basics about setting and checking IP addresses on any given system, knowledge on gateways and routes, and knowledge about DNS and configuring DNS servers, et cetera.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - While working on this section, as before, we sent out a poll asking about your knowledge in networking.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - Based on your feedback, we've created some prerequisite lectures around configuring interfaces and IP addresses, configuring gateways and routes, basics of name resolution, DNS configuration on Linux systems, as well as how to get started with one...
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 7 | **Type:** Best Practice
+  - These are short lectures that should give you enough knowledge to go through the remainder of this section.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 8 | **Type:** Operational Insight
+  - It is also important to know a little bit about a network name spaces and how Docker uses network name spaces internally.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Again, as always, these are for beginners and our optional lectures, and depending on your knowledge, feel free to go through only those that you think you really need.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - I would highly recommend the network name spaces and Docker networking lectures.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Once we are done with the prerequisite lectures we start with networking in Kubernetes.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Again, I'm going to rearrange the topics a little bit to improve the flow.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - We start by looking at the cluster networking needs and then followed by POD networking concepts.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - We then look at CNI in Kubernetes and how CNI can help solve the POD networking challenges.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - This is where we pick up from where we left off in the prerequisite lectures around network name spaces.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 16 | **Type:** Operational Insight
+  - We continue to discuss cluster DNS and how Kubernetes implements DNS internally.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - We then finish with ingress networking.
+- **File:** `204_Networking - Introduction.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Again, this is one section that I spent a lot of time on and I hope you enjoy it.
+
+### Prerequisite Switching, Routing, Gateways CNI in Kubernetes
+
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this series of lectures, we get our networking basics right.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - We look at basic networking concepts like switching, routing, gateways, etc. we then understand DNS and then we get a basic introduction to core DNS.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - We look at how to configure DNS settings on a Linux system.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - We then understand basics of network namespaces in Linux.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Okay, I'm not going to bore you with theories on OSI models or network layers.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - We're just brushing up enough networking to understand the rest of the section in this course.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 7 | **Type:** Warning/Pitfall
+  - Now we don't just go through the concepts, we see how these are configured on our systems, specifically from a Linux perspective.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So there are going to be lots of commands.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - We look at these from a system admins and the application developer's perspective and not necessarily from a network engineers that way.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 10 | **Type:** Troubleshooting
+  - Later on, when we discuss these in the context of our course, you know what we are talking about, where to look for information, where things are configured, how to troubleshoot, etc. and of course, as always, if these seem to be too basic for you...
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So let's get started.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So what is a network?
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - We have two computers A and B laptops, desktops VMs on the cloud wherever.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - How does system A reach B?
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - We connect them to a switch, and the switch creates a network containing the two systems to connect them to a switch.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - We need an interface on each host, physical or virtual, depending on the host, to see the interfaces for the host.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - We use the IP link command.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - In this case, we look at the interface named eth0 that we will be using to connect to the switch.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Let's assume it's a network with the address 192.168.1.0.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - We then assign the systems with IP addresses on the same network.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - For this we use the command IP addr.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Once the links are up and the IP addresses are assigned, the computers can now communicate with each other through the switch.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - The switch can only enable communication within a network, which means it can receive packets from a host on the network and deliver it to other systems within the same network.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Say we have another network containing systems C and D at address 192.168.2.0.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - The systems have IP address 192.1682.1 and 2.11 respectively.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - How does a system in one network reach a system in the other?
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - How does system B with the IP 1921681.11 reach system C with the IP 2.1 on the other network?
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - That's where a router comes in.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - A router helps connect two networks together.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - It is an intelligent device, so think of it as another server with many network ports.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Since it connects to the two separate networks, it gets two IPS assigned, one on each network.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - In the first network, we assign it an IP address 192.1681.1, and in the second we assign it an IP 2.1.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Now we have a router connected to the two networks that can enable communication between them.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - When system B tries to send a packet to system C, how does it know where the router is on the network to send the packet through?
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - The router is just another device on the network.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - There could be many other such devices.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - That's where we configure the systems with a gateway or a route.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - If the network was a room, the gateway is a door to the outside world, to the other networks, or to the internet.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - The systems need to know where that door is to go through that.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - To see the existing routing configuration on a system, run the route command.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - It displays the kernel's routing table.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And within that, as you can see, there are no routing configurations as of now.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So in this condition your system B will not be able to reach system C, it can only reach other systems within the same network in the range 192.168.1.0.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - To configure a gateway on system B to reach the systems on network 2.0, run the IP route add command and specify that you can reach the 182.168.2.0 network through the door or gateway, at 192.168.1.1.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Running the route command again shows that we have a route added to reach the 1921682.0 series network through the router.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - Now remember this has to be configured on all the systems.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 47 | **Type:** Exam Tip
+  - For example, if the system C is to send a packet to system B, then you need to add a route on System C's routing table to access the network at 1.0 through the router configured with the IP address 2.1.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Now suppose these systems need access to the internet.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Say they need access to Google at 172.27.194.0.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Network on the internet.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - So you connect the router to the internet, and then add a new route in your routing table to route all traffic to the network.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - 172.27.194.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Through your router.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - There are so many different sites on different networks on the internet.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 55 | **Type:** Warning/Pitfall
+  - Instead of adding a routing table entry for the same router's IP address for each of those networks, you can simply say for any network that you don't know a route to use this router as the default gateway.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - This way, any request to any network outside of your existing network goes to this particular router.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So in a simple setup like this, all you need is a single routing table entry with the default gateway set to the router's IP address.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Remember, instead of the word default, you could also say 0.0.0.0.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - It means any IP destination.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Both of these lines mean the same thing.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 61 | **Type:** Warning/Pitfall
+  - A 0.0.0.0 entry in the gateway field indicates that you don't need a gateway.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 62 | **Type:** Exam Tip
+  - For example, in this case, for system C to access any devices in the 192.1682.0 network.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - It doesn't need a gateway because it is in its own network.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 64 | **Type:** Exam Tip
+  - But say you have multiple routers in your network, one for the internet, another for the internal private network.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - Then you will need to have two separate entries for each network, one entry for the internal private network, and another entry with the default gateway for all other networks, including public networks.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 66 | **Type:** Troubleshooting
+  - So if you're having issues reaching internet from your systems, this routing table and the default gateway configuration is a good place to start.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Let us now look at how we can set up a Linux host as a router.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Let's start with a simple setup.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - I have three hosts A, B and C, A and B are connected to a network 192, 1681, and B and C to another 1192168.2.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So host B is connected to both the networks using two interfaces, eth0 and eth1.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - A has IP 1921681.5, C has 1921682.5, and B has an IP on both the networks 1.6 and 2.6.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - How do we get A to talk to C?
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Basically, if I try to ping 2.5 from A, it would say network is unreachable.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And by now we know why that is.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Host A has no idea how to reach a network at 192.168.2.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - We need to tell host A that the door or gateway to network two is through host B, and we do that by adding a routing table entry.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - We add a route to access network 192.168.2 via the gateway.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - 192.1681.6.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - If the packets were to get through to host C.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Host C will have to send back responses to host A.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - When host C tries to reach host A at 192.1681.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - Network.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 83 | **Type:** Troubleshooting
+  - It would face the same issue.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So we need to let host C know that it can reach host A through host B, which is acting as a router.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So we add a similar entry into Host C's routing table.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - This time we say to reach network 1921681.0.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - Talk to host B at 192.1682.6.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 88 | **Type:** Troubleshooting
+  - When we try to ping now, we no longer get the network unreachable error message.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 89 | **Type:** Warning/Pitfall
+  - That means our routing entries are right, but we still don't get any response back by default in Linux.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - Packets are not forwarded from one interface to the next.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 91 | **Type:** Exam Tip
+  - For example, packets received on eth0 on host B are not forwarded to elsewhere through each one.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - This is this way for security reasons.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 93 | **Type:** Exam Tip
+  - For example, if you had eth0 connected to your private network and eth1 to a public network.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 94 | **Type:** Warning/Pitfall
+  - We don't want anyone from the public network to easily send messages to the private network, unless you explicitly allow that.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - But in this case, since we know that both are private networks and it is safe to enable communication between them, we can allow host B to forward packets from one network to the other.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Whether a host can forward packets between interfaces is governed by a setting in this system at file proc sys net IPv4 IP underscore forward.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - By default, the value in this file is set to zero, meaning no forward.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 98 | **Type:** Best Practice
+  - Set this to one and you should see the pins go through.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Now remember simply setting this value does not persist the changes across reboots.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - For that, you must modify the same value in the Etsy Sis control dot conf file.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So let's take away some key commands from this lecture.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - This will be handy in the upcoming lectures.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - IP link is to list and modify interfaces on the host.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - IP addr command is to see the IP addresses assigned to those interfaces.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - IP addr add command is used to set IP addresses on the interfaces.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - Now remember, changes made using these commands are only valid till a restart.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - If you want to persist these changes, you must set them in the network interfaces file.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - IP root, or simply the root command, is used to view the routing table and IP route.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - Add command is used to add entries into the routing table.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - And finally, remember the command to check if IP forwarding is enabled on a host.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 111 | **Type:** Implementation Step
+  - If you're working with a host configured as a router.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `205_Prerequisite Switching, Routing, Gateways CNI in Kubernetes.extraction.md` | **Entry:** 113 | **Type:** Implementation Step
+  - In the next lecture we will discuss about DNS configurations.
+
+### Prerequisite DNS
+
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this video we get introduced to DNS in Linux for the absolute beginners.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - We will discuss the basic concepts and view some commands that will help us explore DNS configuration on hosts, specifically Linux hosts.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We have two computers, A and B, both part of the same network, and they've been assigned with IP addresses 1921681.1 and 1.11.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - You're able to ping one computer from the other using the other computer's IP address.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - You know that system B has database services on them.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So instead of having to remember the IP address of system B, you decide to give it a name DB.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Going forward, you would like to ping system B using the name db instead of its IP address.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - If you try to ping DB now, you would see that host A is unaware of a host named DB.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 9 | **Type:** Troubleshooting
+  - So how do you fix that?
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Basically, you want to tell system A that system B at IP address 1921681.17 11 has a name DB.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - We want to tell system A that when I say db, I mean the IP 1921681.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - 11.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - You can do that by adding an entry into the Etsy host file on system A, mention the IP address and the name you want your host to see.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - System B, as we told system A that the IP at 1921681.11 is a host named DB to DB.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Now gets sent to the correct IP and are successful.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Now there is an important point to note here.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - We told system A that the IP at 1921681.11 is a host named DB host A takes that for granted.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Whatever we put in the Etsy host file is the source of truth for host A, but that need not be the truth.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Host A does not check to make sure if system B is actual name is db.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - For instance, running a hostname command on system B reveals that it is named host two, but host A doesn't care.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - It goes by what's in the host file.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - You can even fool system A to believing that system B is Google.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Just add an entry into the host file with an IP mapping to google.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Then ping Google and you will get a response from system B.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So we have two names pointing to the same system.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - One SDB and another as Google.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And we can use either names to reach system B.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - You can have as many names as you want for as many servers as you want in the Etsy host file.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Every time we reference another host by its name from host A through a ping command or SSH command, or through any of the applications or tools within this system, it looks into its Etsy host file to find out the IP address of that host.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Translating host name to IP address this way is known as name resolution.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Within a small network of few systems, you can easily get away with the entries in the Etsy Hosts file.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - On each system, I specify which are the other systems in the environment, and that's how it was done in the past.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Until the environment grew and these files got filled with too many entries, and managing these became too hard.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - If one of the server's IP changed, you would need to modify the entries in all of these hosts.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And that's where we decided to move all these entries into a single server who will manage it centrally.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - We call that our DNS server, and then we point all hosts to lookup that server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - If they need to resolve a hostname to an IP address instead of its own.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Etsy hosts files.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So how do we do that?
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - How do we point our host to a DNS server?
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Our DNS server has the IP 192.1681.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - 100.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Every host has a DNS resolution configuration file at Etsy Resolv.conf.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - You add an entry into it specifying the address of the DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - We say name server and point it to 192.168.1.10.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 46 | **Type:** Best Practice
+  - And that should be it.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Once this is configured on all of your hosts, every time a host comes up across a hostname that it does not know about, it looks it up from the DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 48 | **Type:** Best Practice
+  - If the IP of any of the host was to change, simply update the DNS server and all hosts should resolve the new IP address going forward.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - You no longer need any entries in the etc. host file in any of the hosts, but that does not mean you can't have entries in host file.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - You still can.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 51 | **Type:** Exam Tip
+  - For example, say you were to provision a test server for your own needs.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 52 | **Type:** Warning/Pitfall
+  - You don't think others would need to resolve the server by its name, so it need not be added to the DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - In that case, you can add an entry into your host's Etsy host file to resolve this server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - You can now resolve the server, however, no other system will be able to do that.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So a system is able to use hostname to IP mapping from the Etsy host file locally, as well as from a remote DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - What if you have an entry in both places, one in your Etsy host file and another in DNS?
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - I have an entry in my local file set to 192.1681.115, and someone added an entry for the same host to 1921681.116 on the DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - In that case, the host first looks in the local Etsy host file and then looks at the name server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So if it finds the entry in the local Etsy host file, it uses that.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - If not, it looks for that host in the DNS server, but that order can be changed.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - The order is defined by an entry in the file Etsy Nsswitch.conf.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - The line with the host entry.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - As you can see, the order is first files and then followed by DNS files.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Refers to Etsy host file and DNS refers to the DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - So for every host name, the host first looks into the Etsy host file, and if it cannot find it there, it then looks at the DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - This order can be modified by editing this entry in the file as per this order.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Our host would resolve the test server to 192.1681.115.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - What if you try to ping a server that is not in either list?
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 69 | **Type:** Exam Tip
+  - For example, I try and ping facebook.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 70 | **Type:** Warning/Pitfall
+  - I don't have facebook.com in my Etsy host file, and I don't have it in my DNS server either.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So in that case it will fail.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - You can add another entry into your resolv.conf file to point to a Nameserver that knows Facebook.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 73 | **Type:** Exam Tip
+  - For example, 8.8.8.8 is a common, well-known public name server available on the internet, hosted by Google that knows about all websites on the internet.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 74 | **Type:** Exam Tip
+  - You can have multiple name servers like this configured on your host, but then you will have to configure that on all your hosts in your network.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - You already have a name server within your network configured on all the hosts.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - So in that case, you can configure the DNS server itself to forward any unknown host names to the public name server on the internet.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 77 | **Type:** Best Practice
+  - You should now be able to ping external sites such as facebook.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Until now, we've been just trying to reach systems with their names like web DB, NFS, etc. but we just try to ping Facebook at facebook.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - What is this name with the W-w-w?
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - And at the end it's called a domain name, and it is how IP's translate to names that we can remember on the public internet, just like how we did for our hosts.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Now, the reason they are in this format, separated by dots, is to group like things together.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - The last portion of the domain name, the dot coms, the dot net, dot edu, dot org, etc. are the top level domains that represent the intent of the website.com for commercial or general purpose dot net for network, dot edu for educational organizati...
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - Let's look at one in particular.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - In Google's case, the dot is the root.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - That's where everything starts.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - Dot com is the top level domain.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - Google is the domain name assigned to Google, and w-w-w is a subdomain.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - The subdomains help in further grouping things together under Google.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 89 | **Type:** Exam Tip
+  - For example, Google's map service is available at maps.google.com, so maps is a subdomain.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - Google's storage service is available at drive.google.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - Mobile apps are available at maps.google.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Google's email service are available at mail.google.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - You can further divide each of these into as many subdomains based on your needs.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So you begin to see a tree structure forming.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - When you try to reach any of these domain names, say Maps.google.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 96 | **Type:** Implementation Step
+  - From within your organization, your request first hits your organization's internal DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - It doesn't know who apps or Google is, so it forwards your request to.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - The internet.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 99 | **Type:** Exam Tip
+  - On the internet, the IP address of the server serving Maps.google.com may be resolved with the help of multiple DNS servers.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - A DNS server looks at your request and points you to a DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - Serving as a DNS server looks at your request and forwards you to Google, and Google's DNS server provides you the IP of the server serving the apps applications.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - In order to speed up all future results, your organization's DNS server may choose to cache this IP for a period of time, typically few seconds up to few minutes.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - That way, it doesn't have to go through the whole process again each time.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - So that was out in the public.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - What about your organization?
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - Your organization can have a similar structure too.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 107 | **Type:** Exam Tip
+  - For example, your organization could be called as my company.com and have multiple subdomains for each purpose.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - The W-w-w for external facing website.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - Mail my company.com for accessing your organizations mail drive for accessing storage.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - Paid or Company.com for accessing the payroll application, HR for accessing HR application, etc..
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 111 | **Type:** Implementation Step
+  - All of these are configured in your organization's internal DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - The reason we discussed all of this is to understand another entry in the Etsy Resolv.conf file.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 113 | **Type:** Implementation Step
+  - Remember, this is the file where we configured the DNS server to be used for our host.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - With that, we were able to resolve servers in your organization with just their names like web.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - We have now introduced more standard domain names like web dot my Company.com or my Company.com, etc. now when you ping web, you can no longer get a response.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - Of course, this is because we are trying to ping web, but there is no record for by the name web on my DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - Instead it is web company.com so you have to use web dot company.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - Now I can understand if someone outside our company wants to access our web server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - He would have to use web company.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 120 | **Type:** Implementation Step
+  - But within our company, your own company, you want to simply address the web server by its first name, web.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - Just like how you address other members in your family simply by their first names, which is not the case when someone outside your family addresses them using their full names.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 122 | **Type:** Implementation Step
+  - So what do you do to configure web?
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 123 | **Type:** Concept
+  - To resolve my web?
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - My company.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - You want to say when I say web, I mean web dot Company.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - For that, you make an entry into your host's Etsy resolv.conf file called search and specify the domain name you want to append.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 127 | **Type:** Implementation Step
+  - Next time you try to ping web, you will see it actually tries web dot company.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - Now your host is intelligent enough to exclude the search domain.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - If you specified a domain in your query like this, you may also provide additional search domains like this.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So it would mean.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - When I say web, I mean web dot my Company.com or web product Company.com.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - So your host would try searching all of these domain names when you look for a host name.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 133 | **Type:** Concept
+  - Finally, a word about a record types.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - So how were the records stored in the DNS server?
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - We know that it stores IP to host names.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 136 | **Type:** Concept
+  - That's known as a records.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 137 | **Type:** Concept
+  - Storing IPv6 to host names is known as quad records mapping.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 138 | **Type:** Concept
+  - One name to another name is called CNAME records.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 139 | **Type:** Exam Tip
+  - For example, you may have multiple aliases for the same application, like a food delivery service may also be reached at eat or hungry.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 140 | **Type:** Concept
+  - That's where a CNAME record is used.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 141 | **Type:** Concept
+  - Name to name mapping.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 142 | **Type:** Concept
+  - There are many more, but that's all we're going to look at for now.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 143 | **Type:** Concept
+  - Now, ping may not always be the right tool to test DNS resolution.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 144 | **Type:** Concept
+  - There are a few other tools as well, such as Nslookup.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 145 | **Type:** Concept
+  - You can use Nslookup to query a hostname from a DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 146 | **Type:** Concept
+  - But remember Nslookup does not consider the entries in the local Etsy host file.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 147 | **Type:** Concept
+  - So if you add an entry into the local Etsy host file for your web application, and if you try to do an nslookup for that web application, it is not going to find it.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 148 | **Type:** Concept
+  - The entry for your web application has to be present in your DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 149 | **Type:** Concept
+  - Nslookup only queries the DNS server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 150 | **Type:** Concept
+  - The same goes with dig.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 151 | **Type:** Concept
+  - Dig is another useful tool to test DNS name resolution.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 152 | **Type:** Concept
+  - It returns more details in a similar form as is stored on the server.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 153 | **Type:** Troubleshooting
+  - In the upcoming Practice Exercises section, you will practice configuring and troubleshooting DNS in a lab environment on actual systems through some fun and challenging exercises.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 154 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 155 | **Type:** Implementation Step
+  - And in the next lecture, we'll look at how to set up an actual DNS server on a system where we will use DNS as our DNS solution.
+- **File:** `206_Prerequisite DNS.extraction.md` | **Entry:** 156 | **Type:** Warning/Pitfall
+  - Well, thank you so much for watching, and don't forget to subscribe to my channel for more videos like this.
+
+### Prerequisite Network Namespaces
+
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this video, we get introduced to network namespaces in Linux.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Network namespaces are used by containers like Docker to implement network isolation.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We'll start with a simple host.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - As we know already, containers are separated from the underlying host using namespaces.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So what are namespaces?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - If your host was your house, then namespaces are the rooms within the house that you assign to each of your children.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - The room helps in providing privacy to each child.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Each child can only see what's within his or her room.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - They cannot see what happens outside their room.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - As far as they're concerned, they're the only person living in the house.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - However, as a parent, you have visibility into all the rooms in the house, as well as other areas of the house.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - If you wish, you can establish connectivity between two rooms in the house.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - When you create a container, you wanna make sure that it is isolated, that it does not see any other processes on the host or any other containers.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So we create a special room for it on our host using a namespace.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - As far as the container is concerned, it only sees the processes run by it and thinks that it is on its own host.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - The underlying host, however, has visibility into all of the processes, including those running inside the containers.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - This can be seen when you list the processes from within the container.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - You see a single process with a process ID of one.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - When you list the same processes as a route user from the underlying host, you see all the other processes along with the process running inside the container.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - This time with a different process ID.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - It's the same process running with different process IDs inside and outside the container.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - That's how namespaces work.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - When it comes to networking, our host has its own interfaces that connect to the local area network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Our host has its own routing and arp tables with information about rest of the network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - We want to seal all of those details from the container.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - When the container is created, we create a network namespace for it.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - That way, it has no visibility to any network related information on the host.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Within its namespace, the container can have its own virtual interfaces, routing, and arp tables.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - The container has its own interface.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - To create a new network namespace on a Linux host, run the IP netns add command.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - In this case, we create two network namespaces to list the network namespace, run the IP netns command.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - To list the interfaces on my host, I run the IP link command.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - I see that my host has the loopback interface and the eat zero interface.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - Now, how do we view the same within the network namespace that we created?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - How do we run the same command within the red or blue namespace?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 36 | **Type:** Troubleshooting
+  - Prefix the command with the command IP netns exec, followed by the namespace name, which is red.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Now, the IP link command will be executed inside the red namespace.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Another way to do it is to add the -n option to the original IP link command.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Both of these are the same.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - The second one is similar, but remember, this only works if you intend to run the IP command inside the namespace.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - As you can see, it only lists the loopback interface.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - You cannot see the eight zero interface on the host.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So with namespaces, we have successfully prevented the container from seeing the host's interface.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - The same is true with the arp table.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - If you run the arp command on the host, you see a list of entries.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - But if you run it inside the container, you see no entries and the same for routing table.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Now, as of now, these network namespaces have no network connectivity.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - They have no interfaces of their own and they cannot see the underlying host network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - Let's first look at establishing connectivity between the namespaces themselves.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Just like how we would connect two physical machines together using a cable to an ethernet interface on each machine, you can connect two namespaces together using a virtual ethernet pair or a virtual cable.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - It's often referred to as a pipe, but I like to call it a virtual cable with two interfaces on either ends.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - To create the cable, run the IP link add command with a type set to veth and specify the two ends, veth-red and veth-blue.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - The next step is to attach each interface to the appropriate namespace.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Use the command IP link set veth-red netns red to do that.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Similarly, attach the blue interface to the blue namespace.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - We can then assign IP addresses to each of these namespaces.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - We will use the usual IP LEDR command to assign the IP address, but within each namespace.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - We will assign the red namespace and IP 192.168.15.1.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - We then assign the blue namespace and IP 192.168.15.2.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - We then bring up the interface using the IP link set up command for each device within the respective namespaces.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - The links are up and the namespaces can now reach each other.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - Try a ping from the red namespace to reach the IP of the blue.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - If you look at the arp table on the red namespace, you see it's identified its blue neighbor at 192.168.15.2 with a MAC address.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Similarly, if you list the arp table on the blue namespace, you see it's identified, it's red neighbor.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 65 | **Type:** Comparison
+  - If you compare this with the arp table of the host, you see that the hosts arp table has no idea about this new namespaces we have created and no idea about the interfaces we created in them.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Now, that worked when you had just two namespaces.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - What do you do when you have more of them?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - How do you enable all of them to communicate with each other?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - Just like in the physical world, you create a virtual network inside your host, create a network, you need a switch.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - So to create a virtual network, you need a virtual switch.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - So you create a virtual switch within our host and connect the namespaces to it.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - But how do you create a virtual switch within a host?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 73 | **Type:** Exam Tip
+  - There are multiple solutions available, such as the native solution called as Linux Bridge, and the Open vSwitch, et cetera.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 74 | **Type:** Exam Tip
+  - In this example, we will use the Linux Bridge option.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - To create an internal bridge network, we add a new interface to the host using the IP link add command with the type set to bridge.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - We will name it v-net-0.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - As far as our host is concerned, it is just another interface, just like the eight zero interface.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - It appears in the output of the IP link command along with the other interfaces.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - It's currently down, so you need to turn it up.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Use the IP link set dev up command to bring it up.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Now, for the namespaces, this interface is like a switch that it can connect to.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So think of it as an interface for the host and a switch for the namespaces.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - So the next step is to connect the namespaces to this new virtual network switch.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - Earlier, we created the cable or the eth pair with the veth-red interface on one end and blue interface on the other because we wanted to connect the two namespaces directly.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - Now, we will be connecting all namespaces to the bridge network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - So we need new cables for that purpose.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - This cable doesn't make sense anymore, so we will get rid of it.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Use the IP link delete command to delete the cable.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - When you delete the link with one end, the other end gets deleted automatically since they are a pair.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - That does now create new cables to connect the namespace to the bridge.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - Run the IP link add command and create a pair with veth-red on one end like before, but this time, the other end will be named veth-red-br as it connects to the bridge network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - This naming convention will help us easily identify the interfaces that associate to the red namespace.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - Similarly, create a cable to connect the blue namespace to the bridge network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - Now that we have the cables ready, it's time to get them connected to the namespaces.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - To attach one end of the interface to the red namespace, run the IP link set veth-red netns red command.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - To attach the other end to the bridge network, run the IP link set command on the veth-red-br end and specify the master for it as the v-net-0 network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - Follow the same procedure to attach the blue cable to the blue namespace and the bridge network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - That has now set IP addresses for these links and turn them up.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - We'll use the same IP addresses that we used before, 192.168.15.1 and 192.168.15.2.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - And finally, turn the devices up.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - The containers can now reach each other over the network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - So we follow the same procedure to connect the remaining namespaces to the same network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - We now have all four namespaces connected to our internal bridge network, and they can all communicate with each other.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - They have all IP addresses 192.168.15.1, two, three, and four.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - And remember, we assigned our host the IP 192.168.1.2.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - From my host, what if I try to reach one of these interfaces in these namespaces?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - Will it work?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - No.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - My host is on one network and the namespaces are on another.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - But what if I really want to establish connectivity between my host and this namespaces?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - Remember, we said that the bridge switch is actually a network interface for the host.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - So we do have an interface on the 192.168.15 network on our host.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - Since this just another interface, all we need to do is assign an IP address to it so we can reach the namespace through it.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - Run the IP addr command to set the IP 192.168.15.5 to this interface.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - We can now ping the red namespace from our local host.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - Now, remember, this entire network is still private and restricted within the host.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - From within the namespaces, you can't reach the outside world, nor can anyone from the outside world reach the services or applications hosted inside.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - The only door to the outside world is the ethernet port on the host.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 119 | **Type:** Implementation Step
+  - So how do we configure this bridge to reach the LAN network through the ethernet port?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - Say there is another host attached to our LAN network with the address 192.168.1.3.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 121 | **Type:** Concept
+  - How can I reach this host from within my namespaces?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - What happens if I try to ping this host from my blue namespace?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 123 | **Type:** Concept
+  - The blue namespace sees that I'm trying to reach a network at 192.168.1, which is different from my current network of 192.168.15.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - So it looks at its routing table to see how to find that network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - The routing table has no information about other network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - So it comes back saying that the network is unreachable.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 127 | **Type:** Concept
+  - So we need to add an entry into the routing table to provide a gateway or door to the outside world.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - So how do we find that gateway?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - A door or a gateway, as we discussed before, is a system on the local network that connects to the other network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So what is a system that has one interface on the network local to the blue namespace, which is the 192.168.15 network, and is also connected to the outside LAN network?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - Here's a logical view.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - It's the local host that have all these namespaces on so you can ping the namespaces.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 133 | **Type:** Concept
+  - Remember, our local host has an interface to attach to the private network so you can ping the namespaces.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - So our local host is the gateway that connects the two networks together.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - We can now add a route entry in the blue namespace to say, route all traffic to the 192.168.1 network through the gateway at 192.168.15.5.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 136 | **Type:** Concept
+  - Now, remember, our host has two IP addresses, one on the bridge network at 192.168.15.5, and another on the external network at 192.168.1.2.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 137 | **Type:** Concept
+  - Can you use any in the route?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 138 | **Type:** Concept
+  - No, because the blue namespace can only reach the gateway in its local network at 192.168.15.5.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 139 | **Type:** Best Practice
+  - The default gateway should be reachable from your namespace when you add it to your route.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 140 | **Type:** Warning/Pitfall
+  - When you try to ping now, you no longer get the network unreachable message, but you still don't get any response back from the ping.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 141 | **Type:** Concept
+  - What might be the problem?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 142 | **Type:** Concept
+  - We talked about a similar situation in one of our earlier lectures, where from our home network, we try to reach the external internet through our router.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 143 | **Type:** Warning/Pitfall
+  - Our home network has our internal private IP addresses that the destination network don't know about, so they cannot reach back.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 144 | **Type:** Concept
+  - For this, we need NAT enable on our host acting as the gateway here so that it can send the messages to the LAN in its own name with its own address.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 145 | **Type:** Concept
+  - So how do we add NAT functionality to our host?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 146 | **Type:** Best Practice
+  - We should do that using iptables.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 147 | **Type:** Concept
+  - Add a new rule in the NAT iptable in the post routing chain to masquerade or replace the from address on all packets coming from the source network 192.168.15.0 with its own IP address.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 148 | **Type:** Concept
+  - That way, anyone receiving these packets outside the network will think that they're coming from the host and not from within the namespace.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 149 | **Type:** Concept
+  - When we try to ping now, we see that we are able to reach the outside world.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 150 | **Type:** Concept
+  - Finally, say the LAN is connected to the internet.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 151 | **Type:** Concept
+  - We want the namespaces to reach the internet.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 152 | **Type:** Concept
+  - So we try to ping a server on the internet at 8.8.8.8 from the blue namespace.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 153 | **Type:** Concept
+  - We receive a familiar message that the network is unreachable.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 154 | **Type:** Concept
+  - By now we know why that is.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 155 | **Type:** Concept
+  - We look at the routing table and see that we have routes to the network 192.168.1, but not to anything else.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 156 | **Type:** Concept
+  - Since these namespaces can reach any network our host can reach, we can simply say that to reach any external network, talk to our host.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 157 | **Type:** Best Practice
+  - So we add a default gateway specifying our host, we should now be able to reach the outside world from within these namespaces.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 158 | **Type:** Concept
+  - Now, what about connectivity from the outside world to inside the namespaces?
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 159 | **Type:** Exam Tip
+  - Say for example, the blue namespace hosts a web application on port 80.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 160 | **Type:** Concept
+  - As of now, the namespaces are on an internal private network and no one from the outside world knows about them.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 161 | **Type:** Concept
+  - We can only access these from the host itself.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 162 | **Type:** Concept
+  - If you try to ping the private IP of the namespace from another host on another network, you will see that it's not reachable.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 163 | **Type:** Concept
+  - Obviously, because that host doesn't know about this private network.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 164 | **Type:** Concept
+  - In order to make that communication possible, you have two options.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 165 | **Type:** Concept
+  - The two options that we saw previously on that.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 166 | **Type:** Implementation Step
+  - The first is to give away the identity of the private network to the second host.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 167 | **Type:** Warning/Pitfall
+  - So we basically add an IP route entry to the second host, telling the host that the network 192.168.15 can be reached through the host at 192.168.1.2, but we don't want to do that.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 168 | **Type:** Concept
+  - The other option is to add a port forwarding rule using iptables to say any traffic coming to port 80 on the local host is to be forwarded to port 80 on the IP assigned to the blue namespace.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 169 | **Type:** Concept
+  - Well, that's it for this video.
+- **File:** `208_Prerequisite Network Namespaces.extraction.md` | **Entry:** 170 | **Type:** Concept
+  - Thank you for watching.
+
+### Prerequisite Docker Networking
+
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Hello and welcome to this lecture.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In this lecture we look at networking in Docker.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - We will start with a basic networking options in Docker, and then try and relate it to the concepts around networking namespaces.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Let's start with a single Docker host a server with Docker installed on it.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - It has an Ethernet interface at eth0 that connects to the local network with the IP address.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - 192.168.1.1.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - When you run a container, you have different networking options to choose from.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - First, let's see the Non-network with the Non-network.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - The Docker container is not attached to any network.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - The container cannot reach the outside world, and no one from the outside world can reach the container.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 11 | **Type:** Exam Tip
+  - If you run multiple containers, they are all created without being part of any network and cannot talk to each other or to the outside world.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Next is the host network.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - With the host network, the container is attached to the host's network.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - There is no network isolation between the host and the container.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - If you deploy a web application listening on port 80.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - In the container.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - Then the web application is available on port 80 on the host without having to do any additional port mapping.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - If you try to run another instance of the same container that listens on the same port, it won't work as they share the host networking and two processes cannot listen on the same port at the same time.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - The third networking option is the bridge.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - In this case, an internal private network is created which the Docker host and containers attached to the network has an address 172.17.0.0 by default, and each device connecting to this network get their own internal private network address on th...
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - This is the network that we are most interested in.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - So we will take a deeper look at how exactly Docker creates and manages this network.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - When Docker is installed on the host, it creates an internal private network called bridge by default.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - You can see this when you run the Docker network ls command.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - Now Docker calls the network by the name, but on the host, the network is created by the docker zero.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - You can see this in the output of the IP link command.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 27 | **Type:** Command
+  - 
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So remember the name bridge in Docker network output refers to the name docker zero on the host to run the same thing.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Also note that the interface or network is currently down.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Now remember we said that the bridge network is like an interface to the host, but a switch to the namespaces or containers within the host.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So the interface docker zero on the host is assigned an IP 172.17.0.1.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - You can see this in the output of the IP addr command.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - Whenever a container is created, Docker creates a network namespace for it, just like how we created network namespaces in the previous video.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Run the IP net command to list the namespace.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Note that there is a minor hack to be done to get the IP Netns command.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - To list the namespaces created by Docker.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Check out the resources section of this lecture for information on that.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - The namespace has the name starting B3165.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - You can see the namespace associated with each container in the output of the docker inspect command.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So how does Docker attach the container or its network namespace to the bridge network?
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - For the remainder of this lecture, a container and network namespace means the same thing.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - When a container, I'm referring to the network namespace created by Docker for that container.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So how does Docker attach the container to the bridge?
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - As we did before, it creates a cable a virtual cable with two interfaces on each end.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - Let's find out what Docker has created here.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - If you run the IP link command on the Docker host, you see one end of the interface which is attached to the local bridge Docker zero.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - If we run the same command again, this time with the dash n option with the namespace, then it lists the other end of the interface within the container namespace.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - The interface also gets an IP assigned within the network.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - You can view this by running the IP addr command, but within the container's namespace the container gets assigned 172.17.0.3.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - You can also view this by attaching to the container and looking at the IP address assigned to it that way.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - The same procedure is followed every time a new container is created.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 52 | **Type:** Command
+  - 
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - The interface pairs can be identified using their numbers.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Odd and even form a pair nine and ten are one, pair seven and eight are another.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - 11 and 12 are one pair.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - The containers are all part of the network.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Now they can all communicate with each other.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - Let us look at port mapping now. the container we created is nginx.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So it's a web application serving web page on port 80.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Since our container is within a private network inside the host, only other containers in the same network are.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - The host itself can access this web page.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - If you try to access the web page using curl with the IP of the container from within Docker host on port 80, you will see the web page.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - If you try to do the same thing outside the host, you cannot view the web page to allow external users to access the applications hosted on containers.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 64 | **Type:** Command
+  - 
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Tell Docker to map port 8080 on the Docker host to port 80 on the container.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - With that done, you could access the web application using the IP of the Docker host and port 8080.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Any traffic to port 8080 on the docker host will be forwarded to port 80 on the container.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - Now all of your external users and other applications or service can use this URL to access the application deployed on the host.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - But how does Docker do that?
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - How does it forward traffic from one port to another?
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Well, what would you do?
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Let's forget about Docker and everything else for a second.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - The requirement is to forward traffic coming in on one port to another port on the server.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - We talked about it in one of our prerequisite lectures.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - We create a Nat rule for that using iptables.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - We create an entry into the Nat table to append the rules to the prerouting chain, to change the destination port from 1880 to 80.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 77 | **Type:** Command
+  - 
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 78 | **Type:** Command
+  - 
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - You can see the rule Docker creates when you list the rules in iptables.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `210_Prerequisite Docker Networking.extraction.md` | **Entry:** 81 | **Type:** Implementation Step
+  - In the next lecture we will talk about CNI and what a container networking interface is.
+
+### Prerequisite CNI
+
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Hello and welcome to this lecture.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In this lecture we look at container networking interface.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So far we saw how network namespaces work as in how to create an isolated network namespace environment.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Within our system.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 5 | **Type:** Exam Tip
+  - We saw how to connect multiple such namespaces through a bridged network, how to create virtual cables or pipes with virtual interfaces on either end, and then how to attach each end to a namespace and the bridge.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 6 | **Type:** Warning/Pitfall
+  - We don't know how to assign IP and bring them on, and finally enable Nat or IP masquerade for external communication, etc. we then saw how Docker did it for its bridge networking option.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - It was pretty much the same way, except that it uses different naming patterns.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Well, other container solutions solve their networking challenges in kind of the same way, like Rocket or Mesos, containerization, or any other solutions that work with containers and requires to configure networking between them like Kubernetes.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 9 | **Type:** Comparison
+  - If we are all trying to solve the same networking challenges by researching and finally identifying a similar approach with our own little minor differences.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 10 | **Type:** Exam Tip
+  - Why code and develop the same solution multiple times?
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Why not just create a single standard approach that everyone can follow?
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So we take all of these ideas from the different solutions, and move all the networking portions of it into a single program or code.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And since this is for the bridge network, we call it bridge.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So we created a program or script that performs all the required tasks to get the container attached to a bridge network.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 15 | **Type:** Exam Tip
+  - For example, you could run this program using its name bridge and specify that you want to add this container to a particular network namespace.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 16 | **Type:** Operational Insight
+  - The bridge program takes care of the rest so that the container runtime environments are relieved of those tasks.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 17 | **Type:** Exam Tip
+  - For example, when Rocket or Kubernetes creates a new container, they call the bridge program and pass the container ID and namespace to get networking configured for that container.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - So what if you wanted to create such a program for yourself, maybe for a new networking type?
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 19 | **Type:** Best Practice
+  - If you were doing so, what arguments and commands should it support?
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - How do you make sure the program you create will work correctly with these runtimes?
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 21 | **Type:** Operational Insight
+  - How do you know that container runtimes like Kubernetes or Rocket will invoke your program correctly?
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 22 | **Type:** Best Practice
+  - That's where we need some standards to find a standard that defines how a program should look, how container runtimes will invoke them so that everyone can adhere to a single set of standards and develop solutions that work across runtimes.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Basuo container network interface comes in.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 24 | **Type:** Best Practice
+  - The CNI is a set of standards that define how programs should be developed to solve networking challenges in a container.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 25 | **Type:** Operational Insight
+  - Runtime environments.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - The programs are referred to as plugins, in this case bridge Brits program that we have been referring to is a plugin for CNI.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 27 | **Type:** Best Practice
+  - CNI defines how the plugin should be developed and how container runtimes should invoke them.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 28 | **Type:** Operational Insight
+  - CNI defines a set of responsibilities for container runtimes and plugins for container runtimes.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - CNI specifies that it is responsible for creating a network namespace for each container.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 30 | **Type:** Best Practice
+  - It should then identify the networks the container must attach to.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Container runtime must then invoke the plugin when a container is created using the add command, and also invoke the plugin when the container is deleted using the del command.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - It also specifies how to configure a network plugin on the container runtime environment using a JSON file.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 33 | **Type:** Best Practice
+  - On the plugin side, it defines that the plugin should support add del and check command line arguments, and that these should accept parameters like container and network namespace.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 34 | **Type:** Best Practice
+  - The plugin should take care of assigning IP addresses to the pods and any associated routes required for the containers to reach other containers in the network at the end, the results should be specified in a particular format, as long as the con...
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 35 | **Type:** Best Practice
+  - Any runtime should be able to work with any plugin.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - CNI comes with a set of supported plugins already, such as bridge, Vlan, IP, Vlan, Macvlan one for windows, as well as iPam plugins like host, local and DHCP.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - There are other plugins available from third party organizations as well.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 38 | **Type:** Exam Tip
+  - Some examples are weave, flannel, cilium, VMware, NSX, calico, Infoblox, etc. all of these container runtimes implement CNI standards, so any of them can work with any of these plugins.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - But there is one that is not in this list.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 40 | **Type:** Command
+  - 
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Her Docker does not implement.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 42 | **Type:** Command
+  - 
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 43 | **Type:** Warning/Pitfall
+  - These plugins don't natively integrate with Docker, meaning you can't run a Docker container and specify the network plugin to use is CNI and specify one of these plugins.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - But that doesn't mean you can't use Docker with CNI at all, you just have to work around it yourself.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 45 | **Type:** Exam Tip
+  - For example, create a Docker container without any network configuration and then manually invoke the bridge plugin yourself.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - That is pretty much how Kubernetes does it.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - When Kubernetes creates Docker containers, it creates them on the network.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - It then invokes the configured CNI plugins who take care of the rest of the configuration.
+- **File:** `211_Prerequisite CNI.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - We talk about CNI in Kubernetes in the upcoming lectures.
+
+### Cluster Networking
+
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture, we look at the networking configurations required on the master and worker nodes in a Kubernetes cluster.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - The Kubernetes cluster consists of master and worker nodes.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Each node must have at least one interface connected to a network.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - Each interface must have an address configured.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - The hosts must have a unique hostname set as well as a unique Mac address.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 6 | **Type:** Best Practice
+  - You should note this especially if you created the VMs by cloning from existing ones.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - There are some ports that needs to be opened as well.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - These are used by the various components in the control plane.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 9 | **Type:** Best Practice
+  - The master should accept connections on 6443 for the API server.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - The worker nodes.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Kube control tool.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - External users and all other control plane components.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 13 | **Type:** Architecture
+  - Access the kube API server via this port.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 14 | **Type:** Architecture
+  - The Kubelets on the master and worker nodes.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Listen on port 10250.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Yes.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 17 | **Type:** Architecture
+  - In case we didn't discuss this, the Kubelets can be present on the master node as well.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 18 | **Type:** Architecture
+  - The kube scheduler requires port 10259 to be open.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 19 | **Type:** Architecture
+  - The kube controller manager requires port 10257 to be open.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 20 | **Type:** Best Practice
+  - The worker nodes expose services for external access on port 30,000 to 32,767, so this should be open as well.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 21 | **Type:** Exam Tip
+  - Finally, the etcd server listens on port 2379 if you have multiple master nodes.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - All of these ports need to be open on those as well.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 23 | **Type:** Architecture
+  - And you also need an additional port 2380 open so the etcd clients can communicate with each other.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - The list of ports to be opened are also available in the Kubernetes documentation page.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So consider this when you set up networking for your nodes and your firewalls or iptables rules or network security group in a cloud environment such as GCP or Azure or AWS.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - And if things are not working, this is one place to look for while you're investigating.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Head over to the practice session and explore the networking setup in the existing environment.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Keep these commands handy while you look for information.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - We will start with simple exercises where you will explore an existing Kubernetes cluster and view information about the interfaces, IPS, hostnames, ports, etc. this will help you familiarize with the environment and look for information in the fu...
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Going forward, we will get into more challenging exercises.
+- **File:** `212_Cluster Networking.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - For now, let's start slow.
+
+### Lab Solution - Explore Environment (optional)
+
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - Instructor: For the first question, it's asking us how many nodes are part of this cluster.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So we can do this by running a kubectl get nodes and we can see there's two nodes, control-plane and node01.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So I'll select two.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - What is the internal IP address of the controlplane node in the cluster?
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So we're gonna run the same command, kubectl get nodes, but this time passing a -o wide.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - That's gonna give us a little bit more information.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And what we specifically want is the INTERNAL-IP column.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So this is gonna give us the internal IP address, which is what it's asking for.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So for under controlplane, we can see it's 192.5.114.3.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So I'll select that.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - What is the network interface configured for cluster connectivity on control-plane node?
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So here, I'm going to run the command.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So there's two commands, you can either do ip address, or you can do ip link.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - It doesn't matter which one you use, each one will give you the same information.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So we do ip address and what you want to do is find the interface that has this specific IP.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So we will go down and we'll see one 114.3.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And if you go through all the interfaces, when we get down to eth0, we could see that it's got the one 114.3.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So this IP address is bound to this interface.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So this is what's gonna be used for cluster connectivity.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So I'll select eth0.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Now, it's asking for what is the MAC address of the interface on the control-plane?
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So it's asking us what's the MAC address of the interface of eth0.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So we're already here, we've already got the output open.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So we can just run this right here.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So this is the answer, 72:03, it's gonna be this guy.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - But if you wanted to, you could also run ip address show and then the name of the interface.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So if you just wanted to see the information for this interface without it cluttering your screen, you could do show eth0.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And that's gonna give us all of the same information, but just for this interface.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Now it's asking us, what is the IP address assigned to node01?
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So we'll do kubectl get nodes -o wide.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And now, we grab the INTERNAL-IP of node01, which is the one 114.6.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So I'll grab, that's this guy right here.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - And so I'll grab one 114.6.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - What is the MAC address assigned to node01?
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - So we're gonna do the same steps for node01.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - I'm gonna SSH to that one first.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So now we're on node01 and I can just do an ip address.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - And we gotta look for the one 114.6.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So if I scroll down, we can see one 114.6, that's also eth0 on node01.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And then, if you take a look at the MAC address for that interface, we can see it's 72:06.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So I'll select 72:06.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - The next question is asking us, we use the Containerd as our container runtime.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - What is the interface/bridge created by on that host?
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So this is asking specifically, you know, back on the controlplane, we'll do ip address, or ip link.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And we wanna look for the bridge/interface that the Containerd is gonna be using, so that's going to be the cni0.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Now, I know that's what's going to be the bridge/interface, but if you didn't know that that was a bridge/interface on a Linux host, what you can do is you can run this command, ip address show.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So this is gonna show you, you know, based off a certain criteria what interfaces you're interested in and you type in type and bridge.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So this is gonna show you all of the bridge interfaces on this machine.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And so here, you can see the only bridge interface is cni0, so we'll select cni0.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - What is the state of interface cni0?
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So we've already got this information up.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 52 | **Type:** Best Practice
+  - If you just scroll to the right, you should see a state of UP, right here.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - The next question is asking us, if you were to ping Google from the control-plane node, what route does it take?
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Basically, it's asking us what is the IP address of the default gateway?
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So I'm gonna do a ip route.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - This is gonna list all of the routes on this host and we can see that the default route is via 172.25.0.1 on eth1 interface.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So that's the IP address of the default gateway, 172.25.0.1.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So basically, anytime you send a request to anybody that's outside of any of the following networks, which you already have routes for, it's, by default, going to go to this IP address right here.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 59 | **Type:** Architecture
+  - The next question is asking us, what is the port the kube-scheduler is listening on in the controlplane.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So to figure out what port it's listening on, we're gonna want to use the netstat command and I recommend you take a look at the different flags so we can figure out what we want.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - And I realize that there's a typo.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - Okay, so we do netstat.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Now, a couple of things that we want, since we want to figure out what port it's listening on, we want the -l.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - This is gonna be display listening server sockets.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 65 | **Type:** Architecture
+  - Also, I want to be able to do, you know, like a netstat and then filter based off of, you know, scheduler, to figure out the schedule process.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 66 | **Type:** Architecture
+  - So we want to do the -p flag, which is gonna list out the program name, so that we can actually grep for the scheduler.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 67 | **Type:** Warning/Pitfall
+  - And then finally, the other flag that I usually like to do, in general, which is the -n flag here, which is saying don't resolve the names of the ports, right?
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 68 | **Type:** Warning/Pitfall
+  - Don't resolve the names of the ports or the IP addresses.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - I want to be able to physically see the number, or then it's going to try to figure out what is the protocol that uses that specific port.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So let's run those flags.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - I'll do -npl, and then I'm gonna do a | grep -i, the -i means we're going to, it's going to be case-insensitive, so it doesn't matter if we capitalize it or not.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 72 | **Type:** Architecture
+  - And I'll do scheduler.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 73 | **Type:** Architecture
+  - And we see that the scheduler is listening on this port right here, 10259.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 74 | **Type:** Architecture
+  - Now, it's saying notice that the ETCD is listening on two ports.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Which of these have more client connections established?
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 76 | **Type:** Architecture
+  - And so to do that, we will run the same command, but this time we're going to grep for ETCD.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - All right, so you could see that we are listening on 2379 and 2381.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So those are the two ports.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - And now we want to figure out how many established connections there are.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So once again, we're gonna do the --help.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 81 | **Type:** Warning/Pitfall
+  - We're not gonna be using the listening flag anymore because we don't care about what's listening.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - We wanna find the the established connections.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So we're gonna display all sockets, that's gonna be the -a.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 84 | **Type:** Architecture
+  - We're gonna do the -p again, so we can see all the programs that we can grep for ETCD.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 85 | **Type:** Warning/Pitfall
+  - And then, we'll do the n flag, numeric, so we don't resolve the names.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 86 | **Type:** Architecture
+  - So now I'll do netstat -npa | grep -i ETCD.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So this is gonna show us all of the established connections.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - And this is going to show us for all the ports, 2379, 2380.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - You can see most of the connections are 2379.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 90 | **Type:** Warning/Pitfall
+  - You don't see a lot of 2380 zeros.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So we already kind of know the answer, but let's go ahead and run a command that's going to actually count the total number of connections.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 92 | **Type:** Architecture
+  - So I'm gonna do grep -i ETCD, then I'm gonna do | grep -i and I'm gonna grep for 2379.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - And then we could do a wc -l.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - That's gonna count the number of lines.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So we could see there's 67, and if I change this to 2380, we can see there's one.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - So we can see clearly that the 2379 has way more connections, so I'll select that.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 97 | **Type:** Architecture
+  - And we could see that this is just saying that the reason for this is because 2379 is the port of ETCD to which all control plane components connect to.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - 2380 is only for peer-to-peer connectivity.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 99 | **Type:** Warning/Pitfall
+  - And so that's only used when you have multiple control plane nodes, which in this case we don't.
+- **File:** `215_Lab Solution - Explore Environment (optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - And so that's going to wrap up this lab.
+
+### Pod Networking
+
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we discuss about pod networking in Kubernetes.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So far, we have set up several Kubernetes master and worker nodes and configured networking between them.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So they are all on a network that can reach each other.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - We also make sure the firewall and network security groups are configured correctly to allow for the Kubernetes control plane components to reach each other.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 5 | **Type:** Architecture
+  - Assume that we have also set up all the Kubernetes control plane components, such as the cube API server, the etcd servers, kubelets, etc. and we are finally ready to deploy our applications.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - But before we can do that, there is something that we must address.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - We talked about the network that connects the nodes together, but there's also another layer of networking that is crucial to the clusters functioning, and that is the networking at the pod layer.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Our Kubernetes cluster is soon going to have a large number of pods and services running on it.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - How are the pods addressed?
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - How do they communicate with each other?
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 11 | **Type:** Operational Insight
+  - How do you access the services running on these parts internally from within the cluster, as well as externally from outside the cluster.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - These are challenges that Kubernetes expects you to solve.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - As of today, Kubernetes does not come with a built in solution for this.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - It expects you to implement a networking solution that solves these challenges.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - However, Kubernetes has laid out clearly the requirements for pod networking.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Let's take a look at what they are.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 17 | **Type:** Best Practice
+  - Kubernetes expects every pod to get its own unique IP address, and that every pod should be able to reach every other pod within the same node using that IP address.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 18 | **Type:** Best Practice
+  - And every pod should be able to reach every other pod on other nodes as well, using the same IP address.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - It doesn't care what IP address that is and what range or subnet it belongs to.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - As long as you can implement a solution that takes care of automatically assigning IP addresses and establish connectivity between the pods in a node as well as pods on different nodes, you're good without having to configure any Nat rules.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So how do you implement a model that solves these requirements?
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Now there are many networking solutions available out there that does this, but we have already learned about networking concepts routing, IP address management, namespaces and CNI.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - So let's try to use that knowledge to solve this problem by ourselves first.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - This will help in understanding how other solutions work.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - I know there is a bit of repetition, but I'm trying to relate the same concept and approach all the way from plain network namespaces on Linux all the way to Kubernetes.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So we have a three node cluster.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - It doesn't matter which one is master or worker.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - They all run pods either for management or workload purposes.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - As far as networking is concerned, we're going to consider all of them as the same.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - So first let's plan what we're going to do.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - The nodes are part of an external network and has IP addresses in the 192.168.1. series, node one is assigned 11, node two is 12, and node three is 13.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - Next step.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - When containers are created, Kubernetes creates network namespaces for them to enable communication between them.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - We attach these namespaces to a network.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - But what network?
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - We've learned about networks that can be created within nodes to attach namespaces.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So we create a bridge network on each node and then bring them up.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - It's time to assign an IP address to the bridge interfaces or networks.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - But what IP address.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - We decide that each person network will be on its own subnet.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Choose any private address range, say ten 244.11244.2 and ten 244.3.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - Next we set the IP address for the bridge interface.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So we have built our base.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - The remaining steps are to be performed for each container and every time a new container is created.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So we write a script for it.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 46 | **Type:** Warning/Pitfall
+  - Now, you don't have to know any kind of complicated scripting.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 47 | **Type:** Exam Tip
+  - It's just a file that has all commands we will be using, and we can run this multiple times for each container.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Going forward.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - To attach a container to the network, we need a pipe or virtual network cable.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - We create that using the IP link add command.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 51 | **Type:** Warning/Pitfall
+  - Don't focus on the options as they are similar to what we saw in our previous lectures.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Assume that they vary depending on the inputs.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - We then attach one end to the container and another end to the bridge.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Using the IP link, set command with an assigned IP address using the IP addr command, and add a route to the default gateway.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - But what IP do we add?
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - We either manage that ourselves or store that information in some kind of database.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - For now, we will assume it is 10.244 .1.2, which is a free IP in the subnet.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - We discuss about IP address management in detail in one of the upcoming lectures.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Finally, we bring up the interface.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - We then run the same script, this time for the second container with its information, and gets the container connected to the network.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - The two containers can now communicate with each other.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - We copy the script to the other nodes and run the script on them to assign IP address and connect those containers to their own internal networks.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - So we have solved the first part of the challenge.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - The pods all get their own unique IP address and are able to communicate with each other on their own nodes.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - The next part is to enable them to reach other pods on other nodes.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 66 | **Type:** Exam Tip
+  - Say for example, the pod at ten 244 1.2 on node one wants to ping pod 10 to 4 4.2.2 on node two.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - As of now, the first has no idea where the address ten 244.2.2 is because it is on a different network than its own, so it routes to node one IP as it is said to be the default gateway.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Node one doesn't know either, since 10 to 44 .2.2 is a private network on node two.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Add a root to node ones routing table to route traffic to 10 to 44 .2.2 via the second node's IP at 192.168.1.12.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Once the root is added, the blue pod is able to ping across.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - Similarly, we configure root on all hosts to all the other hosts with information regarding the respective networks within them.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 72 | **Type:** Architecture
+  - Now this works fine in this simple setup, but this will require a lot more configuration as and when your underlying network architecture gets complicated.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - Instead of having to configure routes on each server.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - A better solution is to do that on a router if you have one in your network, and point all hosts to use that as the default gateway.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - That way, you can easily manage routes to all networks in the routing table on the router.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - With that, the individual virtual networks we created with the address ten .244.1.0 slash 24.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - On each node now form a single large network with the address 10.244.0.0 slash 16.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - It's time to tie everything together.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - We performed a number of manual steps to get the environment ready with the bridged networks and routing tables.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - We then wrote a script that can be run for each container that performs the necessary steps required to connect each container to the network.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And we executed the script manually.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 82 | **Type:** Warning/Pitfall
+  - Of course, we don't want to do that, as in large environments where thousands of pods are created every minute.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - So how do we run this script automatically when a pod is created on Kubernetes?
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - That's where CNI comes in.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - Acting as the middleman.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 86 | **Type:** Best Practice
+  - CNI tells Kubernetes that this is how you should call a script as soon as you create a container, and CNI tells us this is how your script should look like.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So we need to modify the script a little bit to meet CNI standards.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 88 | **Type:** Best Practice
+  - It should have an add section that will take care of adding a container to the network, and a delete section that will take care of deleting container interfaces from the network and freeing the IP address, etc..
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So our script is ready.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 90 | **Type:** Operational Insight
+  - The container runtime on each node is responsible for creating containers.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - Whenever a container is created, the container runtime looks at the CNI configuration passed as a command line argument when it was run, and identifies our scripts name.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - It then looks in the CNI bin directory to find our script, and then executes the script with the add command and the name and namespace ID of the container, and then our script takes care of the rest.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - We will look at how and where the CNI is configured in Kubernetes in the next lecture, along with practice tests.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - For now, let's set from the Pod Networking Concepts lecture.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 95 | **Type:** Best Practice
+  - Hopefully that should give you enough knowledge on inspecting networking within pods in a Kubernetes cluster.
+- **File:** `216_Pod Networking.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - We will see how other solutions do the same thing that we did in the upcoming lectures.
+
+### CNI in kubernetes
+
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - This lecture will discuss about CNI in Kubernetes.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In the prerequisite lectures we started all the way from the absolute basics of network namespaces.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - Then we saw how it is done in Docker.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - We then discussed why you need standards for networking containers and how the container network interface came to be.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - And then we saw a list of supported plugins available with CNI.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - In this lecture we will see how Kubernetes is configured to use these network plugins.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 7 | **Type:** Operational Insight
+  - As we discussed in the prerequisite lecture, CNI defines the responsibilities of container runtime as per CNI container runtimes.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - In our case, Kubernetes is responsible for creating container network namespaces, identifying and attaching those namespaces to the right network by calling the right network plugin.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So where do we specify the CNI plugins for Kubernetes to use?
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - The CNI plugin must be invoked by the component within Kubernetes that is responsible for creating containers, because that component must then invoke the appropriate network plugin after the container is created, the component that is responsible...
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 11 | **Type:** Exam Tip
+  - The two good examples are Containerd and Cri-o.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 12 | **Type:** Operational Insight
+  - Not that Docker was the original container runtime, which was later replaced by an abstraction called container D, which we kind of explained in the beginning of this course.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now, we discussed earlier that there are many network plugins available today.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - How do you configure these container runtimes to use a particular plugin?
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - First of all, the network plugins are all installed in the directory op cni bin.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 16 | **Type:** Operational Insight
+  - So that's where the container runtimes find the plugins.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - But which plugin to use and how to use it is configured in the directory forward slash forward slash CNI forward slash net d.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 18 | **Type:** Exam Tip
+  - There may be multiple configuration files in this directory that's responsible for configuring each plugin.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - If you look at the CNI bin directory, you'll see that it has all the supported CNI plugins as executables such as the bridge, DHCP, flannel, etc. the CNI config directory has a set of configuration files.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 20 | **Type:** Operational Insight
+  - This is where container runtime looks to find out which plugin needs to be used.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - In this case it finds the bridge configuration file.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 22 | **Type:** Exam Tip
+  - If there are multiple files here, it will choose the one in alphabetical order.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - If you look at the bridge conf file, it looks like this.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - This is a format defined by the CNI standard for a plugin configuration file.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Its name is minute.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Type is bridge.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - It also has a set of other configurations which we can relate to.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - The concepts we discussed in the prerequisite lectures on bridging, routing and masquerading in Nat.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 29 | **Type:** Best Practice
+  - D is gateway defines whether the bridge interface should get an IP address assigned so it can act as a gateway.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 30 | **Type:** Best Practice
+  - The IP masquerade defines if a Nat rule should be added for IP masquerading.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - The iPam section defines iPam configuration.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - This is where you specify the subnet or range of IP addresses that will be assigned to pods and any necessary routes.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - The type host local indicates that the IP addresses are managed locally on this host, unlike a DHCP server maintaining it remotely.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - The type can also be set to DHCP to configure an external DHCP server.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `217_CNI in kubernetes.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Head over to the practice exercises and practice working with CNI in Kubernetes.
+
+### CNI weave
+
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Hello and welcome to this lecture.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In this lecture we will discuss about one solution based on CNI, in particular, Weaveworks, the Weaveworks Weave CNI plugin.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - In the previous practice test, we saw how it is configured.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Now we will see more details about how it works.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 5 | **Type:** Architecture
+  - We will start where we left off in the pod networking concepts section, we had our own custom CNI script that we've built and integrated into Kubelet through CNI.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - In the previous lecture, we saw how instead of our own custom script, we integrated the Weave plugin.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Let is now see how the Weave solution works as it is important to understand at least one solution well.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 8 | **Type:** Best Practice
+  - You should then be able to relate this to other solutions as well.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So the networking solution we set up manually had a routing table which mapped what networks are on what hosts.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So when a packet is sent from one pod to the other, it goes out to the network, to the router, and finds its way to the node that hosts that pod.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Now that works for a small environment and in a simple network, but in larger environments with hundreds of nodes, in a cluster and hundreds of pods on each node, this is not practical.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The routing table may not support so many entries, and that is where you need to get creative and look for other solutions.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Think of the Kubernetes cluster as our company and the nodes as different office sites.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - With each site, we have different departments, and within each department we have different offices.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Someone in office one wants to send a packet to office three and hand it over to the office boy, all he knows is it needs to go to office three, and he doesn't care who or how it is transported.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 16 | **Type:** Exam Tip
+  - The office boy takes the package, gets in his car, looks up the address for the target office in GPS, uses directions on the streets and finds his way to the destination site, delivers the package to the payroll department, who in turn forwards th...
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - This works just fine for now.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - We soon expand to different regions and countries, and this process no longer works.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - It's hard for the office boy to keep track of so many routes to these large number of offices across different countries.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And of course, he can't drive to these offices by himself.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - That's where we decide to outsource all mailing and shipping activities to a company who does it best.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - Once the shipping company is engaged, the first thing that they do is place their agents in each of our company's sites.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - These agents are responsible for managing all shipping activities between sites.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - They also keep talking to each other and are well connected.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So they all know about each other's sites, the departments in them, and the offices in them.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 26 | **Type:** Exam Tip
+  - And so when a package is sent from, say, office 10 to office three, the shipping agent in that site intercepts the package and looks at the target office name.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 27 | **Type:** Exam Tip
+  - He knows exactly in which site and department that office is in through his little internal network with his peers on the other sites, he then places this package into his own new package with the destination address set to the target site's locat...
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 28 | **Type:** Exam Tip
+  - Once the package arrives at the destination, it is again intercepted by the agent on that site, he opens the packet, retrieves the original packet, and delivers it to the right department.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - Back to our world, where the Weave CNI plugin is deployed on a cluster, it deploys an agent or service on each node.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - They communicate with each other to exchange information regarding the nodes and networks and pods within them.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Each agent or peer stores a topology of the entire setup.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - That way they know the pods and their IPs on the other nodes.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - Weave creates its own bridge on the nodes and names at Weave, then assigns IP address to each network.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 34 | **Type:** Exam Tip
+  - The IPs shown here are just examples.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - In the upcoming practice test, you will figure out the exact range of IP addresses we've assigned on each node.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - We will talk about IP address management and how IP addresses are handed out to pods and containers in the next lecture.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 37 | **Type:** Exam Tip
+  - Remember that a single pod may be attached to multiple bridge networks.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 38 | **Type:** Exam Tip
+  - For example, you could have a pod attached to the Weave Bridge as well as the Docker Bridge created by Docker.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - What path a packet takes to reach its destination depends on the route configured on the container.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - Weave makes sure that pods gets the correct route configured to reach the agent, and the agent then takes care of other pods.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Now, when a packet is sent from one pod to another on another node, Weave intercepts the packet and identifies that it's on a separate network, it then encapsulates this packet into a new one with new source and destination and sends it across the...
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Once on the other side, the other Weave agent retrieves the packet, decapsulates it, and routes the packet to the right pod.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - So how do we deploy Weave on a Kubernetes cluster?
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - Weave and Weave Peers can be deployed as services or daemons on each node in the cluster manually, or if Kubernetes is set up already, then an easier way to do that is to deploy it as pods in the cluster.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - Once the base Kubernetes system is ready, with nodes and networking configured correctly between the nodes and the basic control plane components are deployed, Weave can be deployed in the cluster with a single kubectl apply command.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - This deploys all the necessary components required for Weave in the cluster.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Most importantly, the Weave peers are deployed as a daemon set.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - A daemon set ensures that one pod of the given kind is deployed on all nodes in the cluster.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - This works perfectly for the Weave cluster.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - If you deployed your cluster with a Kubeadm tool and Weave plugin, you can see the Weave peers as pods deployed on each node.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 51 | **Type:** Troubleshooting
+  - For troubleshooting purpose, view the logs using the kubectl logs command.
+- **File:** `219_CNI weave.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - Well, that's it for this lecture, I will see you in the next.
+
+### Lab Solution - Explore CNI (optional)
+
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 1 | **Type:** Architecture
+  - Instructor: So, for the first question, it's asking us to inspect the kubelet service and identify the container runtime endpoint that's set for this Kubernetes cluster.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 2 | **Type:** Architecture
+  - So, I'm gonna do a ps -aux | grep -i kubelet.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - And we can see there's a lot of information.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 4 | **Type:** Operational Insight
+  - So I'm gonna further drill that down, hence, I'm gonna grep for container -runtime.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 5 | **Type:** Operational Insight
+  - And we can see the --container-runtime-endpoint flag is set to unix:///var/run/containerd/containerd.sock.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So I will select this one.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - What is the path configured with all binaries of CNI supported plug-ins?
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So all of the plug-ins are going to be stored in /opt/cni/bin.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - And so, if I then do an ls, we can see all of the binaries here.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So, it's going to be /opt/cni/bin.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Identify which of the below plugins is not available in the list of available CNI plugins on the host?
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So let's see, vlan, we have vlan there.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - We have, let's see, cisco, do we have cisco?
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Doesn't look like we have cisco.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Let's just double check if the other two are there.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So bridge, we've got bridge.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Dhcp, we've got dhcp.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So cisco is not there.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - What is the CNI plugin configured to be used on this Kubernetes cluster?
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So to see that, we can just do a ls /etc/cni/net.d.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - So this is going to tell us which plugin has been configured, and we could see it's flannel.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So I'll select flannel.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 23 | **Type:** Architecture
+  - And what binary executable file will be run by the kubelet after a container and its associated namespaces are created?
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So if I cat that file, and let me actually move into there.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Here we can see that the binary that it's gonna run is flannel.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - And then after that, it's gonna run portmap.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So the answer is flannel.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And that's gonna match up with this binary here.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So we'll say flannel.
+- **File:** `221_Lab Solution - Explore CNI (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And that's going to wrap up this lab.
+
+### ipam weave
+
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Hello and welcome to this lecture.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In this lecture we discussed about IP address management.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So how does IP address management work in Kubernetes.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - This section does not concern the IP address assigned to the nodes in the network.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - We can manage that on your own or with your own external iPam solutions.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - What this section covers is how are the virtual bridge networks in the nodes assigned an IP subnet, and how are the pods assigned an IP?
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Where is this information stored and who is responsible for ensuring there are no duplicate IPS assigned?
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Let's start with the Who.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Let's ask CNI as they are the ones who define the standards.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - CNI says it is the responsibility of the CNI plugin, the network solution provider, to take care of assigning IPS to the containers.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Remember the basic plugin we built earlier?
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - We actually took care of assigning IP addresses within this plugin.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - There was a section for assigning IP to the container network namespace.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - But how do we manage these IPS?
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Now?
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 16 | **Type:** Warning/Pitfall
+  - Kubernetes doesn't care how we do it, we just need to do it by making sure we don't assign any duplicate IPS and manage it properly.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - An easy way to do it is to store the list of IPS in a file, and make sure we have necessary code in our script to manage this file properly.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - This file would be placed on each host and manages the IPS of pods on those nodes.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Instead of coding that ourselves in our script, CNI comes with two built in plugins to which you can outsource this task to.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - In this case, the plugin that implements the approach that we followed for managing the IP addresses locally on each host is the host local plugin, but it is still our responsibility to invoke that plugin in our script.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Or we can make our script dynamic to support different kinds of plugins.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - The CNI configuration file has a section called iPam, in which we can specify the type of plugin to be used, the subnet and route to be used.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - These details can be read from our script to invoke the appropriate plugin, instead of hard coding it to use host local every time.
+- **File:** `222_ipam weave.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Well, for this lecture, head over to the Practice Test and explore iPam in the CNI plugin.
+
+### Service Networking
+
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will discuss about service networking.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - In the previous lectures we talked about pod networking, how bridge networks are created within each node, and how pods get a namespace created for them, and how interfaces are attached to those namespaces, and how pods get an IP address assigned ...
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - And we also saw through routes or other overlay techniques, we can get the pods in different nodes to talk to each other, forming a large virtual network where all pods can reach each other.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - Now, you would rarely configure your pods to communicate directly with each other.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - If you want a pod to access services hosted on another pod, you would always use a service.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Let's quickly recap the different kinds of services to make the orange pod accessible to the blue pod.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - We create an orange service.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - The orange service gets an IP address and a name assigned to it.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - The blue pod can now access the orange pod through the Orange Services IP or its name.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - We'll talk about name resolution in the upcoming lectures.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - For now, let's just focus on IP addresses.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The blue and orange pod are on the same node.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - What about access from the other pods on other nodes?
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - When a service is created, it is accessible from all pods on the cluster, irrespective of what nodes the pods are on.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - While a pod is hosted on a node, a service is hosted across the cluster.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - It is not bound to a specific node.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - But remember the service is only accessible from within the cluster.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - This type of service is known as cluster IP.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - If the orange pod was hosting a database application that is to be only accessed from within the cluster, then this type of service works just fine.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Say, for instance, the purple pod was hosting a web application to make the application on the pod accessible.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - Outside the cluster, we create another service of type node port.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - This service also gets an IP address assigned to it and works just like cluster IP.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - As in all the other pods can access this service using its IP.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - But in addition, it also exposes the application on a port on all nodes in the cluster.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - That way, external users or applications have access to the service.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So that's the topic of our discussion for this lecture.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Our focus is more on services and less on pods.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - How are the services getting these IP addresses and how were they made available across all the nodes in the cluster?
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - How is the service made available to external users through a port on each node?
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Who is doing that and how and where do we see it?
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So let's get started.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Let's start on a clean slate.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - We have a three node cluster.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 34 | **Type:** Architecture
+  - No pods or services yet we know that every Kubernetes node runs a kubelet process which is responsible for creating pods.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 35 | **Type:** Architecture
+  - Each kubelet service on each node watches the changes in the cluster through the kube API server, and every time a new pod is to be created, it creates the pod on the nodes.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - It then invokes the CNI plugin to configure networking for that pod.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Similarly, each node runs another component known as kube proxy.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 38 | **Type:** Architecture
+  - Kube proxy watches the changes in the cluster through kube API server, and every time a new service is to be created, kube proxy gets into action.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - Unlike pods, services are not created on each node or assigned to each node.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Services are a cluster wide concept.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - They exist across all the nodes in the cluster.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 42 | **Type:** Warning/Pitfall
+  - As a matter of fact, they don't exist at all.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - There is no server or service really listening on the IP of the service.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - We have seen that pods have containers, and containers have namespaces with interfaces and IPS assigned to those interfaces with services.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Nothing like that exists.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - There are no processes or namespaces or interfaces for a service.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - It's just a virtual object.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - Then how do they get an IP address, and how were we able to access the application on the pod through service?
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - When we create a service object in Kubernetes, it is assigned an IP address from a predefined range.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 50 | **Type:** Best Practice
+  - The kube proxy components running on each node gets that IP address and creates forwarding rules on each node in the cluster, saying any traffic coming to this IP, the IP of the service should go to the IP of the pod.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Once that is in place, whenever a pod tries to reach the IP of the service, it is forwarded to the pods IP address, which is accessible from any node in the cluster.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Now remember, it's not just the IP, it's an IP and port combination.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - Whenever services are created or deleted, the kube proxy component creates or deletes these rules.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - So how are these rules created?
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 55 | **Type:** Comparison
+  - Kube proxy supports different ways, such as user space, where kube proxy listens on a port for each service, and proxies connections to the pods by creating ipvs rules.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Or the third and the default option, and the one familiar to us is using iptables.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - The proxy mode can be set using the proxy mode option while configuring the kube proxy service.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - If this is not set, it defaults to iptables.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - So we'll see how iptables are configured by kube proxy and how you can view them on the nodes.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - We have a pod named DB deployed on node one.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - It has IP address 10.244.1.2.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - We create a service of type cluster IP to make this pod available within the cluster.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - When the service is created, Kubernetes assigns an IP address to it.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - It is set to 10.103.132.104.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 65 | **Type:** Architecture
+  - This range is specified in the kube API servers option called Service Cluster IP range, which is by default set to 10.0.0.0 slash 24.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 66 | **Type:** Architecture
+  - In my case, if I look at my kube API server option, I see it is set to 10.96.0.0 slash 12.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - That gives my services IP anywhere from 10.96.0.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - 0 to 1 0.111.255.255.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - A relative point to mention here.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - When I set up my pod networking, I provided a Pod network Cidr range of 10.244.0.0 16, which gives my pod's IP addresses from 10 to 40 40.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - 0 to 1 244.255.255.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 72 | **Type:** Best Practice
+  - The reason I brought this up here is because whatever range you specify for each of these networks, it shouldn't overlap, which it doesn't in this case.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 73 | **Type:** Best Practice
+  - Both of these should have its own dedicated range of IPS to work with.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 74 | **Type:** Best Practice
+  - There shouldn't be a case where a pod and a service are assigned the same IP address.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So getting back to services, that's how my service got an IP address of 10.103.132.104.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - You can see the rules created by kube proxy in the iptables Nat table.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Output.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - Search for the name of the service as all rules created by kube proxy have a comment with the name of the service on it.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - These rules mean any traffic going to the IP address.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 80 | **Type:** Best Practice
+  - Ten 103132.104 on port 3306, which is the IP of the service, should have its destination address changed to 10 to 44 .1.2 and port 3306, which is the IP of the pod.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - This is done by adding a Nat rule to iptables.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - Similarly, when you create a service of type node port, kube proxy creates iptables rules to forward all traffic coming on a port on all nodes to the respective backend ports.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - You can also see kube proxy create these entries in the kube proxy logs itself.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - In the logs you will find what proxy it uses.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - In this case it's iptables and then adds an entry when it added a new service for the database.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - Note that the location of this file might vary depending on your installation.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 87 | **Type:** Warning/Pitfall
+  - If you don't see these entries, you must also check the verbosity level of the process as well.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Well, that's it about service networking.
+- **File:** `224_Service Networking.extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - I will see you in the next lecture.
+
+### Lab Solution - Service Networking (optional)
+
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - Instructor: So, the first question it's asking us, "What network range are the nodes in the cluster a part of?" So, what this is asking us, what is the IP address of the nodes?
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Not the pods or the services, but the nodes itself.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So, what I'm gonna do is I'm gonna do a kubectl get nodes -o, and I'm gonna do wide.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And I'm gonna look for the internal IP of my nodes.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So, I'm on the control plane, so 192.16.10.10.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And so now if I take a look at the interfaces on this node I could do an IP add.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And we're gonna see all of the interfaces.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And so, if we go down to ethernet zero or ethernet one, we wanna look for whichever interface has this IP address which is ethernet zero, which has 192.6.10.10.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So, the subnet is going to be 192.168.10.0/24.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - 24 means that the last eight bits, so the last octet is going to be reserved for the host addresses.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So we want 192.168...
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Sorry, 192.6.10.0/24.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So that's what all of the nodes are gonna be using.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - What is the range of IP addresses configured for pods on this cluster?
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - So first of all, we have to see what we're doing from a networking perspective.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And so, I'm gonna just do a kubectl get all --all-namespaces just to see everything that's deployed.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And if we look at the kube system namespace, we could see that we have a weave pod.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So for networking, we're using weave.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So I'm actually gonna take a look at the logs of that pod to see if it's gonna give us some information about what IP addresses are gonna be used for the pods in our cluster.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So, I'll do a kubectl logs.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - I'll grab one of the weave pods.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And I'm just gonna start at the top and just kind of scroll my way down until I see a log message that tells us what subnet's gonna use.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And what we wanna do is look for something like ipalloc for IP allocation, and we can see ipalloc range 10.244.0.0/16.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - So, any pods that you deploy, they're gonna be part of this subnet here.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So, the answer is 10.244.0.0/16.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 26 | **Type:** Architecture
+  - Now, the next question is asking, "What is the IP range configured for the services within the cluster?" And to see the IP address range for services, what we wanna do is take a look at the configuration of the API server.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 27 | **Type:** Architecture
+  - So the API server, it's manifests are gonna be located in /etsy, I think it's kubernetes/manifests.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And we're gonna look at the kube-apiserver.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 29 | **Type:** Best Practice
+  - And we're gonna go to the top and there should be a certain flag that specifies the service range or the IP address range for the services.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And here we go, service-cluster-ip-range which is 10.96.0.0/12.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Next question's asking us how many cube proxy pods are deployed in this cluster?
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So, I'm gonna do a kubectl get pods -n kube-system.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 33 | **Type:** Architecture
+  - We could see that we have two kube-proxy pods.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So, I'll select two.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 35 | **Type:** Architecture
+  - What type of proxy is the kube-proxy configured to use?
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 36 | **Type:** Architecture
+  - Well for this, well, let's take a look at the kube-proxy pods themselves and we'll see if the logs tell us anything.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So, I'll do kubectl logs, and I'll grab one of these pods.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - And I'm just gonna look through the logs to see if it tells us what type of proxy it's using.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So, detecting node IP address using IP tables proxy.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Okay, so this is probably the answer right here using IP tables proxy.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So, let's select IP tables.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 42 | **Type:** Architecture
+  - And finally, it's asking how does the Kubernetes cluster ensure that the kube-proxy pod runs on all nodes in the cluster?
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - Now, just knowing based off of this question, you know, what is the methodology that we use to normally deploy on every single node in a cluster?
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Usually it's a DaemonSet.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - But let's confirm that's the case.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 46 | **Type:** Architecture
+  - So, I'm gonna do a kubectl get all -- all-namespaces and I'm just gonna look for anything with kube-proxy.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So obviously under pods I see the kube-proxies, that's fine.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Under services, there's nothing there.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 49 | **Type:** Architecture
+  - Under DaemonSet looks like we do have a kube-proxy.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - So, there's nothing under Deployment.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Nothing under ReplicaSet, it's under DaemonSet.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 52 | **Type:** Architecture
+  - So, that means that we are using a DaemonSet to deploy a kube-proxy pod onto every single node.
+- **File:** `226_Lab Solution - Service Networking (optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And so, that's going to wrap up this lab.
+
+### DNS in kubernetes
+
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will discuss about DNS in the Kubernetes cluster.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - If you are new to DNS, make sure you go through the prerequisites section on DNS where we discuss what DNS is, what are the tools used for working with DNS, such as host Nslookup and the Dig utility, and the different types of DNS records like a, ...
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - In this lecture we will see what names are assigned to what objects.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - What are service DNS records, pod DNS records?
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - What are the different ways you can reach one pod from another?
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - And in the next lecture we will see how Kubernetes implements DNS in the cluster.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So we have a three node Kubernetes cluster with some pods and services deployed on them.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Each node has a node name and IP address assigned to it.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - The node names and IP addresses of the cluster are probably registered in a DNS server in your organization.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Now how that is managed, who accesses them are not of concern in this lecture.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - In this lecture, we discuss about DNS resolution within the cluster between the different components in the cluster, such as pods and services.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Kubernetes deploys a built in DNS server by default when you set up a cluster.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - If you set up Kubernetes manually, then you do it by yourself.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - We will see how that is done and how it is configured in the next lecture.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - As far as this lecture is concerned, we will see how it helps pods resolve other parts and services within the cluster.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 16 | **Type:** Warning/Pitfall
+  - So we don't really care about nodes.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - We focus purely on pods and services within the cluster.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - As long as our cluster networking is set up correctly.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 19 | **Type:** Best Practice
+  - Following the best practices we learned so far in this section, and all pods and services can get their own IP address and can reach each other, which should be good.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Let's start with just two pods and a service.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - I have a test pod on the left with the IP set to 1234.1.5, and I have a web pod on the right with the IP set to 1244.2.5.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Looking at their IPS, you can guess that they're probably hosted on two different nodes, but that doesn't really matter as far as DNS is concerned.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - We assume that all ports and services can reach each other using their IP addresses.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - To make the web server accessible to the test port, we create a service.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Rename it Web Service.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - The service gets an IP ten 10737.188.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - Whenever a service is created, the Kubernetes DNS service creates a record for the service.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - It maps the service name to the IP address.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So within the cluster, any pod can now reach this service using its service name.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - Remember, we talked about namespaces earlier that everyone within the namespace address each other just with their first names, and to address anyone in another namespace, you use their full names.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - In this case, since the test pod and the web pod and its associated service are all in the same namespace, the default namespace.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - You are able to simply reach the web service from the test pod using just the service name web service.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Let's assume the web service was in a separate namespace named apps.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - Then to refer to it from the default namespace, you would have to say WebService dot apps.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - The last name of the service is now the name of the namespace.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So here WebService is the name of the service, and apps is the name of the namespace for each namespace.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - The DNS server creates a subdomain.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - All the services are grouped together into another subdomain called SVC.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So what was that about?
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Let's take a closer look.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Web service is the name of the service, and apps is the name of the namespace.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - For each namespace.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - The DNS server creates a subdomain with its name.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - All pods and services for a namespace are thus grouped together within a subdomain in the name of the namespace.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - All the services are further grouped together into another subdomain called SVC.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So you can reach your application with the name Web service SVC.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Finally, all the services and pods are grouped together into a root domain for the cluster, which is set to cluster dot local by default, so you can access the service using the URL web service dot svc cluster local.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And that's the fully qualified domain name for the service.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So that's how services are resolved within the cluster.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - What about pods?
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - Records for pods are not created by default, but we can enable that explicitly.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - We will see that in the next lecture.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - Once enabled, records are created for pods as well.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - It does not use the pod name though.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - For each pod, Kubernetes generates a name by replacing the dots in the IP address with dashes.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - The namespace remains the same and type is set to pod.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - The root domain is always cluster dot, local.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Similarly, the pod in the default namespace gets a record in the DNS server with its IP converted to a hostname.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Ten 240 415 and namespace set to default type is pod and the root is cluster dot local.
+- **File:** `227_DNS in kubernetes.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - This resolves to the IP address of the pod.
+
+### CoreDNS in Kubernetes
+
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will discuss how Kubernetes implements DNS in the cluster.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In the previous lecture, we saw how you can address a service or pod from another pod.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - In this lecture we will see how Kubernetes makes that possible.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Say you were given two pods with two IP addresses.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - How would you do it?
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Based on what we learned in the prerequisite lectures on DNS?
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - An easy way to get them to resolve each other is to add an entry into each of their Etsy hosts file on the first pod.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - I would say the second pod web is at 10.244.2.5.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And on the second pod.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - I would say the first pod test is at 10.244 .1.5.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - But of course, when you have thousands of pods in the cluster and hundreds of them being created and deleted every minute, this is not a suitable solution.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So we moved these entries into a central DNS server.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - We then point these pods to the DNS server by adding an entry into their Etsy resolv.conf file, specifying that the Nameserver is at the IP address of the DNS server, which happens to be 1.96.0.1.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - In this case, every time a new pod is created, we add a record in the DNS server for that pod so that other pods can access the new pod and configure the resolv.conf file in the pod to point to the DNS server, so that the new pod can resolve other...
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - This is kind of how Kubernetes does it, except that it does not create similar entries for pods to map pod name to its IP address, as we have seen in the previous lecture.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - It does that for services for pods.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - It forms hostnames by replacing dots with dashes in the IP address of the pod.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Kubernetes implements DNS in the same way it deploys a DNS server within the cluster.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Prior to version 1.12, the DNS server implemented by Kubernetes was known as kube DNS.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - With Kubernetes version 1.12, the DNS server is called DNS.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - We took a brief look at DNS in one of the prerequisite lectures.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So how is the DNS setup in the cluster.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - The DNS server is deployed as a pod in the kube system namespace in the Kubernetes cluster.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Well, they are deployed as two pods for redundancy as part of a replica set.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - They're actually a replica set within a deployment, but it doesn't really matter.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - But we'll just see.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Core DNS as a pod in this lecture.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - This pod runs the core DNS executable, the same executable that we ran when we deployed core DNS ourselves.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Core DNS requires a configuration file.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - In our case we used a file named core file.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So does Kubernetes.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - It uses a file named Core file located at Etsy core DNS.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - Within this file you have a number of plugins configured.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 34 | **Type:** Troubleshooting
+  - The ones highlighted in orange plugins are configured for handling errors, reporting, health monitoring, metrics, cache, etc. the plugin that makes core DNS work with Kubernetes is the Kubernetes plugin, and that is where the top level domain name...
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - In this case cluster dot local. so every record in the core DNS DNS server falls under this domain.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 36 | **Type:** Exam Tip
+  - With the Kubernetes plugin, there are multiple options.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - The pods option you can see here is what is responsible for creating a record for pods in the cluster.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Remember we talked about a record being created for each pod by converting the IPS into the format.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - That's disabled by default, but it can be enabled with this entry here.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Any record that the DNS server console.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 41 | **Type:** Exam Tip
+  - For example, say a pod tries to reach w-w-w-what google.com, it is forwarded to the nameserver specified in the DNS pods.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Etsy Resolv.conf file.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - The Etsy resolv.conf file is set to use the nameserver from the Kubernetes node.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Also note that this core file is passed in to the pod as a config map object.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - That way, if you need to modify this configuration, you can edit the config map object.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - We now have the core DNS pod up and running using the appropriate Kubernetes plugin.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - It watches the Kubernetes cluster for new pods or services, and every time a pod or service is created, it adds a record for it in its database.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - Next step is for the pods to point to the core DNS server.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - What address do the pods use to reach the DNS server?
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - When we deploy the DNS solution, it also creates a service to make it available to other components within the cluster.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - The service is named as kube DNS.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - By default, the IP address of this service is configured as the Nameserver on pods.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 53 | **Type:** Warning/Pitfall
+  - Now you don't have to configure this yourself.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - The DNS configurations on pods are done by Kubernetes automatically when the pods are created.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Want to guess which Kubernetes component is responsible for that?
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 56 | **Type:** Architecture
+  - The Kubelet.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 57 | **Type:** Architecture
+  - If you look at the config file of the Kubelet, you will see the IP of the DNS server and domain in it.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - Once the pods are configured with the right name server, you can now resolve other pods and services.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - You can access the web service using just web service or web service default or web service default or web service default SVC cluster.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - If you try to manually look up the web service using Nslookup or the Host Web Service command, it will return the fully qualified domain name of the web service, which happens to be Web Service default SVC cluster local.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - But you didn't ask for that.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - You just set web service.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So how did it look up for the full name?
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - It so happens the Resolv.conf file also has a search entry which is set to default cluster local as well as SVC local and cluster dot local.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - This allows you to find the service using any name, web service or web service default or web service default.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - However, note that it only has search entries for service, so you won't be able to reach a pod the same way.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - For that, you need to specify the full FQDN of the pod.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Head over to the practice test and practice working with DNS on a Kubernetes cluster.
+- **File:** `228_CoreDNS in Kubernetes.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - I will see you in the next lecture.
+
+### Lab Solution - Explore DNS (optional)
+
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, in this video we're gonna look at CoreDNS in Kubernetes.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the first question is to identify the DNS solution implemented in this cluster.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So let's do set my alias.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 4 | **Type:** Command
+  - 
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Let's do get pods.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Dash n kube system.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - We see all the pods in the kube system in space and we see that we have the CoreDNS pods.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So these are so, so we use CoreDNS as the DNS solution.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - Okay, the next question is how many pods of the DNS server are deployed?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So we see that there are two, so that's the answer to that.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - There are two plots.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Now, what is the name of the service created for accessing CoreDNS?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - So the name of the service created for accessing CoreDNS, so let's do a service that is we see in the kube system namespace and we see that there's only one service called KubeDNS.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So that's the service that's used for accessing the DNS server.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So that is kube-DNS.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 16 | **Type:** Best Practice
+  - Now, what is the IP of the CoreDNS server that should be configured on the pods to resolve services.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 17 | **Type:** Best Practice
+  - So all the pods should have the IP of the CoreDNS service.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And that IP is 10.96.0.10.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So that's the IP of this service.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So that's this one.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Now, where is the configuration file located for configuring the CoreDNS service?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So let's look at the CoreDNS service.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Let's do a system.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - We see that we have these two pods.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So let's take a closer look at those pods to a describe pod in the kube system namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - And we see additional information.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And here is the container that runs the CoreDNS service and it's, this is image that runs the, the CoreDNS, 1.7.0.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And these are the port that's that are exposed.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - But here, if you look at here these are the arguments that are passed to the CoreDNS container.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So the config file is at /etc/CoreDNS/corefile.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So that's etc, CoreDNS, core file.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So that's the configuration file.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - How is this core file passed into the CoreDNS pod?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - So is it pulled from gate when it starts or is it configured as a conflict map object?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Does it come built in, or is it stored on the, on the master node?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So if you look at this, the path etc CoreDNS, let's see if there are any mounts.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So there are mounts.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So we have a etc CoreDNS mount and it says that it is coming from config volume.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And we can also see this if we do, so let's say we do a kubectl, get pod, and we look at it in the yaml format.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So if you look at it this way, scroll up.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Okay.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So this is the spec section.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So you can ignore all of this.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Always look at the spec section.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And we have the containers.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So for the container, we have the arguments that we just saw, the image and everything.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - If you scroll down, you'll see the volume mounts.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So you have volume amounts here.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And this the etc CoreDNS is the volume mount, and it's coming from a config volume.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - And so if you have volume mounts, then you have volumes.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So you scroll down and receive volumes.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - So this is where the volumes are configured.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And the volume for config mount is the config volume.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And here you see, you have the core file and CoreDNS CoreDNS is the config volume.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So config map.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So this is what indicates, this is what tells us that it's loaded from a config map.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - Okay, so the next question is, what is the name of the config map object created for core file?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So for this volume, this config map, the name of the config map is CoreDNS.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So that's, that's the name of the config map.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - Now, what is the root domain or zone configured for this kubernetes cluster?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So to find that out, we have to look into that config map.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So let's do that now.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So let's do a get config map in the kube system namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So we have the CoreDNS.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So let's do a describe, describe config map in the kube system namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - These, these are the DNS config for, for Kubernetes.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - And right here, this is the root, this is the root domain.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So let's cluster.local.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - Now we have deployed a set of pods and services in the default and payroll namespaces, to inspect them and go to the next question, right?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So let's do that.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So let's look at get pods.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - And we see that there are indeed the hr the simple web app and tests.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - So there's, there are four pods and then there's also another namespace called payroll.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And in the payroll namespace there's another called web, right?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 75 | **Type:** Exam Tip
+  - So there are multiple applications, so that's fine.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Now, what name can be used to access the HR web server from the test application?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - So here, here we have the HR web server and here we have the test application.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So we wanna access the HR web server from the test application.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So you can execute the curl command, or you can test applications also have a UI.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So let's, let's use the UI.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - I like the UI this is the UI of the test application.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - And we'll use this to run a connectivity test.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - And, but first, how do you access the HR application, right?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So if you do a HR and assuming it's on 8080, it's not working.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So we had to find out what is the service that's used to access this.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 86 | **Type:** Exam Tip
+  - So let's do a kubectl get svc because that's in the default namespace, and we see that there are multiple services.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - You, you have the test service and the webservice.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - I'm assuming the test service is for the test application.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - And I'm not sure if the webservice is for the HR application.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So let's do a describe on the webservice.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - Service is missing. svc.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - And we see that the selector here, name equals HR right?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - So that indicates that the webservice is a service for the HR application.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So that, that's what connects them two.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So it's webservice.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - So I'm gonna use webservice and the port, if you see is 80.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So that's what I'm gonna do.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So I'm going to use webservice and the port 80 and let's run a test.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Okay, so it says this is the HR service.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - So that's, that's good.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So that confirms that.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - So it's, it's webservice.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 103 | **Type:** Concept
+  - That's what is the answer to this question.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 104 | **Type:** Concept
+  - Okay, now, which of the names cannot be used to access the HR service from the test pod?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - So we know that to access the, the HR service from the test pod we just used webservice, that works.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 106 | **Type:** Concept
+  - Does webservice.default work, it will because we are in the default namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 107 | **Type:** Concept
+  - So let's try that, default.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 108 | **Type:** Concept
+  - Yep.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 109 | **Type:** Concept
+  - So that works.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 110 | **Type:** Concept
+  - Does webservice.default.svc work? .svc Yes, because svc stands for service and webservice is a service, in the default namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 111 | **Type:** Concept
+  - So that's, that's fine.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 112 | **Type:** Implementation Step
+  - The next one is webservice.default.pod.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 113 | **Type:** Concept
+  - So let's try pod.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 114 | **Type:** Troubleshooting
+  - So that fails.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 115 | **Type:** Concept
+  - So that's not, that's not the right kind of convention.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 116 | **Type:** Concept
+  - So this is the right answer to this question.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 117 | **Type:** Concept
+  - Now, which of the below name can be used to access the payroll service from the test application?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 118 | **Type:** Concept
+  - So the payroll service as we know is, it must be in the payroll namespace, right?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 119 | **Type:** Concept
+  - So let's explore that.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 120 | **Type:** Concept
+  - Let's do a kubectl, get pod, payroll.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - And then so there's a webservice there.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 122 | **Type:** Implementation Step
+  - And then let's do a get svc - n payroll.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - And we see a webservice here.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 124 | **Type:** Concept
+  - So this is, let's make sure that this is for that.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 125 | **Type:** Concept
+  - So let's do a kubectl describe, svc, webservice.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 126 | **Type:** Concept
+  - In the payroll service.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 127 | **Type:** Concept
+  - The payroll namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 128 | **Type:** Concept
+  - Okay and, we see that the selector's name equals web app.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 129 | **Type:** Concept
+  - So that's, that's for this.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So yes, the webservice is used for the web application in the payroll service.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 131 | **Type:** Concept
+  - So in the payroll namespace, we'll just assume that this is the payroll service.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 132 | **Type:** Concept
+  - So which of the below name can you use to access the payroll service from the test application?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 133 | **Type:** Concept
+  - So the test application we know is in the default namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 134 | **Type:** Concept
+  - So if you do webservice from the default namespace it's going to go to the HR app.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 135 | **Type:** Concept
+  - That's not what we want.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 136 | **Type:** Concept
+  - We want this, we wanna access the webservice in the payroll namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 137 | **Type:** Concept
+  - So web is not the correct answer.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 138 | **Type:** Concept
+  - Webservice.default is gonna go to the HR app, webservice.payroll because it's in the payroll namsespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 139 | **Type:** Concept
+  - So let's try that.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 140 | **Type:** Concept
+  - And it says this is a payroll.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 141 | **Type:** Concept
+  - So yeah, so it's webservice.payroll.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 142 | **Type:** Concept
+  - So that's the answer to this question.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 143 | **Type:** Concept
+  - Now, which of the below name cannot be used to access the payroll service from the test application?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 144 | **Type:** Concept
+  - So webservice.payroll, you know it works, webservice.payroll.svc.cluster.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 145 | **Type:** Concept
+  - So payroll.svc.cluster.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 146 | **Type:** Best Practice
+  - So that doesn't work because it should either be, webservice.payroll or it should be webservice.payroll.svc Or it should be webservice.payroll.svc.cluster.local because cluster.local is the root domain, the root zone.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 147 | **Type:** Best Practice
+  - So you should always, you should either use cluster.local or you shouldn't use anything at all.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 148 | **Type:** Concept
+  - So cluster is something that doesn't work.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 149 | **Type:** Implementation Step
+  - Now we just deployed a web server, web app that accesses a database MySQL server.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 150 | **Type:** Concept
+  - So let's check that out.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 151 | **Type:** Command
+  - 
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 152 | **Type:** Concept
+  - And we see that there's a web app, indeed.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 153 | **Type:** Implementation Step
+  - And then it accesses a database, MySQL server, however the web server is failing to connect to the database.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 154 | **Type:** Warning/Pitfall
+  - So we don't, we don't see a MySQL server here, so let's do a, get, let's do a kubectl, get pods and all namespaces so we can see all the pods.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 155 | **Type:** Concept
+  - So we can ignore most of these.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 156 | **Type:** Concept
+  - But if you look at these two, so there are two namespaces and we have the web app, the pod that runs the web app.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 157 | **Type:** Concept
+  - So it says web app.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 158 | **Type:** Concept
+  - So this is web app.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 159 | **Type:** Concept
+  - So this is, this is our application.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 160 | **Type:** Concept
+  - And if you look here, we have the MySQL on database here.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 161 | **Type:** Concept
+  - So it is in the payroll service, payroll namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 162 | **Type:** Concept
+  - So basically this web app is trying to connect to the MySQL pod in the payroll namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 163 | **Type:** Concept
+  - But it's not able to access.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 164 | **Type:** Concept
+  - Look at the applications and the web server interface can be seen by clicking the tab web server at the top of the terminal.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 165 | **Type:** Concept
+  - So here we have the web server.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 166 | **Type:** Concept
+  - So just open that, and as you can see it is in a failed state.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 167 | **Type:** Concept
+  - So if you look at the environment variables that were passed to it, it says the db host is MySQL, db database not set, db user route, db password, all of that.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 168 | **Type:** Concept
+  - So it says the name does not resolve.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 169 | **Type:** Troubleshooting
+  - So the issue is with the name.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 170 | **Type:** Concept
+  - So if you look at this, it says MySQL, so MySQL is a name.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 171 | **Type:** Concept
+  - So the web app here is trying to get to the MySQL service here, which is in the payroll namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 172 | **Type:** Concept
+  - So it's not gonna be able to do that.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 173 | **Type:** Implementation Step
+  - Let's first see the service configured for it in the payroll namespace.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 174 | **Type:** Concept
+  - So we have the MySQL service, so the service is there but for the web app to reach the MySQL service it would need to say MySQL.payroll, right?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 175 | **Type:** Best Practice
+  - So that, that's how it should be.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 176 | **Type:** Implementation Step
+  - So let's see where that is configured.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 177 | **Type:** Implementation Step
+  - So let's do a kubectl describe deployment web app.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 178 | **Type:** Concept
+  - Web app.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 179 | **Type:** Implementation Step
+  - And we see that it has environment variables configured here.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 180 | **Type:** Concept
+  - So MySQL route and, and the password.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 181 | **Type:** Implementation Step
+  - So let's do edit, deploy and, and edit it.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 182 | **Type:** Best Practice
+  - Now of course this password here, this is not a best practice.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 183 | **Type:** Best Practice
+  - It should be going in through as a secret or some, some other, you know, a safer method.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 184 | **Type:** Concept
+  - But we just did that here.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 185 | **Type:** Concept
+  - Just keep, just to keep this simple.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 186 | **Type:** Concept
+  - So we have the environment here, which is MySQL, and we're gonna change that to MySQL.payroll.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 187 | **Type:** Concept
+  - Okay, so you could just say MySQL.payroll or MySQL.payroll.svc.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 188 | **Type:** Concept
+  - Or MySQL.payroll.svc.cluster.local.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 189 | **Type:** Concept
+  - Okay, so let's save that.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 190 | **Type:** Concept
+  - Let's check the pods.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 191 | **Type:** Implementation Step
+  - Let me see that the older one is terminating and then the new one is already running.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 192 | **Type:** Concept
+  - So let's go back and check the status here.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 193 | **Type:** Concept
+  - We see that it's a success.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 194 | **Type:** Concept
+  - So now we have db host, which is MySQL.payroll.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 195 | **Type:** Concept
+  - And so that's, that's good.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 196 | **Type:** Concept
+  - So let's check the work.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 197 | **Type:** Concept
+  - Okay, so that, that was successful.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 198 | **Type:** Implementation Step
+  - Now the next question is, from the HR pod, run a nslookup and the MySQL service and redirect the output to a file.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 199 | **Type:** Concept
+  - So from the HR pod.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 200 | **Type:** Implementation Step
+  - So we're gonna do a exec HR and then give a command.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 201 | **Type:** Best Practice
+  - And what the command we need to run is nslookup, we'll do a MySQL and it says it's not found, so we know that since the HR app is in the default namespace and MySQL is in the payroll namespace, we should be appending payroll to the name.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 202 | **Type:** Concept
+  - Okay, so that's, that's got us the the IP address of the MySQL port.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 203 | **Type:** Concept
+  - And you can also see the full name of the MySQL service here.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 204 | **Type:** Concept
+  - So let's redirect that to this path.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 205 | **Type:** Concept
+  - Let's make sure that it's redirected successfully and see, see the output.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 206 | **Type:** Concept
+  - Okay?
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 207 | **Type:** Concept
+  - Yep.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 208 | **Type:** Concept
+  - So that's, that's the end of this lab.
+- **File:** `230_Lab Solution - Explore DNS (optional).extraction.md` | **Entry:** 209 | **Type:** Concept
+  - Alright, thank you very much.
+
+### Ingress
+
+- **File:** `231_Ingress.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will discuss ingress in Kubernetes.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - One of the common questions that students reach out usually is regarding services and ingress.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 3 | **Type:** Comparison
+  - What's the difference between the two.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And when to use what.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So we're going to briefly revisit services and work our way towards ingress.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - We will start with a simple scenario.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - You're deploying an application on Kubernetes for a company that has an online store selling products.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Your application will be available at, say, My Online store.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - You build the application into a Docker image and deploy it on Kubernetes cluster as a pod.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - In a deployment, your application needs a database.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - So you deploy a MySQL database as a pod and create a service of type cluster IP called MySQL service to make it accessible to our application.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Your application is now working to make the application accessible to the outside world.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - You create another service, this time of type node port and make your application available on a high port on the nodes notes in the cluster.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 14 | **Type:** Exam Tip
+  - In this example, a port of 30080 is allocated for the service.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - The users can now access your application using the URL http colon slash slash IP of any of your nodes, followed by port 30080.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - That setup works and users are able to access the application whenever traffic increases.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - We increase the number of replicas of the pod to handle the additional traffic, and the service takes care of splitting traffic between the pods.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - However, if you have deployed a production grade application before, you know that there are many more things involved in addition to simply splitting the traffic between the pods.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 19 | **Type:** Warning/Pitfall
+  - For example, we do not want the users to have to type in the IP address every time.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - So you configure your DNS server to point to the IP of the nodes.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Your users can now access your application using the URL.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - My online store and port 30080.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - 080.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 24 | **Type:** Warning/Pitfall
+  - Now, you don't want your users to have to remember port number either.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - However, service node ports can only allocate high numbered ports which are greater than 30,000.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - So you then bring in an additional layer between the DNS server and your cluster, like a proxy server that proxies requests on port 80 to port 30080 on your nodes.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - You then point your DNS to this server, and users can now access your application by simply visiting my online store.com.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Now this is if your application is hosted on prem in your data center.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - Let's take a step back and see what you could do if you were on a public cloud environment like Google Cloud Platform.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - In that case, instead of creating a service of type node port for your web application, you could set it to type load balancer.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - When you do that, Kubernetes would still do everything that it has to do for a node port, which is to provision a high port for the service.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - But in addition to that, Kubernetes also sends a request to Google Cloud Platform to provision a network load balancer for this service.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - On receiving the request, GCP would then automatically deploy a load balancer configured to route traffic to the service ports on all nodes and return its information to Kubernetes.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - The load balancer has an external IP that can be provided to users to access the application.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - In this case, we set the DNS to point to this IP and users access the application using the URL.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - My online store.com.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Perfect.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Your company's business grows and you now have new services for your customers.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 39 | **Type:** Exam Tip
+  - For example, a video streaming service.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Now you want your users to be able to access your new video streaming service by going to my online store.com.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Watch your developers develop the new video streaming application as a completely different application, as it has nothing to do with the existing one.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - However, to share the cluster's resources, you deploy the new application as a separate deployment within the same cluster, you create a service called Video Service of type Load balancer Kubernetes provisions port 382 for this service and also pr...
+- **File:** `231_Ingress.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - The new load balancer has a new IP.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Remember, you must pay for each of these load balancers, and having many such load balancers can inversely affect your cloud bill.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So how do you direct traffic between each of these load balancers based on the URL that the user types in?
+- **File:** `231_Ingress.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - You need yet another proxy or load balancer that can redirect traffic based on URLs to the different services.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Now every time you introduce a new service, you have to reconfigure the load balancer.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And finally, you also need to enable SSL for your applications so your users can access your application using Https.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - Now where do you configure that?
+- **File:** `231_Ingress.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - It can be done at different levels, either at the application level itself or at the load balancer level, or at the proxy server level.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 51 | **Type:** Warning/Pitfall
+  - But now you don't want your developers to implement it in their applications, as they would do it in different ways, and it's an additional burden for them to develop additional code to handle that.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - You want it to be configured in one place with minimal maintenance.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Now that's a lot of different configuration.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And all of these becomes difficult to manage when your application scales.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - It requires involving different individuals in different teams.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - You need to configure your firewall rules for each new service, and it's expensive as well as for each service.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - And new cloud native load balancer needs to be provisioned.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - Wouldn't it be nice if you could manage all of that within the Kubernetes cluster, and have all that configuration as just another Kubernetes definition file that lives along with the rest of your application deployment files?
+- **File:** `231_Ingress.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - That's where ingress comes in.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - Ingress helps your users access your application using a single, externally accessible URL that you can configure to route traffic to different services within your cluster based on the URL path.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - At the same time, implement SSL security as well.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - Think of ingress as a layer seven load balancer built into the Kubernetes cluster that can be configured using native Kubernetes primitives, just like any other object that we have been working within Kubernetes.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Now remember, even with ingress, you still need to expose it to make it accessible outside the cluster.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So you still have to either publish it as a node port or with a cloud native load balancer.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - But that is just a one time configuration.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Going forward, you're going to perform all your load balancing, SSL, and URL based routing configurations on the ingress controller.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So how does it work?
+- **File:** `231_Ingress.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - What is it?
+- **File:** `231_Ingress.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Where is it?
+- **File:** `231_Ingress.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - How can you see it and how can you configure it and how does it load balance?
+- **File:** `231_Ingress.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - How does it implement SSL without ingress?
+- **File:** `231_Ingress.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - How would you do all of these?
+- **File:** `231_Ingress.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - Well I would use a reverse proxy or a load balancing solution like nginx or HAProxy or traffic, and I would deploy them on my Kubernetes cluster and configure them to route traffic to other services.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - The configuration involves defining URL routes, configuring SSL certificates.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - Ingress is implemented by Kubernetes in kind of the same way you first deploy a supported solution, which happens to be any of these listed here, and then specify a set of rules to configure ingress.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - The solution you deploy is called as an ingress controller, and the set of rules you configure are called as ingress resources.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - Ingress resources are created using definition files like the ones we have been using to create pods, deployments, and services earlier in this course.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Now remember, a Kubernetes cluster does not come with an ingress controller by default.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - If you set up a cluster following the demos in this course, you won't have an ingress controller built into it.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - So if you simply create ingress resources and expect them to work, they won't.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Now let's look at each of these in a bit more detail.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 82 | **Type:** Warning/Pitfall
+  - As I mentioned, you do not have an ingress controller on Kubernetes by default, so you must deploy one.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - What do you deploy?
+- **File:** `231_Ingress.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - There are a number of solutions available for ingress.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - A few of them being GCE, which is Google's Layer seven HTTP Load Balancer, nginx, contour, HAProxy, traffic and Istio.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 86 | **Type:** Exam Tip
+  - Out of these, GCE and nginx are currently being supported and maintained by the Kubernetes project, and in this lecture we will use nginx as an example.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - These ingress controllers are not just another load balancer or nginx server.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - The load balancer components are just a part of it.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - Ingress controllers have additional intelligence built into them to monitor the Kubernetes cluster for new definitions or ingress resources, and configure the nginx server accordingly, and nginx controller is deployed as just another deployment in...
+- **File:** `231_Ingress.extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - So we start with a deployment definition file named nginx ingress controller with one replica and a simple pod definition template.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - We will label it nginx ingress and the image.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Use these nginx ingress controller.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - With the right version.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - This is a special build of index.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - Built specifically to be used as an ingress controller in Kubernetes, so it has its own set of requirements within the image.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Within the image, the nginx program is stored at location nginx ingress controller.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So you must pass that as the command to start with nginx controller service.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 98 | **Type:** Implementation Step
+  - If you have worked with nginx before, you know that it has a set of configuration options such as a path to store the logs, keepalive threshold, SSL settings, session timeout, etc. in order to decouple these configuration data from nginx controlle...
+- **File:** `231_Ingress.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Now remember the config map object need not have any entries at this point.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - A blank object will do, but creating one makes it easy for you to modify a configuration setting.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - In the future.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 102 | **Type:** Implementation Step
+  - You will just have to add it in to this config map and not have to worry about modifying the nginx next configuration files.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - You must also pass in two environment variables that carry the pod's name and namespace it is deployed to.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - The nginx service requires these to read the configuration data within the pod, and finally specify the ports used by the ingress controller, which happens to be 80 and 443.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 105 | **Type:** Implementation Step
+  - We then need a service to expose the ingress controller to the external world.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 106 | **Type:** Implementation Step
+  - So we create a service of type node port with the nginx ingress label selector to link the service to the deployment.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 107 | **Type:** Implementation Step
+  - As mentioned before, the ingress controllers have additional intelligence built into them to monitor the Kubernetes cluster for ingress resources and configure the underlying nginx server when something is changed.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - But for the ingress controller to do this, it requires a service account with the right set of permissions.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 109 | **Type:** Implementation Step
+  - For that, we create a service account with the correct roles and role bindings.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - So to summarize, with the deployment of the nginx ingress image, a service to expose it, a config map to feed nginx configuration data, and a service account.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 111 | **Type:** Best Practice
+  - With the right permissions to access all of these objects, we should be ready with an ingress controller in its simplest form.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 112 | **Type:** Implementation Step
+  - Now on to the next part of creating ingress resources.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - An ingress resource is a set of rules and configurations applied on the ingress controller.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - You can configure rules to say simply forward all incoming traffic to a single application, or route traffic to different applications based on the URL.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 115 | **Type:** Implementation Step
+  - So if user goes to my online store, then route to one app, or if the user visits the watch URL, then route to the video app.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - Or you could route user based on the domain name itself.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 117 | **Type:** Exam Tip
+  - For example, if the user visits where my online store.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 118 | **Type:** Implementation Step
+  - Com then route to the web app or route to the video app.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 119 | **Type:** Implementation Step
+  - Let us look at how to configure these in a bit more detail.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 120 | **Type:** Implementation Step
+  - The ingress resource is created with a Kubernetes definition file.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 121 | **Type:** Concept
+  - In this case, ingress dot YAML.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - As with any other object, we have API version kind metadata and spec.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 123 | **Type:** Concept
+  - The API version is networking.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - IO v1 kind is ingress.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - We will name it ingress where and under spec we have default backend.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - So the traffic is of course routed to the application services and not pods directly.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 127 | **Type:** Concept
+  - The default backend section defines where the traffic will be routed to.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 128 | **Type:** Warning/Pitfall
+  - So if it's a single backend then you don't really have any rules.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - You can simply specify the service name and port of the backend where service.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 130 | **Type:** Implementation Step
+  - Create the ingress resource by running the kubectl create command.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 131 | **Type:** Implementation Step
+  - View the created ingress by running the kubectl get ingress command.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 132 | **Type:** Implementation Step
+  - The new ingress is now created and routes all incoming traffic directly to the where service.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 133 | **Type:** Concept
+  - You use rules when you want to route traffic based on different conditions.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 134 | **Type:** Exam Tip
+  - For example, you create one rule for traffic originating from each domain or hostname.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - That means when users reach your cluster using the domain my online store.com, you can handle that traffic using rule one when users reach your reach a cluster using domain name where my online store.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 136 | **Type:** Concept
+  - You can handle that traffic using a separate rule.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 137 | **Type:** Concept
+  - Use rule three to handle traffic from.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 138 | **Type:** Concept
+  - Watch my online store.com and say use a fourth rule to handle everything else.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 139 | **Type:** Exam Tip
+  - And just in case you didn't know, you could get different domain names to reach your cluster by adding multiple DNS entries, all pointing to the same ingress controller service on your Kubernetes cluster.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 140 | **Type:** Concept
+  - Now, within each rule, you can handle different paths.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 141 | **Type:** Exam Tip
+  - For example, within rule one, you can handle the where path to route the traffic to the cloud application, and a watch path to route the traffic to the video streaming application.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 142 | **Type:** Implementation Step
+  - And a third path that routes anything other than the first two to a 404 not found page.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 143 | **Type:** Concept
+  - Similarly, the second rule handles all traffic from where my online.com.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 144 | **Type:** Concept
+  - You can have path definition within this rule to route traffic based on different paths.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 145 | **Type:** Exam Tip
+  - For example, say you have different applications and services within the apparel section for the shopping or returns or support when a user goes to my online store.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 146 | **Type:** Concept
+  - By default there is the shopping page, but if they go to exchange or support URL, there is different back end services.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 147 | **Type:** Concept
+  - The same goes for rule three where you route traffic to Watch.mandolin.com.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 148 | **Type:** Concept
+  - To the video streaming application.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 149 | **Type:** Concept
+  - But you can have additional paths in it, such as movies or TV.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 150 | **Type:** Troubleshooting
+  - And finally, anything other than the ones listed here will go to the fourth rule that will simply show a 404 not found error page.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 151 | **Type:** Concept
+  - So remember, you have rules at the top for each host or domain name, and within each rule you have different paths to route traffic based on the URL.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 152 | **Type:** Implementation Step
+  - Now let's look at how we configure ingress resources in Kubernetes.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 153 | **Type:** Concept
+  - We will start where we left off.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 154 | **Type:** Concept
+  - We start with a similar definition file this time under spec.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 155 | **Type:** Concept
+  - We start with a set of rules.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 156 | **Type:** Concept
+  - Now our requirement here is to handle all traffic coming to my online com and route them based on the URL path.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 157 | **Type:** Concept
+  - So we just need a single rule for this since we are only handling traffic to a single domain name, which is my online store in this case.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 158 | **Type:** Concept
+  - Under rules, we have one item, which is an HTTP rule in which we specify different paths.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 159 | **Type:** Exam Tip
+  - So paths is an array of multiple items, one path for each URL.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 160 | **Type:** Exam Tip
+  - Then we move the back end we used in the first example.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 161 | **Type:** Implementation Step
+  - Under the first path, the backend specification remains the same.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 162 | **Type:** Concept
+  - It has a service name and port.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 163 | **Type:** Implementation Step
+  - Similarly, we create a similar backend entry to the second URL path for the watch service to route all traffic coming in through slash watch URL to the watch service.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 164 | **Type:** Implementation Step
+  - Create the ingress resource using the kubectl create command.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 165 | **Type:** Implementation Step
+  - Once created, view additional details about the ingress resource by running the kubectl describe ingress command.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 166 | **Type:** Concept
+  - We.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 167 | **Type:** Implementation Step
+  - You now see two backend URLs under the rules and the back end service they are pointing to just as we created it.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 168 | **Type:** Concept
+  - Now if you look closely in the output of this command, you see that there is something about a default backend. end.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 169 | **Type:** Concept
+  - What might that be?
+- **File:** `231_Ingress.extraction.md` | **Entry:** 170 | **Type:** Implementation Step
+  - If a user tries to access a URL that does not match any of these rules, then the user is directed to the service specified as a default back end.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 171 | **Type:** Implementation Step
+  - In this case, it happens to be a service named default HTTP backend, so you must remember to deploy such a service.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 172 | **Type:** Warning/Pitfall
+  - Now back in your application, say a user visits the URL, my online store or com slash listen or slash eat and you don't have an audio streaming or a food delivery service.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 173 | **Type:** Concept
+  - You might want to show them a nice message.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 174 | **Type:** Troubleshooting
+  - You can do this by configuring a default back end service to display this 404 not found error page.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 175 | **Type:** Concept
+  - The third type of configuration is using domain names or host names.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 176 | **Type:** Concept
+  - We start by creating a similar definition file for ingress.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 177 | **Type:** Implementation Step
+  - Now that we have two domain names, we create two rules, one for each domain.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 178 | **Type:** Concept
+  - To split traffic by domain name, we use the host field.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 179 | **Type:** Concept
+  - The host field in each rule matches the specified value within the domain name used in the request URL, and routes traffic to the appropriate backend.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 180 | **Type:** Concept
+  - In this case, note that we only have a single backend path for each rule, which is fine.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 181 | **Type:** Concept
+  - All traffic from these domain names will be routed to the appropriate backend, irrespective of the URL path used.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 182 | **Type:** Exam Tip
+  - You can still have multiple path specifications in each of these to handle different URL paths.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 183 | **Type:** Comparison
+  - Now let's compare the two.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 184 | **Type:** Concept
+  - Splitting traffic by URL had just one rule, and we split the traffic with two paths to split traffic by hostname, we used two rules and one path specification in each rule.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 185 | **Type:** Concept
+  - Well that's it for this lecture.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 186 | **Type:** Concept
+  - Let us now head over to the practice test section and practice working on ingress.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 187 | **Type:** Concept
+  - There are two types of labs in this section.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 188 | **Type:** Implementation Step
+  - The first one is where an ingress controller resources and applications are already deployed.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 189 | **Type:** Concept
+  - And you basically view and walk through the environment, gather data and answer questions.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 190 | **Type:** Implementation Step
+  - Towards the end, you would create or modify ingress resources based on needs.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 191 | **Type:** Implementation Step
+  - In the second practice test, you will be deploying an ingress controller and resources from scratch.
+- **File:** `231_Ingress.extraction.md` | **Entry:** 192 | **Type:** Implementation Step
+  - Good luck and hope you enjoy the labs and I will see you in the next one.
+
+### Lab Solution - Ingress Networking 1 - (optional)
+
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, so let's go through this lab on ingress controller.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So we have deployed ingress controller resources and applications to explore the setup.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So let's first look at the environment.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So let's look at the nodes, there's a single node.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Let's look at the deployments, so there are no deployments.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - Let's check all name spaces, so there are deployments in other name spaces.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So there's, there are deployments in the app space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - The ingress NGINX space, the Kube system space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Let's look at the ingress controller which is usually in Kube system name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And we see, nope, it's in the ingress namespace, which is, sorry, it's given here.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So it's ingress NGINX and yeah, well so we see the ingress controller and the other pods right here.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Okay, so which namespace is the ingress controller deployed in?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So if you on a get pod slash a command and we see all the pods and we see the ingress controller here and we see that it's part of the ingress NGINX name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So it's the ingress NGINX name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Now what is the name of the ingress controller deployment?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So the ingress controller deployment, this is the name of the deployment, so we can also verify that, but by doing a get deploy in the ingress NGINX name space and we see that it's ingress NGINX controller.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So it's ingress NGINX controller.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Now which name space are the applications deployed in?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So we have, yeah, so here we have the pods for the application and we have the video wear and the default backend application.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - They're in the app space name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - How many applications are deployed in the app space name space?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So we see that there are three pods.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So that's three applications.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Now, which name space is the ingress resource deployed in?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So let's look at the ingress resource.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So we'll do a Kubectl git ingress, and we'll look at all name spaces.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And we see that we have the ingress wear watch resource and it's in the app space name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Now what is the name of the ingress resource?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So the name of the ingress resource is ingress wear watch.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - Now, what is the host configured on the ingress resource?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So you can see that right here.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So it's set to star.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - That means all hosts are applicable, or all or any hosts.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - What backend is the wear path on the ingress configured in?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So let's look at the ingress, ingress wear watch, ingress resource in a bit more detail.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So that's in the app space, name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And here we see the additional details and we can see the rules.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - We see the host and then we see the path.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - And we have the wear and the watch path, and what backend is the wear path configured to?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - So the wear is configured to the wear service, so that's the wear service.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - At what path is the video streaming application made available on the ingress?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So the video streaming application, the video service, is at the watch path.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So, watch is the answer.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - Now if the requirement does not match any of the configured paths what service are the requests forwarded to?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So we know that if the requirement, if it does not match any of these is going to go to the default backend.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So here it is default HTTP backend, that's the service, so that's default HTTP backend.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Now view the ingress service using the tab at the top of the terminal.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 48 | **Type:** Troubleshooting
+  - So here we have ingress service and if you look at it, it gives us a 404 not found error.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So what, which page do you see?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 50 | **Type:** Troubleshooting
+  - So we see a 404 error page.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Now view the applications by appending the wear and watch to the URL that you opened.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So let me open this.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And we have a wear, which is this, so this is the wear application.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - And then we have the watch.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - This is the, apparently this is the video streaming application, okay?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - You're requested to change the URLs at which the applications are made available.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So make the video streaming application available at stream.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So for that, let's go and edit the ingress resource.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So let's just replace describe with edit.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 60 | **Type:** Best Practice
+  - And this one should be fairly easy.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So here we have the paths.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - So we have the wear path for the wear service and then we have the watch path for the watch service.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So all we have to do is replace this with stream and let's save that.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So it's immediately replace.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 65 | **Type:** Troubleshooting
+  - If you refresh the watch path, now we get 404 error and we replace it with stream and we now get the video streaming application.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So let's check that out.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Yep, so that's successful.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Now view the video application using the stream, which we just, we already did so let's skip that.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Now a user is trying to view the eat URL on the ingress service.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Which paid would he see?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So we know that there's nothing called eat.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So let's just verify.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 73 | **Type:** Warning/Pitfall
+  - So there's nothing called eat here but we don't know if it is there in another space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So let's try that out.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Eat, so it doesn't, there's nothing.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 76 | **Type:** Troubleshooting
+  - So it's a 404 error, so there's a 404 error.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Now due to increased demand, your business decides to take on a new venture, you acquired a food delivery company, their applications have been migrated over to your cluster.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - So inspect the new deployments in the app space name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - Okay, so let's check out deploy in the app space namespace.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - And we see that we have the default backend.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - We have food along with the video and wear applications.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So this is the new application.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - Now you're requested to add a new path to your ingress to make the food delivery application available to your customers.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So make the new application available at eat.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So we wanna make it available at eat so we know that we need to find out the service that this is exposed on.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - So let's try and find that.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 87 | **Type:** Implementation Step
+  - So instead of deployment, let's look at services in the same name space and we see that we have the food service.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - And let's also verify and make sure that the port is 80 80.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So it's food service at port 80 80.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So I'm gonna copy that and let's go and edit the ingress resource again.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So we have a command for that already, Kubectl edit ingress, the name of the ingress resource in the app space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - And what we need to do is add an additional path here.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - We're going to copy this, paste that and what we'll do is, you know that it's food service, so food service, and the port number is 80 80, that's fine, and the path is eat, and let's save that.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - Let's wait for it to finish.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - Okay, and let's try and refresh, and we see the food service application.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Okay, let's check the work.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - Okay now view the food delivery application using eat which we already did.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 98 | **Type:** Implementation Step
+  - Now a new payment service has been introduced since it is critical, the new application is deployed in its own name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - So identify the name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - Okay, so let's do a get pods dash A and see what that new name space is.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So we have something, we have a new name space called critical space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 102 | **Type:** Implementation Step
+  - So let's do a get deploy in the critical space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 103 | **Type:** Concept
+  - And we see that we have a web app pay.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - So that's, this is the new deployment.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - So identify the name space, so that's critical space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 106 | **Type:** Implementation Step
+  - What is the name of the deployment of the new applications?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 107 | **Type:** Concept
+  - We just found that out.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 108 | **Type:** Concept
+  - It's called web app pay.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 109 | **Type:** Concept
+  - You requested to make the new application available at pay.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 110 | **Type:** Concept
+  - So identify and implement the best approach to making this application available on the ingress controller and test to make sure it's working.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 111 | **Type:** Concept
+  - Look into annotations as well.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 112 | **Type:** Concept
+  - Okay, so we know that for the app space applications we have the ingress resource in the app space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 113 | **Type:** Concept
+  - Now we cannot use that resource to add something in another space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - So what we're going to do is we're gonna create an ingress resource for this critical space itself.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 115 | **Type:** Best Practice
+  - So, or at least that's the best practice.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 116 | **Type:** Best Practice
+  - It is the best practice is to create, for different teams who may be having access to different name spaces to create their own ingress resource right, so that should be the approach that we should be using.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 117 | **Type:** Concept
+  - So you can assume that maybe, you know those who are working on this application only has access to this name space, but those who are working on the web pay application only has access to this name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 118 | **Type:** Implementation Step
+  - And so, you know any ingress related resources that are created would have to be created in this name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 119 | **Type:** Implementation Step
+  - So we'll create a new ingress and then we'll set the path as we did before, we'll set the backend service.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 120 | **Type:** Implementation Step
+  - So let's first find out what the backend service is to this web pay.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 121 | **Type:** Concept
+  - So it's called pay service.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 122 | **Type:** Implementation Step
+  - So just like food service, wear service, this one's called pay service, and the deployment is web app pay.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - So we want to direct traffic that goes to the path pay which as of now there won't be anything, and we want to direct that to this pay service on port.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 124 | **Type:** Concept
+  - So remember that the port now is 82 82.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 125 | **Type:** Best Practice
+  - So that should be the port, okay?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 126 | **Type:** Implementation Step
+  - So let's do a Kubectl create ingress, and so we do have an imperative command for that.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 127 | **Type:** Concept
+  - Let's do a dash H to see the format.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 128 | **Type:** Exam Tip
+  - So we're going to, you know there are multiple examples and let's just pick the simplest one, right?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 129 | **Type:** Implementation Step
+  - So Kubectl create ingress, the name and then the rule.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 130 | **Type:** Concept
+  - And that's basically it.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 131 | **Type:** Concept
+  - So let's do that.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 132 | **Type:** Concept
+  - So the name, let's see if there's a name given.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 133 | **Type:** Concept
+  - So there's no name given here.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 134 | **Type:** Concept
+  - So we could, you know, give it any name.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 135 | **Type:** Implementation Step
+  - So this is going to be ingress pay maybe, and then it's in the name space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 136 | **Type:** Concept
+  - Remember that this is all has to be in the critical space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 137 | **Type:** Implementation Step
+  - And then the rule is that anything that goes to, sorry, pay the path pay, so that's pay here, would go to the pay service.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 138 | **Type:** Concept
+  - That's what we just saw.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 139 | **Type:** Warning/Pitfall
+  - And the port is 82 82 and we don't have any certs for now so let's just get rid of this.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 140 | **Type:** Concept
+  - So that's the ingress pay.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 141 | **Type:** Implementation Step
+  - And so let's check it out git.ingress in the critical space, and we see that is indeed created.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 142 | **Type:** Concept
+  - Let's take a look at it, ingress in critical space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 143 | **Type:** Implementation Step
+  - And we see that we have the ingress pay is gonna catch everything that goes to pay and then redirect that to pay service, right?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 144 | **Type:** Concept
+  - So let's go and try it out here.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 145 | **Type:** Troubleshooting
+  - But you see that it's still not, it's not working as expected, still here's the 404 error.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 146 | **Type:** Concept
+  - So let's take a look at the logs and find out why.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 147 | **Type:** Implementation Step
+  - So if you look at the logs of this application in the critical space, we have the web pay service, so the web app pay pod, then what we're going to do is we're gonna do a logs for that pod in the critical space.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 148 | **Type:** Concept
+  - And we see that these are the requests that are coming in.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 149 | **Type:** Concept
+  - It's coming in as pay, right?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 150 | **Type:** Concept
+  - So the thing is, these applications may not have a slash pay at the end, right?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 151 | **Type:** Best Practice
+  - So it should be without this pay.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 152 | **Type:** Best Practice
+  - So what's happening is when you're calling pay is just the ingress resource is just forwarding as is, the URL as is, to this application and this application does not really have a pay path, so it should just be just slash right?
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 153 | **Type:** Concept
+  - So let's do that.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 154 | **Type:** Concept
+  - So for that we have to put in the ingress, the annotations and the rewrite rules.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 155 | **Type:** Warning/Pitfall
+  - So if you look at this, right, the watch wear or even the pay service, they're just available at this they don't have a slash watch or slash wear at the end.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 156 | **Type:** Implementation Step
+  - But with the default rule that the ingress controller creates, anything that goes to watch is going to have watch at the end.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 157 | **Type:** Concept
+  - Anything that goes to wear is gonna have wear at the end.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 158 | **Type:** Troubleshooting
+  - So that's why the error.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 159 | **Type:** Concept
+  - So we want to put in this rewrite annotation to get that removed.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 160 | **Type:** Best Practice
+  - So let's copy that, and let's edit the ingress pay in the, what do you call, space, should have ingress.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 161 | **Type:** Implementation Step
+  - And then, so we've gotta add an annotation here.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 162 | **Type:** Concept
+  - So annotations go in metadata section here and we are gonna say to rewrite target.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 163 | **Type:** Implementation Step
+  - So this is basically going to take that out and take out the pay at the end and then just put slash there.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 164 | **Type:** Concept
+  - So that seems to be set.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 165 | **Type:** Concept
+  - Okay so when you refresh it you can actually see that this is working as expected.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 166 | **Type:** Concept
+  - Let's check our work.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 167 | **Type:** Concept
+  - That's good.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 168 | **Type:** Concept
+  - And yep, we've already gone here and verified that it's working.
+- **File:** `235_Lab Solution - Ingress Networking 1 - (optional).extraction.md` | **Entry:** 169 | **Type:** Concept
+  - Okay, so that's the end of this lab.
+
+### Lab Solution - Ingress Networking - 2 (optional)
+
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hey, In this video, we're gonna look at ingress networking, in a bit more detail.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So we'll, we'll try and deploy an ingress controller.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So, we've deployed two applications, "explore" and "setup".
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So let's check that out.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Set, headings first.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Let's do pause dash a.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And we have, in the app space we have the video and there applications.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - So, that is now deploying an ingress controller first.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - So create a name space called "ingress space".
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So let's, so this is what we are going to do and the first step is to create this name space called "ingress space".
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - So we'll do this one step at a time.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So let's do that first.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - Create name space ingress space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Okay, so that's successful.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Now, the NGINX ingress controller requires a ConfigMap object.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - Create a ConfigMap object in the ingress space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - So, we're just gonna create a ConfigMap object.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 18 | **Type:** Best Practice
+  - So we'll do a Q call, create conflict map in this and the name should be as given here and genetic configuration.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And the name space is ingress space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Okay?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So that's done.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - So if you can see here, so you've just created these two.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Now the NGINX ingress controller requires a service account.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - So create a service account in the ingress space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Name, the name of the service account is ingress service account.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - So create service account and the ingress space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Okay?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - We've created the roles and rule bindings for the service account.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So let's check that out.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Okay, so get roles.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So we have the ingress role and bindings we have the ingress role binding Let's check out ingress role in the ingress space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So we see that there are a number of resources that are given access to like the policy Chris name spaces, and these are the works that the actions that it can perform.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Okay, let's keep going.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - Let us now deploy the ingress controller create a deployment using the file given.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So there's already a file given called ingress controller and the, you know, the hard stuff is already there in there.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So you have, it's called it's gonna be called ingress controller.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - The service account name that we created is here.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - The container that it uses is here.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - The arguments that are passed to it is configured and there are some environment variables as well and the port that is exposed.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So these are all done.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 41 | **Type:** Troubleshooting
+  - There are just, there are some issues.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - So let's try and let's try and create a file from this first, Create a deployment from this file first.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 43 | **Type:** Troubleshooting
+  - So it looks like there are some issues.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 44 | **Type:** Troubleshooting
+  - So there's, there's an issue online.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 45 | **Type:** Troubleshooting
+  - 36 looks like a yamo issue.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 46 | **Type:** Troubleshooting
+  - So let's, let's edit the file and try and fix those.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So let's go to line 36.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 48 | **Type:** Troubleshooting
+  - So right here we see that, yeah indeed there's an issue with spacing.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 49 | **Type:** Troubleshooting
+  - So we'll fix that's, try to create it again and we see that namespace, ingress dash not found.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So if you look here the namespace is not properly specified.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So let's try and edit that and space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - Okay, so let's try and create ingress controller now.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Let's check out the status in the ingress space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And it's in a continuing creating state.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Let's give it some time.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - And meanwhile we can check the status of our work.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So yeah, it's, it's completed successfully.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - So we have now deployed an ingress controller.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - Now the next step is to create a service to make the ingress make ingress available to external users.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Okay, so the ingress controller is ready.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - The next step is to create a service called ingress.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So we're going to do, what we're going to do is our goal is to expose ingress controller, right?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - So the easiest way to do that is deploy dash n ingress space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - It's called ingress controller.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - So we're gonna create a service using the exposed command.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So we're gonna do expose and what do we wanna expose?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - We wanna expose the ingress controller deployment.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - Let's say deploy an ingress controller in the ingress names ingress space Right?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - And and also there are some specifications given here.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So the name has to be ingress so pass in a name called ingress.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So let's check out the, the help just to get a bit of bit more idea.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - So we have the exposed command and then we have the deployment deployment name.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - If you want a name for the service, you can use dash dash name.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - That's what we just did.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Can also specify the port, so the port and the target port.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So we wanna use 80, and the target port is also 80 but the expos command does not allow us to use the node port option.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - So what we're gonna do is we're gonna create the service first, and then we're just gonna go in and edit the node port.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So that's kind of the easiest way to do that.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So we'll just take these because that's what we are left with.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So let's clear my screen and we're gonna specify the port.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - So the port and the target port are both 80, okay?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - So we're gonna do an export deploy ingress controller in the ingress space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - We'll name it ingress.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - And then we have specified these.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - We can also specify the type.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - So we'll see dash dash type going to be node port.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - That's what's given here.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - Then we have specified the port and the target port.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - The node port cannot be specified, but we specified this.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So, and the right selector.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 91 | **Type:** Best Practice
+  - So expo should take care of using the right selector for this, for the deployment.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - So let's create that.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - So it's created to get, as we see in the ingress space and it's, it's created, it's a node port.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - And if you, if you look here at the port that the node port that it used is 32 7 41.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - That's not what we wanted.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - So we'll go and edit the service in the ingress space edit service called ingress.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - And here we can see the details.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - The only thing we need to do is change this to 3 0 0 8 0.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - This is actually a simpler way to create a service without having to work with the amo files at all.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 100 | **Type:** Exam Tip
+  - So that's gonna be useful in the exam.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - Let's check.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - Okay, so that's successful.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - Now the next step is to create the ingress resource to make the applications available at where and watch on the ingress service.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - So we're gonna create an ingress service.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 105 | **Type:** Implementation Step
+  - So we'll do a kubectl create ingress in the app space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 106 | **Type:** Concept
+  - That's where we wanna, that's where the applications are.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 107 | **Type:** Concept
+  - And quickly check help.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 108 | **Type:** Concept
+  - So this is, is what we used earlier.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 109 | **Type:** Implementation Step
+  - So we're gonna do a create and then give the name of the ingress rule and then we'll just use this rule to specify the rules.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 110 | **Type:** Concept
+  - So, the name of the ingress resource would just be ingress and where, and watch.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 111 | **Type:** Implementation Step
+  - And then we'll specify the rules.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 112 | **Type:** Warning/Pitfall
+  - We don't need the certificate stuff.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 113 | **Type:** Concept
+  - So we'll remove that.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 114 | **Type:** Concept
+  - So the rules says where needs to go to the where service.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 115 | **Type:** Implementation Step
+  - And then we have another rule.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 116 | **Type:** Concept
+  - Again, we're going to remove this.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 117 | **Type:** Concept
+  - And this is for the second one.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 118 | **Type:** Exam Tip
+  - So we can have multiple rules like this, watch.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 119 | **Type:** Concept
+  - And there's going to go to the watch service.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 120 | **Type:** Concept
+  - So I'm not sure if it's called the where and watch service.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 121 | **Type:** Concept
+  - I'm just going to park this for now and let's check the service names in app space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 122 | **Type:** Concept
+  - And we see that, okay, it's the where service and it's the video service, not the watch service.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - And the ports are 80 80.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 124 | **Type:** Concept
+  - So let's edit that.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 125 | **Type:** Concept
+  - So the watch is called the video service and Port 80 80.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 126 | **Type:** Concept
+  - And the where is called the where service.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 127 | **Type:** Concept
+  - And let's get rid of this for now.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 128 | **Type:** Concept
+  - Okay?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 129 | **Type:** Implementation Step
+  - So that's created.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 130 | **Type:** Implementation Step
+  - Ingress in the app space, see that it's created.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 131 | **Type:** Concept
+  - Let's do a describe ingress.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 132 | **Type:** Concept
+  - Ingress, just to app space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 133 | **Type:** Concept
+  - And we see that the where is is to the where service and it's identified the, the endpoint for that.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 134 | **Type:** Concept
+  - And the watch is to the video service.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 135 | **Type:** Concept
+  - And it's identified the endpoints to that.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 136 | **Type:** Concept
+  - So let's, let's test it out and see if it's working.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 137 | **Type:** Concept
+  - So let's do a where, Okay, so it isn't working.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 138 | **Type:** Concept
+  - Let's do a watch.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 139 | **Type:** Concept
+  - Okay, so let's go and check out the logs on this applications.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 140 | **Type:** Concept
+  - So let's do logs.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 141 | **Type:** Concept
+  - Check this out.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 142 | **Type:** Concept
+  - And as you can see, the requests aren't even reaching here.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 143 | **Type:** Concept
+  - Let's check the other service, right?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 144 | **Type:** Concept
+  - So if the requests were coming in you'd actually see the request coming in.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 145 | **Type:** Concept
+  - So the requests aren't hitting, hitting this.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 146 | **Type:** Concept
+  - So that's one thing, and let's try and figure out why.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 147 | **Type:** Concept
+  - So let's do, let's look at the logs of the ingress controller itself.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 148 | **Type:** Concept
+  - And the ingress controller as we know is in the ingress space just do a logs of this ingress controller, okay?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 149 | **Type:** Concept
+  - And if you look here, there seems to be a lot of logs.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 150 | **Type:** Concept
+  - So app space.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 151 | **Type:** Implementation Step
+  - So it's definitely hitting the ingress controller but, then you see there are three node eights, right?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 152 | **Type:** Concept
+  - So the three note eights indicate a redirect, right?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 153 | **Type:** Concept
+  - So what's happening is every time we're going here as you can see the, the browser here it just keeps redirecting.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 154 | **Type:** Troubleshooting
+  - So it, it looks like it's going into a too, and you can see the error here.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 155 | **Type:** Concept
+  - So it's going into too many redirects.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 156 | **Type:** Concept
+  - So, and that is mainly because it is just trying to do a redirect on the SSL, right?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 157 | **Type:** Concept
+  - So for https, it's trying to do a redirect on https.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 158 | **Type:** Concept
+  - So what we need to do is we need to edit the Ingress service.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 159 | **Type:** Concept
+  - Yeah.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 160 | **Type:** Concept
+  - So here's Ingress service.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 161 | **Type:** Concept
+  - We need to edit it in the app space to provide in Chris.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 162 | **Type:** Warning/Pitfall
+  - And then we need to add the annotations, so the annotations for the rewrite target, because as we discussed earlier we don't want it to go to a where and watch URL.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 163 | **Type:** Implementation Step
+  - And then this is, so to prevent the redirect SSL redirect we have to add the false, the SSL redirect to false.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 164 | **Type:** Concept
+  - So let's, let's edit that and let's try this again.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 165 | **Type:** Concept
+  - Okay?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 166 | **Type:** Concept
+  - So that's, that seems to do the trick.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 167 | **Type:** Concept
+  - And it's actually working now.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 168 | **Type:** Concept
+  - Okay, let's check our work.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 169 | **Type:** Concept
+  - And we've already accessed the application.
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 170 | **Type:** Concept
+  - Okay?
+- **File:** `237_Lab Solution - Ingress Networking - 2 (optional).extraction.md` | **Entry:** 171 | **Type:** Concept
+  - So that's, that's the end of this lab.
+
+### Introduction to Gateway API (2025 updates)
+
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Let's now look at an introduction to gateway API.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Earlier when we spoke about ingress, we spoke about two services sharing the same ingress resource.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - What if each service was managed by different teams or even completely different organizations or businesses?
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - What if the web service was managed by team A and the video service was managed by team B?
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - In such case, the underlying ingress resource is still a single resource, which can only be managed by one team at a time.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So in a multi-tenant environment, ingress can pose a challenge.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - They would need to coordinate between handling the same ingress resource and might lead to conflicts.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Ingress lacks sufficient support for multi-tenancy.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Another limitation are the options for rules.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Configuration.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Ingress only supports HTTP based rules such as host matching or path matching.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Others like TCP, UDP routing.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - Traffic splitting, header manipulation, authentication, rate limiting, and others aren't currently supported.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - These are all configured by the controllers, and these configurations are passed through to the controllers using annotations like this.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - So here you can see some nginx configurations pass through such as SSL redirect, etc. as such, you'll see real complex annotations specified in different ingress rules such as to configure course.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - We have some nginx specification configuration here.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 17 | **Type:** Exam Tip
+  - And in the second example we're using traffic controller.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And so we have some traffic related configuration here.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - The challenge here as you can see, is that these configurations are very specific to the underlying controllers nginx and traffic respectively.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And Kubernetes itself is not aware of these settings.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So it can't validate if they are right or wrong.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - These configuration are merely passed to the underlying controllers.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So we have different configurations for different controllers for the same use case.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And these configurations can now only be used with these specific controllers.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - And that's where gateway APIs come in.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Gateway API is an official Kubernetes project focused on layer four and layer seven routing.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - This project represents the next generation of Kubernetes ingress, load balancing, and Service Mesh APIs.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Now, one of the challenges we discussed with ingress was the lack of support for multi-tenancy.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So we discussed that with different teams accessing the same infrastructure.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - How do you provide the flexibility needed by the users while maintaining control by the owners of the infrastructure?
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - This is where gateway API introduces three separate objects that are managed by three separate personas.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - The infrastructure providers configure the gateway class.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - The gateway class defines what the underlying network infrastructure would be, such as the nginx traffic or other load balancers.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - The cluster operators would then configure the gateway, which are instances of the gateway class.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - And then we have the HTTP routes created by the application developers.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Now unlike ingress where we only had HTTP routes, here we have TCP route and gRPC route and others.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So let's look at how each of these are created.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - First we have the gateway class.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - It has the API gateway networking I o v1.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - The gateway class.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 41 | **Type:** Exam Tip
+  - The name is example class and the controller name is Gateway Controller.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - Now remember that like ingress, we must also deploy a controller for gateway.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - We will talk about that in a bit.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - But note that that name is what you put here under controller name.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - Next we have gateway object.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - It has the API version set to gateway network I o v1.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 47 | **Type:** Exam Tip
+  - Kind is gateway, name is example gateway and it has the gateway class specified, which is the gateway class we created above.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 48 | **Type:** Exam Tip
+  - And then we have the HTTP listeners configured with the HTTP and port 80 And finally we have the escape route rule, which is again gateway networking.io v1 as the API version kind is HTTP route name is example HTTP route is the example gateway we ...
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 49 | **Type:** Exam Tip
+  - It matches requests coming in with the hostname or example.com, and a rule is configured that has a path login and the back end service.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 50 | **Type:** Exam Tip
+  - It refers to is the example service which is the service on the cluster.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 51 | **Type:** Exam Tip
+  - In this example, the HTTP traffic from gateway example gateway with the host header set to w-w-w-what example.com and the request path specified as login will be routed to the service.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 52 | **Type:** Exam Tip
+  - Example svc on port 8080.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So the HTTP route that we saw is a layer seven protocol.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Some of the additional route options available are TLS route, TCP route, UDP route, gRPC route, etc..
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So back to a few limitations that we saw with ingress.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - Let's see how those are configured in gateway API.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So earlier we saw that with ingress the basic TLS configuration um goes in the TLS section right here.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - And then this is the ingress way.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - But to ensure all traffic uses Https well we want to redirect http to https.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - We need to use the nginx specific annotation.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So these annotations won't work with other ingress controllers.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So the gateway API approach is much more declarative and structured.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Everything is defined in the proper spec, no annotations needed.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - The listeners section clearly shows we are setting up an Https endpoint on port 403.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - The TLS configuration is explicit with the mod terminate showing we are terminating TLS at the gateway.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - The certificate refs directly reference our TLS secret allowed routes.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Specifies which kinds of routes can attach to this listener, in this case HTTP routes.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 68 | **Type:** Exam Tip
+  - Here's another example.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - Through nginx specific annotations, we're saying, hey, this is um, a Canary deployment and, uh, send 20% of the traffic here.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - The remaining 80% of traffic automatically goes to the primary ingress, which is another ingress service that may exist.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - But this isn't obvious from looking at this configuration alone, and it only works with nginx.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Other controllers might not understand these annotations because these are specific to nginx.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So the gateway API tells the complete story in one clear configuration, so everything is visible in one place, no hidden primary configuration needed.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - We can see both services app v1 and v2 right there in the backend refs section.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - The traffic split is explicitly defined 80% goes to v1, 20% goes to v2.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - No annotations needed.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - This is a native feature, so this will work the same way across any gateway API implementation.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Now these configurations work with any controller and these are not specific to ingress or anything.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 79 | **Type:** Exam Tip
+  - Here's just another example.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So earlier we saw the complex controller specific annotations needed for advanced configurations like course setting.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 81 | **Type:** Implementation Step
+  - Now with GitHub API we can configure these centrally.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - No annotations needed.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - Everything is defined in this spec.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - Course headers are explicitly defined using the response header modifier filter.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - The configuration is more readable and self-documenting.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - And this will work consistently across any gateway API implementation.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So speaking about gateway API implementation, most controllers have now implemented gateway API or are on the way to implement it.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Amazon Ex Azure Application gateway for containers.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - Contour.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - Egress.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - Envoy gateway.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Google Kubernetes engine HAProxy.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - Kubernetes.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - Ingress controller.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - Istio.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Nginx.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - Gateway.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - Fabric.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Traffic proxy are already GA with the implementation and others are on their way.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - Well, that's all for this lecture.
+- **File:** `238_Introduction to Gateway API (2025 updates).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - Head over to the labs and practice working with gateway API controllers.

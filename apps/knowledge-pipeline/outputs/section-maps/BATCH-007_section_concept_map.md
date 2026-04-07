@@ -1,0 +1,5205 @@
+# Section Concept Map: BATCH-007
+
+## Section
+- Course: `certified-kubernetes-administrator-with-practice-tests`
+- Section: `07_Security`
+
+## Source Files Used
+- `143_Security - Section Introduction.extraction.md`
+- `144_Kubernetes Security Primitives.extraction.md`
+- `145_Authentication.extraction.md`
+- `146_TLS Introduction.extraction.md`
+- `147_TLS Basics.extraction.md`
+- `148_TLS in Kubernetes.extraction.md`
+- `149_TLS in Kubernetes - Certificate Creation.extraction.md`
+- `150_View Certificate Details.extraction.md`
+- `153_Lab Solution - View Certification Details.extraction.md`
+- `154_Certificates API.extraction.md`
+- `156_Lab Solution - Certificates API.extraction.md`
+- `157_KubeConfig.extraction.md`
+- `159_Lab Solution - KubeConfig.extraction.md`
+- `161_API Groups.extraction.md`
+- `162_Authorization.extraction.md`
+- `163_Role Based Access Controls.extraction.md`
+- `165_Lab Solution - Role-Based Access Controls.extraction.md`
+- `166_Cluster Roles.extraction.md`
+- `168_Lab Solution - Cluster Roles.extraction.md`
+- `169_Service Accounts.extraction.md`
+- `171_Lab Solution_ Service Accounts.extraction.md`
+- `172_Image Security.extraction.md`
+- `174_Lab Solution - Image Security.extraction.md`
+- `175_Pre-requisite - Security in Docker.extraction.md`
+- `176_Security Contexts.extraction.md`
+- `178_Lab Solution - Security Contexts.extraction.md`
+- `179_Network Policy.extraction.md`
+- `180_Developing network policies.extraction.md`
+- `182_Lab Solution - Network Policies (optional).extraction.md`
+- `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md`
+- `186_(2025 Updates) Custom Controllers.extraction.md`
+- `187_(2025 Updates) Operator Framework.extraction.md`
+
+## Concept Groups
+
+### Security - Section Introduction
+
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hello and welcome to this section on security in Kubernetes.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - My name is Mumshad Mannambeth, and we are going through the certified Kubernetes Administrators Course.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - In this section of the course, we will start with understanding the Kubernetes security primitives.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - How does someone gain access to the Kubernetes cluster?
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - And how are their actions controlled, et cetera, at a high level?
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - We then start with the various authentication mechanisms available.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - We will look at the default settings in the cluster and we practice viewing configurations of an existing cluster.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - We discuss about TLS certificates and how various components within the cluster are secured using TLS certificates.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - If you are a Kubernetes administrator and you set up a cluster on your own you are bound to face challenges related to certificates, which is why we discuss these from ground up, from the absolute basics.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - This is one of the sections that I spent a lot of time on.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - I wanted to simplify some of the core concepts around certificates, which is why I've added a number of prerequisite lectures for those who are new to this topic.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - We sent out a poll while working on this section to understand your knowledge about TLS certificates, and most of you said you were absolute beginners, which is why we thought it would be good to explain some of these well.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Especially since there are so many certificates used within the cluster between various components and it can be quite confusing for a beginner.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 14 | **Type:** Best Practice
+  - These lectures and the practice tests associated with them should help bridge that gap.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - But you might have to be a bit patient with me on this.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 16 | **Type:** Troubleshooting
+  - Our goal is to enable you to tackle any security related or certificate related issues by the end of this section.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - These prerequisite lectures may not be for everyone, so depending on your level of expertise with certificates, feel free to skip some of these lectures as required.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - We then move on to authorization, where we look at the various authorization mechanisms and we focus specifically on role-based access controls.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - We then discussed how to secure images in your environment, followed by security contacts, and finally, network policies.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So a lot of lectures and practice tests coming up.
+- **File:** `143_Security - Section Introduction.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Take it easy, and I hope you enjoy it.
+
+### Kubernetes Security Primitives
+
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we look at the security parameters in Kubernetes.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Kubernetes being the go to platform for hosting production grid applications.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Security is of prime concern.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - In this lecture we look at the various security primitives in Kubernetes.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - At a high level, before diving deeper into those in the upcoming lectures, let's begin with the hosts that formed the cluster itself.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - Of course, all access to these hosts must be secured root access disabled, password based authentication disabled, and only SSH key based authentication to be made available.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And of course, any other measures you need to take to secure your physical or virtual infrastructure that hosts Kubernetes.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Of course, if that is compromised, everything is compromised.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Our focus in this lecture is more on Kubernetes related security.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - What are the risks and what measures do you need to take to secure the cluster?
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 11 | **Type:** Architecture
+  - As we have seen already, the kube API server is at the center of all operations within Kubernetes.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - We interact with it through the kube control utility or by accessing the API directly.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And through that you can perform almost any operation on the cluster.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So that's the first line of defense.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 15 | **Type:** Architecture
+  - Controlling access to the API server itself.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - We need to make two types of decisions.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Who can access the cluster and what can they do.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 18 | **Type:** Architecture
+  - Who can access the API server is defined by the authentication mechanisms.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 19 | **Type:** Architecture
+  - There are different ways that you can authenticate to the API server certificates, or even a integration with external authentication providers like Ldap.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - Finally, for machines we create service accounts.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - We will look at these in more detail in the upcoming lectures once they gain access to the cluster.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - What can they do is defined by authorization mechanisms.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Authorization is implemented using role based access controls, where users are associated to groups with specific permissions.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - In addition, there are other authorization modules like the attribute based access Control node, Authorizers, webhooks, etc. again, we look at these in more detail in the upcoming lectures.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 25 | **Type:** Architecture
+  - All communication with the cluster between the various components such as the etcd cluster, the kube controller, manager, scheduler, API server, as well as those running on the worker nodes such as the Kubelet and kube proxy, is secured using TLS ...
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - We have a section entirely for this, where we discuss and practice how to setup certificates between the various components.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - What about communication between applications within the cluster?
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - By default, all pods can access all other pods within the cluster.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Now you can restrict access between them using network policies.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - We will look at how exactly that is done later in the network policies section.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So that was a high level overview of the various security primitives in Kubernetes.
+- **File:** `144_Kubernetes Security Primitives.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - We will now look at these in much more detail going forward.
+
+### Authentication
+
+- **File:** `145_Authentication.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - Hello and welcome to this lecture on authentication in a Kubernetes cluster.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 2 | **Type:** Exam Tip
+  - As we have seen already, the Kubernetes cluster consists of multiple nodes physical or virtual, and various components that work together.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - You have users, like administrators that access the cluster to perform administrative tasks, the developers that access the cluster to test or deploy applications.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - We have end users who access the applications deployed on the cluster, and we have third party applications accessing the cluster for integration purposes.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Throughout this section, we will discuss how to secure our cluster by securing the communication between internal components and securing management access to the cluster through authentication and authorization mechanisms.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - In this lecture, our focus is on securing access to the Kubernetes cluster with authentication mechanisms.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So we talked about the different users that may be accessing the cluster.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Security of end users who access the applications deployed on the cluster is managed by the applications themselves internally.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So we will take them out of our discussion.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Our focus is on users access to the Kubernetes cluster for administrative purposes.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So we are left with two types of users humans, such as the administrators and developers, and robots, such as other processes or services or applications that require access to the cluster.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Kubernetes does not manage user accounts natively.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - It relies on an external source, like a file with user details or certificates, or a third party identity service like Ldap to manage these users.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - And so you cannot create users in a Kubernetes cluster or view the list of users like this.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - However, in case of service accounts, Kubernetes can manage them.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - You can create and manage service accounts using the Kubernetes API.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - We have a section on service accounts exclusively where we discuss and practice more about service accounts.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 18 | **Type:** Architecture
+  - For this lecture we will focus on users in Kubernetes, all user access is managed by the API server.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Whether you're accessing the cluster through kube control tool or the API directly.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 20 | **Type:** Architecture
+  - All of these requests go through the kube API server.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 21 | **Type:** Architecture
+  - The kube API server authenticates the requests before processing it.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 22 | **Type:** Architecture
+  - So how does the kube API server authenticate?
+- **File:** `145_Authentication.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - There are different authentication mechanisms that can be configured.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - You can have usernames and tokens in a static token file.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - Or you can authenticate using certificates.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - And another option is to connect to third party authentication protocols like Ldap, Kerberos, etc..
+- **File:** `145_Authentication.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - We will look at some of these next.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Let's start with static password and token files as it is the easiest to understand.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - In the CSV file with the user details that we saw, we can optionally have a fourth column with the group details to assign users to specific groups.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Similarly, instead of a static password file, you can have a static token file.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Here, instead of password, is.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Specify a token.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 33 | **Type:** Architecture
+  - Pass the token file as an option token auth file to the cube API server.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - While authenticating, specify the token as an authorization bearer token.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Peer requests like this.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - That's it for this lecture.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 37 | **Type:** Best Practice
+  - Remember that this authentication mechanism that stores usernames, passwords, and tokens in clear text in a static file is not a recommended approach as it is insecure.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - But I thought this was the easiest way to understand the basics of authentication in Kubernetes.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - Going forward, we will look at other authentication mechanisms.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - I also want to point out that if you were trying this out in a cube ADM setup, you must also consider volume mounts to pass in the auth file.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Details about this are available in the article that follows, and remember to set up authorization for the new users.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - We will discuss about authorization later in this course.
+- **File:** `145_Authentication.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - In the upcoming lectures, we will discuss about certificate based authentication and how the various components within Kubernetes cluster are secured using certificates.
+
+### TLS Introduction
+
+- **File:** `146_TLS Introduction.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Hello and welcome to this lecture on TLS certificates in Kubernetes.
+- **File:** `146_TLS Introduction.extraction.md` | **Entry:** 2 | **Type:** Troubleshooting
+  - Securing the cluster with TLS and troubleshooting TLS related issues can be especially difficult if you are not familiar with the basics of TLS certificates.
+- **File:** `146_TLS Introduction.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We sent out a poll during the creation of this course about your knowledge on TLS certificates.
+- **File:** `146_TLS Introduction.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Most of you got back to us saying you had no clue about it or were not very comfortable with it, so we decided to put together a set of lectures that will help you gain enough knowledge to work with certificates in Kubernetes.
+- **File:** `146_TLS Introduction.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - And of course, these lectures will help you otherwise as well.
+- **File:** `146_TLS Introduction.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - If you're comfortable with this concept already, feel free to skip the prerequisite lectures and head straight over to the ones relevant to Kubernetes.
+- **File:** `146_TLS Introduction.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - By the end of this section.
+- **File:** `146_TLS Introduction.extraction.md` | **Entry:** 8 | **Type:** Troubleshooting
+  - You should be an expert when it comes to working with certificates in general as well as with Kubernetes, you should be able to easily configure and troubleshoot issues related to certificates, and the only way to do it, as I understand, is to lea...
+- **File:** `146_TLS Introduction.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And that's what we're going to do in this section.
+- **File:** `146_TLS Introduction.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - We will start with the basics of certificates.
+- **File:** `146_TLS Introduction.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - In general, if you're already comfortable with certificates, certificate authorities and how they work, feel free to skip this lecture and go over to the next where we discuss this in Kubernetes terms.
+
+### TLS Basics
+
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - In this video, we will look at the absolute basics of what TLS certificates are, why you need them, and how you can configure certificates to secure SSH or web servers.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - A certificate is used to guarantee trust between two parties during a transaction.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - For example, when a user tries to access a web server, TLS certificates ensure that the communication between the user and the server is encrypted and the server is who it says it is.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Let's take a look at a scenario without secure connectivity.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - If a user were to access his online banking application, the credentials he types in would be sent in a plain text format.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - The hacker sniffing network traffic could easily retrieve the credentials and use it to hack into the user's bank account.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Well, that's obviously not safe, so you must encrypt the data being transferred using encryption keys.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - The data is encrypted using a key, which is basically a set of random numbers and alphabets.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - You add the random number to your data, and you encrypt it into a format that cannot be recognized.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - The data is then sent to the server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - The hacker sniffing the network gets the data but can't do anything with it.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - However, the same is the case with the server receiving the data.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - It cannot decrypt the data without the key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So a copy of the key must also be sent to the server so that the server can decrypt and read the message.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Since the key is also sent over the same network, the attacker can sniff that as well and decrypt the data with it.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - This is known as symmetric encryption.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - It is a secure way of encryption, but since it uses the same key to encrypt and decrypt the data, and since the key has to be exchanged between the sender and the receiver.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - There is a risk of a hacker gaining access to the key and decrypting the data.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And that's where asymmetric encryption comes in.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Instead of using a single key to encrypt and decrypt data, asymmetric encryption uses a pair of keys, a private key, and a public key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Well, their private and public keys.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 22 | **Type:** Exam Tip
+  - But for the sake of this example, we will call it a private key and a public lock.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - We will get back to that at the end, but for now, think of it as a key and a lock pair.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - A key which is only with me.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So it's private.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - A lock that anyone can access.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So it's public.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - The trick here is if you encrypt or lock the data with your lock, you can only open it with the associated key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So your key must always be secure with you and not be shared with anyone else.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - It's private, but the lock is public and may be shared with others, but they can only lock something with it no matter what is locked using the public lock.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - It can only be unlocked by your private key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 32 | **Type:** Exam Tip
+  - Before we go back to our web server example, let's look at an even simpler use case of securing SSH access to servers using key pairs.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - You have a server in your environment that you need access to.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 34 | **Type:** Warning/Pitfall
+  - You don't want to use passwords as they are too risky, so you decide to use key pairs.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - You generate a public and private key pair.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - You can do this by running the ssh keygen command.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - It creates two files id underscore RSA is the private key and id underscore RSA dot pub is the public key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Well not a public key a public lock.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - You then secure your server by locking down all access to it except through a door that is locked using your public lock.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - It's usually done by adding an entry with your public key into the server's SSH authorized underscore case file.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So you see, the lock is public and anyone can attempt to break through.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - But as long as no one gets their hands on your private key, which is safe with you on your laptop, no one can gain access to the server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - When you try to SSH, you specify the location of your private key in your SSH command.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - What if you have other servers in your environment?
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - How do you secure more than one server with your key pair?
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - Well, you can create copies of your public log and place them on as many servers as you want.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - You can use the same private key to SSH into all of your servers securely.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - What if other users need access to your servers?
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Well, they can do the same thing.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - They can generate their own public and private key pairs.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - As the only person who has access to those servers, you can create an additional door for them and lock it with their public locks.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Copy their public logs to all the servers, and now other users can access the servers using their private keys.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 53 | **Type:** Exam Tip
+  - Let's go back to our web server example.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - You see, the problem we had earlier with symmetric encryption was that the key used to encrypt data had to be sent to the server over the network, along with the encrypted data.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And so there is a risk of the hacker getting the key to decrypt the data.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - What if we could somehow get the key to the server safely?
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Once the key is safely made available to the server, the server and client can safely continue communication with each other using symmetric encryption to securely transfer the symmetric key from the client to the server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - We use asymmetric encryption.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So we generate a public and private key pair on the server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - We're going to refer to the public lock as public key going forward.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - Now that you have got the idea, the ssh keygen command was used earlier to create a pair of keys for ssh purposes.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So the format is a bit different.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Here.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - We use the OpenSSL command to generate a private and public key pair.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - And that's how they look.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - When the user first accesses the web server using https, he gets the public key from the server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Since the hacker is sniffing all traffic.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Let us assume he two gets a copy of the public key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - We'll see what he can do with it.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - The user.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - In fact, the user's browser then encrypts the symmetric key using the public key provided by the server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - The symmetric key is now secure.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - The user then sends this to the server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - The hacker also gets a copy.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - The server uses the private key to decrypt the message and retrieve the symmetric key from it.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - However, the hacker does not have the private key to decrypt and retrieve the symmetric key from the message it received.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - The hacker only has the public key with which he can only lock or encrypt a message, and not decrypt the message.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - The symmetric key is now safely available only to the user and the server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - They can now use the symmetric key to encrypt data and send to each other.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - The receiver can use the same symmetric key to decrypt data and retrieve information.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - The hacker is left with the encrypted messages and public keys with which he can't decrypt any data.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - With asymmetric encryption, we have successfully transferred the symmetric keys from the user to the server and with symmetric encryption, we have secured all future communication between them.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - Perfect.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - The hacker now looks for new ways to hack into your account.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - And so he realizes that the only way he can get your credentials is by getting you to type it into a form he presents.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - So he creates a website that looks exactly like your bank's website.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - The design is the same.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - The graphics are the same.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - The website is a replica of the actual bank's website.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - He hosts the website on his own server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - He wants you to think it's secure.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - Two so he generates his own set of public and private key pairs and configures them on his web server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - And finally, he somehow manages to tweak your environment or your network to route your requests, going to your bank's website, to his servers.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - When you open up your browser and type the website address in, you see a very familiar page.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - The same login page of your bank that you're used to seeing.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - So you you go ahead and type in the username and password.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - You make sure you type them https in the URL to make sure the communication is secure and encrypted.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 98 | **Type:** Implementation Step
+  - Your browser receives a key, you send encrypted symmetric key, and then you send your credentials encrypted with the key, and the receiver decrypts the credentials with the same symmetric key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - You've been communicating securely in an encrypted manner, but with the hacker's server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - As soon as you send any credentials, you see a dashboard that doesn't look very much like your bank's dashboard.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - What if you could look at the key you received from the server and say, if it is a legitimate key from the real bank server, when the server sends the key, it does not send the key alone.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - It sends a certificate that has the key in it.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - If you take a closer look at the certificate, you will see that it is like an actual certificate, but in a digital format.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 104 | **Type:** Troubleshooting
+  - It has information about who the certificate is issued to, the public, key of that server, the location of that server, etc. on the right you see the output of an actual certificate.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 105 | **Type:** Troubleshooting
+  - Every certificate has a name on it, the person or subject to whom the certificate is issued to.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - That is very important as that is the field that helps you validate their identity is this is for a web server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - This must match what the user types in in the URL on his browser.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 108 | **Type:** Best Practice
+  - If the bank is known by any other names, and if they like their users to access their application with the other names as well, then all those names should be specified in this certificate under the subject Alternative Names section.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - But you see, anyone can generate a certificate like this.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - You could generate one for yourself saying you're Google and that's what the hacker did.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - In this case.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - He generated a certificate saying he is your bank's website.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - So how do you look at a certificate and verify if it is legit?
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - That is where the most important part of the certificate comes into play.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 115 | **Type:** Troubleshooting
+  - Who signed and issued the certificate?
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 116 | **Type:** Implementation Step
+  - If you generated a certificate then you will have to sign it by yourself.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - That is known as a self-signed certificate.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - Anyone looking at the certificate you generated will immediately know that it is not a certificate, because you have signed it.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - If you looked at the certificate you received from the hacker closely, you would have noticed that it was a fake certificate that was signed by the hacker himself.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - As a matter of fact, your browser does that for you.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 121 | **Type:** Concept
+  - All of the web browsers are built in with a certificate validation mechanism, wherein the browser checks the certificate received from the server and validates it to make sure it is legitimate.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 122 | **Type:** Implementation Step
+  - If it identifies it to be a fake certificate, then it actually warns you.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 123 | **Type:** Implementation Step
+  - So then how do you create a legitimate certificate for your web servers that the web browsers will trust?
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - How do you get your certificates signed by someone with authority?
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - That's where certificate authorities or CAS comes in.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - They're well known organizations that can sign and validate your certificates for you.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 127 | **Type:** Concept
+  - Some of the popular ones are Symantec, Digicert, Comodo, Globalsign, etc..
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - The way this works is you generate a certificate, signing request or CSR using the key you generated earlier and the domain name of your website.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - You can do this again using the OpenSSL command.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 130 | **Type:** Best Practice
+  - This generates a Mai-bangkok CSR file, which is the certificate signing request that should be sent to the CA for signing.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - It looks like this.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - The certificate authorities verify your details and once it checks out, they sign the certificate and send it back to you.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 133 | **Type:** Concept
+  - You now have a certificate signed by a CA that the browsers trust.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - If hacker tried to get his certificate signed the same way, he would fail during the validation phase and his certificate would be rejected by the CA.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - So the website that he is hosting won't have a valid certificate.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 136 | **Type:** Concept
+  - The CS used different techniques to make sure that you are the actual owner of that domain.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 137 | **Type:** Concept
+  - You now have a certificate signed by CA that the browsers trust.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 138 | **Type:** Concept
+  - But how do browsers know that the CA itself was legitimate?
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 139 | **Type:** Exam Tip
+  - For example, what if the certificate was signed by a fake CA?
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 140 | **Type:** Concept
+  - In this case, our certificate was signed by Symantec.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 141 | **Type:** Concept
+  - How would the browser know Symantec is a valid CA and that the certificate was in fact signed by Symantec, and not by someone who says they are Symantec.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 142 | **Type:** Concept
+  - The CA themselves have a set of public and private key pairs.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 143 | **Type:** Concept
+  - The CA's used their private keys to sign the certificates.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 144 | **Type:** Concept
+  - The public keys of all the CAS are built in to the browsers.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 145 | **Type:** Concept
+  - The browser uses the public key of the CA to validate that the certificate was actually signed by the CA themselves.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 146 | **Type:** Concept
+  - You can actually see them in the settings of your web browser under certificates.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 147 | **Type:** Concept
+  - They are under trusted CAS tab.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 148 | **Type:** Concept
+  - Now these are public CAS that help us ensure the public websites we visit like our banks, emails, etc. are legitimate.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 149 | **Type:** Warning/Pitfall
+  - However, they don't help you validate sites hosted privately, say within your organization.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 150 | **Type:** Exam Tip
+  - For example, for accessing your payroll or internal email applications.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 151 | **Type:** Concept
+  - For that, you can host your own private CAS.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 152 | **Type:** Implementation Step
+  - Most of these companies listed here have a private offering of their services a CAS server that you can deploy internally within your company.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 153 | **Type:** Implementation Step
+  - You can then have the public key of your internal CA server installed on all your employees browsers, and establish secure connectivity within your organization.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 154 | **Type:** Concept
+  - So let's summarize real quick.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 155 | **Type:** Concept
+  - We've seen why you may want to encrypt messages being sent over a network to encrypt messages.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 156 | **Type:** Concept
+  - We use asymmetric encryption with a pair of public and private keys.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 157 | **Type:** Concept
+  - An admin uses a pair of keys to secure SSH connectivity to the servers.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 158 | **Type:** Concept
+  - The server uses a pair of keys to secure Https traffic.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 159 | **Type:** Implementation Step
+  - But for this, the server first sends a certificate signing request to a CA.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 160 | **Type:** Concept
+  - The CA uses its private key to sign the CSR.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 161 | **Type:** Concept
+  - Remember, all users have a copy of the CAS public key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 162 | **Type:** Implementation Step
+  - The signed certificate is then sent back to the server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 163 | **Type:** Implementation Step
+  - The server configures the web application with the signed certificate.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 164 | **Type:** Implementation Step
+  - Whenever a user accesses the web application, the server first sends the certificate with its public key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 165 | **Type:** Concept
+  - The user, or rather the user's browser, reads the certificate and uses the CA's public key to validate and retrieve the server's public key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 166 | **Type:** Implementation Step
+  - It then generates a symmetric key that wishes to use going forward for all communication.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 167 | **Type:** Concept
+  - The symmetric key is encrypted using the server's public key and sent back to the server.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 168 | **Type:** Concept
+  - The server uses its private key to decrypt the message and retrieve the symmetric key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 169 | **Type:** Concept
+  - The symmetric key is used for communication going forward, so the administrator generates a key pair for securing SSH.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 170 | **Type:** Concept
+  - The web server generates a key pair for securing the website with Https.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 171 | **Type:** Concept
+  - The certificate authority generates its own set of key pair to sign certificates.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 172 | **Type:** Concept
+  - The end user, though, only generates a symmetric key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 173 | **Type:** Concept
+  - Once he establishes trust with the website.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 174 | **Type:** Implementation Step
+  - He uses his username and password to authenticate to the web server with the server's key pairs.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 175 | **Type:** Concept
+  - The client was able to validate that the server is who they say they are, but the server does not for sure know if the client is who they say they are.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 176 | **Type:** Concept
+  - It could be a hacker impersonating a user by somehow gaining access to his credentials.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 177 | **Type:** Concept
+  - Note over the network for sure, as we have secured it already with TLS.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 178 | **Type:** Concept
+  - Maybe by some other means.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 179 | **Type:** Concept
+  - Anyway, so what can the server do to validate that the client is who they say they are?
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 180 | **Type:** Concept
+  - For this, as part of the initial trust building exercise, the server can request a certificate from the client, and so the client must generate a pair of keys and a signed certificate from a valid CA.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 181 | **Type:** Implementation Step
+  - The client then sends the certificate to the server for it to verify that the client is who they say they are.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 182 | **Type:** Concept
+  - Now you must be thinking you have never generated a client certificate to access a website.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 183 | **Type:** Concept
+  - Well, that's because TLS client certificates are not generally implemented on web servers.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 184 | **Type:** Concept
+  - Even if they are, it's all implemented under the hood.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 185 | **Type:** Warning/Pitfall
+  - So a normal user don't have to generate and manage certificates manually.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 186 | **Type:** Concept
+  - So that was the final piece about client certificates.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 187 | **Type:** Concept
+  - This whole infrastructure, including the CA, the servers, the people, and the process of generating, distributing and maintaining digital certificates is known as Public key infrastructure or PKI.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 188 | **Type:** Concept
+  - Finally, let me clear up something before you leave.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 189 | **Type:** Concept
+  - I've been using the analogy of a key and lock for private and public keys.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 190 | **Type:** Implementation Step
+  - If I give you the impression that only the lock or the public key can encrypt data, then please forgive me as it's not true.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 191 | **Type:** Concept
+  - These are in fact two related or paired keys.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 192 | **Type:** Concept
+  - You can encrypt data with any one of them and only decrypt data with the other.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 193 | **Type:** Concept
+  - You cannot encrypt data with one and decrypt with the same.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 194 | **Type:** Concept
+  - So you must be careful what you encrypt your data with.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 195 | **Type:** Implementation Step
+  - If you encrypt your data with your private key, then remember anyone with your public key, which could really be anyone out there, will be able to decrypt and read your message.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 196 | **Type:** Concept
+  - Finally, a quick note on naming convention.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 197 | **Type:** Concept
+  - Usually certificates with public key are named CRT or PEM extension.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 198 | **Type:** Concept
+  - So that's server server PEM for server certificates or client CRT or client PEM for client certificates.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 199 | **Type:** Concept
+  - And private keys are usually with extension key or dash key.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 200 | **Type:** Exam Tip
+  - For example server key or server key PEM.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 201 | **Type:** Concept
+  - So just remember private keys have the word key in them, usually either as an extension or in the name of the certificate, and one that doesn't have the word key in them is usually a public key or certificate.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 202 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 203 | **Type:** Concept
+  - Thank you for watching.
+- **File:** `147_TLS Basics.extraction.md` | **Entry:** 204 | **Type:** Implementation Step
+  - I will see you in the next lecture.
+
+### TLS in Kubernetes
+
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture, we look at securing your Kubernetes cluster with TLS certificates.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In the previous lecture, we saw what public and private keys are, how a server uses public and private keys to secure connectivity.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We will call them serving certificates.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - We saw what a certificate authority is.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - We learned that the CA has its own set of public and private key pairs that it uses to sign server certificates.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - We will call them root certificates.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - We also saw how a server can request a client to verify themselves using client certificates.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - So three types of certificates: server certificates configured on those servers, root certificate configured on the CA servers, and then client certificates configured on the clients.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And a quick note on naming convention before we go forward.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - You're going to see a lot of certificate files in this lecture, and it could be very confusing.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So use this technique to know which one is which.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Usually certificates with public keys are named "crt" or "pem" extension, so that's server.crt, or server.pem for server certificates or client.crt, or client.pem for client certificates.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 13 | **Type:** Exam Tip
+  - And private keys are usually with extension ".key" or with a "-key" in the file names, for example, server.key or server-key.pem.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So just remember, private keys have the word "key" in them, usually either as an extension or in the name of the certificate, and one that doesn't have the word "key" in them is usually a public key or certificate.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - That's how I remember it.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - We will now see how these concepts relate to a Kubernetes cluster.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - The Kubernetes cluster consists of a set of master and worker nodes.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Of course, all communication between these nodes need to be secure and must be encrypted.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - All interactions between all services and their clients need to be secure.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 20 | **Type:** Exam Tip
+  - For example, an administrator interacting with the Kubernetes cluster through the Kube control utility, or while accessing the Kubernetes API directly must establish secure TLS connection.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Communication between all the components within the Kubernetes cluster also need to be secured.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So the two primary requirements are to have all the various services within the cluster to use server certificates and all clients to use client certificates to verify they are who they say they are.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Let's look at the different components within the Kubernetes cluster and identify the various servers and clients and who talks to who.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Let's start with the kube-apiserver.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 25 | **Type:** Architecture
+  - As we know already, the API server exposes an ACTPS service that other components as well as external users use to manage the Kubernetes cluster.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So it is a server and it requires certificates to secure all communication with its clients.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So we generate a certificate and key pair.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - We call it "apiserver.crt" and "apiserver.key." We will try to stick to this naming convention going forward.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Anything with a ".crt" extension is the certificate and ".key" extension is the private key.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Also, remember, these certificate names could be different in different Kubernetes setups depending on who and how the cluster was set up.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So these names may be different in yours.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - In this lecture, we will try to use names that help us easily identify the certificate files.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 33 | **Type:** Architecture
+  - Another server in the cluster is the ETCD server.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 34 | **Type:** Architecture
+  - The ETCD server stores all information about the cluster.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So it requires a pair of certificate and key for itself.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 36 | **Type:** Architecture
+  - We will call it "etcd-x-server.crt" and "etcd-x-server.key." The other server component in the cluster is on the worker nodes.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 37 | **Type:** Architecture
+  - There are the Kubelet services.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 38 | **Type:** Architecture
+  - They also expose an HTTPS API endpoint that the Kube API server talks to to interact with the worker nodes.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Again, that requires a certificate and key pair.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 40 | **Type:** Architecture
+  - We call it "kubelet.crt" and "kubelet.key." Those are really the server components in the Kubernetes cluster.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Let's now look at the client components.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Who are the clients who access these services?
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 43 | **Type:** Architecture
+  - The clients who access the Kube API server are us, the administrators through Kube Control or REST API.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 44 | **Type:** Architecture
+  - The admin user requires a certificate and key pair to authenticate to the Kube API server.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 45 | **Type:** Architecture
+  - We will call it "admin.crt," and "admin.key." The scheduler talks to the Kube API server to look for pods that require scheduling and then get the API server to schedule the pods on the right worker nodes.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 46 | **Type:** Architecture
+  - The scheduler is a client that accesses the Kube API server.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 47 | **Type:** Architecture
+  - As far as the Kube API server is concerned, the scheduler is just another client, like the admin user.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 48 | **Type:** Architecture
+  - So the scheduler needs to validate its identity using a client TLS certificate.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So it needs its own pair of certificate and keys.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 50 | **Type:** Architecture
+  - We will call it "scheduler.crt" and "scheduler.key." The Kube Controller Manager is another client that accesses the Kube API server.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 51 | **Type:** Architecture
+  - So it also requires a certificate for authentication to the Kube API server.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - So we create a certificate pair for it.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - The last client component is the Kube proxy.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 54 | **Type:** Architecture
+  - The Kube proxy requires a client certificate to authenticate to the Kube API server, and so it requires its own pair of certificate and keys.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 55 | **Type:** Architecture
+  - We will call them "kube-proxy.crt" and "kube-proxy.key." The servers communicate amongst them as well.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 56 | **Type:** Exam Tip
+  - For example, the Kube API server communicates with the ETCD server.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 57 | **Type:** Architecture
+  - In fact, of all the components, the Kube API server is the only server that talks to the ETCD server.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 58 | **Type:** Architecture
+  - So as far as the ETCD server is concerned, the Kube API server is a client, so it needs to authenticate.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 59 | **Type:** Architecture
+  - The Kube API server can use the same keys that it used earlier for serving its own API service.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - The apiserver.crt and the apiserver.key files.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 61 | **Type:** Architecture
+  - Or you can generate a new pair of certificates specifically for the Kube API server to authenticate to the ETCD server.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 62 | **Type:** Architecture
+  - The Kube API server also talks to the Kubelet server on each of the individual nodes.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - That's how it monitors the worker nodes.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - For this, again, it can use the original certificates or generate nuances specifically for this purpose.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So that's too many certificates.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Let's try and group them.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 67 | **Type:** Architecture
+  - There are a set of client certificates mostly used by clients to connect to the Kube API server, and there are a set of server side certificates used by the Kube API server, ETCD server, and Kubelet to authenticate their clients.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - We will now see how to generate these certificates.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - As we know already, we need a certificate authority to sign all of these certificates.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Kubernetes requires you to have at least one certificate authority for your cluster.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - In fact, you can have more than one.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 72 | **Type:** Architecture
+  - One for all the components in the cluster, and another one specifically for ETCD, in that case, the ETCD server's certificates, and the ETCD server's client certificates, which in this case is the API server client certificate, will be all signed ...
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - For now, we will stick to just one CA for our cluster.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - The CA, as we know, has its own pair of certificates and key.
+- **File:** `148_TLS in Kubernetes.extraction.md` | **Entry:** 75 | **Type:** Best Practice
+  - We will call it "ca.crt" and "ca.key." That should sum up all the certificates used in the cluster.
+
+### TLS in Kubernetes - Certificate Creation
+
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture, we'll look at how to generate the certificates for the cluster to generate certificates.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - There are different tools available such as easy RSA, OpenSSL or SSL etc. or many others.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - In this lecture we will use OpenSSL tool to generate certificates.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - This is where we left off.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - We will start with the CA certificates.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - First we create a private key using the OpenSSL command OpenSSL RSA dash out CA key.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Then we use the OpenSSL request command along with the key we just created to generate a certificate signing request.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - The certificate signing request is like a certificate with all of your details, but with no signature.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - In the certificate signing request, we specify the name of the component the certificate is for in the common name or CN field.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - In this case, since we are creating a certificate for the Kubernetes CA, we name it Kubernetes CA.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Finally, we sign the certificate using the OpenSSL x509 command and by specifying the certificate signing request we generated in the previous command.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Since this is for the CA itself, it is self-signed by the CA using its own private key that it generated in the first step going forward.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - For all other certificates, we will use the CA key pair to sign them.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The CA now has its private key and root certificate file.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Great.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Let's now look at generating the client certificates.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - We start with the admin user.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - We follow the same process where we create a private key for the admin user using the OpenSSL command.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - We then generate a CSR and that is where we specify the name of the admin user which is kube admin.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - A quick note about the name.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - It doesn't really have to be kube admin.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - It could be anything.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - But remember this is the name that kube control client authenticates with.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And when you run the kube control command.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So in the audit logs and elsewhere This is the name that you will see, so provide a relevant name in this field.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Finally, generate a signed certificate using the OpenSSL zero nine command.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - But this time you specify the CA certificate and the CA key.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - You're signing your certificate with the CA key pair.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - That makes this a valid certificate within your cluster.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - The signed certificate is then output to admin file.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - That is the certificate that the admin user will use to authenticate to Kubernetes cluster.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - If you look at it, this whole process of generating a key and a certificate pair is similar to creating a user account for a new user, the certificate is the validated user ID and the key is like the password.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - It's just that it's much more secure than a simple username and password.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So this is for the admin user.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - How do you differentiate this user from any other users?
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - The user account needs to be identified as an admin user and not just another basic user.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - You do that by adding the group details for the user in the certificate.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - In this case, a group named System Masters exist on Kubernetes with administrative privileges.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - We will discuss about groups later, but for now it's important to know that you must mention this information in your certificate signing request.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - You can do this by adding group details with the OU parameter while generating a certificate signing request.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Once it's signed, we now have our certificate for the admin user with admin privileges.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 42 | **Type:** Architecture
+  - We follow the same process to generate client certificates for all other components that access the kube API server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 43 | **Type:** Architecture
+  - The kube scheduler.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 44 | **Type:** Troubleshooting
+  - Now the kube scheduler is a system component part of the Kubernetes control plane, so its name must be prefixed with the keyword system.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 45 | **Type:** Architecture
+  - The same with kube controller manager.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 46 | **Type:** Troubleshooting
+  - It is again a system component, so its name must be prefixed with the keyword system and finally kube proxy.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - So far we have created CA certificates.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 48 | **Type:** Architecture
+  - Then all of the client certificates including the admin, user scheduler, controller manager and kube proxy.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 49 | **Type:** Architecture
+  - We will follow the same procedure to create the remaining three client certificates for API servers and Cubelets.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - When we create the server certificates for them, so we will set them aside for now.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Now what do you do with these certificates?
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Take the admin certificate for instance to manage the cluster.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - You can use this certificate instead of a username and password.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 54 | **Type:** Architecture
+  - In a Rest API call you make to the kube API server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - You specify the key, the certificate, and the CA certificate as options.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - That's one simple way.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - The other way is to move all of these parameters into a configuration file called kube config.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 58 | **Type:** Architecture
+  - Within that, specify the API server endpoint, details, the certificates to use, etc. that is what most of the Kubernetes clients use.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - We will look at kube config in depth in one of the upcoming lectures.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Okay, so we're now left with the server side certificates.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - But before we proceed, one more thing.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - Remember, in the prerequisite lecture, we mentioned that for clients to validate the certificates sent by the server and vice versa, they all need a copy of the certificate authorities public certificate, the one that we said is already installed ...
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - In case of a web application.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Similarly, in Kubernetes, for these various components to verify each other, they all need a copy of the CA's root certificate.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - So whenever you configure a server or a client with certificates, you will need to specify the CA root certificate as well.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Let's look at the server side certificates now.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 67 | **Type:** Architecture
+  - Let's start with the etcd server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 68 | **Type:** Architecture
+  - We follow the same procedure as before to generate a certificate for etcd.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 69 | **Type:** Architecture
+  - We will name it etcd server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 70 | **Type:** Exam Tip
+  - Etcd server can be deployed as a cluster across multiple servers as in a high availability environment.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - In that case, to secure communication between the different members in the cluster, we must generate additional peer certificates.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 72 | **Type:** Architecture
+  - Once the certificates are generated, specify them while starting the etcd server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 73 | **Type:** Architecture
+  - There are key and cert file options where you specify the etcd server keys.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - There are other options available for specifying the peer certificates.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 75 | **Type:** Architecture
+  - And finally, as we discussed earlier, it requires the CA root certificate to verify that the clients connecting to the etcd server are valid.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 76 | **Type:** Architecture
+  - Let's talk about the kube API server now.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 77 | **Type:** Architecture
+  - We generate a certificate for the API server like before.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 78 | **Type:** Architecture
+  - But wait, the API server is the most popular of all components within the cluster.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 79 | **Type:** Architecture
+  - Everyone talks to the kube API server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 80 | **Type:** Architecture
+  - Every operation goes through the kube API server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 81 | **Type:** Architecture
+  - Anything moves within the cluster, the API server knows about it.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - You need information.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 83 | **Type:** Architecture
+  - You talk to the API server and so it goes by many names and aliases within the cluster.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 84 | **Type:** Warning/Pitfall
+  - Its real name is Kube API server, but some call it Kubernetes because for a lot of people who don't really know what goes under the hoods of Kubernetes?
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 85 | **Type:** Architecture
+  - The kube API server is Kubernetes.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - Others like to call it Kubernetes.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - While some refer to it as Kubernetes default SVC and some like to call it by its full name Kubernetes default svc dot cluster dot local.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 88 | **Type:** Architecture
+  - Finally, it is also referred to in some places simply by its IP address, the IP address of the host running the kube API server, or the pod running it.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 89 | **Type:** Architecture
+  - So all of these names must be present in the certificate generated for the kube API server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 90 | **Type:** Architecture
+  - Only then those referring to the cube API server by these names will be able to establish a valid connection.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So we use the same set of commands as earlier to generate a key.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 92 | **Type:** Architecture
+  - In the certificate signing request you specify the name kube API server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - But how do you specify all the alternate names?
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 94 | **Type:** Implementation Step
+  - For that you must create an open SSL config file.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 95 | **Type:** Implementation Step
+  - Create an OpenSSL conf file and specify the alternate names in the.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Altnames section of the file.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 97 | **Type:** Architecture
+  - Include all the DNS names the API server goes by as well as the IP address.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - Pass this config file as an option while generating the certificate signing request.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Finally, sign the certificate using the CA certificate and key.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 100 | **Type:** Architecture
+  - You then have the API server certificate.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - It is time to look at where we are going to specify these keys.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 102 | **Type:** Architecture
+  - Remember to consider the API client certificates that are used by the API server while communicating as a client to the etcd and Kubelet servers.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 103 | **Type:** Architecture
+  - The location of these certificates are passed in to the kube API server's executable or service configuration file.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - First, the CA file needs to be passed in.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - Remember, every component needs the CA certificate to verify its clients.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 106 | **Type:** Architecture
+  - Then we provide the API server certificates under the TLS cert options.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 107 | **Type:** Architecture
+  - We then specify the client certificates used by kube API server to connect to the etcd server again with the CA file, and finally the kube API server client certificates to connect to the Kubelets.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 108 | **Type:** Architecture
+  - Next comes the Kubelet server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 109 | **Type:** Architecture
+  - The Kubelet server is an https API server that runs on each node responsible for managing the node.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 110 | **Type:** Architecture
+  - That's who the API server talks to to monitor the node, as well as send information regarding what pods to schedule on this node.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - As such, you need a key certificate pair for each node in the cluster.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - Now what do you name these certificates?
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - Are they all going to be named Cubelets?
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - No, they will be named after their nodes.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - Node zero one, node zero two and node zero three.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 116 | **Type:** Architecture
+  - Once the certificates are created, use them in the kubelet config file.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 117 | **Type:** Architecture
+  - As always, you specify the root certificate and then provide the Kubelet node certificates.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - You must do this for each node in the cluster.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 119 | **Type:** Architecture
+  - We also talked about a set of client certificates that will be used by the Kubelet to communicate with the kube API server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 120 | **Type:** Architecture
+  - These are used by the Kubelet to authenticate into the kube API server.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 121 | **Type:** Concept
+  - They need to be generated as well.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - What do you name these certificates?
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 123 | **Type:** Architecture
+  - The API server needs to know which node is authenticating and give it the right set of permissions.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - So it requires the nodes to have the right names in the right format.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 125 | **Type:** Architecture
+  - Since the nodes are system components like the kube scheduler and the controller manager we talked about earlier, the format starts with the system keyword followed by node and then the node name.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - In this case node one to node zero three.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 127 | **Type:** Architecture
+  - And how would the API server give it the right set of permissions?
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - Remember we specified a group name for the admin user.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - So the admin user gets administrative privileges.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 130 | **Type:** Concept
+  - Similarly, the nodes must be added to a group named system nodes.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - Once the certificates are generated, they go into the kube config files as we discussed earlier.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - Well that's it for this lecture.
+- **File:** `149_TLS in Kubernetes - Certificate Creation.extraction.md` | **Entry:** 133 | **Type:** Implementation Step
+  - In the next lecture we will see how you can view certificate information and how certificates are configured by the Kube ADM tool.
+
+### View Certificate Details
+
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture, we see how we can view certificates in an existing cluster.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So you join a new team to help them manage their Kubernetes environment.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - You're a new administrator to this team.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 4 | **Type:** Troubleshooting
+  - You've been told that there are multiple issues related to certificates in the environment.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So you're asked to perform a health check of all the certificates in the entire cluster.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - What do you do?
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - First of all, it's important to know how the cluster was set up.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - There are different solutions available for deploying a Kubernetes cluster, and they use different methods to generate and manage certificates.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - If you were to deploy a Kubernetes cluster from scratch, you generate all the certificates by yourself as we did in the previous lecture.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - Or else, if you were to rely on an automated provisioning tool like kube ADM, it takes care of automatically generating and configuring the cluster for you while you deploy all the components as native services on the nodes in the hard way.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - The kubectl tool deploys these as pods.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So it's important to know where to look at to view the right information.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 13 | **Type:** Exam Tip
+  - In this lecture, we're going to look at a cluster provisioned by kube ADM as an example.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - In order to perform a health check, start by identifying all the certificates used in the system.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - I've created a sample Excel spreadsheet for you.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Check out the resources linked at the end of this lecture to access it.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 17 | **Type:** Troubleshooting
+  - So the idea is to create a list of certificate files used, their paths, the names configured on them, the alternate names configured, if any, the organization the certificate account belongs to the issuer of the certificate and the expiration date...
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So how do you get these?
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Start with certificate files used for this in an environment set up by Kube ADM.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 20 | **Type:** Architecture
+  - Look for the kube API server definition file under slash Kubernetes manifests folder.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 21 | **Type:** Architecture
+  - The command used to start the API server has information about all the certificates it uses.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Identify the certificate file used for each purpose and note it down.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 23 | **Type:** Exam Tip
+  - Next, take each certificate and look inside it to find more details about that certificate, for example.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 24 | **Type:** Architecture
+  - We will start with the API server certificate file.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Run the OpenSSL x509 command and provide the certificate file as input to decode the certificate and view details.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Start with the name on the certificate under the subject section.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 27 | **Type:** Architecture
+  - In this case it's kube API server.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - Then the alternate names.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 29 | **Type:** Troubleshooting
+  - The kube API server has many, so you must ensure all of them are there, and then check the validity section of the certificate to identify the expiry date and then the issuer of the certificate.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 30 | **Type:** Troubleshooting
+  - This should be the CA who issued the certificate.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Kube ADM names the Kubernetes CA as Kubernetes itself.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Follow the same procedure to identify information about all the other certificates.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Things to look for.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Check to make sure you have the right names, the right alternate names.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 35 | **Type:** Troubleshooting
+  - Make sure the certificates are part of the correct organization, and most importantly, they are issued by the right issuer and that the certificates are not expired.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - The certificate requirements are listed in detail in the Kubernetes documentation page.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Check the references section for the link.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 38 | **Type:** Troubleshooting
+  - When you run into issues, you want to start looking at logs.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - If you set up the cluster from scratch by yourself and the services are configured as native services in the OS, you want to start looking at the service logs using the operating system's logging functionality.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - In case you set up a cluster with kube ADM, then the various components are deployed as pods.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So you can look at the logs using the kube control logs command followed by the pod name.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 42 | **Type:** Architecture
+  - Sometimes if the core components, such as the Kubernetes API server or the etcd server are down, the kube control commands won't function.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - In that case, you have to go one level down to Docker to fetch the logs.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - List all the containers using the crystal PS a command, and then view the logs using crystal or logs command followed by the container ID.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `150_View Certificate Details.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Head over to the practice test and practice viewing information about the existing cluster.
+
+### Lab Solution - View Certification Details
+
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: So in this video we're going to look at the solution for the lab on viewing certificate details.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 2 | **Type:** Architecture
+  - So the first question is to identify the certificate file used for the kube-api server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 3 | **Type:** Architecture
+  - So let's look at the manifest files for the kube-api server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So we know that they are under etc/kubernetes/manifest and we have the kube-apiserver.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 5 | **Type:** Architecture
+  - And if you look at this file, we know that we need to look for the certificate file used for the kube-api server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 6 | **Type:** Architecture
+  - So these are the files to connect to the ETCD Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 7 | **Type:** Architecture
+  - These are the kubelet, have the proxy and the certificate for the kube-api server itself are these.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So we have the certificate file here and the key here.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So /etc/kubernetes/pki/apiserver.crt, pki/apiserver.crt.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So that's this one.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 11 | **Type:** Architecture
+  - Okay, so identify the certificate file used to authenticate kube-apiserver as a client to ETCD Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So this is the kube-apiserver configuration.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 13 | **Type:** Architecture
+  - And kube-apiserver connecting to ETCD Server, is connecting to ETCD Server as a client.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So these are the relevant files.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 15 | **Type:** Architecture
+  - So this is the address of the ETCD Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And then you have the cafile, the certfile and the key.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 17 | **Type:** Architecture
+  - Here we're asked to identify the certificate file used to authenticate the kube-apiserver to ETCD.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 18 | **Type:** Architecture
+  - So the cert file is this, so that's /etc/kubernetes/pki/apiserver-etcd-client.crt, etcd-client.crt.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Looks like it's this one.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 20 | **Type:** Architecture
+  - Okay, identify the key used to authenticate the kubeapi-server to the kubelet server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 21 | **Type:** Architecture
+  - So these are the files that are relevant to the kubelet.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And you have a certificate file here.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - And then the key, so that's /etc/kubernetes/pki/apiserver-kubetlet-client.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 24 | **Type:** Architecture
+  - So a apiserver-kubelet-client, /etc/kubernetes/pki.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - And we're asked to identify the key.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So it's not the crt, it's the one that has key at the end.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Okay, so just to summarize here.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 28 | **Type:** Architecture
+  - These are the files used by the kube-api server itself to host itself.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So that's under the /etc/kubernetes/pki.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - And then you have the apiserver.crt and apiserver.key.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 31 | **Type:** Architecture
+  - Everything for connecting to the ETCD Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 32 | **Type:** Architecture
+  - The cafile is under etcd.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 33 | **Type:** Architecture
+  - But then the API server client files are still under the pki directory.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 34 | **Type:** Architecture
+  - And then here to the kubelet client files, they're still under the pki directory.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And so that's what we were concerned about.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 36 | **Type:** Architecture
+  - So if you look at it, anything to do with the Kubernetes API server, they're under the pki directory.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 37 | **Type:** Architecture
+  - So either the API server certificate and key itself or the client files, which are used to connect to either ETCD or kubelet, they're all under /etc/kubernetes/pki, under the pki directory.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So think about it that way.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 39 | **Type:** Architecture
+  - And then now we're asked to identify the ETCD Server Certificate used to host the ETCD Server itself.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 40 | **Type:** Architecture
+  - So for this we're going to look at the ETCD Server manifest file.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 41 | **Type:** Architecture
+  - And here we have the certificate file is under the etcd directory.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 42 | **Type:** Architecture
+  - And the key is also under the ETCD directory.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - And then you have the cafile.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 44 | **Type:** Architecture
+  - It's also under the etcd directory.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 45 | **Type:** Architecture
+  - So anything to do with the ETCD Server itself for its own hosting is under the etc/kubernetes/pki/etcd directory.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 46 | **Type:** Architecture
+  - So in this case, we're asked to identify the ETCD Server Certificate.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So that's this certificate.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 48 | **Type:** Architecture
+  - So that's /etc/kubernetes/pki/etcd/server.crt, that's /etc/kubernetes/pki.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 49 | **Type:** Architecture
+  - There's no etcd here. /etc/kubernetes/pki/etcd/server.crt.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So that's this one.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 51 | **Type:** Architecture
+  - Now identify the ETCD Server CA Root ETCD Server used to serve the ETCD Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So here we have the CA file here which is a trusted-ca-file.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 53 | **Type:** Architecture
+  - And this is under the /kubernetes/pki/etcd directory.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 54 | **Type:** Architecture
+  - So as we discussed, in this case, the ETCD Server has its own CA file, trusted CA Root file which is under the etcd directory.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 55 | **Type:** Architecture
+  - And the kube-api server has its own which is in a different directory.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So just keep that in mind.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 57 | **Type:** Architecture
+  - So this is under /etc/kubernetes/pki/etcd/ca.crt.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 58 | **Type:** Architecture
+  - So that's at etcd/ca.crt.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - It's this one.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 60 | **Type:** Architecture
+  - Now, what is the common name configured on the Kube API Server Certificate.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 61 | **Type:** Architecture
+  - So we know that the Kube API Server Certificate is this one and we'll run that through the openssl x509, filename, -text and -noout.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So that command is gonna give us this information.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - And if you look inside here, you have information about the certificate.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 64 | **Type:** Troubleshooting
+  - So the issuer is Kubernetes, but the subject, which is what this certificate is issued to, is the common name for that is kube-apiserver.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - That's kube-apiserver.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So that's the answer to this question.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - That's kube-apiserver.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 68 | **Type:** Troubleshooting
+  - Now, what is the name of the CA who issued the Kube API Server Certificate?
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 69 | **Type:** Troubleshooting
+  - If you at here you have the issuer and the name is Kubernetes.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 70 | **Type:** Troubleshooting
+  - So Kubernetes is the CA who issued the Kube API Server Certificate.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 71 | **Type:** Architecture
+  - Now, which of the below alternate names is not configured on the Kube API Server?
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 72 | **Type:** Exam Tip
+  - So as we discussed, the Kube API Server has multiple names.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So it could be controlplane, kubernetes, kubernetes.default, kubernetes.default.svc, kubernetes.default.svc.cluster.local and this IP addresses as well.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So kubernetes, yes.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Controlplane, yes.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Kubernetes.default.svc, yes.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Kube-master, no, there is no kube-master.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So in this case, that's the answer to that question.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 79 | **Type:** Architecture
+  - Now, what is the common name configured on the ETCD Server Certificate?
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 80 | **Type:** Architecture
+  - So let's look at the ETCD Server Certificate and that is this one.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 81 | **Type:** Architecture
+  - And let's run it through the same command but we're just going to replace it with the ETCD Server Certificate.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 82 | **Type:** Troubleshooting
+  - And here we can see the issuer is etcd-ca.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 83 | **Type:** Architecture
+  - So ETCD has its own CA, that's what we need to understand from here.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And if you remember, Kubernetes had the CA, kubernetes, but here you have another CA.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 85 | **Type:** Architecture
+  - And then the common name configured on the ETCD Server Certificate.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 86 | **Type:** Architecture
+  - If you look at this common name for the ETCD Server is controlplane.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So this is not the control plane, as this, this is not the Kubernetes control plane.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 88 | **Type:** Architecture
+  - This is referring to the ETCD control plane, in fact.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So let's select that.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 90 | **Type:** Troubleshooting
+  - Now, how long from the issue date is the Kube API Server Certificate valid for?
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 91 | **Type:** Architecture
+  - So we have the output for the API server here.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - And if you look at this, if you look at the validity, it's not valid before.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - So this is basically the starting.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So this is April 17th, 2022 and is valid for until April 17th, 2023.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So that's one year.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Okay.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 97 | **Type:** Troubleshooting
+  - How long from the issue date is the Root CA Certificate valid for?
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So the Root CA Certificate, as we know, is here.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - So let's run the same command.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - And if you look at the validity, it's April 17th, 2022 to April 14th, 2032.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So that's approximately, that's 10 years.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - So that's like that.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - Okay, so going through a change window.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - So there are some changes happening.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - Okay, so kubectl suddenly stops responding to your commands after a change window.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - So check it out.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 107 | **Type:** Troubleshooting
+  - Someone recently modified this particular file, so you're asked to investigate and fix the issue.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 108 | **Type:** Troubleshooting
+  - And once you fix the issue, wait for some time for kubectl to respond.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - Okay.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - So let's see that.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - Let's do a kubectl get something, get pods and let's see what's happening.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - So this might take some time.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - Okay, so it says the connection to the server was refused, did you specify the right host or port?
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - So apparently none of the Kubernetes commands are working.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 115 | **Type:** Architecture
+  - So let's see, let's first, so if this happens, this means that the kubectl utility is not able to communicate with the Kube API Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 116 | **Type:** Architecture
+  - So we need to look at the status of the Kube API Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 117 | **Type:** Architecture
+  - But you can't do that with the kubectl command because the kubectl command cannot communicate with the Kube API Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 118 | **Type:** Implementation Step
+  - So we have to then use Docker because we know that these pods are in fact running as containers on the host, Docker containers.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 119 | **Type:** Implementation Step
+  - So let's do a docker ps, then grep for kube-apiserver.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 120 | **Type:** Architecture
+  - And we see that we have the Kube API Server and we have a Kube API Server that exited like 27 seconds ago.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 121 | **Type:** Architecture
+  - And then we have a new Kube API Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 122 | **Type:** Troubleshooting
+  - So let's quickly check the logs of that container and we see that it has this error, error while dialing tcp 127.0.0.1:2379.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 123 | **Type:** Architecture
+  - Now we know that 2379 is a port of ETCD but this is the ETCD Server port.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 124 | **Type:** Architecture
+  - So basically the Kube API Server is not able to connect to the ETCD Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 125 | **Type:** Architecture
+  - So let's look at the ETCD Server then.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - So let's do a docker ps -a.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 127 | **Type:** Architecture
+  - So let's look for ETCD and we have ETCD part here.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 128 | **Type:** Architecture
+  - And if you look at this, let's see if we can find, okay, so right here it says etcdmain cannot find /etc/kubernetes/pki/etcd/server-certificate.crt is not found.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - So let's see where that is.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 130 | **Type:** Architecture
+  - So that's /etc/kubernetes/pki/etcd.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - If you look at this directory, there is server.crt but there is no server-certificate.crt.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 132 | **Type:** Troubleshooting
+  - So that's the error.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 133 | **Type:** Architecture
+  - So something is changed in the ETCD server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 134 | **Type:** Architecture
+  - So let's look at the ETCD manifest files.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 135 | **Type:** Architecture
+  - So that's /etc/kubernetes/manifests/etcd.yml.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 136 | **Type:** Implementation Step
+  - And let's see where we have this configured which is server-certificate.crt.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 137 | **Type:** Concept
+  - So someone's put in the wrong path to the certificate here.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 138 | **Type:** Troubleshooting
+  - So that's the crt file, and that's the issue.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 139 | **Type:** Troubleshooting
+  - So we have to fix this.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 140 | **Type:** Architecture
+  - So the crt file for ETCD, as we know we have seen earlier is the server.crt file.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 141 | **Type:** Concept
+  - It's not server-certificate, it's just server.crt.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 142 | **Type:** Concept
+  - So we're going to modify this.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 143 | **Type:** Concept
+  - So let's go in, edit this file and let's remove this case.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 144 | **Type:** Concept
+  - Let's save that.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 145 | **Type:** Concept
+  - And let's now give it some time start up.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 146 | **Type:** Architecture
+  - So let's look at etcd again.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 147 | **Type:** Concept
+  - See that it's powered up now a new pod, our new container.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 148 | **Type:** Troubleshooting
+  - So let's check the logs of that container and see that, I see that it's now, that error is not no longer there.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 149 | **Type:** Concept
+  - So let's see if...
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 150 | **Type:** Concept
+  - It's still not working.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 151 | **Type:** Architecture
+  - So we might have to give it some time for the Kube API Server to pick this up.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 152 | **Type:** Architecture
+  - So let's check the Kube API Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 153 | **Type:** Concept
+  - Let's check the logs.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 154 | **Type:** Architecture
+  - So this is the previous instance of the Kube API server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 155 | **Type:** Concept
+  - So we just have to wait for a new instance to come up.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 156 | **Type:** Concept
+  - Okay.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 157 | **Type:** Concept
+  - Looks like there's a new container.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 158 | **Type:** Concept
+  - Let's check the logs of that container.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 159 | **Type:** Concept
+  - So let's do a docker logs.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 160 | **Type:** Warning/Pitfall
+  - And we see, don't see errors anymore so let's check.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 161 | **Type:** Concept
+  - Yep.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 162 | **Type:** Concept
+  - Okay, so now we have the kubectl utility back and the node is now ready.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 163 | **Type:** Concept
+  - Okay, let's give that a shot.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 164 | **Type:** Concept
+  - Okay, so that's success.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 165 | **Type:** Concept
+  - After a few hours.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 166 | **Type:** Concept
+  - I believe someone's gonna break something again.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 167 | **Type:** Architecture
+  - So we have the kube-api server and it stopped again.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 168 | **Type:** Concept
+  - Check it out.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 169 | **Type:** Concept
+  - Let's check that out.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 170 | **Type:** Concept
+  - Yep, it looks like that's stopped again.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 171 | **Type:** Troubleshooting
+  - Now inspect the kube-api server logs and identify the root cause and fix the issue.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 172 | **Type:** Concept
+  - So let's look at the logs again.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 173 | **Type:** Concept
+  - Okay, so this time it says, unable to connect to the server, TLS handshake timeout.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 174 | **Type:** Troubleshooting
+  - So it looks like there's some issue with the TLS certificates.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 175 | **Type:** Concept
+  - So let's check that again.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 176 | **Type:** Architecture
+  - So let's check the kube-api server again.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 177 | **Type:** Concept
+  - So docker ps -a, grep kube-apiserver and you see that it exited.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 178 | **Type:** Concept
+  - So let's do docker logs.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 179 | **Type:** Implementation Step
+  - And here it says, authentication handshake failed, certificate signed by unknown authority.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 180 | **Type:** Concept
+  - Let's see if there's something else.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 181 | **Type:** Troubleshooting
+  - Okay, so that's the error.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 182 | **Type:** Concept
+  - And also here you have some information that, it's failed to connect to 127.0.0.1:2379.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 183 | **Type:** Architecture
+  - So we know that 2379 is ETCD Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 184 | **Type:** Architecture
+  - So it's got something to do with the ETCD Server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 185 | **Type:** Troubleshooting
+  - So basically the kube-api server is unable to connect to the ETCD Server because of handshake issue.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 186 | **Type:** Concept
+  - So it's because the certificate is signed unknown authorities.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 187 | **Type:** Concept
+  - So let's check that out.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 188 | **Type:** Troubleshooting
+  - Let's look at, let's first look at the ETCD pod, and see if that has any issues.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 189 | **Type:** Architecture
+  - So if you look at this, the ETCD container has been running for four minutes.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 190 | **Type:** Concept
+  - So let's check the logs of that container.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 191 | **Type:** Troubleshooting
+  - And we see that it started, well, there were no errors, but then started getting this rejected connection from, and this is a remote and it's a bad certificate.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 192 | **Type:** Concept
+  - So it's rejecting connections from somewhere.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 193 | **Type:** Architecture
+  - And we assume that that's the kube-api server trying to connect to that ETCD server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 194 | **Type:** Concept
+  - And that's because it is sending in a bad certificate.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 195 | **Type:** Architecture
+  - Okay, so let's try to look at the certificates configured on the API server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 196 | **Type:** Architecture
+  - So that's under manifest, kube-api server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 197 | **Type:** Architecture
+  - We're basically focusing on the ETCD itself.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 198 | **Type:** Concept
+  - So let's just look at those alone.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 199 | **Type:** Concept
+  - Okay, so this is what we need to look at.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 200 | **Type:** Architecture
+  - So here we have the etcd-cafile and that's set to /etc/kubernetes/pki/ca.crt and then you have the etcd-certfile.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 201 | **Type:** Architecture
+  - This is the client certificate for API server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 202 | **Type:** Architecture
+  - So that's apiserver-etcd-client.crt set correctly.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 203 | **Type:** Concept
+  - This is the key file.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 204 | **Type:** Architecture
+  - Again, this is the a API server, at etcd-client.key file which is right.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 205 | **Type:** Architecture
+  - And the etcd-servers is set to the correct URL as well.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 206 | **Type:** Concept
+  - So as we discussed earlier, the Kubernetes has its own CA file, which is this.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 207 | **Type:** Architecture
+  - And ETCD has its own CA file, which is not this.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 208 | **Type:** Architecture
+  - So ETCD has a CA file, which is under /kubernetes/pki/etcd and then the CA file that's here.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 209 | **Type:** Architecture
+  - So this is the CA file for ETCD.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 210 | **Type:** Best Practice
+  - So here you should be specifying that and not the the Kubernetes CA file.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 211 | **Type:** Concept
+  - So that seems to be the problem.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 212 | **Type:** Concept
+  - So let's go in and change.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 213 | **Type:** Concept
+  - Okay, you can just add this here, like this.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 214 | **Type:** Architecture
+  - And let's check the status of Kube API server.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 215 | **Type:** Concept
+  - Okay, it started one eight seconds ago.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 216 | **Type:** Concept
+  - Let's check the logs.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 217 | **Type:** Warning/Pitfall
+  - And we see, we don't see those errors anymore.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 218 | **Type:** Concept
+  - These are all informational.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 219 | **Type:** Architecture
+  - Okay, let's check if the API server is back up.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 220 | **Type:** Concept
+  - Yep, it seems to be back up.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 221 | **Type:** Concept
+  - So that was a problem.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 222 | **Type:** Architecture
+  - So we looked at the logs on the Kube API Server, we looked at the logs on the ETCD Server and the containers for both.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 223 | **Type:** Troubleshooting
+  - And we realized that it was a certificate issue somewhere.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 224 | **Type:** Implementation Step
+  - So we went through and looked at the certificate files configured on each of them and finally figured out that it was this.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 225 | **Type:** Concept
+  - So that was a bit tricky but that's just something we'll have to keep in mind.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 226 | **Type:** Concept
+  - Okay.
+- **File:** `153_Lab Solution - View Certification Details.extraction.md` | **Entry:** 227 | **Type:** Concept
+  - Well, that's all for this lab.
+
+### Certificates API
+
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture, we look at how to manage certificates and what the certificate API is in Kubernetes.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So what have we done so far?
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - I, as an administrator of the cluster, in the process of setting up the whole cluster, have set up a CA server and bunch of certificates for various components.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - We then started the services using the right certificates and is all up and working.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - I'm the only administrator and user of the cluster and I have my own admin certificate and key.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - A new admin comes into my team.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - She needs access to the cluster.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - We need to get her a pair of certificate and key pair for her to access the cluster.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - She creates her own private key, generates a certificate signing request and sends it to me.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - Since I'm the only admin, I then take the certificate signing request to my CA server, gets it signed by the CA server using the CA server's private key and route certificate, thereby generating a certificate and then sends the certificate back to...
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - She now has her own valid pair of certificate and key that she can use to access the cluster.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The certificates have a validity period.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - It ends after a period of time.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Every time it expires, we follow the same process of generating a new CSR and getting it signed by the CA.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So we keep rotating the certificate files.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So we keep talking about the CA server.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - What is the CA server and where is it located in the Kubernetes setup?
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - The CA is really just the pair of key and certificate files we have generated.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Whoever gains access to these pair of files can sign any certificate for the Kubernetes environment.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - They can create as many users as they want with whatever privileges they want.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So these files need to be protected and stored in a safe environment.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Say we place them on a server that is fully secure, now that server becomes your CA server.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - The certificate key file is safely stored in that server and only on that server.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Every time you want to sign a certificate, you can only do it by logging into that server.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - As of now, we have the certificates placed on the Kubernetes master node itself.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So the master node is also RCA server.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - The Kubeadm tool does the same thing.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - It creates a CA pair of files and stores that on the master node itself.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So far we have been signing requests manually, but as in when the users increase and your team grows, you need a better automated way to manage the certificates signing requests, as well as to rotate certificates when they expire.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Kubernetes has a built-in certificates API that can do this for you.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - With the certificates API, you now send a certificate signing request directly to Kubernetes through an API call.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - This time when the administrator receives a certificate signing request, instead of logging onto the master node and signing the certificate by himself, he creates a Kubernetes API object called CertificateSigningRequest.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - Once the object is created, all CertificateSigningRequest can be seen by administrators of the cluster.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - The request can be reviewed and approved easily using Kube control commands.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - This certificate can then be extracted and shared with the user.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Let's see how it is done.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - A user first creates a key, then generates a certificate signing request using the key with her name on it, then sends the request to the administrator.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - The administrator takes a key and creates a CertificateSigningRequest object.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - The CertificateSigningRequest object is created like any other Kubernetes object using a manifest file with the usual fields.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - The kind is CertificateSigningRequest under the spec section.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - In the spec section, usages defines how the certificate will be used.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Expiration seconds controls certificate validity signer name tells Kubernetes who is allowed to sign the certificate signing request and what kind of certificate is being requested.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 43 | **Type:** Warning/Pitfall
+  - The request field is where you specify the certificate signing request sent by the user, but you don't specify it as plain text.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Instead, it must be encoded using the base 64 command.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - Then move the encoded text into the request field and then submit the request.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - Once the object is created, all CertificateSigningRequests can be seen by administrators by running the Kube control, get csr command.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Identify the new request and approve the request by running the Kube control certificate approved command, Kubernetes signs the certificate using the CA key pairs and generates a certificate for the user.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - This certificate can then be extracted and shared with the user.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - View the certificate by viewing it in a YAML format.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - The generated certificate is part of the output, but as before, it is in a base 64 and coded format.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - To decode it, take the text and use the base 64 utilities decode option.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - This gives the certificate in a plain text format.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - This can then be shared with the end user.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Now that we have seen how it works, let's see who does all of this for us.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 55 | **Type:** Architecture
+  - If you look at the Kubernetes control plane, you see the kube-apiserver, the scheduler, the controller manager, etcd server, et cetera.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Which of these components is actually responsible for all the certificate related operations?
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 57 | **Type:** Architecture
+  - All the certificate related operations are carried out by the controller manager.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 58 | **Type:** Architecture
+  - If you look closely at the controller manager, you will see that it has controllers in it called as CSR-Approving, CSR-Signing, et cetera, that are responsible for carrying out these specific tasks.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - We know that if anyone has to sign certificates, they need the CA server's route certificate and private key.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 60 | **Type:** Architecture
+  - The Controller Manager service configuration has two options where you can specify these.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `154_Certificates API.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - Head over to the practice test and play around with the certificate's API and we'll see you in the next lecture.
+
+### Lab Solution - Certificates API
+
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, so let's go through the lab on certificates.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So a new member, Akshay joined our team.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - He requires access to our cluster.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - The certificate signing request is at the route location.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So, let's see where we are.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So we are in, we are in route.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So we have Akshay dot CSR, and Akshay dot key.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Let's look at, what's there in those files.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So this is the CSR, so certificate signing request.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - And then here is, that's basically the, the key.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Okay, so that's good.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So create a certificate signing request object with the name Akshay with the contents of the Akshay dot CSR file.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - So for this we have to create, there is no imperative command.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So let's go here.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And in the CSR or the certificate signing request page on, on Kubernetes.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So we have Kubernetes documentation pages.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - We have this section here to create certificate signing requests.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So we're gonna get this, because we want to.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - Let's, let's skip the first and last lines because we want to edit this request and maybe even the expiration dates.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Because that's not required for now.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - So I'm going to create a file called Akshay dot yaml.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - I'm gonna paste that.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And what we need to do is paste in the CSR file here.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So basically, the contents of, actually dot CSR, needs to go here.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - But as you can see, this is in a different format.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So this is basically, base64 encoded format.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - So first we need to get the basic C4 encoded format of this and then change this and change the name now's maybe get rid of this.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Okay, so let's do that.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So let's, yeah, Cat, actually that's CSR.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - And then we paste it through base64.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - And then we get this.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Now this command, base64, by default prints it in this format with, with new lines.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - But that won't work very well here because it needs to be a single line.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So what we're going to do is touch W zero and that basically prints it in, in a single line.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - And then we're just gonna copy this and just make sure you copied right to here.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Okay.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - Then we go in here.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Go.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Request.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Let's paste that.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Okay.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - And then we gotta get rid of this line.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - That's not required.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - And then we have the metadata here.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And this is Akshay.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Well also, So the signer name.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 47 | **Type:** Best Practice
+  - So the signer name should be recorded as an audio kube-apiserver client.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So it's already kube-apiserver client.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Okay, so.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - This is good.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - Leave that and let's create.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 52 | **Type:** Troubleshooting
+  - Okay, so it looks like there is an error.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - This is illegal.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Base64 data at input.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Right?
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Hundreds.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Let's take a look.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - If you look here, I think we, we missed an equal sign.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Let's just do that again.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Yeah, copy that.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - And we have a request.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - Okay, that seems to be good.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Just gonna align that directly.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - And let's save this and let's create that file again.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Get CSR.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - Okay, so the CSR request named Akshay is created and you can see it's in a pending state.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So let's give this a shot.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Okay, so that's successful.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - And what is the condition of the newly created certificate signing request object.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So it's in a pending state.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Select pending.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - And now we've got to approve the CSR request.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So let's do a kube KUTTL.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - Certificate approve. and then the name.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - That's approved and we see that it's indeed, approved.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Now how many CSR requests are available on the cluster?
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So if you look at this, we have two requests.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - Okay?
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So, during a routine check, you realize that there is a new CSR request.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - What is the name of this request?
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So let's look at that again.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So we see that there is indeed a new request that's come in.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - It's called Agent Smith.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - Okay, so it's called Agent Smith.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - Now, you're not aware of the request coming in.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - Now what groups is the CSR requesting access to?
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - So you see that there's a request and now, let's see what groups it's requesting access to.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So we could do a kube KUTTL with CSR Agent Smith.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - And then do, view it in, in the YAML format.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - That way we get more details.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - And here you see under the spec section, you have groups.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - And it's requesting for system masters, system authenticated.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So, system masters is one that it is requesting access to.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So the select system masters.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 96 | **Type:** Warning/Pitfall
+  - And that doesn't look very right, because we don't want to give system masters, which is the group which is an access to a group that has all, that has a lot of powers.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 97 | **Type:** Warning/Pitfall
+  - So we don't want to do that.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So we want to reject that.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - So let's do a kube KUTTL certificate, deny Agent Smith.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - Okay.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 101 | **Type:** Implementation Step
+  - Next.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - Now let's get rid of it.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - Delete the new CSR object.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - So let's see the status now.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - And we see that it's denied.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - And we want to now get rid of it.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - So we'll do a peddle delete CSR Agent Smith.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 108 | **Type:** Best Practice
+  - Okay, so that should now be gone.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - Let's check it again.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - Yep.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - And that's indeed gone.
+- **File:** `156_Lab Solution - Certificates API.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - Okay, so that's the end of this lab.
+
+### KubeConfig
+
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we look at kube configs in Kubernetes.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So far we have seen how to generate a certificate for a user.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We have seen how a client uses the certificate file and key to query the Kubernetes Rest API for a list of pods using curl.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - In this case, my cluster is called Minikube playground.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 5 | **Type:** Architecture
+  - So send a curl request to the address of the kube API server while passing in the pair of files, along with the certificate as options.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 6 | **Type:** Architecture
+  - This is then validated by the API server to authenticate the user.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Now how do you do that while using the kube control command?
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - You can specify the same information using the options server, client key, client certificate and certificate authority with the kube control utility.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Obviously, typing those in every time is a tedious task.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So you move these information to a configuration file called as kube config, and then specify this file as the kube config option in your command.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - By default, the cube control tool looks for a file named config under a directory cube under the user's home directory.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 12 | **Type:** Warning/Pitfall
+  - So if you create the cube config file there, you don't have to specify the path to the file explicitly in the cube control command.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - That's the reason you haven't been specifying any options for your cube control commands so far.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The cube config file is in a specific format.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Let's take a look at that.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - The config file has three sections clusters, users, and contexts.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Clusters are the various Kubernetes clusters that you need access to.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 18 | **Type:** Exam Tip
+  - So you have multiple clusters for development environment or testing environment, or prod, or for different organizations, or on different cloud providers, etc. all those go there.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 19 | **Type:** Exam Tip
+  - Users are the user accounts with which you have access to these clusters, for example the admin user, a dev user, a prod producer, etc. these users may have different privileges on different clusters.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Finally, contexts marry these together.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Context define which user account will be used to access which cluster.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 22 | **Type:** Exam Tip
+  - For example, you could create a context named admin at production that will use the admin account to access a production cluster.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - Or I may want to access the cluster I have set up on Google with the dev user's credentials to test deploying the application I built.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Remember, you're not creating any new users or configuring any kind of user access or authorization in the cluster.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - With this process, you're using existing users with their existing privileges and defining what user you're going to use to access what cluster.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 26 | **Type:** Warning/Pitfall
+  - That way, you don't have to specify the user certificates and server address in each and every kube control command you run.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 27 | **Type:** Exam Tip
+  - So how does it fit into our example?
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - The server Service specification in our command goes into the cluster section.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - The admin users keys and certificates goes into the users section.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - You then create a context that specifies to use the Mycube admin user to access the Mycube playground cluster.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Let's look at a real Kubeconfig file.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Now the Kubeconfig file is in YAML format.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - It has API version set to v1.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - The kind is config and then it has three sections as we discussed.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - One for clusters, one for contexts, and one for users.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Each of these is in an array format.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 37 | **Type:** Exam Tip
+  - That way you can specify multiple clusters, users, or contexts within the same file.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Under clusters, we add a new item for our Cube Playground cluster.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - We name it My Cube Playground and specify the server address under the server field.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - It also requires the certificate of the certificate authority.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - We can then add an entry into the users section to specify details of my cube admin user, provide the location of the client certificate and key pair.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So we have now defined the cluster and the user to access the cluster.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - Next, we create an entry under the context section to link the two together.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - We will name the context my Cube admin at my cube playground.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - We will then specify the same name we used for cluster and user.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Follow the same procedure to add all the clusters.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - You daily access the user credentials you use to access them as well as the contexts.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 48 | **Type:** Warning/Pitfall
+  - Once the file is ready, remember that you don't have to create any object like you usually do for other Kubernetes objects.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - The file is left as is and is read by the cube control command and the required values are used.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Now how does cube control know which context to choose from?
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - We have defined three contexts here.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 52 | **Type:** Best Practice
+  - Which one should it start with?
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - You can specify the default context to use by adding a field current context to the kubeconfig file.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Specify the name of the context to use.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - In this case, kube control will always use the context dev user at Google to access the Google clusters using the dev user's credentials.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - There are command line options available within kube control to view and modify the Kubeconfig files.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - To view the current file being used, run the kube control config view command.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - It lists the cluster's context and users, as well as the current context that is set.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 59 | **Type:** Warning/Pitfall
+  - As we discussed earlier, if you do not specify which kubeconfig file to use, it ends up using the default file located in the folder kube in the user's home directory.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Alternatively, you can specify a kubeconfig file by passing the kube config option in the command line like this.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - We will move our custom config to the home directory, so this becomes our default config file.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So how do you update your current context.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So you've been using minikube admin user to access my Kube playground.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - How do you change the context to use prod user to access the production cluster?
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Run the kube control config.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Use context command to change the current context to the producer at production context.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - This can be seen in the current context field in the file.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So yes, the changes made by kube control config command actually reflects in the file.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - You can make other changes in the file update or delete items in it using other variations of the kube control config command.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Check them out when you get time.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 71 | **Type:** Exam Tip
+  - What about namespaces for example?
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 72 | **Type:** Exam Tip
+  - Each cluster may be configured with multiple namespaces within it.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - Can you configure a context to switch to a particular namespace?
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - Yes.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - The context section in the Kubeconfig file can take additional field called namespace, where you can specify a particular namespace.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - This way when you switch to that context, you will automatically be in a specific namespace.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Finally, a word on certificates you have seen.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Paths to certificate files mentioned in Kubeconfig.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - Like this.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Well, it's better to use the full path like this.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - But remember, there's also another way to specify the certificate credentials.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - Let's look at the first one for instance where we configure the path to the certificate authority.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - We have the contents of the file on the right.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - Instead of using certificate authority field and the path to the file, you may optionally use the Certificate Authority data field and provide the contents of the certificate itself, but not the file as is.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - Convert the contents to a base64 encoded format and then pass that in.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - Similarly, if you see a file with the certificates data in the encoded format, use the base64 decode option to decode the certificate.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Head over to the Practice Exercises section.
+- **File:** `157_KubeConfig.extraction.md` | **Entry:** 89 | **Type:** Troubleshooting
+  - Practice working with Kubeconfig files and troubleshooting issues.
+
+### Lab Solution - KubeConfig
+
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, so let's go through the lab on cube config or security context.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So where is the default cube config file located in the current environment?
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Find the current home directory by looking at the home environment variable.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So let's look at home.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - And home is set to root, which is the current directory we are in.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So we know that it's usually under the hidden cube directory.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So we have a cube directory here.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - And then, and you have config here.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So if you look at this, you have dot cube slash config and that's really the cube config file.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So it's at root dot cube slash config.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So root dot cube slash config.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So that's the one.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now, how many clusters are defined in the default cube config file?
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So if you look at this, the clusters, you have one cluster and then you have context.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So you just have one cluster.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So that's one.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - How many users are defined in the default cube config file?
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So here you see the users are just one again.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So here you have the user and you have the certificate information here.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So it's just one.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - How many contacts are defined in the default cube config file?
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - If you look at the context, you have one and that's just one.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So you just have one context.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Now, what is the user configured in the current context?
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So if you look at the current context, it's Kubernetes admin at Kubernetes.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - That's the name of the context.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And so that is this.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So this is that context.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - And if you look at this, the user is Kubernetes admin.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So remember that this is just the name.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 31 | **Type:** Best Practice
+  - So you shouldn't assume that this is the actual user, configured, but it so happens that in this case, the naming and convention is this user at the cluster.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 32 | **Type:** Best Practice
+  - But you should always look at this field.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - So this is the actual user that's configured for that context.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So it is Kubernetes dash admin.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - Now, what is the name of the cluster configured in the default cube config file?
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So the name of the cluster: so this is the cluster and the name is Kubernetes.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - Okay, so a new cube config file named my cube config is created and it's in the root directory.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So let's look at that, my cube config, and it is placed in the root directory.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And how many clusters are defined in that cube config file?
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So let's look at this file.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So you have 1, 2, 3, 4, 4 clusters.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - How many contexts are configured in the my cube config file?
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - If you look at this, you have 1, 2, 3, 4, 4 context.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - What user is configured in the research context?
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So if you look at the research context you see that the user is dev user.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So that's dev user is that user.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Now, what is the name of the client certificate file configured for the AWS user?
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So you have users here and you have AWS user.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - The client certificate file.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - The file name is AWS user dot crt so that's AWS user dot crt.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - What is the current context set to in the My Cube config file?
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - The current context, as you can see here, is test user at development.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So that's the current context.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - That's test user development.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Now, I would like to use the dev user to access test cluster one.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - I'll set the current context to the right one, so I can do that.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - And once the right context is identified use the cube config file and use context command.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So dev user to access test cluster one.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So we're gonna look at contexts and dev user.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So this is the dev user.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - And to access test cluster one there's already a context called research created.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So we're going to use that.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So what we need to do is use the cube kubectl config command.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So cube kubectl config command, and use the context command.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - And the context that we're going to use is research.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Now remember that by default, the cube kubectl config command will use the default cube config file which is in root dot cube slash config.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - This is in a different file that we want it to work on.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So we have to provide this file name like this.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Okay, so switched to context research.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Let's check it out.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - And we see that current context, but in the file it's set to research.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Okay, let's check the work.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 73 | **Type:** Warning/Pitfall
+  - Now, we don't want to have to specify the cube config file option on each command.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So make the my cube config file the default cube config file.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So this is what we want to use going forward.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So what we're going to do is gonna move this cube config file as the default one, which is available here.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Okay, let's make sure that move was complete.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Yep.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 79 | **Type:** Warning/Pitfall
+  - So going forward, we don't have to.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - We could do a cube config view and we can see that this is the new view.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Let's check it.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So this is the new file.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - Okay, now with the current context set to research, we are trying to access the cluster.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - However, something seems to be wrong.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 85 | **Type:** Troubleshooting
+  - Identify and fix the issue.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - So let's do get notes command.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - We see that there's something wrong.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - So it says, unable to read client cert atc Kubernetes PKI users, dev user, developer user dot CRT for the dev user.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So let's check content of the file.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - And we see that the dev user has a client certificate which is set to Dev user, User crt.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - Now all user certificates are stored in this directory.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - So let's go here, we have the dev user, let's go here.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - And we see that it's dev user dot crt dev user dot csr, dev user dot key.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So it's dev user dot crt, not developer user dot crt.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So we're gonna have to modify that.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - So let's go in and let's change this.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 97 | **Type:** Troubleshooting
+  - So that's fixed.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - Let's try it again.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Yep.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - That seems to be working.
+- **File:** `159_Lab Solution - KubeConfig.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - Okay, so that is the end of this lab.
+
+### API Groups
+
+- **File:** `161_API Groups.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Before we head into authorization, it is necessary to understand about API groups in Kubernetes.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - But first, what is the Kubernetes API?
+- **File:** `161_API Groups.extraction.md` | **Entry:** 3 | **Type:** Architecture
+  - We learned about the kube API server.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 4 | **Type:** Architecture
+  - Whatever operations we have done so far with the cluster, we've been interacting with the API server one way or the other, either through the kube control utility or directly via Rest.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Say we want to check the version.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 6 | **Type:** Architecture
+  - We can access the API server at the master node's address, followed by the port, which is 6443 by default, and the API version it returns the version.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Similarly, to get the list of pods, you would access the url api slash v1 slash pods.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Our focus in this lecture is about these API paths, the version and the API.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - The Kubernetes API is grouped into multiple such groups based on their purpose, such as one for APIs, one for health, one for metrics and logs, etc. the version API is for viewing the version of the cluster.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - As we just saw, the metrics and health API are used to monitor the health of the cluster.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - The logs are used for integrating with third party logging applications.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - In this video, we will focus on the APIs responsible for the cluster functionality.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - These APIs are categorized into two the core group and the named group.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The core group is where all core functionality exists, such as namespaces, pods, replication, controllers, events, endpoints, nodes, bindings, persistent volumes, persistent volume claims, config maps, secrets, services, etc..
+- **File:** `161_API Groups.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - The named group APIs are more organized and going forward.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - All the newer features are going to be made available through these named groups.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - It has groups under it for apps, extensions, networking, storage, authentication, authorization, etc..
+- **File:** `161_API Groups.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Shown here are just a few.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - Within apps you have. deployments, replica sets, stateful sets.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Within networking you have network policies, certificates, have the certificate signing request that we talked about earlier in this section.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So the ones at the top are API groups and the ones at the bottom are resources in those groups.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Each resource in this has a set of actions associated with them.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Things that you can do with these resources such as.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - List the deployments.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - Get information about one of these deployments.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - Create a deployment, delete a deployment, update a deployment watch a deployment, etc. these are known as verbs.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - The Kubernetes API reference page can tell you what the API group is for each object.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - Select an object and the first section in the documentation page shows its group details.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - V1 core is just v1.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - You can also view these on your Kubernetes cluster.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 31 | **Type:** Architecture
+  - Access your kube API server at port 643 without any path, and it will list you the available API groups, and then within the named API groups, it returns all the supported resource groups.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - A quick note on accessing the cluster API like that.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - If you were to access the API directly through curl as shown here, then you will not be allowed access except for certain APIs like version, as you have not specified any authentication mechanisms.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - So you have to authenticate to the API using your certificate files by passing them in the command line like this.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - An alternate option is to start a kube control proxy client.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - The kube control proxy command launches a proxy service locally on port 8001, and uses credentials and certificates from your kube config file to access the cluster.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 37 | **Type:** Warning/Pitfall
+  - That way you don't have to specify those in the curl command.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 38 | **Type:** Architecture
+  - Now you can access the kube control proxy service at port 8001, and the proxy will use the credentials from kube config file to forward your request to the kube API server.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - This will list all available APIs at root.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So here are two terms that kind of sound the same.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - The kube proxy and kube control proxy.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Well they are not the same.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - We discussed about kube proxy earlier in this course.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - It is used to enable connectivity between pods and services across different nodes in the cluster.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - We discussed about kube proxy in much more detail later in this course.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 46 | **Type:** Architecture
+  - Whereas kube control proxy is an HTTP proxy service created by kube control utility to access the kube API server.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So what to take away from this?
+- **File:** `161_API Groups.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - All resources in Kubernetes are grouped into different API groups.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - At the top level you have core API group and named API group.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Under the named API group you have one for each section.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Under this API groups you have the different resources and each resource has a set of associated actions known as verbs.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - In the next section on authorization, we can see how we use these to allow or deny access to users.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `161_API Groups.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - I will see you in the next.
+
+### Authorization
+
+- **File:** `162_Authorization.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - So far we talked about authentication.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - We saw how someone can gain access to a cluster.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We saw different ways that someone, a human or a machine can get access to the cluster.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Once they gain access, what can they do?
+- **File:** `162_Authorization.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - That's what authorization defines.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - First of all, why do you need authorization in your cluster as an administrator of the cluster?
+- **File:** `162_Authorization.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - We were able to perform all sorts of operations in it, such as viewing various objects like pods and nodes and deployments, creating or deleting objects such as adding or deleting pods or even nodes in the cluster.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - As an admin, we're able to perform any operation, but soon we will have others accessing the cluster as well, such as the other administrators, developers, testers, or other applications like monitoring applications or continuous delivery applicat...
+- **File:** `162_Authorization.extraction.md` | **Entry:** 9 | **Type:** Warning/Pitfall
+  - But we don't want all of them to have the same level of access as us.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 10 | **Type:** Warning/Pitfall
+  - For example, we don't want the developers to have access to modify our cluster configuration, like adding or deleting nodes or the storage or networking configurations.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - We can allow them to view but not modify, but they could have access to deploying applications.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The same goes with service accounts.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - We only want to provide the external application the minimum level of access to perform its required operations.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - When we share our cluster between different organizations or teams by logically partitioning it using namespaces, we want to restrict access to the users to their namespaces alone.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - That is what authorization can help you within the cluster.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - There are different authorization mechanisms supported by Kubernetes, such as node authorizer, attribute based access control, role based access control, and webhook.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Let us go through these now.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 18 | **Type:** Architecture
+  - We know that the cube API server is accessed by users like us for management purposes, as well as the Cubelets or nodes within the cluster for management purposes within the cluster.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 19 | **Type:** Architecture
+  - The Cubelet accesses the API server to read information about services, endpoints, nodes, and pods.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 20 | **Type:** Architecture
+  - The Cubelet also reports to the cube API server with information about the node, such as its status.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - These requests are handled by a special authorizer known as the node authorizer.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 22 | **Type:** Troubleshooting
+  - In the earlier lectures, when we discussed about certificates, we discussed that the Cubelets should be part of the system nodes group and have a name prefixed with system node.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So any requests coming from a user with the name system node and part of the system nodes group is authorized by the node authorizer and are granted these privileges.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - The privileges required for a Cubelet.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So that's access within the cluster.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Let's talk about external access to the API.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - For instance, a user attribute based authorization is where you associate a user or a group of users with a set of permissions.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - In this case, we say the dev user can view, create, and delete pods.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - You do this by creating a policy file with a set of policies defined in a JSON format.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 30 | **Type:** Architecture
+  - This way you pass this file into the API server.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Similarly, we create a policy definition file for each user or group in this file.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 32 | **Type:** Architecture
+  - Now, every time you need to add or make a change in the security, you must edit this policy file manually and restart the kube API server.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - As such, the attribute based access control configurations are difficult to manage.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - We will look at role based access controls next.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Role based access controls make this much easier with role based access controls.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Instead of directly associating a user or a group with a set of permissions.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - We define a rule in this case for developers.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - We create a rule with the set of permissions required for developers.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - Then we associate all the developers to that role.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - Similarly, create a role for security users with the right set of permissions required for them.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Then associate the user to that role going forward whenever a change needs to be made to the user's access.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - We simply modify the role and it reflects on all developers immediately.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Role based access controls provide a more standard approach to managing access within the Kubernetes cluster.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - We will look at role based access controls in much more detail in the next lecture.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - For now, let's proceed with the other authorization mechanisms.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Now what if you want to outsource all the authorization mechanisms?
+- **File:** `162_Authorization.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Say you want to manage a authorization externally and not through the built in mechanisms that we just discussed.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - For instance, Open Policy Agent is a third party tool that helps with admission control and authorization.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 49 | **Type:** Best Practice
+  - You can have Kubernetes make an API call to the open policy agent with the information about the user and his access requirements, and have the open policy agent decide if the user should be permitted or not.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Based on that response, the user is granted access.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Now there are two more modes in addition to what we just saw always allow and always deny.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - As the name states, Always allow allows all requests without performing any authorization checks.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Always deny denies all requests.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - So where do you configure these modes?
+- **File:** `162_Authorization.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Which of them are active by default?
+- **File:** `162_Authorization.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Can you have more than one at a time?
+- **File:** `162_Authorization.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - How does authorization work?
+- **File:** `162_Authorization.extraction.md` | **Entry:** 58 | **Type:** Exam Tip
+  - If you do have multiple ones configured, the modes are set using the authorization mode option on the kube API server.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 59 | **Type:** Warning/Pitfall
+  - If you don't specify this option, it is set to always allow by default.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 60 | **Type:** Exam Tip
+  - You may provide a comma separated list of multiple modes that you wish to use.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - In this case, I want to set it to node, Rbac and webhook.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 62 | **Type:** Exam Tip
+  - When you have multiple modes configured, your request is authorized using each one in the order it is specified.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 63 | **Type:** Exam Tip
+  - For example, when a user sends a request, it's first handled by the node authorizer.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - The node authorizer handles only node requests, so it denies the request.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - Whenever a module denies a request, it is forwarded to the next one in the chain.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - The role based access control module performs its checks and grants.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - The user permission.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Authorization is complete and user is given access to the requested object.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - So every time a module denies a request, it goes to the next one in the chain, and as soon as a module approves the request, no more checks are done and the user is granted permission.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `162_Authorization.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - In the upcoming lectures, we will discuss more about role based access controls.
+
+### Role Based Access Controls
+
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture, we look at role based access controls in much more detail.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So how do we create a role?
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We do that by creating a role object.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - So we create a role definition file with the API version set to Rbac, dot authorization, dot k.io v1, and kind set to role.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - We name the role developer as we are creating this role for developers.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - And then we specify rules.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Each rule has three sections API groups, resources and verbs.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - The same things that we talked about in one of the previous lectures.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - For core group.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - You can leave the API groups section as blank.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - For any other group, you specify the group name.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The resources that we want to give developers access to are pods.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - The actions that they can take are list, get, create, and delete.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - Similarly, to allow the developers to create config maps, we add another rule to create config map.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 15 | **Type:** Exam Tip
+  - We can add multiple rules for a single role like this.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - Create the rule using the cube control.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - Create rule command.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - The next step is to link the user to that rule.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - For this we create another object called rule binding.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - The rule binding object links a user object to a rule.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - We will name it dev user to developer binding.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - The kind is rule binding.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - It has two sections.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - The subjects is where we specify the user details.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - The rule ref section is where we provide the details of the rule we created.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - Create the rule binding using the cube control create command.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Also note that the roles and role bindings fall under the scope of namespaces.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So here the dev user gets access to pods and Configmaps within the default namespace.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - If you want to limit the dev users access within a different namespace, then specify the namespace within the metadata of the definition file while creating them.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - To view the created roles.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Run the Kube control.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Get roles.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Command to list role bindings from the Kube control.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Get role bindings command to view more details about the role.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - When the kube control describe role developer command, here you see the details about the resources and permissions for each resource.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Similarly, to view details about role bindings, run the kube control describe role bindings command.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Here you can see details about an existing role binding.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - What if you, being a user, would like to see if you have access to a particular resource in the cluster?
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - You can use the kube control auth.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - Can I command and check if you can say create deployments or say delete nodes?
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - If you are an administrator, then you can even impersonate another user to check their permission.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - For instance, say you were tasked to create necessary set of permissions for a user to perform a set of operations.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And you did that, but you would like to test if what you did is working.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 44 | **Type:** Warning/Pitfall
+  - You don't have to authenticate as the user to test it.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Instead, you can use the same command with the as user option.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Like this.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Since we did not grant the developer permissions to create deployments, it returns null.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - The dev user has access to creating pods, though you can also specify the namespace in the command like this.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - The dev user does not have permission to create a pod in the test namespace.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Well, a quick note on resource names.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - We just saw how you can provide access to users for resources like pods within the namespace.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - You can go one level down and allow access to specific resources alone.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 53 | **Type:** Exam Tip
+  - For example, say you have five pods in namespace.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - You want to give access to a user to pods, but not all pods.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - You can restrict access to the blue and orange pod alone by adding a resource names field to the rule.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `163_Role Based Access Controls.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Head over to the Practice Exercises section and practice working with role based access controls.
+
+### Lab Solution - Role-Based Access Controls
+
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Okay, in this lab, we're going to look at role-based access controls.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the first question is, inspect the environment and identify authorization modes configured on the cluster.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 3 | **Type:** Architecture
+  - So let's look at the kube API server.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 4 | **Type:** Architecture
+  - So etc kubernetes manifests kube api server.yaml.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 5 | **Type:** Architecture
+  - And then, here we see the options passed to the kube API server.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And if you look at the authorization mode, you have Node and RBAC.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So that's one way of checking that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - The other way is to, we're gonna look at the processes on the control plane.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So we're gonna do a ps -aux grep for authorization mode.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So we know that, ultimately, all containers are running as processes on the control plane.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 11 | **Type:** Architecture
+  - So we look at the authorization mode configured on the kube API server.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 12 | **Type:** Architecture
+  - So this is basically the kube API server service.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And if you look at the authorization mode, it's set to Node and RBAC.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 14 | **Type:** Architecture
+  - These are two ways of finding out the settings passed to the kube API server.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So it's Node and RBAC.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Now, how many roles exist in the default namespace?
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So we're going to do kube cuttle get roles.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And in the default namespace, there are no roles.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So let's select that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - How many roles exist in all namespaces?
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So we're gonna pass in the -A to get all namespaces.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And instead of counting, we're going to do no headers.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So that prints it without this header.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - And then we'll do a word count to count the length and to count all the lines.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - And we get, and the answer to that is 12.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So let's select 12.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Okay, now, what are the resources, the kube proxy role in the kube system namespace is given access to?
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So here we have the kube proxy role.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So let's check that out.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So let's do a kube cuttle describe role kube proxy -: n kube system.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - System.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - And we see that the resources that this kube proxy role has access to is then config map.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So config maps.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And what actions can the kube proxy role perform on the config map?
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So the actions that it can perform for now is just get.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Oops, I accidentally clicked that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So which of the following statements are true?
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Kube proxy role can get details of a config map object by the name kube proxy.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So we know that, that's true, because kube proxy role can get the config map by the name kube proxy.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Kube proxy role can delete the config map.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - It cannot delete the config map, because it doesn't have the delete verb here.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And the kube proxy rule can only view and update the config map object by the name.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Obviously, this is incorrect, but still.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So what we need to understand here is that the kube proxy role can only get a config map with the resource name kube proxy.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So that's the correct answer.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Now, which account is the kube proxy role assigned to?
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So for that, we need to look at role binding.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So let's look at role bindings, role bindings in the kube system namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And if you look at this, we see that, so the kube proxy role is part of the kube proxy role binding.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So let's look at the kube proxy role binding in a bit more detail.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So you have kube cuttle describe role bindings kube proxy in the default, sorry, in the kube system namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And here you can see the group that it has access to for the account that the kube proxy role is assigned to.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So that's system bootstrappers kube admin default node token, that's the group that it's assigned to.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - So a user, dev user is created, the user's details have been added to a kube config file.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So let's look at the kube config file, let's do a kube cuttle config view.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - And we can see that there's a user named dev user.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - And inspect the permissions granted to the user.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So check if the user can list pods in the default namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So we can do a kube cuttle get pods, and we can use the ask dev user option to view as the dev user. (keyboard keys click) So as you can see, it's forbidden.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - The user, dev user cannot list resource pods in the API group in the default namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So the dev user has permissions, does not have permissions, that's the correct answer.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - Now, create the necessary roles and role bindings required for the dev user to create, list, and delete pods in the default namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - So first, we have to create the role, and role bindings for the dev user.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So we're gonna do a kube cuttle create role.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Let's take a look at the help.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - So we have create role and then the role name, and then the verbs.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So the verbs could be passed in, comma separated, and the resources that, that role has access to.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So that's going to be, let us do that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - So it's kube cuttle create role, and verbs are going to be list, create and delete.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - And resources are going to be pods.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - And let's also give it a name.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - The name is developer.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - It's resource, I think.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - Yep.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So let's describe the role.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - We can see that the developer role is created with list, create and delete access to pods.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - Now, we have to create a role binding and bind it to the, so let's do a kube cuttle create role binding help.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - And we see we can do create a role binding, the name is gonna be dev user binding, then the cluster role or user, our end group.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So what we wanna do is we wanna bind the dev user.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So this one and the role name, we're gonna use role.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 81 | **Type:** Implementation Step
+  - So we're going to use kube cuttle create role binding, and dev user binding.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - And the role is going to be developer.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - And the user is going to be dev user.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - Then let's check the role binding, dev user binding.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - We can see user, dev user is now associated to developer role.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - Okay?
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - Now, the dev user is trying to get details about the dark blue app pod in the blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 88 | **Type:** Troubleshooting
+  - But there is an issue.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 89 | **Type:** Troubleshooting
+  - So investigate and fix the issue.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So let's do that as the dev user.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - As dev user, I'm going to get details about the pod dark blue app, but in the blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Perfect, in the blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - So it says dark blue app is forbidden, user, dev user cannot get resource pods in the API group in the namespace blue.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 94 | **Type:** Implementation Step
+  - But it says that we have created the required roles in role binding.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So let's take a look at that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Let's take a look at the roles in the blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 97 | **Type:** Implementation Step
+  - We can see that there's a developer role, and then there's also role bindings in the blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So there's the dev user binding role.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - So let's take a closer look at those.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - Describe role developer in the blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 101 | **Type:** Implementation Step
+  - And we see that it has resource pods and the resource names, blue app then can do a get, watch, create and delete.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - But here, as you can see, it's not blue, it's dark blue app.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - So that's basically the reason that you can't access that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - So we're going to edit the role developer in the blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - And what we're going to do is change this to dark blue app.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - Okay, now, let's do that again.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - So we're gonna do a get pod dark blue app in the blue namespace as the user, dev user.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - Okay, and we can see that it is now in a running state.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 109 | **Type:** Troubleshooting
+  - So that's fixed.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - Now, we would like to grant the dev user permissions to create deployments in blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - So let's try that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 112 | **Type:** Implementation Step
+  - As the dev user, I want to create a deployment called nginx, save with image nginx.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - This could be anything, this is just a test.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - But in the blue namespace, when I try to do that, it says the user, dev user cannot create resource deployments in API group apps in the default, in the blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - So what we have to do is we're gonna edit the role of developer, which is used by the dev user in the blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 116 | **Type:** Implementation Step
+  - And what we're gonna do is, so this is one rule that allows a get, watch, and create and delete on the dark blue app pod.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 117 | **Type:** Implementation Step
+  - What we're going to do is we're gonna create a new rule.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - So we can just copy this and we're just gonna paste that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 119 | **Type:** Implementation Step
+  - And what we'll do is set, the API groups for deployment is apps.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - So we're gonna put apps.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - We're not gonna give any resource names, because we want to be able to create any resource, any resource name.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 122 | **Type:** Implementation Step
+  - Here, we're going to say deployment.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 123 | **Type:** Implementation Step
+  - And we're gonna allow get, watch, create, and delete.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - Because after creating, we obviously wanna get, or watch it or even delete.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - So let's just give that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 127 | **Type:** Concept
+  - Let's verify that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - Role developer in the blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 129 | **Type:** Implementation Step
+  - And we see that we have deployment.apps, and we're now able to get, watch, create and delete.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 130 | **Type:** Implementation Step
+  - So let's try the command again to create a deployment called nginx in the blue namespace.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - Okay, that's still not working.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - Let's see where that is.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 133 | **Type:** Best Practice
+  - So actually it should be deployments, sorry about that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - Let's go and change that.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - Okay.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 136 | **Type:** Concept
+  - And let's try that again.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 137 | **Type:** Concept
+  - Okay, and that works.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 138 | **Type:** Troubleshooting
+  - Yep, so that should be the fix to this.
+- **File:** `165_Lab Solution - Role-Based Access Controls.extraction.md` | **Entry:** 139 | **Type:** Concept
+  - All right, so that's the end of this lab.
+
+### Cluster Roles
+
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - We discussed about roles and role bindings in the previous lecture.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In this lecture we will talk about cluster roles and cluster role bindings.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - When we talked about roles and role bindings, we said that roles and role bindings are namespaced, meaning they are created within namespaces.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 4 | **Type:** Warning/Pitfall
+  - If you don't specify a namespace, they are created in the default namespace and control access within that namespace alone.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - In one of the previous lectures, we discussed about namespaces and how it helps in grouping or isolating resources like pods, deployments, and services.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - But what about other resources like nodes?
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Can you group or isolate nodes within a namespace?
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Like can you say node zero one is part of the namespace?
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Now those are cluster wide or cluster scoped resources.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - They cannot be associated to any particular namespace.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So the resources are categorized as either namespace or cluster scoped. code.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Now, we have seen a lot of Namespaced resources throughout this course, like pods and replica sets and jobs, deployments, services, secrets.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And in the last lecture, we saw two new roles and role bindings.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - These resources are created in the namespace you specify when you create them.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 15 | **Type:** Warning/Pitfall
+  - If you don't specify a namespace, they're created in the default namespace.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - To view them or delete them or update them, you always specify the right namespace.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 17 | **Type:** Warning/Pitfall
+  - The cluster scoped resources are those where you don't specify a namespace when you create them like nodes, persistent volumes persist the cluster roles and cluster role bindings that we're going to look at in this lecture.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Certificate signing request.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - We saw earlier and namespace objects themselves are of course not namespaced.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Note that this is not a comprehensive list of resources.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - To see a full list of namespaces and non namespace resources.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Run the kube control API resources command with the namespace option set.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - In the previous lecture, we saw how to authorize a user to namespace resources.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - We use roles and role bindings for that.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - But how do we authorize users to cluster wide resources like nodes or persistent volumes?
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - That is where you use cluster roles and cluster role bindings.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Cluster roles are just like roles, except they are for cluster scoped resources.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 28 | **Type:** Exam Tip
+  - For example, a cluster admin role can be created to provide a cluster administrator permissions to view, create, or delete nodes in a cluster.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - Similarly, a storage administrator role can be created to authorize a storage admin to create persistent volumes and claims.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - Create a cluster role definition file with the cluster role and specify the roles as we did before.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - In this case, the resources are nodes.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - Then create the cluster role.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - The next step is to link the user to that cluster role.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - For this we create another object called cluster role.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Binding.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - The role binding object links the user to the role.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - We will name it limit cluster admin role binding.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - The client is cluster role binding under subjects.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - We specify the user details cluster admin user.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - In this case, the role ref section is where we provide the details of the cluster role we created.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Create the role binding using the cube control create command.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - One thing to note before I let you go, we said that cluster roles and bindings are used for cluster scope resources, but that is not a hard rule.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - You can create a cluster role for namespace resources as well.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - When you do that, the user will have access to these resources across all namespaces.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - Earlier, when we created a role to authorize a user to access pods, the user had access to the pods in a particular namespace alone with cluster roles.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - When you authorize a user to access the pods, the user gets access to all pods across the cluster.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Kubernetes creates a number of cluster roles by default when the cluster is first set up.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - We will explore those in the practice tests that are coming up.
+- **File:** `166_Cluster Roles.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Good luck!
+
+### Lab Solution - Cluster Roles
+
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, in this lab we'll go over cluster roles and cluster role bindings.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So for the first few questions of this lab, you would have to inspect the existing cluster roles and cluster role bindings that have already been created.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So let's go over that.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So how many cluster roles do you see defined in the cluster?
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So let's do a kubectl get cluster roles.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Okay, so there seems to be a lot.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So you have the cluster admin, a lot of system cluster roles, and then a few others.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So we're going to count this, but we're not going to count it manually.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - So we're going to do no headers, right, and then we're going to do a word count, sorry, word count-l.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And that's 69.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So we're going to select 69.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Now, how many cluster role bindings exist on the system?
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So let's do the same thing.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - We're going to get cluster role bindings, and that's 54.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Now, what namespace is the cluster admin cluster role part of?
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So, if you do a kubectl get cluster roles, you will see that they all are here, but as we learned, these are not namespaced.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So cluster roles and cluster role bindings are not namespaced.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So they're not specific to any namespace.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So cluster roles are cluster wide and not part of any namespace.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So that's the correct answer here.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Now, what user or groups are the cluster admin role bound to?
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So the cluster role binding for the role is with the same name.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Let's take a look at that.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Okay, let's get cluster role bindings and look for cluster admin.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So the cluster admin role is associated with the cluster admin, cluster role binding.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - There are a few others as well, but we are just going to look at this.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So let's describe the cluster role bindings or cluster admin.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And we see that it's part of the group system masters.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So it's asking the user and groups.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - We can also check these out.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Let's check those out.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - As you can see, they're associated with a service account, and I'm guessing this is to associate it with a service account.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So we'll just focus on this, and it's associated with the system masters group.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So of this, it's system masters.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Now, what level of permission does the cluster admin role want?
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So let's take a look at that.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 37 | **Type:** Command
+  - 
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - And we see that it's all star star.star and star, star, star.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So star means any and all access to all resources.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So that's basically perform any action on any resource in the cluster.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Now a new user, now Michelle joined the team, she will be focusing on the nodes in the cluster.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - So create the required cluster role and cluster role binding so she gets access to the node.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So basically we're looking at kubectl get nodes, but as the user Michelle, and as you can see, it says, "Nodes forbidden.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 44 | **Type:** Best Practice
+  - User Michelle cannot list resource nodes in the APA group." So it does not give any kind of specifications on the cluster role name or role binding, so basically we should be able to do we should be able to create any role and role bindings as we ...
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 45 | **Type:** Best Practice
+  - So let's, as long as this command works, this exercise should be good.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So if there are no specifications given, we are free to name things, anything as we want.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - So let's do a kubectl create cluster role.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Let's look it up.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - And we see kubectl create cluster role then the name followed by work and resource.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And this is basically what we want.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 51 | **Type:** Best Practice
+  - So we're going to name this, let's say Michelle-role, and we should have a get list and watch.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And the resource is nodes, okay?
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - Now we have to create a cluster role binding.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Cluster role binding.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And let's look at the help.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - And so a cluster role binding binds a cluster role to a user, right?
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So as simple as that.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - We're going to create a cluster role binding.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - We'll call this- We'll call this Michelle-role-binding.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - Then we will have cluster role, which is Michelle-role.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - That's what we created.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And the user is Michelle.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Okay, let's take a look at that cluster role.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So first look at Michelle role, and then let's look at your role binding, which is your role binding.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So we have get list and watch access to nodes.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - Then we have the Michelle role associated with Michelle user.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So let's try the command again to test access.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So kubectl get nodes as Michelle.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - And that's working.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Okay, so let's check our work.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Okay, so that's successful.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - Now, the next question is Michelle's responsibilities are growing and now she will be responsible for storage as well, so create the required cluster role and role bindings to allow her access to storage.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Get the API groups and resource names from the command kubectl API resources.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So the kubectl API resources command is a command that will help you quickly- let's just maximize this so we can see it better.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Okay, so this command lists all the resources as well as their short names.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 76 | **Type:** Best Practice
+  - So if you ever want to know what the short names are for some of these, this is the command that you should look at.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - So deploy has- deployments have deploy, replicasets has rs.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So that's one thing.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - It also is the API version.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So when you're creating an object, and if you're not sure about the API version, this is something that you can look at.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And also if they're namedspaced or not.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 82 | **Type:** Best Practice
+  - So as we learned, the persistent volumes and persistent volume claims, I'm sorry, the cluster role bindings are not namespaced, so you should be able to see those here.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So cluster roles and cluster role bindings are not namespaced.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And this is the kind that you would use while creating a definition file, right?
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So that's, that's pretty neat.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - So what we want to do is we want to create back- so we want to create a cluster role to allow Michelle access to storage classes.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 87 | **Type:** Implementation Step
+  - So I'm going to do a create cluster role.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - The name is storage-admin.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So storage-admin, and the resource, there are two resources, persistent volumes and storage classes.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - So first resource is persistent volumes.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - Let's get that, and storage classes, let's get that.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - And the verbs are, let's do list, create, get, and watch.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - So those are the four verbs that I used.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So let's give this a shot.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 95 | **Type:** Implementation Step
+  - Okay, so it's created, and let's check it out.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 96 | **Type:** Command
+  - 
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 97 | **Type:** Implementation Step
+  - Okay, so that's created the role.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - And I want to look at the role in the .yaml format.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - And we can see that the cluster role is created, name is storage-admin.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - There are two rules.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 101 | **Type:** Implementation Step
+  - So it's created two rules, one for each resource, so we have persistent volumes, and then you have storage class.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - Okay, so that's good.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - Now we have to create the cluster role binding.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - So which is this.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 105 | **Type:** Implementation Step
+  - So kubectl create cluster role.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - So the name is Michelle-storage-admin.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - The user is Michelle, and the cluster role is storage-admin.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - Okay, so let's take a look.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - Okay, and we can see the cluster role that is associated to a storage admin, and the user is Michelle.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - So let's do kubectl as well and get storage classes.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - You see that that's working as expected.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - Okay.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - Okay, so that's about it.
+- **File:** `168_Lab Solution - Cluster Roles.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - Well, that's the end of this lab.
+
+### Service Accounts
+
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Let's now look at service accounts and Kubernetes.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So there are two types of accounts in Kubernetes.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - A user account and a service account.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - As you might already know, the user account is used by humans and the service accounts are used by machines.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - A user account could be for an administrator accessing the cluster to perform administrative tasks, so a developer accessing the cluster to deploy applications.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - A service account could be an account used by an application to interact with the Kubernetes cluster.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 7 | **Type:** Exam Tip
+  - For example, a monitoring application like Prometheus uses a service account to poll the Kubernetes API for performance metrics.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - An automated build tool like Jenkins uses service accounts to deploy applications on Kubernetes cluster.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - The second example I've built a simple Kubernetes dashboard application named my Kubernetes Dashboard.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - It's a simple application built in Python, and all that it does when deployed is retrieve the list of pods on a Kubernetes cluster by sending a request to the Kubernetes API and display it on a web page.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - In order for my application to query the Kubernetes API, it has to be authenticated.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - For that, we use a service account.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - A service account is an identity of a service.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - A service account is associated with what is known as a token.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - A token is what is used to authenticate a service account into the Kubernetes API.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So if you have ever authenticated to an API using a curl command or something that you probably know of, the tokens that are passed through as a bearer token in the header of the call.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - This token is what proves the identity of the service account to the API endpoint.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Well, think of it this way if the service account was an ID card that we create for a service, the barcode that's usually on the ID cards is the token.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - It's the barcodes that are scanned by the gates to prove the identity of that user.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And it is this token that we will input in our Kubernetes dashboard later.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Now let's look at how service accounts and tokens work in Kubernetes.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - By default, when a Kubernetes cluster is set up, it creates a service account by the name default in all namespaces.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - To list existing service accounts, use the kubectl get service account command.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - To see the details of an existing service account, run the kubectl describe service account command.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - Whenever a pod is created, the default service account is automatically attached to the pod.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - As you can see in the output of the describe pod command.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Here, there's a service account field, and you can see that the service account associated with this pod is named as default.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So the service account gets mounted as a projected volume within the pod.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - So think of a projected volume as a dynamic directory created inside the pod by Kubernetes automatically.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So it is mounted at the location.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - VAR run secrets Kubernetes service account.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Now if you list the contents of this directory, you'll see the token available as a file, and if you look inside the contents of the file, you'll see the actual token itself.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - The default service account comes with a lot of limitations, so if you have specific access requirements we must create a custom service account.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So how do we do that.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - To create a service account run the command cube CTL create service account followed by the service account name which is dashboard Dash S.A. in this case, you can also of course create the service account the declarative way using a YAML file lik...
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So API version is v1, kind is service, account name is dashboard SA.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And to view the service accounts we run the kubectl get service account command.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - This will list all the service accounts.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - And we can see that our newly created service account is listed here.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And to list the details of a create a service account, we run the kubectl describe command and it lists its details.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - As you can see, when you first create a service account, it creates a blank service account with most of its properties set to none.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - So to associate a newly created service account to a pod, we pass the name of the service account using the service account name field in the pod spec.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - This time when we describe the pod, we see the dashboard service account associated with it.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - And if you look inside the mounted directory, you get to see the token file.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - Kubernetes automatically creates a short lived token and mounts it inside a projected volume.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 46 | **Type:** Architecture
+  - The Kubelet also automatically rotates this token, and this token is bound to the life of the pod, so it is automatically expired when the pod is deleted.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 47 | **Type:** Warning/Pitfall
+  - Now, if you don't want a token to be automatically created and mounted inside the pod for the service account, you may add the auto mount Service account token key to false like this.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - You can define this either at the service account level.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - That way, no pods that use the service account gets the service account token auto mounted.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Or you can define it at the pod definition level so that irrespective of whether this property is set at the service account level, it won't be auto mounted for that pod.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Now, for the pods or applications hosted within the Kubernetes cluster.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - This setup that we've discussed so far works fine.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - So the pod is associated to a service account, and as soon as the pod is associated to a service account, Kubernetes automatically creates a token with an expiry date and automatically mounts that within the pod at a particular location, which the...
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - At times, you might want to create a token that is to be used outside of the cluster, maybe to paste into the Kubernetes dashboard that we had created, or to put it into a CI CD tool or an external monitoring tool.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - In such cases, you can create a token by running the kubectl create token command.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - It creates a token and shares it on screen.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - And this token is not stored in any secret.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - By default, all tokens are valid for one hour to extend the validity.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Add a duration flag to the command.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Like this.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - If you decode this token using the jq and the base64 utility, you'll see an expiry defined as well as the service account name and other details that are associated with this token.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - This token can then be used as an authentication bearer token while making a Rest call to the Kubernetes API.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 63 | **Type:** Exam Tip
+  - For example, in this simple example using Curl, you could provide the bearer token as an authorization header while making a Rest call to the Kubernetes API.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - In case of my custom dashboard application, we can copy and paste the token into the tokens field to authenticate the dashboard application.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So let's summarize what we have learned so far.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Service accounts are used by other applications or services to interact with Kubernetes.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Tokens are associated to service accounts to prove their identity.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - To create a new service account, run the kubectl create service account command followed by the name of the service account.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - To use the service account from an external application, such as a CI, CD tool or monitoring tools.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - We first create a token and specify the name of the service account associated with that, and it prints the token.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - On screen, you can then copy the token and paste it or use it in the external application.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Now for internal applications or pods that are within the cluster, every namespace has a default service account.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - The default service account is automatically attached to the pod on creation.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - To attach a service account to a pod, we use the service account name field, and when a service account is attached to a pod, Kubernetes automatically creates a token and mounts as a projected volume, automatically rotates the token and automatica...
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `169_Service Accounts.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - Head over to the labs and I'll see you in the next one.
+
+### Lab Solution_ Service Accounts
+
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - Instructor: So the first question is asking us how many service accounts exist in the default namespace?
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So I'll do a kubectl get and then we'll do service account.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - I'm just gonna do sa for short and we can see in the default namespace, we've got two total service accounts, one called default, one called dev.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Now, it's asking us what is the secret token used by the default service account?
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So to get this information, we'll go to kubectl and we'll do a describe of the default service account.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And we wanna look under tokens.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And right now, we can see it's set to none.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So we'll select none.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - We just deployed the dashboard application, inspect the deployment, what is the image used by the deployment?
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So I'll do a kubectl get deployment, and then I'll do a kubectl describe deployment web-dashboard.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - And we wanna go under pod template, under containers, and then for the web-dashboard, we could see this is the name of the container.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So I will select this one.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - And this is just saying wait for the deployment to be ready.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - And then you can access the dashboard application by selecting this button right here.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And we can see the dashboard application.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So we'll hit OK here and we'll go to the next question, saying what is the state of the dashboard?
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Have the pod details loaded successfully?
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So we'll go back to this and we can see that, you know, there's some red text.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Usually that's not good.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 20 | **Type:** Troubleshooting
+  - So there's an error saying pods is forbidden.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - User blah cannot list resources pods in the API group.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - All right, so let's go back and we'll say that it failed.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - It's asking us what type of account does the dashboard application use to query the Kubernetes API?
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So if we go back, we can see here in the log message, it's sayingsystemserviceaccount:defaultdefault cannot list the resource pods.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So it's using a service account.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - More specifically, it's using the default service account.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So which account does the dashboard application use to query the Kubernetes API?
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - As I mentioned, it's using the default one.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So now it's saying inspect the dashboard application pod and identify the service account mounted on it.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So we'll do a kubectl get pod and I'm gonna do a kubectl describe and we'll describe that pod and I forgot the word pod.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And we're trying to identify the service account mounted on it.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So if we go up to the top, there's gonna be a section called service account.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - And we can see here it's set to default.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - And the next question is asking at what location is this service account credentials available within the pod?
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So if we go down here, we wanna go to the mount section or if we go to the volume, sorry, we wanna look at the mount section right here.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - And so we could see it's mounted at /var/run/secrets.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So this is where the service account credentials are gonna be mounted.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So we'll select /var/run/secrets.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - Next question is asking us the application needs a service account with the right permissions to be created to authenticate to Kubernetes.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - The default service account has limited access.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Create a new service account named dashboard-sa.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - So to do that, we just need to run one single command and that's going to be kubectl create serviceaccount.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - And then the name of the service account, which is gonna be dashboard-sa.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - So that's going to get created.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - We'll then run the validation.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - And this is just letting us know that with the new service account that we created, it went ahead and added in permissions for the newly created dashboard-sa account using RBAC.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - If you wanna take a look at the configurations, you can always go to /var/rbac.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And here you could see the role and role binding configurations.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - But we're gonna discuss RBAC in a separate section in this course.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So we'll hit OK for now.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 51 | **Type:** Troubleshooting
+  - So it's telling us to get an access token and enter it in the UI dashboard and see if that basically fixes the issue.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - So to create a token, we have to run the command kubectl create token and then we're gonna create a token for the dashboard-sa service account.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So this is going to be the token and we're gonna copy this.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - We're gonna go back to the application and we're gonna paste it in here.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And now if we do load dashboard, we could see that we're able to load all of the pods that's running on our cluster.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 56 | **Type:** Best Practice
+  - So now the next question is telling us, you know, we shouldn't have to create a token and then paste it into our application every time we need an application to interact with the Kubernetes API.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - So what we're gonna do is we're going to edit the deployment configuration for that specific deployment.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So instead of using the default service account, it's going to use the dashboard service account so it already has access to the API.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So here I'm gonna do a kubectl.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - And then I'll do get deployment and I'm gonna grab the web-dashboard and I'm gonna pipe it to a YAML file and I'll just call this dashboard.yaml and then we'll go to the dashboard.yaml file.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - And to specify this service account, we wanna go under the spec for the pod.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - So that's gonna be not the first spec but the second one 'cause this is a deployment.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - And under here, we just specify serviceAccountName and then the service account we wanna give it.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So this is gonna be dashboard-sa.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - We'll save this and then I'll do a kubectl apply -f dashboard.yaml.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 66 | **Type:** Warning/Pitfall
+  - Don't worry about the warning.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - That's just because the first deployment wasn't created using the apply command.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - But that's all right.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - So we've got kubctl get deployment.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - All right, so now we can go ahead and run the validation and we can see that was successful.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - And if we go to the application now and we hit refresh, I'm just gonna hit Control + R.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - We refresh.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - There's no token, but it's going to work now because it's got the service account and the token mounted automatically onto it.
+- **File:** `171_Lab Solution_ Service Accounts.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And so that's going to wrap up this lab.
+
+### Image Security
+
+- **File:** `172_Image Security.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will talk about securing images.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - We will start with the basics of image names, and then work our way towards secure image repositories and how to configure your pods to use images from secure repositories.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - We deployed a number of different kinds of pods hosting different kinds of applications throughout this course, like web apps and databases and Redis cache, etc..
+- **File:** `172_Image Security.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Let's start with a simple pod definition file, for instance.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Here we have used the nginx image to deploy an nginx container.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Let's take a closer look at this image.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Name.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - The name is nginx.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - But what is this image and where is this image pulled from?
+- **File:** `172_Image Security.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - This name follows Dockers image naming convention nginx.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Here is the image or the repository name.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - When you say nginx, it's actually library slash nginx.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - The first part stands for the user or the account name.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 14 | **Type:** Warning/Pitfall
+  - So if you don't provide a user or account name, it assumes it to be library.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Library is the name of the default account where Docker's official images are stored.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 16 | **Type:** Best Practice
+  - These images promote best practices and are maintained by a dedicated team, who are responsible for reviewing and publishing these official images.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - Now, if you were to create your own account and create your own repositories or images under it, then you would use a similar pattern.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So instead of library it would be your name or your company's name.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Now where are these images stored and pulled from?
+- **File:** `172_Image Security.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Since we have not specified the location where these images are to be pulled from, it is assumed to be Dockers default registry.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 21 | **Type:** Command
+  - 
+- **File:** `172_Image Security.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - The DNS name for which is Docker.io.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - The registry is where all the images are stored.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Whenever you create a new image or update an image, you push it to the registry and every time anyone deploys this application, it is pulled from the registry.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - There are many other popular registries as well.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Google's registry is at Gcr.io, where a lot of Kubernetes related images are stored, like the ones used for performing end to end tests on the cluster.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - These are all publicly accessible images that anyone can download and access.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 28 | **Type:** Best Practice
+  - When you have applications built in-house that shouldn't be made available to the public.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Hosting an internal private registry may be a good solution.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Many cloud service providers, such as AWS, Azure, or GCP, provide a private registry by default on any of these solutions, be it on Docker Hub or Google's Registry or your internal private registry.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - You may choose to make a repository private so that it can be accessed using a set of credentials from Dockers perspective.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - To run a container using a private image, you first login to your private registry using a Docker login command.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Input your credentials.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Once successful, run the application using the image from the private registry.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Going back to our Pod definition file to use an image from our private registry, we replace the image name with the full path to the one in the private registry.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - But how do we implement the authentication?
+- **File:** `172_Image Security.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - The login part?
+- **File:** `172_Image Security.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - How does Kubernetes get the credentials to access the private registry within Kubernetes?
+- **File:** `172_Image Security.extraction.md` | **Entry:** 39 | **Type:** Operational Insight
+  - We know that the images are pulled and run by the Docker runtime on the worker nodes.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 40 | **Type:** Operational Insight
+  - How do you pass the credentials to the Docker runtimes on the worker nodes?
+- **File:** `172_Image Security.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - For that, we first create a secret object with the credentials in it.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - The secret is of type docker registry and we name it.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 43 | **Type:** Command
+  - 
+- **File:** `172_Image Security.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - We then specify the registry server name, the username to access the registry, the password, and the email address of the user.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - We then specify the secret inside our Pod definition file under the Image Pull Secrets section.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 46 | **Type:** Architecture
+  - When the Pod is created, Kubernetes or the Kubelets on the worker node uses the credentials from the secret to pull images.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `172_Image Security.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Head over to the Practice Exercises section and practice working with secure images.
+
+### Lab Solution - Image Security
+
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Narrator: Okay, we will now walk through the lab on security, image security.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So, the first question is, "What secret type must we choose for Docker registry?" So, if you look at the different types of secrets that we can create. you see that we have Docker registry, generic NGLs.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So, Docker registry is the one that we're gonna use for Docker registry.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Now, we have an application running on our cluster.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Let us explore it first.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So, let's do it.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Oh, the deploy.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And we see that we have a web- An application by the name web.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And what image is the application using?
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So, let's take a look at in full set areas.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Okay, now let's take a look at the deployment web, and we see that it's using the engine X alpine image.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So, let's select that.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now, we decided to use a modified version of the application from an internal private registry.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So, update the image of the deployment to use a new image from my privateregistry.com/5,000.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 15 | **Type:** Warning/Pitfall
+  - So, we have a private registry, and we know that if you do not specify a registry before the image name it's going to the default- It's gonna pull it from the default location on Docker hub.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So, what we want to do is we want to edit the deployment, and we want it to pull the image from the private registry.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So, I'm just going to copy this, and paste it here, and also add a slash.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So, let's save that.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Let's check it out.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - We see that the image aim has been updated.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 22 | **Type:** Warning/Pitfall
+  - And don't worry about the status for now, because we're gonna fix that in a bit.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So, let's see if- Let's see if the pods are running.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - So, if you look at it, the pod, this is the new pod that was created.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - So, the rolling update kicked in, and the deployment created a new pod with the new image, but it left the existing ones as is because only if the new pod was successful, and was in a ready state, it would kill the old pod, and then would create t...
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So- but in this case, it's not even- the new pod is not running.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - It's in an image pulled back off state.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So, let's check that out.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So, it says 'fail to pull image,' a malformed response.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So, that's basically because it doesn't have the permissions to pull image from that repository.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So, the answer to this question is No.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - Now, create a secret object with the credentials required to access the registry.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - So let's create a secret.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - You cuddle, create secret, and this has to be Docker registry.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So, let's take a look at the help, and we see that here's a sample command.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So, let's run this command along with the rest of it.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Okay, so, let's go and edit this.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So we have- (pause in speaking) Okay, so we have the name.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - I'm going to use the name as- Private Rights Spread, Docker server.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 40 | **Type:** Command
+  - 
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - And the password is password.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And the email is this.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Yes, I'm gonna remove the hash.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - So, that's been created.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Okay.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - Now configure the deployment to use credentials from the new secret to pull images from the private registry.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - What we have to do is we have to configure the the deployment, or the pod to use this image.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - So, let's first look at the credential's documentation page, and let's look at image pool- or image pool secret.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 49 | **Type:** Best Practice
+  - That's what it's called. 'pull an image from a private registry.' And we should have- Yes, so, this is what we need to do.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So, under the spec for the pod, we must add the image pool secrets.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - So, let us copy that, and let's edit the deployment called web.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - That's going to the pod template, right here, and we're going to add image pool secrets.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Let's align it, and let's give the secret name, which happens to be Private Rights Spread?
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - I'm going to save that.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - Let's check the status of the deployment, and we see that there are no changes.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So, it looks like that worked.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - It's pretty much check.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Yes, so that's successful.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Now, we're gonna check the status of the pods.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - So, as you see, it's terminating the old pods, and the new pods are created, and that has the new images.
+- **File:** `174_Lab Solution - Image Security.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Okay, so that's the end of that lab.
+
+### Pre-requisite - Security in Docker
+
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will talk about security contexts in Kubernetes.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - But before we get into that, it is important to have some knowledge about security in Docker.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - If you are familiar with security in Docker, feel free to skip this lecture and head over to the next.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - In this lecture, we will look at the various concepts related to security in Docker.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Let us start with a host with Docker installed on it.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - This host has a set of its own processes running, such as a number of operating system processes, the Docker daemon itself, the SSH server, etc. we will now run an Ubuntu Docker container that runs a process that sleeps for an hour.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - We have learned that unlike virtual machines, containers are not completely isolated from their host containers, and the hosts share the same kernel.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Containers are isolated using namespaces.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - In Linux, the host has a namespace and the containers have their own namespace.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - All the processes run by the containers are in fact run on the host itself, but in their own namespace.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - As far as the Docker container is concerned, it is in its own namespace and it can see its own processes only.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - It cannot see anything outside of it or in any other namespace.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So when you list the processes from within the Docker container, you see the sleep process with a process ID of one for the Docker host, all processes of its own, as well as those in the child.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Namespaces are visible as just another process in the system.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So when you list the processes on the host, you see a list of processes, including the sleep command, but with a different process ID.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - This is because the processes can have different process IDs in different namespaces.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And that's how Docker isolates containers within a system.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So that's process isolation.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Let us now look at users in context of security.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - The Docker host has a set of users A root user as well as a number of Non-root users.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - By default, Docker runs processes within containers as the root user.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - This can be seen in the output of the commands we ran earlier, both within the container and outside the container on the host.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - The process is run as the root user.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 24 | **Type:** Warning/Pitfall
+  - Now, if you do not want the process within the container to run as the root user, you may set the user using the user option within the docker run command and specify the new user ID.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - You will see that the process now runs with the new user ID.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Another way to enforce user security is to have this defined in the Docker image itself at the time of creation.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 27 | **Type:** Exam Tip
+  - For example, we will use the default ubuntu image and set the user id to 1000 using the user instruction.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - Then build the custom image.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - We can now run this image without specifying the user id, and the process will be run with the user id 1000.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - Let us take a step back.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - What happens when you run containers as the root user?
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Is the root user within the container the same as the root user on the host?
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Can the process inside the container do anything that the root user can do on the system?
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - If so, isn't that dangerous?
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Well, Docker implements a set of security features that limits the abilities of the root user within the container.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So the root user within the container isn't really like the root user on the host.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 37 | **Type:** Command
+  - 
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - As we all know, the root user is the most powerful user on a system.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - The root user can literally do anything, and so does a process run by the root user.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - It has unrestricted access to the system from modifying files and permissions on files, access control, creating or killing processes, setting group ID or user ID.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Performing network related operations such as binding to network ports.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Broadcasting on a network. controlling network ports system related operations like rebooting the host, manipulating system clock, and many more.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - All of these are the different capabilities on a Linux system, and you can see a full list at this location.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - You can now control and limit what capabilities are made available to a user.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 45 | **Type:** Warning/Pitfall
+  - By default, Docker runs a container with a limited set of capabilities, and so the processes running within the container do not have the privileges to say, reboot the host or perform operations that can disrupt the host or other containers runnin...
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 46 | **Type:** Operational Insight
+  - If you wish to override this behavior and provide additional privileges than what is available, use the cap add option in the docker run command.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Similarly, you can drop privileges as well using the cap drop option or in case you wish to run the container with all privileges enabled, use the privileged flag.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Well that's it on Docker Security for now.
+- **File:** `175_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - I will see you in the next lecture.
+
+### Security Contexts
+
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - As we saw in the previous lecture, when you run a Docker container, you have the option to define a set of security standards, such as the ID of the user used to run the container, the Linux capabilities that can be added or removed from the conta...
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Containers are encapsulated in pods.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - You may choose to configure the security settings at a container level or at a pod level.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - If you configure it at a pod level, the settings will carry over to all the containers within the pod.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - If you configure it at both the pod and the container, the settings on the container will override the settings on the pod.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Let us start with a pod definition file.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - This pod runs an ubuntu image with the sleep command to configure security context on the container.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Add a field called Security Context under the specs section of the pod.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Use the run as user option to set the user ID for the pod.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - To set the same configuration on the container level.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Move the whole section under the container specification like this.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - To add capabilities.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Use the capabilities option and specify a list of capabilities to add to the pod.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Well, that's all on security contexts in Kubernetes.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 15 | **Type:** Troubleshooting
+  - Head over to the Coding Exercises section and practice viewing, configuring, and troubleshooting issues related to security contexts in Kubernetes.
+- **File:** `176_Security Contexts.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - That's it for now and I will see you in the next lecture.
+
+### Lab Solution - Security Contexts
+
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - Narrator: So for the first question is asking is what is the user use to execute the sleep process within the ubuntu-sleeper pod?
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So if you ever wanna see, you know, what user you're logged into as on a Linux machine, you can run the command, whoamI?
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So all we need to do is run that command inside the container, inside the container.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So we'll do Kubectl get pods.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - We can see the Pod Ubuntu-Sleeper, so I'll do Kubectl exec ubuntu-sleeper and then we'll do the two dashes, and now we enter in the command we wanna run.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So we just do whoamI.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And I forgot an E right here.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And we could see that the user that's used to execute the sleep process is the root user, so we'll select root.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - The next question is asking us to edit the pod Ubuntu-sleeper to run the sleep process with the user ID of 1010.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So to do this, I'm gonna first get the configuration of the current pod because it's saying only make the necessary changes.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So I'll do Kubectl get pod ubuntu-sleeper and I'll do -o yaml and we'll pipe this out to a file.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And I realized I misspelled this.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And now we'll open up that file.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - And so to change the user, we're gonna look for a property called Security Context.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Okay, so here we'll go under security context and we just have to add one line in.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And we just have to say runAsuser, and then we provide the idea of the user, which would be 1010.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So I will save the configuration.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Then I'm gonna do a Kubectl delete pod, so I'm gonna delete the current pod.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - I'll do a --force just so it deletes it a little bit quicker and then now we can apply the configuration that we just created.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - And I'm gonna do a Kubectl get pod just to make sure that it's up and running and it's running, so let's go ahead and run the validation, and we can go to the next question.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - The next question is saying a pod definition file named Multi-pod.yaml is given.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - With what user are the processes in the web container started.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 23 | **Type:** Exam Tip
+  - So this pod is created with multiple containers and security context defined at the pod and container level.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Okay, so let's open up the multi-pod configuration and we wanna find what is the user for the process in the web container?
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So if we take a look at the configuration, we can see that the security context was set to run as user 1001 and this is at the pod level.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - But within the container level, we could see, we overrid it for the web container and we've set it to be 1002.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So this is going to be more specific and it's gonna override the pod context.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So the answer's gonna be 1002.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - Next question is asking us with what user are the processes in the sidecar container started.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So in this case, we could see that there's no container level security context configuration, so it's going to default to the pod level security context, so that's gonna be 1001.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - The next question is asking us to update the ubuntu-sleeper Pod to run as Root user and with the SYS_TIME capability.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - The next question is asking us to update the ubuntu-sleeper Pod to run as Root user.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - We're gonna change it back to the Root user and add the SYS_TIME capabilities.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - So I'm gonna open up the ubuntu-sleeper configuration file and so first of all, we're going to remove the securitycontext config 'cause we want to run it as the Root user now.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So I'll just delete those two lines.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - Then we're gonna add the SYS_TIME capability.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So we're gonna go under the container that we're interested in and I'm just gonna go, it doesn't really matter where, but I'll just go right here and we'll add a security context line.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - And then under here, we're gonna pass in a property called add.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Oh, sorry, not add, capabilities.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 40 | **Type:** Best Practice
+  - And then under here, we're gonna add, and this is going to take a list of different capabilities and so we're just gonna add the SYS_TIME and that should be everything we need.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So I'll save the configuration.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - We'll then do a Kubectl delete pod.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - And then we'll do an apply.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - All right, so pod has now been created.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Let's go ahead and validate that and looks like everything's good to go.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - And the final question is asking us to update this pod to make use of the NET_ADMIN capability.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So we could just go in, this is gonna be pretty simple and under the add, we just add in the extra capability that we want.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So I'll say NET_ADMIN, and that's all we have to do.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So we will delete this again.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - And then we will apply it.
+- **File:** `178_Lab Solution - Security Contexts.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And we'll run the validation, and that's going to wrap up this assignment.
+
+### Network Policy
+
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - So let us first get our networking and security basics right.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - And I'm sorry if this is too basic, but I just wanted to spend a minute on this to make sure we're all on the same page before we begin.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - We will start with a simple example of a traffic flowing through a web app and database server.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So you have a web server serving front end to users and app server serving back end APIs and a database server.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - The user sends in a request to the web server at port 80.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 6 | **Type:** Architecture
+  - The web server then sends a request to the API server at port 5000.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 7 | **Type:** Architecture
+  - In the backend, the API server then fetches data from the database server at port 3306, and then sends the data back to the user.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - A very simple setup.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So there are two types of traffic here ingress and egress.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 10 | **Type:** Exam Tip
+  - For example, for a web server, the incoming traffic from the users is an ingress traffic and the outgoing request to the app server is egress traffic and that is denoted by the straight arrow.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - When you define ingress and egress.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Remember you're only looking at the direction in which the traffic originated.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 13 | **Type:** Warning/Pitfall
+  - The response back to the user, denoted by the dotted lines, do not really matter.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 14 | **Type:** Architecture
+  - Similarly, in case of the back end API server, it receives ingress traffic from the web server on port 5000 and has egress traffic to port 3306 to the database server, and from the database servers perspective, it receives ingress traffic on port ...
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 15 | **Type:** Architecture
+  - If we were to list the rules required to get this working, we would have an ingress rule that is required to accept HTTP traffic on port 80 on the web server, and egress rule to allow traffic from the web server to port 5000 on the API server, and...
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And finally, an ingress rule on the database server to accept traffic on port 3306.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So that's the basic of traffic flow and rules.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Let us now look at network security in Kubernetes.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So we have a cluster with a set of nodes hosting a set of pods and services.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Each node has an IP address and so does each pod as well as service.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 21 | **Type:** Best Practice
+  - One of the prerequisites for networking in Kubernetes is whatever solution you implement, the pods should be able to communicate with each other without having to configure any additional settings like routes.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 22 | **Type:** Exam Tip
+  - For example, in this network solution, all pods are on a virtual private network that spans across the nodes in the Kubernetes cluster, and they can all by default reach each other using the IPS or pod names or services Cells configured for that p...
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - Kubernetes is configured by default with an all allow rule that allows traffic from any pod to any other pod or services within the cluster.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Let us now bring back our earlier discussion and see how it fits into Kubernetes.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 25 | **Type:** Architecture
+  - For each component in the application, we deploy a pod one for the front end web server, for the API server, and one for the database.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - We create services to enable communication between the pods as well as to the end user, based on what we discussed in the previous slide.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - By default, all the three pods can communicate with each other within the Kubernetes cluster.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 28 | **Type:** Warning/Pitfall
+  - What if we do not want the front end web server to be able to communicate with the database server directly?
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 29 | **Type:** Exam Tip
+  - Say for example, your security teams and audits require you to prevent that from happening.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 30 | **Type:** Architecture
+  - That is where you would implement a network policy to allow traffic to the DB server only from the API server and network policy is another object in the Kubernetes namespace, just like pods, replica sets, or services.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - You link a network policy to one or more pods.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - You can define rules within the network policy.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - In this case, I would say only allow ingress traffic from the API pod on port 3306.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - Once this policy is created, it blocks all other traffic to the pod and only allows traffic that matches the specified rule.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Again, this is only applicable to the pod on which the network policy is applied.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - So how do you apply or link a network policy to a pod?
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - We use the same technique that was used before to link replica sets or services to pods.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Labels and selectors.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - We label the pod and use the same labels on the port selector field in the network policy.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And then we build our rule.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Under policy types specify whether the rule is to allow ingress or egress, traffic, or both.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - In our case, we only want to allow ingress traffic to the DB pod.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So we add ingress.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - Next we specify the ingress rule that allows traffic from the API pod, and you specify the API pod again using labels and selectors.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And finally the port to allow traffic on which is 3306.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Let us put all that together.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - We start with a blank object definition file.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And as usual we have API version kind metadata and spec.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - The API version is networking.io v1.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - The kind is network policy.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - We will name the policy db dash policy.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - And then under the spec section we will first move the pod selector to apply this policy to the DB pod.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - Then we will move the rule we created in the previous slide under it.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And that's it.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - We have our first network policy ready.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Run the cube control.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - Create command to create the policy.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Remember that network policies are enforced by the network solution implemented on Kubernetes cluster.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - And not all network solutions support network policies.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - A few of them that are supported are cube, router, calico, Romana, and WaveNet.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - If you used flannel as the networking solution, it does not support network policies as of this recording.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - Always refer to the Network Solutions documentation to see support for network policies.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - Also remember, even in a cluster configured with a solution that does not support network policies, you can still create the policies, but they will just not be enforced.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 64 | **Type:** Troubleshooting
+  - You will not get an error message saying the network solution does not support network policies.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `179_Network Policy.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Walk through the documentation and head over to the Coding Challenges to Practice network policies.
+
+### Developing network policies
+
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture, we will take a look at network policies in more detail.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So here we have the same web API and database pods that we discussed about in the previous lecture.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So first let's be very clear with our requirements.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Our goal is to protect the database pod so that it does not allow access from any other pod except the API pod, and only on port 3306.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So let's assume that we are not concerned about the web pod or the API pod for those pods.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - We are okay for all traffic to go in and out from anywhere.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - However, we want to protect the database pod and only allow traffic from the API pod.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So let's get the other things out of our way so we can focus exactly on the required tasks.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 9 | **Type:** Warning/Pitfall
+  - So we don't need to worry about the web pod or its port, as we don't want to allow any traffic from any other sources other than the EPA poured, so let's get rid of that.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 10 | **Type:** Warning/Pitfall
+  - We can also forget about the port on the API pod to which the web server connects, as we don't care about that either.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - As we discussed, by default, Kubernetes allows all traffic from all pods to all destinations.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So as the first step, we want to block out everything going in and out of the database pod.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - So we create a network policy.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - We will call it DB policy.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - And the first step is to associate this network policy with the pod that we want to protect.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And we do that using labels and selectors.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So we do that by adding a pod selector field with the match labels option and by specifying the label on the DB pod, which happens to be set to roll DB.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And that associates the network policy with the database pod and blocks out all traffic.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - However, we need the API pod to be able to query the database on port 3006.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - So that's what we are going to configure next.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 21 | **Type:** Best Practice
+  - First, we need to figure out what type of policies should be defined on this network policy object to meet our requirements.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So there are two types of policies that we discussed in the previous lecture.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - We have ingress and egress.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So do we need ingress or egress here or both.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So you always look at this from the DB pod's perspective.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - From the DB pod's perspective, we want to allow incoming traffic from the API pod.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So that is incoming.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So that is ingress.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - The API pod makes database queries and the database pods returns the results.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So what about the results?
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Do you need a separate rule for the results to go back to the API pod?
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - No, because once you allow incoming traffic, the response or reply to that traffic is allowed back automatically.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 33 | **Type:** Warning/Pitfall
+  - We don't need a separate rule for that.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So in this case, all we need is an ingress rule to allow traffic from the API pod to the database pod, and that would allow the API pod to connect to the database and run queries, and also retrieve the result of the queries.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - So when deciding on what type of rule is to be created, you only need to be concerned about the direction in which the request originates and which is denoted by the straight line here.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 36 | **Type:** Warning/Pitfall
+  - And you don't need to worry about the response, which is denoted by a solid line here.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So a single network policy can have an ingress type of rule, an egress type of rule, or both.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - In cases where a pod wants to allow incoming connections as well as wants to make external calls.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So for now, our use case only requires ingress.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Policy types.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Now that we have decided on the type of policy.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - The next step is to define the specifics of that policy.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - If it's ingress, we create a section called ingress.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 44 | **Type:** Exam Tip
+  - Within which we can specify multiple rules.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Each rule has a from and ports fields.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - The from field defines the source of traffic that is allowed to pass through to the database port.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - And here we would use a port selector and provide the labels of the API pod like this.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - The ports field defines what port on the database pod is the traffic allowed to go to?
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - In this case it's 3306 with the TCP protocol.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And that's it.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - This would create a policy that would block all traffic to the DB pod, except for traffic from the API pod.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 52 | **Type:** Exam Tip
+  - Now, what if there are multiple API pods in the cluster with the same labels, but in different namespaces.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So say here we have different namespaces for dev test and prod environments.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And we have the API pod with the same labels in each of these environments.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - The current policy would allow any pod in any namespace with matching labels to reach the database pod.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - We only want to allow the API pod in the prod namespace to reach the database pod.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So how do we do that?
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - For this, we add a new selector called as the namespace selector property along with the pod selector property.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Under this, we use match labels again to provide a label set on the namespace.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - And you must remember that you must have this label set on namespace first for this to work.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So that's what the namespace selector does.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - It helps in defining from what namespace traffic is allowed to reach the database pod.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Now what if you only have the namespace selector and not the pod selector like this.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - In this case, all pods within the specified namespace will be allowed to reach the database pod, such as the web pod that we had earlier.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - But pods from outside this namespace won't be allowed to go through.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Let's look at another use case.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Say we have a backup server somewhere outside of the Kubernetes cluster, and we want to allow the server to connect to the database pod.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - Now, since this backup server is not deployed in our Kubernetes cluster, the pod selector and namespace selector fields that we use to define traffic from won't work because it's not a pod in the cluster.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - However, we know the IP address of the backup server, and that happens to be 192.168.5.1.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - We could configure a network policy to allow traffic originating from certain IP addresses.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - For this, we add a new type of from definition known as the IP block definition.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - IP block allows you to specify a range of IP addresses from which you could allow traffic to hit the database pod.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So those are three supported selectors under the from section in ingress.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And these are also applicable to the two section in egress.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - And we'll see that in a few minutes.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - We have pod selector to select pods by labels.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - We have namespace selector to select namespaces by labels.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - And we have the IP block selector to select IP address ranges.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - These can be passed in separately as individual roles or together as part of a single rule.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 80 | **Type:** Exam Tip
+  - In this example, under the from section we have two elements.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - So these are two rules.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - The first rule has the pod selector and the namespace selector together, and the second rule has the IP block selector.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So this works like an Or operation.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - Traffic from sources meeting either of these criteria are allowed to pass through.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - However, within the first rule we have two selectors.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - Part of it that would mean traffic from sources must meet both of these criteria to pass through.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So they have to be originating from ports with matching labels of API pod.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - And those pods must be in the prod namespace so it works like an and operation.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - Now what if we were to separate them by adding a dash before the namespace selector like this.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - Now they are two separate rules.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - So this would mean that traffic matching the first rule is allowed.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - That is, from any pod matching the label API pod in the same namespace and traffic matching.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - The second rule is allowed, which is from any pod within the prod namespace that is, either from the pod web and of course, along with the backup server, as we have the IP block specification as well.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - So now we have three separate rules, and almost traffic from anywhere is allowed to the DB pod.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So a small change like that can have a big impact.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - So it's important to understand how you could put together these rules based on your requirements.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So now let's get rid of all of that and go back to a basic set of rules.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - And we'll now look at egress.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 99 | **Type:** Exam Tip
+  - So say for example instead of the backup server initiating a backup, say we have an agent on the DB pod that pushes backup to the backup server.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - In that case, the traffic is originating from the database pod to an external backup server.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - For this, we need to have egress rule defined.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 102 | **Type:** Implementation Step
+  - So we first add egress to the policy types.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - And then we add a new egress section to define the specifics of the policy.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - So instead of a from we now have two under egress.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 105 | **Type:** Comparison
+  - So that's the only difference.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - Under two we could use any of the selectors such as a pod, a namespace or an IP block selector.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - And in this case, since the database server is external, we use IP block selector and provide the Cidr block for the server.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - The port to which the requests are to be sent to is 80.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - So we specify 80 as the port.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - So this rule allows traffic originating from the database port to an external backup server at the specified address.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - Well that's it for now.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - About network policies and rules.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - Head over to the lab and practice working with network policies yourself.
+- **File:** `180_Developing network policies.extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - I will see you in the next one.
+
+### Lab Solution - Network Policies (optional)
+
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: In this video, we'll go over the practice test on network policies.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So, how many network policies do you see in the environment?
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So we've deployed a few web applications, services, and network policies. that inspect the environment, so let's take a look.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 4 | **Type:** Warning/Pitfall
+  - Seems to be an image, so, we do not have the alias set, the alias.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Okay, let's first check out the pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So we have four pods.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So you have the external, internal the MySQL, and payroll pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So we have the external, we have the internal pod we have the payroll pod and the DB pod which is the MySQL pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And let's check out the services you have the DB service, the external service, internal service and the Kubernetes service.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So these are, sorry, the payroll service.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So these are the the services.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So each one, each of them are on different ports.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So you have 8080 for the payroll service.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The external and internal service are both on 8080.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - Then you have the DB service, which is on 3306.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - These are the port numbers.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And the question is to identify the network policies in the environment.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So we could do a get, kubectl get network policies.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So you have the payroll policy.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - You could also do, kubectl get net poll.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So that's the short form for network policy.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So we'll stick to this going forward.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So there is one policy and that's called as "The Payroll Policy".
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So there's one policy in total.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So what is the name of the network policy?
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - That is Payroll Policy.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Okay, so which part is the network policy applied on?
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So if you look at this you have a pod selector and it says, "Name Equals Payroll".
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So the, the name of the pod is Payroll.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And so the pod name is Payroll.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So the network policy named "Payroll Policy" is applied on the pod, which is called a "Payroll".
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So that's this pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So if you look at the image we have now identified that this is kind of how it looks.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - So you have the external port, internal port, DB port and then you have the, the payroll port and then network policies applied on the payroll port.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Now as we learned from the lectures, by default all ports allow traffic both ingress and egress on all the ports.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - So there are no restrictions but as soon as you apply a network policy, it's kind of blocked.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So everything gets blocked then you have to manually allow stuff.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So let's try and answer this question.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - So what type of traffic is the network policy configured to handle?
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So let's look at the network policy in more details.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So let's do a kubectl describe net poll Payroll Policy.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And we see that, we see the pod selector, which we know and it's allowing ingress traffic to port 8080 from the pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And it says not affecting egress traffic.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So there are no rules for egress traffic.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - That means all egress traffic from this pod to external to outside world is, is allowed.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - And the only thing that's allowed is ingress traffic.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - So what type of traffic is the network policy configured to handle, is just ingress.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - Okay, now what is the impact of the rule configured on this network policy?
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So looking at this, we know that it allows ingress traffic to port 8080.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So this is with the to the port within the, within the pod, from, we have a pod selector and the name is internal.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So this rule allows ingress traffic to port 8080 on the payroll pod from the internal pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So this is basically what is allowed.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So traffic to and from payroll part is blocked, now not entirely true because we know that there is one, one route of traffic that is allowed, traffic from internal to payroll pod is blocked traffic to and from the internal pod is blocked.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Traffic from internal to payroll pod is allowed.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So traffic from internal to payroll pod is allowed.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So that's the correct answer.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - Now what is the impact of the rule configured on this network policy?
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So in other words, external pod can ping payroll pod so external pod and ping payroll pod, that's not correct.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - External pod can't do anything.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - The internal pod can ping payroll pod, the internal pod cannot ping the payroll pod because we have not, we have only allowed TCP, the TCP rule.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So that's not gonna be allowed.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - External port can access port 8080.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - That's not true because we have not configured anything for the external pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - The internal pod can access port 8080 on payroll pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So that's allowed, so that, that's the correct answer.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Now access the UI of these applications using the link given about the terminal?
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Okay, so if you look at this you have the external portal and the internal portal.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So let's open those up.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Okay, so this is the internal facing application the one, the book background and this is the external facing application.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Okay?
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So access the UI of these applications using the link can load this, we have just done that.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Now, perform a connectivity test using the user interface in these applications to access the payroll service on, at port 8080.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So we're gonna try and see, we've said this in your policy but we're just gonna see it for real.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So from the external port and the internal port we're gonna ping, or we're gonna access, try and access this payroll pod on port 8080.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So the service to access a payroll port is a payroll service.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So we're gonna copy this and from the internal facing application we're gonna try to do a test.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - And that is successful, from the external facing application we're gonna do a test and that's timed out.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So this is working as expected.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - The answer here is both internal and external applications can, can access payroll, do, no, so that's not correct.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Only internal application can access the payroll service.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Okay, now perform a connectivity test using the user interface on the terminal application to access the external service at port 80.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So we, we wanna see if, so we've, we have identified that this is how it is.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - Internal port can access a payroll port and external port cannot access a payroll port.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - Now let's see if the internal port can access the external port.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So external service at port 8080 this is the internal application and try and access the external application at port 8080.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - And that is success.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So that is allowed.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - So let's select successful.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - Now finally, we have to create a network policy to allow traffic from the internal application only to the payroll service and DB service.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - See this is the internal application, we wanna block its access to everything else except for the payroll service and the database service, right?
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So this is what we want to achieve.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - So basically this is what we want to create.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - Use the spec que and below.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 94 | **Type:** Implementation Step
+  - So we have to create an Azure policy named "Internal Policy".
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - And that is this.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - And we have to, for, so after creating the policy we need to associate it with the internal pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So that's the, that's the pod specification.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 98 | **Type:** Best Practice
+  - Like the pod selector should be for the internal pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - And then the policy is egress.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 100 | **Type:** Implementation Step
+  - So we we're gonna configure egress traffic.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So we're gonna block everything except for the egress traffic to both of these.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 102 | **Type:** Best Practice
+  - And then there should be two rules.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 103 | **Type:** Concept
+  - One is to the payroll pod and the other is to the DB pod which is the MySQL pod as shown here.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 104 | **Type:** Concept
+  - So let's try and do that.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 105 | **Type:** Implementation Step
+  - So first let's go to the Kubernetes documentation pages and look for network policies and let's get a template to start with.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 106 | **Type:** Concept
+  - So we're going to get until here.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 107 | **Type:** Implementation Step
+  - So let's create a file called "internalpolicy.YMAL".
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 108 | **Type:** Concept
+  - Okay, so the policy name.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 109 | **Type:** Concept
+  - So the policy name has to be "Internal policy".
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - Then you have the pod selectors.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 111 | **Type:** Concept
+  - So we basically wanna select this pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 112 | **Type:** Concept
+  - So that's going to be, okay, and let's specify a name, "Internal".
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 113 | **Type:** Concept
+  - Okay, and let's pick the egress rule.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 114 | **Type:** Concept
+  - So we want, we only want egress rule.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 115 | **Type:** Concept
+  - So have that here.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 116 | **Type:** Implementation Step
+  - So we want to have, let's first define what we want.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 117 | **Type:** Implementation Step
+  - So first we need a one rule for this and another rule for this.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 118 | **Type:** Concept
+  - So we basically need two rules.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 119 | **Type:** Concept
+  - Let's add that here.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 120 | **Type:** Implementation Step
+  - And so the first rule is so we need to specify the pod selector.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 121 | **Type:** Concept
+  - So pod selector and match labels.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 122 | **Type:** Concept
+  - So we want to allow traffic to the pod payroll.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - So we're gonna give it a name, "Payroll".
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 124 | **Type:** Concept
+  - And we also wanna specify boards.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 125 | **Type:** Concept
+  - So we wanna allow protocol TCP to board.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 126 | **Type:** Concept
+  - So to payroll its a 8080, okay.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 127 | **Type:** Implementation Step
+  - So that's the first rule.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 128 | **Type:** Concept
+  - Same way we're gonna have for the second rule, we need to specify to which pod as well as to which port, right?
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 129 | **Type:** Concept
+  - So let's just check it here.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 130 | **Type:** Best Practice
+  - So it should be so each one will have a two and, and port, ports.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 131 | **Type:** Concept
+  - So it's actually ports.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 132 | **Type:** Troubleshooting
+  - I'm gonna fix that.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 133 | **Type:** Implementation Step
+  - Okay, and within this we're gonna have pod selector then we're gonna have match labels, and then we have MySQL.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 134 | **Type:** Concept
+  - So that's the second pod.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 135 | **Type:** Implementation Step
+  - And then we're gonna have ports.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 136 | **Type:** Implementation Step
+  - Then we specify the protocol, which happens to be TCP.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 137 | **Type:** Concept
+  - And the port for SQL is 3306, as you can see here.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 138 | **Type:** Concept
+  - Okay, so this particular policy, so we're gonna remove ingress from here.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 139 | **Type:** Implementation Step
+  - So what this does is it creates a policy for the internal, it creates an internal policy for the internal pod using this label.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 140 | **Type:** Concept
+  - So everything has a, has a label with the name on it.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 141 | **Type:** Implementation Step
+  - And then we have, we're allowing egress to the payroll pod on port 8080.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 142 | **Type:** Implementation Step
+  - And then on the MySQL pod on port 3306.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 143 | **Type:** Implementation Step
+  - Now let's create that policy.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 144 | **Type:** Concept
+  - Okay, let's do a describe internal policy and we'll verify the pod selector and egress traffic configuration.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 145 | **Type:** Implementation Step
+  - So we have 8080 to payroll and 3306 to MySQL is configured.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 146 | **Type:** Implementation Step
+  - You'll have egress policies configured.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 147 | **Type:** Concept
+  - Let's check it out.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 148 | **Type:** Concept
+  - Okay, so that's, that's about it.
+- **File:** `182_Lab Solution - Network Policies (optional).extraction.md` | **Entry:** 149 | **Type:** Concept
+  - And that's the end of this lab.
+
+### (2025 Updates)Custorm Resource Definition (CRD)
+
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Let's look at custom resource definitions in Kubernetes.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - Before we talk about custom resources, let's first talk about resources.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So here's a deployment definition file.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 4 | **Type:** Architecture
+  - And when we create a deployment Kubernetes creates a deployment and stores its information in the etcd data store.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - Now we can create this deployment and then list the deployments and see the status.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - And we can run the delete command to delete the deployment.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 7 | **Type:** Architecture
+  - Now all of this is simply going to create list and modify the deployment object or resource in the etcd data store.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - But we know that when we create deployments it creates pods equal to the number of replicas defined in the deployment, in this case three.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So who or what is responsible for that?
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - And that's the job of a controller in this case the deployment controller.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 11 | **Type:** Warning/Pitfall
+  - Now we don't have to create a controller because the deployment controller is built in to the Kubernetes and is already available.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So the controller is a process that runs in the background, and its job is to continuously monitor the status of resources that it's supposed to manage, in this case, the deployment that we created.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - And when we create, update or delete the deployment, it makes the necessary changes on the cluster to match what we have done.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - In this case, when we create a deployment object, the controller creates a replica set, which in turn creates as many pods as we have specified in the deployment definition file.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So that's the job of a controller.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And here is how it looks in code.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - So the deployment controller is written in go and is part of the Kubernetes source code.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 18 | **Type:** Warning/Pitfall
+  - You don't have to understand go or understand this code.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - For now I'm just showing this so you can see what a controller actually looks like.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Okay.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - Now we've learned about many resources throughout this course, such as replica sets, deployments, jobs, cronjobs, stateful sets, namespaces, etc. these are just a few of the many resources available on the cluster, and these have controllers that ...
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Now let's do something fun.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 23 | **Type:** Exam Tip
+  - Let's just like how we created the deployment to deploy multiple pods in a cluster.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - We would like to create, say, a flight ticket object to book a flight ticket.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - I'm just picking this use case to show that this could be really anything like literally anything.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - And later, towards the end of the video or end of this section, we will see some real life use cases.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Let's stick with this for now.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - And first we're going to see what we want and later we will see how to achieve it.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - So what I want to do is create an object called flight ticket.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - We will say the API version is flights.com/v1.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - The kind is flight ticket.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - We will name it my flight ticket.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - The spec section will have some properties required to book the ticket, such as from airport which we will set to Mumbai, and the two address which we will set to London, and also another property called number to specify the number of tickets tha...
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And that is two.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - Now when I create this object I want to have a flight ticket resource created.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - And when I list all flight tickets I want all flight tickets to be listed.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And when I delete a flight ticket, I want the flight ticket booking to be deleted.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Now how we're going to do this?
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - I'll explain in a bit.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - For now, we're just discussing the what what what do we want?
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 41 | **Type:** Architecture
+  - So this is going to create or delete the flight ticket object in the etcd data store.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - But it's not actually going to book a flight ticket.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Is it?
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - We want this to actually go out and book a flight ticket for real.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Say, for instance, there is this, uh, API available at, say, book flight com slash API that we can call to book a flight ticket.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - So how do we call this API whenever we create a flight ticket object to book a flight ticket.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So for that we're going to need a controller.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - So we will create a flight ticket controller.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And it's written in go.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And we will watch for the creation, update or deletion of the flight ticket resource.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - And when we create a resource it will contact the book Flight Ticket API to book a flight ticket.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And when we delete the resource, it would make an API call to delete that booking.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And it might look something like this in code.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So that's how it works at a high level.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - The flight ticket object that we created It is a custom resource, and the controller that we wrote to book the actual flight ticket by calling the API that is called as a custom controller.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - We have a custom resource and we have a custom controller.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Now let's see how we are going to achieve this.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 58 | **Type:** Troubleshooting
+  - If you tried to create a flight ticket resource now on your Kubernetes cluster, you will see that it fails with the error message that says there is.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - There are no matches for the kind flight ticket in version flights.com/v1.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 60 | **Type:** Best Practice
+  - Now this is because you can't simply create any resource that you want without configuring it in the Kubernetes API, without first telling Kubernetes that it should allow us to create a flight ticket object.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So that's what we have to do.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - First, we have to first define what that resource is that we want to create.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So But for that we need what is known as a custom resource definition or CRD.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - We're going to use CRD to tell Kubernetes that we would like to create objects of kind flight ticket going forward.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So the CRD is a similar object with API version kind metadata and spec.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - The API version is API extensions.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Dot case.io/v1.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Kind is custom resource definition.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Metadata has name set to flight tickets, dot flights.com, let's say.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - And under the spec section we will specify a scope.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Now scope defines if the object is namespaced or not.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 72 | **Type:** Exam Tip
+  - And we know that there are Namespaced and non namespaced scopes in Kubernetes for example, pods, replica sets, deployments are all scoped, whereas persistent volumes, nodes and namespace itself are non Unknown non scoped objects.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So here we can define if this object is going to be namespace scoped or not.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - We will set it to names namespace for now.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - Then we define groups.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Groups is the API group that we provide in the API version.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - It will be flights.com.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - And then we specify the names of the resource.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - We define the kind which is the kind that we use in the flight ticket definition file.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - And we will set it to flight ticket.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And we must also specify a singular and plural versions of names.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So the singular name here is just the flight ticket, which is used to display the resource type in the output of the kubectl commands.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - The plural is what is used by the Kubernetes API resource.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And if you run the Kubernetes, the kubectl API resources command.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - This is what is going to be shown here in the plural format.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - So it's flight tickets there.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - And of course you can provide a short version of the name.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Let's say feet.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - This way we can just refer to the resource as feet.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - When we run the kubectl commands.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - Next we have versions.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 92 | **Type:** Exam Tip
+  - Each resource can be configured with multiple versions as it passes through the various phases of its lifecycle.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 93 | **Type:** Exam Tip
+  - For example, if it's a new resource type then we're going to introduce it.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 94 | **Type:** Implementation Step
+  - Then we start at alpha or beta versions before making its way to version v1.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - This is something that we discussed in the API versions lecture earlier in this course.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Let's name it version v1 for now.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 97 | **Type:** Exam Tip
+  - And with multiple versions configured for the same resource, we must choose which ones are served through the API server.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - And we also define which is the storage version.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 99 | **Type:** Exam Tip
+  - If you have multiple versions, only one version can be marked as the storage version.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - We discussed about what are storage versions in the lecture about APIs earlier in this course.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 101 | **Type:** Implementation Step
+  - Next we specify a schema.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - The schema defines all the parameters that can be specified under the spec section.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - When you create the object, it defines what fields are supported and what type of value that fields supports, etc..
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 104 | **Type:** Concept
+  - The schema uses OpenAPI v3 schema version.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - We specify the different properties using an object type we have from to and number and from and to.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 106 | **Type:** Concept
+  - Our string number is an integer.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 107 | **Type:** Concept
+  - We can also specify validations like the minimum or maximum value that can be specified under the number.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 108 | **Type:** Troubleshooting
+  - If the value is entered by the user does not fall within this range, the resource will not be created and will return an error message.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 109 | **Type:** Implementation Step
+  - We can now create the custom resource definition by running the kubectl create command, and once the custom resource definition is created, you can now create the flight ticket object and then get or delete it.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - So that solves the first part of our problem.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 111 | **Type:** Implementation Step
+  - Being able to create any kind of object type that we want on Kubernetes, you can use custom resource definitions or crds to create any kind of resource you want.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 112 | **Type:** Concept
+  - On Kubernetes and specify a schema and add validations.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 113 | **Type:** Architecture
+  - But it's only going to allow you to create these resources and store them in etcd.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 114 | **Type:** Warning/Pitfall
+  - It's not actually going to do anything about these resources because we don't yet have a controller for it.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 115 | **Type:** Implementation Step
+  - And that's what we will look at next.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 116 | **Type:** Implementation Step
+  - The second part is building a custom controller that can handle these resources, that can watch when these resources are created, and perform actions based on the resource specifications you see without a controller.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 117 | **Type:** Implementation Step
+  - The custom resource that we created is just going to sit there.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 118 | **Type:** Concept
+  - It's just data stored locally in our data stores and does not actually do anything.
+- **File:** `184_(2025 Updates)Custorm Resource Definition (CRD).extraction.md` | **Entry:** 119 | **Type:** Concept
+  - So in the upcoming video, we will see how to get started with creating such a controller.
+
+### (2025 Updates) Custom Controllers
+
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will look at developing custom controllers.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So to pick up from where we left off, we have created a custom resource definition.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - And we are able to create our flight ticket objects.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 4 | **Type:** Architecture
+  - And the data about the ticket is stored in etcd.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 5 | **Type:** Architecture
+  - Now what we need to do is monitor the status of the objects in etcd and perform actions such as making calls to the flight booking API to book, edit, or cancel flight tickets.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And that's why we need a custom controller.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So a controller is any process or code that runs in a loop and is continuously monitoring the Kubernetes cluster and listening to events of specific objects being changed, in this case, the flight ticket object.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And now we could do that in any way we can.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Of course you need to write some code.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 10 | **Type:** Architecture
+  - So say I know Python well, so I could write a code in Python that would query the Kubernetes API server for objects in the Kubernetes API.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - And then I could watch for changes and make a further call to the API to make changes to the system.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - However, developing a controller in Python may be challenging as the calls made to the APIs may become expensive and we will need to create our own queuing and caching mechanisms.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Developing in go with the Kubernetes Go client provides support for other libraries like shared informers, that provide caching and queuing mechanisms that can help build controllers easily and in the right way.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So how do you start building a custom controller?
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So there's a GitHub repo named Sample controller.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So first clone this repo and then we modify the controller.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Go with your custom code.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Then we build and run it.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So make sure you have the go programming language installed on your machine.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Install it if it is.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Um, if it isn't already installed.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - And then clone the GitHub repo of the sample controller.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - We then CD into the sample controller directory, and then we customize the controller dot go with our custom logic.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And we're not going to get into the details about the code itself at this point.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Um, we would probably go over it at some other time where we will focus on advanced topics that that would be that would include like building controllers and operators.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - For now, let's just assume that we've customized the controller Go code.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And somewhere within the code, we're making a call to the flight booking API and to book flight tickets.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - And then once we do that, we then build the code and then we run it.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - And when we run it, we specify the kubeconfig file that the controller can use to authenticate to the Kubernetes API, and then the control process starts locally, and it then watches for the creation of the flight ticket objects and make the makes...
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Once your controller is ready, you can decide on how to distribute it.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 31 | **Type:** Warning/Pitfall
+  - Now you don't want to build and run it each time, so you may package the custom controller in a Docker image and then choose to run it inside your Kubernetes cluster as a pod or a deployment.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - That's a high level overview of building a custom controller.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 33 | **Type:** Warning/Pitfall
+  - Now, in the exam, I don't expect them to ask a question about building a custom controller as it requires more coding knowledge.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 34 | **Type:** Warning/Pitfall
+  - So I don't anticipate a question on this.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - However, there may be questions to build custom resource definitions and work with custom resource definition files, or to to work with existing controllers that are already there.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So it's good to know.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - All right.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So that's that's all for now.
+- **File:** `186_(2025 Updates) Custom Controllers.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - And in the next video we will talk about operators.
+
+### (2025 Updates) Operator Framework
+
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Let's now look at the operator framework.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So we've talked about creating a custom resource definition or CRD and a custom controller that has the logic to work with that CRD.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - And currently these are separate entities.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - And we have to manually create the CRD and the resources using the CRD.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - And then we deploy the controller as a pod or a deployment.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 6 | **Type:** Exam Tip
+  - However, these two entities can be packaged together to be deployed as a single entity using the operator framework.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So by deploying the flight operator, it internally creates the custom resource definition and the resources, and also deploys the custom controller as a deployment.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Now the operator framework does much more than just deploying these two components.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - But let's look at a real life use case of an operator.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 10 | **Type:** Architecture
+  - And one of the most popular operator is the etcd operator.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 11 | **Type:** Architecture
+  - It is used to deploy and manage an etcd cluster within Kubernetes.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 12 | **Type:** Architecture
+  - So it has an etcd cluster, CRD, and a custom controller that watches for the etcd cluster resource and deploys etcd within the Kubernetes cluster.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 13 | **Type:** Architecture
+  - However, it can do much more, such as take a backup of etcd cluster, as well as restore a backup to the etcd cluster by simply creating a CRD.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - There are additional code in the operator named Backup and restore operators that are responsible for performing these additional tasks.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 15 | **Type:** Troubleshooting
+  - So Kubernetes operators do what a human operator typically would do to manage a specific application, such as installing it, maintaining it by taking backups, and restoring backups in case of disasters, uh, fixing any issues that may come across t...
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - All operators are available at the operator hub.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 17 | **Type:** Architecture
+  - You can find operators for many of the popular applications like etcd, MySQL, Prometheus.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Grafana.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Argo CD.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Istio.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Select any operator to view additional details and the installation instructions are available on clicking the install button.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - Deploying an application is as easy as following the three steps.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - That's first, installing the Operator Lifecycle manager and then installing the operator itself.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And that's about it.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - That's a high level overview of operators.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Now diving deep into operators require its own mini course.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And we will have that at some point in the future.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 28 | **Type:** Warning/Pitfall
+  - For now I do not anticipate any questions on operators itself in the exam.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Um, I think uh, the curriculum mentions mostly about crds.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So this lecture on operators is just an add on, right?
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So thank you so much.
+- **File:** `187_(2025 Updates) Operator Framework.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - And, um, I'll see you in the next one.

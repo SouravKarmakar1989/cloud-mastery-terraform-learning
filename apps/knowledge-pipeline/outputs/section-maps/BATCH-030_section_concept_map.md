@@ -1,0 +1,659 @@
+# Section Concept Map: BATCH-030
+
+## Section
+- Course: `certified-kubernetes-application-developer`
+- Section: `14_Lightning Labs`
+
+## Source Files Used
+- `202_Solution_ Lightning Lab1.extraction.md`
+- `204_Solution_ Lightning Lab - 2.extraction.md`
+
+## Concept Groups
+
+### Solution_ Lightning Lab1
+
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: In this video, I'm gonna walk you through these solutions for the Lightning Lab 1.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - The first question, it's asking us to create a PersistentVolume called log-volume.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 3 | **Type:** Best Practice
+  - And it's saying that this should make use of a StorageClass name manual, it should use RWX as the access mode and have a size of 1 Gi, and the volume should use the host path /opt/volume/nginx.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - So let's get started with the first task.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - And so what I'm gonna do is I'm gonna just create a new file and we'll just call this log-volume.yaml.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - And if you want, at this point, you can pull up the Kubernetes documentation to get a baseline template of how to configure a PersistentVolume.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So if you go to the PersistentVolume section, I'm just gonna copy this right here, and then we can paste that right in.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - So first thing, we're gonna change the name, this is gonna be log-volume.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - StorageClass name, this is gonna be set to manual.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Let's add the capacity.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So this is gonna be 1 Gi.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And let's set the access mode.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And this is gonna be ReadWriteMany, that's what that RWX is.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - And finally, let's set the host path, so that be /opt/volume/nginx.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And that's all we need to do for the PersistentVolume.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - We can now apply this configuration.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - I'll do a kubectl apply.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 18 | **Type:** Best Practice
+  - And now, if I do a kubectl get pv, we should see it.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - Now the next step, we have to create a PersistentVolumeClaim called log claim with the following specs, so let's go ahead and create a new file vi, and I'll call this a log-claim.yaml.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 20 | **Type:** Warning/Pitfall
+  - And once again, we can go back to the documentation and find an example of a PersistentVolumeClaim, so we don't have to hand write everything out.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - And so here's one, and I'm just gonna grab everything from here up.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And so let's change the name.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - The access mode, this is once again gonna be ReadWriteMany.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - I'm gonna delete the volume mode section.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 25 | **Type:** Best Practice
+  - Then, for storage, it's saying that this should request a minimum of 200.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 26 | **Type:** Best Practice
+  - And StorageClass name should be manual as well.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And that's going to wrap up the configuration for the PVC.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - So now, we can do kubectl apply again on this guy.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - And if I do a kubectl get PVC, you see that we've got one PVC.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - And the final task for the first question is that we have to mount this in a Pod called logger at the location /var/www/nginx.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 31 | **Type:** Best Practice
+  - And the Pod should be running an NGINX Alpine image.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So I'm gonna do a kubectl run, and this is gonna be called logger.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - And we'll set the image to be NGINX Alpine, and then we'll do a dry run.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - And then I'm gonna pipe this to a file.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - We'll call this logger.yaml.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - And so to mount this, I'm gonna create a volume section, and we've got one volume, I'm just gonna call this log.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - And then here, we'll provide the PersistentVolume claim.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Claim name is gonna be log-claim.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - And then under the container, I'll do volume mounts.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - And the mount path, this is going to be this path right here.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - And then we can do a kubectl apply -f.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And it looks like I made a typo, and that's right here.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - So this needs an S, so persistent, and we'll try that again, and it looks like it was successfully created.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - So let's go onto the next question.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - But the next question, a new Pod called secure pod and a service called secure service has been deployed.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 46 | **Type:** Troubleshooting
+  - And it looks like incoming and outgoing connections to this Pod is currently not working, so we have to troubleshoot why this is happening.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - And after we make the necessary changes, we have to make sure that incoming connections from the Pod webapp-color are successful.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 48 | **Type:** Best Practice
+  - So traffic from webapp-color to the secure pod using the secure service should be successful.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So let's do a kubectl get pods.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Now we've got the web app color and the secure pod.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 51 | **Type:** Best Practice
+  - And if I do a kubectl get service, we should see the secure service that the secure Pod is using.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 52 | **Type:** Troubleshooting
+  - So let's first confirm the issue.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So what I'm going to do is I'm going to go into the webapp-color pods.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So I'm gonna do a kubectl exec-it, webapp-color--sh.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And so now we're in this Pod right now, and what I'm gonna do is I'm gonna just test the connection, so this service is gonna be using port 80.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So let's test that, see if we can reach port 80.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - So I'll do a nc-v-z-w, time out of two seconds, and then we're gonna try to reach the secure-service, and it's gonna be on port 80.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So let's see what happens.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - And it looks like operation timed up.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 60 | **Type:** Troubleshooting
+  - So this does confirm, in fact, there is some sort of connection issue, so we are unable to reach that specific pod using the service.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So let me exit outta here.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And what I'm gonna do is I'm gonna check the network policy.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So I'll do a kubectl get netpol.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So we've got one policy here, and I'm gonna do a kubectl describe, and let's take a look.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - And so it looks like, for this default deny policy for allowing ingress traffic, you can see that it's set to none, so no traffic is allowed in.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 66 | **Type:** Troubleshooting
+  - So this is most likely the issue.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - So let's create a new network policy that's going to allow this traffic.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - So first thing first, I'm gonna do a kubectl get pod--show labels 'cause we are going to have to reference these pods using their labels.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So if we wanna reference the secure pod, we can pass the label run =secure pod.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - And if we wanna reference the webapp-color pod, we can reference this label here.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - And so what I'm gonna do is I'm gonna do a kubectl get netpol, and then I'm gonna do a kubectl get netpol default-deny.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - And I'm gonna pipe this to a YAML config, so we can just modify this one so we have a baseline starting config.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Let's move into here.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And so I'm gonna change a couple things.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - First of all, we're gonna change the name.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 76 | **Type:** Warning/Pitfall
+  - And the instructions don't give a name, So we can just call this whatever you want, I'm just gonna call this network-policy.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 77 | **Type:** Best Practice
+  - Then under spec, we have to select a pod, so what rule should this apply to, and this is going to be for the secure pod.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - And so I'm gonna delete this, and then we're gonna go under here, and we gotta say, "matchLabels," and then we have to provide the label to match the secure Pod, 'cause we want this policy for the secure pod.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So I'm gonna exit outta here.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - And then if we just take a look to access the secure pod we can use run=secure pod.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - So I'm just gonna copy this and we can just paste that in here.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - Under policy types, we just want an ingress policy, and then we can define the ingress policy below.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - So traffic from where, so I'll say, "-from." And then here, we're gonna do a Pod selector.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - And once again, this is gonna be matchLabels, so we have to provide the label to match the web app-color pod.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - And so the label for that is going to be name webapp-color.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 86 | **Type:** Best Practice
+  - So this policy, what it's saying is traffic coming from this Pod or any Pod with this specific label should be allowed to go to the Pod with the this specific label.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 87 | **Type:** Best Practice
+  - So traffic coming from webapp-color should be able to reach the secure pod.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - But we wanna be a little bit more specific.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - We wanna also specify what specific ports it can use.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - So I'll say, "Ports," and we'll do a protocol.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So this is gonna be TCP and we want port 80, 'cause that's what the port that the secure service uses, and you can get that information by doing a kubectl get service.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - Okay, and so now we can do a kubectl apply -f netpol.yaml, and looks like there's a typo.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - So we'll go up to here and then just change this.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - And it's the label that I used right here, so I'm gonna just change this.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - It's gonna be run secure pod, not run =secure pod.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 96 | **Type:** Implementation Step
+  - Let's apply that.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - All right, so it looks like it's successful.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - And so what we can do is we can go back into that container again using that exec command and I can try running that nc command, so nc-v-z-w.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 99 | **Type:** Best Practice
+  - And this should work this time, and we can see that the connection's open now.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - Perfect.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 101 | **Type:** Implementation Step
+  - In the next question, we have to create a Pod called time-check in the following namespace.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 102 | **Type:** Best Practice
+  - And this Pod should run a container called time-check that uses the BusyBox image.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 103 | **Type:** Best Practice
+  - We also have to create a config map called time-config with the following key value pair, and the container itself should run the following command.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 104 | **Type:** Best Practice
+  - And notice how this is going to make use of an environment variable that's going to reference the config map we created in the previous step and we have to write the result out to the following location here, and the path/opt/time on the Pod shoul...
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 105 | **Type:** Implementation Step
+  - So to get started, first of all, let's take a look and see if that namespace exists, and we can see it doesn't, So I'll do a kubectl create namespace and then we'll just copy that name.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 106 | **Type:** Implementation Step
+  - The next thing that we need to do is let's go ahead and create the config map while we're at it, so I'll do a kubectl create cm, and that's going to be time-config.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - The namespace is going to be the same namespace, and it's gonna be --from-literal which =time_freak=10.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 108 | **Type:** Implementation Step
+  - And then if we do a kubectl get config map, we can see our config map there.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 109 | **Type:** Best Practice
+  - And so the next thing that we have to do is create our Pod spec, so I'm gonna do a kubectl run and our Pod should be called time-check, and it should use an image that is a BusyBox image.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - And then I'm gonna do dry-run=client.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - And let's open that config, and let's take a look at what other changes we have to make.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 112 | **Type:** Implementation Step
+  - So first of all, let's define our environment variable because, as I mentioned, the command here is going to make use of an environment variable.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - I'll say, "env," and the name of this has to be time_freak, and this is going to be a value from...
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - ConfigMapKeyRef.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - And the key is going to be time_break.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - Now let's specify the command that the container's gonna use.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - So I'll say, "Command." And so this is gonna be /bin/sh, it's gonna be -C.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 118 | **Type:** Implementation Step
+  - And then the final command is going to be...
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - We're just gonna copy this and paste that in there.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - Okay, so now let's mount the volumes.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - So I'm gonna define the volumes first, so we'll do volumes.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 122 | **Type:** Implementation Step
+  - Name is gonna be called log-volume, and then we'll do emptydir.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 123 | **Type:** Concept
+  - And this will be volume mount.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 124 | **Type:** Best Practice
+  - The name of this is gonna be log-volume, and the mount path should be /opt/time.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - And I forgot one last thing, we actually have to modify the command.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - So remember, we want to write the result to the location that's provided here.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 127 | **Type:** Concept
+  - So I'll just redirect this output to that specific location.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - And that's not what I wanted.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - I want just the path that it's gonna be /opt/time/time-check.log.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 130 | **Type:** Implementation Step
+  - And then we'll do a kubectl apply -f time-check and we'll do a kubectl get pod -n.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 131 | **Type:** Troubleshooting
+  - And I realized we made one issue, so I'm gonna go back in to that file and we forgot to change the namespace, so we wanna make sure it runs in that new namespace.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - So let me delete the old pod.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 133 | **Type:** Implementation Step
+  - And then now we can do a kubectl apply -f, and we can see that it's in a running state now.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 134 | **Type:** Implementation Step
+  - So let's move on to the next question.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 135 | **Type:** Best Practice
+  - The next question we have to create a new deployment called nginx-deploy which is going to deploy one single container called NGINX using the following image, and it should have full replicas.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 136 | **Type:** Best Practice
+  - And the deployment should use a rolling update strategy with the maxSurge of one and a maxUnavailable of two.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 137 | **Type:** Implementation Step
+  - And before we move on to the other test, this actually gets started in creating that deployment.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 138 | **Type:** Implementation Step
+  - So I'm going to do a kubectl create deploy, and this is gonna be called nginx-deploy.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 139 | **Type:** Best Practice
+  - The image should be set to nginx 1.16 and the replicas should be set to four.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 140 | **Type:** Concept
+  - And I'll just do a --dry run.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 141 | **Type:** Concept
+  - And in here, if we take a look at what we need to change, we have to add in the rolling update.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 142 | **Type:** Concept
+  - So under strategy, do rolling update, maxSurge is one, and the maxUnavailable is gonna be set to two.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 143 | **Type:** Implementation Step
+  - All right, and then we'll save the config I'll do a kubectl apply -f, nginx deploy, that's going to get created.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 144 | **Type:** Implementation Step
+  - And if we do a kubectl get deploy, let's wait 'til we have all four available.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 145 | **Type:** Concept
+  - Okay, so now we have four available.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 146 | **Type:** Best Practice
+  - Now, the next step is that we have to upgrade the deployment to a version of 1.17, So we could do a kubectl set image deployment, nginx-deploy, and we'll say nginx = nginx 1.17, So this should change the image to be a 1.17, it should be updated.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 147 | **Type:** Implementation Step
+  - And then if I do a kubectl get pod, you can see it's terminating the old containers or the old pods, and it's creating new pods with the new images.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 148 | **Type:** Implementation Step
+  - Let's do kubectl get deploy.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 149 | **Type:** Concept
+  - So we can see that we have four available now.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 150 | **Type:** Concept
+  - Perfect.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 151 | **Type:** Implementation Step
+  - And then finally, once all pods are updated, undo the update and go back to the previous version.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 152 | **Type:** Implementation Step
+  - And so to do that we do a kubectl rollout, undo deployment, nginx-deploy.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 153 | **Type:** Implementation Step
+  - And that's all we need to do for this question, so we'll go to the next question.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 154 | **Type:** Implementation Step
+  - For the last question, we have to create a Redis deployment with the following parameters.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 155 | **Type:** Best Practice
+  - And so the deployment name should be Redis, using this following image, and it should have one replica.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 156 | **Type:** Best Practice
+  - And the container should use a .2 CPU.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 157 | **Type:** Best Practice
+  - It should use a label of app=redis, and then we should also mount these two volumes.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 158 | **Type:** Implementation Step
+  - So I'm gonna do a kubectl create deployment, and the name of the deployment's gonna be Redis with an image, which is gonna be Redis Alpine, and then the replicas is going to be set to one.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 159 | **Type:** Concept
+  - All right, and couple of things now.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 160 | **Type:** Implementation Step
+  - So first of all, we already got the replica set, we've already got the name set, and we've already got the image set.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 161 | **Type:** Concept
+  - So let's change the CPU resources.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 162 | **Type:** Concept
+  - So under the container, we'll go under resources and I'll say, "Requests," and the CPU is gonna be 0.2.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 163 | **Type:** Implementation Step
+  - Now the next thing that we have to do is we have to specify the volumes.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 164 | **Type:** Concept
+  - So we're gonna have two volumes.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 165 | **Type:** Implementation Step
+  - The first one is going to be called data and the second one is gonna be called redis-config.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 166 | **Type:** Concept
+  - And this is going to use a config map.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 167 | **Type:** Concept
+  - And the name of the config map is going to be redis-config.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 168 | **Type:** Implementation Step
+  - And then after we define those, we can then add it to the container.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 169 | **Type:** Concept
+  - So we'll do volume mount.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 170 | **Type:** Implementation Step
+  - The first one is gonna be the data, and the volume mount...
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 171 | **Type:** Concept
+  - Sorry, not the volume mount, the mount path.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 172 | **Type:** Concept
+  - This is going to be /redis master data.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 173 | **Type:** Concept
+  - And the other one is going to be redis-config.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 174 | **Type:** Concept
+  - And this is gonna be in /redis-master.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 175 | **Type:** Warning/Pitfall
+  - And for the last requirement, the container should expose port 6379, and it's just letting us know also that the config map that we're referencing here has already been created, so we don't have to create that ourselves.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 176 | **Type:** Concept
+  - So for ports, we'll do container port and the port is 6379, 6379.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 177 | **Type:** Concept
+  - I think that matches all of the requirements.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 178 | **Type:** Implementation Step
+  - So now we can just do a kubectl apply -f redis.yaml and it was successfully created.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 179 | **Type:** Concept
+  - So that's gonna be the last question.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 180 | **Type:** Exam Tip
+  - And so now we can then go ahead and end the exam, and run the validation.
+- **File:** `202_Solution_ Lightning Lab1.extraction.md` | **Entry:** 181 | **Type:** Concept
+  - And so that's going to wrap up the solutions for the Lightning Lab 1.
+
+### Solution_ Lightning Lab - 2
+
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: In this video, I'm gonna walk you through the solutions for Lightning Lab 2.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So for the first question, a couple of pods have been deployed in the cluster across several different namespaces.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 3 | **Type:** Troubleshooting
+  - We have to inspect them and identify which pod is not in a ready state and then troubleshoot and fix that issue for the first part of the question.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 4 | **Type:** Troubleshooting
+  - And then for the second part, for that same pod that has this issue, we want to add a check to restart the container on the same pod if the command LS slash var slash WWW slash HTML slash file underscore check fails.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - So first of all, let's figure out which pod is impacted at the moment.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So I'm gonna do a kubectl get pods.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And remember we wanna check all namespaces so we can do a dash dash all dash namespaces.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And so if we take a look, there's one pod that's not in a running state or ready state and that's gonna be this engine X-1-4-0-1.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And that's in this specific namespace.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 10 | **Type:** Troubleshooting
+  - To troubleshoot this, I'm gonna start off by doing kubectl describe pod.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - And if we take a look at the events, it's already giving us some useful information.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - It says the readiness probe failed.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 13 | **Type:** Troubleshooting
+  - So there's some sort of issue surrounding that, whether it's a misconfiguration on the probe itself or something else that's to be determined.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So what we're gonna do is, I'm gonna clear this and I'm actually going to do a get pod now and I'm gonna pipe this out to a YAML config file so I can take a look at the configs and see if I can spot something off.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So I'll say dash O yaml.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And then if I take a look at the YAML configuration.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And let's take a look at the readiness probe.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So it looks like it's sending a request to the root URL on port 8080.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And right there I already notice something a little unusual because in the config above, it's saying the container port is on 9-0-8-0.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 20 | **Type:** Best Practice
+  - So I suspect that this is actually a typo and this should be 9-0-8-0.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 21 | **Type:** Troubleshooting
+  - So let's actually try changing that and see if that fixes the issue.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 22 | **Type:** Troubleshooting
+  - Okay, so we changed the port, and while we're at it, let's go ahead and knock out this second task, which is, we want to add a check to restart the container on the same pod if this specific command fails.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So for this, we actually need a liveness probe.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So we already have a readiness probe.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Let's add a liveness probe.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So I'm gonna go and add this here.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So we'll do liveness and this is gonna be an HTTP, or actually, sorry not, this is gonna be an exec if we wanna run a command.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - And the command is going to be dash LS and then slash var slash www HTML file underscore check.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - And then we wanna start this check after a delay of 10 seconds.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So that's going to be initial delay.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - We wanna set that to 10 seconds.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - And then we want this to run every 60 seconds so that's gonna be period seconds.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - And then we can do a kubectl apply dash F and actually we can change this cuz we're gonna have to delete the old pods.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - So I'm gonna do a replace so it'll automatically delete it for us and then we'll do a dash dash force.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And that's been successfully replaced.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 36 | **Type:** Troubleshooting
+  - And let's do a kubectl get one one more time just to make sure that there's no issues.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So I'm gonna get all the pods and we can see that it is now in a ready state.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Let's move on to the next question.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - For the next question, we have to create a CronJob called Dice that runs every one minute and it's giving us a pod template to take a look at under slash route slash throw a dice.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 40 | **Type:** Troubleshooting
+  - The image throw dash dice randomly returns a value between one and six, and the result of a six is considered a success and all others are a failure.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 41 | **Type:** Best Practice
+  - And so a couple of other configurations that we have to provide the job should be run non-parallel, so in series, so one by one.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - And then we want to complete the task only once and we wanna use a back off limit of 25.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 43 | **Type:** Best Practice
+  - And if the task is not completed within 20 seconds, the job should fail and pod should be terminated.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - So first of all, to create a CronJob, I wanna take a look at the Kubernetes documentation.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So under CronJob, we have a template right here so we could just copy this.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - I'm gonna do a V-I, I'll just call this dice job dot yaml and we can paste that.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - And actually before we do that, I'm gonna save this and let's actually go to that directory and then take a look at throw a dice.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So we can see that the image that we need to use is code cloud slash throw dash dice.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So I'm gonna change the image here and I'm just gonna change the name to dice.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - I'm gonna change the name of my CronJob to be dice as well.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 51 | **Type:** Best Practice
+  - From a schedule perspective, it's saying that this should run every one minute.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So to change this to run every one minute, we just do slash one here.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - Then under spec, we wanna specify the completions now.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 54 | **Type:** Best Practice
+  - And this should be one and the back off limit should be set to 25.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 55 | **Type:** Best Practice
+  - And for this last requirement here, if the task is not completed within 20 seconds, the job should fail and the pod should be terminated.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - The configuration that we want is called active dead line seconds.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - And that's gonna be 20.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 58 | **Type:** Warning/Pitfall
+  - And we'll delete the command config here; we don't need that.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - And then last thing is, I'm gonna set up a restart policy to be never.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - And now we can do a kubectl apply.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - And let me change the API version here to be V one beta one.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - There we go.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - Okay, so let's move on to the next question.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - The next question, we have to create a pod called My Busy Box in this following namespace using the busy box image.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 65 | **Type:** Best Practice
+  - And the container should be called secret and should sleep for 3,600 seconds.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And there's a few other requirements.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - We'll start off by knocking out the first one.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - So first of all, let's do a kubectl get namespace.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Let's just make sure that this namespace does in fact exist.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - And then we can do a kubectl run my dash busy box dash dash image and we'll set this equal to busy box.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - And then we can pipe this out to a file and I'll just call this my busy box dot yaml.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - We'll open this up and let's make the necessary changes.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - So the first thing that we're gonna have to do is set the namespace.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So here I'll do namespace and this is going to be this namespace provided.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 75 | **Type:** Best Practice
+  - The next thing that we want to do is we have to change the command because it should sleep for 3,600 seconds.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - So we'll go to the image or the container and then change the command.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - So this is gonna be sleep and the next one is going to be 3,600.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - And it says that we need to name the container secret.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - Okay, and so that covers all of the first requirements.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 80 | **Type:** Best Practice
+  - The next thing that we have to do is the container should mount a read only secret volume called secret dash volume at the path of slash etc slash secret volume.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 81 | **Type:** Implementation Step
+  - And it looks like the secret that's being mounted has already been created and is called dot file dash secret.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So let's define our volumes.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - So we're gonna do name and we'll call this secret dash volume and then the secret that we're gonna reference, which is dot file dash secret.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - And then we can go under the container and define our volume mount.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 85 | **Type:** Best Practice
+  - And it should be secret dash volume.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - It says that it needs to be a read only so we'll say read only.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - This is gonna be set to true.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - And then finally, the mount path.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - I'm gonna set this to be slash etc slash secret dash volume.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - And the final requirement is that we have to make sure this pod is scheduled on the control plane and no other node in the cluster.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - And so we can go up here and I'm gonna set the node name property to be control plane.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - All right, and then we can do a kubectl apply dash F my busy box and we can go to the next question.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - The next question, we have to create a single ingress resource called ingress dash VH dash routing.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 94 | **Type:** Best Practice
+  - And this resource should route HTB traffic to multiple host names as specified below.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 95 | **Type:** Best Practice
+  - So for the service video dash service, this should be accessible on the following URL.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 96 | **Type:** Best Practice
+  - And then for the apparel service, this should be available on the following URL.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 97 | **Type:** Exam Tip
+  - And so if you want, you can take a look at the Kubernetes documentation to get an example configuration.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 98 | **Type:** Exam Tip
+  - So if you go to the ingress page, I'm just gonna copy this example config, and I'm just gonna create a file called ingress dot yaml and we can paste this here.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - So first of all, let's change the name to be ingress dash VH dash routing.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 100 | **Type:** Implementation Step
+  - And now let's knock off the first service, which is gonna be the video service.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - And so here I'm gonna do dash and I'm gonna just delete the configs here.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - So we're gonna specify the host.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - So the first one is going to be watch dot eCommerce slash video.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - And I'm just gonna copy this; it doesn't let me copy just the text that I want.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - And so I'm going to just delete all of this.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 106 | **Type:** Implementation Step
+  - So just get the base URL and this is gonna be HTTP and then we'll configure our paths.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 107 | **Type:** Troubleshooting
+  - And so this is gonna be path type prefix the path, this one's going to be slash video.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 108 | **Type:** Implementation Step
+  - And then we'll do back end.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - We'll grab the service and the name.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - And then here we're gonna pass in the name of the service.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 111 | **Type:** Implementation Step
+  - So this is gonna use the video service and then the port.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - So here we're gonna specify the port that that service lists it on.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - And I know it's 8080, but just to show you guys, just in case we'll do a kubectl get SVC.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - So we got video service running on 8080 and we have apparel service running on 8080.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - So that's why I chose that port.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 116 | **Type:** Implementation Step
+  - So that's gonna cover the first service and then now we have to do the second one.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - So I'm going to copy all of this and I can change this to apparels.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - And the path is going to be apparel, or sorry, where, and the service is gonna be called apparels.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 119 | **Type:** Warning/Pitfall
+  - And also we wanna make sure we remove the port numbers from here; we don't need those.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - All right, and so just to summarize once again, any request going to this specific host name or this domain name with the slash video path is going to get redirected or sent or forwarded to the service called video service.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - And then anything going to here with a slash where path is going to get sent to the apparel service on port 8080.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - So let's save this.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 123 | **Type:** Implementation Step
+  - Let's do a kubectl apply dash F ingress dot yaml.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 124 | **Type:** Best Practice
+  - And if I do a kubectl get ingress, we should now see our ingress.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 125 | **Type:** Implementation Step
+  - Okay, so let's go to the next question.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 126 | **Type:** Implementation Step
+  - The next question, a pod with this following name has been deployed in the default namespace.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 127 | **Type:** Warning/Pitfall
+  - Inspect the logs for the container called log dash X and redirect the warnings to the following file on the control plane node.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - So if I do kubectl get pods, we can see the pod in question.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - And so we wanna do kubectl logs and we'll grab that name and it's specifically asking for the container called log dash X.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 130 | **Type:** Implementation Step
+  - So you do dash C and then the name of the container.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - And let's take a look at the logs.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - And so you can see, it's just standard type logging.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 133 | **Type:** Warning/Pitfall
+  - So we've got different levels, informational warning, and it's saying we want to redirect all of the warnings to this specific file.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - So how do we do that?
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 135 | **Type:** Implementation Step
+  - Well, first of all, we're gonna have to grip for that.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 136 | **Type:** Warning/Pitfall
+  - We'll do grip and then we wanna grip for warning, keep in mind it is case sensitive.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 137 | **Type:** Implementation Step
+  - And then we want to redirect to a file and that's gonna be slash opt slash D-I-N-D.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 138 | **Type:** Concept
+  - And actually I'm just gonna copy that name.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 139 | **Type:** Implementation Step
+  - And so now if I do a CAT and then we can go to that same location, we can see we have all of the logs there.
+- **File:** `204_Solution_ Lightning Lab - 2.extraction.md` | **Entry:** 140 | **Type:** Concept
+  - And so that's going to wrap up the Lightning Lab 2.

@@ -1,0 +1,693 @@
+# Section Concept Map: BATCH-034
+
+## Section
+- Course: `learn-kubernetes`
+- Section: `03_Kubernetes Concepts`
+
+## Source Files Used
+- `012_Kubernetes Setup - Introduction and Minikube.extraction.md`
+- `013_Demo - Minikube-Setup.extraction.md`
+- `014_Pods.extraction.md`
+- `015_Demo - Pods.extraction.md`
+
+## Concept Groups
+
+### Kubernetes Setup - Introduction and Minikube
+
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Let us now look at how to set up a Kubernetes cluster and gain access to it.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So there are lots of ways to set up and get started with Kubernetes, so we can set it up ourselves from scratch locally on our laptops or virtual machines.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Or we could use an existing managed service on a cloud provider, or you can access publicly accessible, uh, playgrounds.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So for local systems, solutions like Docker Desktop, minikube and Kube admin are popular tools.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 5 | **Type:** Command
+  - 
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - And kube admin is a tool used to configure Kubernetes in a multi node setup, and we will look more into that later.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - There are also hosted versions available for setting up Kubernetes in a cloud environment such as GCP, AWS or Azure.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And these are one click access.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So you just click a button and it provisions an entire Kubernetes cluster for you.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - And then you gain access to it.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - And you can just continue to work with it without spending time setting it up.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 12 | **Type:** Warning/Pitfall
+  - And finally, if you don't have the resources or if you don't want to go through this hassle of setting it all up for yourself as part of your learning process, and you just want an instant access to a Kubernetes cluster just to play with or run so...
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So one of the playgrounds that are available provided by us is the cloud playgrounds that are accessible at code Cloud.com.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - I'll also show a little bit of information about that in a bit.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Now feel free to choose the one that is right for you.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 16 | **Type:** Warning/Pitfall
+  - You don't need to go through all of the demos.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Pick the ones that best suit your needs based on your time and resources.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So just starting with Docker Desktop.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So Docker Desktop is a free solution available with Docker.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So if you go to the Docker Docker website you have options to download and install Docker on all of these different options that are available here.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So you have Docker for Docker Desktop for Mac, both for, um, silicon as well as Intel chips.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - Similarly, you have Docker Desktop for windows, both for AMD and ARM chips, and then you have the Docker for desktop for Linux.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Now once you, uh, set up and install Docker desktop, this is kind of the interface that you're going to see.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - You'll be able to see all the containers running and their information and a lot of other information.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - The best part is that it comes with Kubernetes built in.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So if you go to settings and to Kubernetes section in the settings, all you need to do is enable Kubernetes from there.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And it kind of sets up an instant Kubernetes cluster that you can play around with, uh, in the back end.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So very easy to set up and gain access to Kubernetes.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - The next option I'm going to show is the, uh, code cloud public playgrounds.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So, uh, this is built specifically for those who wants to have instant access to the, um, two, a Kubernetes cluster, specifically a historical version of the cluster two.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So as you can see here, we currently support up to four historical versions of Kubernetes.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 32 | **Type:** Comparison
+  - So if you want to see if you want to go back to a previous version of Kubernetes cluster and, you know, compare and see features and differences between the clusters in between different versions, then this is a really good option.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - One click and you get this cloud Kubernetes playground open up in the right in the browser that you can then refer to.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So moving on to minikube, which is another easy way to get started with Kubernetes on a local system.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So before we head into the demo, it's good to understand how it works.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 36 | **Type:** Architecture
+  - Earlier, we talked about the different components of Kubernetes that make up a control plane and worker nodes such as the API server, etcd key value store controllers and scheduler on the master or the control plane, and then you have the Kubernet...
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - Now, it would take a lot of time and effort to set up and install all of these various components on different systems, individually, by ourselves, which is why a mini cube bundles all of these different components into a single image, providing u...
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 38 | **Type:** Exam Tip
+  - Now, to make it easier, the whole bundle is packaged into an ISO image and is available online for download.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 39 | **Type:** Warning/Pitfall
+  - Now you don't have to download it yourself.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 40 | **Type:** Command
+  - 
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So you must have a hypervisor installed on your system.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So for windows you would use VirtualBox or Hyper-V.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And for Linux you use VirtualBox or KVM.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - And finally, to interact with the Kubernetes cluster, you must have the kubectl Kubernetes command line tool also installed on your machine.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So you need three things to get this working.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So you must have a hypervisor installed.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - You have kubectl installed and you have minikube executable installed on your system.
+- **File:** `012_Kubernetes Setup - Introduction and Minikube.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Let's check it out.
+
+### Demo - Minikube-Setup
+
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this demo, we are going to install a basic Kubernetes cluster using the minikube utility.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - As part of this beginners course, to keep things simple and easy, we will stick to minikube as our lab solution.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We explore additional options of provisioning Kubernetes cluster using the Kube admin tool in the course.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - As for this course, we just want to stick to the very basics and all the basic operations can be performed on minikube cluster.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So we will start at the Kubernetes.io page.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Within this website, click on the documentation section and navigate to Tasks and Install Tools section.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Now before installing minikube we must install the kubectl utility.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - It may be called kube control or kubectl or kubectl whatever you prefer.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Now you might hear me mix it up at times, so bear with me on that.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So the kubectl command line tool is what we will use to manage our Kubernetes resources and our cluster after it is set up using minikube and installing the kubectl utility before installing minikube will allow minikube to configure the kubectl ut...
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 11 | **Type:** Exam Tip
+  - So the kubectl utility can work with multiple clusters, local or remote clusters at the same time.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And there's a small configuration for it.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And minikube will automatically take care of that when it starts when it provisions a Kubernetes cluster.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - But that is if you already have the kubectl utility installed.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So that's important.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Now our goal is to set up a cluster on our local machine.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - I'm on Linux ubuntu system.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - But the same procedure will also work on Windows or Mac operating systems as well.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Now all the demos and tools that we have throughout this course will work on all operating systems Linux, Windows or Mac.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Okay, you just need to follow the respective installation procedure for your OS.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - And to start with, I'm going to install the kubectl utility on my Linux system.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And we're going to go ahead with the latest version.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So just copy and paste the command provided here for downloading the kubectl binary.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - The binary has now been downloaded.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - The next step is to make this command executable.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So I'm going to use the command chmod plus x to make it executable.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And finally we're going to move this to a location within the path usr local bin.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Okay.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So this way I'll be able to run this kubectl command from anywhere within my system.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So let's run the command and you can see that it has installed the 1.8 version.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Now what we just saw was a one way of installing a kubectl utility.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - There are other ways to do it.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 33 | **Type:** Exam Tip
+  - You can install it using a package.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Managers depending upon the type of distribution, the OS distribution that you are on, and the documentation associated with these are available here.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 35 | **Type:** Best Practice
+  - So if you scroll down, you'll see that there are instructions for installation on Mac OS, and there should be one for windows as well.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So make sure that you use the appropriate link and setup kubectl based on the documentation provided.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Now that we have completed the installation of kubectl utility, we can proceed with the installation of minikube.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Now the first thing that we have to check, and this goes for all operating systems Linux, windows or Mac is to make sure that virtualization is enabled for your laptop or desktop wherever you're setting up this lab.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So one of the easy ways to make sure that virtualization is enabled on Linux is to grep for the VM or the SCM keyword under the proc CPU info file.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So that's what I'm going to do now.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So as long as this command shows an output such as the switches listed here, virtualization has been enabled.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 42 | **Type:** Warning/Pitfall
+  - And you don't have to enable it specifically from the Bios.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - If it's not enabled then you have to check your laptop's Bios settings.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 44 | **Type:** Best Practice
+  - So you have to restart your laptop, go into the Bios and there should be an option to enable virtualization.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And you have to do that.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Um, you might have to check your laptop's manual, um, in order to know how that's done or just Check online with your laptop model and search how to enable virtualization on your laptop.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - And again, make sure that you check the documentation here for the respective operating system that you are on.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - For each of these, there are specific commands that can be used to run a test to see whether virtualization has been enabled.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Okay.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - So next we're going to install minikube.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And again we will go ahead with the option for Linux.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - And the first prerequisite is to install kubectl which we have already done.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - The next one is to install a hypervisor.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So for Linux we can either use KVM or VirtualBox.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Um we will go with VirtualBox as that is our preferred virtualization solution.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - You can also run minikube without a hypervisor and directly on your host using Docker.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So if you already have Docker installed you could leverage that.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Um, and have minikube or, you know, provision a Kubernetes cluster, uh, using a Docker container.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 59 | **Type:** Warning/Pitfall
+  - However, note that as you can see here in the documentation page, um, there's a warning that says it can result in security or data loss issues.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So we will just stick with a virtual machine based approach for now.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - I just prefer VirtualBox because it can, in case you mess up something on your system and you need to restart, it's easy to get rid of the VM and restart again, right?
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - It won't really mess up your laptop and you can take snapshots before you make a major change, and then you can restore that snapshot in case that changed, you know, doesn't really work well for you.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Now VirtualBox is supported on all variety of operating systems, including Linux, windows and OS X.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So I'm going to open this in a new window.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - And it takes me to the download section.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And here I'm going to select Linux distribution and the one that is most appropriate for my system.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Uh you may choose one that is appropriate for yours.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - So wait for it to complete the download and then we will install VirtualBox.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 69 | **Type:** Exam Tip
+  - It has downloaded the Debian package, so I'm just going to install it directly.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Um, wait for the installation to complete.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - And while it installs let's go back to the documentation section.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So now the installation has been completed and I'm just going to close this and I'm going to launch VirtualBox.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So as you can see here um, this is what the VirtualBox interface looks like.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And you will have a similar interface for Windows or Mac.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 75 | **Type:** Best Practice
+  - Um, with minor differences, but that should not matter.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 76 | **Type:** Warning/Pitfall
+  - So right now we don't have any virtual machines running.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - So when we provision a cluster using minikube, it will automatically create a virtual machine as required.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 78 | **Type:** Warning/Pitfall
+  - So apart from just installing VirtualBox, you don't really have to do anything directly with it.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - Now let's proceed with the installation.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - So the next step is to install the minikube utility.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - Again there are different ways to do this.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 82 | **Type:** Exam Tip
+  - Either use the package manager and install it as a package, or we can do it using a direct download approach.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So we're going to download the latest version.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 84 | **Type:** Exam Tip
+  - And just like we did with the kubectl utility I'm going to curl the package and then install it on my machine.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So I'm just going to copy the whole thing.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - And this will download the minikube binaries and assign an execute bit so that we can run it as a command.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - And once that has been done let us add minikube to our path.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 88 | **Type:** Warning/Pitfall
+  - The user local bin directory has already been created, so we don't have to do that first step.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - We will run this command to install minikube at the location slash user local bin.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - Next we will provision a Kubernetes cluster using the minikube utility.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So we're going to run the minikube start command.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - But we also have to specify the driver name to be used with this command.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - Now minikube can work with different virtualization tools.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - And that's where you must specify what driver to use.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - In our case we use VirtualBox.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - So let's open this link and make sure that you we are using the correct driver name.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So the name of VirtualBox driver is VirtualBox.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So we'll make use of that name.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Um so I'm going to copy and paste this command until the driver name.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 100 | **Type:** Implementation Step
+  - And then I'm just going to copy the driver name from this page and paste it here.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - We will now execute the command when it starts.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - You'll notice that it follows a process.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - So it is in fact a downloading the ISO image for minikube.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - And then this is the image that will be used to provision a VM on VirtualBox.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - We now see that it's downloading Kubernetes version 1.8.3 and any other required binaries.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - Now let me switch to the VirtualBox UI.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 107 | **Type:** Implementation Step
+  - And we will see that a virtual machine by the name minikube has been created and it is in a running state.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - And you can see that the VM uses two CPUs and two GB of Ram.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - So let's wait for this setup to complete.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - Okay.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - So now this has been installed.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 112 | **Type:** Implementation Step
+  - And um kubectl utility is now configured to use the Kubernetes cluster provisioned using minikube.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - So let's head back to the documentation page.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - And the next thing that we are going to do is um run the minikube status command to ensure that everything has been set up correctly.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 115 | **Type:** Implementation Step
+  - So I'm going to clear the screen here and then run the minikube status command.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 116 | **Type:** Architecture
+  - We can see that, uh, the minikube uh, control plane, Kubelet API server, and Kubeconfig are all in a running and configured state.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - So that's good.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 118 | **Type:** Troubleshooting
+  - Uh, if you run into issues with the installation anytime, feel free to run this command and check the status.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - So our cluster is now set up.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 120 | **Type:** Implementation Step
+  - We will deploy some applications on the cluster and make sure it's working as expected.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - Now we will get into talking about the different concepts on deploying an application in the upcoming lectures.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - Right now we just want to make sure that the cluster we setup is working as expected, so we will simply follow the tutorial given in this page.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 123 | **Type:** Concept
+  - Although it may not make total sense now, but I assure you that we will get to that in a bit.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 124 | **Type:** Implementation Step
+  - So click on this link under What's Next?
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 125 | **Type:** Exam Tip
+  - And here we have some examples that could be used to test our setup.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - In the new page.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 127 | **Type:** Implementation Step
+  - You can skip the first step of starting a minikube cluster.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - So we have already done that.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 129 | **Type:** Implementation Step
+  - So the next thing that we need to check is if kubectl commands are working.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So I'm going to run the kubectl get nodes command.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - And you can see that it is a single node cluster.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - And the node name is minikube.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 133 | **Type:** Concept
+  - And it is in a ready state.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - And it was spun up about eight seconds ago.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - And it's running the latest release of Kubernetes which is 1.18 as of this recording.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 136 | **Type:** Implementation Step
+  - So next let us try to create some deployments using this cluster.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 137 | **Type:** Exam Tip
+  - So here we have an example.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 138 | **Type:** Implementation Step
+  - On this page I'm going to run kubectl create deployment command to create the deployment.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 139 | **Type:** Implementation Step
+  - Once that is done, we will run the kubectl get deployments command.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 140 | **Type:** Implementation Step
+  - And you can see that the hello minikube deployment has been running for 22 seconds.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 141 | **Type:** Implementation Step
+  - Next we will expose this deployment as a service.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 142 | **Type:** Concept
+  - For that make use of this command here.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 143 | **Type:** Implementation Step
+  - And kubectl expose deployment.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 144 | **Type:** Concept
+  - Hello minikube command.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 145 | **Type:** Warning/Pitfall
+  - Now don't worry about the command for now.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 146 | **Type:** Concept
+  - We'll talk about this in much detail later in this course.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 147 | **Type:** Concept
+  - For now we will just copy and paste.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 148 | **Type:** Concept
+  - Okay.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 149 | **Type:** Implementation Step
+  - And then we will skip to step five where we will get the URL of the exposed service.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 150 | **Type:** Concept
+  - So by running this command.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 151 | **Type:** Concept
+  - And copy the URL and paste it into a browser on your laptop.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 152 | **Type:** Best Practice
+  - And it should list the details about the application like this.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 153 | **Type:** Concept
+  - Okay, so that's not the most exciting application, but this is proof that your setup is working.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 154 | **Type:** Concept
+  - And that's all we need for now.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 155 | **Type:** Concept
+  - Now follow the remaining instructions to clean up your system.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 156 | **Type:** Implementation Step
+  - Delete the services and delete the deployment.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 157 | **Type:** Implementation Step
+  - Now the deployment will be in a terminating state for a few seconds.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 158 | **Type:** Concept
+  - And after it's done, the application will no longer be accessible on the web page.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 159 | **Type:** Concept
+  - Well, that's it for now.
+- **File:** `013_Demo - Minikube-Setup.extraction.md` | **Entry:** 160 | **Type:** Implementation Step
+  - I will see you in the next lecture.
+
+### Pods
+
+- **File:** `014_Pods.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Before we head into understanding pods, we would like to assume that the following have been set up already.
+- **File:** `014_Pods.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - At this point, we assume that the application is already developed and built into Docker images, and it is available on Docker repository like Docker Hub, so Kubernetes can pull it down.
+- **File:** `014_Pods.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We also assume that the Kubernetes cluster has already been set up and is working.
+- **File:** `014_Pods.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - This could be a single node setup or a multi node setup.
+- **File:** `014_Pods.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Doesn't matter.
+- **File:** `014_Pods.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - All the services need to be in a running state, as we discussed before with Kubernetes.
+- **File:** `014_Pods.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Our ultimate aim is to deploy our application in the form of containers on a set of machines that are configured as worker nodes in a cluster.
+- **File:** `014_Pods.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - However, Kubernetes does not deploy containers directly on the worker nodes.
+- **File:** `014_Pods.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - The containers are encapsulated into a Kubernetes object known as pods.
+- **File:** `014_Pods.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - A pod is a single instance of an application.
+- **File:** `014_Pods.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - A pod is the smallest object that you can create in Kubernetes.
+- **File:** `014_Pods.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Here we see the simplest of simplest cases, where you have a single node Kubernetes cluster with a single instance of your application running in a single Docker container encapsulated in a pod.
+- **File:** `014_Pods.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - What if the number of users accessing your application increase and you need to scale your application?
+- **File:** `014_Pods.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - You need to add additional instances of your web application to share the load.
+- **File:** `014_Pods.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Now where would you spin up additional instances?
+- **File:** `014_Pods.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Do we bring up new container instances within the same pod?
+- **File:** `014_Pods.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - No.
+- **File:** `014_Pods.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - We create new pod altogether with a new instance of the same application.
+- **File:** `014_Pods.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - As you can see, we now have two Instances of our web application running on two separate pods on the same Kubernetes system or node.
+- **File:** `014_Pods.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - What if the user base further increases and your current node has no sufficient capacity?
+- **File:** `014_Pods.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - Well, then you can always deploy additional pods on a new node in the cluster.
+- **File:** `014_Pods.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - You will have a new node added to the cluster to expand the cluster's physical capacity.
+- **File:** `014_Pods.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So what I'm trying to illustrate in this slide is that pods usually have a 1 to 1 relationship, with containers running your application.
+- **File:** `014_Pods.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - To scale up, you create new pods, and to scale down you delete existing pods.
+- **File:** `014_Pods.extraction.md` | **Entry:** 25 | **Type:** Warning/Pitfall
+  - You do not add additional containers to an existing pod to scale your application.
+- **File:** `014_Pods.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Also, if you're wondering how we implement all of this and how we achieve load balancing between containers, etc., we will get into all of that in a later lecture.
+- **File:** `014_Pods.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - For now, we are only trying to understand the basic concepts.
+- **File:** `014_Pods.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - We just said that pods usually have a 1 to 1 relationship with the containers.
+- **File:** `014_Pods.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - But are we restricted to having a single container in a single pod?
+- **File:** `014_Pods.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - No.
+- **File:** `014_Pods.extraction.md` | **Entry:** 31 | **Type:** Exam Tip
+  - A single pod can have multiple containers, except for the fact that they're usually not multiple containers of the same kind.
+- **File:** `014_Pods.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - As we discussed in the previous slide, if our intention was to scale our application, then we would need to create additional pods.
+- **File:** `014_Pods.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - But sometimes you might have a scenario where you have a helper container that might be doing some kind of supporting task for our web application, such as processing a user entered data, processing a file uploaded by the user, etc. and you want t...
+- **File:** `014_Pods.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - In that case, you can have both of these containers part of the same pod, so that when a new application container is created.
+- **File:** `014_Pods.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - The helper is also created and when it dies, the helper also dies.
+- **File:** `014_Pods.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Since they are part of the same pod, the two containers can also communicate with each other directly by referring to each other as local host, since they share the same network space.
+- **File:** `014_Pods.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Plus, they can easily share the same storage space as well.
+- **File:** `014_Pods.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - If you still have doubts in this topic, I would understand if you did, because I did.
+- **File:** `014_Pods.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - The first time I learned these concepts, we could take another shot at understanding pods from a different angle.
+- **File:** `014_Pods.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Let's for a moment keep Kubernetes out of our discussion and talk about simple Docker containers.
+- **File:** `014_Pods.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Let's assume we were developing a process or a script to deploy our application on a Docker host.
+- **File:** `014_Pods.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - Then we would first simply deploy our application using a simple Docker run Python app command.
+- **File:** `014_Pods.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And the application runs fine and our users are able to access it.
+- **File:** `014_Pods.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - When the load increases, we deploy more instances of our application by running the Docker run commands many more times.
+- **File:** `014_Pods.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - This works fine and we're all happy.
+- **File:** `014_Pods.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Now, sometime in the future, our application is further developed, undergoes architectural changes, and grows and gets complex.
+- **File:** `014_Pods.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - We now have a new helper container that helps our web application by processing or fetching data from elsewhere.
+- **File:** `014_Pods.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - These helper containers maintain a 1 to 1 relationship with our application container, and thus needs to communicate with the application containers directly and access data from those containers.
+- **File:** `014_Pods.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - For this, we need to maintain a map of what app and helper containers are connected to each other.
+- **File:** `014_Pods.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - We would need to establish network connectivity between these containers ourselves using links and custom networks.
+- **File:** `014_Pods.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - We would need to create shareable volumes and share it among the containers.
+- **File:** `014_Pods.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - We would need to maintain a map of that as well.
+- **File:** `014_Pods.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And most importantly, we would need to monitor the state of the application container and when it dies, manually kill the helper container as well, as it's no longer required.
+- **File:** `014_Pods.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - When a new container is deployed, we would need to deploy the new helper container as well with pods.
+- **File:** `014_Pods.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Kubernetes does all of this for us automatically.
+- **File:** `014_Pods.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - We just need to define what containers a pod consists of, and the containers in a pod by default will have access to the same storage, the same network namespace, and same fate as in they will be created together and destroyed together.
+- **File:** `014_Pods.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - Even if our application didn't happen to be so complex and we could live with a single container, Kubernetes still requires you to create pods, but this is good in the long run as your application is now equipped for architectural changes and scal...
+- **File:** `014_Pods.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - However, also note that multi-part containers are a rare use case, and we're going to stick to single containers per pod in this course.
+- **File:** `014_Pods.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - Let us now look at how to deploy pods.
+- **File:** `014_Pods.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Earlier we learned about the Kube control run command.
+- **File:** `014_Pods.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - What this command really does is it deploys a Docker container by creating a pod.
+- **File:** `014_Pods.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - So it first creates a pod automatically and deploys an instance of the nginx docker image.
+- **File:** `014_Pods.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - But where does it get the application image from?
+- **File:** `014_Pods.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - For that you need to specify the image name using the image parameter.
+- **File:** `014_Pods.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - The application image.
+- **File:** `014_Pods.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - In this case the nginx image is downloaded from the Docker Hub repository Docker Hub.
+- **File:** `014_Pods.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - As we discussed, is a public repository where Docker images of various applications are stored.
+- **File:** `014_Pods.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - You could configure Kubernetes to pull the image from the public Docker hub or a private repository within the organization.
+- **File:** `014_Pods.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - Now that we have a pod created, how do we see the list of pods available?
+- **File:** `014_Pods.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - The Kube control get pods command helps us see the list of pods in our cluster.
+- **File:** `014_Pods.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - In this case, we see the pod is in a container creating state and soon changes to a running state when it is actually running.
+- **File:** `014_Pods.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Also, remember that we haven't really talked about the concepts on how a user can access the nginx web server, and so in the current state, we haven't made the web server accessible to external users.
+- **File:** `014_Pods.extraction.md` | **Entry:** 73 | **Type:** Operational Insight
+  - You can access it internally from the node.
+- **File:** `014_Pods.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - But for now we will just see how to deploy a pod.
+- **File:** `014_Pods.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - And later in a later lecture, once we learn about networking and services, we will get to know how to make this service accessible to end users.
+- **File:** `014_Pods.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `014_Pods.extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - Head over to a demo and I will see you in the next one.
+
+### Demo - Pods
+
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - In this demo, we're going to deploy a pod in our minikube cluster.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - As we discussed, a pod is the most basic and the smallest unit in Kubernetes.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So we will use the kubectl command line utility to interact with the Kubernetes cluster.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - Now if you followed our demo earlier of deploying a cluster using minikube, then you already have the kubectl command line utility configured to work with the cluster.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - We will run the command kubectl run nginx, which is the name of the pod dash dash image uh equals to nginx.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Now here is where we specify the Docker image to be used.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - While the pod name could be anything, the image name has to be the name of an image available at Docker Hub or any other container registry.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - You can additionally specify a tag for the image name or a different address to an image hosted on another registry.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - If the image is hosted, uh, in a place that's, uh, other than Docker Hub.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Okay, so once we run this command, we see a pod by the name nginx.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Um has been created and you can check the status using the kubectl get pods command.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Now here you can see the column name which is nginx.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - The status is running and we see that the.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - There is a ready column which shows the number of containers in a ready state.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - We also see if the container has restarted since it was created.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - And how long has the pod been running?
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 17 | **Type:** Comparison
+  - We can get more information related to the pod by running the kubectl describe pod nginx command, and you'll notice that this provides a lot more information as compared to the get command.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 18 | **Type:** Exam Tip
+  - So for example, the name of the pod is nginx.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - It shows any labels that has been assigned to this pod.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - So this was created by default when we ran the run command.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - It shows when it was started.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - It shows the node that is uh, that it is assigned to along with the IP address of the node.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So in this case, we just have a single node cluster set up using minikube.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And the node name is minikube.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - And that is the IP address of this worker node.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Secondly it also shows the IP address of the pod itself.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So in this case the pod is assigned an IP of 172.16.0.3.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - We'll cover more about the IP addresses of the pod and later in the networking section.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Now moving on.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - We can see that it displays information related to the container.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So we know that there is a single container which uses the image nginx.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 32 | **Type:** Exam Tip
+  - If there were multiple containers we would list them here.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 33 | **Type:** Exam Tip
+  - I'll explain about creating a pod with multiple containers in the upcoming lectures.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - But here we can also see that the nginx image was pulled from Docker Hub.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And if you scroll all the way to the bottom, you'll see additional information called events.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - And here you see the list of events that occurred since the pod was created.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 37 | **Type:** Exam Tip
+  - And it went through multiple stages before it started.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - We can see that the pod was assigned to the minikube node.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 39 | **Type:** Exam Tip
+  - If there were multiple nodes, you would see which node the pod was assigned to here.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And then it entered the pulling phase where the nginx image was pulled down from Docker Hub successfully.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - And then the container called nginx was created and started.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Now there is one other command that we can use to check the status of the pod, and that is the same command as before.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - The kubectl get pods command, but with the dash wide option.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - And this provides additional information such as the node where the pod is running and the IP address of the pod as well.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So this is the internal IP address of the pod itself.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So each pod gets an internal IP of its own within the within the Kubernetes cluster.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Um but more on that later.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - That was a quick demonstration on how to run a pod in minikube environment.
+- **File:** `015_Demo - Pods.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - In the upcoming videos, we will see how to create a pod using a YAML definition file.

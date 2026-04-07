@@ -1,0 +1,911 @@
+# Section Concept Map: BATCH-012
+
+## Section
+- Course: `certified-kubernetes-administrator-with-practice-tests`
+- Section: `12_(2025 Updates)Helm Basics`
+
+## Source Files Used
+- `252_Helm - Introduction.extraction.md`
+- `253_Installation and Configuration.extraction.md`
+- `255_A Quick Note on Helm2 vs Helm3.extraction.md`
+- `256_Helm Components.extraction.md`
+- `257_Helm Charts.extraction.md`
+- `258_Working With Helm - Basics.extraction.md`
+- `259_Customizing Chart Parameters.extraction.md`
+- `261_Lifecycle Management With Helm.extraction.md`
+
+## Concept Groups
+
+### Helm - Introduction
+
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Let's start by understanding what Helm is.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Now, Kubernetes is awesome at managing complex infrastructures.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We humans tend to struggle with complexity, though.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - Applications that we deploy into our Kubernetes cluster can become very complicated.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - A typical app is usually made up of a collection of objects that need to interconnect to make everything work.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 6 | **Type:** Exam Tip
+  - For example, even a relatively simple WordPress site might need the following, a deployment to deploy the pods that you wanna run, such as MySQL database servers or web servers, a persistent volume to store the database, a persistent volume claim,...
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - For every object, we might need a separate YAML file.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Then we need to apply kubectl apply on every YAML file to get these objects created, and this can be a tedious task, but that's not the end of it.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Now imagine we download these YAML files from the internet and we are not happy with the default, so we start changing stuff.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 10 | **Type:** Comparison
+  - The persistent volumes are 20 GB, but we know our website will need much more storage than that, so we go to the YAML files where the PVs and PVCs are declared, and we change 20 to 100.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - More stuff needs to be changed.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Well, we'll have to open up every YAML file and edit each one according to our needs.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 13 | **Type:** Warning/Pitfall
+  - And now, not bad enough yet, imagine two months go by and we now have to upgrade some components in our app, and so we are back to editing multiple YAML files' declarations again, with great care so that we don't change the wrong thing in the wron...
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Now, sometime later, you wanna delete the app and we'll need to remember each object that belongs to our app and delete them all one by one.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Now you might be thinking, Hey, that's not a big deal.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - We can just write all object declarations in a single YAML file and be done with it.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 17 | **Type:** Troubleshooting
+  - Well, that's true, but it might make it even harder to find stuff when you're looking for, say you wanna troubleshoot an issue, we'd have to continuously search for stuff that we need to edit in something that could be 25 pages of text.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 18 | **Type:** Exam Tip
+  - Now, at least in multiple files, they'd be somewhat organized and we'd know we'll find deployment related stuff in the mydeployment.yaml file, for example.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Enter Helm, Helm changes the paradigm.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Kubernetes doesn't really care about our app as a whole.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - All that it knows is that we declared various objects and it proceeds to make each of them exist in our cluster.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - It doesn't really know that this persistent volume and that deployment and that secret and that service are all part of a big application called WordPress.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - It looks at all the little pieces that the administrator wanted to have in the cluster and takes care of each one individually.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 24 | **Type:** Command
+  - 
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 25 | **Type:** Exam Tip
+  - That's why it's sometimes called a package manager for Kubernetes.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 26 | **Type:** Warning/Pitfall
+  - It looks at those objects as part of a big package as a group, and whenever we need to perform an action, we don't tell Helm the objects that it should touch, we just tell it what package we want to act on, like our WordPress app package.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 27 | **Type:** Best Practice
+  - And based on the package name, it then knows what objects it should change and how, even if there are hundreds of objects that belong to that particular package.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Now, to make this easier to understand, think about this, a computer game is contained in hundreds of thousands of files.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - There are a few files with the program's executable code, other files with audio, game sounds and music, and other files with graphics, textures, images, files with configuration data and so on.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Now, imagine we'd have to download each of them separately, and that would be tedious.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 31 | **Type:** Warning/Pitfall
+  - Fortunately, we don't have to go through such horrors as we get a game installer.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - We run it, we choose the directory where we want to install, we press the install button, and then the installer does the rest, putting thousands of files in their proper location.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 33 | **Type:** Command
+  - 
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - We use a single command to install our entire app, even if it needs hundreds of objects, Helm proceeds to automatically add every necessary object to Kubernetes without bothering us with the details.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 35 | **Type:** Exam Tip
+  - We can customize the settings we want for our app or package by specifying desired values at installed time, but instead of having to edit multiple values in the multiple YAML files, we have a single location where we can declare every custom sett...
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - In a file like values.yaml, we can change the size of our persistent volumes, choose the name of our WordPress website, the admin password, settings for the database engine, and so on.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - We can upgrade our application with a single command.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 38 | **Type:** Command
+  - 
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 39 | **Type:** Command
+  - 
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - We use a single command to uninstall our app, and it keeps track of all the objects used by each app so it knows what to remove.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 41 | **Type:** Warning/Pitfall
+  - We don't need to remember each object that belongs to one of our apps anymore or use 10 separate commands to remove everything.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 42 | **Type:** Command
+  - 
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - We will look into these commands in more detail in the upcoming lectures.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 44 | **Type:** Exam Tip
+  - For now, understand that Helm works as a package manager with Install or Uninstall Wizard, and also as a release manager helping us upgrade or rollback applications.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 45 | **Type:** Warning/Pitfall
+  - The most important thing is that it lets us treat our Kubernetes apps as apps instead of just a collection of objects, and this takes a huge burden off our shoulders as we don't have to micromanage each Kubernetes object anymore.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 46 | **Type:** Command
+  - 
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Well, that's a quick introduction to Helm.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - We have a lot more to discuss.
+- **File:** `252_Helm - Introduction.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - I'll see you in the next one.
+
+### Installation and Configuration
+
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: In this section, we will talk briefly about installing Helm.
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - And before installing Helm, you must first have a functional Kubernetes cluster and kubectl installed and configured on your local computer with the right login details set up the kubeconfig file to work with the intended Kubernetes cluster.
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Now, Helm can be installed on Linux, Windows or macOS systems.
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - We will go over the instructions on installing Helm on Linux systems in this lecture.
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - System with Snap can install Helm using the snap install helm command.
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Use the classic option to install a more relaxed sandbox that gives the app a bit more access to the whole system.
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So rather than strictly isolating it to its separate environment, this way, Helm can easily access the kubeconfig file in your home directory so it knows how to connect to our Kubernetes cluster.
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - For APT bases systems, such as the BN or Ubuntu, follow the instructions to add key and sources list before installing Helm.
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And for PKG, I'll run the pkg install helm command.
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Now, all this refer to the latest instructions from the documentation pages to install Helm for your version of operating system.
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Well, that's all for now.
+- **File:** `253_Installation and Configuration.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Head over to the labs and practice working with installing Helm on our lab environment.
+
+### A Quick Note on Helm2 vs Helm3
+
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 1 | **Type:** Comparison
+  - Instructor: There were some significant changes when Helm 3 was released compared to Helm 2.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - And when you browse through charts and blogs online, you may come across either of these versions.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 3 | **Type:** Comparison
+  - So, it is important to understand the differences between them.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Now, let's look at a brief history of Helm.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 5 | **Type:** Command
+  - 
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Now, since the initial launch in 2016, the project has matured, and it got better and better.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - The improvements were also made possible by the fact that Kubernetes itself was improving, so Helm had more tools at its disposal it could leverage right off of Kubernetes.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - In our lessons, we'll use Helm 3, which has a simpler and better design than the previous Helm 2 and is also a bit smarter.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Since Helm 2 was around for a few years, a lot of users had already been using it, but there are several important changes made when Helm 3 was launched.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 10 | **Type:** Comparison
+  - So, let's take a look at the differences between them.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 11 | **Type:** Command
+  - 
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - When Helm 2 was around, Kubernetes lacked features such as role-based access control and custom resource definitions.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - To allow Helm to do its magic, an extra component called Tiller had to be installed in the Kubernetes cluster.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So, whenever you wanted to perform a Helm specific operation, your Helm client communicated with Tiller that was running on some server.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Tiller, in turn, communicated with Kubernetes and proceeded to take actions to make whatever you requested happen.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So, Tiller was the middleman, so to speak.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Besides the fact that an extra component sitting between you and Kubernetes adds complexity, there were also some security concerns.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - By default, Tiller was running in God mode or otherwise said, it had the privileges to do anything that it wanted.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - This was good since it allowed it to make whatever changes necessary in your Kubernetes cluster to install your charts, but this was bad since it allowed any user with Tiller access to do whatever they wanted in the cluster.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - After cool stuff like role-based access control and custom resource definitions appeared in Kubernetes, the need for Tiller decreased, and so it was removed entirely in Helm 3.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Now, there's nothing sitting between Helm and the cluster.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Furthermore, with RBAC, security is much improved and any user can be limited in what they can do with Helm.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And before, you had to set these limits in Tiller and that was not the best option, but with RBAC built from ground up to fine-tune user permissions in Kubernetes, it's now straightforward to do.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - As far as Kubernetes is concerned, it doesn't matter if the user is trying to make changes within the cluster with kubectl or with Helm commands, the user requesting the changes has the same RBAC-allowed permissions, whatever tool they use.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 25 | **Type:** Comparison
+  - So, that's a big difference between Helm 2 and 3.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 26 | **Type:** Command
+  - 
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 27 | **Type:** Comparison
+  - The next big difference is a three-way strategic Merge Patch.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 28 | **Type:** Warning/Pitfall
+  - The name might sound intimidating, but don't worry.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - At the end of this section, we'll see it's actually a simple but very smart thing that can prove quite useful.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Now, Helm has something like a snapshot feature.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 31 | **Type:** Exam Tip
+  - Here's an example.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - You can use a chart to install a full-blown WordPress website.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - This will create revision number 1 for this install.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 34 | **Type:** Exam Tip
+  - Then if you change something, for example, you upgrade to a newer chart to upgrade your WordPress install, you will arrive at revision number 2.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 35 | **Type:** Exam Tip
+  - These revisions can be considered something like snapshots, the exact stage of a Kubernetes package at that moment in time.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - If there's a need, you can return to revision number 1 through a rollback.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 37 | **Type:** Exam Tip
+  - This would get your package app to the same state it was when you first installed your chart.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - New revisions are created whenever important changes are done with the Helm command.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 39 | **Type:** Exam Tip
+  - For example, when we first install a package, a revision 1 is created.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 40 | **Type:** Exam Tip
+  - Then when we upgrade that package, a new revision appears, that's revision 2 in this case.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - And even when we roll back, a new revision is created, revision 3.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So, that's pretty straightforward.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 43 | **Type:** Command
+  - 
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 44 | **Type:** Troubleshooting
+  - And when a rollback command is issued, Helm compares the current chart, which is the chart that has the WordPress image 5.8 in it with the previous chart, which is the chart that has a WordPress 4.8 image in it and realizes that they're different.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So, it applies the original chart to revert the WordPress image to 4.8.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 46 | **Type:** Exam Tip
+  - Now, let's look at another example.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - Say we install a WordPress deployment using a Helm chart, which creates revision 1 just like before.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - Then a user manually goes in and updates the application image using the kubectl set image command.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So, the application gets updated and this is done instead of doing the upgrade through Helm.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - And this does not create a new revision in Helm, because the change was not performed through Helm.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - When we now roll back, what happens?
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 52 | **Type:** Comparison
+  - As before, Helm compares the current revision with the previous version.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - Since there is only one revision, Helm does not detect any changes, and so it does not roll back or make any changes to the deployment.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 54 | **Type:** Comparison
+  - So, Helm 2 compares the current chart with the previous chart to identify the difference between revisions to make a rollback decision.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And in this case, it doesn't help us, because the manual change that the user made is still active.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 56 | **Type:** Command
+  - 
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 57 | **Type:** Comparison
+  - It compares the chart currently in use, if we had created a revision that is, which we didn't.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - The chart we want to revert to, and also the live state, how our Kubernetes objects currently look like their declarations in the yaml form, this is where that fancy three-way Strategic Merge Patch name comes from.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - By also looking at the live state, it notices that the image version in live is 5.8, but the image in revision 1 that we want to revert to, it has 4.8.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So, it makes necessary changes to come back to the original state.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Now, besides rollbacks, there are also things like upgrades to consider, where Helm 2 was also lacking.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 62 | **Type:** Exam Tip
+  - For example, say you install a chart, but then you make some changes to some of the Kubernetes objects installed.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - It all works nicely until you perform an upgrade.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 64 | **Type:** Command
+  - 
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - But Helm 3, as mentioned, looks at the charts and also at the live state, and it notices that you added some stuff of your own, so it performs the upgrade while preserving the anything that you might have added.
+- **File:** `255_A Quick Note on Helm2 vs Helm3.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - Well, that's all for this lecture and I'll see you in the next one.
+
+### Helm Components
+
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Let's look at the different components of Helm.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 2 | **Type:** Command
+  - 
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So we have the Helm command line utility on our local system that we will be using to perform Helm actions such as installing a chart, upgrading, rollback, et cetera.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - Charts are a collection of files, and they contain all the instructions that Helm needs to know to be able to create the collection of objects that you need in your Kubernetes cluster.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - By using charts and adding the objects according to these specific instructions in the charts, Helm, in a way, installs applications into your cluster.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - When a chart is applied to your cluster, a release is created.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - A release is a single installation of an application using a Helm chart.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 8 | **Type:** Exam Tip
+  - Within each release, you can have multiple revisions, and each revision is like a snapshot of the application.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - Every time a change is made to the applications, such as an upgrade of the image or change of replicas or configuration objects, a new revision is created.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Now, just like how we can find all kinds of images on Docker hub or Vagrant boxes on the Vagrant Cloud, if you're familiar with that, you know, we can find Helm charts in a public repository.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - We can easily download publicly available charts for various applications, and these are readily available and we can use them to deploy applications on our cluster.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And finally, to keep track of what it did in our cluster, such as the releases that it installed, the charts used, revision states and so on, Helm will need a place to save this data.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - This data is known as metadata, and that is data about data.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Now, it wouldn't be too useful if Helm would save this on our local computer.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - If another person would need to work with our releases through Helm, they would need a copy of this data.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So instead, Helm does the smart thing and saves this metadata directly in our Kubernetes cluster as Kubernetes secrets.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - This way, the data survives, and as long as the Kubernetes cluster survives and everyone from our team can access it, so they can do Helm upgrades or whatever it is that they want to do.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - So Helm will always know about everything it did in this cluster and will be able to keep track of every action, every step of the way, since it always has its metadata available.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Now, let's look at each of these in a bit more detail.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - Charts are a collection of files, and they contain all the instructions that Helm needs to know to be able to create the collection of objects that you need in your Kubernetes cluster.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - By using these charts and adding the objects according to that specific instructions, is how, as we discussed, Helm installs applications into your cluster.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Now, I'll be using two applications throughout this course to explain concepts.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - First is a simple Hello World application, which is a simple NGINX-based web server and a service to expose it.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And the other would be a WordPress site, which is slightly more complex.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Now, the simple web server will help you understand the concepts in the simplest form.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 26 | **Type:** Exam Tip
+  - The WordPress example will help you understand its real life usage.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 27 | **Type:** Exam Tip
+  - For example, in this simple Hello World application, we have two objects, a deployment and a service.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 28 | **Type:** Best Practice
+  - And most of these you should be able to relate to what you learned in the Kubernetes course.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - It's a standard deployment object that deploys pods of an image and a service that exposes it as a node port service, for instance.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - However, you might notice the image name and replicas are specified in a different form.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - This is called templating.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - The values that go here are part of another file called as the values.yaml file.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Now in a Helm chart, we'll often be interacting with a special file.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - You see, most of the time we won't need to build the charts ourselves.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - We have hundreds of them already available to download in the public repository.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 36 | **Type:** Exam Tip
+  - But what we'll almost always need to do or want to do is configure the package that we installed through that chart.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - The values.yaml file is where the configurable values are stored, and most of the time, this is the only file you'll have to modify to customize the deployment of the application for your needs.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - This is like the settings file or the inputs file for the Helm chart.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - The charts are way more complicated for a WordPress application with so many files and very complex templating.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - And we will look more into templating and get into the details about these charts later in this course, but for now, we'll stick with simple charts to understand the basics.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Now, when a chart is applied to your cluster, a release is created.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Now we could ask ourselves why the need for an additional item?
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Why can't we just say we installed a chart to Kubernetes?
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Now in the command helm install my-site bitnami wordpress, we used the chart at Bitnami WordPress and named the release my-site.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So why not just use a shorter command like helm install bitnami wordpress and be done with it?
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Without specifying a release name.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 47 | **Type:** Exam Tip
+  - Well, one simple reason why it makes more sense to have releases based on charts is that we can install multiple releases based on the same chart.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So we can launch a second WordPress website with a command such as helm install my-SECOND-site bitnami wordpress.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And since there are two different releases, they can be tracked separately and changed independently.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Even though they're based on the same chart as releases, they're two entirely different entities.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Now, this can be useful in a lot of scenarios.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 52 | **Type:** Exam Tip
+  - For example, you can have a release for a WordPress website that your customers use and another release for a WordPress website that is only visible to your internal team of developers.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - There they can experiment and add new features without breaking the main website.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 54 | **Type:** Best Practice
+  - And since the two releases are based on the same chart, once they get something working correctly on the development site, they can transfer it to the main website since it should work exactly the same way as the two websites are basically clones ...
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 55 | **Type:** Exam Tip
+  - Now we saw an example of a very basic chart developed in Helm.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 56 | **Type:** Exam Tip
+  - And earlier we saw an example of a chart to deploy a WordPress application.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - And what if we want to deploy a new chart, say, for deploying Redis or Prometheus, for instance?
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Thousands of charts are readily available at different Helm repositories across the world.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - There are different providers who are hosting Helm repositories such as AppsCode, Community Operators, TrueCharts, Bitnami, et cetera.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 60 | **Type:** Warning/Pitfall
+  - And you don't have to go to each of these repositories to search for charts.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - All of these repositories have listed their charts in a single location known as the Helm Hub or Artifact Hub, as it is also known now.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So at Artifacthub.io, you'll find charts that you can use right away.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 63 | **Type:** Exam Tip
+  - As of this recording, there are over 6,300 packages available there, and you may search for the chart you're looking for or browse through available ones, and sometimes the charts are actually published by the actual developers of that project.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So you'll see the official or verified publisher badges in such cases, and it's preferable you use those when available.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - We'll see more about installing charts from repositories in the upcoming videos and labs.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - Well, that's all for now.
+- **File:** `256_Helm Components.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - I'll see you in the next one.
+
+### Helm Charts
+
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Lecturer: Let's talk a bit more about Helm Charts.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 2 | **Type:** Command
+  - 
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - You just tell it to install this, uninstall that, upgrade something, roll back to a previous state and so on.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And it proceeds to do all the heavy lifting behind the scenes.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - It's basically an automation tool where we, the human operators, specify our desired end result, the destination, and then it doesn't matter if 5, 10, 20, or 50 actions are necessary to achieve that end result, to get to that destination, Helm wil...
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 6 | **Type:** Warning/Pitfall
+  - But since in the command line, we don't give this tool a lot of info except, "Hey, I want this installed." How does it know how to achieve this goal?
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 7 | **Type:** Command
+  - 
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Charts are like an instruction manual for it.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - By reading and interpreting their contents, it then knows exactly what it has to do to fulfill as user's request.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - As far as the human operators are concerned, charts are just a bunch of text files.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Each specific file named in a specific way has a well-defined purpose.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 12 | **Type:** Exam Tip
+  - For example, as discussed before, in the values.yaml file, we'll find parameters that we can pass to the chart so that everything gets installed with a configuration options set as we desire.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 13 | **Type:** Exam Tip
+  - Now, we saw this simple example earlier.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - In this case, we have two objects, a deployment and a service.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - And it's a standard deployment that deploys parts of an image and a service that exposes it as a node port service.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - However, you might notice the image name and replicas are specified in a different form.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - This is called templating.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - The values that go here are part of the values.yam file, and we will look into templating itself in more detail later in this course and how to form these values.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So the two files are templates.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - These are customized using the values from the values.yaml file to create the final version of files required to deploy the application on the Kubernetes cluster.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Apart from the values.yaml file, every chart also has a chart.yaml file.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - This contains information about the chart itself, such as the chart API version, which could be either V1 or V2.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - There's also an app version, which is used to specify the version of the application.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - And then we have the name of the chart, a description, type of chart, et cetera.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - And these are just a few of the many properties a chart.yaml file has.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - So that's what we will look at next.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 27 | **Type:** Exam Tip
+  - So let's look at the chart.yaml file of this WordPress site as an example to understand it better.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - The API version is the API version of the chart.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Now, when Helm 2 was around, this field did not exist.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And when Helm 3 was introduced, it came with the additional features that introduced changes in the yaml file, which were not present earlier.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 31 | **Type:** Exam Tip
+  - For example, the dependencies section and the type fields that you see here were not available in Helm 2.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So Helm 3 needed a way to differentiate between charts built in the past and charts built for Helm 3.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - And so this field was first introduced by Helm 3.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - With this field, Helm 3 can now differentiate between old charts built for Helm 2 and new charts built specifically for Helm 3.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - So old charts will either not have this value set at all, or if you build a chart specifically for Helm 2 today, then it would need to be set to V1.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - And all charts built for Helm 3 will have this value set to V2.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So let's say you build a chart with the API version set to V2, but use it on Helm 2, then Helm 2 will not even consider this field, and will simply ignore any additional fields that were not only available for Helm 3, resulting in unexpected results.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So bottom line is if you are developing a chart going forward, just make sure that you set this to V2 because you're most likely going to write charts for Helm 3.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - And if you're looking at a chart that does not have this value set, then it is very likely that the chart was built for Helm 2.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - Okay, so next is the app version.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Now the app version is a version of the application that's inside of this chart.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So in this case, the application is WordPress.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - So this refers to the version of WordPress that this chart will deploy.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - This field is for informational purposes only, and then there is version, which is the version of the chart itself.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - So every chart must have its own version, and this is independent of the version of the app that this chart will deploy.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - This helps in tracking changes to the chart itself.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - The next is the name of the chart, which is set to WordPress, followed by a description.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - And the next is type.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So there are two types of charts, application and library.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - So application is the default type, which is all the charts that we create for deploying applications.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And library is the type of chart that provides utilities that help in building charts.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So we'll discuss more about that later.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - The next are dependencies.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So the WordPress application is a two tier application that has the WordPress server and a database server.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 55 | **Type:** Exam Tip
+  - The database in this example is a MariaDB database.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So MariaDB has its own Helm charts.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So we could simply add it as a dependency to our application.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 58 | **Type:** Warning/Pitfall
+  - This way we don't have to merge the manifest files of MariaDB or any other database into this particular chart.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - And then there is a list of keywords associated with this project.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - This can be helpful when searching for this chart in a public chart repository.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - And then there is maintainers section, which is information about the maintainers.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And there are optional fields like Home and Icon that are used to share a URL of the homepage of the project and a URL to an icon.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So a chart directory has the following structure.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - It has a templates directory that has the template files that we just talked about.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - It also has the values.yaml and the chart.yaml file we just talked about.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And apart from these, there may also be a license file that has the chart license information, a readme file that has information about the chart in a human readable form.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - And there could also be a charts directory that has other charts that this chart is dependent upon.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - And we will talk about chart dependency later in this course.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Well, that's all for now.
+- **File:** `257_Helm Charts.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - I'll see you in the next one.
+
+### Working With Helm - Basics
+
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: With Helm installed, let's check out what we can do with it.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - All operations are run using the Helm command line interface.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - To invoke the Helm command line interface, simply run the Helm command.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Simply running the help command, running help with the Helm option will list helpful information.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - This can serve as a quick way to remember what the right command is to do something.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 6 | **Type:** Exam Tip
+  - For example, say we want to restore a release to a previous version after a failed upgrade, we might wonder, wait, what was the command to do that?
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 7 | **Type:** Command
+  - 
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - And we then see in this list that the correct command is actually helm rollback.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So it's much faster than looking on the internet for the answers since it's immediately accessible from the command line interface.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - We can also use this help feature for sub commands.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 11 | **Type:** Exam Tip
+  - For example, if we want to see what repository related actions we can take, the command helm repo help will show us how we can add chart repository or list chart repository or remove repository and so on.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And we can even dig deeper and learn about what a sub command does and what parameters it supports.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So now that we are familiar with the basics of Helm CLI, let's see what we can do with it.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So let's assume we are in a scenario where we need to launch a WordPress website in Kubernetes, and we know that we need a chart to easily deploy the WordPress application.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So earlier we learned that all the charts are stored in the online chart repository at artifacthub.io.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So we go to the website and search for the chart manually.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - To ensure we get a high quality chart, we can try to find one that has the official or a verified publisher badge.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So once the chart is selected, we'll see a detailed page with all the info, and we may want to know about this chart.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - So it starts out with the exact commands that we need to use to install the chart into our Kubernetes cluster, then continues with what software components this uses.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And further down the page, we can even see some of the most important configurable settings that we can tweak.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - It's up to chart developers to mention what they think is important in this description page.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Another way to search for a chart is from the command line itself.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Use the helm search command to search for WordPress.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - But note that the search command expects an additional sub command where you must specify where to search.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So you must specify either hub or repo.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Hub refers to the artifact hub, which we just saw.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - We know that the hub is where all the repositories are kind of listed.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So this is going to list all charts listed at the artifacthub.io.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - However, if you'd like to search in specific repositories, then you could use the repo option.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - So here are the results that show a list of charts for deploying WordPress along with the app version, which by now we know is a version of the WordPress that these charts will deploy.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Once we have identified the chart to install, we can deploy the application in two commands.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - As listed in the Read Me file for that chart, there are two commands to be run.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - The first is to add the Namibia repository.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So the Bitnami chart repository is available at chartsbitnami.com/bitnami.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - It must be added as a repository to our local Helm setup so that when we run the install command, Helm can find where the chart is to be installed from.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - The helm repo add command adds the repository.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - Next, we deploy the application to our cluster using the helm chart by running the command helm install my-release bitnami/wordpress.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So that's it.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - It's super simple.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - Deploying an application on a Kubernetes cluster has never been easier.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - At the end, we even get some useful information about how we can use this WordPress install.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So this text is actually generated by the instructions included in the chart.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 43 | **Type:** Exam Tip
+  - So this way users can get an idea about how they can continue with their newly installed Kubernetes package.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - Now, once a chart is deployed, it is deployed as a release.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So to list all existing releases, run the helm list command.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - This is very useful not only to track what has been installed, but also to see what hasn't been updated in a long time.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Now, when we want to remove all traces of this app, imagine doing that by hand.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - We would have to delete a lot of objects from our cluster one by one to get rid of all the WordPress related components.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - But with Helm, this is again, easily done with a simple command.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Since we now have the name of the release, we can remove all Kubernetes objects added by the WordPress website with one simple command.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 51 | **Type:** Exam Tip
+  - Again, very easy, we can really begin to see the power of Helm as a package manager for Kubernetes.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Now, let's look at some of the other commands available while working with Helm repositories.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So the helm repo command can be used to add, list and remove or update Helm repositories.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So we already saw the Helm repo add command.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - The Helm repo list command lists existing repositories.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - The Helm repo update command is somewhat equivalent to what a sudo app get update command does on some Linux-based operating systems.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So in a nutshell, the info that Helm has about that repository is stored locally and with time, repository maintainers make changes, update stuff, and so on.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So our local copy of this info gets stale and updated.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So the command above refreshes the info that Helm has by pulling it in from the online repository to our local computer.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - This way, we get the latest data available.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Well, that's all for now.
+- **File:** `258_Working With Helm - Basics.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - Head over to the labs and get your hands dirty with some of the basic Helm command line operations, and I'll see you in the next one.
+
+### Customizing Chart Parameters
+
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Let us now look at how to customize chart parameters while installing a chart.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - When we installed WordPress, we installed everything with its default value.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - But we may not want to do that at all times.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - For example, the block has a default name called User's Blog.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - We may not want our WordPress site to have this name.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - So how did it get this name in the first place?
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - The WordPress application deployed by the deployment.yaml file has a WordPress blog name value set as environment variable, and it picks the value from the values.yaml file which has it set to User's Blog.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So that's where the value is being picked from.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Now, when we install the WordPress application with a helm chart, we did it with a single helm install command.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - Now, this command pulls the chart and deploys the application instantly, so there is no window for us to modify the value in values.yaml file.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - One way we could modify some of the default values is by passing in a command line parameter along with the helm install command using the set option.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - With the set option, you can pass in any field from the values.yaml file and set a value for it in the command line.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 13 | **Type:** Exam Tip
+  - This can be used multiple times to pass multiple parameters to the command line to customize the deployment.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 14 | **Type:** Exam Tip
+  - So here we customize the WordPress blog name property to helm tutorials and the user email to john@example.com.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And these override the values set in the values.yaml file.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - Now, if there are too many of these values, then another option is to move these to our own custom values.yaml file.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - So here we create a file named customvalues.yaml, and we then move the variables inside this.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Since this is a yaml file, we replaced the equal sign with the colon, and we then pass in this file using the values option like this.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - So dash dash values customvalues.yaml So this is going to now pick the values from this custom.values file, and then override the values in the default values.yaml file.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And finally, what if we really want to modify the built-in values.yaml file itself instead of using the command line option or the custom values file?
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So instead of running the helm install command, we will break it up into two commands.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - First, we pull the chart using the helm pull command.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - Now, this will pull the chart in an archived form or compressed form, and then you will have to unarchive or uncompress it, or you could have helm uncompress it by running the helm pull command with the dash dash untar option in the command line.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Now, this creates a directory named WordPress.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Under this, you will see all the files that are part of the chart, and there is the values.yaml file.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - We can then open and edit this file in any text editor.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - And then once we are ready, we run the helm install command.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - But instead of specifying the WordPress chart name, now, we specify the path to the local WordPress directory.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So the ./ here indicates current directory, and it picks the chart from the WordPress directory, which is under the current directory.
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So when you run the helm install command, you can specify a release name followed by the chart name, which is on the chart repository, or if you have a local chart on your local file system in a particular directory, you can specify the path to th...
+- **File:** `259_Customizing Chart Parameters.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Well, that's all for now, and I'll see you in the next one.
+
+### Lifecycle Management With Helm
+
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Tutor: Let's talk about Lifecycle Management with Helm.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - Now, lifecycle management can sound like a fancy technical term that's too abstract to understand at first glance.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 3 | **Type:** Exam Tip
+  - So let's translate it into plain English by taking a look at some practical examples.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - Now, each time we pull in a chart and install it, a release is created, as discussed in the previous lessons.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 5 | **Type:** Exam Tip
+  - A release is somewhat similar to an app, but more specifically, it represents a package or a collection of Kubernetes objects.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Now, since Helm knows what Kubernetes objects belong to each release, it can do things like upgrades, downgrades, or uninstalls without touching objects that might belong to other releases.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So each release can be managed independently, even if they're all based on the same chart.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Now let's just create a new release and discuss this as we go along.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - So we'll install a pretty old version of this Nginx chart.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - By the way, you can pass in a specific version of Helm chart to install using the version option in the install command like this.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - We now have an Nginx release, plainly called Nginx release.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And now imagine two months go by, which is a long time for any piece of software, but especially for a website, a lot of security vulnerabilities get discovered and they need to be patched up.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now our Nginx hosted website may have many objects in our Kubernetes cluster, and when we upgrade the pods running Nginx, maybe we also need to make some changes to other Kubernetes objects.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 14 | **Type:** Exam Tip
+  - For example, the newer version of Nginx may require a new environment variable to be set, or new secret to be created, which requires changing configuration objects and other files, part of the manifest files.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - But it may be hard to keep track of all pieces that need to be changed.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 16 | **Type:** Warning/Pitfall
+  - Fortunately, as we said, Helm keeps track of everything associated with a release, so we don't have to upgrade our objects one by one.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 17 | **Type:** Command
+  - 
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - But first, let's see what version of Nginx is running in our pod.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - We initially have to find out the name of our Nginx pod.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - So we run the, "kubecutl get pods", command to see the pod that we created.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - Then we run a "kubectl describe pod" command to see more details about the image, and we see that it's running Nginx version 1.19.2.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So that's pretty old.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Now let's see a Helm upgrade in action.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - The command is rather simple, so we just tell Helm what release we want to upgrade and then specify the chart that this release is based on.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So we now run the Helm upgrade command to upgrade the Nginx release.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So Revision 1 is now replaced, and by Revision 2.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Note the revision number in the output of the Helm upgrade command.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So did the Helm upgrade command really do its job?
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Let's check.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - In the upgrade process the old pod gets destroyed and a new one gets created.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So we need to get the name of the new one.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - So we follow the same Helm process again and get the new pod name then run a describe on it and we see the new version, which is Nginx 1.21.4.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So there you have it.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - We just went through the so-called Lifecycle Management with Helm.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - A release can exist for months or years, and Helm can manage its lifecycle in many ways by keeping track of its current state, previous states, and bring it into future states.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So in this case, we brought the release into a future state by upgrading it, but Helm kept a record of the previous state too.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - We noticed the revision number changing to 2, so the previous state would be Revision 1.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Now, how does that help us?
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Let's take a look at our releases.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Run the Helm list command to list the current releases, and we have our Nginx release listed.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - We see the current revision number, which happens to be 2.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - In this case we know what the previous revision was and what the current one is.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - But say we work in a big team and lots of people manage their releases, this output doesn't really tell us what happened.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So how do we dig deeper?
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Run the Helm history command to see more details about a particular release.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - This is a lot more helpful.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - We can clearly see a lot of useful things.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - What chart version was, or is used, in each revision?
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - What app version was, or is, used in each revision?
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - What action actually created that revision?
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Was it an install, an upgrade, or a rollback?
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So this paints a clear picture of the stages our release went through, its lifecycle history.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 53 | **Type:** Warning/Pitfall
+  - Now let's assume this upgrade did something that we don't like.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 54 | **Type:** Command
+  - 
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Now, this lets us return a release to a previous date.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So in this case, we want to return to Revision 1.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So in this case, we run the command "helm rollback Nginx release", and specify the revision number that we want to roll back to, and that is Revision 1.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Now, when you do that, remember, Helm reverts all configuration to how it was previously in Revision 1, but technically, it does not go back to Revision 1.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - Instead, it creates a new revision, Revision 3, with a similar configuration as in Revision 1.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So if you list Helm revisions with the Helm history command, now you will see that there are three versions with Revision 1 and 2 having the same chart and the app versions.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - And there is a note in description that says it's a rollback to Revision 1.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 62 | **Type:** Exam Tip
+  - It's worth mentioning that we chose Nginx here as it's simple to upgrade, but there will be Kubernetes packages that may require a few extra steps to upgrade.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 63 | **Type:** Exam Tip
+  - For example, if we had have tried to upgrade the previous WordPress release that we created, we would've got this output.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - Now, that's not to say that this is a problem.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - It can be easily solved by adding some more parameters to the command line as instructed in the text.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - But, why does this happen?
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - In this case, Helm cannot upgrade everything without having access to some administrative passwords.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - It needs administrative access to the database and to the WordPress website itself so that it can get permissions to make necessary changes.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - It's also worth mentioning that all the rollbacks are very similar to a Backup Restore feature.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 70 | **Type:** Implementation Step
+  - It doesn't cover file or directory data that may be created by our applications.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Instead, Helm backs up and restores the declarations or manifest files of our Kubernetes objects.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So for things that use persistent volumes or other forms of persistent data or something that is external, maybe like an external database, the rollback won't restore that data too.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 73 | **Type:** Exam Tip
+  - For example, imagine you rollback MySQL database server.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - The MySQL pods will be restored to their previous states, software versions used and so on, but the actual database, its data will remain the same.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - Its data is not going to be backed up or restored.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So there are options available to take consistent backups of databases before upgrading charts, or even to roll back or restore databases, but they're done using what is known as chart hooks, which we will discuss later in this course.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Well, that's all for now.
+- **File:** `261_Lifecycle Management With Helm.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Head over to the labs and get some hands-on practice.

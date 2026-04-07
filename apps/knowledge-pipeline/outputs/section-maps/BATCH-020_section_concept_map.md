@@ -1,0 +1,3593 @@
+# Section Concept Map: BATCH-020
+
+## Section
+- Course: `certified-kubernetes-application-developer`
+- Section: `03_Configuration`
+
+## Source Files Used
+- `041_Define, build and modify container images.extraction.md`
+- `043_Commands and Arguments in Docker.extraction.md`
+- `044_Commands and Arguments in Kubernetes.extraction.md`
+- `047_Solution - Commands and Arguments (Optional).extraction.md`
+- `048_Environment Variables.extraction.md`
+- `049_ConfigMaps.extraction.md`
+- `051_Solution_ ConfigMaps (Optional).extraction.md`
+- `052_Secrets.extraction.md`
+- `056_Solution - Secrets (Optional).extraction.md`
+- `057_Demo_ Encrypting Secret Data at Rest.extraction.md`
+- `058_Pre-requisite - Security in Docker.extraction.md`
+- `059_Security Contexts.extraction.md`
+- `061_Solution_ Security Contexts.extraction.md`
+- `062_Resource Requirements.extraction.md`
+- `064_Solution_ Resource Requirements.extraction.md`
+- `065_Service Account.extraction.md`
+- `067_Solution_ Service Account.extraction.md`
+- `069_Taints and Tolerations.extraction.md`
+- `071_Solution - Taints and Tolerations (Optional).extraction.md`
+- `072_Node Selectors Logging.extraction.md`
+- `073_Node Affinity.extraction.md`
+- `075_Solution - Node Affinity (Optional).extraction.md`
+- `076_Taints & Tolerations vs Node Affinity.extraction.md`
+
+## Concept Groups
+
+### Define, build and modify container images
+
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - (gentle upbeat music) -: Hello, and welcome to this lecture on Docker images.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - In this lecture, we're going to see how to create your own image.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - Now, before that, why would you need to create your own image?
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - It could either be because you cannot find a component or a service that you want to use as part of your application on Docker Hub already or you and your team decided that the application you're developing will be Dockerized for ease of shipping ...
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - In this case, I'm going to containerize an application, a simple web application that I have built using the Python Flask framework.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - First we need to understand what we are containerizing or what application we are creating an image for and how the application is built.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So start by thinking what you might do if you want to deploy the application manually.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - We write down the steps required in the right order.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - I'm creating an image for a simple web application.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - If I were to set it up manually, I would start with an operating system like Ubuntu, then update the source repositories using the APT command, then install dependencies using the APT command, then install Python dependencies using the pip command...
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Now that I have the instructions, create a Docker file using this.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Here's a quick overview of the process of creating your own image.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - First, create a Docker file named Docker File and write down the instructions for setting up your application in it, such as installing dependencies, where to copy the source code from and to, and what the entry point of the application is, et cet...
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Once done, build your image using the docker build command and specify the Docker File as input as well as a tag name for the image.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - This will create an image locally on your system.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - To make it available on the public Docker Hub registry, run the docker push command and specify the name of the image you just created.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - In this case, the name of the image is my account name, which is Moonshot, followed by the image name, which is my custom app.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Now, let's take a closer look at that Docker file.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 19 | **Type:** Command
+  - 
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - It's in an instruction and arguments format.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 21 | **Type:** Exam Tip
+  - For example, in this Docker file, everything on the left in caps is an instruction.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - In this case from, run, copy, and entry point are all instructions.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Each of these instruct Docker to perform a specific action while creating the image.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Everything on the right is an argument to those instructions.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 25 | **Type:** Best Practice
+  - The first line from Ubuntu defines what the base OS should be for this container.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - Every Docker image must be based off of another image, either an OS or another image that was created before based on an OS.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - You can find official releases of all operating systems on Docker Hub.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - It's important to note that all Docker files must start with a from instruction.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - The run instruction instructs Docker to run a particular command on those base images.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 30 | **Type:** Exam Tip
+  - So at this point, Docker runs the apt-get update command to fetch the updated packages and installs required dependencies on the image.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - Then the copy instruction copies files from the local system onto the Docker image.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - In this case, the source code of our application is in the current folder, and I will be copying it over to the location, OPT source code, inside the Docker image.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - And finally, entry point allows us to specify a command that will be run when the image is run as a container.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 34 | **Type:** Architecture
+  - When docker builds the images, it builds this in a layered architecture.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - Each line of instruction creates a new layer in the Docker image with just the changes from the previous layer.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 36 | **Type:** Exam Tip
+  - For example, the first layer is a base Ubuntu OS followed by the second instruction, that creates a second layer, which installs all the APT packages, and then the third instruction creates a third layer with the Python packages followed by the fo...
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Since each layer only stores the changes from the previous layer, it is reflected in the size as well.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 38 | **Type:** Exam Tip
+  - If you look at the base Ubuntu image, it is around 120 MB in size, the APT packages that I install is around 300 MB, and the remaining layers are small.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - You could see this information if you run the docker history command followed by the image name.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - When you run the docker build command, you could see the various steps involved and the result of each task.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 41 | **Type:** Troubleshooting
+  - All the layers built are cast, so the layered architecture helps you restart docker build from that particular step in case it fails.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - Or if you were to add new steps in the build process, you wouldn't have to start all over again.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - All the layers built are cast by Docker.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 44 | **Type:** Troubleshooting
+  - So in case a particular step was to fail, for example, in this case, step three failed, and you were to fix the issue and rerun docker build, it will reuse the previous layers from cache and continue to build the remaining layers.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - The same is true if you were to add additional steps in the Docker file.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 46 | **Type:** Warning/Pitfall
+  - This way, rebuilding your image is faster and you don't have to wait for Docker to rebuild the entire image each time.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - This is helpful especially when you update source code of your application, as it may change more frequently.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Only the layers above the updated layers needs to be rebuild.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - We just saw a number of products containerized, such as databases, development tools, operating systems, et cetera, but that's just not it.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - You can containerized almost all of the application, even simple ones like browsers or utilities like curl, applications like Spotify, Skype, et cetera.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Basically, you can containerize everything.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And going forward, I see that's how everyone is going to run applications.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Nobody is going to install anything anymore going forward.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Instead, they're just going to run it using Docker.
+- **File:** `041_Define, build and modify container images.extraction.md` | **Entry:** 55 | **Type:** Warning/Pitfall
+  - And when they don't anymore, get rid of it easily without having to clean up too much. (gentle upbeat music)
+
+### Commands and Arguments in Docker
+
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this section we will talk about commands and arguments in a Pod definition file.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 2 | **Type:** Exam Tip
+  - This is not listed as a required topic in the certification curriculum, but I think it's important to explain as it is a topic that is usually overlooked.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - Let's first refresh our memory on commands in containers and Docker.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - We will then translate this into pods in the next lecture.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - In this lecture we will look at commands, arguments and entry points in Docker.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Let's start with a simple scenario.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Say you were to run a Docker container from an ubuntu image.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - When you run the docker run ubuntu command, it runs an instance of ubuntu image and exits immediately.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - If you were to list the running containers, you wouldn't see the container running.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - If you list all containers, including those that are stopped, you will see that the new container you ran is in an exited state.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Now why is that?
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Unlike virtual machines, containers are not meant to host an operating system.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Containers are meant to run a specific task or process, such as to host an instance of a web server or application server or a database, or simply to carry out some kind of computation or analysis.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Once the task is complete, the container exits.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - A container only lives as long as the process inside it is alive.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - If the web service inside the container is stopped or crashes, the container exits.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So who defines what process is run within the container?
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - If you look at the Docker file for Docker images like nginx, you will see an instruction called cmd, which stands for command that defines the program that will be run within the container when it starts.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - For the nginx image, it is the nginx command.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - For the MySQL image it is the MySQL command.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - What we tried to do earlier was to run a container with a plain ubuntu operating system.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Let us look at the docker file for this image.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - You will see that it uses bash as the default command.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Now bash is not really a process like a web server or database server.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - It is a shell that listens for inputs from a terminal.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - If it cannot find a terminal, it exits.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - When we ran the ubuntu container earlier, Docker created a container from the ubuntu image and launched the bash program.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - By default, Docker does not attach a terminal to a container when it is run, and so the bash program does not find the terminal and so it exits.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - Since the process that was started when the container was created finished the container exits as well.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So how do you specify a different command to start the container?
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - One option is to append a command to the docker run command, and that way it overrides the default command specified within the image.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - In this case, I run the docker run ubuntu command with the sleep five command as the added option.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - This way when the container starts, it runs the sleep program, waits for five seconds and then exits.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - But how do you make that change permanent?
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Say you want the image to always run the sleep command when it starts.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - You would then create your own image from the base ubuntu image and specify a new command.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - There are different ways of specifying the command, either the command simply as is in a shell form, or in a JSON array format like this.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 38 | **Type:** Best Practice
+  - But remember, when you specify in a JSON array format, the first element in the array should be the executable.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 39 | **Type:** Warning/Pitfall
+  - In this case, the sleep program do not specify the command and parameters together like this.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 40 | **Type:** Best Practice
+  - The command and its parameters should be separate elements in the list.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So I now build my new image using the docker build command and name it as Ubuntu Sleeper.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - I could now simply run the Docker ubuntu sleeper command and get the same results.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - It always sleeps for five seconds and exits.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - But what if I wish to change the number of seconds it sleeps?
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Currently it is hard coded to five seconds.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - As we learned before, one option is to run the docker run command with the new command appended to it.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - In this case, sleep ten.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - And so the command that will be run at startup will be sleep ten.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - But it doesn't look very good.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 50 | **Type:** Best Practice
+  - The name of the image, ubuntu Sleeper in itself implies that the container will sleep, so we shouldn't have to specify the sleep command again.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Instead, we would like it to be something like this.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 52 | **Type:** Command
+  - 
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 53 | **Type:** Best Practice
+  - We only want to pass in the number of seconds the container should sleep, and sleep command should be invoked automatically.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And that is where the entry point instruction comes into play.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Entry point defines the executable command.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - CMD provides default args as in.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - You can specify the program that will be run when the container starts, and whatever you specify on the command line.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - In this case, ten will get appended to the entry point.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So the command that will be run when the container starts is sleep ten.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 60 | **Type:** Comparison
+  - So that's the difference between the two.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - In case of CMD instruction the command line parameters passed will get replaced entirely, whereas in case of entry point the command line parameters will get appended.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - Now in the second case, what if I run the ubuntu sleeper image command without appending the number of seconds?
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 63 | **Type:** Troubleshooting
+  - Then the command at startup will be just sleep and you get the error that the operand is missing.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So how do you configure a default value for the command if one was not specified in the command line.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - That's where you would use both entrypoint as well as the command instruction.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - In this case, the command instruction will be appended to the Entrypoint instruction.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So at startup the command would be sleep five if you didn't specify any parameters in the command line.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - If you did then that will override the command instruction.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 69 | **Type:** Best Practice
+  - And remember for this to happen, you should always specify the entry point and command instructions in a JSON format.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 70 | **Type:** Operational Insight
+  - Finally, what if you really, really want to modify the entry point during runtime?
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Say from sleep to an imaginary sleep 2.0 command?
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Well, in that case, you can override it by using the Entrypoint option in the docker run command.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - The final command at startup would then be sleep 2.0.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - Ten.
+- **File:** `043_Commands and Arguments in Docker.extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - Well, that's it for this lecture and I will see you in the next.
+
+### Commands and Arguments in Kubernetes
+
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will look at commands and arguments in a Kubernetes pod.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - In the previous lecture, we created a simple Docker image that sleeps for a given number of seconds.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - We named it Ubuntu Sleeper and we ran it using the docker command Docker run ubuntu sleeper.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - By default it sleeps for five seconds, but you can override it by passing a command line argument.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - We will now create a pod using this image.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - We start with a blank pod definition template, input the name of the pod and specify the image name.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - When this pod is created, it creates a container from the specified image and the container sleeps for five seconds before exiting.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Now, if you need the container to sleep for 10s as in the second command, how do you specify the additional argument in the pod definition file?
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Anything that is appended to the docker run command will go into the args property of the pod definition file in the form of an array like this.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - Let us try to relate that to the docker file we created earlier.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - The docker file has an entry point as well as a cmd instruction Specified, the entry point is the command that is run at startup, and the cmd is the default parameter passed to the command with the args option in the Pod definition file.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - We override the cmd instruction in the docker file.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - But what if you need to override the entry point?
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Say from sleep to an imaginary sleep 2.0 command?
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - In the Docker world, we would run the docker run command with the entrypoint option set to the new command.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - The corresponding entry in the pod definition file would be using a command field.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - The command field corresponds to entrypoint instruction in the docker file.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So to summarize, there are two fields that correspond to two instructions in the docker file.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - The command field overrides the entrypoint instruction, and the args field overrides the command instruction in the docker file.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Remember, it is not the command field that overrides the cmd instruction in the docker file.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Well, that's it about commands and arguments in Kubernetes.
+- **File:** `044_Commands and Arguments in Kubernetes.extraction.md` | **Entry:** 22 | **Type:** Troubleshooting
+  - Head over to the Coding exercises section and practice viewing, configuring and troubleshooting commands and arguments in Kubernetes.
+
+### Solution - Commands and Arguments (Optional)
+
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, in this video, we're going to go over the lab on commands and arguments.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So let's start.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So the first question is, how many pods exist on the system?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So let's check the number of pods.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - And there's just one pod.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - The second question is, "What is the command used to run the pod?" Now, Ubuntu sleeper.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So we're going to look at the pod in detail, and we'll see under the containers we have the Ubuntu container.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And here we have the command, which is sleep 4,800.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 9 | **Type:** Warning/Pitfall
+  - And, I do not see any arguments.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So that's the command.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So it's sleep 4,800.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - That's the command that's run by this pod.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So this one right here.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - Okay, so the next one is to create a pod with the Ubuntu image to run a container to sleep for 5,000 seconds.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Modify the file, Ubuntu sleeper two.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So there's already a file given called Ubuntu sleeper two.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - It says simple part definition file.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - We have containers, the name and image, and we want to set it to run and sleep for 5,000 seconds.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So let's modify this file, and set a command, and it has to be to sleep for now, 5,000 seconds.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 21 | **Type:** Concept
+  - 5,000.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Now, remember that when you specify command, the command is always an array.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So it has to be in an array format like this.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - So that's the first thing.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So this is, that's one way of specifying an array.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - The other way is to just have it like this, this form of an array.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - So sleep, and then 5,000.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So something like this.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - Right.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So these are two forms.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - You may follow any of them.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And this one right here, this is still not in the correct form because if you look at this, this is an array of a single item.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So this array only has one item and that's called sleep 5,000.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - It's a single kind of item in the array.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Whereas here, it's two separate.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - Now, one of the thing to remember is when you're specifying a command, a command always have to have the command as the first item.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And that's basically, if you look at this, sleep is the command and 5,000 is the argument.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So, this has to be, sleep has to be a separate string, separate item in the array like this.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And the argument, you could specify the argument either in the same command as another item or you could provide it as an argument.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - So that's, those are two other options.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So let's get rid of this.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Let's go with this.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So this is one approach.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - The other is to specify arguments as args, and provide the argument here, and get rid of it here.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - This is more readable and straightforward.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So this way, we know that the command is sleep and the argument is 5,000.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - But even if you give the argument here as a second array, it's ultimately going to combine them both for running.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So that works too.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So, that's that.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - So let's go ahead and create that file.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Let's make sure.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Odd Ubuntu sleep two.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Okay.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And here we see that is in the running stage and you have the command and argument as 5,000.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So let's give it a shot.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Okay, so that works.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - And as I said, it could also be just the command as two elements in the array with sleep 5,000 like this.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Okay, let's proceed.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - The next task is to create a pod using the file named Ubuntusleeper3.yaml.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - There's another file.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Okay, and there's something wrong with it.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 62 | **Type:** Troubleshooting
+  - So try and fix it.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 63 | **Type:** Warning/Pitfall
+  - So taking a quick look, I don't see anything wrong with it.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So you have the image, you have the name, you have the command and the argument which is also given as a command, which is actually okay.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - So let's try and create this pod.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And we see that it's come back as a bad request, and it says, "Cannot unmarshal number into construct field container, inspect containers, command of type string." So all the elements in the command must be a string.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - You cannot have a number.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 68 | **Type:** Warning/Pitfall
+  - So this exercise was just to kind of make sure you know that you don't accidentally put in a number instead of a string.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - So let's create that.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Okay?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 71 | **Type:** Best Practice
+  - That should be good.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - Okay, so the next question is to update the pod Ubuntu sleeper 3 to sleep for 2,000 seconds.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So we have, let's try and queue cuttle edit pod and it's going to sleeper three.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - And let's see what happens if we just try to edit it, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So we're going to just change the command to 2,000 seconds.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - Let's try and save that.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - If you see this, it did not go through.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - And it says that this is forbidden.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So pod updates may not change the fields other than these.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So image and active deadline second.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - So there are some properties that you can change and there are some that you can't change.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So this here right here is a property that you cannot just directly edit.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So what we'll have to do, so let's go out of it.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - It's already created a file here with our edits.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So we can look at that.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - It has a lot of other information which can be ignored, but you can see that it has the edit.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So we could just do a queue cuttle replace place and force and provide that file name.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - So this is one approach that you can use.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - And what it's going to do is it's going to delete the pod then recreate the new pod based on the edit, edited one.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 90 | **Type:** Exam Tip
+  - So this is one of the approach you can use in the exam if you have to edit something that's not actually editable directly, or you could edit the pod itself the pod definition that you have locally, and update that.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 91 | **Type:** Best Practice
+  - And that's also, that's the best practice.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 92 | **Type:** Operational Insight
+  - It's taking a while for the pod to be terminated and as is mentioned before and that's completely okay, that's an expected behavior.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - So when we try to delete the pod a kill signal is sent to the process that's running in the container inside the pod.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - And it depends on the process and how much time it takes to handle the kill signal and fully terminate the process.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So that's, that delay is expected.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Okay, so it's now updated.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - Let's check the work.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 98 | **Type:** Implementation Step
+  - Okay, so the next question is to inspect the Dockerfile under root bitmap color Dockerfile and what command is run at the container startup.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - So if we were to create an image from this Dockerfile and run it what would be the command that's run at startup?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - So we know that entry point is where is the command that's gonna be run.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - So it's gonna be Python abdo py, that's the command that would be run at startup.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - So that's pretty straightforward.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 103 | **Type:** Concept
+  - Now let's look at Dockerfile two.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 104 | **Type:** Concept
+  - And now you have entry point and the command admin.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 105 | **Type:** Concept
+  - Now we know that this in, in Docker, you have both of these.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 106 | **Type:** Concept
+  - And in this case what command is run at the container startup.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 107 | **Type:** Concept
+  - So you have Python and abdo py, we know that that's the entry point, and these are gonna be going in as arguments for the entry points.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 108 | **Type:** Concept
+  - So it's gonna be Python abdo py followed by color red, so Python abdo py and followed by color red.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 109 | **Type:** Concept
+  - Okay?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - The next one is to inspect the two files under directory web app color two.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 111 | **Type:** Concept
+  - So there's a directory called web app color two and there are two files.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 112 | **Type:** Implementation Step
+  - First one is a Dockerfile and this is a similar file which has an entry point and the CMD parameter.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 113 | **Type:** Implementation Step
+  - And then we also have a web and we also have a Kubernetes manifest file for pod.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - And which uses this Dockerfile, the image created from this Dockerfile.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 115 | **Type:** Concept
+  - So that's what it says here.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 116 | **Type:** Implementation Step
+  - It says image was created from the Dockerfile.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 117 | **Type:** Implementation Step
+  - So first we create an image from this and then we use that image here.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 118 | **Type:** Concept
+  - And when we do that here we are overriding the command with color green.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 119 | **Type:** Concept
+  - So what would be the end result?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 120 | **Type:** Concept
+  - So as we learned from the lecture the command always overrides the entry point.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - And if we had arguments then that would override this command here.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 122 | **Type:** Concept
+  - So in this case, the command overrides the entry point.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 123 | **Type:** Concept
+  - So if that's gonna be color green that's the command I would start with.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 124 | **Type:** Concept
+  - So it's not going to be any of this it's actually going to be this.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 125 | **Type:** Concept
+  - It's not even going to run the abdo py.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 126 | **Type:** Concept
+  - Okay?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 127 | **Type:** Implementation Step
+  - And the next question is to explore the files under another directory.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 128 | **Type:** Concept
+  - So let's go to web app color three.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 129 | **Type:** Concept
+  - There are two files there.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So we have web app color three followed by your profile two so that's a similar Dockerfile.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 131 | **Type:** Implementation Step
+  - And then there's a pod definition file as well.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 132 | **Type:** Concept
+  - So again, it's the same kind of question.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 133 | **Type:** Concept
+  - You have an entry point and the command here.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 134 | **Type:** Implementation Step
+  - Then you have command and arguments here.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 135 | **Type:** Concept
+  - So as we know, this is- both of these are gonna override both of these.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 136 | **Type:** Concept
+  - So is the ultimate command that's gonna be run is Python abdo py, followed by the color pink.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 137 | **Type:** Concept
+  - So Pytho abdo py followed by the color pink.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 138 | **Type:** Concept
+  - Okay?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 139 | **Type:** Implementation Step
+  - So the final question is to create a pod with the given specifications.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 140 | **Type:** Concept
+  - These, by default, it displays a blue background and said the given command line arguments to change it to green.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 141 | **Type:** Concept
+  - Okay?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 142 | **Type:** Implementation Step
+  - So when we run this command, so let's first start with the command to create a pod.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 143 | **Type:** Implementation Step
+  - So we we're gonna do a queue cuttle run and then followed by the pod name, which is web app green and then followed by the image which is the code cloud about color image.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 144 | **Type:** Implementation Step
+  - And then we have the command line arguments that we need to pass, which are color green.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 145 | **Type:** Operational Insight
+  - Now, what it says is by default, it runs, it actually runs, it displays a blue background but we want, and that's the behavior of this particular image.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 146 | **Type:** Concept
+  - We want it to run in the green color.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 147 | **Type:** Concept
+  - And that's, that can be done by passing in this additional argument.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 148 | **Type:** Implementation Step
+  - So all we need to do is kind of create this and then pass in an additional argument.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 149 | **Type:** Implementation Step
+  - And one way to do that is we can create a manifest file.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 150 | **Type:** Implementation Step
+  - So we could do a dry run equals client and then output this to a yaml format.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 151 | **Type:** Concept
+  - Sorry, clicked that wrong, okay?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 152 | **Type:** Implementation Step
+  - And then we can go in and add the args section here.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 153 | **Type:** Best Practice
+  - So that's one way to do it, but something like this we should be able to do it in a much easier, more straightforward way.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 154 | **Type:** Concept
+  - So let me explain how that is.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 155 | **Type:** Exam Tip
+  - So for example, in general if I had this application locally, I would run python abdo py or if there's an executable called web app.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 156 | **Type:** Implementation Step
+  - So I would actually run web app, something like this and then if changing the color is an option then it would be as easy as just specifying the color to be green, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 157 | **Type:** Concept
+  - So the same way, running this application on Kubernetes has to be as easy as that.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 158 | **Type:** Best Practice
+  - So basically all you should be able to do is queue cuttle a run and then whatever is the name of whatever that it is, the name of that application.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 159 | **Type:** Concept
+  - So web app followed by, you know, the image name and stuff.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 160 | **Type:** Best Practice
+  - And also it should be as easy to customize it by just passing in the color and color like this.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 161 | **Type:** Best Practice
+  - So once this application is containerized and a docker image is built out of it it should be as easy as something like this, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 162 | **Type:** Concept
+  - So there's, there is an option for that.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 163 | **Type:** Concept
+  - If you look at the help of the queue cuttle run command you'll see that out of all of these options there's a section here where you can pass in additional arguments, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 164 | **Type:** Implementation Step
+  - So here it says I run the end to next pod, but use custom arguments.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 165 | **Type:** Implementation Step
+  - So here you have the name, the image but then you have this double dash and then you have all the arguments, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 166 | **Type:** Concept
+  - So, so there are arguments, if you look at this command there are arguments that are specific for the queue cuttle utility.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 167 | **Type:** Concept
+  - So you have image which is specifically for the queue cuttle utility and there may be many other arguments such as all of these dry run labels.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 168 | **Type:** Implementation Step
+  - All of these are for the queue cuttle utility, but then the application that runs inside internet or the simple web app that we are running that also has options that are very similar to this.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 169 | **Type:** Concept
+  - So in order to differentiate between options for queue cuttle and the options for the application that's running within the container, and to specify those, all of those on the same command line, you have this double dash option.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 170 | **Type:** Concept
+  - So this basically separates the options for the queue cuttle utility and the options that are going to go through to the Internex application running inside, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 171 | **Type:** Concept
+  - So anything that's before this are specifically options for the queue cuttle utility.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 172 | **Type:** Concept
+  - And anything that goes in after this which may also look very much like these they are going to be passed through to the Internex application that's running inside, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 173 | **Type:** Concept
+  - So that's the reason why you have this double dash.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 174 | **Type:** Implementation Step
+  - So if you just use the double dash and then passing anything, all of these are gonna be options for the application running inside.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 175 | **Type:** Implementation Step
+  - And then if you want to override the command itself not just the arguments, but the command itself then you could use the dash dash command option.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 176 | **Type:** Implementation Step
+  - And again, remember that before, but if you do that then you can also provide a command and a set of arguments after it, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 177 | **Type:** Concept
+  - So that's why you have this double dash.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 178 | **Type:** Concept
+  - So let's try and use that approach for this, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 179 | **Type:** Concept
+  - So let's do a queue cuttle run followed by web app green and the image is this.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 180 | **Type:** Concept
+  - Okay?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 181 | **Type:** Concept
+  - And now we wanna pass in the arguments and the arguments are just color green.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 182 | **Type:** Concept
+  - So we're going to put the double dash in.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 183 | **Type:** Concept
+  - And now anything I specify now is gonna be an option that won't be considered by queue cuttle but it will be considered by this process running inside.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 184 | **Type:** Concept
+  - So I'm gonna say color and I'm gonna say green, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 185 | **Type:** Concept
+  - So these are gonna be passed through.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 186 | **Type:** Implementation Step
+  - And if I want to, let's say, so this is gonna be basically generate the command called Python, then abdo py followed by color and green.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 187 | **Type:** Implementation Step
+  - But if I want to update Python abdo py itself then I could pass in this command option and then pass in the command here like Python let's say App two dot py or something like that, okay?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 188 | **Type:** Warning/Pitfall
+  - In this case we don't, we're not going to do that.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 189 | **Type:** Concept
+  - So I'm going to remove that and just pass this through.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 190 | **Type:** Concept
+  - Okay?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 191 | **Type:** Implementation Step
+  - So let's create it, let's check it out.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 192 | **Type:** Concept
+  - If you look at this, you have parks color green and the command is already built into the web app as the entry point, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 193 | **Type:** Concept
+  - So we're not going to touch that here.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 194 | **Type:** Concept
+  - We we have just passed through the green color, okay?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 195 | **Type:** Concept
+  - Let's check our work, right?
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 196 | **Type:** Concept
+  - So that's about it.
+- **File:** `047_Solution - Commands and Arguments (Optional).extraction.md` | **Entry:** 197 | **Type:** Implementation Step
+  - I hope that was informational and I'll see you in the next one.
+
+### Environment Variables
+
+- **File:** `048_Environment Variables.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will see how to set an environment variable in Kubernetes.
+- **File:** `048_Environment Variables.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Given a Pod definition file which uses the same image as the docker command, we ran in the last lecture to set an environment variable, use the env property.
+- **File:** `048_Environment Variables.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Env is an array, so every item under the env property starts with a dash indicating an item in the array.
+- **File:** `048_Environment Variables.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Each item has a name and a value property.
+- **File:** `048_Environment Variables.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - The name is the name of the environment variable made available with the container, and the value is its value.
+- **File:** `048_Environment Variables.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - What we just saw was a direct way of specifying the environment variables using a plain key value pair format.
+- **File:** `048_Environment Variables.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - However, there are other ways of setting the environment variables, such as using configmaps and secrets.
+- **File:** `048_Environment Variables.extraction.md` | **Entry:** 8 | **Type:** Comparison
+  - The difference in this case is that instead of specifying value, we say value from and then a specification of configmap or secret.
+- **File:** `048_Environment Variables.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - We will discuss about Configmaps and secret keys in the upcoming lectures.
+- **File:** `048_Environment Variables.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - That's it for this lecture and I will see you in the next.
+
+### ConfigMaps
+
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will discuss how to work with configuration data in Kubernetes.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In the previous lecture we saw how to define environment variables in a Pod definition file.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - When you have a lot of Pod definition files, it will become difficult to manage the environment data stored within the various files.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - We can take this information out of the Pod definition file and manage it centrally using configuration maps.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Config maps are used to pass configuration data in the form of key value pairs in Kubernetes.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - When a pod is created, inject the configmap into the pod so the key value pairs are available as environment variables for the application hosted inside the container in the pod.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - There are two phases involved in configuring Configmaps.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - First, create the config map and second, inject them into the pod just like any other Kubernetes object.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - There are two ways of creating a config map.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - App.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - The imperative way without using a config map definition file and the declarative way by using a config map definition file.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 12 | **Type:** Warning/Pitfall
+  - If you do not wish to create a config map definition file, you could simply use the cube control, create Configmap command and specify the required arguments.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - Let's take a look at that first.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - With this method, you can directly specify the key value pairs in the command line to create a config map of the given values.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Run the cube control.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - Create config map command.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - The command is followed by the config name and the option from literal.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - The from literal option is used to specify the key value pairs in the command itself.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 19 | **Type:** Exam Tip
+  - In this example, we are creating a config map by the name appconfig with a key value pair of app color equals blue.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 20 | **Type:** Exam Tip
+  - If you wish to add additional key value pairs, simply specify the from literal options multiple times.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - However, this will get complicated when you have too many configuration items.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Another way to input configuration data is through a file.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Use the from file option to specify a path to the file that contains the required data.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - The data from this file is read and stored under the name of the file.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Let us now look at the declarative approach.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - For this, we create a definition file just like how we did for the pod.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - The file has an API version kind metadata instead of spec.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Here we have data.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - The API version is v1.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - The kind is configmap.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Under metadata we specify a name for the Configmap.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - We will call it Appconfig.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - Under data and the configuration data in a key value format, run the kube control create command and specify the configuration file name.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - So that creates the Appconfig Configmap map with the values we specify.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - You can create as many config maps as you need in the same way for various different purposes.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Here I have one of my application, other for MySQL and another one for Reddis.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So it is important to name the config maps appropriately, as you will be using these names later while associating it with pods.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - To view config maps, run the kube control get config maps command.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - This lists the newly created config map named appconfig.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - The describe config maps command lists the configuration data as well under the data section.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Now that we have the config map created, let us proceed with step two.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Configuring it with a pod.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Here I have a simple pod definition file that runs my simple web application to inject an environment variable.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Add a new property to the container called env from the env from property is a list so we can pass as many environment variables as required.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Each item in the list corresponds to a config map item.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - Specify the name of the config map we created earlier.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - This is how we inject a specific config map from the ones we created before creating the pod definition file.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - Now creates a web application with a blue background.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - What we just saw was using config maps to inject environment variables.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - There are other ways to inject configuration data into pods.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - You can inject it as a single environment variable, or you can inject the whole data as files in a volume.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - We will look at some of these options in the coding exercises that accompany this lecture.
+- **File:** `049_ConfigMaps.extraction.md` | **Entry:** 53 | **Type:** Troubleshooting
+  - So head over to the coding exercises section and practice viewing, configuring and troubleshooting environment variables on a live Kubernetes environment.
+
+### Solution_ ConfigMaps (Optional)
+
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Hey, I'm Sanji, one of the co-instructors of this course, and I'll be walking you through this solutions video for the ConfigMap section.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - For the first question, we have to find out how many pods exist in the system.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - And we can do this by doing a kubectl get pod.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - And so we can see here we have exactly one pod running and that pod's name is web app dash color.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So we'll select one here.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - For the next question, we have to figure out what is the environment variable name set on the container in the pod.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - And so, now we can do a kubectl describe pod and then just grab the pod name here.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And in this output, we wanna go up to the containers section.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And in here, there's going to be a section called environment.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So this is gonna be where all of the environment variables are set.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - And we can see that there is an environment variable called app underscore color.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And so, we'll select that.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And make sure you select the one that's app underscore color 'cause there's also an app dash color, as well.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - The next question is asking what is the value set on the environment variable called app underscore color?
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 15 | **Type:** Warning/Pitfall
+  - And so, we don't actually have to run another command.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - We can just see that the value's set to pink.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And we'll select pink.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - The next question is just telling us to click the web app color tab so that we can take a look at the web app.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And when it opens up, we can see that this is what the web app looks like.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 20 | **Type:** Concept
+  - And so, I'll just hit okay right here.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - The next question is asking us to update the environment variable on the pod to display a green background.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And it gives a few extra notes.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 23 | **Type:** Warning/Pitfall
+  - It's saying that we need to delete and recreate the pod and only make the necessary changes, and to make sure that we don't modify the name of the pod.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 24 | **Type:** Best Practice
+  - And so, down here, there's a couple of bullet points and it's just letting us know what is the name we should give it, the pod.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - And we can see it's the same web app dash color.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - We're gonna give it the same label.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - And then, the important part is we have to provide an environment variable called app underscore color and this time, set it to be green instead of pink.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - So the first thing that I'm gonna do is I'm gonna run kubectl get pods.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - And so, we can see that the pod right now is called web app dash color.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And what I wanna do is I wanna get the current yaml configuration for this pod so that I can just copy it and just change the environment variable name.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - So I'll do a kubectl get pod and then, we'll do web app dash color.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 32 | **Type:** Concept
+  - And I'll say dash 0.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Yam, also, that's gonna get the yaml configuration.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And I'm gonna just pipe it to a file and I'll call this pod dot yaml.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - And the next thing I wanna do is I wanna delete the current running pod, so I'll do kubectl delete pod.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - And then, we'll do the web app dash color.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And now that the pod's deleted, let's go into the pod dot yaml file and make some modifications.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So I'll do a VI pod dot yaml.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And what we wanna do is we wanna go down to the environment section here.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - And so, we can see that the value is set to pink.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - And we wanna change this to green.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 42 | **Type:** Best Practice
+  - And that should be the only thing that we have to change.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - And so, now we can do a kubectl apply dash F, and then pass in the pod dot yaml file.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 44 | **Type:** Concept
+  - And let's verify that that worked.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So I'll run check here.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - And we can see that everything passed.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - And the next question is just telling us to verify that the web app actually did, in fact, change its color.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - So we'll go back to our web app and I'm just going to do a refresh.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And we can see that the color changed to green.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - The next question is asking us how many ConfigMaps exist in the default namespace.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And to take a look at all of the ConfigMaps, we can do a kubectl get, and we can do ConfigMap.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Or you can just do CM for short.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - And we can see that there are two ConfigMaps.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So we'll go back and answer with two.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - For the next question, we have to identify the database host from the ConfigMap called DB dash config.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - And so, we have this ConfigMap called DB dash config.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So we'll do kubectl describe.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - And once again, you can either type out ConfigMap or we can just do CM, and then DB dash config.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 59 | **Type:** Exam Tip
+  - And for the, under the data section, if we go for the database host key, we can see that the value is set to be sql 01 dot example dot com.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So I'll select sql 01.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - For the next question, we have to create a new ConfigMap for the web app dash color pod, using the spec given below.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So we have to give it, the ConfigMap, a name of web app dash config dash map, and a value, our key value pair, of app underscore color set to be dark blue.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - And so, we're gonna run a imperative command to create this ConfigMap.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So we'll do kubectl create.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - And then, you can type out the word ConfigMap or just do CM.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And here we wanna grab the name of the ConfigMap so this is going to be web app dash config dash map.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 67 | **Type:** Warning/Pitfall
+  - I'm gonna copy this just to make sure I don't make a mistake.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - And then, we have to pass in the dash dash from literal option.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 69 | **Type:** Warning/Pitfall
+  - And I'm gonna copy this, as well, just so I don't make a mistake.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - And that's all we have to do, so I'll run that.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - It got created.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - And I'll just run a check just to verify that it worked.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - And it looks like it was successful so we'll go on to the next question.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - For the next question, we have to update the environment variable on the pod to make use of the newly created ConfigMap.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - And so, we can see these settings that we have to apply.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So on the pod name of web app dash color, we have to set the environment variable to make use of the new ConfigMap.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - All right, so first, let's delete the current pod.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - And I'll do a kubectl get pod.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - And I'll do a kubectl delete pod web app dash color.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - All right, so now that the pod's deleted, let's modify the pod dot yaml to make use of the ConfigMap.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And so, right now, the environment variable is set using just a standard key value.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - And we need to now make it reference that ConfigMap we created.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - And so, what we're gonna do is we're gonna keep the same name, but we're gonna change the value.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So instead of providing the value directly, we're gonna change this to value from.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - And then, we'll remove the green here.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - And underneath value from, we're gonna say ConfigMap key ref.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So this is gonna reference a ConfigMap.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - And then, here, we have to provide the name of the ConfigMap.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - I'll say name, and this is gonna be set to web app dash config dash map.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - And then, we have to provide the specific key from this ConfigMap.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - And the key is gonna be web app underscore color.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - And that's actually a mistake.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - It's just app.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - I'm gonna delete the web part.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So it's just app underscore color.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 96 | **Type:** Best Practice
+  - And that should be all the changes that we have to make.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So now the environment variable app underscore color is going to be set to this ConfigMap and it's gonna reference this specific key in that ConfigMap.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 98 | **Type:** Implementation Step
+  - So now, we can do a kubectl apply dash F pod dot yaml.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - Pod's created, and we can now run a check just to verify that that worked.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 100 | **Type:** Concept
+  - And it looks like everything's good to go.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 101 | **Type:** Concept
+  - And the last question is just telling you to verify that the changes were actually made to the web app.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 102 | **Type:** Concept
+  - So I'm just gonna select web app color here.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 103 | **Type:** Concept
+  - And we can see that now it's set to dark blue.
+- **File:** `051_Solution_ ConfigMaps (Optional).extraction.md` | **Entry:** 104 | **Type:** Concept
+  - So now that we've verified that it's blue now, I'll just hit okay, and that's going to complete this assignment or this lab session.
+
+### Secrets
+
+- **File:** `052_Secrets.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Welcome to this lecture on secrets in Kubernetes.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Here we have a simple Python web application that connects to a MySQL database on success.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - The application displays a successful message.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - If you look closely into the code you will see the host name, username, and password hard coded.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - This is of course not a good idea as we learned in the previous lecture.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - One option would be to move these values into a Configmap.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - The Configmap stores configuration data in plain text format, so while it would be okay to move the host name and username into a configmap, it is definitely not the right place to store a password.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - This is where secrets come in.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Secrets are used to store sensitive information like passwords or keys.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - They're similar to config maps, except that they are stored in an encoded or hashed format.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - As with Configmaps, there are two steps involved in working with secrets.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - First, create the secret and second, inject it into pod.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - There are two ways of creating a secret.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - The imperative way without using a secret definition file and the declarative way.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - By using a secret definition file with the imperative method, you can directly specify the key value pairs in the command line itself.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - To create a secret of the given values, run the cube control.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - Create secret generic command.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - The command is followed by the secret name and the option from literal.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - The from literal option is used to specify the key value pairs in the command itself.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 20 | **Type:** Exam Tip
+  - In this example, we are creating a secret by the name app secret with a key value pair db underscore host equals MySQL.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 21 | **Type:** Exam Tip
+  - If you wish to add additional key value pairs, simply specify the from literal options multiple times.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - However, this could get complicated when you have too many secrets to pass in.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Another way to input the secret data is through a file.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Use the from file option to specify a path to the file that contains the required data.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - The data from this file is read and stored under the name of the file.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Let us now look at the declarative approach.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - For this we create a definition file just like how we did for the config map.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - The file has API version kind metadata and data.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - The API version is v1.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Kind is secret.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Under metadata specify the name of the secret.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - We will call it app secret.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Under data, add the secret data in a key value format.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - However, one thing we discussed about secrets was that they are used to store sensitive data and are stored in an encoded format.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Here we have specified the data in plain text, which is not very safe.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So while creating a secret with a declarative approach, you must specify the secret values in a hashed format.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So you must specify the data in an encoded form like this.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - But how do you convert the data from plain text to an encoded format on a Linux host?
+- **File:** `052_Secrets.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Run the command echo n followed by the text you're trying to convert, which is MySQL in this case, and pipe that to the base64 utility.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - To view secrets.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Run the kube control.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Get secrets command.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - This lists the newly created secret along with another secret previously created by Kubernetes for its internal purposes.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - To view more information on the newly created secret, run the Kube control.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Describe secret command.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - This shows the attributes in the secret, but hides the value themselves.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - To view the values as well, run the Kube control.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Get secret command with the output displayed in a YAML format using the dash o option.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - You can now see the hashed values as well.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Now how do you decode these hashed values?
+- **File:** `052_Secrets.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Use the same base64 command used earlier to encode it, but this time add a decode option to it.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - Now that we have secret created, let us proceed with step two.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Configuring it with a pod.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Here I have a simple pod definition file that runs my application to inject an environment variable.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Add a new property to the container called env from the env from property is a list so we can pass as many environment variables as required.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Each item in the list corresponds to a secret item.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - Specify the name of the secret we created earlier.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Creating the pod definition file now makes the data in the secret available as environment variables for the application.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - What we just saw was injecting secrets as environment variables into the pods.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - There are other ways to inject secrets into pods.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - You can inject a single environment variables or inject the whole secret as files in a volume.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - If you were to mount the secret as a volume in the pod, each attribute in the secret is created as a file with the value of the secret as its content.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - In this case, since we have three attributes in our secret, three files are created, and if we look at the contents of the db password file, we see the password in it.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - That's it for this lecture.
+- **File:** `052_Secrets.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Head over to the coding exercises and practice working with secrets.
+
+### Solution - Secrets (Optional)
+
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Okay, so let's go through the lab for secrets.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the first question is, how many secrets exist on the system in the default namespace?
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So we're going to do kubectl get secrets and there's just one.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So the answer is one.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - How many secrets are defined in the default token secret?
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So we're going to do a kubectl describe secret and we see additional details.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 7 | **Type:** Exam Tip
+  - And under the data section we have multiple details.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So we have the c assert, that's one.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - And then you have the namespace and then you have the token.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And this entire text here is the encoded token.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So we have three, that's the answer for that.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Now, what is the type of the default token secret?
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So the type, as you can see it is a Kubernetes service account token.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So that's the type.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And which of the following is not a secret data defined in the default token?
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So we know that the data is ca dot cert, namespace and token.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So that's namespace, c assert, and token type is not data.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So that's the answer to that.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 19 | **Type:** Architecture
+  - Okay, So we're going to deploy an application with the below architecture.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - And we have already deployed the required pods and services.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - Check out the pods and services created and check out the web application using the web app MySQL link about.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - So let's first check out the deployment.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - There are no deployments.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Let's check pods.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So there are two pods.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So you have a web app pod and a My SQL pod.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So you have the MySQL pod, and this is the web app pod.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - And then there are two services.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So let's check services.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And this we know is a default Kubernetes service but you also have the web app service which happens to be this and SQL zero one service, which happens to be this.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So those are the services.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - And then secret.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So there's a default token secret, but that's not the secret that's used here.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So the secret is required for the web application to connect to the My SQL database.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So let's check the application status.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - And here we can see that it's in a failed state.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - It says failed connecting to the MySQL database.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - The database host is not set, the DB is not set and the password is not set.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 39 | **Type:** Troubleshooting
+  - So that's the error.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Let's proceed.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - So the reason the application is failed is because we have not created the secret object yet.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - So let's create a new secret named DB secret with the data given below.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - So let's create a secret.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - So kubectl create secret, and let's quickly check the help.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - So when you create a secret you have to specify the type of secret.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - So we're not going to create a docker registry or TLS we're just going to create a generic secret.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So let's check the help for that.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - And here we see the syntax is to create a secret is to specify secret generic and then the name of the secret followed by the data from a file.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 49 | **Type:** Exam Tip
+  - Or it could be from multiple files or it could just be from later on just from the command line.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So we're gonna use this approach cuz we have the information right here.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So let's do that.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 52 | **Type:** Warning/Pitfall
+  - Secret generics, don't forget generic.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - The name of the secret is DB secret.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - Then we have from literal DB post equals SQL zero one.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - Then from literal, again, DB user equals root.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - I remember that these are case sensitive.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - And then from literal again and DB password equals password one two three.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - That's verified if it's created.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - Describe DB secret, describe secret, then DB secret.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - We see that's created with the data DB host, DB user and DB password.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Okay, so that's a success.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - Next is to configure a web app pod to load environment variables from the newly created secret.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - So let's check the pod out first.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So we have the web app pod and currently there are no secrets.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So let's edit the pod to add the secret.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 66 | **Type:** Warning/Pitfall
+  - But if we don't know how to do that let's first review the Kubernetes documentation pages and look at secrets.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - And let's go to the first one.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Okay, so we are at the page for secrets.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - And here as you can read you must not create secret as we created just now to store database credentials or passwords.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - That's because the secret data is stored in CD as is without any encryption.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So anyone who has access to the APIs server... or the CD database can read or even modify the secret, right?
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So must enable the encryption at rest or look into enabling roll back based access controls.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - And so let's go ahead and configure the secret, find information on configuring the secret for the pod.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So you can see that here.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 75 | **Type:** Implementation Step
+  - So here you have using a secret and then you also have using secrets as environment variables.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 76 | **Type:** Exam Tip
+  - So there are multiple options here.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - And here's one that we could use, which is the ENV from what we did for the config map.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - So we could use the ENV from and then specify a secret key reference.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - That way all the data stored in the secret is gonna be passed through as environment variable.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So let's copy that.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And this is going to go into the container section.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - We can have this anywhere.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 83 | **Type:** Best Practice
+  - Space that, and the key name should be DB secret.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 84 | **Type:** Concept
+  - Okay, let's save the file.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 85 | **Type:** Concept
+  - And so they're gonna allow us to edit it.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 86 | **Type:** Concept
+  - That's fine.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - I'm gonna quit and let's do a kubectl replace and specify the file.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - And we will just wait for the file, for the pod to be deleted and recreated.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - And let's verify the pod.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - We see that the environment variables are read from the DB secret.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - Okay, let's check this out.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 93 | **Type:** Implementation Step
+  - Okay, that's configured correctly and let's go back and review the web application.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - And we see that it's now a success.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 95 | **Type:** Concept
+  - It's able to read the environment variables as we passed through, right?
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 96 | **Type:** Best Practice
+  - And yeah, of course remember we should not, you know read passwords and display like this.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - But this is just a sample application to prove how secrets can be passed through as an environment variables.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 98 | **Type:** Troubleshooting
+  - And this kind of helps us debug if something is not passed through right.
+- **File:** `056_Solution - Secrets (Optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Okay, so that's the end of this lab.
+
+### Demo_ Encrypting Secret Data at Rest
+
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, so in this video, we're going to look into encrypting secret data at rest.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So if you go to the Kubernetes documentation pages, and under task you have administrative cluster, and encrypting secret data at rest, and you have these following documents.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - I'm going to follow this, but also kind of try and explain what we are trying to do.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - So, the first thing, first thing first, I'm going to start up a Kubernetes playground.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So, this is a single node cluster.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - All right, so, this basically uses, it's built with the (inaudible) tool and has container D.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - I'm just going to maximize this, and we'll just work on the terminal.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - All right, so first things first.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - I'm going to first create a secret object.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So I'm going to do a (inaudible) (computer keyboard clicks) create secret, and I want a generic secret, so I'll do that.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - And I'll probably create a secret from literals.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - I'm just going to copy this command.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Okay.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So I'm going to call it "Key One" and super secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So that's my secret object.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So my secret object is created.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So if I now do a get secret, I get to see my secret object.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And if I do a describe (computer keyboard clicks) secret, I get to see that its the, the secret name and the data.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - If I want to see a little bit more.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - I'll do a (indistinct muttering) and I'm gonna do a get secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Okay, and I get to see the data here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Now, if you look here, so this is key one, and this is kind of the encoded format of the secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So remember that, you know, anyone could take this and decode it and easily view the actual secret, right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So if I do, let me see if I have it base64.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Yep, I do. (computer keyboard clicks) So, going to get that again.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So I'm going to do a echo.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Copy and paste this.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Let's pass it through base64 and do a cheat code.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - And I get to see the, the secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Okay?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - So, so that's the first thing to know that the secrets objects stored in the secret configuration as you see it here, is just base64 encoded.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So if you just do a base64 D code, you're gonna see this.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - So remember not to create your secret definition files and you know, push it to GitHub, or something, because anyone could just pick this up, and run this command and see the secret, right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - So that's the first step.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - But I wanna make it clear that, this, the scope of this video is not really relevant to this encoding here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 36 | **Type:** Architecture
+  - We are going to focus on the data that's stored within the ETCD server.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Okay?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So this, after we are done, this part is still going to be, still going to remain the same.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So we're not really focusing on this part right here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 40 | **Type:** Architecture
+  - What we are focusing on, is how the data is stored in the at ETCD server.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So, that's the focus.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 42 | **Type:** Architecture
+  - So, let's first look at how this data is stored in the ETCD server.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Okay, so for that, if you go to the bottom of this, there is this command.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 44 | **Type:** Architecture
+  - It uses the ETCD API version three.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 45 | **Type:** Architecture
+  - It runs the ETCD (inaudible) command passing the CS certificates for authentication, and we're gonna get this particular secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 46 | **Type:** Architecture
+  - So, the way that it's stored in ETCD is, is stored in registry, and secrets and default, and this is the secret name.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 47 | **Type:** Architecture
+  - So, let me first see if we have the ETCD (inaudible) command line.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 48 | **Type:** Warning/Pitfall
+  - So we don't have that.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - So the first step, is to get that installed.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 50 | **Type:** Architecture
+  - So I'm just gonna do a apt get install, I think it's ETCD client.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Yep.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 52 | **Type:** Warning/Pitfall
+  - So if you do not have the ETCD on, so so remember that the ETCD server is running in a pod.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 53 | **Type:** Architecture
+  - So you can either search into the exec, into the pod and then runs ETCD cuddle command from within that.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 54 | **Type:** Architecture
+  - Or if you're, you wanna run it locally from your control plane node you could use the ETCD cuddle client.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Now, if the client command line utility is not available you have different options to install it on different systems.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So let me see.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 57 | **Type:** Exam Tip
+  - Okay, so I have it installed on my machine using the ETCD, the, the package ETCD client.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 58 | **Type:** Architecture
+  - So look up for whatever it is that your the version of ETCD that you're running.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Okay, So that's there.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 60 | **Type:** Architecture
+  - So now we've got it ETCD Cuddle utility.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So that's, remember that's the client only the server is still running on as a pod.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 62 | **Type:** Architecture
+  - So if I do a get pods dash cube system I have the ETCD control plane here, right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Okay.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 64 | **Type:** Implementation Step
+  - So the next step is to run this.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - So first, remember that you need the, the certificate file.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So let's see if we have that.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Yep, we do.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 68 | **Type:** Architecture
+  - So under the under ETCD you have all the certificates files needed for its for connecting or authenticating to the ETCD server.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So that's good.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So I'm gonna copy this command.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 71 | **Type:** Architecture
+  - Remember to set the version ETCD Cuddle API version to 3 And the name of the secret is secret one.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - See what I created?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - It's secrets.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 74 | **Type:** Concept
+  - So it's named my secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So I'm gonna replace that with my secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - I'm gonna do a, my secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Now if I just run this command, you can see that it kind of gives me a kind of a jumbled information but you can kind of see the secret there as is, right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - You can see the secret there in a text format.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - To see it in this format you just need to append the hex term to it because sometimes you may not be able to see it in the right format.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 80 | **Type:** Architecture
+  - So this is the data that's stored in ETCD and if you look closely, you'll see that the the secret that I have, the password or whatever it is that I've stored, is actually visible like this.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 81 | **Type:** Architecture
+  - So the data is stored in ETCD in a, an unencrypted format.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 82 | **Type:** Architecture
+  - So anyone with access to ETCD will be able to just go through and get all the secret secrets and other confidential information stored as as a secret object.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - So that's, that's the problem here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 84 | **Type:** Architecture
+  - So this is the problem that we are trying to solve by enabling encryption at rest in ETCD.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - Now, if you go through this document first thing that I would say is first we need to determine if encryption address is already enabled or not.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - So this is done with a property called encryption provider config.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 87 | **Type:** Architecture
+  - So if I go to my Cuba API server, so let's say my cube a server is running as a process here and let me just grab for cube API server and I get to see the S server process running with all the options.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - Let's, let's first see if it has the encryption, provider config options.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - So that's the first thing that we'll do.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - This is to check if encryption rest is already enabled.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - And as you can see, it does not return a result.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - So that means this option is not configured.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - You can, we can also kind of verify this because this is a cube ADM setup.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - It uses the, our manifest KC Kubernetes manifest.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - Yeah, it is Kubernetes manifest.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 96 | **Type:** Concept
+  - And here you have the cube a server.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So if configuration, so if you look at this particular file do a cat, we'll be able to see all the options provided.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 98 | **Type:** Warning/Pitfall
+  - And here you don't see the encryption option that we have talked about here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 99 | **Type:** Concept
+  - So this means that encryption at rest is not not enabled.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 100 | **Type:** Implementation Step
+  - So that's the first step, and we've already verified that by creating the secret subject.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - Okay?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 102 | **Type:** Implementation Step
+  - So the next step is to create a configuration file and then pass it in as this particular option.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - So that's it.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 104 | **Type:** Implementation Step
+  - So that's basically the steps required to enable encryption right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 105 | **Type:** Implementation Step
+  - You create a configuration file and you pass it in as an option.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - So let's look at the configuration file.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - So this is what it is.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 108 | **Type:** Implementation Step
+  - So you have the API version, you have the kind this encryption configuration, and then you have resources.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - Now you can pick and choose which resources you want to encrypt, right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 110 | **Type:** Implementation Step
+  - So you have pods and deployments and secrets and services.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - You want to store all of them as encrypted you might not because not everything is confidential, right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 112 | **Type:** Implementation Step
+  - So you need not necessarily encrypt and save all the data about pods and, and, and deployments.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - Here our concern is just secrets.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - So under resources, you specify the targets.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - So this is secrets that means only the secret objects are going to be encrypted.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - Now you can encrypt something using a set of providers, right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - So the default one is called identity.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - Now the identity provider just means that there's no encryption at all.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - So you can see the list of providers here, and it says the identity provider says there's no encryption Resources are rich without any encryption.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 120 | **Type:** Implementation Step
+  - So, and then you have other providers which are these and those are listed here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 121 | **Type:** Concept
+  - So you have the secret box you have the AEs, gcm, the AEs, cbc, so CBCs.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - So all of these are encryption algorithms different encryption algorithms.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 123 | **Type:** Concept
+  - And you can see the details about how they're how they encrypt here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - So you can choose whichever one you want and provide a key.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - So this key has a secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 126 | **Type:** Exam Tip
+  - You can provide multiple keys, keys and secrets.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 127 | **Type:** Concept
+  - And this secret is what will be used to use for the encryption by the encryption algorithm, right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - Now one thing to note here is the order.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - So this, as you can see providers is a list.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 130 | **Type:** Implementation Step
+  - So these, this is the first item in the list second item in the list, third item and the list and fourth item in the list.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 131 | **Type:** Implementation Step
+  - So this order matters because when when the encryption happens it first it uses this to encrypt and then it could use any of these to de decrypt, right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - So always encryption happens with this.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 133 | **Type:** Implementation Step
+  - So if identity provider, which is a pro which has no encryption is the first one then there's no encryption enabled at all.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - So that's how it, that's how it works.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 135 | **Type:** Implementation Step
+  - So if this is the first one that means this is what is going to be used for encryption.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 136 | **Type:** Concept
+  - And since it's identity it's not going to encrypt anything at all.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 137 | **Type:** Best Practice
+  - So if we, if you really want to encrypt the data in cd then one of these should be at the top, okay?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 138 | **Type:** Implementation Step
+  - So that's, that's then, that's the whatever is the first one is what's going to be used for encryption.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 139 | **Type:** Concept
+  - So let's just do this real quick.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 140 | **Type:** Implementation Step
+  - So we're gonna create a very simpler version of this file, which is which is this and this, as you can see, we have specified that all the secrets are gonna be encrypted.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 141 | **Type:** Concept
+  - And we're gonna use the AEs, CBC encryption provider.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 142 | **Type:** Concept
+  - And you, as you can see, identities at the bottom.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 143 | **Type:** Implementation Step
+  - So the first one is AEs cbc.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 144 | **Type:** Concept
+  - So this is what is going to be used for encryption.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 145 | **Type:** Concept
+  - Now this requires a secret object.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 146 | **Type:** Concept
+  - So we could generate a 32 by random key using this, using this.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 147 | **Type:** Implementation Step
+  - I'm just gonna copy this, I'm gonna get that key first.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 148 | **Type:** Concept
+  - So this, that's what our key is going to be.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 149 | **Type:** Implementation Step
+  - Then I'm gonna copy this and create encryption object file.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 150 | **Type:** Best Practice
+  - So I'll call it BNC dot aml, and I'm gonna paste this, okay should have copied the secret value first.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 151 | **Type:** Concept
+  - I'm gonna copy this and I'm gonna go here and replace the secret object here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 152 | **Type:** Concept
+  - Okay.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 153 | **Type:** Concept
+  - Okay, so that's that.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 154 | **Type:** Concept
+  - So now I have the encryption configuration file.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 155 | **Type:** Concept
+  - It's currently in my home directory.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 156 | **Type:** Concept
+  - Now all I need to do is go and edit this file.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 157 | **Type:** Implementation Step
+  - So that's the next step shown here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 158 | **Type:** Implementation Step
+  - So in the cube, a server, I'm gonna add this line to point to the encryption file that I just created.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 159 | **Type:** Implementation Step
+  - Then of course we need to since the file is created locally I have to mount it inside.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 160 | **Type:** Concept
+  - So I'm gonna use volumes and volume ones.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 161 | **Type:** Concept
+  - If you have not gone through the volumes and volume ones yet that you might want to take a look at that and come back.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 162 | **Type:** Concept
+  - But this is pretty straightforward.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 163 | **Type:** Concept
+  - So here you have the directory, the local directory and that's on my, on my mission on my control panel node here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 164 | **Type:** Concept
+  - And this directory is gonna be mapped to this path within the pod.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 165 | **Type:** Implementation Step
+  - And then, so anything that's available here is gonna be available here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 166 | **Type:** Concept
+  - That's it, right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 167 | **Type:** Implementation Step
+  - So first I'm gonna create this local directory so they can put my file there.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 168 | **Type:** Concept
+  - Okay, I'm gonna move my encryption file from here to the local directory.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 169 | **Type:** Concept
+  - Make sure, Yeah, so I have the file there now.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 170 | **Type:** Architecture
+  - So now I'm gonna edit the QA API server manifest file and then make these changes.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 171 | **Type:** Concept
+  - Okay?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 172 | **Type:** Implementation Step
+  - So that's the next step.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 173 | **Type:** Architecture
+  - So I'm gonna go into it is manifest and QA API server.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 174 | **Type:** Implementation Step
+  - And the first thing that I'm gonna do, I'm going to add this line.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 175 | **Type:** Concept
+  - So this is what tells where the encryption configuration file is.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 176 | **Type:** Implementation Step
+  - So that's the first step.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 177 | **Type:** Implementation Step
+  - And then I'm gonna go down.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 178 | **Type:** Concept
+  - So I have two things.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 179 | **Type:** Concept
+  - I have volume mounts.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 180 | **Type:** Concept
+  - So this is inside my volume, inside the pod where it's gonna be mounted.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 181 | **Type:** Concept
+  - So I'm gonna copy this.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 182 | **Type:** Concept
+  - So the directory, the local directory is gonna be mounted into this path.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 183 | **Type:** Implementation Step
+  - So that's the first step.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 184 | **Type:** Implementation Step
+  - Then below under mounts, I'm going to specify the location of my local directory.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 185 | **Type:** Concept
+  - Okay?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 186 | **Type:** Concept
+  - So this is how it works on my local host the ETSC Kubernetes ENC directory is going to be mapped to THEC Kubernetes Inc.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 187 | **Type:** Concept
+  - Directory inside the pod.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 188 | **Type:** Implementation Step
+  - And then, so since my ENC dot ammo file is available locally, that file is gonna be available inside.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 189 | **Type:** Concept
+  - And that's it.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 190 | **Type:** Best Practice
+  - Okay, let me see if that, So now that I've saved it made changes to this file, that Q A P S server should be restarting.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 191 | **Type:** Concept
+  - So let's just give it a few seconds.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 192 | **Type:** Concept
+  - Let's see.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 193 | **Type:** Concept
+  - Okay, so this is now, it's now gone.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 194 | **Type:** Concept
+  - So I'm gonna wait for it to come back Waiting.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 195 | **Type:** Concept
+  - And if you wanna see the status of the Q A PS server, since we are using container D so you could use a cry cuddle command.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 196 | **Type:** Concept
+  - So you could do the cry cuddle parts to sees come up.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 197 | **Type:** Concept
+  - Okay, so it looks like it's ready three seconds ago.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 198 | **Type:** Concept
+  - I'm just gonna do, Yep, so it's back.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 199 | **Type:** Concept
+  - Okay, so now let's do a PSA X and GR hub Yes, server.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 200 | **Type:** Concept
+  - And let's see if it has just to confirm if it has the encryption.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 201 | **Type:** Implementation Step
+  - Yeah, so it looks like it has the encryption provider configured.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 202 | **Type:** Concept
+  - Okay, so that's, that's good.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 203 | **Type:** Implementation Step
+  - Now what we're going to do is going to create another secrets file.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 204 | **Type:** Implementation Step
+  - So we're going to create a secret object.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 205 | **Type:** Implementation Step
+  - So we're going to create (inaudible) create secret, and Eric, okay?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 206 | **Type:** Implementation Step
+  - And we are going to pick this and this time we'll just create the second one which is key two.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 207 | **Type:** Concept
+  - So you have key two, and it's called the values top secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 208 | **Type:** Implementation Step
+  - Create that, My secret already exists I'm gonna say my secret two maybe.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 209 | **Type:** Concept
+  - Yep.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 210 | **Type:** Concept
+  - Okay, so I now have two.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 211 | **Type:** Implementation Step
+  - This is the first one I created.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 212 | **Type:** Implementation Step
+  - This is the second one I just created after encryption was enabled.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 213 | **Type:** Concept
+  - So I'm gonna go and run the same command as I did previously to check the status of of that within scd.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 214 | **Type:** Concept
+  - So run this, and the name is my secret too.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 215 | **Type:** Concept
+  - And Okay.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 216 | **Type:** Concept
+  - And as you can see, I can no longer see the top seeker.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 217 | **Type:** Warning/Pitfall
+  - So the value was top secret and I don't I no longer see that here.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 218 | **Type:** Concept
+  - That means encryption is enabled, okay?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 219 | **Type:** Concept
+  - And if I do the same for the old one, I'll I still see the super secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 220 | **Type:** Implementation Step
+  - Now this is because after encryption is enabled only things that you create newly will be will be encrypted.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 221 | **Type:** Concept
+  - Everything that existed previously won't be re-encrypt.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 222 | **Type:** Implementation Step
+  - But if you update an existing configuration then that will be re re-encrypt.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 223 | **Type:** Concept
+  - So one of the thing that you have here is to ensure all secrets are encrypted.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 224 | **Type:** Implementation Step
+  - So to, and what this is doing is basically you're getting getting the secrets and then just re replacing them with the same JS on file.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 225 | **Type:** Concept
+  - So essentially you're just updating the objects with the same data.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 226 | **Type:** Concept
+  - So I'm just gonna do that.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 227 | **Type:** Concept
+  - So that's done.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 228 | **Type:** Concept
+  - And if I run the same command again I see that no longer sees the super, super secret.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 229 | **Type:** Concept
+  - All right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 230 | **Type:** Concept
+  - So that's basically encrypting secret data at rest using one of these encryption algorithms.
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 231 | **Type:** Concept
+  - Right?
+- **File:** `057_Demo_ Encrypting Secret Data at Rest.extraction.md` | **Entry:** 232 | **Type:** Implementation Step
+  - Thank you very much and I'll see you in the next one.
+
+### Pre-requisite - Security in Docker
+
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will talk about security contexts in Kubernetes.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - But before we get into that, it is important to have some knowledge about security in Docker.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - If you are familiar with security in Docker, feel free to skip this lecture and head over to the next.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - In this lecture, we will look at the various concepts related to security in Docker.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - Let us start with a host with Docker installed on it.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - This host has a set of its own processes running, such as a number of operating system processes, the Docker daemon itself, the SSH server, etc. we will now run an ubuntu Docker container that runs a process that sleeps for an hour.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - We have learned that unlike virtual machines, containers are not completely isolated from their host containers, and the hosts share the same kernel.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Containers are isolated using namespaces.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - In Linux, the host has a namespace and the containers have their own namespace.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - All the processes run by the containers are in fact run on the host itself, but in their own namespace.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - As far as the Docker container is concerned, it is in its own namespace and it can see its own processes only.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - It cannot see anything outside of it or in any other namespace.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So when you list the processes from within the Docker container, you see the sleep process with a process ID of one.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - For the Docker host, all processes of its own, as well as those in the child, namespaces are visible as just another process in the system.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - So when you list the processes on the host, you see a list of processes, including the sleep command, but with a different process ID.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - This is because the processes can have different process IDs in different namespaces.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - And that's how Docker isolates containers within a system.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So that's process isolation.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Let us now look at users in context of security.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - The Docker host has a set of users a root user, as well as a number of Non-root users.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - By default, Docker runs processes within containers as the root user.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - This can be seen in the output of the commands we ran earlier, both within the container and outside the container on the host.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - The process is run as the root user.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 24 | **Type:** Warning/Pitfall
+  - Now, if you do not want the process within the container to run as the root user, you may set the user using the user option within the docker run command and specify the new user ID.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - You will see that the process now runs with the new user ID.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Another way to enforce user security is to have this defined in the Docker image itself at the time of creation.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 27 | **Type:** Exam Tip
+  - For example, we will use the default ubuntu image and set the user id to 1000 using the user instruction.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - Then build the custom image.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - We can now run this image without specifying the user id, and the process will be run with the user id 1000.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - Let us take a step back.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - What happens when you run containers as the root user?
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Is the root user within the container the same as the root user on the host?
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Can the process inside the container do anything that the root user can do on the system?
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - If so, isn't that dangerous?
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Well, Docker implements a set of security features that limits the abilities of the root user within the container.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So the root user within the container isn't really like the root user on the host.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 37 | **Type:** Command
+  - 
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - As we all know, the root user is the most powerful user on a system.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - The root user can literally do anything.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - And so does a process run by the root user.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - It has unrestricted access to the system from modifying files and permissions on files, access control, creating or killing processes, setting group ID or user ID.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - Performing network related operations such as binding to network ports.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - Broadcasting on a network. controlling network ports system related operations like rebooting the host, manipulating system clock, and many more.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - All of these are the different capabilities on a Linux system, and you can see a full list at this location.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - You can now control and limit what capabilities are made available to a user.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 46 | **Type:** Warning/Pitfall
+  - By default, Docker runs a container with a limited set of capabilities, and so the processes running within the container do not have the privileges to say, reboot the host or perform operations that can disrupt the host or other containers runnin...
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 47 | **Type:** Operational Insight
+  - If you wish to override this behavior and provide additional privileges than what is available, use the cap add option in the docker run command.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Similarly, you can drop privileges as well using the cap drop option, or in case you wish to run the container with all privileges enabled, use the privileged flag.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Well that's it on Docker Security for now.
+- **File:** `058_Pre-requisite - Security in Docker.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - I will see you in the next lecture.
+
+### Security Contexts
+
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - As we saw in the previous lecture, when you run a Docker container, you have the option to define a set of security standards, such as the ID of the user used to run the container, the Linux capabilities that can be added or removed from the conta...
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Containers are encapsulated in pods.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - You may choose to configure the security settings at a container level or at a pod level.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - If you configure it at a pod level, the settings will carry over to all containers within the pod.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - If you configure it at both the pod and the container, the settings on the container will override the settings on the pod.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Let us start with pod definition file.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - This pod runs an ubuntu image with the sleep command to configure security context on the container.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Add a field called Security context under the spec section of the pod.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Use the run as user option to set the user ID for the pod.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - To set the same configuration on the container level.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Move the whole section under the container specification like this to add capabilities.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Use the capabilities option and specify a list of capabilities to add to the pod.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Well, that's all on security contexts in Kubernetes.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 14 | **Type:** Troubleshooting
+  - Head over to the Coding Exercises section and practice viewing, configuring, and troubleshooting issues related to security contexts in Kubernetes.
+- **File:** `059_Security Contexts.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - That's it for now and I will see you in the next lecture.
+
+### Solution_ Security Contexts
+
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - Instructor: So for the first question it's asking is what is the user used to execute the sleep process within the ubuntu-sleeper pod?
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - So if you ever wanna see what user you're logged into as on a Linux machine, you can run the command whoami.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So all we need to do is run that command inside the container.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So we'll do kubectl get pod.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - We can see the pod ubuntu-sleeper so I'll do kubectl exec ubuntu-sleeper, and then we'll do the two dashes and now we enter in the command we wanna run, so we just do whoami.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - And I forgot an E right here.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - And we could see that the user that's used to execute the sleep process is the root user, so we'll select root.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - The next question is asking us to edit the pod ubuntu-sleeper to run the sleep process with the user ID of 1010.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - So to do this, I'm gonna first get the configuration of the current pod because it's saying "Only make the necessary changes." So I'll do kubectl get pod ubuntu-sleeper and I'll do -o yaml and we'll pipe this out to a file.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - And I realized I misspelled this, and now we'll open up that file.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - And so to change the user, we're gonna look for a property called security context.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Okay, so here we'll go under security context and we just have to add one line in and we just have to say run as user, and then we provide the idea of the user, which could be 1010.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - So we will save the configuration then I'm gonna do a kubectl delete pod, so I'm gonna delete the current pod.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - I'll do a --force just so it deletes it a little bit quicker.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - And then now we can apply the configuration that we just created, and I'm gonna do a kubectl get pod just to make sure that it's up and running and it's running.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - So let's go ahead and run the validation and we can go to the next question.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - The next question is saying a pod definition file named multi-pod.yaml is given.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - With what user are the processes in the web container started?
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 19 | **Type:** Exam Tip
+  - So this pod is created with multiple containers and security context defined at the pod and container level.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Okay, so let's open up the multi-pod configuration and we wanna find what is the user for the process in the web container.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So if we take a look at the configuration, we can see that the security context was set to run as user 1001, and this is at the pod level, but within the container level, we could see we overrid it for the web container and we've set it to be 1002.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So this is going to be more specific and it's gonna override the pod context.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So the answer's gonna be 1002.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Next question is asking us with what user are the processes in the sidecar container started?
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So in this case, we could see that there's no container level security context configuration so it's going to default to the pod level security context, so that's gonna be 1001.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - The next question is asking us to update the ubuntu-sleeper pod to run as root user and with the SYS_TIME capability.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - The next question is asking us to update the ubuntu-sleeper pod to run as root users.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - We're gonna change it back to the root user and add the SYS_TIME capabilities.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - So I'm gonna open up the ubuntu-sleeper configuration file, and so first of all, we're going to remove the security context config 'cause we want to run it as the root user now, so I'll just delete those two lines.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - Then we're gonna add the SYS_TIME capability.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So we're gonna go under the container that we're interested in and I'm just gonna go...
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - It doesn't really matter where but I'll just go right here, and we'll add a security context line.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - And then under here, we're gonna pass in a property called add...
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - Oh, sorry, not add, capabilities.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - And then under here, we're gonna add, and this is going to take a list of different capabilities, and so we're just gonna add the SYS_TIME.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 36 | **Type:** Best Practice
+  - And that should be everything we need, so I'll save the configuration.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - We'll then do a kubectl delete pod and then we'll do an apply.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - All right, so pod has now been created.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Let's go ahead and validate that and looks like everything's good to go.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - And the final question is asking us to update this pod to make use of the NET_ADMIN capability.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So we could just go in, this is gonna be pretty simple, and under the add, we just add in the extra capability that we want.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So I'll say NET_ADMIN and that's all we have to do.
+- **File:** `061_Solution_ Security Contexts.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - So we will delete this again and then we will apply it and we'll run the validation, and that's going to wrap up this assignment.
+
+### Resource Requirements
+
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Let's look at resource requirements.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - Let us start by looking at a three node Kubernetes cluster.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Each node has a set of CPU and memory resources available.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Now every pod requires a set of resources to run.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 5 | **Type:** Exam Tip
+  - In this case, for example, this pod requires two CPUs and one memory unit.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Now, whenever a pod is placed on a node, it consumes the resources available on that node.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 7 | **Type:** Architecture
+  - Now, as we have discussed before, it is the Kubernetes Scheduler that decides which node a pod goes to.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 8 | **Type:** Architecture
+  - The scheduler takes into consideration the amount of resources required by a pod and those available on the nodes, and identifies the best node to place a pod on.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 9 | **Type:** Architecture
+  - In this case, the scheduler schedules a new pod on node two because there are sufficient resources available on that node.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - If nodes have no sufficient resources available.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 11 | **Type:** Best Practice
+  - The scheduler avoids placing the pod on those nodes, and instead places the pod on one where sufficient resources are available, and if there is no sufficient resources available on any of the nodes, then the scheduler holds back, scheduling the p...
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - And if you look at the events using the kube control describe pod command, you will see there is an insufficient CPU.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Now let us now focus on the resource requirements for each pod.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So what are these blocks and what are their values.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Now you can specify the amount of CPU and memory required for a pod when creating one.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 16 | **Type:** Exam Tip
+  - For example, it could be one CPU and one GB of memory and this is known as the resource request for a container.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So the minimum amount of CPU or memory requested by the container.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 18 | **Type:** Architecture
+  - So when the scheduler tries to place the pod on a node, it uses these numbers to identify a node which has sufficient amount of resources available.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - So to do this in the the sample pod definition file, all you need to do is add a section called resources under which add requests and specify the new values for memory and CPU usage.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - In this case, I set it to four GB of memory and two counts of CPU.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 21 | **Type:** Architecture
+  - So when the scheduler gets a request to place this pod, it looks for a node that has this amount of resources available.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - And when the pod gets placed on a node, the pod gets a guaranteed amount of resources available for it.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So what does one count of CPU really mean?
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Now you can specify any value as low as 0.1.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So 0.1 CPU can also be expressed as 100 M, where M stands for milli, and you can go as low as one M, but not lower than that.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Uh, now one count of CPU is equivalent to one Vcpu so that's one vcpu in AWS.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So if you're looking at the AWS cloud, or it could be referred to as one core in GCP or Azure or one hyper thread, um, on other other systems, and you could request a higher number of CPUs for the container provided your nodes are sufficiently fun...
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 28 | **Type:** Exam Tip
+  - In this example, I have set it to five.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 29 | **Type:** Troubleshooting
+  - Now, similarly with memory, you could specify 256 mebibyte using the mi suffix, or specify the same value in memory like this.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - That's the um, the full number, the whole number, and or specify the same, uh, value in memory like this as m.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 31 | **Type:** Troubleshooting
+  - So um, or use the suffix g for uh, gigabyte.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 32 | **Type:** Comparison
+  - So note the difference between g and g.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - So g is gigabyte and it refers to 1000MB, whereas g refers to GB byte.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And that that would be equivalent to 1024MB.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So the same applies to megabyte and maybe byte in kilobyte and kibibyte.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Now let's look at a container running on a node, and by default, a container has no limit to the resources it can consume on a node.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So say a container that's part of a pod starts with one CPU.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Um, on a node, it can go up and consume as much resources as it requires.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And, and that suffocates the native processes on the node or other containers of resources.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Um, however, you can set a limit for the resource usage on these pods.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 41 | **Type:** Exam Tip
+  - For example, if you set a limit of one vcpu to um, the containers, a container will be limited to consume only one vcpu uh, from that node.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So the same goes with memory.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 43 | **Type:** Exam Tip
+  - For example, you can set a limit of 512 megabyte on containers.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - Um, like this.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Now you can specify the limits under the limits section.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Under the resources section in your Pod definition file.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So here specify the new limits for memory and CPU.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Like this.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - Now when the pod is created, Kubernetes sets new limits for the container.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And remember that the limits and requests are set for each container within a pod.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 51 | **Type:** Exam Tip
+  - So if there are multiple containers, then each container can have a request or limit set for its own.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - So what happens when a pod tries to exceed resources beyond its specified limit?
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - In case of the CPU, the system throttles the CPU so that it does not go beyond the specified limit.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - A container cannot use more CPU resources than its limit.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - However, this is not the case with memory.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - A container can use more memory resources than its limit, so if a pod tries to consume more memory than its limit constantly.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 57 | **Type:** Troubleshooting
+  - The pod will be terminated and you'll see that the pod terminated with an error in the logs or in the output of the describe command when you run it.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So that's what is Om refers to out of memory kill.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So now that we have learned what resource requests are and what limits are and how they function, and what happens when a particular container or pod hits the limits of that were defined.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Let's see what the default configuration is right?
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - So by default Kubernetes does not have a CPU or memory request or limit set.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So this means that any pod can consume as much resources as required on any node, and suffocate other pods or processes that are running on the node of resources.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - So this is very, very important to note.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So let's just look at how CPU requests and limits work.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Let's say there are two pods competing for CPU resources on the cluster.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And when I say pod, I mean a container within a pod, right?
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So just keep that in mind.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So without a resource or a limit set, one pod can consume all the CPU resources on the node and prevent the second part of required resources.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So of course this is not ideal.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Now let's look at another case where we have no request specified.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - But we do have limits specified.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - In this case, Kubernetes automatically sets requests to the same as limits.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 73 | **Type:** Exam Tip
+  - For example, requests and limits are assumed to be three in this case, and each pod is guaranteed three vCPUs and no more than that as limits are also set to the same.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - The next one is where requests and limits are set.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - In this case, each pod gets a guaranteed number of CPU requests, which is one vcpu and can go up to the limits that is defined, which is three vcpu, but not more.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So this might look to be the most ideal scenario.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 77 | **Type:** Warning/Pitfall
+  - However, the issue is that if Pod one needs more CPU cycles for some reason and pod two isn't really consuming that many CPU cycles, then we don't want to limit pod one of CPU, right?
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - So we'd like to allow pod one to use the available CPU cycles, as long as pod two doesn't, um, really need it.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - So if there are sufficient CPU cycles available on the system, then why not let the pods use them?
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Right?
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 81 | **Type:** Warning/Pitfall
+  - So we don't want to unnecessarily limit resources of CPU cycles.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So, uh, that's uh, that is not really the ideal scenario.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - And that's where the last, um, scenario comes in.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - So setting requests but no limits in this case because requests are set each pod is guaranteed one vcpu.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - However, because limits are not set when available, any pod can consume as many CPU cycles as available.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - But at any point in time, If pod two is, uh, requires additional, uh, CPU cycles or whatever it is it has requested, then it will be guaranteed its requested CPU cycle.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - So this is the most ideal setup.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Of course, there are cases where you absolutely may want to limit a pod of resources, and in that case you may set limits.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 89 | **Type:** Exam Tip
+  - For example, a good use case for setting limits is our labs themselves, where, um, all the labs that you've been, you guys have been going through and accessing, um, as part of this course, they are hosted as containers, um, on a cluster.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - Right.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 91 | **Type:** Concept
+  - And since it's made accessible to public and um, users, uh, can run any kind of workload that they want, we set limits to prevent the user from misusing the infrastructure to, let's say, perform Bitcoin mining or, um, other resource consuming acti...
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - So that works for us in that case.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 93 | **Type:** Warning/Pitfall
+  - But in your case, if you don't want to restrict your application to consume additional CPU, uh, if needed, then you could consider not setting limits.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - But remember, if you were to do that, you need to make sure that all the pods have some request set, because that's the only way a pod will have resources guaranteed when there are no limits set for other pods.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - Right.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 96 | **Type:** Implementation Step
+  - So if there is any pod that has no request set and and there are no limits set for all the all the other pods, then it's possible that any pod could consume all the memory, all the CPU that's available on the node, and starve the pod that has no r...
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 97 | **Type:** Concept
+  - So just make sure that you have set requests for all the nodes.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So a couple of things to note.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 99 | **Type:** Exam Tip
+  - The requests and limits may be different for each pod, but for the sake of simplicity we are assuming that it's the same for, um, both, uh, pods in these examples that I'm sharing here.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - Right.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 101 | **Type:** Concept
+  - But you can have absolutely different requests or limit set for containers for each containers within each pods.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - So also note that these recommendations are just for CPU.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - So um, let's look at how it works for memory next.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - So it's kind of similar.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - So if you look at the memory let's say there are two.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 106 | **Type:** Implementation Step
+  - In the first case there are two pods competing for memory resources on the cluster.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - And without a resource or limit set, one pod can consume all the memory resources on the node and prevent the second pod of required resources.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 108 | **Type:** Concept
+  - So this is not ideal.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - Now let's look at the case where we have no requests specified.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - But we do have limits specified.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - And in this case Kubernetes automatically sets requests to the same as limits.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 112 | **Type:** Exam Tip
+  - So for example requests and limits are assumed to be three gigabytes in this case.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - And each pod is guaranteed three gigabytes and no more as limits is also the same.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - The next one is where requests and limits are set.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 115 | **Type:** Concept
+  - In this case, each pod gets a guaranteed amount of memory, which is one GB byte and can go up to the limits defined, which is three gigabytes but not more.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - And the last one is setting requests, but no limits.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - In this case, because requests are set, each pod is guaranteed one GB byte.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 118 | **Type:** Concept
+  - However, because limits are not set when available, any pod can consume as much memory as available, and if part two requests more memory to free up part one, the only option available is to kill it now because unlike CPU, we cannot throttle memory.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - Once memory is assigned to a part, the only way to retrieve it is to kill the pod and free up all the memory that are used by it.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 120 | **Type:** Implementation Step
+  - Okay, so now, as we discussed before, by default Kubernetes does not have resource requests or limits configured for pods.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - But then how do we ensure that every pod created has some defaults?
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - Um, set.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 123 | **Type:** Concept
+  - Now this is possible with limit ranges.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 124 | **Type:** Implementation Step
+  - So limit ranges can help you define default values to be set for containers in pods that are created without a request or limit specified in the Pod definition files.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - This is applicable at the namespace level.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - So remember that.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 127 | **Type:** Concept
+  - And this is an object.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 128 | **Type:** Implementation Step
+  - So you create a definition file with the API version set to v1 kind set to limit range.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - And we'll give it a name CPU resource constrained.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 130 | **Type:** Implementation Step
+  - We then set the default limit to 500.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - M default request to the same as well.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - Um, we will also specify a max CPU as one and a minimum as 100 M, so the max refers to the maximum limit that can be set on a container in a pod, and minimum refers to the minimum request a container in a pod can make.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 133 | **Type:** Exam Tip
+  - So these are of course some example values, not a recommendation or anything.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - So you must set whatever is best for your applications.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - Um so the same goes for memory.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 136 | **Type:** Concept
+  - Uh, use memory instead of CPU and specify the defaults and max and min values in this in this form.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 137 | **Type:** Implementation Step
+  - And note that these limits are enforced when a pod is created.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 138 | **Type:** Implementation Step
+  - So if you create or change a limit range it does not affect existing pods.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 139 | **Type:** Implementation Step
+  - It will only affect newer pods that are created after the limit range is created or updated.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 140 | **Type:** Implementation Step
+  - And finally, is there any way to restrict the total amount of resources that can be consumed by applications deployed in a Kubernetes cluster.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 141 | **Type:** Best Practice
+  - For example, if we had to say that all the pods together shouldn't consume more than this much of CPU or memory.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 142 | **Type:** Implementation Step
+  - What we could do is create quotas at a namespace level.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 143 | **Type:** Implementation Step
+  - So a resource quota is a namespace level object that can be created to set hard limits for requests and limits.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 144 | **Type:** Exam Tip
+  - In this example, this resource limits the total requested CPU and the current namespace to four and memory to four gigabyte.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 145 | **Type:** Concept
+  - And it defines a maximum limit of CPU consumed by all the parts together to be ten and memory to be um, ten gigabyte as well.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 146 | **Type:** Concept
+  - Right.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 147 | **Type:** Concept
+  - So that's um, that's another option, uh, that can be explored.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 148 | **Type:** Concept
+  - Well, uh, that's all for now.
+- **File:** `062_Resource Requirements.extraction.md` | **Entry:** 149 | **Type:** Implementation Step
+  - Uh, refer to these pages on the Kubernetes documentation site for more information, and head over to the labs, and I'll see you in the next one.
+
+### Solution_ Resource Requirements
+
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Teacher: In this video, I'm gonna walk you through the solutions for the resource limits lab.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - The first question, a pod called Rabbit is deployed, and we need to identify the CPU requirements set on the pod.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - To get this information, we'll do a kubectl describe pod and then well grab the name of the pod, which is Rabbit.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 4 | **Type:** Best Practice
+  - And if we scroll up we should see a resource section.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So, here we can see that the CPU requirements is that it needs to have a CPU of one.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Ill select one.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - For the next question, we just need to delete the pod called Rabbit.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - And to do that we'll just do kubectl, delete pod Rabbit.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - After that's deleted we can just check this.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - After that's verified we'll go to the next question.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - And for the next question, it looks like another pod called Elephant has been deployed in the default name space.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 12 | **Type:** Troubleshooting
+  - And for some reason or another it fails to get into a running state.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And we need to figure out why it is not in a currently running state.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So, I'm gonna do a kubectl, describe pod Elephant.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And if we scroll up, we can see that in the last state it set to terminated and we can see that the reason was because it was oomkilled, so out of memory.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So I'm gonna select oomkilled.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - And the next question is just telling us that the status of oomkilled indicates that it is failing because the pod ran out of memory.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And we need to identify the memory limits set on the pod.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - And from the same output we, if you go to the limits section for memory, we can see it's set to 10 mebibytes.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - The next question tells us that the Elephant pod runs a process that consumes 15 mebibytes of memory.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - And it tells us to increase the limit of the Elephant pod to 28 mebibytes.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - So we have to delete the current pod and the recreate it with the new configuration.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 23 | **Type:** Implementation Step
+  - So first of all, lets do a kubectl get pod and I'm gonna do dash O and then get the yaml configuration and I'm gonna pipe this to a file and I'll call this Elephant.yaml.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - Then, we'll delete the current pod.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - So I'll do a kubectl delete pod Elephant.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - And then I'll go into my Elephant.yaml file.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - And we need to increase the memory limit up to 20 mebibytes.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - Right now it's set to 10.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - We'll then save the configuration and now I can just do a kubectl apply dash F and then grab the Elephant.yaml file.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - After that's deployed we will then run the validation and everything was successful.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - We'll go to the next question.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Inspect that status of the pod, make sure it's a running state.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 33 | **Type:** Best Practice
+  - So if I do a kubectl get pod, we should see that it is a currently in a running state.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - And then I will hit, okay.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And the last question is telling us to delete the Elephant pod.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So I'll do a kubectl delete, pod Elephant.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And once that's complete we'll run the validation.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - And that's successful well then go to the next section.
+- **File:** `064_Solution_ Resource Requirements.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And that's going to wrap up the resource limits lab.
+
+### Service Account
+
+- **File:** `065_Service Account.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Instructor: Hello and welcome to this lecture.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - In this lecture, we will talk about service accounts in Kubernetes.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - The concept of service accounts is linked to other security-related concepts in Kubernetes, such as authentication, authorization, role-based access controls, et cetera.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 4 | **Type:** Exam Tip
+  - However, as part of the Kubernetes for the application developers exam curriculum, you only need to know how to work with service accounts.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - We have detailed sections covering the other concepts and security in the Kubernetes administrators course.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So there are two types of accounts in Kubernetes, a user account and a service account.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - As you might already know, the user account is used by humans, and service accounts are used by machines.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - A user account could be for an administrator accessing the cluster to perform administrative tasks, or a developer accessing the cluster to deploy applications, et cetera.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - A service account could be an account used by an application to interact with the Kubernetes cluster.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 10 | **Type:** Exam Tip
+  - For example, a monitoring application like Prometheus uses a service account to pull the Kubernetes API for performance metrics.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - An automated build tool like Jenkins uses service accounts to deploy applications on the Kubernetes cluster.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 12 | **Type:** Exam Tip
+  - Let's take an example.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - I've built a simple Kubernetes dashboard application named My Kubernetes Dashboard.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - It's a simple application built in Python and all that it does when deployed is retrieve the list of pods on a Kubernetes cluster by sending a request to the Kubernetes API and display it on a webpage.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - In order for my application to query the Kubernetes API, it has to be authenticated.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - For that, we use a service account.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - To create a service account, run the command kubectl create serviceaccount, followed by the account name, which is dashboard-sa in this case.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - To view the service accounts, run the kubectl get serviceaccount command.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - This will list all the service accounts.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - When the service account is created, it also creates a token automatically.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - The service account token is what must be used by the external application while authenticating to the Kubernetes API.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - The token, however, is stored as a secret object.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - In this case, it's named dashboard-sa-token-kbbdm.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 24 | **Type:** Implementation Step
+  - So when a service account is created, it first creates the service account object, and then generates a token for the service account.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - It then creates a secret object and stores that token inside the secret object.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - The secret object is then linked to the service account.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - To view the token, view the secret object by running the command kubectl describe secret.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - This token can then be used as an authentication bearer token while making a REST call to the Kubernetes API.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 29 | **Type:** Exam Tip
+  - For example, in this simple example using cURL, you could provide the bearer token as an authorization header while making a REST call to the Kubernetes API.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - In case of my custom dashboard application, copy and paste the token into the tokens field to authenticate the dashboard application.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - So that's how you create a new service account and use it.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - You can create a service account, assign the write permissions using role-based access control mechanisms, and export your service account tokens, and use it to configure your third-party application to authenticate to the Kubernetes API.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - But what if your third-party application is hosted on the Kubernetes cluster itself?
+- **File:** `065_Service Account.extraction.md` | **Entry:** 34 | **Type:** Exam Tip
+  - For example, we can have our custom Kubernetes dashboard application, or the Prometheus application deployed on the Kubernetes cluster itself.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - In that case, this whole process of exporting the service account token and configuring the third-party application to use it can be made simple by automatically mounting the service token secret as a volume inside the pod hosting the third-party ...
+- **File:** `065_Service Account.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - That way, the token to access the Kubernetes API is already placed inside the pod and can be easily read by the application.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 37 | **Type:** Warning/Pitfall
+  - You don't have to provide it manually.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - If you go back and look at the list of service accounts, you will see that there is a default service account that exists already.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - For every namespace in Kubernetes, a service account named default is automatically created.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Each namespace has its own default service account.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - Whenever a pod is created, the default service account and its token are automatically mounted to that pod as a volume mount.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 42 | **Type:** Exam Tip
+  - For example, we have a simple pod definition file that creates a pod using my custom Kubernetes dashboard image.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - We haven't specified any secrets or volume mounts in the definition file.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - However, when the pod is created, if you look at the details of the pod, by running the kubectl describe pod command, you see that a volume is automatically created from the secret named default token, which is in fact the secret containing the to...
+- **File:** `065_Service Account.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - The secret token is mounted at location var/run/secrets/kubernetes.io/serviceaccount inside the pod.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So from inside the pod, if you run the ls command to list the contents of the directory, you will see the secret mounted as three separate files.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - The one with the actual token is the file named token.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - If you view contents of that file, you will see the token to be used for accessing the Kubernetes API Now remember that the default service account is very much restricted.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - It only has permission to run basic Kubernetes API queries.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - If you'd like to use a different service account such as the one we just created, modify the pod definition file to include a service account field and specify the name of the new service account.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - Remember, you cannot edit the service account of an existing pod.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 52 | **Type:** Implementation Step
+  - You must delete and recreate the pod.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 53 | **Type:** Implementation Step
+  - However, in case of a deployment, you will be able to edit the service account as any changes to the pod definition file will automatically trigger a new rollout for the deployment.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - So the deployment will take care of deleting and recreating new pods with the right service account.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - When you look at the pod details now, you see that the new service account is being used.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So remember, Kubernetes automatically mounts the default service account if you haven't explicitly specified any.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - You may choose not to mount a service account automatically by setting the automountServiceAccountToken field to false in the pod spec section.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Let's now discuss some of the changes that were made in releases version 1.22 and 1.24 of Kubernetes that changed the way service accounts secrets and tokens worked.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Now, as we discussed in the previous video, every namespace has a default service account, and that service account has a secret object with a token associated with it.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - When a pod is created, it automatically associates the service account to the pod and mounts the token to a well-known location within the pod.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - In this case, it's under var/run/secrets/kubernetes.io/serviceaccount.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - This makes the token accessible to a process that's running within the pod, and that enables that process to query the Kubernetes API.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Now, if you list the contents of the directory inside the pod, you will see the secret mounted as three separate files.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - The one with the actual token is the file named token.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So if you list the contents of that file, you'll see the token to be used for accessing the Kubernetes API.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - So all of that remains same.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - This is exactly what we discussed in the previous video.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - Now let's take that token that we just saw, and if you decode this token using this command, or you could just copy and paste this token in the JWT website at jwt.io, you'll see that it has no expiry date defined in the payload section here on the...
+- **File:** `065_Service Account.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - So this is a token that does not have an expiry date set.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 70 | **Type:** Troubleshooting
+  - So this excerpt from the Kubernetes Enhancement Proposal for creating bound service account tokens describes this form of JWT to be having some security and scalability related issues.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So the current implementation of JWT is not bound to any audience and is not time bound as we just saw.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - There was no expiry date for the token.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - So the JWT is valid as long as the service account exists.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 74 | **Type:** Troubleshooting
+  - Moreover, each JWT requires a separate secret object per service account, which results in scalability issues.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - And as such, in version 1.22, the TokenRequestAPI was introduced as part of the Kubernetes Enhancement Proposal 1205 that aimed to introduce a mechanism for provisioning Kubernetes service account tokens that are more secure and scalable via an API.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So tokens generated by the token request API are audience bound, they're time bound and object bound, and hence are more secure.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - Now, since version 1.22, when a new pod is created, it no longer relies on the service account secret token that we just saw.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - Instead, a token with a defined lifetime is generated through the TokenRequestAPI by the service account admission controller when the pod is created.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - And this token is then mount as a projected volume onto the pod.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - So in the past, if you look at this space here, you'd see the secret that's part of the service account mount as a secret object.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - But now as you can see, it's a projected volume that actually communicates with the token controller API, TokenRequestAPI, and it gets a token for the pod.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 82 | **Type:** Concept
+  - Now with version 1.24, another enhancement was made as part of the Kubernetes Enhancement Proposal 2799, which dealt with the reduction of secret-based service account tokens.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 83 | **Type:** Implementation Step
+  - So in the past, when a service account was created, it automatically created a secret with a token that has no expiry and is not bound to any audience.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - This was then automatically mount as a volume to any pod that uses that service account.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - And that's what we just saw.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - But in version 1.22, that was changed.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 87 | **Type:** Implementation Step
+  - The automatic mounting of the secret object to the pod was changed, and instead it then moved to the TokenRequestAPI.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - So with version 1.24, a change was made where when you create a service account, it no longer automatically creates a secret or a token access secret.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - So you must run the command kubectl create token, followed by the name of the service account to generate a token for that service account if you needed one.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 90 | **Type:** Implementation Step
+  - And it will then print that token on screen.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - Now, if you copy that token, and then if you try to decode this token, this time, you'll see that it has an expiry date defined.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - And if you haven't specified any time limit, then it's usually one hour from the time that you run the command.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - You can also pass in additional options to the command to increase the expiry of the token.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 94 | **Type:** Implementation Step
+  - So now post version 1.24, if you would still like to create secrets the old way with non-expiring token, then you could still do that by creating a secret object with the type set to kubernetes.io/service-account-token and the name of the service ...
+- **File:** `065_Service Account.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - So this is how the secret object will be associated with that particular service account.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 96 | **Type:** Implementation Step
+  - So when you do this, just make sure that you have the service account created first and then create a secret object.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 97 | **Type:** Implementation Step
+  - Otherwise, the secret object will not be created.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 98 | **Type:** Implementation Step
+  - So this will create a non-expiring token in a secret object and associated with that service account.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 99 | **Type:** Best Practice
+  - Now, you have to be sure if you really wanna do that because as per the Kubernetes documentation pages on service account token secrets, it says you should only create service account token secrets if you can't use the TokenRequestAPI to obtain a ...
+- **File:** `065_Service Account.extraction.md` | **Entry:** 100 | **Type:** Implementation Step
+  - So that's either the kubectl create token command we just talked about, or it talks to the TokenRequestAPI to generate that token, or it's the automated token creation that happens on pods when they're created post version 1.22.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 101 | **Type:** Best Practice
+  - And also, you should only create service account token request if the security exposure of persisting and non-expiring token credential is acceptable to you.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 102 | **Type:** Best Practice
+  - Now, the TokenRequestAPI is recommended instead of using the service account token secret objects as they are more secure and have a bounded lifetime unlike the service account token secrets that have no expiry.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - Well, that's all for now.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - To read more about these changes, refer to the Kubernetes Enhancement Proposals that are listed here, as well as the documentation pages on service accounts and secrets.
+- **File:** `065_Service Account.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - All right, thank you very much.
+
+### Solution_ Service Account
+
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - -: So the first question is asking us how many service accounts exist in the default namespace?
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So I'll do a kubectl get and then we'll do service account, I'm just gonna do sa for short and we can see in the default namespace we've got two total service accounts, one called default, one called dev.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Now it's asking us what is the secret token used by the default service account?
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So to get this information, we'll go to kubectl and we'll do a describe of the default service account.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - And we wanna look under Tokens and right now we can see it's set to none.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So we'll select None.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - We just deployed the dashboard application inspect the deployment, what is the image used by the deployment?
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - So I'll do a kubectl get deployments, and then I'll do a kubectl describe deployment web-dashboard.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And we wanna go under Pod Template under Containers.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - And then for the web-dashboard we could see this is the name of the container.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So I will select this one.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - And this is just saying wait for the deployment to be ready and then you can access the dashboard application by selecting this button right here.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - And we can see the dashboard application.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So we'll hit OK here and we'll go to the next question.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Saying what is the state of the dashboard?
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Have the pod details loaded successfully?
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So we'll go back to this and we can see that, you know there's some red text, usually that's not good.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 18 | **Type:** Troubleshooting
+  - So there's an error it's saying pods is forbidden, user block cannot list resources pods in the api group.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - All right, so let's go back and we'll say that it failed.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - It's asking us what type of account does the dashboard application use to query the Kubernetes api?
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So if we go back, we can see here in the log message is saying system service account default default cannot list the resource pods.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So it's using a service account.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - More specifically, it's using the default service account.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So which account does the dashboard application use to query the Kubernetes api as I mentioned?
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - It's using the default one.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So now it's saying inspect the dashboard application pod and identify the service account mounted on it.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So we'll do a kubectl get pod and I'm gonna do a kubectl describe and we'll describe that pod and I forgot the word pod.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And we're trying to identify the service account mounted on it.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So if we go up to the top there's gonna be a section called service account.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - And we could see here it's set to default.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - And the next question is asking at what location is this service account credentials available within the pod?
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So if we go down here, we wanna go to the mount section or if we go to the volume, sorry, we wanna look at the mount section right here.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - And so, we could see it's mounted at var/run/secrets.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - So this is where the service account credentials are gonna be mounted.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So we'll select the var/run/secrets.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - Next question is asking us the application needs a service account with the right permissions to be created to authenticate to Kubernetes.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - The default service account has limited access.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Create a new service account named dashboard-sa.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - So to do that we just need to run one single command and that's going to be kubectl create service account.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And then, the name of the service account which is gonna be dashboard-sa.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - So that's going to get created.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 42 | **Type:** Implementation Step
+  - We'll then run the validation.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - And this is just letting us know that with the new service account that we created it went ahead and added in permissions for the newly created dashboard-sa account using rbac.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - If you wanna take a look at the configurations you can always go to /var/rbac.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - And here you could see the role and role-binding configurations.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - But we're gonna discuss rbac in a separate section in this course.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So we'll hit OK for now.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 48 | **Type:** Troubleshooting
+  - So it's telling us to get an access token and entered in the UI dashboard and see if that basically fixes the issue.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 49 | **Type:** Implementation Step
+  - So to create a token we have to run the command kubectl create token and then we're gonna create a token for the dashboard-sa service account.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So this is going to be the token and we're gonna copy this.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - We're gonna go back to the application and we're gonna paste it in here.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And now if we do load dashboard, we could see that we're able to load all of the pods that's running on our cluster.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 53 | **Type:** Best Practice
+  - So now the next question is telling us, we shouldn't have to create a token and then paste it into our application every time we need an application to interact with the Kubernetes api.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - So what we're gonna do is we're going to edit the deployment configuration for that specific deployment.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - So instead of using the default service account, it's going to use the dashboard service account, so it already has access to the api.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So here I'm gonna do a kubectl.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - And then I'll do get deployments and I'm gonna grab the web-dashboard and I'm gonna pipe it to a yaml file and I'll just call this dashboard.yaml and then we'll go to the dashboard-yaml file.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - And to specify this service account, we wanna go under the spec for the pod.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - So that's gonna be not the first spec, but the second one, 'cause this is a deployment And under here we just specify service account name and then the service account we wanna give it.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - So this is gonna be dashboard-sa, we'll save this and then I'll do a kubectl apply -f dashboard.yaml.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 61 | **Type:** Warning/Pitfall
+  - Don't worry about the warning, that's just because the the first deployment wasn't created using the apply command.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - But that's all right.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 63 | **Type:** Implementation Step
+  - So we've got kubectl get deployments.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - All right, so now we can go ahead and run the validation and we can see that was successful.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - And if we go to the application now, and we hit Refresh, I'm just gonna hit Ctrl-R.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - We refresh, there's no token, but it's going to work now, because it's got the service account and the token mounted automatically onto it.
+- **File:** `067_Solution_ Service Account.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - And so, that's going to wrap up this lab.
+
+### Taints and Tolerations
+
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture, we will discuss about the pod to node relationship and how you can restrict what pods are placed on what nodes.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - The concept of taints and tolerations can be a bit confusing for beginners, so we will try to understand what they are using an analogy of a bug approaching a person.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - Now my apologies in advance, but this is the best I could come up with.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - To prevent the bug from landing on the person, we spray the person with repellent spray or taint as we will call it in this lecture.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - The bug is intolerant to the smell, so on approaching the person, the taint applied on the person throws the bug off.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - However, there could be other bugs that are tolerant to this smell and so the taints doesn't really affect them and so they end up landing on the person.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - So there are two things that decide if a bug can land on a person first, the taint on the person, and second the bug's toleration level to that particular taint.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - Getting back to Kubernetes, the person is a node and the bugs are pods.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Now, taints and tolerations have nothing to do with security or intrusion on the cluster.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Taints and tolerations are used to set restrictions on what pods can be scheduled on a node.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Let us start with a simple cluster with three worker nodes.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - The nodes are named one, two, and three.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - We also have a set of pods that are to be deployed on these nodes.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Let's call them A, B, C, and D.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 15 | **Type:** Architecture
+  - When the pods are created, Kubernetes Scheduler tries to place these pods on the worker nodes.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 16 | **Type:** Architecture
+  - As of now, there are no restrictions or limitations, and as such, the scheduler places the pods across all of the nodes to balance them out equally.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - Now let us assume that we have dedicated resources on node one for a particular use case or application.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So we would like only those parts that belong to this application to be placed on node one.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - First, we prevent all parts from being placed on the node by placing a taint on the node.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Let's call it blue by default.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Pods have no tolerations, which means unless specified otherwise, none of the pods can tolerate any taint.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So in this case, none of the pods can be placed on node one, as none of them can tolerate the taint.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Blue.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - This solves half of our requirement.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - No unwanted pods are going to be placed on this node.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - The other half is to enable certain pods to be placed on this node.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - For this, we must specify which pods are tolerant to this particular taint.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - In our case, we would like to allow only part D to be placed on this node.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So we add a toleration to part D.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Part D is now tolerant to blue.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 31 | **Type:** Architecture
+  - So when the scheduler tries to place this part on node one it goes through node one can now only accept pods that can tolerate the taint blue.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So with all the chains and tolerations in place, this is how the pods would be scheduled.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 33 | **Type:** Architecture
+  - The scheduler tries to place pod A on node one, but due to the time it is thrown off and it goes to node two, the scheduler then tries to place pod B on node one, but again due to the taint, it is thrown off and is placed on node three, which happ...
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 34 | **Type:** Architecture
+  - The scheduler then tries to place pod C to the node one.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - It is thrown off again and ends up on node two.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 36 | **Type:** Architecture
+  - And finally the scheduler tries to place pod D on node one.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Since the pod is tolerant to node one, it goes through.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So remember chains Things are set on nodes and tolerations are set on pods.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So how do you do this?
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Use the kube control nodes command to taint a node.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Specify the name of the node to taint followed by the taint itself, which is a key value pair.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 42 | **Type:** Exam Tip
+  - For example, if you would like to dedicate the node to pods in application blue, then the key value pair would be app equals blue.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 43 | **Type:** Warning/Pitfall
+  - The taint effect defines what would happen to the pods if they do not tolerate the taint.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - There are three taint effects.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - No schedule, which means the pods will not be scheduled on the node, which is what we have been discussing.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 46 | **Type:** Best Practice
+  - Preferred no schedule, which means the system will try to avoid placing a pod on the node, but that is not guaranteed.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 47 | **Type:** Warning/Pitfall
+  - And third is no execute, which means that new pods will not be scheduled on the node and existing pods on the node, if any will be evicted if they do not tolerate the taint.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - These pods may have been scheduled on the node before the taint was applied to the node.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 49 | **Type:** Exam Tip
+  - An example command would be to taint node node one with the key value pair app blue, and an effect of no schedule.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - Tolerations are added to pods to add a toleration to a pod.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 51 | **Type:** Implementation Step
+  - First, pull up the pod definition file in the spec section of the Pod definition file.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Add a section called Tolerations.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Move the same values used while creating the taint under this section.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - The key is app operator is equal, value is blue and the effect is no schedule.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And remember all of these values need to be encoded in double quotes.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - When the pods are now created or updated with the new tolerations, they are either not scheduled on nodes or evicted from the existing nodes depending on the effect set.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Let us try to understand the no execute change effect in a bit more depth.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 58 | **Type:** Exam Tip
+  - In this example we have three nodes running some workload.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 59 | **Type:** Warning/Pitfall
+  - We do not have any teams or tolerations at this point, so they are scheduled this way.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - We then decided to dedicate node one for a special application, and as such, we change the node with the application name and add a toleration to the pod that belongs to the application, which happens to be pod D in this case, while tending the no...
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - The pod D continues to run on the node as it has a toleration to the tank blue.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - Now, going back to our original scenario where we have taints and tolerations configured, remember taints and tolerations are only meant to restrict nodes from accepting certain paths.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - In this case, node one can only accept pod D, but it does not guarantee that pod D will always be placed on node one, since there are no taints or restrictions applied on the other two nodes, pod D may very well be placed on any of the other two n...
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So remember taints and Tolerations does not tell the pod to go to a particular node.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 65 | **Type:** Concept
+  - Instead, it tells the node to only accept pods with certain tolerations.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - If your requirement is to restrict a pod to certain nodes, it is achieved through another concept called as node affinity, which we will discuss in the next lecture.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - Finally, while we are on this topic, let us also take a look at an interesting fact.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So far we have only been referring to the worker nodes, but we also have master nodes in the cluster, which is technically just another node that has all the capabilities of hosting a pod.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - Plus it runs all the management software.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 70 | **Type:** Architecture
+  - Now, I'm not sure if you noticed the scheduler does not schedule any pods on the master node.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Why is that?
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 72 | **Type:** Implementation Step
+  - When the Kubernetes cluster is first set up, a tent is set on the master node automatically that prevents any pods from being scheduled on this node.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 73 | **Type:** Operational Insight
+  - You can see this as well as modify this behavior if required.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 74 | **Type:** Best Practice
+  - However, a best practice is to not deploy application workloads on a master server.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - To see this tent run a cube control, describe node command with cube Master as the node name and look for the tent section.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 76 | **Type:** Concept
+  - You will see a tent set to not schedule any pods on the master node.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Well, that's it for this lecture.
+- **File:** `069_Taints and Tolerations.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Head over to the Coding Exercises section and practice working with Taints and Tolerations.
+
+### Solution - Taints and Tolerations (Optional)
+
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, so let's go over the lab for practicing taints and tolerations.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So let's start with the first question, how many nodes exist on the system, including the control plane?
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So let's look at the number of nodes. and we see that there are two nodes, control plane and node 01, so the answer is two.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - Okay, so the next question is, do any taints exist on node 01 node?
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So for that we're gonna have to take a closer look at node 01.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So we do a kubectl describe node, node 01, and we see taints right here and we see that there are none, so there are no taints on this particular node.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So I'm gonna select no going to clear my screen.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Okay, so the next question is to create a taint on node 01, with key of spray value of morteen, and effect of node schedule.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 9 | **Type:** Exam Tip
+  - So we're gonna continue with the, the silly example that we used in the lecture of the spray and morteen and mosquito and bee.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - So here the task is to create a taint.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So we're gonna do kubectl taint and let's quickly look at the help.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So the command is kubectl of taint, and then nodes, then the name of the node, and then followed by these values, which are, the key has to be spray, and then the value is morteen, and then the effect is no schedule.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 13 | **Type:** Concept
+  - So let's do that.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So it's kubectl taint, node, and it's node 01, and then the key is spray, and the value is morteen, and the effect is no schedule.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Okay, let's confirm that.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So we have the spray equals morteen, and the no schedule effect, right.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So that's done.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - So we now have a taint on node 01.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - Now the goal is to create a new pod with the nginx image and the pod name as mosquito, right?
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - So we're gonna do a kubectl run and then that's a pod name, and image equals nginx.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - Let's do get pods, and we see that it's created.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Ignore the status for now.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Okay, so what is the state of the pod?
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So it seems to be in a pending state, so select pending.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Now why do you think the pod is in a pending state?
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Is it because image is not available?
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 27 | **Type:** Troubleshooting
+  - Is there an error?
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - So let's see, let's do a describe pod, and the pod name.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - And here you'll see the reason why it's in a pending state. it says that the pod didn't tolerate one node that had taint and spray morteen that the pod didn't tolerate.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So basically the pod mosquito cannot tolerate the taint morteen, that's a problem here.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So we're gonna select that.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - Okay, so now we have to create another pod named bee, with the nginx image, which has a toleration set to the taint morteen.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - So we're gonna do kubectl run command to create a pod.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 34 | **Type:** Concept
+  - The name is going to be bee, and the image is going to be nginx.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - And basically, now we have to add toleration to it, but you cannot specify toleration in the command lane.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - So what we're gonna do is we're going do a dry run, equals client to generate a yamo file for this pod.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 37 | **Type:** Concept
+  - So that's the yamo file and we're gonna redirect that to bee.yamo.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So we have this in bee.yamo, we're going to edit bee.yamo file and we're going to add in tolerations.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So add a section called tolerations.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - Now if you're not sure of the format check out the Kubernetes documentation pages and search for chains tolerations, and that's the first result.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - And so these are, this is the command for taint, and this is the format for tolerations.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So dash key operator value and effect, so that's key, so key is going to be spray, operator value and effect.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - So the value is going to be in effect that's going to be schedule, finally we have operator set be equal.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - Operator set to equal, you save that, and let's create image.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - Okay, so it's now in a container creating state.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 46 | **Type:** Concept
+  - Let's watch the creation process and we can see that it's now in a running state.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 47 | **Type:** Concept
+  - So this pod is now running.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Okay, so that's correct.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - Now notice the bee pod was scheduled on node 01, so let's see where it was scheduled.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - And we see the bee pod is on node 01.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So basically now this bee was able to tolerate the taint set on node 01.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Now do you see any taints on control plane node?
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 53 | **Type:** Concept
+  - So let's look at the control plane node, and let's look at taints, and we see that yes, there is a taint set on the control plane node and it's set to no schedule, that's the effect.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So yes, it's set, it's set to no schedule.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Okay, now remove the taint on control plane, which currently has the taint effect of no schedule.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So we've got to remove that.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 57 | **Type:** Implementation Step
+  - So first let's get that.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - So this is the taint, so let's copy that, and the command to remove is the same, kubectl taint, and we just, that's by the node, that's control plane node, specify the taint that we want to remove, and at the end you've got to put a dash or a minu...
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So it says it's untainted, so let's confirm that.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 60 | **Type:** Concept
+  - Go back to taints, I see, that nothing is set.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Let's click on check.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - And now we've got to check the status of the pods again.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 64 | **Type:** Concept
+  - And we see that the pod mosquito, which earlier was in a pending state, is now in a running state.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - So that's the state of the pod mosquito.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - And then we have to, let's check on what node it is placed so as you can see it's now placed on the control plane node.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - So earlier in the beginning the control plane node has a taint set on it, and then we set a taint on node 01 and then we created the mosquito pod.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - And so it was not placed on any of the nodes because both of them had a taint then.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - Then we created the bee pod with the toleration on node 01, so the bee pod was able to be placed on node 01, and then we removed the taint on control plane.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - And without doing anything the pod mosquito was automatically placed on control plane because it no longer has any kind of taint on it.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So it's, the answer to this is control plane.
+- **File:** `071_Solution - Taints and Tolerations (Optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - Okay, so that's the end of this lab.
+
+### Node Selectors Logging
+
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will talk about node selectors in Kubernetes.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 2 | **Type:** Exam Tip
+  - Let us start with a simple example.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - You have a three node cluster of which two are smaller nodes with lower hardware resources, and one of them is a larger node configured with higher resources.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - You have different kinds of workloads running in your cluster.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - You would like to dedicate the data processing workloads that require higher horsepower to the larger node, as that is the only node that will not run out of resources in case the job demands extra resources.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - However, in the current default setup, any pods can go to any nodes.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - So pod C in this case may very well end up on nodes 2 or 3, which is not desired.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - To solve this, we can set a limitation on the pods so that they only run on particular nodes.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - There are two ways to do this.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - The first is using node selectors, which is the simple and easier method.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - For this we look at the pod definition file we created earlier.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - This file has a simple definition to create a pod with a data processing image.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - To limit this pod to run on the larger node, we add a new property called node selector to the spec section and specify the size as large.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - But wait a minute, where did the size large come from?
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - And how does Kubernetes know which is the large node?
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - The key value pair of size and large are in fact labels assigned to the nodes.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 17 | **Type:** Architecture
+  - The scheduler uses these labels to match and identify the right node to place the pods on.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - Labels and selectors are a topic we have seen many times throughout this Kubernetes course, such as with services, replica sets and deployments.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - To use labels in a node selector like this, you must have first labeled your nodes prior to creating this pod.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - So let us go back and see how we can label the nodes to label a node.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Use the command Kube cube control.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Label nodes followed by the name of the node and the label in a key value pair format.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - In this case it would be cube control label nodes.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Node one, followed by the label in a key value format such as size equals large.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Now that we have labeled the node, we can get back to creating the pod, this time with the node selector set to a size of large.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 26 | **Type:** Implementation Step
+  - When the pod is now created, it is placed on node one as desired.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Node selector served our purpose, but it has limitations.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - We used a single label and selector to achieve our goal here.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - But what if our requirement is much more complex?
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 30 | **Type:** Exam Tip
+  - For example, we would like to say something like place the pod on a large or medium node or something like place the pod on any nodes that are not small.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - You cannot achieve this using node selectors.
+- **File:** `072_Node Selectors Logging.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - For this node affinity and anti-affinity features were introduced and we will look at that next.
+
+### Node Affinity
+
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - In this lecture we will talk about node affinity feature in Kubernetes.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - The primary purpose of node affinity feature is to ensure that pods are hosted on particular nodes.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - In this case, to ensure the large data processing pod ends up on node one.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - In the previous lecture, we did this easily using node selectors.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - We discussed that you cannot provide advanced expressions like or or not with node selectors.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - The node affinity feature provides us with advanced capabilities to limit pod placement on specific nodes.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - With great power comes great complexity.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So the simple node selector specification will now look like this with node affinity.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - Although both does exactly the same thing.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - Place the pod on the node.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - Let us look at it a bit closer.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Under spec you have affinity and then node affinity under that.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - And then you have a property that looks like a sentence called required during scheduling.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - Ignored during execution.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - No description needed for that.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 16 | **Type:** Implementation Step
+  - And then you have the node selector turns.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - That is an array.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - And that is where you will specify the key and value pairs.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - The key value pairs are in the form, key operator, and value where the operator is in the in operator ensures that the pod will be placed on a node whose label size has any value in the list of values specified here.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - In this case, it is just one called large.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - If you think your pod could be placed on a large or a medium node, you could simply add the value to the list of values like this.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - You could use the not in operator to say something like size, not in small, where node affinity will match the nodes with a size not set to small.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 23 | **Type:** Warning/Pitfall
+  - We know that we have only set the label size to large and medium nodes, The smaller nodes don't even have the label set, so we don't really have to even check the value of the label, as long as we are sure we don't set a label size to the smaller ...
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 24 | **Type:** Warning/Pitfall
+  - The excess operator will simply check if the label size exists on the nodes, and you don't need the values section for that, as it does not compare the values.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - There are a number of other operators as well.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Check the documentation for specific details.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Now we understand all of this and we're comfortable with creating a pod with specific affinity rules.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - When the pods are created, these rules are considered and the pods are placed onto the right nodes.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - But what if node affinity could not match a node with a given expression?
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - In this case, what if there are no nodes with the label called size?
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - Say we had the labels and the pods are scheduled.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - What if someone changes the label on the node at a future point in time, will the pod continue to stay on the node?
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - All of this is answered by the long sentence like property under node affinity, which happens to be the type of node affinity.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 34 | **Type:** Architecture
+  - The type of node affinity defines the behavior of the scheduler with respect to node affinity, and the stages in the lifecycle of the pod.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - There are currently two types of node affinity available.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Required during scheduling.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - Ignored during execution and preferred during scheduling.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - Ignored during execution.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And there are additional types of node affinity planned as of this recording.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - Required during scheduling.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Required during execution.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - We will now break this down to understand further.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - We will start by looking at the two available affinity types.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - There are two states in the life cycle of a pod when considering node affinity during scheduling and during execution.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - During scheduling is the state where a pot does not exist and is created for the first time.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - We have no doubt that when a pot is first created, the affinity rules specified are considered to place the pods on the right nodes.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - Now, what if the nodes with matching labels are not available?
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 48 | **Type:** Exam Tip
+  - For example, we forgot to label the node as large.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - That is where the type of node affinity used comes into play.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 50 | **Type:** Architecture
+  - If you select the required type, which is the first one, the scheduler will mandate that the pod be placed on a node with the given affinity rules.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - If it cannot find one, the pod will not be scheduled.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - This type will be used in cases where the placement of the pod is crucial.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - If a matching node does not exist, the pod will not be scheduled.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - But let's say the pod placement is less important than running the workload itself.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - In that case, you could set it to preferred.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 56 | **Type:** Architecture
+  - And in cases where a matching node is not found, the scheduler will simply ignore Ignored node affinity rules and place the pot on any available node.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 57 | **Type:** Architecture
+  - This is a way of telling the scheduler, hey, try your best to place the pod on matching node, but if you really cannot find one, just place it anywhere.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - The second part of the property or the other state is during execution.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - During execution is the state where a pod has been running, and a change is made in the environment that affects node affinity, such as a change in the label of a node.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 60 | **Type:** Exam Tip
+  - For example, say an administrator removed the label we set earlier called size equals large from the node.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Now, what would happen to the pods that are running on the node?
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - As you can see, the two types of node affinity available today has this value set to ignored, which means pods will continue to run and any changes in node affinity will not impact them once they are scheduled.
+- **File:** `073_Node Affinity.extraction.md` | **Entry:** 63 | **Type:** Comparison
+  - In the next lecture, we will compare taints and Tolerations and node affinity.
+
+### Solution - Node Affinity (Optional)
+
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 1 | **Type:** Concept
+  - -: Okay, in this video we will go over the practice test for node affinity.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So the first question is to identify the labels on node zero one.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So to count the number of labels on node zero one.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 4 | **Type:** Concept
+  - So let's do kubectl, describe node, node zero one and let's look at the labels.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So we have one, two, three, four, five, five labels.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So we're gonna select five.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - And then the next question is, what is the value set to the label at beta.kubernetes.io/arch?
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So on node zero one, so we are already on node zero one and it is AMD 64.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 9 | **Type:** Concept
+  - That's this one.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - Okay, so the next question is to apply a label called color equals blue to node, node zero one.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So for that we're going to use the kubectl label command.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 12 | **Type:** Concept
+  - So let's take a look at the help.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 13 | **Type:** Exam Tip
+  - And here we have some examples.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So you have kubectl label, the pods or node what, whatever, what is the object that we wanna apply the label to?
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - And then the node name, and then just the label.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So it's pretty straightforward.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 17 | **Type:** Implementation Step
+  - So we're gonna do kubectl, label, node, node zero one and then color equals blue.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 18 | **Type:** Concept
+  - Let's verify that it's set correctly.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 19 | **Type:** Concept
+  - We're gonna go back the labels and we see the color equals blue.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - Okay, now the next one is to create a new deployment named blue with the nginx image and three replicas.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - So let's create the deployment, the name is blue, image is nginx and replicas is three.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - Okay, so the next one is, which nodes can the pods for the blue deployment be placed on?
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So we, we've gotta check the taints on both the nodes.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 24 | **Type:** Concept
+  - So let's do that.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Let's check the taints on each one.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So we're gonna do a kubectl describe node.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 27 | **Type:** Concept
+  - Let's check node zero one.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And let's just check for taints.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 29 | **Type:** Concept
+  - So there are no taints on node zero one and the other node, which I believe is the control plane node.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 30 | **Type:** Concept
+  - Let's check that too.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So, so there are no taints on either of these nodes, but for now the pods can be scheduled on either of the nodes because there are no taints on any of these nodes.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - Okay, so in this question, the task is to set node affinity to the deployment to place the pod on node zero one only.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - So we're going to edit the deployment.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - So let's kubectl edit deployment blue.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 35 | **Type:** Concept
+  - So we are here and what we need to do is on the pod specification.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 36 | **Type:** Concept
+  - Now we've got to set the node affinity for these, right?
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - So we, we have to use the required during scheduling, ignore during execution, then use the color and the values to blue.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 38 | **Type:** Concept
+  - So for this, let's go to the Kubernetes documentation page and search for node affinity.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 39 | **Type:** Concept
+  - And let's get this.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 40 | **Type:** Concept
+  - And here, let's look for the affinity spec.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 41 | **Type:** Concept
+  - So we're going to copy this and paste it here.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 42 | **Type:** Exam Tip
+  - So here, basically this one is an example for a pod.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And so all of these are kind of aligned a bit more to the left.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 44 | **Type:** Implementation Step
+  - But here, this is under the pod which is under the template section of deployment.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So we have to move it all a little bit to the right.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - So for this, what I'm gonna do here is, the first one is okay, first line is okay but all these remaining lines we need to move it one step inside.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - So press capital V and then select all the lines.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - Then I'm gonna do a greater than symbol.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So that's shift dot on the keyboard that I'm using.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So it moves everything to the, to the right.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 51 | **Type:** Concept
+  - So it's not, not very pretty but I think that will do the job for now.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 52 | **Type:** Concept
+  - And I'm just going to set the key to color and the value to blue.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 53 | **Type:** Exam Tip
+  - So there are ways that we can set the vim settings so that this always gets indented with spaces as opposed to multiple spaces at a time that you can see here.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 54 | **Type:** Concept
+  - So we're gonna save that and let's give this a shot.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 55 | **Type:** Concept
+  - Okay, so that's done.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Now the question is to find out which nodes the pods are placed on.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So let's run a kubectl get pods dash o wide.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 58 | **Type:** Concept
+  - Okay now it shows us all the pods are on node zero one.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So they're all on node zero one.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - So the next task is to create a new deployment named red with the nginx image and two replicas and ensure it gets placed on the control plane node only.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 61 | **Type:** Concept
+  - And the recommendation is to use the label node coordinators dot io slash master which is already set on the control plane node.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 62 | **Type:** Concept
+  - So if you look at the control plane node we see that there is this label, right?
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 63 | **Type:** Concept
+  - It doesn't have a value set, right?
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 64 | **Type:** Best Practice
+  - So all we need to do is to set a node affinity rule that says the pods that are part of the deployment red should be placed on a node that has this label set.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 65 | **Type:** Concept
+  - And the label does not have a value.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 66 | **Type:** Best Practice
+  - But if this label exists then that's where it should be placed on.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So let's try and do that.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 68 | **Type:** Implementation Step
+  - So we'll use the kubectl create deployment command and then the name is red, image is nginx and replicas equals two.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - But we're not gonna create it.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 70 | **Type:** Concept
+  - So we're gonna do a dry run because we need to get the yaml file to input the new definition rules.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 71 | **Type:** Implementation Step
+  - So we're gonna do a dry run equals find and then dash o yaml.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So that's gonna give us the yaml output.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 73 | **Type:** Implementation Step
+  - Then we're going to put it to a file named red dot yaml.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 74 | **Type:** Concept
+  - Now we're going to edit that file.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 75 | **Type:** Concept
+  - And within the spec section, we're gonna do the same as we did before.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 76 | **Type:** Concept
+  - So we're gonna copy this new definition rule and paste it.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 77 | **Type:** Concept
+  - Now we've got to select all of these lines.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 78 | **Type:** Concept
+  - We're gonna do a shift dot on my keyboard which is gonna, that's basically the greater than symbol and it's gonna move it to the right.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 79 | **Type:** Concept
+  - Now we're gonna change this so the key is the label, which is this.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 80 | **Type:** Concept
+  - We're gonna copy and paste.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And as we realized that this label does not have value, so there's no point in checking the value here.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 82 | **Type:** Concept
+  - So we're gonna get rid of this and all we are gonna do is say if the label exists, so the operator would be exists with a capital E.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 83 | **Type:** Concept
+  - Save that.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 84 | **Type:** Implementation Step
+  - And now we're going to create a deployment.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 85 | **Type:** Troubleshooting
+  - There seems to be some error.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 86 | **Type:** Troubleshooting
+  - So let's go back, see what the error is.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 87 | **Type:** Concept
+  - It's on line 26.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 88 | **Type:** Concept
+  - Did not find expected key.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 89 | **Type:** Concept
+  - So line 26 is this.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 90 | **Type:** Concept
+  - Okay, actually it's this line here.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 91 | **Type:** Concept
+  - So this is not currently indented, that's the problem.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 92 | **Type:** Concept
+  - We're going to move it two characters before.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 93 | **Type:** Concept
+  - Okay so we're going to save that.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 94 | **Type:** Concept
+  - Let's try that again.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 95 | **Type:** Troubleshooting
+  - Okay, so even though here it said line 26 the issue was a few lines above.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 96 | **Type:** Concept
+  - Okay so let's check our solution.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 97 | **Type:** Concept
+  - All right, so that works.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 98 | **Type:** Concept
+  - And if we look at pods now, we'll see that those the new pods are on node control plane.
+- **File:** `075_Solution - Node Affinity (Optional).extraction.md` | **Entry:** 99 | **Type:** Concept
+  - Okay, that's the end of this lab.
+
+### Taints & Tolerations vs Node Affinity
+
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - Now that we have learned about taints and tolerations and node affinity, let us tie together the two concepts through a fun exercise.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 2 | **Type:** Concept
+  - We have three nodes and three pods, each in three colors blue, red, and green.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - The ultimate aim is to place the blue pod in the blue node, the red pod in the red node, and likewise for green.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - We are sharing the same Kubernetes cluster with other teams, so there are other pods in the cluster as well as other nodes.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 5 | **Type:** Warning/Pitfall
+  - We do not want any other pod to be placed on our node.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - Neither do we want our pods to be placed on their nodes.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - Let us first try to solve this problem using taints and tolerations.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - We apply a taint to the nodes, marking them with their colors blue, red and green, and we then set a toleration on the pods to tolerate the respective colors.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - When the pods are now created, the nodes ensure they only accept the pods with the right toleration, so the green pod ends up on the green node and the blue pod ends up on the blue node.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 10 | **Type:** Warning/Pitfall
+  - However, taints and tolerations does not guarantee that the pods will only prefer these nodes, so the red pods ends up on one of the other nodes that do not have a taint or toleration set.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - This is not desired.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - Let us try to solve the same problem with node affinity.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - With node affinity.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - We first label the nodes with their respective colors blue, red, and green.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - We then set node selectors on the pods to tie the pods to the nodes.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - As such, the pods end up on the right nodes.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - However, that does not guarantee that other pods are not placed on these nodes.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - In this case, there is a chance that one of the other pods may end up on our nodes.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - This is not something we desire.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - As such, a combination of taints and tolerations and node affinity rules can be used together to completely dedicate nodes for specific pods.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - We first use taints and tolerations to prevent other pods from being placed on our nodes, and then we use node affinity to prevent our pods from being placed on their nodes.
+- **File:** `076_Taints & Tolerations vs Node Affinity.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Well, that's it for this lecture.

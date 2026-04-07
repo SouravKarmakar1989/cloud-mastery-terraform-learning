@@ -1,0 +1,1167 @@
+# Section Concept Map: BATCH-039
+
+## Section
+- Course: `learn-kubernetes`
+- Section: `08_Microservices Architecture`
+
+## Source Files Used
+- `045_Microservices Application.extraction.md`
+- `046_Deploying Voting App on Kubernetes.extraction.md`
+- `047_Demo - Deploying Voting App on Kubernetes.extraction.md`
+- `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md`
+
+## Concept Groups
+
+### Microservices Application
+
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 1 | **Type:** Architecture
+  - In this lecture, we will try and understand microservices architecture using a simple web application.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 2 | **Type:** Exam Tip
+  - We will then try and deploy this web application on multiple different Kubernetes platforms such as Google Cloud Platform.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - I'm going to use a simple application developed by Docker to demonstrate the various features available in running an application stack on Docker.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - So let's first get familiarized with the application, because we will be working with the same application in different sections through the rest of this course.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - This is a sample voting application which provides an interface for a user to vote, and another interface to show the results.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - The application consists of various components such as the voting app, which is a web application developed in Python to provide the user with an interface to choose between two options a cat and a dog.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - When you make a selection, the vote is stored in readers.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - For those of you who are new to readers, readers.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - In this case, serves as a database in memory.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - This vote is then processed by the worker, which is an application written in dotnet.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - The worker application takes the new vote and updates the persistence database, which is a Postgres SQL.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 12 | **Type:** Concept
+  - In our case, the Postgres SQL simply has a table with the number of votes for each category.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 13 | **Type:** Concept
+  - Cats and dogs.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - In this case, it increments the number of votes for cats as our vote was for cats.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - Finally, the result of the vote is displayed in a web interface, which is another web application developed in Node.js.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - This resulting application reads the count of votes from the Postgres SQL database and displays it to the user.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 17 | **Type:** Architecture
+  - So that is the architecture and data flow of this simple voting application stack.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 18 | **Type:** Exam Tip
+  - As you can see, this sample application is built with a combination of different services, different development tools and multiple different development platforms such as Python, Node.js, DotNet, etc. this sample application will be used to showc...
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - Let us see how we can put together this application stack on a single Docker engine using Docker run commands.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - Let us assume that all images of applications are already built and are available on Docker repository.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - Let us start with the data layer.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - First, we run the docker run command to start an instance of redice by running the docker run command.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - We will add the dash d parameter to run this container in the background, and we will also name the container Redice.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - Now naming the containers is important.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - Why is that important?
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - Hold that thought.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - We will come to that in a bit.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - Next we will deploy the PostgreSQL database by running the docker run Postgres command.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - This time too, we will add the dash D option to run this in the background and name this container db for database.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 30 | **Type:** Implementation Step
+  - Next we will start with the application services.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 31 | **Type:** Implementation Step
+  - We will deploy a front end app for voting interface by running an instance of voting app image.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - Run the docker run command and name the instance vote.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - Since this is a web server, it has a web UI instance running on port 80.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - We will publish that port to 5000 on the host system so we can access it from a browser.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - Next, we will deploy the web application that shows the results to the user.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - For this, we deploy a container using the results app image and publish port 80 to port 5001 on the host.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - This way we can access the web UI of the resulting app on a browser.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Finally, we deploy the worker by running an instance of the worker image.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Okay, now this is all good and we can see that all the instances are running on the host.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - But there is some problem.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - It just does not seem to work.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - The problem is that we have successfully run all the different containers, but we haven't actually linked them together.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - As in, we haven't told the voting web application to use this particular Redis instance.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 44 | **Type:** Exam Tip
+  - There could be multiple instances running.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - We haven't told the worker and the resulting app to use this particular PostgreSQL database that we ran.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 46 | **Type:** Concept
+  - So how do we do that?
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - That is where we use links.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - Link is a command line option which can be used to link two containers together.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 49 | **Type:** Exam Tip
+  - For example, the voting app web service is dependent on the Redice service. disservice when the web server starts.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - As you can see in this piece of code on the web server.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - It looks for a service running on host reads, but the voting app container cannot resolve a host by the name reads.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - To make the voting app aware of the reads service, we add a link option while running the voting app container to link it to the read this container.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Adding a dash dash link option to the docker run command and specifying the name of the container which is which, in this case is read, is followed by a colon and the name of the host that the voting app is looking for, which is also read this in ...
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - Remember that this is why we named the container when we ran it the first time, so we could use its name while creating a link.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - What this is in fact doing is it creates an entry into the etc. host file on the voting app container.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - Adding an entry with the hostname reads with the internal IP of the After this container.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - Similarly, we add a link for the result app to communicate with the database by adding a link option to refer the database by the name db.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 58 | **Type:** Concept
+  - As you can see in this source code of the application, it makes an attempt to connect to a Postgres database on host DB.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Finally, the worker application requires access to both the redice as well as the Postgres database.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - So we add two links to the worker application, one link to link the redice and the other link to link Postgres database.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 61 | **Type:** Warning/Pitfall
+  - Note that using links this way is deprecated and the support may be removed in a future in Docker.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - This is because, as we will see in some time, advanced and newer concepts in Docker Swarm and networking supports better ways of achieving what we just did here with links.
+- **File:** `045_Microservices Application.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - But I wanted to mention it anyway, so you learn the concept from the very basics.
+
+### Deploying Voting App on Kubernetes
+
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 1 | **Type:** Concept
+  - So we just saw how the voting application works on Docker.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - Let's now see how to deploy it on Kubernetes.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - So it's important to have a clear idea of what we are trying to achieve and plan accordingly.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 4 | **Type:** Concept
+  - Before we get started.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - So we already know how the application works, and it's a good idea to write down what we plan to do.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 6 | **Type:** Implementation Step
+  - So our goal is to deploy these containers, these applications as containers on a Kubernetes cluster, and then enable connectivity between the containers so that the applications can access each other and the databases, and then enable external acc...
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - Right.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 8 | **Type:** Concept
+  - So how do we go about this?
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - Now we know that we cannot deploy containers directly on Kubernetes.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 10 | **Type:** Implementation Step
+  - We learned that the smallest object that we can create on a Kubernetes cluster is a pod.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - So we must first deploy these applications as a pod on our Kubernetes cluster.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - Or we could deploy them as replica sets or deployments, as we have seen through throughout this course.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - But first, for the sake of simplicity, we will stick to pods or in this lecture, right?
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - And later we will see how to easily convert that to a deployment.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - So once the pods are deployed the next step is to enable connectivity between the services.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - So it's important to know what connectivity requirements are.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - So we must be very clear about what application requires access to what services.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - We know that the database is accessed by the voting app and the worker app.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - The voting app says the vote to the database and the worker app reads the vote from the Redis database.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 20 | **Type:** Concept
+  - We know that the PostgreSQL database is accessed by the worker app to update it with the total count of votes, and it's also accessed by the result app to read the total count of votes to be displayed in the resulting web page in the browser.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - So we know that the voting app is accessed by the external users, the voters, and the result app is also accessed by the external users to view the results.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - So most of the components are being accessed by another component except for the worker app.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - Note that the worker app is not being accessed by anyone.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - You can see arrows going into all of these components, but there are no arrows going into worker, which means none of the other components or external users are accessing the worker app.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - The worker app simply reads the count of votes from the database, and then updates the total count of votes on the Postgres SQL database.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So none of the other components nor the external users ever access the worker app now?
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - While the voting app has a Python web server that listens on port 80, and the result app also has a Node.js based server that listens on port 80.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And the Redis database has a service that listens on port six, three, seven, nine.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - And the PostgreSQL database has a service that listens on port 5432.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - The worker app has no service because it's just a worker, and it's not accessed by any other service or external users.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - So keep that in mind.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - So how do you make one component accessible by another?
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 33 | **Type:** Exam Tip
+  - Say for example, how do you make the Redice database accessible by the voting app?
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 34 | **Type:** Best Practice
+  - Should the voting app use the IP address of the Redis pod?
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 35 | **Type:** Concept
+  - Perhaps no, because that can change.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - The IP of the pod can change if the pod restarts.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 37 | **Type:** Troubleshooting
+  - And you may also run into issues when you try to scale your applications in the future.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - The right way to do it is to use a service.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - Now we learned that a service can be used to expose an application to other applications or users for external access.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - So we will create a service for the Redis pod so that it can be accessed by the voting app and the worker app.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - We will call it a Redis service, and it will be accessible anywhere within the cluster by the name of the service Redis.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - So why is that name important?
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - The source code within the voting app and the worker app are hard coded to point to a Redis database running on a host by the name Redice.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So it's important to name your service as Redis so that these applications can connect to the database.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 45 | **Type:** Best Practice
+  - And this is not a best practice to hard code stuff like this within the source code of an application.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 46 | **Type:** Best Practice
+  - Instead you should be using environment variables or something.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - But for the sake of simplicity, we will just follow up this application as it is developed right now.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 48 | **Type:** Concept
+  - These services are not to be accessed outside the cluster.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 49 | **Type:** Best Practice
+  - So, um, they should just be of type cluster IP.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So we will follow the the same approach of creating a service for the PostgreSQL pod, so that the PostgreSQL DB can be accessed by the worker and the result app.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 51 | **Type:** Best Practice
+  - So what should we name the PostgreSQL service?
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - If you look at the source code of the result app and the worker app, you will see that they are looking for a database at the address db.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 53 | **Type:** Best Practice
+  - So the service that we create for PostgreSQL should be named DB.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - Also note that while connecting to the database, the worker and the result apps are passing a username and password to connect to the database, both of which are set to Postgres.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - So when we deploy the the Postgres db pod, we must make sure that we set the credentials for it as the initial set of credentials to while creating the database.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 56 | **Type:** Implementation Step
+  - Now the next task is to enable external access.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So for this we saw that we could use a service with a type set to node port.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - So we create services for voting app and the result app and set their type to node port.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - Now we could decide on what port we are going to make them available on, and it would be a high port with a port number greater than 30,000.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - So we'll do that when we create the service.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - So we are done and we have the high level steps ready.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 62 | **Type:** Implementation Step
+  - So to summarize we will be deploying five ports in total.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - And we have four services one for Redis, another for Postgres both of which are internal services.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So they are of type cluster IP.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - And we then have external facing services for voting app and the result app.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - However, we have no service for the worker pod and this is because it is not running any service that must be accessed by another application or external users.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 67 | **Type:** Concept
+  - So it is just a worker process that reads from one database and updates another.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So it's not going to require a service now.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 69 | **Type:** Concept
+  - I say that again, as that's a common question that I get when we talk about services.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - Why does this worker not require a service?
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - Right.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - So a service is only required if the application has some kind of process or database service or web service that needs to be exposed, that needs to be accessed by others.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - In this case, that's that's not true for the worker app.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - Now before we we get started with the deployment, note that we will be using the following Docker images for these applications.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So these images are built um from a fork of the original um developed at the Docker samples repository.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 76 | **Type:** Exam Tip
+  - Uh, the image names are code cloud slash example app underscore vote with a tag of v1, and then again worker v1 result v1.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - And for the databases we will use the official Redis and PostgreSQL releases that are available.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 78 | **Type:** Concept
+  - Right.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So that's it for now.
+- **File:** `046_Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - Uh, and we will see this in action in the upcoming demo.
+
+### Demo - Deploying Voting App on Kubernetes
+
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - So in this video, we're going to deploy the voting application onto a Kubernetes cluster.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - And the first thing that we have to do is we have to create the pod definition file for each one of the services in our application.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 3 | **Type:** Implementation Step
+  - So we're going to first create the pod definition file for the voting app.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - So I'm just going to create a file called voting dash app dash pod YAML.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 5 | **Type:** Implementation Step
+  - So for the voting app we're going to first specify the API version.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - So this is going to be v1.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 7 | **Type:** Concept
+  - We're going to specify the kind which is.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 8 | **Type:** Implementation Step
+  - Since we want to create a pod the kind is going to be set to pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 9 | **Type:** Implementation Step
+  - Then we give it the metadata.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So this is going to be things like what is the name as well as what labels do we want to assign to it.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 11 | **Type:** Concept
+  - So I'm just going to call this one vote just to keep it simple.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - And then labels.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - So what I'm going to do is I'm going to follow the convention of I'm going to have a label where it's app and then the name of the service or component.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 14 | **Type:** Concept
+  - So since this is the vote service, we're just going to call this vote.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 15 | **Type:** Implementation Step
+  - And then what we have to go under spec and here we will create the list of containers.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - In this pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - There's going to be just one container.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 18 | **Type:** Concept
+  - You can give the container a name.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 19 | **Type:** Concept
+  - We'll just call this one vote the image.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 20 | **Type:** Exam Tip
+  - This is going to be the Docker samples slash example voting app underscore vote.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 21 | **Type:** Implementation Step
+  - And then we have to specify what ports is the application or the container going to be listening on.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 22 | **Type:** Concept
+  - Uh so we'll say container port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - And we know that the voting app is listening on port 80.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And if you want you can even give the the port that it's listening on a name.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 25 | **Type:** Concept
+  - We'll just call this a vote.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So that's everything we need for the voting app pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 27 | **Type:** Implementation Step
+  - We can then go to and create the results pod uh, we'll say result app pod YAML.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 28 | **Type:** Concept
+  - And here I'm going to be really simple.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 29 | **Type:** Concept
+  - We're just going to copy this and just change a few values.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So the pod spec is going to be almost 100% percent identical.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - We're going to change the name to be result.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 32 | **Type:** Concept
+  - We're going to change the label to be result as well.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 33 | **Type:** Concept
+  - We'll change the name of the container to be result.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 34 | **Type:** Implementation Step
+  - And then the image is going to be Docker samples.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 35 | **Type:** Exam Tip
+  - Example voting app underscore result.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 36 | **Type:** Concept
+  - It's going to also listen on port 80.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 37 | **Type:** Concept
+  - And we're going to change that port name to be result.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 38 | **Type:** Implementation Step
+  - Now let's create the reader's database pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 39 | **Type:** Concept
+  - So we'll call this reader's pod dot YAML.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 40 | **Type:** Concept
+  - And once again I'm going to copy this.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 41 | **Type:** Concept
+  - Paste it.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - And we're going to change the names.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 43 | **Type:** Concept
+  - And what I'm going to do is I'm just going to do a multi-select.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - So everything with the word vote I'm just going to change to be reader's.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 45 | **Type:** Implementation Step
+  - So we're going to update the name, the label, the name of the container and then the container port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - And then we have to change the image.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 47 | **Type:** Concept
+  - This is going to be using The Reedus alpine image.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - And then we have to change the container port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - So the Reedus image by default listens on six, three, seven, nine.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 50 | **Type:** Concept
+  - So we'll update that.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 51 | **Type:** Best Practice
+  - And we should be done with the Reedus pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 52 | **Type:** Concept
+  - Let's now go to the Postgres database pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - We'll call this DB dash pod YAML.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 54 | **Type:** Concept
+  - And we'll copy the Reedus config.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 55 | **Type:** Concept
+  - And I'm going to change the name to be DB, the label to be app db as well.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - This is going to be using a Postgres image.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - So we'll set the name to be Postgres.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - And then the actual image will be we'll change this to be Postgres and the tag is going to be 15 alpine the container port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 59 | **Type:** Concept
+  - So the default port that Reedus listens on is 543, two.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 60 | **Type:** Implementation Step
+  - And then we'll just update that port name to be Postgres.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 61 | **Type:** Concept
+  - Now for the Postgres image.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - If you go to the documentation, we have to provide it some information, which is what's going to be the default username and password for Postgres instance.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - And the way that we provide that information is by passing in environment variables.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - And to do that we just say env.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - And then we just provide a list of key value pairs.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 66 | **Type:** Implementation Step
+  - So we say name and then value.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - So this is going to be the key for the environment variable and then the value.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - So Postgres has a specific convention.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 69 | **Type:** Best Practice
+  - It should be Postgres underscore user.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - That's going to be the environment variable that specifies a username.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - And we're going to set the default username to be.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - How about Postgres.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - Just to keep it simple.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - And then we're going to do the password.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - So this is the environment variable called Postgres underscore password.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 76 | **Type:** Implementation Step
+  - And then we'll set the value to be Postgres.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 77 | **Type:** Concept
+  - So in this case if you want to connect to the Postgres database the username is going to be Postgres.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 78 | **Type:** Implementation Step
+  - And then the password is also going to be Postgres just to keep it simple for this demonstration.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 79 | **Type:** Implementation Step
+  - And then the last thing that we have to create is going to be the worker pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 80 | **Type:** Concept
+  - And I'm going to go to the voting app and copy this one as a template.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 81 | **Type:** Concept
+  - And so for the worker once again I'm going to update the values here all at once to be worker.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 82 | **Type:** Exam Tip
+  - And then the image is going to be Docker samples slash example voting app underscore worker.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - And keep in mind that the worker pod isn't going to have a service exposed.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 84 | **Type:** Warning/Pitfall
+  - So in this case we don't really need to specify the port because it's not going to have the service associated with it.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 85 | **Type:** Concept
+  - So we can just delete that.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 86 | **Type:** Implementation Step
+  - So now that we've finished creating the pod specs for all the different components, we now need to create services so that we can enable communication between all of the different components of our application.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 87 | **Type:** Implementation Step
+  - So we're going to create a service for the pod first so that the other components can talk to the database.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - I'm going to create a new file I'm going to call this one Readers dash service dot YAML.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 89 | **Type:** Concept
+  - And here we're going to set API version to be v1.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - We're going to set the kind to be of type service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - And then we'll pass in the metadata.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 92 | **Type:** Concept
+  - So what will the name be.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - I'm just going to keep it simple.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 94 | **Type:** Concept
+  - We'll call this uh readers.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 95 | **Type:** Implementation Step
+  - Now the name of a service is kind of important because when you create a service it's going to get an IP address.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 96 | **Type:** Implementation Step
+  - And we can configure our application to talk to the to the service using the IP address.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 97 | **Type:** Implementation Step
+  - But on top of that it'll also create a DNS entry so that instead of having to remember the IP address of the service, you can just send it to the domain of readers that hostname.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 98 | **Type:** Concept
+  - So the name is important.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - The applications have already been configured to reach the readers database through the domain of readers.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - So we want to make sure we set the name of the service to be readers as well.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 101 | **Type:** Implementation Step
+  - And then if you want, you can have some labels.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 102 | **Type:** Concept
+  - These are purely optional, but we'll just set this to be readers.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 103 | **Type:** Implementation Step
+  - Then for spec, We have to specify what type of service do we want.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - Um, and so there's three types of services.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - There's clusterip, nodeport and load balancer.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 106 | **Type:** Best Practice
+  - The reader's database should not be exposed to the outside world.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - So only internal components.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 108 | **Type:** Best Practice
+  - Um, so basically components already on our Kubernetes cluster should be able to talk to it, not the outside world.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - We're not going to expose it to the end user.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - So for that you want to use a cluster IP service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - So you just say type cluster IP.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 112 | **Type:** Concept
+  - However this is the default type.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - So you can actually delete it.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 114 | **Type:** Concept
+  - And it's going to default to of type cluster IP.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 115 | **Type:** Implementation Step
+  - Then we have to specify the port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - Let's give the port a name I'm going to say we'll call this uh redirect service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - You have to provide the two values which is going to be port and target port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 118 | **Type:** Best Practice
+  - So target port is going to be what port should it forward to on the container.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 119 | **Type:** Concept
+  - And so this is going to be based off of what port is the reader's pod listening on.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 120 | **Type:** Concept
+  - It's going to be 6379.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - So we can copy that and set that to be six, three, seven, nine, and then the port that the server is listening on.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 122 | **Type:** Concept
+  - This can be any port that you want, but in general, we're just going to keep it to be the same as the target port, just to keep things as simple as possible.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 123 | **Type:** Implementation Step
+  - And then after that we have to provide a selector.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 124 | **Type:** Best Practice
+  - So this is basically telling the service what pods should it forward traffic to.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - So we have to grab the labels for the pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - So the the reader's pod has a label of app reader's.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 127 | **Type:** Implementation Step
+  - And so then we go to the reader's service paste that in there.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 128 | **Type:** Concept
+  - This is basically saying that if we get a request to the service, forward it to any pod with the label of app Reader's.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 129 | **Type:** Implementation Step
+  - So now let's create the service for the Postgres database.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 130 | **Type:** Concept
+  - So we'll say DB service dot YAML.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - And we can just copy the reader's service and just change the values accordingly.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 132 | **Type:** Implementation Step
+  - First things first the name.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 133 | **Type:** Concept
+  - Remember the name is important because it automatically sets the DNS entry.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 134 | **Type:** Implementation Step
+  - The applications have been configured to talk to the database using the hostname of db, so we have to name the service accordingly.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - We'll update the label here to just be DB and we'll call this one the DB service for the type.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 136 | **Type:** Concept
+  - The type will once again, just like the reader's database.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 137 | **Type:** Best Practice
+  - It should be only internal to our application.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 138 | **Type:** Best Practice
+  - We shouldn't allow it to be exposed to the outside world.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 139 | **Type:** Concept
+  - So we could set this to be cluster IP.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 140 | **Type:** Concept
+  - And once again this is purely optional because this is the default service type.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 141 | **Type:** Warning/Pitfall
+  - So you don't technically need it.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 142 | **Type:** Concept
+  - But we'll leave it on this file.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 143 | **Type:** Implementation Step
+  - And then the target port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 144 | **Type:** Concept
+  - Well that's going to be the port that the database listens on which is 5432.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 145 | **Type:** Implementation Step
+  - And then we can set the service port to be the same just to keep it simple.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 146 | **Type:** Implementation Step
+  - And then finally we need a selector.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 147 | **Type:** Concept
+  - So we have to select the database pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 148 | **Type:** Concept
+  - So we'll look up the labels for the database pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 149 | **Type:** Concept
+  - And paste that there.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 150 | **Type:** Implementation Step
+  - Let's now create the service for the voting application.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 151 | **Type:** Concept
+  - And I'm going to just grab the DB service, copy it.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 152 | **Type:** Concept
+  - And let's go and update the values.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 153 | **Type:** Implementation Step
+  - So first of all this is going to be we'll just call this service called vote.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 154 | **Type:** Concept
+  - We'll give it the label of vote as well.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 155 | **Type:** Concept
+  - Now for the type the vote service needs to be accessible outside of the Kubernetes cluster.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 156 | **Type:** Concept
+  - So we need to be able to access the application.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 157 | **Type:** Concept
+  - This is kind of like the entry point into our application cluster.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 158 | **Type:** Concept
+  - IP does not give that functionality to us.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 159 | **Type:** Concept
+  - So we need to use either Nodeport or Loadbalancer.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 160 | **Type:** Concept
+  - We're going to use Nodeport for this demonstration.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 161 | **Type:** Implementation Step
+  - Then for the DB for the name we'll just call this vote service Target port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 162 | **Type:** Concept
+  - Well, to get that we have to go to the voting app.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 163 | **Type:** Concept
+  - Here we can see it's listening on port 80.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 164 | **Type:** Best Practice
+  - So this should be port 80.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 165 | **Type:** Concept
+  - And just to kind of mix things up remember you know normally you just kind of set the service port to be the same.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 166 | **Type:** Concept
+  - But technically it can be different.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 167 | **Type:** Concept
+  - So if I wanted to I could set this to be 8080, and that's perfectly fine.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 168 | **Type:** Implementation Step
+  - That just means that whenever somebody wants to talk to this service, they're going to send it on port 8080 to the service IP, which will then get forwarded to port 80 on the container.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 169 | **Type:** Concept
+  - Now, since we are using a type node port, we need to add in another field which is node port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 170 | **Type:** Best Practice
+  - And this is basically going to tell the the nodes in our Kubernetes cluster what port they should listen on so that they can forward traffic to these remote servers.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 171 | **Type:** Concept
+  - It has to be within the specific range.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 172 | **Type:** Concept
+  - So we're going to do 31,000.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 173 | **Type:** Concept
+  - So now when a user sends a request to the IP address of one of our nodes, he's going to send it to this port and it's going to forward it to the vote service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 174 | **Type:** Implementation Step
+  - And then the vote service can then forward it to the vote pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 175 | **Type:** Implementation Step
+  - Then we need a selector.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 176 | **Type:** Concept
+  - So we have to go to the voting app.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 177 | **Type:** Concept
+  - Grab the app vote.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 178 | **Type:** Best Practice
+  - And that should be everything that we need for the vote service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 179 | **Type:** Concept
+  - And the final service that we need is going to be the result service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 180 | **Type:** Concept
+  - And we can copy the vote service in this case.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 181 | **Type:** Concept
+  - And you're going to see that things are going to be fairly close.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 182 | **Type:** Concept
+  - Uh, we're going to change the name to be result.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 183 | **Type:** Concept
+  - The label is also going to be result.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 184 | **Type:** Concept
+  - Uh, since the result service needs to be exposed to the outside world, it needs to be either of type node port or load balancer.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 185 | **Type:** Concept
+  - We're going to use node port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 186 | **Type:** Concept
+  - In this case we'll name the port to be result service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 187 | **Type:** Concept
+  - Let's give it a different node port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 188 | **Type:** Concept
+  - So it's going to be accessible on how about 31,001 target port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 189 | **Type:** Concept
+  - That's going to be what port is the result app listening on which is port 80.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 190 | **Type:** Concept
+  - So that's fine.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 191 | **Type:** Implementation Step
+  - And then if you want to you can also change this to be a different value.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 192 | **Type:** Concept
+  - You can keep it.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 193 | **Type:** Concept
+  - You could be 80.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 194 | **Type:** Concept
+  - It can be 8080.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 195 | **Type:** Concept
+  - Or in this case we'll just set it to be something different 8081.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 196 | **Type:** Implementation Step
+  - And then we have to change the selector to be of whatever the result app is, which is result.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 197 | **Type:** Implementation Step
+  - So now that we have all of the specifications and all of the Kubernetes manifest, we can go ahead and deploy it.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 198 | **Type:** Concept
+  - I already have a cluster set up.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 199 | **Type:** Concept
+  - If I do kubectl get node, you can see I've got a single node cluster here.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 200 | **Type:** Concept
+  - And if I do kubectl get pod you can see there's nothing.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 201 | **Type:** Concept
+  - And if I do kubectl get service there's just the default Kubernetes service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 202 | **Type:** Implementation Step
+  - So at this point we can just deploy everything.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 203 | **Type:** Implementation Step
+  - And the best way to do that is I can just do kubectl apply dash f.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 204 | **Type:** Concept
+  - And I just do current directory.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 205 | **Type:** Implementation Step
+  - And it's going to deploy all of these files.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 206 | **Type:** Implementation Step
+  - Or if you want to you can go in and deploy each one manually.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 207 | **Type:** Implementation Step
+  - So you could do pod dot YAML and then go to DB service, dot YAML and so on.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 208 | **Type:** Implementation Step
+  - But you could just apply an entire folder.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 209 | **Type:** Concept
+  - So I'll do that.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 210 | **Type:** Implementation Step
+  - You can see it went ahead and created everything there.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 211 | **Type:** Concept
+  - All right.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 212 | **Type:** Implementation Step
+  - So now if we take a look we can verify what's been created.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 213 | **Type:** Concept
+  - So if I do kubectl get pod you're going to see that we've got the five pods the pod the result pod.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 214 | **Type:** Concept
+  - The readeth.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 215 | **Type:** Concept
+  - The database.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 216 | **Type:** Concept
+  - The worker.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 217 | **Type:** Concept
+  - You want to see that they're ready in a one slash, one state.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 218 | **Type:** Concept
+  - And running.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 219 | **Type:** Concept
+  - That means everything looks good.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 220 | **Type:** Concept
+  - And you can see they've been up for two minutes and 20s.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 221 | **Type:** Concept
+  - If I do kubectl get service, you can type in the whole word service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 222 | **Type:** Concept
+  - Or you can use the shorthand notation of SVC.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 223 | **Type:** Concept
+  - It's going to show us the different services.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 224 | **Type:** Concept
+  - So we've got the vote service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 225 | **Type:** Concept
+  - And I do want to show you guys how the output kind of lines up to the configuration.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 226 | **Type:** Concept
+  - So you can see the port value is here.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 227 | **Type:** Implementation Step
+  - And then the node port value is here.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 228 | **Type:** Concept
+  - So remember this is the port that we're going to send traffic to on whatever the IP address of our node is.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 229 | **Type:** Concept
+  - You can see the same thing with the result.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 230 | **Type:** Concept
+  - The result service 8081.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 231 | **Type:** Concept
+  - And it can be accessible through this node port.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 232 | **Type:** Implementation Step
+  - And then we've got the two cluster IP services which you can see of type cluster IP.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 233 | **Type:** Operational Insight
+  - They're only going to be accessible internally.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 234 | **Type:** Concept
+  - So now let's go ahead and test this out.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 235 | **Type:** Concept
+  - So if I do a kubectl get node dash o wide.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 236 | **Type:** Concept
+  - When you do o wide it's going to give us the IP address of the nodes.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 237 | **Type:** Concept
+  - So here I can access the node using this IP address.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 238 | **Type:** Concept
+  - So I'm going to copy this.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 239 | **Type:** Concept
+  - And I'm going to go to my browser.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 240 | **Type:** Concept
+  - And we can just put in the IP address there.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 241 | **Type:** Implementation Step
+  - And then if we want to access the let's say the vote service, you just grab this port and the vote service will be accessible through that port on that node.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 242 | **Type:** Concept
+  - So I'll just paste that in.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 243 | **Type:** Concept
+  - And you can see we have access to the vote service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 244 | **Type:** Concept
+  - So if I select cats and I cast a vote great.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 245 | **Type:** Implementation Step
+  - And then now what we want to do is we want to check the results service.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 246 | **Type:** Concept
+  - The results service is available on 31001.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 247 | **Type:** Concept
+  - So let's go to 31001.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 248 | **Type:** Concept
+  - And we can see cats 100%.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 249 | **Type:** Concept
+  - Dogs 0%.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 250 | **Type:** Concept
+  - So this just confirms we can access the node port services.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 251 | **Type:** Concept
+  - And the applications are all communicating with one another destroying the information in the databases and there probably retrieving that data.
+- **File:** `047_Demo - Deploying Voting App on Kubernetes.extraction.md` | **Entry:** 252 | **Type:** Implementation Step
+  - So all of the services are working and everything's been deployed properly onto the Kubernetes cluster.
+
+### Demo - Deploying Voting App on Kubernetes With Deployments
+
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 1 | **Type:** Implementation Step
+  - So in the previous demo, we walked through the steps that we needed to perform to properly deploy our voting application onto our Kubernetes cluster.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 2 | **Type:** Implementation Step
+  - So we deployed all of the pod specifications, as well as the specifications for the different services, so that they can all communicate with one another.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 3 | **Type:** Concept
+  - And the voting application and the result application were exposed to the outside world using the Nodeport service.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 4 | **Type:** Implementation Step
+  - Now, since we deployed pods directly, I want you guys to be aware that there are some limitations when you deploy pods directly.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 5 | **Type:** Concept
+  - One there isn't a way to easily scale up the number of pods, so if we wanted instead of one instance of the voting app, we wanted five.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 6 | **Type:** Concept
+  - It doesn't provide us a mechanism to easily scale up and scale down.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 7 | **Type:** Implementation Step
+  - On top of that, if one of our applications goes down, there's nothing watching over it to restart it or deploy a new instance.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 8 | **Type:** Warning/Pitfall
+  - You don't get that functionality with just pods.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 9 | **Type:** Concept
+  - And on top of that, there's no simple way to upgrade your application.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 10 | **Type:** Concept
+  - So if you want version two of the voting or result app, you would have to delete the old one.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 11 | **Type:** Implementation Step
+  - Deploy a brand new pod spec with the new version, and this could lead to user impact as your service would be down during that time.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 12 | **Type:** Implementation Step
+  - So instead of deploying pods directly, what we want to do is we want to make use of other Kubernetes primitives like replica sets and deployments.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 13 | **Type:** Implementation Step
+  - More specifically, we're going to be focusing on using deployments because deployments help address a lot of these concerns.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 14 | **Type:** Implementation Step
+  - So instead of deploying each one of these components as a pod, we're going to deploy it as a deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 15 | **Type:** Concept
+  - This is going to give us a lot of extra benefits.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 16 | **Type:** Concept
+  - Like it's very easy to scale up and scale down.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 17 | **Type:** Concept
+  - It's going to give us the ability to monitor and watch our pods.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 18 | **Type:** Implementation Step
+  - So if one pod goes down, the deployment will create a new one, and you'll see that it's very easy to deploy new versions of your application as it has built in rolling update functionality so your users aren't impacted.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 19 | **Type:** Implementation Step
+  - And we're going to be using deployments because instead of replica sets, deployments actually use replica sets under the hood.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 20 | **Type:** Implementation Step
+  - So we're going to be using deployments which are an abstraction over pods and replica sets themselves.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 21 | **Type:** Concept
+  - All right.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 22 | **Type:** Implementation Step
+  - So the first thing that we're going to do is we're going to delete everything we deployed.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 23 | **Type:** Concept
+  - So I'm going to do a cube CTL delete dash F.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 24 | **Type:** Concept
+  - And I'm going to just delete all of those resources.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 25 | **Type:** Implementation Step
+  - And then what I want to do is I'm going to just kind of organize this.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 26 | **Type:** Concept
+  - So I'm going to say this is the pod configuration.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 27 | **Type:** Concept
+  - So for the pod demo and I'm just going to move them into there.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 28 | **Type:** Implementation Step
+  - And we will create a separate folder for this new deployment configuration using Kubernetes deployments.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 29 | **Type:** Implementation Step
+  - So the great part is when we configure these deployments it's going to be very simple.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 30 | **Type:** Concept
+  - So I'm going to have a close all of these.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 31 | **Type:** Concept
+  - And what I'm going to do is I'm going to open up the voting app pod spec here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 32 | **Type:** Implementation Step
+  - And then in deployments I'm going to create the new one, which is going to be called vote dash deployment dot YAML.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 33 | **Type:** Implementation Step
+  - So this is going to be the deployment configuration.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 34 | **Type:** Concept
+  - And what I'm going to do is I'm going to split screen it so that it's a little bit easier to see.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 35 | **Type:** Implementation Step
+  - And you guys can understand just how easy it is to copy the pod configuration to the deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 36 | **Type:** Implementation Step
+  - And we're going to set the deployment over here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 37 | **Type:** Implementation Step
+  - And so to create a deployment we're going to do we're first going to specify the API version.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 38 | **Type:** Concept
+  - It's going to be apps slash v1.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 39 | **Type:** Implementation Step
+  - We're going to set the kind to be deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 40 | **Type:** Implementation Step
+  - And then we'll set the metadata.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 41 | **Type:** Implementation Step
+  - So let's give the deployment a name.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 42 | **Type:** Concept
+  - We can just call this vote again.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 43 | **Type:** Implementation Step
+  - And then labels we can give the deployment label.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 44 | **Type:** Concept
+  - This is technically optional.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 45 | **Type:** Concept
+  - So it's not going to really change things unless you want to use it for some other reason.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 46 | **Type:** Implementation Step
+  - And then under spec this is where we have to provide these specifications.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 47 | **Type:** Implementation Step
+  - And the first spec that we're going to provide is the template.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 48 | **Type:** Implementation Step
+  - So this is basically telling your deployment how do I create the pod or what pod are you interested in.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 49 | **Type:** Concept
+  - And so under template all you have to do is just go to the voting app pod, which we have here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 50 | **Type:** Implementation Step
+  - And you just copy under metadata and then you go under template and you paste, and obviously some of the formatting will get messed up.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 51 | **Type:** Concept
+  - And instead of doing that, I think it's going to be a little bit easier just to I'm going to just paste it here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 52 | **Type:** Comparison
+  - What I can do is especially if you're using VS code, I could just hit tab tab.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 53 | **Type:** Concept
+  - Okay.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 54 | **Type:** Implementation Step
+  - So this is basically telling the deployment how do we create a new pod when it needs to.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 55 | **Type:** Implementation Step
+  - Then there's a couple of other properties that we need to have which is replicas.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 56 | **Type:** Concept
+  - So how many instances of the voting application do you want.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 57 | **Type:** Concept
+  - We'll just say one.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 58 | **Type:** Implementation Step
+  - And then we also have to provide a selector.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 59 | **Type:** Implementation Step
+  - So you have to tell the deployment that after it creates the pod in this template, how does it know which pods to watch over.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 60 | **Type:** Concept
+  - And so we just say match labels and you specify whatever label you gave the pod.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 61 | **Type:** Implementation Step
+  - So this is basically telling your deployment, hey anytime you see a pod with the label of app vote, then you need to watch over it.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 62 | **Type:** Concept
+  - And you need to make sure that there's exactly one and only one.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 63 | **Type:** Concept
+  - Nothing less, nothing more.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 64 | **Type:** Concept
+  - So now let's do the result applications.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 65 | **Type:** Implementation Step
+  - We'll say result dash deployment dot YAML.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 66 | **Type:** Concept
+  - And I'm going to also open up the result app pod here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 67 | **Type:** Implementation Step
+  - And actually what I'm going to do is I'm going to go to the vote deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 68 | **Type:** Concept
+  - I'm going to copy this and paste it in here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 69 | **Type:** Implementation Step
+  - And then we're also going to on this tab open up the result application here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 70 | **Type:** Concept
+  - All right.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 71 | **Type:** Concept
+  - So what we're going to do is we're going to change the name.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 72 | **Type:** Concept
+  - This is going to be result.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 73 | **Type:** Concept
+  - We'll change the label as well.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 74 | **Type:** Implementation Step
+  - And then for the template I'm just going to delete this.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 75 | **Type:** Concept
+  - And we're going to just copy from here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 76 | **Type:** Troubleshooting
+  - And we'll fix the spacing.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 77 | **Type:** Implementation Step
+  - And then the last thing we have to change is the selector.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 78 | **Type:** Best Practice
+  - So this should be whatever label you put here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 79 | **Type:** Concept
+  - So this will be result.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 80 | **Type:** Implementation Step
+  - Let's now create one for the Redis instance.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 81 | **Type:** Implementation Step
+  - So I'll do redist deployment.yaml.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 82 | **Type:** Implementation Step
+  - And then um on here on this tab I'm going to open up the readers.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 83 | **Type:** Concept
+  - App latest pod.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 84 | **Type:** Concept
+  - Here we go.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 85 | **Type:** Implementation Step
+  - And I'm also going to copy the result deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 86 | **Type:** Concept
+  - So I'm going to do a Ctrl a Ctrl C.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 87 | **Type:** Concept
+  - Paste it in there.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 88 | **Type:** Implementation Step
+  - And then let's update the value.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 89 | **Type:** Implementation Step
+  - So first of all let's um change the name to be readers.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 90 | **Type:** Concept
+  - Change the label to be readers as well.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 91 | **Type:** Implementation Step
+  - And then we'll update the template.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 92 | **Type:** Implementation Step
+  - And then we also need to make sure that the selector is pointing to the right label.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 93 | **Type:** Concept
+  - So this is going to be readers or whatever we specify here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 94 | **Type:** Implementation Step
+  - So now we'll do the DB dash deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 95 | **Type:** Concept
+  - And I'm going to copy the reader's config.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 96 | **Type:** Implementation Step
+  - And then let's open up the DB pod here and just go through the same steps.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 97 | **Type:** Implementation Step
+  - So we're going to rename the name to be DB the label for the deployment to be db.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 98 | **Type:** Implementation Step
+  - And then the template will change that to be whatever this is.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 99 | **Type:** Implementation Step
+  - And then we have to make sure we update the selector.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 100 | **Type:** Concept
+  - So this is going to be whatever label you use on the pod.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 101 | **Type:** Implementation Step
+  - And last but not the least we're going to create the worker deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 102 | **Type:** Implementation Step
+  - And here I'm going to open up the worker pod here and let's copy the reader's deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 103 | **Type:** Concept
+  - And let's update the values.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 104 | **Type:** Concept
+  - So there's going to be worker.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 105 | **Type:** Concept
+  - This will be worker as well.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 106 | **Type:** Concept
+  - The template we can remove that and grab.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 107 | **Type:** Concept
+  - This here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 108 | **Type:** Implementation Step
+  - And then we want to make sure that we update the label to be worker as well for the selector.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 109 | **Type:** Concept
+  - All right.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 110 | **Type:** Concept
+  - So that's everything that we need.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 111 | **Type:** Concept
+  - Now the services uh nothing changes with the services.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 112 | **Type:** Warning/Pitfall
+  - So you don't have to change anything with the service.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 113 | **Type:** Concept
+  - So I'm actually going to just copy the service and paste it here.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 114 | **Type:** Implementation Step
+  - So when you move from a pod to a deployment, it doesn't matter as long as the labels are okay.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 115 | **Type:** Best Practice
+  - Everything should be good.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 116 | **Type:** Concept
+  - Okay, so we now have everything.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 117 | **Type:** Concept
+  - Let's open up the terminal.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 118 | **Type:** Implementation Step
+  - Let's just quickly verify that there's nothing been deployed.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 119 | **Type:** Implementation Step
+  - And I'm going to change into the deployments directory and let's deploy it.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 120 | **Type:** Troubleshooting
+  - And hopefully there's no errors.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 121 | **Type:** Implementation Step
+  - And we can see it went ahead and created everything.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 122 | **Type:** Implementation Step
+  - And let's see exactly what it created.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 123 | **Type:** Concept
+  - So if I do a cube CTL let's do get services.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 124 | **Type:** Concept
+  - You know we've already seen this.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 125 | **Type:** Concept
+  - This is just the same services that we saw before.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 126 | **Type:** Concept
+  - The interesting stuff happens.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 127 | **Type:** Implementation Step
+  - If I do a cube CTL get deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 128 | **Type:** Implementation Step
+  - So you can see that we have a deployment for each of our applications.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 129 | **Type:** Concept
+  - We can see that we have one of one ready.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 130 | **Type:** Concept
+  - We can see one is up to date and one is available.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 131 | **Type:** Concept
+  - So that's what you want.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 132 | **Type:** Concept
+  - You want everything to be ready up to date.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 133 | **Type:** Concept
+  - Which means you know you're running the latest version and it's available to process traffic.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 134 | **Type:** Concept
+  - We can see everything is good to go in that case.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 135 | **Type:** Concept
+  - Under the hood.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 136 | **Type:** Implementation Step
+  - Deployments use replica sets.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 137 | **Type:** Implementation Step
+  - So if I do replica sets, you can see that there's going to be a replica set for each one of these deployments.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 138 | **Type:** Concept
+  - We can see desired current ready.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 139 | **Type:** Implementation Step
+  - And then you can see the pods that were created under the hood.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 140 | **Type:** Implementation Step
+  - And if you want, you could always do a kubectl get all that's going to show you everything that's going to show you pods, services, deployments and replica sets.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 141 | **Type:** Implementation Step
+  - So with everything deployed let's go ahead and try to access the application.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 142 | **Type:** Concept
+  - So I'm going to do git service.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 143 | **Type:** Concept
+  - And kubectl get pod o wide so I can get the sorry not o kubectl get node dash o wide.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 144 | **Type:** Concept
+  - So this is the IP address of our node.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 145 | **Type:** Concept
+  - Let's go to that IP address.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 146 | **Type:** Implementation Step
+  - And then let's access the vote service.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 147 | **Type:** Concept
+  - And we can see the vote service.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 148 | **Type:** Concept
+  - And what's really cool is the application is actually going to show us.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 149 | **Type:** Concept
+  - And maybe you guys can't see this.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 150 | **Type:** Concept
+  - So let me zoom in for you guys.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 151 | **Type:** Concept
+  - It'll even show us which container is processing that request.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 152 | **Type:** Concept
+  - So you can see this one ends in NF F.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 153 | **Type:** Concept
+  - So if I do kubectl get pod for the vote service we can see nf w f processing it so we can vote.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 154 | **Type:** Concept
+  - I think everything's probably working.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 155 | **Type:** Concept
+  - If we want to check the result service we can see 100% perfect.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 156 | **Type:** Concept
+  - And I'm going to go back to the vote service.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 157 | **Type:** Implementation Step
+  - And now what we're going to do is I'm going to show you guys how we can scale the number of pods for a deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 158 | **Type:** Implementation Step
+  - So we've got all of these deployments.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 159 | **Type:** Concept
+  - Let's say we want the vote service to have five instances.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 160 | **Type:** Implementation Step
+  - So to do that we could do kubectl scale deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 161 | **Type:** Implementation Step
+  - You provide the name of the deployment to which is going to be scale deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 162 | **Type:** Implementation Step
+  - And then we say replicas equals and then however many you want.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 163 | **Type:** Implementation Step
+  - So if you say five, that's going to create five pods for the vote deployment.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 164 | **Type:** Concept
+  - And so you see we can see it scaled.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 165 | **Type:** Implementation Step
+  - So if I do a git deployment you can see there's vote.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 166 | **Type:** Concept
+  - We can see right now at the moment there's 4 or 5 that are ready five up to date four available.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 167 | **Type:** Concept
+  - Let's run this one more time.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 168 | **Type:** Concept
+  - And now we can see all five have been upgraded to the latest configuration.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 169 | **Type:** Concept
+  - And so in this case we now have five pods.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 170 | **Type:** Concept
+  - If you want to verify that we can do kubectl get pod.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 171 | **Type:** Concept
+  - And you can see that there's five pods all with a different unique name.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 172 | **Type:** Concept
+  - And so now if we go back to the application you'll see that every time I hit refresh you're going to get a new container that's processing our request.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 173 | **Type:** Concept
+  - So now it's GB v nine.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 174 | **Type:** Concept
+  - You can see that GB v9.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 175 | **Type:** Implementation Step
+  - And so that's how easy it is to scale our application using deployments.
+- **File:** `048_Demo - Deploying Voting App on Kubernetes With Deployments.extraction.md` | **Entry:** 176 | **Type:** Implementation Step
+  - And that's going to wrap up this demo on how to create and deploy the voting applications using deployment.

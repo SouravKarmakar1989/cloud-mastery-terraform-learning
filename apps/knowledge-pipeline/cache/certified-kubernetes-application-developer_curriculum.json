@@ -1,0 +1,3511 @@
+{
+  "count": 229,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 2884094,
+      "title": "Introduction",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 12299352,
+      "title": "Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 61707937,
+        "asset_type": "Video",
+        "title": "ckad-intro-video-nov-2024_v4.mp4",
+        "external_url": "",
+        "filename": "ckad-intro-video-nov-2024-v4.mp4",
+        "download_urls": null
+      },
+      "object_index": 1,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299404,
+      "title": "Kubernetes Series of Courses",
+      "asset": {
+        "_class": "asset",
+        "id": 14950832,
+        "asset_type": "Video",
+        "title": "0110-ckad-kubernetes-series.mp4",
+        "external_url": "",
+        "filename": "0110-ckad-kubernetes-series.mp4",
+        "download_urls": null
+      },
+      "object_index": 2,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12321104,
+      "title": "Kubernetes for Beginners Course",
+      "asset": {
+        "_class": "asset",
+        "id": 53563412,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 3,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299408,
+      "title": "Certification Details",
+      "asset": {
+        "_class": "asset",
+        "id": 68552003,
+        "asset_type": "Video",
+        "title": "000-020-certification-details.mp4",
+        "external_url": "",
+        "filename": "000-020-certification-details.mp4",
+        "download_urls": null
+      },
+      "object_index": 4,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12403254,
+      "title": "CNCF Discount & Certification Details",
+      "asset": {
+        "_class": "asset",
+        "id": 66761171,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 5,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 31704276,
+      "title": "Course release notes",
+      "asset": {
+        "_class": "asset",
+        "id": 63248153,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 6,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2884112,
+      "title": "Core Concepts",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 12299412,
+      "title": "Recap - Kubernetes Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 68548435,
+        "asset_type": "Video",
+        "title": "010-015-kubernetes-architecture.mp4",
+        "external_url": "",
+        "filename": "010-015-kubernetes-architecture.mp4",
+        "download_urls": null
+      },
+      "object_index": 7,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37105776,
+      "title": "Docker-vs-ContainerD",
+      "asset": {
+        "_class": "asset",
+        "id": 68548665,
+        "asset_type": "Video",
+        "title": "010-020-docker-vs-containerd-.mp4",
+        "external_url": "",
+        "filename": "010-020-docker-vs-containerd.mp4",
+        "download_urls": null
+      },
+      "object_index": 8,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 46253691,
+      "title": "A note on Docker deprecation",
+      "asset": {
+        "_class": "asset",
+        "id": 66757433,
+        "asset_type": "Video",
+        "title": "010-025-a-note-on-docker-deprecation.mp4",
+        "external_url": "",
+        "filename": "010-025-a-note-on-docker-deprecation.mp4",
+        "download_urls": null
+      },
+      "object_index": 9,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12316788,
+      "title": "Recap - Pods",
+      "asset": {
+        "_class": "asset",
+        "id": 68548613,
+        "asset_type": "Video",
+        "title": "010-055-pods-.mp4",
+        "external_url": "",
+        "filename": "010-055-pods.mp4",
+        "download_urls": null
+      },
+      "object_index": 10,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13074218,
+      "title": "YAML Basics",
+      "asset": {
+        "_class": "asset",
+        "id": 15917488,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 11,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13074196,
+      "title": "Recap - Pods with YAML",
+      "asset": {
+        "_class": "asset",
+        "id": 68548611,
+        "asset_type": "Video",
+        "title": "030-000-pods-with-yaml.mp4",
+        "external_url": "",
+        "filename": "030-000-pods-with-yaml.mp4",
+        "download_urls": null
+      },
+      "object_index": 12,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13074212,
+      "title": "Recap - Demo - Creating Pods with YAML",
+      "asset": {
+        "_class": "asset",
+        "id": 15917476,
+        "asset_type": "Video",
+        "title": "Demo 7-pods-with-YAML-project.mp4",
+        "external_url": "",
+        "filename": "Demo-7-pods-with-YAML-project.mp4",
+        "download_urls": null
+      },
+      "object_index": 13,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18097971,
+      "title": "Note!",
+      "asset": {
+        "_class": "asset",
+        "id": 22410765,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 14,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12321230,
+      "title": "Introduction to Kubernetes Practice Test",
+      "asset": {
+        "_class": "asset",
+        "id": 68548633,
+        "asset_type": "Video",
+        "title": "010-080-practice-test-introduction.mp4",
+        "external_url": "",
+        "filename": "010-080-practice-test-introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 15,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17649680,
+      "title": "Demo: Accessing Labs",
+      "asset": {
+        "_class": "asset",
+        "id": 54909538,
+        "asset_type": "Video",
+        "title": "5555-accessing-labs-beta-site-new.mp4",
+        "external_url": "",
+        "filename": "5555-accessing-labs-beta-site-new.mp4",
+        "download_urls": null
+      },
+      "object_index": 16,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26608008,
+      "title": "Course setup - accessing the labs",
+      "asset": {
+        "_class": "asset",
+        "id": 55285558,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 17,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12316736,
+      "title": "Lab - Pods",
+      "asset": {
+        "_class": "asset",
+        "id": 65793147,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 18,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13128500,
+      "title": "Solution - Pods (optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295716,
+        "asset_type": "Video",
+        "title": "0136-ckad-solutions-pods.mp4",
+        "external_url": "",
+        "filename": "0136-ckad-solutions-pods.mp4",
+        "download_urls": null
+      },
+      "object_index": 19,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12504382,
+      "title": "Edit Pods",
+      "asset": {
+        "_class": "asset",
+        "id": 51420322,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 20,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12316794,
+      "title": "Recap - ReplicaSets",
+      "asset": {
+        "_class": "asset",
+        "id": 68548657,
+        "asset_type": "Video",
+        "title": "030-030-replication-controllers-and-re-.mp4",
+        "external_url": "",
+        "filename": "030-030-replication-controllers-and-re.mp4",
+        "download_urls": null
+      },
+      "object_index": 21,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12316746,
+      "title": "Lab - ReplicaSets",
+      "asset": {
+        "_class": "asset",
+        "id": 33673080,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 22,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13128700,
+      "title": "Solution - ReplicaSets (optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295746,
+        "asset_type": "Video",
+        "title": "0155-ckad-solutions-replicasets.mp4",
+        "external_url": "",
+        "filename": "0155-ckad-solutions-replicasets.mp4",
+        "download_urls": null
+      },
+      "object_index": 23,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12316810,
+      "title": "Recap - Deployments",
+      "asset": {
+        "_class": "asset",
+        "id": 69789703,
+        "asset_type": "Video",
+        "title": "030-050-deployments-.mp4",
+        "external_url": "",
+        "filename": "030-050-deployments.mp4",
+        "download_urls": null
+      },
+      "object_index": 24,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12316824,
+      "title": "Lab - Deployments",
+      "asset": {
+        "_class": "asset",
+        "id": 33673146,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 25,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21737808,
+      "title": "Solution - Deployments (optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295712,
+        "asset_type": "Video",
+        "title": "0160-ckad-solution-deployments.mp4",
+        "external_url": "",
+        "filename": "0160-ckad-solution-deployments.mp4",
+        "download_urls": null
+      },
+      "object_index": 26,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12350560,
+      "title": "Recap - Namespaces",
+      "asset": {
+        "_class": "asset",
+        "id": 68549909,
+        "asset_type": "Video",
+        "title": "010-155-namespaces-.mp4",
+        "external_url": "",
+        "filename": "010-155-namespaces.mp4",
+        "download_urls": null
+      },
+      "object_index": 27,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12350564,
+      "title": "Lab - Namespaces",
+      "asset": {
+        "_class": "asset",
+        "id": 33673160,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 28,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21737834,
+      "title": "Solution - Namespaces (optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295718,
+        "asset_type": "Video",
+        "title": "0185-ckad-solutions-namespaces.mp4",
+        "external_url": "",
+        "filename": "0185-ckad-solutions-namespaces.mp4",
+        "download_urls": null
+      },
+      "object_index": 29,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299468,
+      "title": "Services",
+      "asset": {
+        "_class": "asset",
+        "id": 68549841,
+        "asset_type": "Video",
+        "title": "010-130-services.mp4",
+        "external_url": "",
+        "filename": "010-130-services.mp4",
+        "download_urls": null
+      },
+      "object_index": 30,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12309038,
+      "title": "Services - Cluster IP",
+      "asset": {
+        "_class": "asset",
+        "id": 68549155,
+        "asset_type": "Video",
+        "title": "010-135-services-cluster-.mp4",
+        "external_url": "",
+        "filename": "010-135-services-cluster.mp4",
+        "download_urls": null
+      },
+      "object_index": 31,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299470,
+      "title": "Lab - Kubernetes Services",
+      "asset": {
+        "_class": "asset",
+        "id": 33673742,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 32,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21738512,
+      "title": "Solution -  Services (optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295760,
+        "asset_type": "Video",
+        "title": "0630-cka-solution-services.mp4",
+        "external_url": "",
+        "filename": "0630-cka-solution-services.mp4",
+        "download_urls": null
+      },
+      "object_index": 33,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 14112621,
+      "title": "Certification Tip: Imperative Commands",
+      "asset": {
+        "_class": "asset",
+        "id": 48096770,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 34,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18121883,
+      "title": "Certification Tip: Formatting Output with kubectl",
+      "asset": {
+        "_class": "asset",
+        "id": 22444847,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 35,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 52883739,
+      "title": "Kubectl Explain Command",
+      "asset": {
+        "_class": "asset",
+        "id": 68660217,
+        "asset_type": "Video",
+        "title": "010-175-kubectl-explain.mp4",
+        "external_url": "",
+        "filename": "010-175-kubectl-explain.mp4",
+        "download_urls": null
+      },
+      "object_index": 36,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 15021564,
+      "title": "Lab - Imperative Commands",
+      "asset": {
+        "_class": "asset",
+        "id": 33673346,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 37,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21737818,
+      "title": "Solution - Imperative Commands (optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295778,
+        "asset_type": "Video",
+        "title": "0190-ckad-solution-imperative-commands.mp4",
+        "external_url": "",
+        "filename": "0190-ckad-solution-imperative-commands.mp4",
+        "download_urls": null
+      },
+      "object_index": 38,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18893658,
+      "title": "Here's some inspiration to keep going",
+      "asset": {
+        "_class": "asset",
+        "id": 23529706,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 39,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 38139816,
+      "title": "A Quick Reminder",
+      "asset": {
+        "_class": "asset",
+        "id": 49117210,
+        "asset_type": "Video",
+        "title": "C0103.mp4",
+        "external_url": "",
+        "filename": "C0103.mp4",
+        "download_urls": null
+      },
+      "object_index": 40,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2884118,
+      "title": "Configuration",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 28376970,
+      "title": "Define, build and modify container images",
+      "asset": {
+        "_class": "asset",
+        "id": 36027634,
+        "asset_type": "Video",
+        "title": "0700-Docker Images.mp4",
+        "external_url": "",
+        "filename": "0700-Docker-Images.mp4",
+        "download_urls": null
+      },
+      "object_index": 41,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28376976,
+      "title": "Lab - Docker Images",
+      "asset": {
+        "_class": "asset",
+        "id": 39708402,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 42,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12375508,
+      "title": "Commands and Arguments in Docker",
+      "asset": {
+        "_class": "asset",
+        "id": 68549887,
+        "asset_type": "Video",
+        "title": "040-030-commands-and-arguments-in-dock.mp4",
+        "external_url": "",
+        "filename": "040-030-commands-and-arguments-in-dock.mp4",
+        "download_urls": null
+      },
+      "object_index": 43,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12308344,
+      "title": "Commands and Arguments in Kubernetes",
+      "asset": {
+        "_class": "asset",
+        "id": 68549199,
+        "asset_type": "Video",
+        "title": "040-035-commands-and-arguments-in-kube.mp4",
+        "external_url": "",
+        "filename": "040-035-commands-and-arguments-in-kube.mp4",
+        "download_urls": null
+      },
+      "object_index": 44,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 14937910,
+      "title": "A quick note on editing Pods and Deployments",
+      "asset": {
+        "_class": "asset",
+        "id": 18298930,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 45,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12318776,
+      "title": "Lab - Commands and Arguments",
+      "asset": {
+        "_class": "asset",
+        "id": 33673354,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 46,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21738196,
+      "title": "Solution - Commands and Arguments (Optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295756,
+        "asset_type": "Video",
+        "title": "0207-ckad-solution-commands-and-args.mp4",
+        "external_url": "",
+        "filename": "0207-ckad-solution-commands-and-args.mp4",
+        "download_urls": null
+      },
+      "object_index": 47,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299418,
+      "title": "Environment Variables",
+      "asset": {
+        "_class": "asset",
+        "id": 68549127,
+        "asset_type": "Video",
+        "title": "040-050-configure-environment-variable.mp4",
+        "external_url": "",
+        "filename": "040-050-configure-environment-variable.mp4",
+        "download_urls": null
+      },
+      "object_index": 48,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13114350,
+      "title": "ConfigMaps",
+      "asset": {
+        "_class": "asset",
+        "id": 68549551,
+        "asset_type": "Video",
+        "title": "040-055-configure-configmaps-in-applic.mp4",
+        "external_url": "",
+        "filename": "040-055-configure-configmaps-in-applic.mp4",
+        "download_urls": null
+      },
+      "object_index": 49,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299488,
+      "title": "Lab - ConfigMaps",
+      "asset": {
+        "_class": "asset",
+        "id": 33673378,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 50,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21738200,
+      "title": "Solution: ConfigMaps (Optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295722,
+        "asset_type": "Video",
+        "title": "0226-ckad-solution-env-vars-configmaps.mp4",
+        "external_url": "",
+        "filename": "0226-ckad-solution-env-vars-configmaps.mp4",
+        "download_urls": null
+      },
+      "object_index": 51,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12321234,
+      "title": "Secrets",
+      "asset": {
+        "_class": "asset",
+        "id": 68617739,
+        "asset_type": "Video",
+        "title": "040-070-secrets.mp4",
+        "external_url": "",
+        "filename": "040-070-secrets.mp4",
+        "download_urls": null
+      },
+      "object_index": 52,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 14827458,
+      "title": "A quick note about Secrets!",
+      "asset": {
+        "_class": "asset",
+        "id": 18156916,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 53,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299490,
+      "title": "Lab - Secrets",
+      "asset": {
+        "_class": "asset",
+        "id": 33673422,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 54,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 42945200,
+      "title": "Additional Resource",
+      "asset": {
+        "_class": "asset",
+        "id": 55482760,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 55,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21738210,
+      "title": "Solution - Secrets (Optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295734,
+        "asset_type": "Video",
+        "title": "0228-ckad-solutions-secrets.mp4",
+        "external_url": "",
+        "filename": "0228-ckad-solutions-secrets.mp4",
+        "download_urls": null
+      },
+      "object_index": 56,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34549240,
+      "title": "Demo: Encrypting Secret Data at Rest",
+      "asset": {
+        "_class": "asset",
+        "id": 44424620,
+        "asset_type": "Video",
+        "title": "0229_2-encrypting-secret-data-at-rest.mp4",
+        "external_url": "",
+        "filename": "0229-2-encrypting-secret-data-at-rest.mp4",
+        "download_urls": null
+      },
+      "object_index": 57,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299424,
+      "title": "Pre-requisite - Security in Docker",
+      "asset": {
+        "_class": "asset",
+        "id": 68549903,
+        "asset_type": "Video",
+        "title": "060-165-pre-requisite---security-in-do.mp4",
+        "external_url": "",
+        "filename": "060-165-pre-requisite-security-in-do.mp4",
+        "download_urls": null
+      },
+      "object_index": 58,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299426,
+      "title": "Security Contexts",
+      "asset": {
+        "_class": "asset",
+        "id": 68549129,
+        "asset_type": "Video",
+        "title": "060-170-security-contexts.mp4",
+        "external_url": "",
+        "filename": "060-170-security-contexts.mp4",
+        "download_urls": null
+      },
+      "object_index": 59,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299492,
+      "title": "Lab - Security Contexts",
+      "asset": {
+        "_class": "asset",
+        "id": 33673426,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 60,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691508,
+      "title": "Solution: Security Contexts",
+      "asset": {
+        "_class": "asset",
+        "id": 50351088,
+        "asset_type": "Video",
+        "title": "0676 Solution Security Contexts.mp4",
+        "external_url": "",
+        "filename": "0676-Solution-Security-Contexts.mp4",
+        "download_urls": null
+      },
+      "object_index": 61,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299430,
+      "title": "Resource Requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 68551401,
+        "asset_type": "Video",
+        "title": "020-080-resource-limits.mp4",
+        "external_url": "",
+        "filename": "020-080-resource-limits.mp4",
+        "download_urls": null
+      },
+      "object_index": 62,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299498,
+      "title": "Lab - Resource Requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 33673436,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 63,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691512,
+      "title": "Solution: Resource Requirements",
+      "asset": {
+        "_class": "asset",
+        "id": 43295720,
+        "asset_type": "Video",
+        "title": "0247-ckad - solutions-resource requirements.mp4",
+        "external_url": "",
+        "filename": "0247-ckad-solutions-resource-requirements.mp4",
+        "download_urls": null
+      },
+      "object_index": 64,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12970866,
+      "title": "Service Account",
+      "asset": {
+        "_class": "asset",
+        "id": 56592132,
+        "asset_type": "Video",
+        "title": "0248-ckad-service-accounts-1.mp4",
+        "external_url": "",
+        "filename": "0248-ckad-service-accounts-1.mp4",
+        "download_urls": null
+      },
+      "object_index": 65,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12970872,
+      "title": "Lab - Service Acccount",
+      "asset": {
+        "_class": "asset",
+        "id": 33673498,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 66,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691510,
+      "title": "Solution: Service Account",
+      "asset": {
+        "_class": "asset",
+        "id": 50350412,
+        "asset_type": "Video",
+        "title": "0251-ckad - solutions-service account.mp4",
+        "external_url": "",
+        "filename": "0251-ckad-solutions-service-account.mp4",
+        "download_urls": null
+      },
+      "object_index": 67,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13553976,
+      "title": "Stay Updated!",
+      "asset": {
+        "_class": "asset",
+        "id": 16520426,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 68,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12903100,
+      "title": "Taints and Tolerations",
+      "asset": {
+        "_class": "asset",
+        "id": 68550055,
+        "asset_type": "Video",
+        "title": "020-040-taints-and-tolerations.mp4",
+        "external_url": "",
+        "filename": "020-040-taints-and-tolerations.mp4",
+        "download_urls": null
+      },
+      "object_index": 69,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12903102,
+      "title": "Lab - Taints and Toleration",
+      "asset": {
+        "_class": "asset",
+        "id": 33964778,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 70,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21738278,
+      "title": "Solution - Taints and Tolerations (Optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295742,
+        "asset_type": "Video",
+        "title": "0257-ckad-solution-taints-and-tolerations.mp4",
+        "external_url": "",
+        "filename": "0257-ckad-solution-taints-and-tolerations.mp4",
+        "download_urls": null
+      },
+      "object_index": 71,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12903110,
+      "title": "Node Selectors Logging",
+      "asset": {
+        "_class": "asset",
+        "id": 68549541,
+        "asset_type": "Video",
+        "title": "020-055-node-selectors.mp4",
+        "external_url": "",
+        "filename": "020-055-node-selectors.mp4",
+        "download_urls": null
+      },
+      "object_index": 72,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12903116,
+      "title": "Node Affinity",
+      "asset": {
+        "_class": "asset",
+        "id": 68549901,
+        "asset_type": "Video",
+        "title": "020-060-node-affinity.mp4",
+        "external_url": "",
+        "filename": "020-060-node-affinity.mp4",
+        "download_urls": null
+      },
+      "object_index": 73,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12903118,
+      "title": "Lab - Node Affinity",
+      "asset": {
+        "_class": "asset",
+        "id": 33964788,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 74,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21738318,
+      "title": "Solution -  Node Affinity (Optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295774,
+        "asset_type": "Video",
+        "title": "0275-ckad-solution-nodaffinity.mp4",
+        "external_url": "",
+        "filename": "0275-ckad-solution-nodaffinity.mp4",
+        "download_urls": null
+      },
+      "object_index": 75,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12903126,
+      "title": "Taints & Tolerations vs Node Affinity",
+      "asset": {
+        "_class": "asset",
+        "id": 68549573,
+        "asset_type": "Video",
+        "title": "020-075-taints-and-tolerations-vs-node.mp4",
+        "external_url": "",
+        "filename": "020-075-taints-and-tolerations-vs-node.mp4",
+        "download_urls": null
+      },
+      "object_index": 76,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 16554502,
+      "title": "Practice Test",
+      "asset": {
+        "_class": "asset",
+        "id": 33673540,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 77,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 15015384,
+      "title": "Certification Tips - Student Tips",
+      "asset": {
+        "_class": "asset",
+        "id": 18395410,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 78,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 15023126,
+      "title": "If you like it, Share it!",
+      "asset": {
+        "_class": "asset",
+        "id": 18403758,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 79,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2884120,
+      "title": "Multi-Container Pods",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 12299434,
+      "title": "Multi-Container Pods",
+      "asset": {
+        "_class": "asset",
+        "id": 68549567,
+        "asset_type": "Video",
+        "title": "040-100-multi-container-pods.mp4",
+        "external_url": "",
+        "filename": "040-100-multi-container-pods.mp4",
+        "download_urls": null
+      },
+      "object_index": 80,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 51468953,
+      "title": "Multi-container Pods Design Patterns",
+      "asset": {
+        "_class": "asset",
+        "id": 66722501,
+        "asset_type": "Video",
+        "title": "040-115-multi-container-pods-design-pa.mp4",
+        "external_url": "",
+        "filename": "040-115-multi-container-pods-design-pa.mp4",
+        "download_urls": null
+      },
+      "object_index": 81,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12401874,
+      "title": "Lab - Multi-Container Pods",
+      "asset": {
+        "_class": "asset",
+        "id": 33673550,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 82,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 32568700,
+      "title": "Init Containers",
+      "asset": {
+        "_class": "asset",
+        "id": 41799744,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 83,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 32568702,
+      "title": "Lab \u2013 Init Containers",
+      "asset": {
+        "_class": "asset",
+        "id": 54914774,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 84,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 32568704,
+      "title": "Solution \u2013 Init Containers (Optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295764,
+        "asset_type": "Video",
+        "title": "initcontainer-solution.mp4",
+        "external_url": "",
+        "filename": "initcontainer-solution.mp4",
+        "download_urls": null
+      },
+      "object_index": 85,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2884122,
+      "title": "Observability",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 12299440,
+      "title": "Readiness and Liveness Probes",
+      "asset": {
+        "_class": "asset",
+        "id": 15006742,
+        "asset_type": "Video",
+        "title": "1100-ckad-kubernetes-readiness-probes.mp4",
+        "external_url": "",
+        "filename": "1100-ckad-kubernetes-readiness-probes.mp4",
+        "download_urls": null
+      },
+      "object_index": 86,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12308640,
+      "title": "Liveness Probes",
+      "asset": {
+        "_class": "asset",
+        "id": 22719280,
+        "asset_type": "Video",
+        "title": "1200-ckad-kubernetes-liveness-probes-2.mp4",
+        "external_url": "",
+        "filename": "1200-ckad-kubernetes-liveness-probes-2.mp4",
+        "download_urls": null
+      },
+      "object_index": 87,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299442,
+      "title": "Lab -  Readiness Probes",
+      "asset": {
+        "_class": "asset",
+        "id": 33673570,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 88,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691528,
+      "title": "Solution: Readiness and Liveness Probes",
+      "asset": {
+        "_class": "asset",
+        "id": 43295766,
+        "asset_type": "Video",
+        "title": "0421-ckad-solution-Readiness and Liveness Probes.mp4",
+        "external_url": "",
+        "filename": "0421-ckad-solution-Readiness-and-Liveness-Probes.mp4",
+        "download_urls": null
+      },
+      "object_index": 89,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299444,
+      "title": "Logging",
+      "asset": {
+        "_class": "asset",
+        "id": 68551389,
+        "asset_type": "Video",
+        "title": "030-025-managing-application-logs.mp4",
+        "external_url": "",
+        "filename": "030-025-managing-application-logs.mp4",
+        "download_urls": null
+      },
+      "object_index": 90,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299446,
+      "title": "Lab - Logging",
+      "asset": {
+        "_class": "asset",
+        "id": 33673612,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 91,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21913370,
+      "title": "Solution - Logging (optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295730,
+        "asset_type": "Video",
+        "title": "0440-ckad-solution-logging.mp4",
+        "external_url": "",
+        "filename": "0440-ckad-solution-logging.mp4",
+        "download_urls": null
+      },
+      "object_index": 92,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299448,
+      "title": "Monitor and Debug Applications",
+      "asset": {
+        "_class": "asset",
+        "id": 68550359,
+        "asset_type": "Video",
+        "title": "030-010-monitor-cluster-components.mp4",
+        "external_url": "",
+        "filename": "030-010-monitor-cluster-components.mp4",
+        "download_urls": null
+      },
+      "object_index": 93,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12403562,
+      "title": "Lab - Monitoring",
+      "asset": {
+        "_class": "asset",
+        "id": 33673624,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 94,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21913314,
+      "title": "Solution - Monitoring (optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295726,
+        "asset_type": "Video",
+        "title": "0460-ckad-solution-monitoring.mp4",
+        "external_url": "",
+        "filename": "0460-ckad-solution-monitoring.mp4",
+        "download_urls": null
+      },
+      "object_index": 95,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2884124,
+      "title": "POD Design",
+      "object_index": 6
+    },
+    {
+      "_class": "lecture",
+      "id": 12299452,
+      "title": "Labels, Selectors and Annotations",
+      "asset": {
+        "_class": "asset",
+        "id": 68551409,
+        "asset_type": "Video",
+        "title": "020-025-labels-and-selectors.mp4",
+        "external_url": "",
+        "filename": "020-025-labels-and-selectors.mp4",
+        "download_urls": null
+      },
+      "object_index": 96,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299454,
+      "title": "Lab - Labels, Selectors and Annotations",
+      "asset": {
+        "_class": "asset",
+        "id": 33673636,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 97,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21913448,
+      "title": "Solution - Labels and Selectors (optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295732,
+        "asset_type": "Video",
+        "title": "0515-ckad-solution-labels-and-selectors.mp4",
+        "external_url": "",
+        "filename": "0515-ckad-solution-labels-and-selectors.mp4",
+        "download_urls": null
+      },
+      "object_index": 98,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299458,
+      "title": "Rolling Updates & Rollbacks in Deployments",
+      "asset": {
+        "_class": "asset",
+        "id": 69532283,
+        "asset_type": "Video",
+        "title": "040-010-rolling-updates-and-rollbacks (1).mp4",
+        "external_url": "",
+        "filename": "040-010-rolling-updates-and-rollbacks-1.mp4",
+        "download_urls": null
+      },
+      "object_index": 99,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18123227,
+      "title": "Updating a Deployment",
+      "asset": {
+        "_class": "asset",
+        "id": 45000204,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 100,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299460,
+      "title": "Lab - Rolling Updates & Rollbacks",
+      "asset": {
+        "_class": "asset",
+        "id": 33673644,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 101,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 22485642,
+      "title": "Solution - Rolling Updates (Optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295768,
+        "asset_type": "Video",
+        "title": "0535-ckad-solution-rolling-updates.mp4",
+        "external_url": "",
+        "filename": "0535-ckad-solution-rolling-updates.mp4",
+        "download_urls": null
+      },
+      "object_index": 102,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28855928,
+      "title": "Deployment Strategy - Blue Green",
+      "asset": {
+        "_class": "asset",
+        "id": 40297940,
+        "asset_type": "Video",
+        "title": "Untitled Project.mp4",
+        "external_url": "",
+        "filename": "Untitled-Project.mp4",
+        "download_urls": null
+      },
+      "object_index": 103,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28855932,
+      "title": "Deployment Strategy - Canary",
+      "asset": {
+        "_class": "asset",
+        "id": 40246716,
+        "asset_type": "Video",
+        "title": "Untitled Project.mp4",
+        "external_url": "",
+        "filename": "Untitled-Project.mp4",
+        "download_urls": null
+      },
+      "object_index": 104,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28855934,
+      "title": "Lab - Deployment strategies",
+      "asset": {
+        "_class": "asset",
+        "id": 39708440,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 105,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691722,
+      "title": "Solution: Deployment strategies",
+      "asset": {
+        "_class": "asset",
+        "id": 43296088,
+        "asset_type": "Video",
+        "title": "deployment-strategy-solution.mp4",
+        "external_url": "",
+        "filename": "deployment-strategy-solution.mp4",
+        "download_urls": null
+      },
+      "object_index": 106,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299462,
+      "title": "Jobs",
+      "asset": {
+        "_class": "asset",
+        "id": 14950820,
+        "asset_type": "Video",
+        "title": "1700-ckad-kubernetes-jobs.mp4",
+        "external_url": "",
+        "filename": "1700-ckad-kubernetes-jobs.mp4",
+        "download_urls": null
+      },
+      "object_index": 107,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299464,
+      "title": "CronJobs",
+      "asset": {
+        "_class": "asset",
+        "id": 15006758,
+        "asset_type": "Video",
+        "title": "1800-audio-kubernetes-cron-jobs.mp4",
+        "external_url": "",
+        "filename": "1800-audio-kubernetes-cron-jobs.mp4",
+        "download_urls": null
+      },
+      "object_index": 108,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299466,
+      "title": "Lab - Jobs & CronJobs",
+      "asset": {
+        "_class": "asset",
+        "id": 33673666,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 109,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21913208,
+      "title": "Solution - Jobs and Cronjobs (optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295758,
+        "asset_type": "Video",
+        "title": "0570-ckad-solution-cronjobs.mp4",
+        "external_url": "",
+        "filename": "0570-ckad-solution-cronjobs.mp4",
+        "download_urls": null
+      },
+      "object_index": 110,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2884128,
+      "title": "Services & Networking",
+      "object_index": 7
+    },
+    {
+      "_class": "lecture",
+      "id": 12315974,
+      "title": "Network Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 68551959,
+        "asset_type": "Video",
+        "title": "060-185-network-policies.mp4",
+        "external_url": "",
+        "filename": "060-185-network-policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 111,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 24491680,
+      "title": "Developing network policies",
+      "asset": {
+        "_class": "asset",
+        "id": 68551907,
+        "asset_type": "Video",
+        "title": "060-190-developing-network-policies.mp4",
+        "external_url": "",
+        "filename": "060-190-developing-network-policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 112,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299474,
+      "title": "Lab - Network Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 33673774,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 113,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21913856,
+      "title": "Solution - Network Policies (optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43391802,
+        "asset_type": "Video",
+        "title": "0684-CKA Solution Network Policy.mp4",
+        "external_url": "",
+        "filename": "0684-CKA-Solution-Network-Policy.mp4",
+        "download_urls": null
+      },
+      "object_index": 114,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13302764,
+      "title": "Ingress Networking",
+      "asset": {
+        "_class": "asset",
+        "id": 69532347,
+        "asset_type": "Video",
+        "title": "080-155-ingress-2.mp4",
+        "external_url": "",
+        "filename": "080-155-ingress-2.mp4",
+        "download_urls": null
+      },
+      "object_index": 115,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28046958,
+      "title": "Article: Ingress",
+      "asset": {
+        "_class": "asset",
+        "id": 35582260,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 116,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13302766,
+      "title": "Lab - Ingress Networking - 1",
+      "asset": {
+        "_class": "asset",
+        "id": 33673756,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 117,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21737678,
+      "title": "Solution: Ingress Networking - 1",
+      "asset": {
+        "_class": "asset",
+        "id": 43295770,
+        "asset_type": "Video",
+        "title": "0645-ckad-solution-ingress-networking-1.mp4",
+        "external_url": "",
+        "filename": "0645-ckad-solution-ingress-networking-1.mp4",
+        "download_urls": null
+      },
+      "object_index": 118,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13302768,
+      "title": "Lab - Ingress Networking - 2",
+      "asset": {
+        "_class": "asset",
+        "id": 33673762,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 119,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21737704,
+      "title": "Solution: Ingress Networking - 2",
+      "asset": {
+        "_class": "asset",
+        "id": 43295772,
+        "asset_type": "Video",
+        "title": "0670-ckad-solution-ingress-networking-2.mp4",
+        "external_url": "",
+        "filename": "0670-ckad-solution-ingress-networking-2.mp4",
+        "download_urls": null
+      },
+      "object_index": 120,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 16716434,
+      "title": "FAQ - What is the rewrite-target option?",
+      "asset": {
+        "_class": "asset",
+        "id": 20596690,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 121,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2884130,
+      "title": "State Persistence",
+      "object_index": 8
+    },
+    {
+      "_class": "lecture",
+      "id": 17478572,
+      "title": "Introduction to Docker Storage",
+      "asset": {
+        "_class": "asset",
+        "id": 68550251,
+        "asset_type": "Video",
+        "title": "070-010-introduction-to-docker-storage.mp4",
+        "external_url": "",
+        "filename": "070-010-introduction-to-docker-storage.mp4",
+        "download_urls": null
+      },
+      "object_index": 122,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17478592,
+      "title": "Storage in Docker",
+      "asset": {
+        "_class": "asset",
+        "id": 68551967,
+        "asset_type": "Video",
+        "title": "070-015-storage-in-docker.mp4",
+        "external_url": "",
+        "filename": "070-015-storage-in-docker.mp4",
+        "download_urls": null
+      },
+      "object_index": 123,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17478594,
+      "title": "Volume Driver Plugins in Docker",
+      "asset": {
+        "_class": "asset",
+        "id": 68551845,
+        "asset_type": "Video",
+        "title": "070-020-volume-driver-plugins-in-docke.mp4",
+        "external_url": "",
+        "filename": "070-020-volume-driver-plugins-in-docke.mp4",
+        "download_urls": null
+      },
+      "object_index": 124,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12309546,
+      "title": "Volumes in Kubernetes",
+      "asset": {
+        "_class": "asset",
+        "id": 68551961,
+        "asset_type": "Video",
+        "title": "070-030-volumes.mp4",
+        "external_url": "",
+        "filename": "070-030-volumes.mp4",
+        "download_urls": null
+      },
+      "object_index": 125,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12299476,
+      "title": "Persistent Volumes",
+      "asset": {
+        "_class": "asset",
+        "id": 68551821,
+        "asset_type": "Video",
+        "title": "070-035-persistent-volumes.mp4",
+        "external_url": "",
+        "filename": "070-035-persistent-volumes.mp4",
+        "download_urls": null
+      },
+      "object_index": 126,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12361594,
+      "title": "Persistent Volume Claims",
+      "asset": {
+        "_class": "asset",
+        "id": 68551851,
+        "asset_type": "Video",
+        "title": "070-040-persistent-volume-claims.mp4",
+        "external_url": "",
+        "filename": "070-040-persistent-volume-claims.mp4",
+        "download_urls": null
+      },
+      "object_index": 127,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17328596,
+      "title": "Using PVCs in Pods",
+      "asset": {
+        "_class": "asset",
+        "id": 21408956,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 128,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "quiz",
+      "id": 4738806,
+      "title": "Volumes Quiz",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 12316756,
+      "title": "Lab - Persistent Volumes",
+      "asset": {
+        "_class": "asset",
+        "id": 33673788,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 129,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21913100,
+      "title": "Solution -  Persistent Volume and Persistent Volume Claims (Optional)",
+      "asset": {
+        "_class": "asset",
+        "id": 43295794,
+        "asset_type": "Video",
+        "title": "0742-ckad-solution-persistent-volume-and-claims.mp4",
+        "external_url": "",
+        "filename": "0742-ckad-solution-persistent-volume-and-claims.mp4",
+        "download_urls": null
+      },
+      "object_index": 130,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17478606,
+      "title": "Note on optional topics",
+      "asset": {
+        "_class": "asset",
+        "id": 21648302,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 131,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17478610,
+      "title": "Storage Classes",
+      "asset": {
+        "_class": "asset",
+        "id": 68551841,
+        "asset_type": "Video",
+        "title": "070-060-storage-class.mp4",
+        "external_url": "",
+        "filename": "070-060-storage-class.mp4",
+        "download_urls": null
+      },
+      "object_index": 132,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21972316,
+      "title": "Lab - Storage Class",
+      "asset": {
+        "_class": "asset",
+        "id": 33673804,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 133,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17478616,
+      "title": "Why Stateful Sets?",
+      "asset": {
+        "_class": "asset",
+        "id": 21607544,
+        "asset_type": "Video",
+        "title": "05-stateful-sets.mp4",
+        "external_url": "",
+        "filename": "05-stateful-sets.mp4",
+        "download_urls": null
+      },
+      "object_index": 134,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17478628,
+      "title": "Stateful Sets Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 21607526,
+        "asset_type": "Video",
+        "title": "06-stateful-sets-intro.mp4",
+        "external_url": "",
+        "filename": "06-stateful-sets-intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 135,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17478630,
+      "title": "Headless Services",
+      "asset": {
+        "_class": "asset",
+        "id": 21607960,
+        "asset_type": "Video",
+        "title": "06-headless-services.mp4",
+        "external_url": "",
+        "filename": "06-headless-services.mp4",
+        "download_urls": null
+      },
+      "object_index": 136,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17478686,
+      "title": "Storage in StatefulSets",
+      "asset": {
+        "_class": "asset",
+        "id": 21607546,
+        "asset_type": "Video",
+        "title": "07-volume-claim-templates.mp4",
+        "external_url": "",
+        "filename": "07-volume-claim-templates.mp4",
+        "download_urls": null
+      },
+      "object_index": 137,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 6812356,
+      "title": "Security",
+      "object_index": 9
+    },
+    {
+      "_class": "lecture",
+      "id": 28360312,
+      "title": "Kubernetes Security Primitives",
+      "asset": {
+        "_class": "asset",
+        "id": 68551901,
+        "asset_type": "Video",
+        "title": "060-010-kubernetes-security-primitives.mp4",
+        "external_url": "",
+        "filename": "060-010-kubernetes-security-primitives.mp4",
+        "download_urls": null
+      },
+      "object_index": 138,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28360314,
+      "title": "Authentication",
+      "asset": {
+        "_class": "asset",
+        "id": 68551965,
+        "asset_type": "Video",
+        "title": "060-015-authentication.mp4",
+        "external_url": "",
+        "filename": "060-015-authentication.mp4",
+        "download_urls": null
+      },
+      "object_index": 139,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 31756514,
+      "title": "Article on Setting up Basic Authentication",
+      "asset": {
+        "_class": "asset",
+        "id": 40693432,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 140,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 32920116,
+      "title": "Important Updates",
+      "asset": {
+        "_class": "asset",
+        "id": 42268166,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 141,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28360326,
+      "title": "KubeConfig",
+      "asset": {
+        "_class": "asset",
+        "id": 68551963,
+        "asset_type": "Video",
+        "title": "060-080-kubeconfig.mp4",
+        "external_url": "",
+        "filename": "060-080-kubeconfig.mp4",
+        "download_urls": null
+      },
+      "object_index": 142,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28360328,
+      "title": "Lab - KubeConfig",
+      "asset": {
+        "_class": "asset",
+        "id": 39708412,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 143,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691598,
+      "title": "Solution KubeConfig",
+      "asset": {
+        "_class": "asset",
+        "id": 43295818,
+        "asset_type": "Video",
+        "title": "0642 Solution KubeConfig.mp4",
+        "external_url": "",
+        "filename": "0642-Solution-KubeConfig.mp4",
+        "download_urls": null
+      },
+      "object_index": 144,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28360330,
+      "title": "API Groups",
+      "asset": {
+        "_class": "asset",
+        "id": 68551853,
+        "asset_type": "Video",
+        "title": "060-095-api-groups.mp4",
+        "external_url": "",
+        "filename": "060-095-api-groups.mp4",
+        "download_urls": null
+      },
+      "object_index": 145,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28360332,
+      "title": "Authorization",
+      "asset": {
+        "_class": "asset",
+        "id": 68551905,
+        "asset_type": "Video",
+        "title": "060-100-authorization.mp4",
+        "external_url": "",
+        "filename": "060-100-authorization.mp4",
+        "download_urls": null
+      },
+      "object_index": 146,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28360336,
+      "title": "Role Based Access Controls",
+      "asset": {
+        "_class": "asset",
+        "id": 69150131,
+        "asset_type": "Video",
+        "title": "060-105-role-based-access-controls.mp4",
+        "external_url": "",
+        "filename": "060-105-role-based-access-controls.mp4",
+        "download_urls": null
+      },
+      "object_index": 147,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28360338,
+      "title": "Lab - Role Based Access Controls",
+      "asset": {
+        "_class": "asset",
+        "id": 39708416,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 148,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691606,
+      "title": "Solution Role Based Access Controls",
+      "asset": {
+        "_class": "asset",
+        "id": 47468062,
+        "asset_type": "Video",
+        "title": "0656_2 Solution Role Based Access Controls.mp4",
+        "external_url": "",
+        "filename": "0656-2-Solution-Role-Based-Access-Controls.mp4",
+        "download_urls": null
+      },
+      "object_index": 149,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28360340,
+      "title": "Cluster Roles",
+      "asset": {
+        "_class": "asset",
+        "id": 68551889,
+        "asset_type": "Video",
+        "title": "060-120-cluster-roles.mp4",
+        "external_url": "",
+        "filename": "060-120-cluster-roles.mp4",
+        "download_urls": null
+      },
+      "object_index": 150,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 31685400,
+      "title": "Lab - Cluster Roles",
+      "asset": {
+        "_class": "asset",
+        "id": 40593844,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 151,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691614,
+      "title": "Solution Cluster Roles",
+      "asset": {
+        "_class": "asset",
+        "id": 43295858,
+        "asset_type": "Video",
+        "title": "0659 Solution Cluster Roles.mp4",
+        "external_url": "",
+        "filename": "0659-Solution-Cluster-Roles.mp4",
+        "download_urls": null
+      },
+      "object_index": 152,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29039636,
+      "title": "Admission Controllers",
+      "asset": {
+        "_class": "asset",
+        "id": 68551981,
+        "asset_type": "Video",
+        "title": "020-160--2025-updates-admission-contro.mp4",
+        "external_url": "",
+        "filename": "020-160-2025-updates-admission-contro.mp4",
+        "download_urls": null
+      },
+      "object_index": 153,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29039638,
+      "title": "Labs - Admission Controllers",
+      "asset": {
+        "_class": "asset",
+        "id": 39708422,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 154,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691676,
+      "title": "Solution: Admission Controllers",
+      "asset": {
+        "_class": "asset",
+        "id": 43295906,
+        "asset_type": "Video",
+        "title": "admission-controller.mp4",
+        "external_url": "",
+        "filename": "admission-controller.mp4",
+        "download_urls": null
+      },
+      "object_index": 155,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29039640,
+      "title": "Validating and Mutating Admission Controllers",
+      "asset": {
+        "_class": "asset",
+        "id": 68551997,
+        "asset_type": "Video",
+        "title": "020-175--2025-updates-validating-and-m.mp4",
+        "external_url": "",
+        "filename": "020-175-2025-updates-validating-and-m.mp4",
+        "download_urls": null
+      },
+      "object_index": 156,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29039642,
+      "title": "Labs - Validating and Mutating Admission Controllers",
+      "asset": {
+        "_class": "asset",
+        "id": 39708430,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 157,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691684,
+      "title": "Solution: Validating and Mutating Admission Controllers",
+      "asset": {
+        "_class": "asset",
+        "id": 43295982,
+        "asset_type": "Video",
+        "title": "valdiation-mutating-admission-controller.mp4",
+        "external_url": "",
+        "filename": "valdiation-mutating-admission-controller.mp4",
+        "download_urls": null
+      },
+      "object_index": 158,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28855920,
+      "title": "API Versions",
+      "asset": {
+        "_class": "asset",
+        "id": 36681590,
+        "asset_type": "Video",
+        "title": "07990_220-api versions.mp4",
+        "external_url": "",
+        "filename": "07990-220-api-versions.mp4",
+        "download_urls": null
+      },
+      "object_index": 159,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28855922,
+      "title": "API Deprecations",
+      "asset": {
+        "_class": "asset",
+        "id": 36681584,
+        "asset_type": "Video",
+        "title": "07990_230-api deprecations.mp4",
+        "external_url": "",
+        "filename": "07990-230-api-deprecations.mp4",
+        "download_urls": null
+      },
+      "object_index": 160,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28855926,
+      "title": "Lab - API Versions/Deprecations",
+      "asset": {
+        "_class": "asset",
+        "id": 54336548,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 161,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691686,
+      "title": "Solution: API Versions/Deprecations",
+      "asset": {
+        "_class": "asset",
+        "id": 43296004,
+        "asset_type": "Video",
+        "title": "api-versions.mp4",
+        "external_url": "",
+        "filename": "api-versions.mp4",
+        "download_urls": null
+      },
+      "object_index": 162,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29112774,
+      "title": "Custom Resource Definition",
+      "asset": {
+        "_class": "asset",
+        "id": 69790029,
+        "asset_type": "Video",
+        "title": "060-215--2025-updates-custorm-resource.mp4",
+        "external_url": "",
+        "filename": "060-215-2025-updates-custorm-resource.mp4",
+        "download_urls": null
+      },
+      "object_index": 163,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 34566072,
+      "title": "Lab - Custom Resource Definition",
+      "asset": {
+        "_class": "asset",
+        "id": 55480320,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 164,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29112776,
+      "title": "Custom Controllers",
+      "asset": {
+        "_class": "asset",
+        "id": 47468412,
+        "asset_type": "Video",
+        "title": "Untitled Project.mp4",
+        "external_url": "",
+        "filename": "Untitled-Project.mp4",
+        "download_urls": null
+      },
+      "object_index": 165,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 29112778,
+      "title": "Operator Framework",
+      "asset": {
+        "_class": "asset",
+        "id": 37034038,
+        "asset_type": "Video",
+        "title": "07990_238-operator framework.mp4",
+        "external_url": "",
+        "filename": "07990-238-operator-framework.mp4",
+        "download_urls": null
+      },
+      "object_index": 166,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 9743994,
+      "title": "Helm Fundamentals",
+      "object_index": 10
+    },
+    {
+      "_class": "lecture",
+      "id": 28855938,
+      "title": "Helm Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 36686978,
+        "asset_type": "Video",
+        "title": "07990_270-helm introduction.mp4",
+        "external_url": "",
+        "filename": "07990-270-helm-introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 167,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28855944,
+      "title": "Install Helm",
+      "asset": {
+        "_class": "asset",
+        "id": 36681598,
+        "asset_type": "Video",
+        "title": "07990_280-install helm.mp4",
+        "external_url": "",
+        "filename": "07990-280-install-helm.mp4",
+        "download_urls": null
+      },
+      "object_index": 168,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28855946,
+      "title": "Labs - Install Helm",
+      "asset": {
+        "_class": "asset",
+        "id": 39708444,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 169,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691724,
+      "title": "Solution: Install Helm",
+      "asset": {
+        "_class": "asset",
+        "id": 43296108,
+        "asset_type": "Video",
+        "title": "helm-installation.mp4",
+        "external_url": "",
+        "filename": "helm-installation.mp4",
+        "download_urls": null
+      },
+      "object_index": 170,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28855948,
+      "title": "Helm Concepts",
+      "asset": {
+        "_class": "asset",
+        "id": 36681604,
+        "asset_type": "Video",
+        "title": "07990_300-helm concepts.mp4",
+        "external_url": "",
+        "filename": "07990-300-helm-concepts.mp4",
+        "download_urls": null
+      },
+      "object_index": 171,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 28855950,
+      "title": "Labs - Helm Concepts",
+      "asset": {
+        "_class": "asset",
+        "id": 63802961,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 172,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 33691730,
+      "title": "Solution: Helm Concepts",
+      "asset": {
+        "_class": "asset",
+        "id": 43296112,
+        "asset_type": "Video",
+        "title": "helm-basics.mp4",
+        "external_url": "",
+        "filename": "helm-basics.mp4",
+        "download_urls": null
+      },
+      "object_index": 173,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 11709645,
+      "title": "(2025 Updates) Kustomize Basics",
+      "object_index": 11
+    },
+    {
+      "_class": "lecture",
+      "id": 49280367,
+      "title": "Kustomize Problem Statement & idealogy",
+      "asset": {
+        "_class": "asset",
+        "id": 63802673,
+        "asset_type": "Video",
+        "title": "020-020-kustomize-problem-statement--- (1080p).mp4",
+        "external_url": "",
+        "filename": "020-020-kustomize-problem-statement-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 174,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49280371,
+      "title": "Kustomize vs Helm",
+      "asset": {
+        "_class": "asset",
+        "id": 63802671,
+        "asset_type": "Video",
+        "title": "020-030-kustomize-vs-helm (1080p).mp4",
+        "external_url": "",
+        "filename": "020-030-kustomize-vs-helm-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 175,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49280401,
+      "title": "Installation/Setup",
+      "asset": {
+        "_class": "asset",
+        "id": 63802693,
+        "asset_type": "Video",
+        "title": "030-020-installationsetup (1080p).mp4",
+        "external_url": "",
+        "filename": "030-020-installationsetup-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 176,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49280427,
+      "title": "kustomization.yaml file",
+      "asset": {
+        "_class": "asset",
+        "id": 63802721,
+        "asset_type": "Video",
+        "title": "030-030-kustomization.yaml-file (1080p).mp4",
+        "external_url": "",
+        "filename": "030-030-kustomization.yaml-file-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 177,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49280443,
+      "title": "Kustomize Output",
+      "asset": {
+        "_class": "asset",
+        "id": 63802725,
+        "asset_type": "Video",
+        "title": "030-040-kustomize-output (1080p).mp4",
+        "external_url": "",
+        "filename": "030-040-kustomize-output-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 178,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49280445,
+      "title": "Kustomize ApiVersion & Kind",
+      "asset": {
+        "_class": "asset",
+        "id": 63802731,
+        "asset_type": "Video",
+        "title": "030-050-kustomize-apiversion---kind (1080p).mp4",
+        "external_url": "",
+        "filename": "030-050-kustomize-apiversion-kind-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 179,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49280449,
+      "title": "Managing Directories",
+      "asset": {
+        "_class": "asset",
+        "id": 63802767,
+        "asset_type": "Video",
+        "title": "030-060-managing-directories (1080p).mp4",
+        "external_url": "",
+        "filename": "030-060-managing-directories-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 180,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49280557,
+      "title": "Managing Directories Demo",
+      "asset": {
+        "_class": "asset",
+        "id": 63802907,
+        "asset_type": "Video",
+        "title": "030-070-managing-directories-demo (1080p).mp4",
+        "external_url": "",
+        "filename": "030-070-managing-directories-demo-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 181,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49281963,
+      "title": "Lab - Managing Directories(Kustomize)",
+      "asset": {
+        "_class": "asset",
+        "id": 63808973,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 182,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49282105,
+      "title": "Common Transformers",
+      "asset": {
+        "_class": "asset",
+        "id": 63803833,
+        "asset_type": "Video",
+        "title": "030-090-common-transformers (1080p).mp4",
+        "external_url": "",
+        "filename": "030-090-common-transformers-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 183,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49282121,
+      "title": "Image Transformers",
+      "asset": {
+        "_class": "asset",
+        "id": 63803851,
+        "asset_type": "Video",
+        "title": "030-100-image-transformers (1080p).mp4",
+        "external_url": "",
+        "filename": "030-100-image-transformers-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 184,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49282139,
+      "title": "Transformers Demo",
+      "asset": {
+        "_class": "asset",
+        "id": 63803867,
+        "asset_type": "Video",
+        "title": "030-110-transformers-demo (1080p).mp4",
+        "external_url": "",
+        "filename": "030-110-transformers-demo-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 185,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49282185,
+      "title": "Lab - Transformers",
+      "asset": {
+        "_class": "asset",
+        "id": 63803861,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 186,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49283097,
+      "title": "Patches Intro",
+      "asset": {
+        "_class": "asset",
+        "id": 63804421,
+        "asset_type": "Video",
+        "title": "030-130-patches-intro (1080p).mp4",
+        "external_url": "",
+        "filename": "030-130-patches-intro-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 187,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49283107,
+      "title": "Different Types of Patches",
+      "asset": {
+        "_class": "asset",
+        "id": 63804457,
+        "asset_type": "Video",
+        "title": "030-140-inline-vs-seperate-file (1080p).mp4",
+        "external_url": "",
+        "filename": "030-140-inline-vs-seperate-file-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 188,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49283161,
+      "title": "Patches Dictionary",
+      "asset": {
+        "_class": "asset",
+        "id": 63804479,
+        "asset_type": "Video",
+        "title": "030-150-patches-dictionary (1080p).mp4",
+        "external_url": "",
+        "filename": "030-150-patches-dictionary-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 189,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49283169,
+      "title": "Patches list",
+      "asset": {
+        "_class": "asset",
+        "id": 63804495,
+        "asset_type": "Video",
+        "title": "030-160-patches-list (1080p).mp4",
+        "external_url": "",
+        "filename": "030-160-patches-list-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 190,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49283195,
+      "title": "Lab - Patches",
+      "asset": {
+        "_class": "asset",
+        "id": 63804649,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 191,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49283433,
+      "title": "Overlays",
+      "asset": {
+        "_class": "asset",
+        "id": 63805029,
+        "asset_type": "Video",
+        "title": "030-180-overlays (1080p).mp4",
+        "external_url": "",
+        "filename": "030-180-overlays-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 192,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49283853,
+      "title": "Lab - Overlay",
+      "asset": {
+        "_class": "asset",
+        "id": 63805113,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 193,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49283883,
+      "title": "Components",
+      "asset": {
+        "_class": "asset",
+        "id": 63805171,
+        "asset_type": "Video",
+        "title": "030-200-components (1080p).mp4",
+        "external_url": "",
+        "filename": "030-200-components-1080p.mp4",
+        "download_urls": null
+      },
+      "object_index": 194,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 49283907,
+      "title": "Lab - Components",
+      "asset": {
+        "_class": "asset",
+        "id": 63808955,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 195,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 2983819,
+      "title": "Additional Practice - Kubernetes Challenges (Optional)",
+      "object_index": 12
+    },
+    {
+      "_class": "lecture",
+      "id": 23161648,
+      "title": "Kubernetes Challenges",
+      "asset": {
+        "_class": "asset",
+        "id": 52127654,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 196,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12337386,
+      "title": "Kubernetes Update and Project Videos - Your Essential Guide",
+      "asset": {
+        "_class": "asset",
+        "id": 66761069,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 197,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 3034944,
+      "title": "Certification Tips",
+      "object_index": 13
+    },
+    {
+      "_class": "lecture",
+      "id": 12978480,
+      "title": "Time Management",
+      "asset": {
+        "_class": "asset",
+        "id": 15794736,
+        "asset_type": "Video",
+        "title": "5000 - tips - time management.mp4",
+        "external_url": "",
+        "filename": "5000-tips-time-management.mp4",
+        "download_urls": null
+      },
+      "object_index": 198,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 13115642,
+      "title": "Additional Tips",
+      "asset": {
+        "_class": "asset",
+        "id": 15969268,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 199,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 4261269,
+      "title": "Lightning Labs",
+      "object_index": 14
+    },
+    {
+      "_class": "lecture",
+      "id": 18117951,
+      "title": "Introduction - Lightning Labs",
+      "asset": {
+        "_class": "asset",
+        "id": 36790618,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 200,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18109729,
+      "title": "Lightning Lab - 1",
+      "asset": {
+        "_class": "asset",
+        "id": 33673904,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 201,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18277666,
+      "title": "Solution: Lightning Lab1",
+      "asset": {
+        "_class": "asset",
+        "id": 43296156,
+        "asset_type": "Video",
+        "title": "1020-ckad-solution-lightning-lab-1.mp4",
+        "external_url": "",
+        "filename": "1020-ckad-solution-lightning-lab-1.mp4",
+        "download_urls": null
+      },
+      "object_index": 202,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18109733,
+      "title": "Lightning Lab - 2",
+      "asset": {
+        "_class": "asset",
+        "id": 33673968,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 203,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 18277680,
+      "title": "Solution: Lightning Lab - 2",
+      "asset": {
+        "_class": "asset",
+        "id": 43296158,
+        "asset_type": "Video",
+        "title": "1040-ckad-solution-lightning-lab-2.mp4",
+        "external_url": "",
+        "filename": "1040-ckad-solution-lightning-lab-2.mp4",
+        "download_urls": null
+      },
+      "object_index": 204,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 3602494,
+      "title": "Mock Exams",
+      "object_index": 15
+    },
+    {
+      "_class": "lecture",
+      "id": 15341792,
+      "title": "Mock Exam - 1",
+      "asset": {
+        "_class": "asset",
+        "id": 33673956,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 205,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 21737642,
+      "title": "Mock Exam -1 (Solution)",
+      "asset": {
+        "_class": "asset",
+        "id": 43296170,
+        "asset_type": "Video",
+        "title": "1120-ckad-solution-mock-exam-1.mp4",
+        "external_url": "",
+        "filename": "1120-ckad-solution-mock-exam-1.mp4",
+        "download_urls": null
+      },
+      "object_index": 206,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 15668754,
+      "title": "Mock Exam - 2",
+      "asset": {
+        "_class": "asset",
+        "id": 33673984,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 207,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 26359180,
+      "title": "Mock Exam -2 (Solution)",
+      "asset": {
+        "_class": "asset",
+        "id": 43296164,
+        "asset_type": "Video",
+        "title": "1130-ckad-solution-mock-exam-2.mp4",
+        "external_url": "",
+        "filename": "1130-ckad-solution-mock-exam-2.mp4",
+        "download_urls": null
+      },
+      "object_index": 208,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37868512,
+      "title": "Bonus Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 56921338,
+        "asset_type": "Video",
+        "title": "CKAD Conclusion Video.mp4",
+        "external_url": "",
+        "filename": "CKAD-Conclusion-Video.mp4",
+        "download_urls": null
+      },
+      "object_index": 209,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 17101072,
+      "title": "Register for Certification",
+      "asset": {
+        "_class": "asset",
+        "id": 66761181,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 210,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 44020486,
+      "title": "What's Next?",
+      "asset": {
+        "_class": "asset",
+        "id": 56883800,
+        "asset_type": "Video",
+        "title": "CKAD mock intro [Updated].mp4",
+        "external_url": "",
+        "filename": "CKAD-mock-intro-Updated.mp4",
+        "download_urls": null
+      },
+      "object_index": 211,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 41933598,
+      "title": "Kubernetes Update and Project Videos - Your Essential Guide",
+      "asset": {
+        "_class": "asset",
+        "id": 54134656,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 212,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 12348570,
+      "title": "Bonus Lecture",
+      "asset": {
+        "_class": "asset",
+        "id": 54915000,
+        "asset_type": "Article",
+        "title": "",
+        "external_url": "",
+        "filename": "",
+        "download_urls": null
+      },
+      "object_index": 213,
+      "supplementary_assets": []
+    }
+  ]
+}
