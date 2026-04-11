@@ -1,0 +1,1 @@
+Hi everyone. In this section we are going to see how can we support our API's definitions in API management in two different formats so we can use our APIs into other tools. Let's get started.

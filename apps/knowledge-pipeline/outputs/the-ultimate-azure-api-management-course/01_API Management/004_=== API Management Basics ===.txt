@@ -1,0 +1,1 @@
+Hi, everyone. In this section we are going to talk about API management basics. We are going to see how to import an API Mockresponse basic protection for the API. How we can debug our API is using Visual Studio code and how we can handle versions and revisions for our APIs in API management. Let's get straight into it.

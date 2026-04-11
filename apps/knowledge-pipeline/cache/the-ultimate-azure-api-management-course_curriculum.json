@@ -1,0 +1,5088 @@
+{
+  "count": 228,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "_class": "chapter",
+      "id": 8966426,
+      "title": "API Management",
+      "object_index": 1
+    },
+    {
+      "_class": "lecture",
+      "id": 37484382,
+      "title": "What is Azure API Management?",
+      "asset": {
+        "_class": "asset",
+        "id": 48303068,
+        "asset_type": "Video",
+        "title": "02 - What is API Management.mp4",
+        "external_url": "",
+        "filename": "02-What-is-API-Management.mp4",
+        "download_urls": null
+      },
+      "object_index": 1,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48303070,
+          "download_urls": null,
+          "title": "Gartner Magic Quadrant for API Management",
+          "asset_type": "ExternalLink",
+          "external_url": "https://dmcommunity.org/2022/11/28/2022-gartner-magic-quadrant-for-full-life-cycle-api-management/",
+          "filename": "Gartner-Magic-Quadrant-for-API-Management"
+        },
+        {
+          "_class": "asset",
+          "id": 48303072,
+          "download_urls": null,
+          "title": "Microservices Architecture",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/architecture/includes/images/microservices-logical.png",
+          "filename": "Microservices-Architecture"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37484392,
+      "title": "Create an Azure API Management",
+      "asset": {
+        "_class": "asset",
+        "id": 48302036,
+        "asset_type": "Video",
+        "title": "03- Create an API Management.mp4",
+        "external_url": "",
+        "filename": "03-Create-an-API-Management.mp4",
+        "download_urls": null
+      },
+      "object_index": 2,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484396,
+      "title": "Important Note!",
+      "asset": {
+        "_class": "asset",
+        "id": 50966330,
+        "asset_type": "Video",
+        "title": "04 - Important Note.mp4",
+        "external_url": "",
+        "filename": "04-Important-Note.mp4",
+        "download_urls": null
+      },
+      "object_index": 3,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484400,
+      "title": "=== API Management Basics ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50966132,
+        "asset_type": "Video",
+        "title": "05 - Basics Intro.mp4",
+        "external_url": "",
+        "filename": "05-Basics-Intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 4,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484402,
+      "title": "Import Your First API",
+      "asset": {
+        "_class": "asset",
+        "id": 48303732,
+        "asset_type": "Video",
+        "title": "06 - Import yout first API.mp4",
+        "external_url": "",
+        "filename": "06-Import-yout-first-API.mp4",
+        "download_urls": null
+      },
+      "object_index": 5,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48303734,
+          "download_urls": null,
+          "title": "Demo Conference API",
+          "asset_type": "ExternalLink",
+          "external_url": "https://conferenceapi.azurewebsites.net?format=json",
+          "filename": "Demo-Conference-API"
+        },
+        {
+          "_class": "asset",
+          "id": 61229211,
+          "download_urls": null,
+          "title": "Petstore API",
+          "asset_type": "ExternalLink",
+          "external_url": "https://petstore3.swagger.io/",
+          "filename": "Petstore-API"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37484404,
+      "title": "Create and Publish a Product",
+      "asset": {
+        "_class": "asset",
+        "id": 48304540,
+        "asset_type": "Video",
+        "title": "07-create and publish a product.mp4",
+        "external_url": "",
+        "filename": "07-create-and-publish-a-product.mp4",
+        "download_urls": null
+      },
+      "object_index": 6,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484406,
+      "title": "Mock API Responses",
+      "asset": {
+        "_class": "asset",
+        "id": 48304774,
+        "asset_type": "Video",
+        "title": "08-Mock API responses.mp4",
+        "external_url": "",
+        "filename": "08-Mock-API-responses.mp4",
+        "download_urls": null
+      },
+      "object_index": 7,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484408,
+      "title": "Protect Your API",
+      "asset": {
+        "_class": "asset",
+        "id": 48305776,
+        "asset_type": "Video",
+        "title": "09-protect your API.mp4",
+        "external_url": "",
+        "filename": "09-protect-your-API.mp4",
+        "download_urls": null
+      },
+      "object_index": 8,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484446,
+      "title": "Import App Service Web API",
+      "asset": {
+        "_class": "asset",
+        "id": 48322306,
+        "asset_type": "Video",
+        "title": "16-Import an App Service Web API.mp4",
+        "external_url": "",
+        "filename": "16-Import-an-App-Service-Web-API.mp4",
+        "download_urls": null
+      },
+      "object_index": 9,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484414,
+      "title": "Debug Your APIs",
+      "asset": {
+        "_class": "asset",
+        "id": 48308250,
+        "asset_type": "Video",
+        "title": "10 - debug your API.mp4",
+        "external_url": "",
+        "filename": "10-debug-your-API.mp4",
+        "download_urls": null
+      },
+      "object_index": 10,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484418,
+      "title": "Add Revisions",
+      "asset": {
+        "_class": "asset",
+        "id": 48318944,
+        "asset_type": "Video",
+        "title": "11-add revision.mp4",
+        "external_url": "",
+        "filename": "11-add-revision.mp4",
+        "download_urls": null
+      },
+      "object_index": 11,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484420,
+      "title": "Add Multiple Versions",
+      "asset": {
+        "_class": "asset",
+        "id": 48319682,
+        "asset_type": "Video",
+        "title": "12-add multiple versions.mp4",
+        "external_url": "",
+        "filename": "12-add-multiple-versions.mp4",
+        "download_urls": null
+      },
+      "object_index": 12,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48319688,
+          "download_urls": null,
+          "title": "Versions vs revisions",
+          "asset_type": "ExternalLink",
+          "external_url": "https://azure.microsoft.com/en-gb/blog/versions-revisions/",
+          "filename": "Versions-vs-revisions"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37484430,
+      "title": "Manage APIs in Visual Studio Code",
+      "asset": {
+        "_class": "asset",
+        "id": 48321808,
+        "asset_type": "Video",
+        "title": "13-manage APIs in VSCode.mp4",
+        "external_url": "",
+        "filename": "13-manage-APIs-in-VSCode.mp4",
+        "download_urls": null
+      },
+      "object_index": 13,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484440,
+      "title": "Add an API Manually",
+      "asset": {
+        "_class": "asset",
+        "id": 48322184,
+        "asset_type": "Video",
+        "title": "15-add API manually.mp4",
+        "external_url": "",
+        "filename": "15-add-API-manually.mp4",
+        "download_urls": null
+      },
+      "object_index": 14,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48322186,
+          "download_urls": null,
+          "title": "https://httpbin.org",
+          "asset_type": "ExternalLink",
+          "external_url": "https://httpbin.org",
+          "filename": "https-httpbin.org"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37484448,
+      "title": "Import a Function App Web API",
+      "asset": {
+        "_class": "asset",
+        "id": 48322424,
+        "asset_type": "Video",
+        "title": "17-Import a Function App Web API.mp4",
+        "external_url": "",
+        "filename": "17-Import-a-Function-App-Web-API.mp4",
+        "download_urls": null
+      },
+      "object_index": 15,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484450,
+      "title": "Import a Logic App",
+      "asset": {
+        "_class": "asset",
+        "id": 48322504,
+        "asset_type": "Video",
+        "title": "18-Import a Logic App.mp4",
+        "external_url": "",
+        "filename": "18-Import-a-Logic-App.mp4",
+        "download_urls": null
+      },
+      "object_index": 16,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484496,
+      "title": "=== Automate API Deployments - APIOps ===",
+      "asset": {
+        "_class": "asset",
+        "id": 48323676,
+        "asset_type": "Video",
+        "title": "19-APIOps Introduction.mp4",
+        "external_url": "",
+        "filename": "19-APIOps-Introduction.mp4",
+        "download_urls": null
+      },
+      "object_index": 17,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37484502,
+      "title": "Setup Azure DevOps Pipeline",
+      "asset": {
+        "_class": "asset",
+        "id": 48375394,
+        "asset_type": "Video",
+        "title": "20-Setup Azure DevOps Pipelines.mp4",
+        "external_url": "",
+        "filename": "20-Setup-Azure-DevOps-Pipelines.mp4",
+        "download_urls": null
+      },
+      "object_index": 18,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48375420,
+          "download_urls": null,
+          "title": "Automate API deployments",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/architecture/example-scenario/devops/automated-api-deployments-apiops?toc=%2Fazure%2Fapi-management%2Ftoc.json&bc=%2Fazure%2Fapi-management%2Fbreadcrumb%2Ftoc.json",
+          "filename": "Automate-API-deployments"
+        },
+        {
+          "_class": "asset",
+          "id": 48375432,
+          "download_urls": null,
+          "title": "APIOps github repo",
+          "asset_type": "ExternalLink",
+          "external_url": "https://github.com/Azure/apiops",
+          "filename": "APIOps-github-repo"
+        },
+        {
+          "_class": "asset",
+          "id": 48375438,
+          "download_urls": null,
+          "title": "APIOps docs",
+          "asset_type": "ExternalLink",
+          "external_url": "https://azure.github.io/apiops/",
+          "filename": "APIOps-docs"
+        },
+        {
+          "_class": "asset",
+          "id": 48375450,
+          "download_urls": null,
+          "title": "APIOps variable group variables",
+          "asset_type": "ExternalLink",
+          "external_url": "https://azure.github.io/apiops/apiops/3-apimTools/apimtools-azdo-2-3-new.html",
+          "filename": "APIOps-variable-group-variables"
+        },
+        {
+          "_class": "asset",
+          "id": 48375466,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-04-25_10-09-46-345e35f6f0a92eb8978739ab5e2826e6/original.yaml?response-content-disposition=attachment%3B+filename%3Drun-publisher.yaml&Expires=1775840661&Signature=S7ho~0xDCkLiRnsJYiLVj6yoVp9iIkCBwwNfW~dSHIur6-B5qiV6lQPVXlx9osOKmIItaCEzZcCNmfNbd3kTfH3GNZGDAv1XiKR2VTfiOdSQ8AvoIVouFzxUdNW1uC9GY2~z7UnpaGTImwxIgu8Hj1hCL7EU7w6EPoaiYaQf6GN879yX9i5cBgbanTJYBXlALSOUDSSMBFlhtd7S-7P~6ZfGpqJDpyPC9cqolKOlzasldF7KL1YN5evZeUD37xuEsNsMieYD-~U2AjH6W4lSXBIrle6P-o-1zRjNLhqNDDOQAfMtn~HEjK0tYQ1jdZwjBMUfB0Ux8Cn7Q8xHhyvHhw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "run-publisher.yaml",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "run-publisher.yaml"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37484504,
+      "title": "Import an API in the Pipelines",
+      "asset": {
+        "_class": "asset",
+        "id": 48369782,
+        "asset_type": "Video",
+        "title": "21-Import an API in Pipelines.mp4",
+        "external_url": "",
+        "filename": "21-Import-an-API-in-Pipelines.mp4",
+        "download_urls": null
+      },
+      "object_index": 19,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48369786,
+          "download_urls": null,
+          "title": "Conference API",
+          "asset_type": "ExternalLink",
+          "external_url": "https://conferenceapi.azurewebsites.net?format=json",
+          "filename": "Conference-API"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37484508,
+      "title": "Configuration.yaml: named values",
+      "asset": {
+        "_class": "asset",
+        "id": 48370548,
+        "asset_type": "Video",
+        "title": "22-Configuration yaml - named values.mp4",
+        "external_url": "",
+        "filename": "22-Configuration-yaml-named-values.mp4",
+        "download_urls": null
+      },
+      "object_index": 20,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48370552,
+          "download_urls": null,
+          "title": "configuration.prod.yaml sample",
+          "asset_type": "ExternalLink",
+          "external_url": "https://github.com/Azure/apiops/blob/main/configuration.prod.yaml",
+          "filename": "configuration.prod.yaml-sample"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37560700,
+      "title": "Configuration.yaml: store named values secrets in Key Vault",
+      "asset": {
+        "_class": "asset",
+        "id": 48372654,
+        "asset_type": "Video",
+        "title": "23 - Configuration yaml - Named values in AKV.mp4",
+        "external_url": "",
+        "filename": "23-Configuration-yaml-Named-values-in-AKV.mp4",
+        "download_urls": null
+      },
+      "object_index": 21,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48372664,
+          "download_urls": null,
+          "title": "configuration.prod.yaml sample",
+          "asset_type": "ExternalLink",
+          "external_url": "https://github.com/Azure/apiops/blob/main/configuration.prod.yaml",
+          "filename": "configuration.prod.yaml-sample"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37560754,
+      "title": "Configuration.yaml: loggers",
+      "asset": {
+        "_class": "asset",
+        "id": 48397698,
+        "asset_type": "Video",
+        "title": "24-configuration yaml - loggers.mp4",
+        "external_url": "",
+        "filename": "24-configuration-yaml-loggers.mp4",
+        "download_urls": null
+      },
+      "object_index": 22,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48397700,
+          "download_urls": null,
+          "title": "configuration.prod.yaml sample",
+          "asset_type": "ExternalLink",
+          "external_url": "https://github.com/Azure/apiops/blob/main/configuration.prod.yaml",
+          "filename": "configuration.prod.yaml-sample"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37560758,
+      "title": "Configuration.yaml: backends",
+      "asset": {
+        "_class": "asset",
+        "id": 48394276,
+        "asset_type": "Video",
+        "title": "25 - configuraiton yaml - backends.mp4",
+        "external_url": "",
+        "filename": "25-configuraiton-yaml-backends.mp4",
+        "download_urls": null
+      },
+      "object_index": 23,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48397080,
+          "download_urls": null,
+          "title": "configuration.prod.yaml sample",
+          "asset_type": "ExternalLink",
+          "external_url": "https://github.com/Azure/apiops/blob/main/configuration.prod.yaml",
+          "filename": "configuration.prod.yaml-sample"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37560764,
+      "title": "Configuration.yaml: APIs & Diagnostics",
+      "asset": {
+        "_class": "asset",
+        "id": 48416066,
+        "asset_type": "Video",
+        "title": "26 - configuration yaml - APIs diagnostics.mp4",
+        "external_url": "",
+        "filename": "26-configuration-yaml-APIs-diagnostics.mp4",
+        "download_urls": null
+      },
+      "object_index": 24,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48416316,
+          "download_urls": null,
+          "title": "configuration.prod.yaml sample",
+          "asset_type": "ExternalLink",
+          "external_url": "https://github.com/Azure/apiops/blob/main/configuration.prod.yaml",
+          "filename": "configuration.prod.yaml-sample"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37592776,
+      "title": "Configuration.extractor.yaml",
+      "asset": {
+        "_class": "asset",
+        "id": 48416304,
+        "asset_type": "Video",
+        "title": "27 - configuration extractor yaml.mp4",
+        "external_url": "",
+        "filename": "27-configuration-extractor-yaml.mp4",
+        "download_urls": null
+      },
+      "object_index": 25,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48416308,
+          "download_urls": null,
+          "title": "configuration.extractor.yaml sample",
+          "asset_type": "ExternalLink",
+          "external_url": "https://github.com/Azure/apiops/blob/main/configuration.extractor.yaml",
+          "filename": "configuration.extractor.yaml-sample"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37592778,
+      "title": "Multiple configuration.extractor.yaml for different teams",
+      "asset": {
+        "_class": "asset",
+        "id": 48416632,
+        "asset_type": "Video",
+        "title": "28 - multiple configuraiton extractor yaml.mp4",
+        "external_url": "",
+        "filename": "28-multiple-configuraiton-extractor-yaml.mp4",
+        "download_urls": null
+      },
+      "object_index": 26,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48416636,
+          "download_urls": null,
+          "title": "configuration.extractor.yaml sample",
+          "asset_type": "ExternalLink",
+          "external_url": "https://github.com/Azure/apiops/blob/main/configuration.extractor.yaml",
+          "filename": "configuration.extractor.yaml-sample"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37597728,
+      "title": "APIOps with VSCode",
+      "asset": {
+        "_class": "asset",
+        "id": 48418826,
+        "asset_type": "Video",
+        "title": "29- VSCode IDE with APIOps.mp4",
+        "external_url": "",
+        "filename": "29-VSCode-IDE-with-APIOps.mp4",
+        "download_urls": null
+      },
+      "object_index": 27,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37597746,
+      "title": "APIOps Clean up!",
+      "asset": {
+        "_class": "asset",
+        "id": 48418986,
+        "asset_type": "Video",
+        "title": "30 - APIOps Clean up.mp4",
+        "external_url": "",
+        "filename": "30-APIOps-Clean-up.mp4",
+        "download_urls": null
+      },
+      "object_index": 28,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37678526,
+      "title": "=== Secure API Access ===",
+      "asset": {
+        "_class": "asset",
+        "id": 49381646,
+        "asset_type": "Video",
+        "title": "31 - Secure APIs Access Intro.mp4",
+        "external_url": "",
+        "filename": "31-Secure-APIs-Access-Intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 29,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 37678530,
+      "title": "Protect your API with Azure AD",
+      "asset": {
+        "_class": "asset",
+        "id": 48530028,
+        "asset_type": "Video",
+        "title": "32 - Protect your API with Azure AD.mp4",
+        "external_url": "",
+        "filename": "32-Protect-your-API-with-Azure-AD.mp4",
+        "download_urls": null
+      },
+      "object_index": 30,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 48530038,
+          "download_urls": null,
+          "title": "Setup OAuth2.0 for API Management",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-oauth2",
+          "filename": "Setup-OAuth2.0-for-API-Management"
+        },
+        {
+          "_class": "asset",
+          "id": 48530052,
+          "download_urls": null,
+          "title": "API Management OAuth2.0 diagram",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/media/api-management-howto-oauth2/overview-graphic-azure-ad.png",
+          "filename": "API-Management-OAuth2.0-diagram"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 37881842,
+      "title": "Protect your API with Azure AD B2C",
+      "asset": {
+        "_class": "asset",
+        "id": 48789528,
+        "asset_type": "Video",
+        "title": "33 - protect your API with Azure B2C.mp4",
+        "external_url": "",
+        "filename": "33-protect-your-API-with-Azure-B2C.mp4",
+        "download_urls": null
+      },
+      "object_index": 31,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 38116360,
+      "title": "Protect your API using client certificate",
+      "asset": {
+        "_class": "asset",
+        "id": 49091332,
+        "asset_type": "Video",
+        "title": "34 - Protect your API with certificates.mp4",
+        "external_url": "",
+        "filename": "34-Protect-your-API-with-certificates.mp4",
+        "download_urls": null
+      },
+      "object_index": 32,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 49091334,
+          "download_urls": null,
+          "title": "authentication-certificate-policy",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/authentication-certificate-policy",
+          "filename": "authentication-certificate-policy"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 38339726,
+      "title": "Manage Protocols & Ciphers",
+      "asset": {
+        "_class": "asset",
+        "id": 49381530,
+        "asset_type": "Video",
+        "title": "35- Manage Protocols & Ciphers.mp4",
+        "external_url": "",
+        "filename": "35-Manage-Protocols-Ciphers.mp4",
+        "download_urls": null
+      },
+      "object_index": 33,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 38679702,
+      "title": "=== Publish APIs ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50367172,
+        "asset_type": "Video",
+        "title": "36 - Publish APIs intor.mp4",
+        "external_url": "",
+        "filename": "36-Publish-APIs-intor.mp4",
+        "download_urls": null
+      },
+      "object_index": 34,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 38679706,
+      "title": "Subscriptions",
+      "asset": {
+        "_class": "asset",
+        "id": 49832192,
+        "asset_type": "Video",
+        "title": "37 - Subscriptions.mp4",
+        "external_url": "",
+        "filename": "37-Subscriptions.mp4",
+        "download_urls": null
+      },
+      "object_index": 35,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 38695444,
+      "title": "Manage User Accounts",
+      "asset": {
+        "_class": "asset",
+        "id": 49850124,
+        "asset_type": "Video",
+        "title": "38 - Manage User Accounts.mp4",
+        "external_url": "",
+        "filename": "38-Manage-User-Accounts.mp4",
+        "download_urls": null
+      },
+      "object_index": 36,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 38695446,
+      "title": "Manage Groups",
+      "asset": {
+        "_class": "asset",
+        "id": 49847212,
+        "asset_type": "Video",
+        "title": "39 - Manage Groups.mp4",
+        "external_url": "",
+        "filename": "39-Manage-Groups.mp4",
+        "download_urls": null
+      },
+      "object_index": 37,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39090366,
+      "title": "Secure Access to Developer Portal",
+      "asset": {
+        "_class": "asset",
+        "id": 50365940,
+        "asset_type": "Video",
+        "title": "40 - Secure Developer Portal Access.mp4",
+        "external_url": "",
+        "filename": "40-Secure-Developer-Portal-Access.mp4",
+        "download_urls": null
+      },
+      "object_index": 38,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50365952,
+          "download_urls": null,
+          "title": "Secure Developer Portal Access",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/secure-developer-portal-access#authentication-options",
+          "filename": "Secure-Developer-Portal-Access"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39090370,
+      "title": "Notifications Templates",
+      "asset": {
+        "_class": "asset",
+        "id": 50366104,
+        "asset_type": "Video",
+        "title": "41 - Notifications & Templates.mp4",
+        "external_url": "",
+        "filename": "41-Notifications-Templates.mp4",
+        "download_urls": null
+      },
+      "object_index": 39,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39091928,
+      "title": "An Overview of the Developer Portal",
+      "asset": {
+        "_class": "asset",
+        "id": 50367054,
+        "asset_type": "Video",
+        "title": "42 - An Overview of the developer portal.mp4",
+        "external_url": "",
+        "filename": "42-An-Overview-of-the-developer-portal.mp4",
+        "download_urls": null
+      },
+      "object_index": 40,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39104788,
+      "title": "=== Provisioning & Scaling ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50552122,
+        "asset_type": "Video",
+        "title": "43 - Provision - scale intro.mp4",
+        "external_url": "",
+        "filename": "43-Provision-scale-intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 41,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39104794,
+      "title": "Capacity for scaling decisions",
+      "asset": {
+        "_class": "asset",
+        "id": 50382238,
+        "asset_type": "Video",
+        "title": "44 - Capacity for scaling decisions.mp4",
+        "external_url": "",
+        "filename": "44-Capacity-for-scaling-decisions.mp4",
+        "download_urls": null
+      },
+      "object_index": 42,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39105754,
+      "title": "Plan & Manage Cost",
+      "asset": {
+        "_class": "asset",
+        "id": 50382694,
+        "asset_type": "Video",
+        "title": "45 - Cost Planning & Management.mp4",
+        "external_url": "",
+        "filename": "45-Cost-Planning-Management.mp4",
+        "download_urls": null
+      },
+      "object_index": 43,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50382698,
+          "download_urls": null,
+          "title": "Pricing Calculator",
+          "asset_type": "ExternalLink",
+          "external_url": "https://azure.microsoft.com/en-au/pricing/calculator/",
+          "filename": "Pricing-Calculator"
+        },
+        {
+          "_class": "asset",
+          "id": 50382700,
+          "download_urls": null,
+          "title": "APIM Pricing",
+          "asset_type": "ExternalLink",
+          "external_url": "https://azure.microsoft.com/en-gb/pricing/details/api-management/",
+          "filename": "APIM-Pricing"
+        },
+        {
+          "_class": "asset",
+          "id": 50382706,
+          "download_urls": null,
+          "title": "APIM feature comparison",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-features",
+          "filename": "APIM-feature-comparison"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39105768,
+      "title": "Upgrade & Scale",
+      "asset": {
+        "_class": "asset",
+        "id": 50383082,
+        "asset_type": "Video",
+        "title": "46 - Upgrade & Scale.mp4",
+        "external_url": "",
+        "filename": "46-Upgrade-Scale.mp4",
+        "download_urls": null
+      },
+      "object_index": 44,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50383088,
+          "download_urls": null,
+          "title": "APIM Pricing & Feature Comparison",
+          "asset_type": "ExternalLink",
+          "external_url": "https://azure.microsoft.com/en-gb/pricing/details/api-management/",
+          "filename": "APIM-Pricing-Feature-Comparison"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39106878,
+      "title": "Enable Zone Redundancy",
+      "asset": {
+        "_class": "asset",
+        "id": 50383746,
+        "asset_type": "Video",
+        "title": "47 - Enable Zone Redundancy.mp4",
+        "external_url": "",
+        "filename": "47-Enable-Zone-Redundancy.mp4",
+        "download_urls": null
+      },
+      "object_index": 45,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39106218,
+      "title": "Configure Autoscale",
+      "asset": {
+        "_class": "asset",
+        "id": 50383948,
+        "asset_type": "Video",
+        "title": "48 - Configure Autoscale.mp4",
+        "external_url": "",
+        "filename": "48-Configure-Autoscale.mp4",
+        "download_urls": null
+      },
+      "object_index": 46,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39106880,
+      "title": "Deploy to Multiple Azure Regions",
+      "asset": {
+        "_class": "asset",
+        "id": 50384562,
+        "asset_type": "Video",
+        "title": "49 - Deploy to multiple Azure Regions.mp4",
+        "external_url": "",
+        "filename": "49-Deploy-to-multiple-Azure-Regions.mp4",
+        "download_urls": null
+      },
+      "object_index": 47,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39218988,
+      "title": "Configure Front Door",
+      "asset": {
+        "_class": "asset",
+        "id": 50535674,
+        "asset_type": "Video",
+        "title": "50 - Configure Front Door.mp4",
+        "external_url": "",
+        "filename": "50-Configure-Front-Door.mp4",
+        "download_urls": null
+      },
+      "object_index": 48,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50535684,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-08-06_06-14-10-ba9f57af7a12ac353ab2a75a1750604b/original.txt?response-content-disposition=attachment%3B+filename%3Dip-filter%2Baction%253Dallow.txt&Expires=1775840662&Signature=wqZROv8bmQlxEAODMHBrtgY7ON6L7SDQlHVmLTf-6wn5rUOaSWB7x9lQUxFYY75wU8H1j4~KgUVDi9MCusindWtbZEgT2n0qhCCR1TeLB8g9gJ~QlO68wZOnIExxYJ8-vHkcB5zA2sTutGMCiAb~xaWvf1n-~FmAIgCVCoreN4Qd2p9cVKwIWak8eiN8bAFFT~R1elwn0FFO-A1PySkG8NtmONmOEUoMmUAABKlpzyOuHVRLxiO6IQ4Cft0gDqjr1oIFCqZ2QPKcBoEUCokyqUx8X~FWgp4uAjkrqSDNc09G89qgMkKtgFl~APjLXN-xQpf-YTlZdXowvbX1cJ40Dw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "ip-filter action=allow.txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "ip-filter-action-allow.txt"
+        },
+        {
+          "_class": "asset",
+          "id": 50535688,
+          "download_urls": null,
+          "title": "Configure Front Door for APIM",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/front-door-api-management",
+          "filename": "Configure-Front-Door-for-APIM"
+        },
+        {
+          "_class": "asset",
+          "id": 50535704,
+          "download_urls": null,
+          "title": "Azure IP Ranges & Service Tags",
+          "asset_type": "ExternalLink",
+          "external_url": "https://www.microsoft.com/en-us/download/details.aspx?id=56519",
+          "filename": "Azure-IP-Ranges-Service-Tags"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39219616,
+      "title": "Compute Platform",
+      "asset": {
+        "_class": "asset",
+        "id": 50535838,
+        "asset_type": "Video",
+        "title": "51 - Compute Platform.mp4",
+        "external_url": "",
+        "filename": "51-Compute-Platform.mp4",
+        "download_urls": null
+      },
+      "object_index": 49,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50535844,
+          "download_urls": null,
+          "title": "Compute Platform",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/compute-infrastructure",
+          "filename": "Compute-Platform"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39219814,
+      "title": "Workspace",
+      "asset": {
+        "_class": "asset",
+        "id": 50536168,
+        "asset_type": "Video",
+        "title": "52 - workspace.mp4",
+        "external_url": "",
+        "filename": "52-workspace.mp4",
+        "download_urls": null
+      },
+      "object_index": 50,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39220076,
+      "title": "Role-Based access control",
+      "asset": {
+        "_class": "asset",
+        "id": 50536226,
+        "asset_type": "Video",
+        "title": "53 - Role-Based access Control.mp4",
+        "external_url": "",
+        "filename": "53-Role-Based-access-Control.mp4",
+        "download_urls": null
+      },
+      "object_index": 51,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39220116,
+      "title": "Managed Identities",
+      "asset": {
+        "_class": "asset",
+        "id": 50536466,
+        "asset_type": "Video",
+        "title": "54 - Managed Identities.mp4",
+        "external_url": "",
+        "filename": "54-Managed-Identities.mp4",
+        "download_urls": null
+      },
+      "object_index": 52,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39314650,
+      "title": "Send events to Azure Event Grid",
+      "asset": {
+        "_class": "asset",
+        "id": 50665288,
+        "asset_type": "Video",
+        "title": "54.1 - Integrate Event Grid with APIM.mp4",
+        "external_url": "",
+        "filename": "54.1-Integrate-Event-Grid-with-APIM.mp4",
+        "download_urls": null
+      },
+      "object_index": 53,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50665294,
+          "download_urls": null,
+          "title": "Integrate APIM with Event Grid",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/how-to-event-grid",
+          "filename": "Integrate-APIM-with-Event-Grid"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39314666,
+      "title": "Implement DR using backup / restore",
+      "asset": {
+        "_class": "asset",
+        "id": 50683166,
+        "asset_type": "Video",
+        "title": "54.2 - DR backup and restore.mp4",
+        "external_url": "",
+        "filename": "54.2-DR-backup-and-restore.mp4",
+        "download_urls": null
+      },
+      "object_index": 54,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50683170,
+          "download_urls": null,
+          "title": "backup / restore",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-disaster-recovery-backup-restore?tabs=powershell",
+          "filename": "backup-restore"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39314656,
+      "title": "Move Instances between regions",
+      "asset": {
+        "_class": "asset",
+        "id": 50682500,
+        "asset_type": "Video",
+        "title": "54.3 Move instances between regions.mp4",
+        "external_url": "",
+        "filename": "54.3-Move-instances-between-regions.mp4",
+        "download_urls": null
+      },
+      "object_index": 55,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50682504,
+          "download_urls": null,
+          "title": "Move APIM across regions",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-migrate",
+          "filename": "Move-APIM-across-regions"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39314658,
+      "title": "Validate Service updates",
+      "asset": {
+        "_class": "asset",
+        "id": 50682980,
+        "asset_type": "Video",
+        "title": "54.4 - Validate Service updates.mp4",
+        "external_url": "",
+        "filename": "54.4-Validate-Service-updates.mp4",
+        "download_urls": null
+      },
+      "object_index": 56,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50682994,
+          "download_urls": null,
+          "title": "Validate Service Updates",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/validate-service-updates",
+          "filename": "Validate-Service-Updates"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39092704,
+      "title": "=== Networking ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50552162,
+        "asset_type": "Video",
+        "title": "55 - Networking - Intro.mp4",
+        "external_url": "",
+        "filename": "55-Networking-Intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 57,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39092706,
+      "title": "Connect to a Virtual Network",
+      "asset": {
+        "_class": "asset",
+        "id": 50550232,
+        "asset_type": "Video",
+        "title": "56 - Conenct to a Virtual Network.mp4",
+        "external_url": "",
+        "filename": "56-Conenct-to-a-Virtual-Network.mp4",
+        "download_urls": null
+      },
+      "object_index": 58,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50550240,
+          "download_urls": null,
+          "title": "Connect to Virtual Network",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-using-with-vnet?tabs=stv2",
+          "filename": "Connect-to-Virtual-Network"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39092708,
+      "title": "Connect to an Internal Network",
+      "asset": {
+        "_class": "asset",
+        "id": 50550702,
+        "asset_type": "Video",
+        "title": "57 - Connect to an Internal VNET.mp4",
+        "external_url": "",
+        "filename": "57-Connect-to-an-Internal-VNET.mp4",
+        "download_urls": null
+      },
+      "object_index": 59,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50550704,
+          "download_urls": null,
+          "title": "Connect to an Internal VNET",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-using-with-internal-vnet?tabs=stv2",
+          "filename": "Connect-to-an-Internal-VNET"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39231742,
+      "title": "Use APIM in an internal VNET",
+      "asset": {
+        "_class": "asset",
+        "id": 50552040,
+        "asset_type": "Video",
+        "title": "58 - Use APIM in an Internal VNET.mp4",
+        "external_url": "",
+        "filename": "58-Use-APIM-in-an-Internal-VNET.mp4",
+        "download_urls": null
+      },
+      "object_index": 60,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50552046,
+          "download_urls": null,
+          "title": "APIM host names",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-using-with-internal-vnet?tabs=stv2#access-on-default-host-names",
+          "filename": "APIM-host-names"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39092710,
+      "title": "Integrate Application Gateway in an Internal Network",
+      "asset": {
+        "_class": "asset",
+        "id": 50662054,
+        "asset_type": "Video",
+        "title": "59 - AppGW with APIM.mp4",
+        "external_url": "",
+        "filename": "59-AppGW-with-APIM.mp4",
+        "download_urls": null
+      },
+      "object_index": 61,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50662060,
+          "download_urls": null,
+          "title": "Integrate AppGW with APIM",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-integrate-internal-vnet-appgateway",
+          "filename": "Integrate-AppGW-with-APIM"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39092714,
+      "title": "Connect privately using Private Endpoint",
+      "asset": {
+        "_class": "asset",
+        "id": 50663134,
+        "asset_type": "Video",
+        "title": "60 - Private endpoints.mp4",
+        "external_url": "",
+        "filename": "60-Private-endpoints.mp4",
+        "download_urls": null
+      },
+      "object_index": 62,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50663136,
+          "download_urls": null,
+          "title": "Private endpoint",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/private-endpoint",
+          "filename": "Private-endpoint"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39092716,
+      "title": "APIM IP addresses",
+      "asset": {
+        "_class": "asset",
+        "id": 50663750,
+        "asset_type": "Video",
+        "title": "61 - APIM IP addresses.mp4",
+        "external_url": "",
+        "filename": "61-APIM-IP-addresses.mp4",
+        "download_urls": null
+      },
+      "object_index": 63,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50663754,
+          "download_urls": null,
+          "title": "IP Addresses",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-ip-addresses",
+          "filename": "IP-Addresses"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39092718,
+      "title": "Defend against DDoS attacks",
+      "asset": {
+        "_class": "asset",
+        "id": 50663990,
+        "asset_type": "Video",
+        "title": "62 - Protect aganist DDoS attacks.mp4",
+        "external_url": "",
+        "filename": "62-Protect-aganist-DDoS-attacks.mp4",
+        "download_urls": null
+      },
+      "object_index": 64,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39092670,
+      "title": "=== Caching ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50681762,
+        "asset_type": "Video",
+        "title": "63 - Caching Intro.mp4",
+        "external_url": "",
+        "filename": "63-Caching-Intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 65,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39092672,
+      "title": "Internal Caching",
+      "asset": {
+        "_class": "asset",
+        "id": 50680694,
+        "asset_type": "Video",
+        "title": "64 - Internal Caching.mp4",
+        "external_url": "",
+        "filename": "64-Internal-Caching.mp4",
+        "download_urls": null
+      },
+      "object_index": 66,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50680704,
+          "download_urls": null,
+          "title": "cache-lookup",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/cache-lookup-policy",
+          "filename": "cache-lookup"
+        },
+        {
+          "_class": "asset",
+          "id": 50680706,
+          "download_urls": null,
+          "title": "cache-lookup-value",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/cache-lookup-value-policy",
+          "filename": "cache-lookup-value"
+        },
+        {
+          "_class": "asset",
+          "id": 50680708,
+          "download_urls": null,
+          "title": "cache-store",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/cache-store-policy",
+          "filename": "cache-store"
+        },
+        {
+          "_class": "asset",
+          "id": 50680710,
+          "download_urls": null,
+          "title": "cache-store-value",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/cache-store-value-policy",
+          "filename": "cache-store-value"
+        },
+        {
+          "_class": "asset",
+          "id": 50680714,
+          "download_urls": null,
+          "title": "cache-remove-value",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/cache-remove-value-policy",
+          "filename": "cache-remove-value"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39092676,
+      "title": "External Caching",
+      "asset": {
+        "_class": "asset",
+        "id": 50681492,
+        "asset_type": "Video",
+        "title": "65 - External Caching.mp4",
+        "external_url": "",
+        "filename": "65-External-Caching.mp4",
+        "download_urls": null
+      },
+      "object_index": 67,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39092636,
+      "title": "=== Export APIs ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50681266,
+        "asset_type": "Video",
+        "title": "67 - Export Intro.mp4",
+        "external_url": "",
+        "filename": "67-Export-Intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 68,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39092624,
+      "title": "Export APIs to Postman",
+      "asset": {
+        "_class": "asset",
+        "id": 50681086,
+        "asset_type": "Video",
+        "title": "68 - Test and Monitor APIs in Postman.mp4",
+        "external_url": "",
+        "filename": "68-Test-and-Monitor-APIs-in-Postman.mp4",
+        "download_urls": null
+      },
+      "object_index": 69,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39092628,
+      "title": "Export APIs to the Power platform",
+      "asset": {
+        "_class": "asset",
+        "id": 50681212,
+        "asset_type": "Video",
+        "title": "69 - Export APIs to Power Platform.mp4",
+        "external_url": "",
+        "filename": "69-Export-APIs-to-Power-Platform.mp4",
+        "download_urls": null
+      },
+      "object_index": 70,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50681214,
+          "download_urls": null,
+          "title": "Export API to Power platform",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/export-api-power-platform",
+          "filename": "Export-API-to-Power-platform"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39428406,
+      "title": "=== API Management Policies ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50834872,
+        "asset_type": "Video",
+        "title": "70 - Intro - APIM Policeis.mp4",
+        "external_url": "",
+        "filename": "70-Intro-APIM-Policeis.mp4",
+        "download_urls": null
+      },
+      "object_index": 71,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39428408,
+      "title": "What is API Management Policies?",
+      "asset": {
+        "_class": "asset",
+        "id": 50814904,
+        "asset_type": "Video",
+        "title": "71 - API Management Policies.mp4",
+        "external_url": "",
+        "filename": "71-API-Management-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 72,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50814916,
+          "download_urls": null,
+          "title": "APIM Policies",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-policies",
+          "filename": "APIM-Policies"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39429254,
+      "title": "Reuse Policies - Policy Fragment",
+      "asset": {
+        "_class": "asset",
+        "id": 50816356,
+        "asset_type": "Video",
+        "title": "72 - Reuse Policies - Policy Fragment.mp4",
+        "external_url": "",
+        "filename": "72-Reuse-Policies-Policy-Fragment.mp4",
+        "download_urls": null
+      },
+      "object_index": 73,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50816358,
+          "download_urls": null,
+          "title": "Policy Fragments",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/policy-fragments",
+          "filename": "Policy-Fragments"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39430278,
+      "title": "Policy Expressions",
+      "asset": {
+        "_class": "asset",
+        "id": 50816846,
+        "asset_type": "Video",
+        "title": "73 - Policy Expressions.mp4",
+        "external_url": "",
+        "filename": "73-Policy-Expressions.mp4",
+        "download_urls": null
+      },
+      "object_index": 74,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50816848,
+          "download_urls": null,
+          "title": "Policy Expressions",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policy-expressions",
+          "filename": "Policy-Expressions"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39430544,
+      "title": "Error Handling",
+      "asset": {
+        "_class": "asset",
+        "id": 50817216,
+        "asset_type": "Video",
+        "title": "74 - Error Handling.mp4",
+        "external_url": "",
+        "filename": "74-Error-Handling.mp4",
+        "download_urls": null
+      },
+      "object_index": 75,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50817222,
+          "download_urls": null,
+          "title": "Error Handling",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-error-handling-policies",
+          "filename": "Error-Handling"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39431418,
+      "title": "Access Restriction Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 50819032,
+        "asset_type": "Video",
+        "title": "75 - Access Restriction Policies.mp4",
+        "external_url": "",
+        "filename": "75-Access-Restriction-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 76,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50819036,
+          "download_urls": null,
+          "title": "Access Restriction Policies",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policies#access-restriction-policies",
+          "filename": "Access-Restriction-Policies"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39443028,
+      "title": "Advanced Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 50833474,
+        "asset_type": "Video",
+        "title": "76 - Advanced Policies.mp4",
+        "external_url": "",
+        "filename": "76-Advanced-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 77,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50833504,
+          "download_urls": null,
+          "title": "Advanced Policies",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policies#advanced-policies",
+          "filename": "Advanced-Policies"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39443402,
+      "title": "Authentication Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 50833912,
+        "asset_type": "Video",
+        "title": "77 - Authentication Policies.mp4",
+        "external_url": "",
+        "filename": "77-Authentication-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 78,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50833914,
+          "download_urls": null,
+          "title": "Authentication Policies",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policies#authentication-policies",
+          "filename": "Authentication-Policies"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39443758,
+      "title": "Caching Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 50833948,
+        "asset_type": "Video",
+        "title": "78 - Caching Policies.mp4",
+        "external_url": "",
+        "filename": "78-Caching-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 79,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50833956,
+          "download_urls": null,
+          "title": "Caching Policies",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policies#caching-policies",
+          "filename": "Caching-Policies"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39443760,
+      "title": "Cross Domain Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 50834084,
+        "asset_type": "Video",
+        "title": "79 - Cross Domain Policies.mp4",
+        "external_url": "",
+        "filename": "79-Cross-Domain-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 80,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50834090,
+          "download_urls": null,
+          "title": "Cross Domain Policies",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policies#cross-domain-policies",
+          "filename": "Cross-Domain-Policies"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39444150,
+      "title": "GraphQL Resolver Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 50834272,
+        "asset_type": "Video",
+        "title": "80 - GraphQL Resolver Policies.mp4",
+        "external_url": "",
+        "filename": "80-GraphQL-Resolver-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 81,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50834274,
+          "download_urls": null,
+          "title": "GraphQL Resolver Policies",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policies#graphql-resolver-policies",
+          "filename": "GraphQL-Resolver-Policies"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39444156,
+      "title": "Transformation Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 50834724,
+        "asset_type": "Video",
+        "title": "81 - Transformation Policies.mp4",
+        "external_url": "",
+        "filename": "81-Transformation-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 82,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50834734,
+          "download_urls": null,
+          "title": "Transformation Policies",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policies#transformation-policies",
+          "filename": "Transformation-Policies"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39444158,
+      "title": "Validation Policies",
+      "asset": {
+        "_class": "asset",
+        "id": 50834822,
+        "asset_type": "Video",
+        "title": "82 - Validation Policies.mp4",
+        "external_url": "",
+        "filename": "82-Validation-Policies.mp4",
+        "download_urls": null
+      },
+      "object_index": 83,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50834824,
+          "download_urls": null,
+          "title": "Validation Policies",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policies#validation-policies",
+          "filename": "Validation-Policies"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39546582,
+      "title": "Policy debugging using VSCode",
+      "asset": {
+        "_class": "asset",
+        "id": 50966040,
+        "asset_type": "Video",
+        "title": "82_1 Policy debugging.mp4",
+        "external_url": "",
+        "filename": "82-1-Policy-debugging.mp4",
+        "download_urls": null
+      },
+      "object_index": 84,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39327068,
+      "title": "=== Monitoring ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50965890,
+        "asset_type": "Video",
+        "title": "83 - monitoring intro.mp4",
+        "external_url": "",
+        "filename": "83-monitoring-intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 85,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39327070,
+      "title": "Analytics",
+      "asset": {
+        "_class": "asset",
+        "id": 50964760,
+        "asset_type": "Video",
+        "title": "84 - Analytics.mp4",
+        "external_url": "",
+        "filename": "84-Analytics.mp4",
+        "download_urls": null
+      },
+      "object_index": 86,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39545796,
+      "title": "Application Insights",
+      "asset": {
+        "_class": "asset",
+        "id": 50965122,
+        "asset_type": "Video",
+        "title": "85 - Application Insights.mp4",
+        "external_url": "",
+        "filename": "85-Application-Insights.mp4",
+        "download_urls": null
+      },
+      "object_index": 87,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39327072,
+      "title": "Metrics",
+      "asset": {
+        "_class": "asset",
+        "id": 50965456,
+        "asset_type": "Video",
+        "title": "86 - Metrics.mp4",
+        "external_url": "",
+        "filename": "86-Metrics.mp4",
+        "download_urls": null
+      },
+      "object_index": 88,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39327076,
+      "title": "Alerts",
+      "asset": {
+        "_class": "asset",
+        "id": 50965698,
+        "asset_type": "Video",
+        "title": "87 - Alerts.mp4",
+        "external_url": "",
+        "filename": "87-Alerts.mp4",
+        "download_urls": null
+      },
+      "object_index": 89,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39327080,
+      "title": "Diagnostic Settings",
+      "asset": {
+        "_class": "asset",
+        "id": 50965806,
+        "asset_type": "Video",
+        "title": "88 - Diagnostic Settings.mp4",
+        "external_url": "",
+        "filename": "88-Diagnostic-Settings.mp4",
+        "download_urls": null
+      },
+      "object_index": 90,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39546864,
+      "title": "Clean Up",
+      "asset": {
+        "_class": "asset",
+        "id": 50966612,
+        "asset_type": "Video",
+        "title": "89 - Clean Up.mp4",
+        "external_url": "",
+        "filename": "89-Clean-Up.mp4",
+        "download_urls": null
+      },
+      "object_index": 91,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "chapter",
+      "id": 9463002,
+      "title": "Azure Functions App",
+      "object_index": 2
+    },
+    {
+      "_class": "lecture",
+      "id": 39558456,
+      "title": "What is Azure Functions App?",
+      "asset": {
+        "_class": "asset",
+        "id": 50983566,
+        "asset_type": "Video",
+        "title": "02 - What is Azure Function App.mp4",
+        "external_url": "",
+        "filename": "02-What-is-Azure-Function-App.mp4",
+        "download_urls": null
+      },
+      "object_index": 92,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50983574,
+          "download_urls": null,
+          "title": "Process File Uploads",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/media/functions-scenarios/process-file-uploads-expanded.png#lightbox",
+          "filename": "Process-File-Uploads"
+        },
+        {
+          "_class": "asset",
+          "id": 50983578,
+          "download_urls": null,
+          "title": "Real-time stream and event processing",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/media/functions-scenarios/real-time-stream-processing-expanded.png#lightbox",
+          "filename": "Real-time-stream-and-event-processing"
+        },
+        {
+          "_class": "asset",
+          "id": 50983580,
+          "download_urls": null,
+          "title": "Machine Learning & AI",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/media/functions-scenarios/machine-learning-and-ai-expanded.png#lightbox",
+          "filename": "Machine-Learning-AI"
+        },
+        {
+          "_class": "asset",
+          "id": 50983586,
+          "download_urls": null,
+          "title": "Scheduled Tasks",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/media/functions-scenarios/scheduled-task-expanded.png#lightbox",
+          "filename": "Scheduled-Tasks"
+        },
+        {
+          "_class": "asset",
+          "id": 50983590,
+          "download_urls": null,
+          "title": "Scalable Web API",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/media/functions-scenarios/scalable-web-api-expanded.png#lightbox",
+          "filename": "Scalable-Web-API"
+        },
+        {
+          "_class": "asset",
+          "id": 50983592,
+          "download_urls": null,
+          "title": "Serverless Workflow",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/media/functions-scenarios/build-a-serverless-workflow-expanded.png#lightbox",
+          "filename": "Serverless-Workflow"
+        },
+        {
+          "_class": "asset",
+          "id": 50983594,
+          "download_urls": null,
+          "title": "Database Changes",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/media/functions-scenarios/respond-to-database-changes-expanded.png#lightbox",
+          "filename": "Database-Changes"
+        },
+        {
+          "_class": "asset",
+          "id": 50983598,
+          "download_urls": null,
+          "title": "Messaging Systems",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/media/functions-scenarios/create-reliable-message-systems-expanded.png#lightbox",
+          "filename": "Messaging-Systems"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39558472,
+      "title": "Create Azure Functions App in Azure Portal",
+      "asset": {
+        "_class": "asset",
+        "id": 50984148,
+        "asset_type": "Video",
+        "title": "03 - Create Azure Function App in Azure Portal.mp4",
+        "external_url": "",
+        "filename": "03-Create-Azure-Function-App-in-Azure-Portal.mp4",
+        "download_urls": null
+      },
+      "object_index": 93,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39558474,
+      "title": "Create Azure Functions App in Visual Studio",
+      "asset": {
+        "_class": "asset",
+        "id": 50984672,
+        "asset_type": "Video",
+        "title": "04 - Create Azure Function App in Visual Studio.mp4",
+        "external_url": "",
+        "filename": "04-Create-Azure-Function-App-in-Visual-Studio.mp4",
+        "download_urls": null
+      },
+      "object_index": 94,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50984678,
+          "download_urls": null,
+          "title": "Prerequisites",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-your-first-function-visual-studio#prerequisites",
+          "filename": "Prerequisites"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39558478,
+      "title": "Create Azure Functions App in VS Code",
+      "asset": {
+        "_class": "asset",
+        "id": 50985964,
+        "asset_type": "Video",
+        "title": "05- Create Azure Function App in VSCode.mp4",
+        "external_url": "",
+        "filename": "05-Create-Azure-Function-App-in-VSCode.mp4",
+        "download_urls": null
+      },
+      "object_index": 95,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 50985970,
+          "download_urls": null,
+          "title": "Create Function App in VSCode",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-csharp",
+          "filename": "Create-Function-App-in-VSCode"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572034,
+      "title": "Integrate with a Virtual Network & Private Endpoints",
+      "asset": {
+        "_class": "asset",
+        "id": 51130776,
+        "asset_type": "Video",
+        "title": "09 - Integrate Function App with Virtual Network.mp4",
+        "external_url": "",
+        "filename": "09-Integrate-Function-App-with-Virtual-Network.mp4",
+        "download_urls": null
+      },
+      "object_index": 96,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51130780,
+          "download_urls": null,
+          "title": "Configure Function App settings",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-vnet#configure-your-function-app-settings",
+          "filename": "Configure-Function-App-settings"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572038,
+      "title": "Establish private site access",
+      "asset": {
+        "_class": "asset",
+        "id": 51131188,
+        "asset_type": "Video",
+        "title": "10 - establish a private site access.mp4",
+        "external_url": "",
+        "filename": "10-establish-a-private-site-access.mp4",
+        "download_urls": null
+      },
+      "object_index": 97,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51131192,
+          "download_urls": null,
+          "title": "private site access",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/media/functions-create-private-site-access/topology.png",
+          "filename": "private-site-access"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572040,
+      "title": "Use outbound NAT gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 51131462,
+        "asset_type": "Video",
+        "title": "11 - Use outbound NAT gateway.mp4",
+        "external_url": "",
+        "filename": "11-Use-outbound-NAT-gateway.mp4",
+        "download_urls": null
+      },
+      "object_index": 98,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51131468,
+          "download_urls": null,
+          "title": "NAT GW Diagram",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/nat-gateway/media/nat-overview/flow-map.png",
+          "filename": "NAT-GW-Diagram"
+        },
+        {
+          "_class": "asset",
+          "id": 51131474,
+          "download_urls": null,
+          "title": "Code sample",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-nat-gateway#create-function",
+          "filename": "Code-sample"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572116,
+      "title": "Developer Basics",
+      "asset": {
+        "_class": "asset",
+        "id": 51259438,
+        "asset_type": "Video",
+        "title": "16 - Developer basics.mp4",
+        "external_url": "",
+        "filename": "16-Developer-basics.mp4",
+        "download_urls": null
+      },
+      "object_index": 99,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51259440,
+          "download_urls": null,
+          "title": "Function App",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference?tabs=table#function-app",
+          "filename": "Function-App"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572118,
+      "title": "Develop and debug locally",
+      "asset": {
+        "_class": "asset",
+        "id": 51260452,
+        "asset_type": "Video",
+        "title": "17 - Develop and debug locally.mp4",
+        "external_url": "",
+        "filename": "17-Develop-and-debug-locally.mp4",
+        "download_urls": null
+      },
+      "object_index": 100,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39572120,
+      "title": "Remote Debugging using Visual Studio",
+      "asset": {
+        "_class": "asset",
+        "id": 51261570,
+        "asset_type": "Video",
+        "title": "18 - Remote Debugger.mp4",
+        "external_url": "",
+        "filename": "18-Remote-Debugger.mp4",
+        "download_urls": null
+      },
+      "object_index": 101,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51261574,
+          "download_urls": null,
+          "title": "Remote debugging",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-vs?tabs=isolated-process#disable-remote-debugging",
+          "filename": "Remote-debugging"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572144,
+      "title": "Azure Blob storage trigger",
+      "asset": {
+        "_class": "asset",
+        "id": 51276884,
+        "asset_type": "Video",
+        "title": "20 - Blob Storage tigger Function App.mp4",
+        "external_url": "",
+        "filename": "20-Blob-Storage-tigger-Function-App.mp4",
+        "download_urls": null
+      },
+      "object_index": 102,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39572148,
+      "title": "Azure Queue storage trigger",
+      "asset": {
+        "_class": "asset",
+        "id": 51277230,
+        "asset_type": "Video",
+        "title": "21 - Azure Queue Storage trigger.mp4",
+        "external_url": "",
+        "filename": "21-Azure-Queue-Storage-trigger.mp4",
+        "download_urls": null
+      },
+      "object_index": 103,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39572152,
+      "title": "Time trigger",
+      "asset": {
+        "_class": "asset",
+        "id": 51277334,
+        "asset_type": "Video",
+        "title": "22- Time Trigger.mp4",
+        "external_url": "",
+        "filename": "22-Time-Trigger.mp4",
+        "download_urls": null
+      },
+      "object_index": 104,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51277336,
+          "download_urls": null,
+          "title": "CRON expressions",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer?tabs=python-v2%2Cin-process&pivots=programming-language-csharp#ncrontab-expressions",
+          "filename": "CRON-expressions"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39559946,
+      "title": "Connect to Storage using Visual Studio",
+      "asset": {
+        "_class": "asset",
+        "id": 51114622,
+        "asset_type": "Video",
+        "title": "06 - Connect functions to Storage Queue.mp4",
+        "external_url": "",
+        "filename": "06-Connect-functions-to-Storage-Queue.mp4",
+        "download_urls": null
+      },
+      "object_index": 105,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51114624,
+          "download_urls": null,
+          "title": "Storage queue output binding",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-add-output-binding-storage-queue-vs?tabs=in-process",
+          "filename": "Storage-queue-output-binding"
+        },
+        {
+          "_class": "asset",
+          "id": 51114646,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-09-02_04-41-08-9caf0739498cf2e957ad8f379ad4f1a5/original.txt?response-content-disposition=attachment%3B+filename%3DNuget.txt&Expires=1775840662&Signature=qMBNz4IS0zFgXJu4IJMhhTWtBIdJCx8y9UAo81FzbCLKfvqzh6X8M0ad-Rh9ZhtFkQv3F8J7biKS0s7jH5AqclTnD5kw3eVhOILWgFZS2MKx0zjLJPHZbAAPlGVmht3rfgEwa8HfAeYODn6AvNzo2feWhM3H0~MJBGyN5OG9fdx1oyz4rmNMJ0iZ6NzFczYZXjWRgrzFjFjNu3RcsgSCUIsZ~bXB2U~8A10EbWbOG6gg9PLwDs20RQ0yWTqcNY3e6HYMo7694Nr3wRxMgNdjE~J0LdOGgWsAXPZza0AKLdce~Sio6OlKD1viCtlh5QSPuZpkfoyagTrlwG53mCITHw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Nuget.txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "Nuget.txt"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39559952,
+      "title": "Connect to a Azure SQL using Visual Studio",
+      "asset": {
+        "_class": "asset",
+        "id": 51115582,
+        "asset_type": "Video",
+        "title": "07 - Connect functions to Azure SQL.mp4",
+        "external_url": "",
+        "filename": "07-Connect-functions-to-Azure-SQL.mp4",
+        "download_urls": null
+      },
+      "object_index": 106,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51115588,
+          "download_urls": null,
+          "title": "Azure SQL output binding",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-add-output-binding-azure-sql-vs-code?pivots=programming-language-csharp&tabs=in-process%2Cv1",
+          "filename": "Azure-SQL-output-binding"
+        },
+        {
+          "_class": "asset",
+          "id": 51115602,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-09-02_05-56-18-e4f27abc4b3c5ee43f3ed882fa9ad42e/original.txt?response-content-disposition=attachment%3B+filename%3DNuget-sql.txt&Expires=1775840662&Signature=ezbMRD1xuH3ft8osqT4vcatIHOGpXcbeba6Jl0srBTbMRC3UgOmAtLd9hw0qQcA5SR90RahDgt1JZ4Jgzt8KLoaGQXFH0PmiqM2Cq-kHBiZJ0FblVI3vdP2ovBuGghvohyk1ZqNzKgJ15DRFrY7veCnP8J4mlmuraFyHQg7~dZ9W8J3REXiVOyt5zQtrcZtlCWkYivLuh4SZNIyik1~YsOZAbQngneNLiHdfAUzkMcD21Hbc3hnS-Ijwygqp4~5AuNx1F-WZt-BYYUUm~lN9AtnhbafRpHIPLc7ruCGwfW9K54r~QH51J8TTDSK-TaSJqVvm-m3WcXy5t9O7FhJ6~g__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Nuget-sql.txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "Nuget-sql.txt"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39559950,
+      "title": "Connect to a Cosmos DB using Visual Studio",
+      "asset": {
+        "_class": "asset",
+        "id": 51116684,
+        "asset_type": "Video",
+        "title": "08 - Connect to Azure CosmosDB.mp4",
+        "external_url": "",
+        "filename": "08-Connect-to-Azure-CosmosDB.mp4",
+        "download_urls": null
+      },
+      "object_index": 107,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51116686,
+          "download_urls": null,
+          "title": "CosmosDB output binding",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-add-output-binding-cosmos-db-vs-code?pivots=programming-language-csharp&tabs=in-process%2Cv1",
+          "filename": "CosmosDB-output-binding"
+        },
+        {
+          "_class": "asset",
+          "id": 51116694,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-09-02_07-22-13-35f6b7d36ce1bdff64f6985db119a8d9/original.txt?response-content-disposition=attachment%3B+filename%3DNuget-cosmos.txt&Expires=1775840662&Signature=p13nD9zae91a4gFYpMgZRGqViLfmG2pkQPq-i-gzHPkEN7Cb0KhPDYxAlIMH2Ie7ThphVCTpvv9g4GzFljMaChT9LBz3P5Ab0oBxDV1VLCDvWw9wl8DR7VQVsnpL5mFySllol1RC4P5zJPCT~6lpuZtL61nXerU4CIJ9eD-AIOzE8j9arpH3jX56213SCE~313q~Pk6D6i3MaWdVWhmvw~7uqX3nXLx3iLFniJamm2BRi3-XTwToUye4UaUbjopVjkhijc2mCmGBEbUiz8ESddQh0o5azx7m~oSckWsYx3TrUrnv0Nu~EBvdZsM3x8JGnNQ95cXgWIsnsSwgfSY7Pw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Nuget-cosmos.txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "Nuget-cosmos.txt"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572154,
+      "title": "Connect Functions to other Azure Services",
+      "asset": {
+        "_class": "asset",
+        "id": 51277484,
+        "asset_type": "Video",
+        "title": "23 - Connect Function App to Azure Services.mp4",
+        "external_url": "",
+        "filename": "23-Connect-Function-App-to-Azure-Services.mp4",
+        "download_urls": null
+      },
+      "object_index": 108,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51277494,
+          "download_urls": null,
+          "title": "Triggers and bindings",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/add-bindings-existing-function?tabs=python-v2%2Cisolated-process%2Cnode-v3&pivots=programming-language-csharp",
+          "filename": "Triggers-and-bindings"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572044,
+      "title": "Use Managed Identity to secure host connections",
+      "asset": {
+        "_class": "asset",
+        "id": 51133884,
+        "asset_type": "Video",
+        "title": "12 - Managed Identity to secure host connections.mp4",
+        "external_url": "",
+        "filename": "12-Managed-Identity-to-secure-host-connections.mp4",
+        "download_urls": null
+      },
+      "object_index": 109,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51133890,
+          "download_urls": null,
+          "title": "template samples",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-identity-based-connections-tutorial?view=iotedge-1.4#edit-the-template",
+          "filename": "template-samples"
+        },
+        {
+          "_class": "asset",
+          "id": 51133900,
+          "download_urls": null,
+          "title": "managed identity template",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/managed-applications/publish-managed-identity#adding-managed-identity",
+          "filename": "managed-identity-template"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572046,
+      "title": "Use Managed Identity to secure triggers and bindings",
+      "asset": {
+        "_class": "asset",
+        "id": 51135752,
+        "asset_type": "Video",
+        "title": "13 - Managed Identities for triggers and bindings.mp4",
+        "external_url": "",
+        "filename": "13-Managed-Identities-for-triggers-and-bindings.mp4",
+        "download_urls": null
+      },
+      "object_index": 110,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51135758,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-09-03_08-29-02-2d80d91c7d794049936eede24b4d4e4d/original.txt?response-content-disposition=attachment%3B+filename%3DNuGet-servicebus.txt&Expires=1775840662&Signature=mC40S4uK2zIy56voBD4Nxdh0MfsGcq6wRIoMjtMd4np7q5gV4vTDiqbqwrf0gkBI0jHuHrZHtjn3MCNlUDkEgaI4rlI8WIIeS5YLAHki~aBHgAYNfoyi4U7Awphp0nPJ~2vzwdv3e7FSSFSNuLmKVmOv5OYWYOiyReEpxvZRYGZjvUsgXYPc3~hlH399QTpG4ywvRBem1m4ECKKcK00Z7e2yXkTkKRSC8gdh47cG58M5P6Sl078xW38DzY7vVb~IjtXc8u6cLgikTMTYip6abXfL4EjoXbHhVSFg9iZBipG935ed3pPw-NAJ~BvldHKcSdD4P3NTBgb9OKVEiXT4IQ__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "NuGet-servicebus.txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "NuGet-servicebus.txt"
+        },
+        {
+          "_class": "asset",
+          "id": 51135770,
+          "download_urls": null,
+          "title": "Connect to service bus using managed identity trigger",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-identity-based-connections-tutorial-2?view=iotedge-1.4#connect-to-service-bus-in-your-function-app",
+          "filename": "Connect-to-service-bus-using-managed-identity-trigger"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572048,
+      "title": "Use Managed Identity to secure access Azure SQL",
+      "asset": {
+        "_class": "asset",
+        "id": 51258616,
+        "asset_type": "Video",
+        "title": "14 - Managed Identities for Azure SQL.mp4",
+        "external_url": "",
+        "filename": "14-Managed-Identities-for-Azure-SQL.mp4",
+        "download_urls": null
+      },
+      "object_index": 111,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51258630,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2023-09-09_04-12-12-1b04d53d91d8335029dc6d570f853156/original.txt?response-content-disposition=attachment%3B+filename%3DNuget%2BSQL.txt&Expires=1775840662&Signature=aCeOj-nHViNT0-2zxSe4uxOqz3b~DJU-rW1UlQzIfaqXPSLB1cJv8NK1ersmi6H6eMwybRIjnL9badXgIP05AV99GgfK822U0JmK3eDZROUePYFfPzeEJIE4sbBkZH9BTT5DHxC5v8KRmsyJy8n0b3S2NauR~t7uv-T9Y6gucGBJHVtgVydJssBfN19h6AaLSVFRvfoqhEIWjHoGbMwOsbkfaaBUuLA8m11BJfl7DmwjC-M4kzLJXNOMBgSKSjX2GGlK7jqndSNgs~0LQMzyEIK0hKhDDojoy2RjqGKufS4-YnI76WKaCtXC0e2Fa7qW2Qi8Vj41M-FXIs3sFiZlZg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Nuget SQL.txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "Nuget-SQL.txt"
+        },
+        {
+          "_class": "asset",
+          "id": 51258648,
+          "download_urls": null,
+          "title": "Get database row by ID",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-sql-input?tabs=isolated-process&pivots=programming-language-csharp#http-trigger-get-row-by-id-from-query-string-1",
+          "filename": "Get-database-row-by-ID"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572174,
+      "title": "Error handling and retires",
+      "asset": {
+        "_class": "asset",
+        "id": 51700508,
+        "asset_type": "Video",
+        "title": "36 - Error handling and retries.mp4",
+        "external_url": "",
+        "filename": "36-Error-handling-and-retries.mp4",
+        "download_urls": null
+      },
+      "object_index": 112,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51700598,
+          "download_urls": null,
+          "title": "Error Handling & Retires",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-error-pages?tabs=fixed-delay%2Cisolated-process&pivots=programming-language-csharp",
+          "filename": "Error-Handling-Retires"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572178,
+      "title": "Manually run a non HTTP triggered function",
+      "asset": {
+        "_class": "asset",
+        "id": 51701364,
+        "asset_type": "Video",
+        "title": "37 - Manually run non-http triggered function.mp4",
+        "external_url": "",
+        "filename": "37-Manually-run-non-http-triggered-function.mp4",
+        "download_urls": null
+      },
+      "object_index": 113,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51701380,
+          "download_urls": null,
+          "title": "Manually run non-http functions",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-manually-run-non-http",
+          "filename": "Manually-run-non-http-functions"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572188,
+      "title": "Continuous deployment",
+      "asset": {
+        "_class": "asset",
+        "id": 51567724,
+        "asset_type": "Video",
+        "title": "33 - Continuous Deployment.mp4",
+        "external_url": "",
+        "filename": "33-Continuous-Deployment.mp4",
+        "download_urls": null
+      },
+      "object_index": 114,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51567774,
+          "download_urls": null,
+          "title": "Continuous deployment folder structure requirements",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-continuous-deployment#requirements-for-continuous-deployment",
+          "filename": "Continuous-deployment-folder-structure-requirements"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572200,
+      "title": "Build and deploy using Azure Pipelines",
+      "asset": {
+        "_class": "asset",
+        "id": 51568366,
+        "asset_type": "Video",
+        "title": "34 - Continuous Delivery with Azure PipeLines.mp4",
+        "external_url": "",
+        "filename": "34-Continuous-Delivery-with-Azure-PipeLines.mp4",
+        "download_urls": null
+      },
+      "object_index": 115,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51568372,
+          "download_urls": null,
+          "title": "CICD using Azure Pipeline",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-azure-devops?tabs=csharp%2Cyaml&pivots=v2",
+          "filename": "CICD-using-Azure-Pipeline"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572190,
+      "title": "Deployment slots",
+      "asset": {
+        "_class": "asset",
+        "id": 51569750,
+        "asset_type": "Video",
+        "title": "35 - Deployment Slots.mp4",
+        "external_url": "",
+        "filename": "35-Deployment-Slots.mp4",
+        "download_urls": null
+      },
+      "object_index": 116,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51569752,
+          "download_urls": null,
+          "title": "Deployment Slots",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-deployment-slots",
+          "filename": "Deployment-Slots"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572228,
+      "title": "Manage a Function App",
+      "asset": {
+        "_class": "asset",
+        "id": 51426598,
+        "asset_type": "Video",
+        "title": "31 - Manage a Function App.mp4",
+        "external_url": "",
+        "filename": "31-Manage-a-Function-App.mp4",
+        "download_urls": null
+      },
+      "object_index": 117,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51426604,
+          "download_urls": null,
+          "title": "Manage a Function App",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings?tabs=portal",
+          "filename": "Manage-a-Function-App"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572236,
+      "title": "Set the runtime version",
+      "asset": {
+        "_class": "asset",
+        "id": 51426840,
+        "asset_type": "Video",
+        "title": "31 - Runtime version.mp4",
+        "external_url": "",
+        "filename": "31-Runtime-version.mp4",
+        "download_urls": null
+      },
+      "object_index": 118,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51426844,
+          "download_urls": null,
+          "title": "Runtime version",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/set-runtime-version?tabs=portal",
+          "filename": "Runtime-version"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39572238,
+      "title": "Disable a Function App",
+      "asset": {
+        "_class": "asset",
+        "id": 51427094,
+        "asset_type": "Video",
+        "title": "32 - Disable a Function.mp4",
+        "external_url": "",
+        "filename": "32-Disable-a-Function.mp4",
+        "download_urls": null
+      },
+      "object_index": 119,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51427108,
+          "download_urls": null,
+          "title": "Disable a function",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/disable-function?tabs=portal",
+          "filename": "Disable-a-function"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39887026,
+      "title": "Configure Auth provider",
+      "asset": {
+        "_class": "asset",
+        "id": 51410742,
+        "asset_type": "Video",
+        "title": "25 - Configure Auth Providers.mp4",
+        "external_url": "",
+        "filename": "25-Configure-Auth-Providers.mp4",
+        "download_urls": null
+      },
+      "object_index": 120,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51410746,
+          "download_urls": null,
+          "title": "Service-to-Service call",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=workforce-tenant#daemon-client-application-service-to-service-calls",
+          "filename": "Service-to-Service-call"
+        },
+        {
+          "_class": "asset",
+          "id": 51410750,
+          "download_urls": null,
+          "title": "Access token request",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow#first-case-access-token-request-with-a-shared-secret",
+          "filename": "Access-token-request"
+        },
+        {
+          "_class": "asset",
+          "id": 51410756,
+          "download_urls": null,
+          "title": "Access user claims in app code",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-user-identities#access-user-claims-in-app-code",
+          "filename": "Access-user-claims-in-app-code"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39888692,
+      "title": "Restrict IPs - Reduce the attack surface",
+      "asset": {
+        "_class": "asset",
+        "id": 51411808,
+        "asset_type": "Video",
+        "title": "26 - Restrict IPs.mp4",
+        "external_url": "",
+        "filename": "26-Restrict-IPs.mp4",
+        "download_urls": null
+      },
+      "object_index": 121,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39888696,
+      "title": "Managed Identities",
+      "asset": {
+        "_class": "asset",
+        "id": 51412018,
+        "asset_type": "Video",
+        "title": "27 - Managed Identities.mp4",
+        "external_url": "",
+        "filename": "27-Managed-Identities.mp4",
+        "download_urls": null
+      },
+      "object_index": 122,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39898436,
+      "title": "Use Key Vault references",
+      "asset": {
+        "_class": "asset",
+        "id": 51425290,
+        "asset_type": "Video",
+        "title": "28 - KeyVault references.mp4",
+        "external_url": "",
+        "filename": "28-KeyVault-references.mp4",
+        "download_urls": null
+      },
+      "object_index": 123,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51425314,
+          "download_urls": null,
+          "title": "Key Vault References",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/app-service/app-service-key-vault-references?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=azure-cli#source-app-settings-from-key-vault",
+          "filename": "Key-Vault-References"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40121180,
+      "title": "Consumption Plan",
+      "asset": {
+        "_class": "asset",
+        "id": 51714612,
+        "asset_type": "Video",
+        "title": "38 - Consumption Plan.mp4",
+        "external_url": "",
+        "filename": "38-Consumption-Plan.mp4",
+        "download_urls": null
+      },
+      "object_index": 124,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51714626,
+          "download_urls": null,
+          "title": "Consumption Plan",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/consumption-plan",
+          "filename": "Consumption-Plan"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40121184,
+      "title": "Premium Plan & Cold starts",
+      "asset": {
+        "_class": "asset",
+        "id": 51715720,
+        "asset_type": "Video",
+        "title": "39 - Premium Plan.mp4",
+        "external_url": "",
+        "filename": "39-Premium-Plan.mp4",
+        "download_urls": null
+      },
+      "object_index": 125,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51715730,
+          "download_urls": null,
+          "title": "Premium Plan",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-premium-plan?tabs=portal",
+          "filename": "Premium-Plan"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40121186,
+      "title": "Dedicated Plan",
+      "asset": {
+        "_class": "asset",
+        "id": 51716224,
+        "asset_type": "Video",
+        "title": "40 - Dedicated Plan.mp4",
+        "external_url": "",
+        "filename": "40-Dedicated-Plan.mp4",
+        "download_urls": null
+      },
+      "object_index": 126,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51716270,
+          "download_urls": null,
+          "title": "Dedicated Plan",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/dedicated-plan",
+          "filename": "Dedicated-Plan"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40122416,
+      "title": "Runtime versions",
+      "asset": {
+        "_class": "asset",
+        "id": 51717126,
+        "asset_type": "Video",
+        "title": "41 - Runtime versions.mp4",
+        "external_url": "",
+        "filename": "41-Runtime-versions.mp4",
+        "download_urls": null
+      },
+      "object_index": 127,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51717128,
+          "download_urls": null,
+          "title": "Runtime versions",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions?tabs=isolated-process%2Cv4&pivots=programming-language-csharp",
+          "filename": "Runtime-versions"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40134594,
+      "title": "Deployment options",
+      "asset": {
+        "_class": "asset",
+        "id": 51733368,
+        "asset_type": "Video",
+        "title": "42 - Deployment options.mp4",
+        "external_url": "",
+        "filename": "42-Deployment-options.mp4",
+        "download_urls": null
+      },
+      "object_index": 128,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51733370,
+          "download_urls": null,
+          "title": "Deployment options",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-deployment-technologies?tabs=windows",
+          "filename": "Deployment-options"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40134940,
+      "title": "Connect to other Azure services",
+      "asset": {
+        "_class": "asset",
+        "id": 51733568,
+        "asset_type": "Video",
+        "title": "43 - Connect to Services.mp4",
+        "external_url": "",
+        "filename": "43-Connect-to-Services.mp4",
+        "download_urls": null
+      },
+      "object_index": 129,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51733572,
+          "download_urls": null,
+          "title": "Connect to Azure services",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/event-messaging-bindings",
+          "filename": "Connect-to-Azure-services"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40219120,
+      "title": "Event-Driven scaling",
+      "asset": {
+        "_class": "asset",
+        "id": 51862826,
+        "asset_type": "Video",
+        "title": "44 - Event-driven scaling.mp4",
+        "external_url": "",
+        "filename": "44-Event-driven-scaling.mp4",
+        "download_urls": null
+      },
+      "object_index": 130,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51862830,
+          "download_urls": null,
+          "title": "Event-driven scaling",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/event-driven-scaling?tabs=azure-cli",
+          "filename": "Event-driven-scaling"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40219366,
+      "title": "Target-based scaling",
+      "asset": {
+        "_class": "asset",
+        "id": 51863122,
+        "asset_type": "Video",
+        "title": "45 - Target-based scaling.mp4",
+        "external_url": "",
+        "filename": "45-Target-based-scaling.mp4",
+        "download_urls": null
+      },
+      "object_index": 131,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51863126,
+          "download_urls": null,
+          "title": "Target-based scaling",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-target-based-scaling?tabs=v5%2Ccsharp",
+          "filename": "Target-based-scaling"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40220434,
+      "title": "Reliable event processing",
+      "asset": {
+        "_class": "asset",
+        "id": 51864216,
+        "asset_type": "Video",
+        "title": "46 - Reliable event processing.mp4",
+        "external_url": "",
+        "filename": "46-Reliable-event-processing.mp4",
+        "download_urls": null
+      },
+      "object_index": 132,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 51864300,
+          "download_urls": null,
+          "title": "Reliable event processing",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-reliable-event-processing",
+          "filename": "Reliable-event-processing"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9708312,
+      "title": "Azure Service Bus",
+      "object_index": 3
+    },
+    {
+      "_class": "lecture",
+      "id": 40586618,
+      "title": "What is Azure Service Bus?",
+      "asset": {
+        "_class": "asset",
+        "id": 52346844,
+        "asset_type": "Video",
+        "title": "02 - What is Azure Service Bus.mp4",
+        "external_url": "",
+        "filename": "02-What-is-Azure-Service-Bus.mp4",
+        "download_urls": null
+      },
+      "object_index": 133,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52346902,
+          "download_urls": null,
+          "title": "Azure Service Bus overview",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview",
+          "filename": "Azure-Service-Bus-overview"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40586892,
+      "title": "Send & receive messages to a Service Bus Queue",
+      "asset": {
+        "_class": "asset",
+        "id": 52347462,
+        "asset_type": "Video",
+        "title": "03 - Create Service Bus Queue - send&recieve messages.mp4",
+        "external_url": "",
+        "filename": "03-Create-Service-Bus-Queue-send-recieve-messages.mp4",
+        "download_urls": null
+      },
+      "object_index": 134,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52347470,
+          "download_urls": null,
+          "title": "Send & Receive messages",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues?tabs=connection-string",
+          "filename": "Send-Receive-messages"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40587800,
+      "title": "Send & receive messages to a Service Bus Topic",
+      "asset": {
+        "_class": "asset",
+        "id": 52348866,
+        "asset_type": "Video",
+        "title": "04 - Send & Recieve messages to Service Bus Topic.mp4",
+        "external_url": "",
+        "filename": "04-Send-Recieve-messages-to-Service-Bus-Topic.mp4",
+        "download_urls": null
+      },
+      "object_index": 135,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52348876,
+          "download_urls": null,
+          "title": "Send & receive messages to a topic",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/media/service-bus-java-how-to-use-topics-subscriptions/sb-topics-01.png",
+          "filename": "Send-receive-messages-to-a-topic"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40588648,
+      "title": "Subscription Filters",
+      "asset": {
+        "_class": "asset",
+        "id": 52349992,
+        "asset_type": "Video",
+        "title": "05 - Topic filters and Inventory use case.mp4",
+        "external_url": "",
+        "filename": "05-Topic-filters-and-Inventory-use-case.mp4",
+        "download_urls": null
+      },
+      "object_index": 136,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52350008,
+          "download_urls": null,
+          "title": "Service Bus samples",
+          "asset_type": "ExternalLink",
+          "external_url": "https://github.com/Azure/azure-service-bus",
+          "filename": "Service-Bus-samples"
+        },
+        {
+          "_class": "asset",
+          "id": 52350018,
+          "download_urls": null,
+          "title": "Inventory use case",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-tutorial-topics-subscriptions-portal#send-and-receive-messages",
+          "filename": "Inventory-use-case"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40796574,
+      "title": "Handle Service Bus event with Logic Apps using Event Grid",
+      "asset": {
+        "_class": "asset",
+        "id": 52639416,
+        "asset_type": "Video",
+        "title": "06 - Handle Service Bus events with Logic Apps Via Event Grid.mp4",
+        "external_url": "",
+        "filename": "06-Handle-Service-Bus-events-with-Logic-Apps-Via-Event-Grid.mp4",
+        "download_urls": null
+      },
+      "object_index": 137,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52639420,
+          "download_urls": null,
+          "title": "MS docs",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-to-event-grid-integration-example",
+          "filename": "MS-docs"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40797542,
+      "title": "Handle Service Bus events with Function App using Event Grid",
+      "asset": {
+        "_class": "asset",
+        "id": 52640254,
+        "asset_type": "Video",
+        "title": "07 - Handle Service Bus event using Function App via Event Grid.mp4",
+        "external_url": "",
+        "filename": "07-Handle-Service-Bus-event-using-Function-App-via-Event-Grid.mp4",
+        "download_urls": null
+      },
+      "object_index": 138,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52640256,
+          "download_urls": null,
+          "title": "MS docs",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-to-event-grid-integration-function",
+          "filename": "MS-docs"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40808122,
+      "title": "Build message-driven application using NServiceBus and Azure Service Bus",
+      "asset": {
+        "_class": "asset",
+        "id": 52653282,
+        "asset_type": "Video",
+        "title": "08 - Build messge-driven application with NServiceBus.mp4",
+        "external_url": "",
+        "filename": "08-Build-messge-driven-application-with-NServiceBus.mp4",
+        "download_urls": null
+      },
+      "object_index": 139,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52653284,
+          "download_urls": null,
+          "title": "MS doc",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/build-message-driven-apps-nservicebus?tabs=Sender",
+          "filename": "MS-doc"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40808690,
+      "title": "Chaining Service Bus entities with Auto-forwarding",
+      "asset": {
+        "_class": "asset",
+        "id": 52653798,
+        "asset_type": "Video",
+        "title": "09 - Auto-forward.mp4",
+        "external_url": "",
+        "filename": "09-Auto-forward.mp4",
+        "download_urls": null
+      },
+      "object_index": 140,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52653804,
+          "download_urls": null,
+          "title": "Auto-forwarding",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-auto-forwarding",
+          "filename": "Auto-forwarding"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40808804,
+      "title": "Duplicate detection",
+      "asset": {
+        "_class": "asset",
+        "id": 52654526,
+        "asset_type": "Video",
+        "title": "10 - Duplicate detection.mp4",
+        "external_url": "",
+        "filename": "10-Duplicate-detection.mp4",
+        "download_urls": null
+      },
+      "object_index": 141,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52654534,
+          "download_urls": null,
+          "title": "Duplicate detection",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/duplicate-detection",
+          "filename": "Duplicate-detection"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40821056,
+      "title": "Message Browsing / Peeking",
+      "asset": {
+        "_class": "asset",
+        "id": 52671752,
+        "asset_type": "Video",
+        "title": "11 - Message Browsing.mp4",
+        "external_url": "",
+        "filename": "11-Message-Browsing.mp4",
+        "download_urls": null
+      },
+      "object_index": 142,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52671756,
+          "download_urls": null,
+          "title": "Message Peeking",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/message-browsing",
+          "filename": "Message-Peeking"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40907224,
+      "title": "Prefetch messages",
+      "asset": {
+        "_class": "asset",
+        "id": 52799308,
+        "asset_type": "Video",
+        "title": "12 - prefetch messages.mp4",
+        "external_url": "",
+        "filename": "12-prefetch-messages.mp4",
+        "download_urls": null
+      },
+      "object_index": 143,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52799318,
+          "download_urls": null,
+          "title": "Prefetch messages",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-prefetch?tabs=dotnet",
+          "filename": "Prefetch-messages"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 40908964,
+      "title": "Atomic transaction",
+      "asset": {
+        "_class": "asset",
+        "id": 52800504,
+        "asset_type": "Video",
+        "title": "13 - Atomic Transaction.mp4",
+        "external_url": "",
+        "filename": "13-Atomic-Transaction.mp4",
+        "download_urls": null
+      },
+      "object_index": 144,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40909222,
+      "title": "Dead-letter queue",
+      "asset": {
+        "_class": "asset",
+        "id": 52801472,
+        "asset_type": "Video",
+        "title": "14 - Dead-letter queue.mp4",
+        "external_url": "",
+        "filename": "14-Dead-letter-queue.mp4",
+        "download_urls": null
+      },
+      "object_index": 145,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 40910106,
+      "title": "Durable Sender using MSMQ",
+      "asset": {
+        "_class": "asset",
+        "id": 52801964,
+        "asset_type": "Video",
+        "title": "15 - Durable Senders.mp4",
+        "external_url": "",
+        "filename": "15-Durable-Senders.mp4",
+        "download_urls": null
+      },
+      "object_index": 146,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 52801968,
+          "download_urls": null,
+          "title": "Install MSMQ",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730960(v=ws.11)?redirectedfrom=MSDN#installing-message-queuing-on-windows-7",
+          "filename": "Install-MSMQ"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9409560,
+      "title": "Azure Application Gateway",
+      "object_index": 4
+    },
+    {
+      "_class": "lecture",
+      "id": 39329736,
+      "title": "Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 50684868,
+        "asset_type": "Video",
+        "title": "Intro.mp4",
+        "external_url": "",
+        "filename": "Intro.mp4",
+        "download_urls": null
+      },
+      "object_index": 147,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329744,
+      "title": "What is Azure Application Gateway?",
+      "asset": {
+        "_class": "asset",
+        "id": 50684872,
+        "asset_type": "Video",
+        "title": "What is Application Gateway.mp4",
+        "external_url": "",
+        "filename": "What-is-Application-Gateway.mp4",
+        "download_urls": null
+      },
+      "object_index": 148,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844131,
+          "download_urls": null,
+          "title": "What is Application Gateway?",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/architecture/guide/technology-choices/load-balancing-overview",
+          "filename": "What-is-Application-Gateway-"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329752,
+      "title": "How Azure Application Gateway works?",
+      "asset": {
+        "_class": "asset",
+        "id": 50684882,
+        "asset_type": "Video",
+        "title": "How AppGW Works.mp4",
+        "external_url": "",
+        "filename": "How-AppGW-Works.mp4",
+        "download_urls": null
+      },
+      "object_index": 149,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844139,
+          "download_urls": null,
+          "title": "How Azure Application Gateway works?",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/application-gateway/how-application-gateway-works",
+          "filename": "How-Azure-Application-Gateway-works-"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329756,
+      "title": "Important Note!!",
+      "asset": {
+        "_class": "asset",
+        "id": 50684884,
+        "asset_type": "Video",
+        "title": "Important Note.mp4",
+        "external_url": "",
+        "filename": "Important-Note.mp4",
+        "download_urls": null
+      },
+      "object_index": 150,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329766,
+      "title": "=== AppGW Routing ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50684892,
+        "asset_type": "Video",
+        "title": "Intro-Routing.mp4",
+        "external_url": "",
+        "filename": "Intro-Routing.mp4",
+        "download_urls": null
+      },
+      "object_index": 151,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329770,
+      "title": "Create an Azure Application Gateway",
+      "asset": {
+        "_class": "asset",
+        "id": 50684898,
+        "asset_type": "Video",
+        "title": "Create an Application Gateway.mp4",
+        "external_url": "",
+        "filename": "Create-an-Application-Gateway.mp4",
+        "download_urls": null
+      },
+      "object_index": 152,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844153,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-10-11_20-13-58-ca7038258ab2ba05e33ea23a77a4ed15/original.txt?response-content-disposition=attachment%3B+filename%3DCreate%252BAn%252BAzure%252BApplication%252B%252BGateway%252BScript%2B%25281%2529.txt&Expires=1775840662&Signature=5fqWu6Aytm4sk95qkp00QgQY2eB-MJBl27Yl5F3D2GZnxHOmjc3NPjHFyWtW2G3aX3yaApAhSqyhv4cBKjV-4RyPutmwGUyr8hSIoLrA02r6JhZmS0Wpzczj6daFqjlHYK4nxhyVko~mnZiU3caluZl4urh4n0rd8vyGafgX4qT91t6Z808PcCAZH09Nhyb2HEqdWUAO2EMWTCM3Hy-f1Fxh60~iBa4scVwJoVbMeTLxFyjvC9QJF50Iu812wOzxeDOXEkeXkGVEslO4i4sHXnLdi0cepcJY4xIUQp-AufXsrYfw5a80i5ImjIB31~VFZyeHSaqB-2ctfhyWZIElIw__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Create+An+Azure+Application++Gateway+Script (1).txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "Create-An-Azure-Application-Gateway-Script-1.txt"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329774,
+      "title": "Azure Application Gateway - Host Multiple Sites",
+      "asset": {
+        "_class": "asset",
+        "id": 50684900,
+        "asset_type": "Video",
+        "title": "Host Multiple Sites.mp4",
+        "external_url": "",
+        "filename": "Host-Multiple-Sites.mp4",
+        "download_urls": null
+      },
+      "object_index": 153,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844187,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-10-11_20-15-09-6c3e999b7cd4eab4c7a6f08b80333d3e/original.txt?response-content-disposition=attachment%3B+filename%3DHost%252BMultiple%252BSites%252BScript%2B%25281%2529.txt&Expires=1775840662&Signature=mwu~68WDxEQ3haJ61ZAsltB-4IN9CUTiVqkO~zi0SDPtcxnIdtDV50oFBdMXWmkZYvOfuwx6iULA90onfW77uQIayqGYFYQrazoHpVWSp4OYbRiwWmhA5yvil2y1goaSCp34BPdJwCt~o2kC1tvn0N14MfEFzLHUdXDiHDVhKSGoV0Ln~H5tUy7sa8lD~SBqX4iuu8Lmpr2YORpEC1kA9YA~XjyTMfsKGF8Z7w02TRyi3juS7lV5UUP-jG3QOCCMCn2i-N31FvvyG75VZTFBSzv~6a4LHEcg8lx1yzHmVzijxve5H~8PLOq-6~0BNM63FY2wzu69x~STUiOQllCKVA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Host+Multiple+Sites+Script (1).txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "Host-Multiple-Sites-Script-1.txt"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329782,
+      "title": "Azure Application Gateway - URL Routing / Path-based Routing",
+      "asset": {
+        "_class": "asset",
+        "id": 50684910,
+        "asset_type": "Video",
+        "title": "URL Routing.mp4",
+        "external_url": "",
+        "filename": "URL-Routing.mp4",
+        "download_urls": null
+      },
+      "object_index": 154,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844189,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-10-11_20-15-17-e5b30ff5930c36cff21f3ff263aa17cc/original.txt?response-content-disposition=attachment%3B+filename%3DURL%252BRouting%252BScripts%2B%25281%2529.txt&Expires=1775840662&Signature=hDI5E0hq5F938Ib0gJcYNPfkUdgjQKvieSQxlSwRDnXgrZTBFanVVcinUk-GNr6HHrRZsMx4~Uge8TTQcq8CkzW-n~Z6XQFjzjK8K8h5pTe4WoHc20RXu5gEgiLNLrahUzRyTu2-MizzJRHlN4NlgLONN5~B~hsosd3wRU0zaqCWa4KP2jZa1lcrA6P9PPnZcRCTGwJmVYNmDu~jYz6d1UQ3PxOw7pKbea6plD4-xMEVdezP3BElbZcCXDrZyVlY6lIhjsDshInIrbkUMnwmJq-oOxLDSTrF3dgSNMadGh7n5sDc8ZXYv3V4oPgGgGPk8Yath2JjqTfDGK6hxok~tg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "URL+Routing+Scripts (1).txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "URL-Routing-Scripts-1.txt"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329784,
+      "title": "Azure Application Gateway - Redirection",
+      "asset": {
+        "_class": "asset",
+        "id": 50684916,
+        "asset_type": "Video",
+        "title": "Redirecting.mp4",
+        "external_url": "",
+        "filename": "Redirecting.mp4",
+        "download_urls": null
+      },
+      "object_index": 155,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844191,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-10-11_20-15-09-fe990119d66212537672db369236acf8/original.txt?response-content-disposition=attachment%3B+filename%3DRedirection%252BScripts%2B%25281%2529.txt&Expires=1775840662&Signature=JwcRQHssCgdFil2rL~955Gg~eWjWESMjnTeyB89~0BWn2717n5GqDcF1nWFZJ-8nY8GIPRhERjfVsZosCDKjtuBVRxBHFMv9XeuW9IVzHJn-i3-YlhseQQ1spT843ruvBRV8EEZyzGw1yE1vVtMUyFxfb3jZjOrSzv1O5fFBC-WhKWToG7FP4uC-lJOfms3dTb6Wz7vBCIFNgPv-0nuZSUmMhiB4n8~j3giUGodZaZovWydxXBE3svxqshhbINY7syRYxJk5hKjntbW~kRmBzCkh4RyYFmokX08~ZR4LGv1Lvwj1p3N~VEfns357nz5ZIfOMpVB5XxwU2vnu2wTi9A__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Redirection+Scripts (1).txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "Redirection-Scripts-1.txt"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329790,
+      "title": "Azure Application Gateway - Rewriting Sets",
+      "asset": {
+        "_class": "asset",
+        "id": 50684904,
+        "asset_type": "Video",
+        "title": "Rewriting Sets.mp4",
+        "external_url": "",
+        "filename": "Rewriting-Sets.mp4",
+        "download_urls": null
+      },
+      "object_index": 156,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844199,
+          "download_urls": null,
+          "title": "Rewriting Sets",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/application-gateway/rewrite-http-headers-url",
+          "filename": "Rewriting-Sets"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329794,
+      "title": "Azure Application Gateway - Internal Load Balancer (ILB)",
+      "asset": {
+        "_class": "asset",
+        "id": 50684908,
+        "asset_type": "Video",
+        "title": "Internal Load Balancer.mp4",
+        "external_url": "",
+        "filename": "Internal-Load-Balancer.mp4",
+        "download_urls": null
+      },
+      "object_index": 157,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844193,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-10-11_20-15-10-071ce4034873cc2f8fde297a52215e23/original.txt?response-content-disposition=attachment%3B+filename%3DInternal%252BLoad%252BBalancer%252BScripts%2B%25281%2529.txt&Expires=1775840662&Signature=ftz-hHzGwlo36uWaqyfVwJVsVB3MsBRn6NajEJH~DkxVo3YJuMpIr2bCFNXB5OPIPDNFs6L3nt6v9x-jzoycc2XztVZRxr~XpjZ71anotA8FsUimCtm6kaM4r0VkWT7MdcVbzzKc1sRLBYfVDs8MRyqPmspd8ijAl9Ue80dCuYVBdxWJeCYlKjEcQ7cKXYG8bhsCOzMepNV-Bg7JQwjr1-YJ-zTkvXdX8vGTEjUX6UXwAIUHMNCbuc8ahqqGqr4A3kGk2~2~ZL41cfoKwQHqydDxK8UYPBpSTcSxDp1rREDJkHXhq8s5KvZI7xbEuZQCM32~ODFSy4rKUy2hAon0cg__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Internal+Load+Balancer+Scripts (1).txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "Internal-Load-Balancer-Scripts-1.txt"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329796,
+      "title": "Azure Application Gateway - Auto Scaling & Zone Redundancy",
+      "asset": {
+        "_class": "asset",
+        "id": 50684926,
+        "asset_type": "Video",
+        "title": "Auto Scaling - Zone Redundancy.mp4",
+        "external_url": "",
+        "filename": "Auto-Scaling-Zone-Redundancy.mp4",
+        "download_urls": null
+      },
+      "object_index": 158,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329800,
+      "title": "=== AppGW Security ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50684914,
+        "asset_type": "Video",
+        "title": "Intro-Security.mp4",
+        "external_url": "",
+        "filename": "Intro-Security.mp4",
+        "download_urls": null
+      },
+      "object_index": 159,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329806,
+      "title": "Azure Application Gateway - SSL Termination",
+      "asset": {
+        "_class": "asset",
+        "id": 50684922,
+        "asset_type": "Video",
+        "title": "SSLTermination.mp4",
+        "external_url": "",
+        "filename": "SSLTermination.mp4",
+        "download_urls": null
+      },
+      "object_index": 160,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844203,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-10-11_20-15-27-526cdce816630feeb1b7003d894c702f/original.txt?response-content-disposition=attachment%3B+filename%3DSSL%252BTermination%252BScripts%2B%25281%2529.txt&Expires=1775840662&Signature=Jh8--rb-~QhZKMWj2Ydb0wL4zXw56ON8gFM3qNJhvhTEfxxA66qsvQEQGhNDJvPzLw-Xkhm5zTo5J8T9ybKxXWCcVcf5Vt3foTB9YAMEEo7uX1fb-rjWM0Gy3HpQaZpFomtdG5~WUScKGtrfypcw93kdZWL7nzEBO1yiXY~O~J8b7Dq0s61lAInn1As775nlTQZkiF9x57STxIWUFq6-MSOt8-lU87yI-UdO2yc4nMM84WEg6N8FSOaN0sgfvq67VNWla5hgF7YuVYd-lCiKxrnTwlFvUo6wa68GiOSsaps4plzlkl3tDh0SSbtZFUf13bkjtZkUGwQnasz-2RVqIA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "SSL+Termination+Scripts (1).txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "SSL-Termination-Scripts-1.txt"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329814,
+      "title": "Azure Application Gateway - End-to-End SSL Encryption",
+      "asset": {
+        "_class": "asset",
+        "id": 50684930,
+        "asset_type": "Video",
+        "title": "End-to-End-SSL.mp4",
+        "external_url": "",
+        "filename": "End-to-End-SSL.mp4",
+        "download_urls": null
+      },
+      "object_index": 161,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329818,
+      "title": "=== AKS ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50684928,
+        "asset_type": "Video",
+        "title": "Intro-AKS.mp4",
+        "external_url": "",
+        "filename": "Intro-AKS.mp4",
+        "download_urls": null
+      },
+      "object_index": 162,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329822,
+      "title": "Azure Application Gateway -  Greenfield - Ingress Controller Add-on for AKS",
+      "asset": {
+        "_class": "asset",
+        "id": 50684934,
+        "asset_type": "Video",
+        "title": "Ingress Controller AKS - Greenfield.mp4",
+        "external_url": "",
+        "filename": "Ingress-Controller-AKS-Greenfield.mp4",
+        "download_urls": null
+      },
+      "object_index": 163,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844205,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-10-11_20-15-43-9f7140dc7d2b69a6d688998b18865a8a/original.txt?response-content-disposition=attachment%3B+filename%3DGreenfield%252B-Ingress%252BController%252Bfor%252BAKS%2B%25281%2529.txt&Expires=1775840662&Signature=LoZ0TMx3q2tlJZUgY~qZy0ieoraB5cw6yh4xGiAeKQc~qmHmpd-MU1GnoIsqu1KS1sJZ1YIcrDHblXJYM~pgVrD2IUIibyhe1oQzAPl7sCyt1voZtF~5~h8xJF9C5Es-xJJUiK3Z4wDpERplax58Sp4qLR1LDFZas-70jMXEPjxKKNxZ8b4ouHJhgtqwvjT4jddwYMyABcVKRbnjZMb1FGpw-CJ8ejFvSJawugUtMEYVeEmw~NRn2dxIi8VIEVC-M0usrXjvE9Ls4gr1efr~HEoCPafdke-rUz1yAZwCq1J-YXvyKIzKQO8U7SY4T2Ul4nVRFqE4DVrCZ8OJjGG04w__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Greenfield+-Ingress+Controller+for+AKS (1).txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "Greenfield-Ingress-Controller-for-AKS-1.txt"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329826,
+      "title": "Azure Application Gateway - Brownfield - Ingress Controller Add-on for AKS",
+      "asset": {
+        "_class": "asset",
+        "id": 50684958,
+        "asset_type": "Video",
+        "title": "Ingress Controller for AKS - Brownfield.mp4",
+        "external_url": "",
+        "filename": "Ingress-Controller-for-AKS-Brownfield.mp4",
+        "download_urls": null
+      },
+      "object_index": 164,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844211,
+          "download_urls": {
+            "File": [
+              {
+                "label": "download",
+                "file": "https://att-c.udemycdn.com/2024-10-11_20-18-08-bde9266296bee576376d2ff10e542535/original.txt?response-content-disposition=attachment%3B+filename%3DBrownfield%252B-%252BIngress%252BConrtolller%252Bfor%252BAKS%2B%25281%2529.txt&Expires=1775840662&Signature=JtZjK~GK83p~ftx8QLPH~EP5qzx7EiqW-zPMp3WBCTqjhb0-DhCNjOfw-OB-I8XAhJKyo-N2TfCndrtk3mOvIOJp1R-0BADhOTSXBbW20UbUEG2WQe2GM5BGLh3twcuc2iXzqFgAokyBnrLuWTlmbEp8weAcpyyh9wMsp3aWOQOjEmHGwVIqiyuPQgnGZmlffA0yHykTvxZ10tkDX2CBMKox4UbqQN72EkyCxY546xeej7k2aUaVgSpjqvCHU2Xv4wgXO-IWGA5VaapKkOVxSr5L5ZT~rTtb0-OIHqPYAtgY9bYGhwPA4EbSv0rgh2uQt6i79VIcN7XZlYuSERihGA__&Key-Pair-Id=K3MG148K9RIRF4"
+              }
+            ]
+          },
+          "title": "Brownfield+-+Ingress+Conrtolller+for+AKS (1).txt",
+          "asset_type": "File",
+          "external_url": "",
+          "filename": "Brownfield-Ingress-Conrtolller-for-AKS-1.txt"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329832,
+      "title": "Azure Application Gateway - Web Application Firewall (WAF)",
+      "asset": {
+        "_class": "asset",
+        "id": 50684948,
+        "asset_type": "Video",
+        "title": "WAF.mp4",
+        "external_url": "",
+        "filename": "WAF.mp4",
+        "download_urls": null
+      },
+      "object_index": 165,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329836,
+      "title": "=== Monitoring ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50684940,
+        "asset_type": "Video",
+        "title": "Intro-Monitoring.mp4",
+        "external_url": "",
+        "filename": "Intro-Monitoring.mp4",
+        "download_urls": null
+      },
+      "object_index": 166,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329844,
+      "title": "Azure Application Gateway - Diagnostic Settings",
+      "asset": {
+        "_class": "asset",
+        "id": 50684950,
+        "asset_type": "Video",
+        "title": "DiagnosticSettings.mp4",
+        "external_url": "",
+        "filename": "DiagnosticSettings.mp4",
+        "download_urls": null
+      },
+      "object_index": 167,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329846,
+      "title": "Azure Application Gateway - Metrics",
+      "asset": {
+        "_class": "asset",
+        "id": 50684976,
+        "asset_type": "Video",
+        "title": "Metrics.mp4",
+        "external_url": "",
+        "filename": "Metrics.mp4",
+        "download_urls": null
+      },
+      "object_index": 168,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329848,
+      "title": "Azure Application Gateway - Alerts",
+      "asset": {
+        "_class": "asset",
+        "id": 50684966,
+        "asset_type": "Video",
+        "title": "Alerts.mp4",
+        "external_url": "",
+        "filename": "Alerts.mp4",
+        "download_urls": null
+      },
+      "object_index": 169,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329854,
+      "title": "Azure Application Gateway - Log Analytics",
+      "asset": {
+        "_class": "asset",
+        "id": 50684970,
+        "asset_type": "Video",
+        "title": "Log Analytics.mp4",
+        "external_url": "",
+        "filename": "Log-Analytics.mp4",
+        "download_urls": null
+      },
+      "object_index": 170,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329856,
+      "title": "Azure Application Gateway - Backend Health & Health Probe",
+      "asset": {
+        "_class": "asset",
+        "id": 50684972,
+        "asset_type": "Video",
+        "title": "Backend Health - Health Probe.mp4",
+        "external_url": "",
+        "filename": "Backend-Health-Health-Probe.mp4",
+        "download_urls": null
+      },
+      "object_index": 171,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329862,
+      "title": "=== Advanced ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50684974,
+        "asset_type": "Video",
+        "title": "Intro-Advanced.mp4",
+        "external_url": "",
+        "filename": "Intro-Advanced.mp4",
+        "download_urls": null
+      },
+      "object_index": 172,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329864,
+      "title": "Azure Application Gateway - High Traffic Support",
+      "asset": {
+        "_class": "asset",
+        "id": 50684988,
+        "asset_type": "Video",
+        "title": "High Traffic Support.mp4",
+        "external_url": "",
+        "filename": "High-Traffic-Support.mp4",
+        "download_urls": null
+      },
+      "object_index": 173,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329866,
+      "title": "Azure Application Gateway - Pricing",
+      "asset": {
+        "_class": "asset",
+        "id": 50684980,
+        "asset_type": "Video",
+        "title": "Pricing.mp4",
+        "external_url": "",
+        "filename": "Pricing.mp4",
+        "download_urls": null
+      },
+      "object_index": 174,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844215,
+          "download_urls": null,
+          "title": "Pricing",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/application-gateway/understanding-pricing",
+          "filename": "Pricing"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329872,
+      "title": "Azure Application Gateway - Cookie Affinity",
+      "asset": {
+        "_class": "asset",
+        "id": 50684978,
+        "asset_type": "Video",
+        "title": "CookieAffinity.mp4",
+        "external_url": "",
+        "filename": "CookieAffinity.mp4",
+        "download_urls": null
+      },
+      "object_index": 175,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329876,
+      "title": "Azure Application Gateway - Connection Draining",
+      "asset": {
+        "_class": "asset",
+        "id": 50684982,
+        "asset_type": "Video",
+        "title": "ConnectionDraining.mp4",
+        "external_url": "",
+        "filename": "ConnectionDraining.mp4",
+        "download_urls": null
+      },
+      "object_index": 176,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329884,
+      "title": "Azure Application Gateway - Custom Error Pages",
+      "asset": {
+        "_class": "asset",
+        "id": 50684984,
+        "asset_type": "Video",
+        "title": "Custom Error Pages.mp4",
+        "external_url": "",
+        "filename": "Custom-Error-Pages.mp4",
+        "download_urls": null
+      },
+      "object_index": 177,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329886,
+      "title": "Azure Application Gateway - Web Sockets",
+      "asset": {
+        "_class": "asset",
+        "id": 50684986,
+        "asset_type": "Video",
+        "title": "WebSockets.mp4",
+        "external_url": "",
+        "filename": "WebSockets.mp4",
+        "download_urls": null
+      },
+      "object_index": 178,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329892,
+      "title": "Azure Application Gateway - Tiers",
+      "asset": {
+        "_class": "asset",
+        "id": 50684992,
+        "asset_type": "Video",
+        "title": "Tiers.mp4",
+        "external_url": "",
+        "filename": "Tiers.mp4",
+        "download_urls": null
+      },
+      "object_index": 179,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844223,
+          "download_urls": null,
+          "title": "Tiers",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/application-gateway/overview-v2",
+          "filename": "Tiers"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329894,
+      "title": "=== Configuration ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50684994,
+        "asset_type": "Video",
+        "title": "Intro-Configuration.mp4",
+        "external_url": "",
+        "filename": "Intro-Configuration.mp4",
+        "download_urls": null
+      },
+      "object_index": 180,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329898,
+      "title": "Azure Application Gateway - Infrastructure",
+      "asset": {
+        "_class": "asset",
+        "id": 50684998,
+        "asset_type": "Video",
+        "title": "Infrastructure.mp4",
+        "external_url": "",
+        "filename": "Infrastructure.mp4",
+        "download_urls": null
+      },
+      "object_index": 181,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844225,
+          "download_urls": null,
+          "title": "Infrastructure",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/application-gateway/configuration-infrastructure",
+          "filename": "Infrastructure"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329904,
+      "title": "Azure Application Gateway - Frontend IP",
+      "asset": {
+        "_class": "asset",
+        "id": 50685002,
+        "asset_type": "Video",
+        "title": "Front-End IP.mp4",
+        "external_url": "",
+        "filename": "Front-End-IP.mp4",
+        "download_urls": null
+      },
+      "object_index": 182,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39329906,
+      "title": "Azure Application Gateway - Listeners",
+      "asset": {
+        "_class": "asset",
+        "id": 50685004,
+        "asset_type": "Video",
+        "title": "Listener.mp4",
+        "external_url": "",
+        "filename": "Listener.mp4",
+        "download_urls": null
+      },
+      "object_index": 183,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844227,
+          "download_urls": null,
+          "title": "Listeners",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/application-gateway/configuration-listeners",
+          "filename": "Listeners"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329908,
+      "title": "Azure Application Gateway - Routing Rules",
+      "asset": {
+        "_class": "asset",
+        "id": 50685008,
+        "asset_type": "Video",
+        "title": "Routing Rules.mp4",
+        "external_url": "",
+        "filename": "Routing-Rules.mp4",
+        "download_urls": null
+      },
+      "object_index": 184,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844233,
+          "download_urls": null,
+          "title": "Routing Rules",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/application-gateway/configuration-request-routing-rules",
+          "filename": "Routing-Rules"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329912,
+      "title": "Azure Application Gateway - HTTP Settings",
+      "asset": {
+        "_class": "asset",
+        "id": 50685014,
+        "asset_type": "Video",
+        "title": "HTTPSettings.mp4",
+        "external_url": "",
+        "filename": "HTTPSettings.mp4",
+        "download_urls": null
+      },
+      "object_index": 185,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844235,
+          "download_urls": null,
+          "title": "HTTP Settings",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/application-gateway/configuration-http-settings",
+          "filename": "HTTP-Settings"
+        }
+      ]
+    },
+    {
+      "_class": "lecture",
+      "id": 39329916,
+      "title": "Azure Application Gateway - Backend Pools",
+      "asset": {
+        "_class": "asset",
+        "id": 50685018,
+        "asset_type": "Video",
+        "title": "BackEndPools.mp4",
+        "external_url": "",
+        "filename": "BackEndPools.mp4",
+        "download_urls": null
+      },
+      "object_index": 186,
+      "supplementary_assets": [
+        {
+          "_class": "asset",
+          "id": 59844245,
+          "download_urls": null,
+          "title": "Backend Pools",
+          "asset_type": "ExternalLink",
+          "external_url": "https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-components#backend-pools",
+          "filename": "Backend-Pools"
+        }
+      ]
+    },
+    {
+      "_class": "chapter",
+      "id": 9409612,
+      "title": "Azure Front Door",
+      "object_index": 5
+    },
+    {
+      "_class": "lecture",
+      "id": 39330020,
+      "title": "Introduction",
+      "asset": {
+        "_class": "asset",
+        "id": 50685148,
+        "asset_type": "Video",
+        "title": "Azure Front Door.mp4",
+        "external_url": "",
+        "filename": "Azure-Front-Door.mp4",
+        "download_urls": null
+      },
+      "object_index": 187,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330022,
+      "title": "What is Azure Front Door?",
+      "asset": {
+        "_class": "asset",
+        "id": 50685138,
+        "asset_type": "Video",
+        "title": "What is Azure Front Door.mp4",
+        "external_url": "",
+        "filename": "What-is-Azure-Front-Door.mp4",
+        "download_urls": null
+      },
+      "object_index": 188,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330024,
+      "title": "Important Note!",
+      "asset": {
+        "_class": "asset",
+        "id": 50685134,
+        "asset_type": "Video",
+        "title": "Important Note.mp4",
+        "external_url": "",
+        "filename": "Important-Note.mp4",
+        "download_urls": null
+      },
+      "object_index": 189,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330026,
+      "title": "=== Front Door Core ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50685146,
+        "asset_type": "Video",
+        "title": "Intro-Core.mp4",
+        "external_url": "",
+        "filename": "Intro-Core.mp4",
+        "download_urls": null
+      },
+      "object_index": 190,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330028,
+      "title": "Create an Azure Front Door",
+      "asset": {
+        "_class": "asset",
+        "id": 50685160,
+        "asset_type": "Video",
+        "title": "Create An Azure Front Door.mp4",
+        "external_url": "",
+        "filename": "Create-An-Azure-Front-Door.mp4",
+        "download_urls": null
+      },
+      "object_index": 191,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330032,
+      "title": "Azure Front Door - Adding Custom Domains",
+      "asset": {
+        "_class": "asset",
+        "id": 50685166,
+        "asset_type": "Video",
+        "title": "Add Custom Domain.mp4",
+        "external_url": "",
+        "filename": "Add-Custom-Domain.mp4",
+        "download_urls": null
+      },
+      "object_index": 192,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330034,
+      "title": "Azure Front Door - Setting up HTTPS on Custom Domains",
+      "asset": {
+        "_class": "asset",
+        "id": 50685150,
+        "asset_type": "Video",
+        "title": "HTTPS On Custom Domain.mp4",
+        "external_url": "",
+        "filename": "HTTPS-On-Custom-Domain.mp4",
+        "download_urls": null
+      },
+      "object_index": 193,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330038,
+      "title": "Azure Front Door - Root / Apex Domains",
+      "asset": {
+        "_class": "asset",
+        "id": 50685156,
+        "asset_type": "Video",
+        "title": "Apex Domain Name.mp4",
+        "external_url": "",
+        "filename": "Apex-Domain-Name.mp4",
+        "download_urls": null
+      },
+      "object_index": 194,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330040,
+      "title": "Azure Front Door - HTTP to HTTPS redirection",
+      "asset": {
+        "_class": "asset",
+        "id": 50685158,
+        "asset_type": "Video",
+        "title": "HTTP to HTTPS Redirection.mp4",
+        "external_url": "",
+        "filename": "HTTP-to-HTTPS-Redirection.mp4",
+        "download_urls": null
+      },
+      "object_index": 195,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330042,
+      "title": "Azure Front Door - URL Redirection",
+      "asset": {
+        "_class": "asset",
+        "id": 50685164,
+        "asset_type": "Video",
+        "title": "URL Redirection.mp4",
+        "external_url": "",
+        "filename": "URL-Redirection.mp4",
+        "download_urls": null
+      },
+      "object_index": 196,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330044,
+      "title": "Azure Front Door - Backends & Backend Pools",
+      "asset": {
+        "_class": "asset",
+        "id": 50685174,
+        "asset_type": "Video",
+        "title": "Backend - backend Pool.mp4",
+        "external_url": "",
+        "filename": "Backend-backend-Pool.mp4",
+        "download_urls": null
+      },
+      "object_index": 197,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330048,
+      "title": "Azure Front Door - Rules Engine & Security Headers",
+      "asset": {
+        "_class": "asset",
+        "id": 50685180,
+        "asset_type": "Video",
+        "title": "Security Headers - Rules Engine.mp4",
+        "external_url": "",
+        "filename": "Security-Headers-Rules-Engine.mp4",
+        "download_urls": null
+      },
+      "object_index": 198,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330050,
+      "title": "Azure Front Door - Web Application Firewall (WAF)",
+      "asset": {
+        "_class": "asset",
+        "id": 50685202,
+        "asset_type": "Video",
+        "title": "Web Application Firewall - FrontDoor.mp4",
+        "external_url": "",
+        "filename": "Web-Application-Firewall-FrontDoor.mp4",
+        "download_urls": null
+      },
+      "object_index": 199,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330052,
+      "title": "Azure Front Door - Caching",
+      "asset": {
+        "_class": "asset",
+        "id": 50685210,
+        "asset_type": "Video",
+        "title": "Caching.mp4",
+        "external_url": "",
+        "filename": "Caching.mp4",
+        "download_urls": null
+      },
+      "object_index": 200,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330054,
+      "title": "=== Rules Engine ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50685214,
+        "asset_type": "Video",
+        "title": "Intro-RulesEngine.mp4",
+        "external_url": "",
+        "filename": "Intro-RulesEngine.mp4",
+        "download_urls": null
+      },
+      "object_index": 201,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330056,
+      "title": "Azure Front Door - Rules Engine Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 50685218,
+        "asset_type": "Video",
+        "title": "Rules Engine Architecture.mp4",
+        "external_url": "",
+        "filename": "Rules-Engine-Architecture.mp4",
+        "download_urls": null
+      },
+      "object_index": 202,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330058,
+      "title": "Azure Front Door - Rules Engine Conditions & Actions",
+      "asset": {
+        "_class": "asset",
+        "id": 50685228,
+        "asset_type": "Video",
+        "title": "Rules Match Conditions.mp4",
+        "external_url": "",
+        "filename": "Rules-Match-Conditions.mp4",
+        "download_urls": null
+      },
+      "object_index": 203,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330060,
+      "title": "=== Routing ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50685226,
+        "asset_type": "Video",
+        "title": "Intro-Routing.mp4",
+        "external_url": "",
+        "filename": "Intro-Routing.mp4",
+        "download_urls": null
+      },
+      "object_index": 204,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330062,
+      "title": "Azure Front Door - Routing Architecture",
+      "asset": {
+        "_class": "asset",
+        "id": 50685232,
+        "asset_type": "Video",
+        "title": "Routing Architecture.mp4",
+        "external_url": "",
+        "filename": "Routing-Architecture.mp4",
+        "download_urls": null
+      },
+      "object_index": 205,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330064,
+      "title": "Azure Front Door - Routing Rules Matching",
+      "asset": {
+        "_class": "asset",
+        "id": 50685246,
+        "asset_type": "Video",
+        "title": "RoutingRuleMatching.mp4",
+        "external_url": "",
+        "filename": "RoutingRuleMatching.mp4",
+        "download_urls": null
+      },
+      "object_index": 206,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330066,
+      "title": "Azure Front Door - Routing Methods",
+      "asset": {
+        "_class": "asset",
+        "id": 50685256,
+        "asset_type": "Video",
+        "title": "Front Door Routing Methods.mp4",
+        "external_url": "",
+        "filename": "Front-Door-Routing-Methods.mp4",
+        "download_urls": null
+      },
+      "object_index": 207,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330068,
+      "title": "=== Azure Front Door Standard / Premium Tiers ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50685252,
+        "asset_type": "Video",
+        "title": "Intro-Stan-Prem.mp4",
+        "external_url": "",
+        "filename": "Intro-Stan-Prem.mp4",
+        "download_urls": null
+      },
+      "object_index": 208,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330072,
+      "title": "Create an Azure Front Door Standard / Premium",
+      "asset": {
+        "_class": "asset",
+        "id": 50685260,
+        "asset_type": "Video",
+        "title": "FrontDoor Standard - Premium.mp4",
+        "external_url": "",
+        "filename": "FrontDoor-Standard-Premium.mp4",
+        "download_urls": null
+      },
+      "object_index": 209,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330074,
+      "title": "Azure Front Door - Feature Comparisons",
+      "asset": {
+        "_class": "asset",
+        "id": 50685268,
+        "asset_type": "Video",
+        "title": "Standar-Premium Feature Comparisions.mp4",
+        "external_url": "",
+        "filename": "Standar-Premium-Feature-Comparisions.mp4",
+        "download_urls": null
+      },
+      "object_index": 210,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330076,
+      "title": "Azure Front Door - Pricing",
+      "asset": {
+        "_class": "asset",
+        "id": 50685274,
+        "asset_type": "Video",
+        "title": "Pricing.mp4",
+        "external_url": "",
+        "filename": "Pricing.mp4",
+        "download_urls": null
+      },
+      "object_index": 211,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330078,
+      "title": "=== Web Application Firewall (WAF) ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50685272,
+        "asset_type": "Video",
+        "title": "Intro-WAF.mp4",
+        "external_url": "",
+        "filename": "Intro-WAF.mp4",
+        "download_urls": null
+      },
+      "object_index": 212,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330080,
+      "title": "How Azure Front Door WAF Works?",
+      "asset": {
+        "_class": "asset",
+        "id": 50685278,
+        "asset_type": "Video",
+        "title": "How WAF Works.mp4",
+        "external_url": "",
+        "filename": "How-WAF-Works.mp4",
+        "download_urls": null
+      },
+      "object_index": 213,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330086,
+      "title": "Azure Front Door - Create a WAF Policy & Log Analytics",
+      "asset": {
+        "_class": "asset",
+        "id": 50685284,
+        "asset_type": "Video",
+        "title": "Create WAF - Monitoring.mp4",
+        "external_url": "",
+        "filename": "Create-WAF-Monitoring.mp4",
+        "download_urls": null
+      },
+      "object_index": 214,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330090,
+      "title": "Azure Front Door - WAF Managed Rules",
+      "asset": {
+        "_class": "asset",
+        "id": 50685298,
+        "asset_type": "Video",
+        "title": "WAF Managed Rules.mp4",
+        "external_url": "",
+        "filename": "WAF-Managed-Rules.mp4",
+        "download_urls": null
+      },
+      "object_index": 215,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330096,
+      "title": "Azure Front Door - WAF Custom Rules",
+      "asset": {
+        "_class": "asset",
+        "id": 50685290,
+        "asset_type": "Video",
+        "title": "WAF Custom Roles.mp4",
+        "external_url": "",
+        "filename": "WAF-Custom-Roles.mp4",
+        "download_urls": null
+      },
+      "object_index": 216,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330100,
+      "title": "Azure Front Door - WAF Settings",
+      "asset": {
+        "_class": "asset",
+        "id": 50685294,
+        "asset_type": "Video",
+        "title": "WAF Settings.mp4",
+        "external_url": "",
+        "filename": "WAF-Settings.mp4",
+        "download_urls": null
+      },
+      "object_index": 217,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330102,
+      "title": "=== Monitoring ===",
+      "asset": {
+        "_class": "asset",
+        "id": 50685296,
+        "asset_type": "Video",
+        "title": "Intro-Monitoring.mp4",
+        "external_url": "",
+        "filename": "Intro-Monitoring.mp4",
+        "download_urls": null
+      },
+      "object_index": 218,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330104,
+      "title": "Azure Front Door - Metrics",
+      "asset": {
+        "_class": "asset",
+        "id": 50685306,
+        "asset_type": "Video",
+        "title": "Metrics.mp4",
+        "external_url": "",
+        "filename": "Metrics.mp4",
+        "download_urls": null
+      },
+      "object_index": 219,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330108,
+      "title": "Azure Front Door - Alerts",
+      "asset": {
+        "_class": "asset",
+        "id": 50685304,
+        "asset_type": "Video",
+        "title": "Alerts.mp4",
+        "external_url": "",
+        "filename": "Alerts.mp4",
+        "download_urls": null
+      },
+      "object_index": 220,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330118,
+      "title": "Azure Front Door - Log Analytics Workspace",
+      "asset": {
+        "_class": "asset",
+        "id": 50685308,
+        "asset_type": "Video",
+        "title": "log Analytics.mp4",
+        "external_url": "",
+        "filename": "log-Analytics.mp4",
+        "download_urls": null
+      },
+      "object_index": 221,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330124,
+      "title": "Azure Front Door - Health Probe",
+      "asset": {
+        "_class": "asset",
+        "id": 50685314,
+        "asset_type": "Video",
+        "title": "Health Probe.mp4",
+        "external_url": "",
+        "filename": "Health-Probe.mp4",
+        "download_urls": null
+      },
+      "object_index": 222,
+      "supplementary_assets": []
+    },
+    {
+      "_class": "lecture",
+      "id": 39330126,
+      "title": "Clean Up!",
+      "asset": {
+        "_class": "asset",
+        "id": 50685320,
+        "asset_type": "Video",
+        "title": "Clean Up.mp4",
+        "external_url": "",
+        "filename": "Clean-Up.mp4",
+        "download_urls": null
+      },
+      "object_index": 223,
+      "supplementary_assets": []
+    }
+  ]
+}

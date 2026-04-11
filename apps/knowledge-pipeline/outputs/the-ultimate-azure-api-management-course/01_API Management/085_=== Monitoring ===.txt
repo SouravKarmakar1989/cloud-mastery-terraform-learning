@@ -1,0 +1,1 @@
+Hi everyone. In this section we are going to talk about API management monitoring. We're going to look at API management analytics, app insights, metrics and alerts and how to configure diagnostic settings for API management. Let's get straight into it.

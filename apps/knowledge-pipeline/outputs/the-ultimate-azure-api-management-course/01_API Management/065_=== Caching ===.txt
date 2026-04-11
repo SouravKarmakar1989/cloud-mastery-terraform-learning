@@ -1,0 +1,1 @@
+Hi, everyone. In this section we are going to talk about caching in API management. We we're going to talk about internal caching, external caching, and what are the different caching policies you can use in your API management to leverage both internal and external caching? Let's get started.

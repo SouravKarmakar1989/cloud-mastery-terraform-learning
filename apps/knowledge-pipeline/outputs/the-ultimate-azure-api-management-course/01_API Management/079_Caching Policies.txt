@@ -1,0 +1,1 @@
+Hi everyone. If you are here for the caching policies, I have covered them already in a separate section where we covered the internal caching in API management and how you configure the external caching through Redis. And in there we covered different caching policies as well. So just go and check it out if you are interested to know more about caching policies.
